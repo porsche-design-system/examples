@@ -7,10 +7,14 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["./yarn.lock"]
+    "includes": ["**", "!yarn.lock"]
   },
-  "organizeImports": {
-    "enabled": true
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
   },
   "formatter": {
     "enabled": true,
@@ -26,7 +30,18 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "all": true
+      "style": {
+        "noParameterAssign": "error",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error"
+      }
     }
   },
   "javascript": {
@@ -47,7 +62,7 @@
   },
   "overrides": [
     {
-      "include": ["*.css", "*.scss"],
+      "includes": ["**/*.css", "**/*.scss"],
       "javascript": {
         "formatter": {
           "quoteStyle": "double"
@@ -55,7 +70,7 @@
       }
     },
     {
-      "include": ["**/tests/*"],
+      "includes": ["**/tests/**/*"],
       "linter": {
         "rules": {
           "suspicious": {
@@ -69,7 +84,7 @@
       }
     },
     {
-      "include": ["vite.config.js", "playwright.config.ts"],
+      "includes": ["**/vite.config.js", "**/playwright.config.ts"],
       "linter": {
         "rules": {
           "correctness": {
