@@ -24,7 +24,7 @@
     "@axe-core/playwright": "^4.10.2",
     "@biomejs/biome": "^2.0.4",
     "@playwright/test": "^1.53.1",
-    "@tailwindcss/postcss": "^4.1.10",
+    "@tailwindcss/postcss": "^4.1.11",
     "@tailwindcss/vite": "^4.1.10",
     "@types/node": "^24.0.3",
     "get-port": "^7.1.0",
