@@ -813,10 +813,17 @@
   dependencies:
     playwright "1.53.1"
 
-"@porsche-design-system/components-js@^3.28.0":
+"@porsche-design-system/components-js@3.28.0", "@porsche-design-system/components-js@^3.28.0":
   version "3.28.0"
   resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.28.0.tgz#4aced445b58ca3b632820740d11716cadb2fb7bd"
   integrity sha512-Ru1kEYEsAuUKF39zUy3zx0LDqfoMfcB5Uj5kk69d/Ma/LhgM92D0XicLm3kqfhuH85yq+M6+1BWzSAdFl1yAXQ==
+
+"@porsche-design-system/components-react@^3.28.0":
+  version "3.28.0"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-react/-/components-react-3.28.0.tgz#d35266ee73ba663f996fe0a54c53246bbc1e8139"
+  integrity sha512-vlqtd5FvsYB+9kegFF89/ZS2rddVQYESgU3B+igW0BQcqqZtqGYrucZT9D2/u3O2xyilTUgdzoGbaXJb4/WXVw==
+  dependencies:
+    "@porsche-design-system/components-js" "3.28.0"
 
 "@react-router/dev@^7.7.1":
   version "7.7.1"
