@@ -2,24 +2,77 @@ name: 'Build'
 
 on:
   workflow_call:
+    inputs:
+      image:
+        description: 'Docker image to be used in workflow.'
+        required: true
+        type: string
 
 jobs:
-  examples:
-    name: 'Examples'
+  lint:
+    name: 'Lint'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.53.1
+      image: ${{ inputs.image }}
       options: --user 1001
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
-      - name: 'Setup and install'
-        uses: ./.github/actions/setup-and-install
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Lint'
+        run: yarn lint
+  patterns:
+    name: 'Patterns'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
       - name: 'Build'
-        run: yarn build
-        shell: bash
-      - name: 'Upload build artifact'
+        run: yarn build:patterns
+      - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
-          name: examples
-          path: ./dist
+          name: build-patterns
+          path: ./patterns/dist/
+  react-router:
+    name: 'React Router'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: yarn build:react-router
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-react-router
+          path: ./react-router/build/client/
+  templates:
+    name: 'Templates'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: yarn build:templates
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-templates
+          path: ./templates/dist/
