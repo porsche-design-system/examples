@@ -28,6 +28,9 @@
     "test:vrt:patterns": "yarn --cwd patterns test:vrt",
     "docker": "docker compose -f docker-compose.yml -p porsche-design-system-examples run --service-ports --rm repository yarn \"${@}\""
   },
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.4"
+  },
   "volta": {
     "node": "22.12.0",
     "yarn": "1.22.22"
