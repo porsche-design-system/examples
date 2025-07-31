@@ -5,6 +5,7 @@
   "type": "module",
   "workspaces": {
     "packages": [
+      "next-js",
       "patterns",
       "react-router",
       "templates"
