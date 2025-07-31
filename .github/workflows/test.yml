@@ -1,66 +1,57 @@
-name: 'Test'
+name: 'Test (Patterns)'
 
 on:
   workflow_call:
+    inputs:
+      image:
+        description: 'Docker image to be used in workflow.'
+        required: true
+        type: string
 
 jobs:
-  lint:
-    name: 'Lint'
+  e2e-patterns:
+    name: 'E2E (Patterns)'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.53.1
+      image: ${{ inputs.image }}
       options: --user 1001
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
-      - name: 'Setup and install'
-        uses: ./.github/actions/setup-and-install
-      - name: 'Lint'
-        run: yarn lint
-        shell: bash
-  e2e:
-    name: 'E2E'
-    runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.53.1
-      options: --user 1001
-    steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v4
-      - name: 'Setup and install'
-        uses: ./.github/actions/setup-and-install
-      - name: 'Download build artifact'
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Download artifact'
         uses: actions/download-artifact@v4
         with:
-          name: examples
-          path: ./dist
+          name: build-patterns
+          path: ./patterns/dist
       - name: 'E2E'
-        run: yarn test:e2e
+        run: yarn test:e2e:patterns
         shell: bash
-  a11y:
-    name: 'A11y'
+  a11y-patterns:
+    name: 'A11y (Patterns)'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.53.1
+      image: ${{ inputs.image }}
       options: --user 1001
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
-      - name: 'Setup and install'
-        uses: ./.github/actions/setup-and-install
-      - name: 'Download build artifact'
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Download artifact'
         uses: actions/download-artifact@v4
         with:
-          name: examples
-          path: ./dist
+          name: build-patterns
+          path: ./patterns/dist
       - name: 'A11y'
-        run: yarn test:a11y
+        run: yarn test:a11y:patterns
         shell: bash
   # vrt:
   #   name: 'VRT'
   #   runs-on: ubuntu-latest
   #   container:
-  #     image: mcr.microsoft.com/playwright:v1.53.1
+  #     image: ${{ inputs.image }}
   #     options: --user 1001
   #   strategy:
   #     fail-fast: false
@@ -71,18 +62,18 @@ jobs:
   #     - name: 'Checkout'
   #       uses: actions/checkout@v4
   #     - name: 'Setup and install'
-  #       uses: ./.github/actions/setup-and-install
+  #       uses: ./.github/actions/install
   #     - name: 'Download build artifact'
   #       uses: actions/download-artifact@v4
   #       with:
   #         name: examples
   #         path: ./dist
   #     - name: 'VRT'
-  #       run: yarn test:vrt --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+  #       run: yarn test:vrt:patterns --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
   #       shell: bash
   #     - name: 'VRT Regression'
   #       if: failure()
   #       uses: actions/upload-artifact@v4
   #       with:
-  #         name: vrt-regression-${{ matrix.shardIndex }}
+  #         name: regression-vrt-patterns-${{ matrix.shardIndex }}
   #         path: ./tests/vrt/test-results

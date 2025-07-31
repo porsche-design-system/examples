@@ -44,7 +44,7 @@ const transformIndexHtmlPlugin = () => {
 };
 
 export default defineConfig({
-  base: '/examples/',
+  base: '/examples/templates/',
   root: 'src',
   publicDir: '../public',
   emptyOutDir: true,
@@ -55,11 +55,7 @@ export default defineConfig({
     outDir: '../dist/',
     rollupOptions: {
       input: {
-        home: resolve(__dirname, 'src/index.html'),
-        'patterns-header-1': resolve(__dirname, 'src/patterns/header/1/index.html'),
-        'patterns-header-2': resolve(__dirname, 'src/patterns/header/2/index.html'),
-        'patterns-footer-1': resolve(__dirname, 'src/patterns/footer/1/index.html'),
-        'templates-landing-page-1': resolve(__dirname, 'src/templates/landing-page/1/index.html'),
+        'landing-page-1': resolve(__dirname, 'src/landing-page/1/index.html'),
       },
     },
   },
