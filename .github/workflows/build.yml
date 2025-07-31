@@ -57,7 +57,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-react-router
-          path: ./react-router/build/client/
+          path: ./react-router/build/client/examples/react-router/
   templates:
     name: 'Templates'
     runs-on: ubuntu-latest
