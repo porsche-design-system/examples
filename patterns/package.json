@@ -1,0 +1,32 @@
+{
+  "name": "@porsche-design-system/patterns",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts",
+    "test:a11y": "playwright test --config=tests/a11y/config/playwright.config.ts",
+    "test:vrt": "playwright test --config=tests/vrt/config/playwright.config.ts",
+    "test:vrt:rename-snapshots": "tsx tests/vrt/scripts/renameSnapshots.ts",
+    "test:vrt:write-snapshots": "tsx tests/vrt/scripts/writeSnapshots.ts"
+  },
+  "dependencies": {
+    "@porsche-design-system/components-js": "^3.28.0",
+    "tailwindcss": "^4.1.10"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.53.1",
+    "@tailwindcss/vite": "^4.1.10",
+    "@types/node": "^24.0.3",
+    "get-port": "^7.1.0",
+    "tsx": "^4.20.3",
+    "vite": "^6.3.5"
+  },
+  "volta": {
+    "extends": "../package.json"
+  }
+}

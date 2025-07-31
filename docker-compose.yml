@@ -8,5 +8,11 @@ services:
     volumes:
       - ./:/opt/repository:cached
       - node-modules:/opt/repository/node_modules
+      - patterns-node-modules:/opt/repository/patterns/node_modules
+      - react-router-node-modules:/opt/repository/react-router/node_modules
+      - templates-node-modules:/opt/repository/templates/node_modules
 volumes:
   node-modules:
+  patterns-node-modules:
+  react-router-node-modules:
+  templates-node-modules:
