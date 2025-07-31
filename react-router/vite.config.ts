@@ -5,6 +5,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(({ isSsrBuild }) => {
   return {
+    base: './',
     define: {
       'process.browser': JSON.stringify(!isSsrBuild),
     },
