@@ -58,6 +58,24 @@ jobs:
         with:
           name: build-react-router
           path: ./react-router/build/client/examples/react-router/
+  next-js:
+    name: 'Next.js'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: NEXT_PUBLIC_BASE_PATH=/examples/next-js yarn build:next-js
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-next-js
+          path: ./next-js/dist/
   templates:
     name: 'Templates'
     runs-on: ubuntu-latest

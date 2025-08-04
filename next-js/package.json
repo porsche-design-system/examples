@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "serve dist",
     "lint": "next lint"
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "serve": "^14.2.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

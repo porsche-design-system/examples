@@ -34,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <base href={process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/` : '/'} />
         {/* necessary for SSR support, injects stylesheet which defines visibility of pre-hydrated PDS components */}
         {getInitialStyles({ format: 'jsx' })}
         {/* injects stylesheet which defines Porsche Next CSS font-face definition (=> minimize FOUT) */}
