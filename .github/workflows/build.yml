@@ -57,7 +57,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-react-router
-          path: ./react-router/build/client/examples/react-router/
+          path: ./frameworks/react-router/build/client/examples/react-router/
   next-js:
     name: 'Next.js'
     runs-on: ubuntu-latest
@@ -75,7 +75,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-next-js
-          path: ./next-js/dist/
+          path: ./frameworks/next-js/dist/
   templates:
     name: 'Templates'
     runs-on: ubuntu-latest
