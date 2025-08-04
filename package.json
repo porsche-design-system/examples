@@ -34,7 +34,7 @@
     "docker": "docker compose -f docker-compose.yml -p porsche-design-system-examples run --service-ports --rm repository yarn \"${@}\""
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.0.4"
+    "@biomejs/biome": "^2.1.3"
   },
   "volta": {
     "node": "22.12.0",
