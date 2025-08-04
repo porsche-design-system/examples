@@ -30,6 +30,11 @@ jobs:
         with:
           name: build-patterns
           path: ./dist/patterns/
+      - name: 'Download artifact "Next.js"'
+        uses: actions/download-artifact@v4
+        with:
+          name: build-next-js
+          path: ./dist/next-js/
       - name: 'Download artifact "React Router"'
         uses: actions/download-artifact@v4
         with:

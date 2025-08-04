@@ -5,6 +5,7 @@
   "type": "module",
   "workspaces": {
     "packages": [
+      "next-js",
       "patterns",
       "react-router",
       "templates"
@@ -12,13 +13,16 @@
   },
   "scripts": {
     "dev:patterns": "yarn --cwd patterns dev",
+    "dev:next-js": "yarn --cwd next-js dev",
     "dev:react-router": "yarn --cwd react-router dev",
     "dev:templates": "yarn --cwd templates dev",
     "build": "yarn build:patterns && yarn build:react-router && yarn build:templates",
     "build:patterns": "yarn --cwd patterns build",
+    "build:next-js": "yarn --cwd next-js build",
     "build:react-router": "yarn --cwd react-router build",
     "build:templates": "yarn --cwd templates build",
     "preview:patterns": "yarn --cwd patterns preview",
+    "preview:next-js": "yarn --cwd next-js start",
     "preview:react-router": "yarn --cwd react-router start",
     "preview:templates": "yarn --cwd templates preview",
     "format": "biome format",
