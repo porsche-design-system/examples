@@ -6,6 +6,7 @@
   "workspaces": {
     "packages": [
       "frameworks/next-js",
+      "frameworks/react",
       "frameworks/react-router",
       "patterns",
       "templates"
@@ -13,15 +14,18 @@
   },
   "scripts": {
     "dev:next-js": "yarn --cwd frameworks/next-js dev",
+    "dev:react": "yarn --cwd frameworks/react dev",
     "dev:react-router": "yarn --cwd frameworks/react-router dev",
     "dev:patterns": "yarn --cwd patterns dev",
     "dev:templates": "yarn --cwd templates dev",
-    "build": "yarn build:patterns && yarn build:react-router && yarn build:templates",
+    "build": "yarn build:patterns && yarn build:next-js && yarn build:react && yarn build:react-router && yarn build:templates",
     "build:next-js": "yarn --cwd frameworks/next-js build",
+    "build:react": "yarn --cwd frameworks/react build",
     "build:react-router": "yarn --cwd frameworks/react-router build",
     "build:patterns": "yarn --cwd patterns build",
     "build:templates": "yarn --cwd templates build",
     "preview:next-js": "yarn --cwd frameworks/next-js start",
+    "preview:react": "yarn --cwd frameworks/react preview",
     "preview:react-router": "yarn --cwd frameworks/react-router start",
     "preview:patterns": "yarn --cwd patterns preview",
     "preview:templates": "yarn --cwd templates preview",

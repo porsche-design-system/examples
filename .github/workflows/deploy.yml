@@ -35,6 +35,11 @@ jobs:
         with:
           name: build-next-js
           path: ./dist/next-js/
+      - name: 'Download artifact "React"'
+        uses: actions/download-artifact@v4
+        with:
+          name: build-react
+          path: ./dist/react/
       - name: 'Download artifact "React Router"'
         uses: actions/download-artifact@v4
         with:
