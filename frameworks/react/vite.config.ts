@@ -35,5 +35,6 @@ const transformIndexHtmlPlugin = () => {
 };
 
 export default defineConfig({
+  base: process.env.REACT_PUBLIC_BASE_PATH || '',
   plugins: [react(), transformIndexHtmlPlugin(), tailwindcss()],
 });
