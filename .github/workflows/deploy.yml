@@ -45,6 +45,11 @@ jobs:
         with:
           name: build-react-router
           path: ./dist/react-router/
+      - name: 'Download artifact "Vanilla JS"'
+        uses: actions/download-artifact@v4
+        with:
+          name: build-vanilla-js
+          path: ./dist/vanilla-js/
       - name: 'Download artifact "Templates"'
         uses: actions/download-artifact@v4
         with:
