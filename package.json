@@ -18,7 +18,7 @@
     "dev:react-router": "yarn --cwd frameworks/react-router dev",
     "dev:patterns": "yarn --cwd patterns dev",
     "dev:templates": "yarn --cwd templates dev",
-    "build": "yarn build:patterns && yarn build:react-router && yarn build:templates",
+    "build": "yarn build:patterns && yarn build:next-js && yarn build:react && yarn build:react-router && yarn build:templates",
     "build:next-js": "yarn --cwd frameworks/next-js build",
     "build:react": "yarn --cwd frameworks/react build",
     "build:react-router": "yarn --cwd frameworks/react-router build",
