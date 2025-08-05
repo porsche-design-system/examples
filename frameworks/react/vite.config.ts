@@ -8,7 +8,7 @@ import {
   getIconLinks,
   getInitialStyles,
   getMetaTagsAndIconLinks
-} from "@porsche-design-system/components-js/partials";
+} from "@porsche-design-system/components-react/partials";
 
 const transformIndexHtmlPlugin = () => {
   return {
