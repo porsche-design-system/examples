@@ -94,6 +94,24 @@ jobs:
         with:
           name: build-react-router
           path: ./frameworks/react-router/build/client/examples/react-router/
+  vanilla-js:
+    name: 'Vanilla JS'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: yarn build:vanilla-js
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-vanilla-js
+          path: ./frameworks/vanilla-js/dist/
   templates:
     name: 'Templates'
     runs-on: ubuntu-latest
