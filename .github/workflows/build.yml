@@ -106,7 +106,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: yarn build:vanilla-js
+        run: VANILLA_JS_PUBLIC_BASE_PATH=/examples/vanilla-js yarn build:vanilla-js
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
