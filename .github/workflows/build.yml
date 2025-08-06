@@ -112,6 +112,24 @@ jobs:
         with:
           name: build-vanilla-js
           path: ./frameworks/vanilla-js/dist/
+  vue:
+    name: 'Vue'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: VUE_PUBLIC_BASE_PATH=/examples/vue yarn build:vue
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-vue
+          path: ./frameworks/vue/dist/
   templates:
     name: 'Templates'
     runs-on: ubuntu-latest

@@ -50,6 +50,11 @@ jobs:
         with:
           name: build-vanilla-js
           path: ./dist/vanilla-js/
+      - name: 'Download artifact "Vue"'
+        uses: actions/download-artifact@v4
+        with:
+          name: build-vue
+          path: ./dist/vue/
       - name: 'Download artifact "Templates"'
         uses: actions/download-artifact@v4
         with:
