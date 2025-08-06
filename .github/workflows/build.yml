@@ -40,6 +40,24 @@ jobs:
         with:
           name: build-patterns
           path: ./patterns/dist/
+  angular:
+    name: 'Angular'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: yarn build:angular
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-angular
+          path: ./frameworks/angular/dist/angular/browser/
   next-js:
     name: 'Next.js'
     runs-on: ubuntu-latest

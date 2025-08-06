@@ -5,6 +5,7 @@
   "type": "module",
   "workspaces": {
     "packages": [
+      "frameworks/angular",
       "frameworks/next-js",
       "frameworks/react",
       "frameworks/react-router",
@@ -15,6 +16,7 @@
     ]
   },
   "scripts": {
+    "dev:angular": "yarn --cwd frameworks/angular watch",
     "dev:next-js": "yarn --cwd frameworks/next-js dev",
     "dev:react": "yarn --cwd frameworks/react dev",
     "dev:react-router": "yarn --cwd frameworks/react-router dev",
@@ -22,7 +24,8 @@
     "dev:vue": "yarn --cwd frameworks/vue dev",
     "dev:patterns": "yarn --cwd patterns dev",
     "dev:templates": "yarn --cwd templates dev",
-    "build": "yarn build:next-js && yarn build:react && yarn build:react-router && yarn build:vanilla-js && yarn build:vue && yarn build:patterns && yarn build:templates",
+    "build": "yarn build:angular && yarn build:next-js && yarn build:react && yarn build:react-router && yarn build:vanilla-js && yarn build:vue && yarn build:patterns && yarn build:templates",
+    "build:angular": "yarn --cwd frameworks/angular build",
     "build:next-js": "yarn --cwd frameworks/next-js build",
     "build:react": "yarn --cwd frameworks/react build",
     "build:react-router": "yarn --cwd frameworks/react-router build",
@@ -30,6 +33,7 @@
     "build:vue": "yarn --cwd frameworks/vue build",
     "build:patterns": "yarn --cwd patterns build",
     "build:templates": "yarn --cwd templates build",
+    "preview:angular": "yarn --cwd frameworks/angular start",
     "preview:next-js": "yarn --cwd frameworks/next-js start",
     "preview:react": "yarn --cwd frameworks/react preview",
     "preview:react-router": "yarn --cwd frameworks/react-router start",
