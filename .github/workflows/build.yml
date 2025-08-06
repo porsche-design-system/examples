@@ -52,7 +52,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: yarn build:angular
+        run: yarn build:angular --base-href /examples/angular
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
