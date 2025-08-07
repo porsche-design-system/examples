@@ -57,7 +57,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-angular
-          path: ./frameworks/angular/dist/angular/browser/
+          path: ./frameworks/angular/dist/
   next-js:
     name: 'Next.js'
     runs-on: ubuntu-latest
