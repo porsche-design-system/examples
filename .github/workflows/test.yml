@@ -17,7 +17,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Download artifact'
@@ -36,7 +36,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Download artifact'
@@ -60,7 +60,7 @@ jobs:
   #       shardTotal: [ 3 ]
   #   steps:
   #     - name: 'Checkout'
-  #       uses: actions/checkout@v4
+  #       uses: actions/checkout@v5
   #     - name: 'Setup and install'
   #       uses: ./.github/actions/install
   #     - name: 'Download build artifact'
