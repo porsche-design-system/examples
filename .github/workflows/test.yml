@@ -21,7 +21,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Download artifact'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: build-patterns
           path: ./patterns/dist
@@ -40,7 +40,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Download artifact'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: build-patterns
           path: ./patterns/dist
@@ -64,7 +64,7 @@ jobs:
   #     - name: 'Setup and install'
   #       uses: ./.github/actions/install
   #     - name: 'Download build artifact'
-  #       uses: actions/download-artifact@v4
+  #       uses: actions/download-artifact@v5
   #       with:
   #         name: examples
   #         path: ./dist
