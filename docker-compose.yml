@@ -5,14 +5,26 @@ services:
     ports:
       - "5173:5173"
       - "4173:4173"
+      - "4200:4200"
+      - "3000:3000"
     volumes:
       - ./:/opt/repository:cached
       - node-modules:/opt/repository/node_modules
-      - patterns-node-modules:/opt/repository/patterns/node_modules
+      - angular-node-modules:/opt/repository/angular/node_modules
+      - next-js-node-modules:/opt/repository/next-js/node_modules
+      - react-node-modules:/opt/repository/react/node_modules
       - react-router-node-modules:/opt/repository/react-router/node_modules
+      - vanilla-js-node-modules:/opt/repository/vanilla-js/node_modules
+      - vue-node-modules:/opt/repository/vue/node_modules
+      - patterns-node-modules:/opt/repository/patterns/node_modules
       - templates-node-modules:/opt/repository/templates/node_modules
 volumes:
   node-modules:
-  patterns-node-modules:
+  angular-node-modules:
+  next-js-node-modules:
+  react-node-modules:
   react-router-node-modules:
+  vanilla-js-node-modules:
+  vue-node-modules:
+  patterns-node-modules:
   templates-node-modules:
