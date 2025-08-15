@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!yarn.lock"]
+    "includes": ["**", "!package-lock.json"]
   },
   "assist": {
     "actions": {

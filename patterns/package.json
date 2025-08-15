@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:ci": "npm run build",
     "preview": "vite preview",
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts",
     "test:a11y": "playwright test --config=tests/a11y/config/playwright.config.ts",
