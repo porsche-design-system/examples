@@ -15,16 +15,16 @@
   },
   "dependencies": {
     "@porsche-design-system/components-js": "^3.28.0",
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
     "@playwright/test": "^1.54.2",
-    "@tailwindcss/vite": "^4.1.10",
-    "@types/node": "^24.0.3",
+    "@tailwindcss/vite": "^4.1.12",
+    "@types/node": "^24.3.0",
     "get-port": "^7.1.0",
-    "tsx": "^4.20.3",
-    "vite": "^7.1.0"
+    "tsx": "^4.20.4",
+    "vite": "^7.1.2"
   },
   "volta": {
     "extends": "../package.json"

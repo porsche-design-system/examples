@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@porsche-design-system/components-js": "^3.28.0",
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.10",
-    "vite": "^7.1.0"
+    "@tailwindcss/vite": "^4.1.12",
+    "vite": "^7.1.2"
   },
   "volta": {
     "extends": "../package.json"
