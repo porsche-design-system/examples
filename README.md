@@ -5,6 +5,32 @@ using [Porsche Corporate Identity](https://brand.porsche.com/) and [WCAG 2.2 (AA
 compliant [components](https://designsystem.porsche.com/v3/components/introduction), [Tailwind CSS](https://designsystem.porsche.com/v3/tailwindcss/introduction)
 and [partials](https://designsystem.porsche.com/v3/partials/introduction).
 
+## Frameworks
+
+### Angular
+
+- [Angular](https://porsche-design-system.github.io/examples/angular/)
+
+### Next.js
+
+- [Next.js](https://porsche-design-system.github.io/examples/next-js/)
+
+### React
+
+- [React](https://porsche-design-system.github.io/examples/react/)
+
+### React Router
+
+- [React Router](https://porsche-design-system.github.io/examples/react-router/)
+
+### Vanilla JS
+
+- [Vanilla JS](https://porsche-design-system.github.io/examples/vanilla-js/)
+
+### Vue
+
+- [Vue](https://porsche-design-system.github.io/examples/vue/)
+
 ## Patterns
 
 ### Header
