@@ -14,7 +14,7 @@
     "templates"
   ],
   "scripts": {
-    "dev:angular": "npm run watch --workspace=@porsche-design-system/angular",
+    "dev:angular": "npm run start --workspace=@porsche-design-system/angular",
     "dev:next-js": "npm run dev --workspace=@porsche-design-system/next-js",
     "dev:react": "npm run dev --workspace=@porsche-design-system/react",
     "dev:react-router": "npm run dev --workspace=@porsche-design-system/react-router",
@@ -40,7 +40,7 @@
     "build:ci:patterns": "npm run build:ci --workspace=@porsche-design-system/patterns",
     "build:templates": "npm run build --workspace=@porsche-design-system/templates",
     "build:ci:templates": "npm run build:ci --workspace=@porsche-design-system/templates",
-    "preview:angular": "npm run start --workspace=@porsche-design-system/angular",
+    "preview:angular": "npm run watch --workspace=@porsche-design-system/angular",
     "preview:next-js": "npm run start --workspace=@porsche-design-system/next-js",
     "preview:react": "npm run preview --workspace=@porsche-design-system/react",
     "preview:react-router": "npm run start --workspace=@porsche-design-system/react-router",
