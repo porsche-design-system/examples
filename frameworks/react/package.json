@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:ci": "REACT_PUBLIC_BASE_PATH=/examples/react npm run build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

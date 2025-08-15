@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:ci": "NEXT_PUBLIC_BASE_PATH=/examples/next-js npm run build",
     "start": "serve dist",
     "lint": "next lint"
   },
