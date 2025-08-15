@@ -1,7 +1,7 @@
 # Examples by Porsche Design System
 
-Designed and developed by the [Porsche Design System](https://designsystem.porsche.com/) team, this repository showcases "Pattern/Templates" examples as well as JS Framework integration built with [Porsche Corporate Identity](https://brand.porsche.com/) and [WCAG 2.2 (AA)](https://www.w3.org/TR/WCAG22/)
-compliant [Porsche Design System Components](https://designsystem.porsche.com/v3/components/introduction) and [Tailwind CSS Styles](https://designsystem.porsche.com/v3/tailwindcss/introduction).
+Designed and developed by the [Porsche Design System](https://designsystem.porsche.com/) team, this repository showcases Patterns, Templates and JS framework integration examples.
+The projects are built using [WCAG 2.2 (AA)](https://www.w3.org/TR/WCAG22/) compliant [Porsche Design System Components](https://designsystem.porsche.com/v3/components/introduction), aligning with the [Porsche Corporate Identity](https://brand.porsche.com/) and leveraging [Tailwind CSS](https://designsystem.porsche.com/v3/tailwindcss/introduction).
 
 ## Demo
 
