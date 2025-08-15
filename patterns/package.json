@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:ci": "npm run build",
     "preview": "vite preview",
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts",
     "test:a11y": "playwright test --config=tests/a11y/config/playwright.config.ts",
@@ -15,16 +16,16 @@
   },
   "dependencies": {
     "@porsche-design-system/components-js": "^3.28.0",
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
-    "@playwright/test": "^1.53.1",
-    "@tailwindcss/vite": "^4.1.10",
-    "@types/node": "^24.0.3",
+    "@playwright/test": "^1.54.2",
+    "@tailwindcss/vite": "^4.1.12",
+    "@types/node": "^24.3.0",
     "get-port": "^7.1.0",
-    "tsx": "^4.20.3",
-    "vite": "^6.3.5"
+    "tsx": "^4.20.4",
+    "vite": "^7.1.2"
   },
   "volta": {
     "extends": "../package.json"
