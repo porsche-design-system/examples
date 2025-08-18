@@ -5,31 +5,32 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
+    "build:ci": "npm run build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
     "@porsche-design-system/components-react": "^3.28.0",
-    "@react-router/node": "^7.7.1",
-    "@react-router/serve": "^7.7.1",
+    "@react-router/node": "^7.8.0",
+    "@react-router/serve": "^7.8.0",
     "isbot": "^5.1.27",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.7.1"
+    "react-router": "^7.8.0"
   },
   "devDependencies": {
-    "@react-router/dev": "^7.7.1",
-    "@tailwindcss/vite": "^4.1.4",
-    "@types/node": "^20",
-    "@types/react": "^19.1.2",
+    "@react-router/dev": "^7.8.0",
+    "@tailwindcss/vite": "^4.1.12",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.2",
-    "tailwindcss": "^4.1.4",
+    "tailwindcss": "^4.1.12",
     "typescript": "^5.8.3",
-    "vite": "^6.3.3",
+    "vite": "^7.1.2",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "volta": {
-    "extends": "../package.json"
+    "extends": "../../package.json"
   }
 }

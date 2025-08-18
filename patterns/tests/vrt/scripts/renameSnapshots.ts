@@ -72,6 +72,7 @@ const walk = (dir, done): void => {
 const deleteRetryDirectories = (source: string): void => {
   fs.readdirSync(source, { withFileTypes: true })
     .filter((dirent) => dirent.isDirectory())
+    // biome-ignore lint/suspicious/useIterableCallbackReturn: ok
     .map((dirent) => {
       if (/retry\d+$/.test(dirent.name)) {
         fs.rmSync(`./${dirent.path}/${dirent.name}`, { recursive: true, force: true });

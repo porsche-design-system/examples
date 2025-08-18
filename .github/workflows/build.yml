@@ -21,9 +21,9 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Lint'
-        run: yarn lint
-  patterns:
-    name: 'Patterns'
+        run: npm run lint
+  angular:
+    name: 'Angular'
     runs-on: ubuntu-latest
     container:
       image: ${{ inputs.image }}
@@ -34,12 +34,48 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: yarn build:patterns
+        run: npm run build:ci:angular
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
-          name: build-patterns
-          path: ./patterns/dist/
+          name: build-angular
+          path: ./frameworks/angular/dist/
+  next-js:
+    name: 'Next.js'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: npm run build:ci:next-js
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-next-js
+          path: ./frameworks/next-js/dist/
+  react:
+    name: 'React'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: npm run build:ci:react
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-react
+          path: ./frameworks/react/dist/
   react-router:
     name: 'React Router'
     runs-on: ubuntu-latest
@@ -52,12 +88,66 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: yarn build:react-router
+        run: npm run build:ci:react-router
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
           name: build-react-router
-          path: ./react-router/build/client/examples/react-router/
+          path: ./frameworks/react-router/build/client/examples/react-router/
+  vanilla-js:
+    name: 'Vanilla JS'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: npm run build:ci:vanilla-js
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-vanilla-js
+          path: ./frameworks/vanilla-js/dist/
+  vue:
+    name: 'Vue'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: npm run build:ci:vue
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-vue
+          path: ./frameworks/vue/dist/
+  patterns:
+    name: 'Patterns'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: npm run build:ci:patterns
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-patterns
+          path: ./patterns/dist/
   templates:
     name: 'Templates'
     runs-on: ubuntu-latest
@@ -70,7 +160,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: yarn build:templates
+        run: npm run build:ci:templates
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
