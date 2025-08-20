@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@porsche-design-system/components-js": "^3.28.0"
+    "@porsche-design-system/components-js": "^3.29.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.12",
