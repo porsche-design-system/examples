@@ -34,7 +34,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci:angular
+        run: npm run build:ci --workspace=@porsche-design-system/angular
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
@@ -52,7 +52,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci:next-js
+        run: npm run build:ci --workspace=@porsche-design-system/next-js
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
@@ -70,7 +70,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci:react
+        run: npm run build:ci --workspace=@porsche-design-system/react
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
@@ -88,7 +88,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci:react-router
+        run: npm run build:ci --workspace=@porsche-design-system/react-router
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
@@ -106,7 +106,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci:vanilla-js
+        run: npm run build:ci --workspace=@porsche-design-system/vanilla-js
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
@@ -124,7 +124,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci:vue
+        run: npm run build:ci --workspace=@porsche-design-system/vue
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
@@ -142,7 +142,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci:patterns
+        run: npm run build:ci --workspace=@porsche-design-system/patterns
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
@@ -160,7 +160,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci:templates
+        run: npm run build:ci --workspace=@porsche-design-system/templates
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v4
         with:
