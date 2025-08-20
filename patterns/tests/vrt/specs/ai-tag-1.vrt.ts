@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { enableForcedColors, enableRightToLeft, enableTextZoom } from '../utils';
 
-const pattern = 'header-1';
+const pattern = 'ai-tag-1';
 
 test.describe(`has no visual regression "${pattern}"`, () => {
   test.beforeEach(async ({ page }) => {
