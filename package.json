@@ -17,7 +17,7 @@
     "dev:vue": "npm run dev --workspace=@porsche-design-system/vue",
     "dev:patterns": "npm run dev --workspace=@porsche-design-system/patterns",
     "dev:templates": "npm run dev --workspace=@porsche-design-system/templates",
-    "build": "npm run build:angular && npm run build:next-js && npm run build:react && npm run build:react-router && npm run build:vanilla-js && npm run build:vue && npm run build:patterns && npm run build:templates",
+    "build": "npm run build --workspaces",
     "build:angular": "npm run build --workspace=@porsche-design-system/angular",
     "build:next-js": "npm run build --workspace=@porsche-design-system/next-js",
     "build:react": "npm run build --workspace=@porsche-design-system/react",
