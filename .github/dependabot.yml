@@ -7,8 +7,19 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    # Add a group to consolidate all GitHub Actions updates
+    groups:
+      github-actions-updates:
+        patterns:
+          - "*"
+
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
+    # Add a group to consolidate all npm updates
+    groups:
+      npm-updates:
+        patterns:
+          - "*"
