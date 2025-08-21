@@ -47,33 +47,28 @@ jobs:
       - name: 'A11y'
         run: npm run test:a11y:patterns
         shell: bash
-  # vrt:
-  #   name: 'VRT'
-  #   runs-on: ubuntu-latest
-  #   container:
-  #     image: ${{ inputs.image }}
-  #     options: --user 1001
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       shardIndex: [ 1, 2, 3 ]
-  #       shardTotal: [ 3 ]
-  #   steps:
-  #     - name: 'Checkout'
-  #       uses: actions/checkout@v5
-  #     - name: 'Setup and install'
-  #       uses: ./.github/actions/install
-  #     - name: 'Download build artifact'
-  #       uses: actions/download-artifact@v5
-  #       with:
-  #         name: examples
-  #         path: ./dist
-  #     - name: 'VRT'
-  #       run: npm run test:vrt:patterns --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
-  #       shell: bash
-  #     - name: 'VRT Regression'
-  #       if: failure()
-  #       uses: actions/upload-artifact@v4
-  #       with:
-  #         name: regression-vrt-patterns-${{ matrix.shardIndex }}
-  #         path: ./tests/vrt/test-results
+  vrt-patterns:
+   name: 'VRT (Patterns)'
+   runs-on: ubuntu-latest
+   container:
+     image: ${{ inputs.image }}
+     options: --user 1001
+   steps:
+     - name: 'Checkout'
+       uses: actions/checkout@v5
+     - name: 'Install'
+       uses: ./.github/actions/install
+     - name: 'Download artifact'
+       uses: actions/download-artifact@v5
+       with:
+         name: build-patterns
+         path: ./patterns/dist
+     - name: 'VRT'
+       run: npm run test:vrt:patterns
+       shell: bash
+     - name: 'VRT Regression'
+       if: failure()
+       uses: actions/upload-artifact@v4
+       with:
+         name: regression-vrt-patterns
+         path: ./patterns/tests/vrt/test-results
