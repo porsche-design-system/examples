@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:ci": "ASTRO_PUBLIC_BASE_PATH=/examples/astro npm run build",
     "preview": "astro preview",
     "astro": "astro"
   },

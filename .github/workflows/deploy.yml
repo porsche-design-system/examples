@@ -35,6 +35,11 @@ jobs:
         with:
           name: build-angular
           path: ./dist/angular/
+      - name: 'Download artifact "Astro"'
+        uses: actions/download-artifact@v5
+        with:
+          name: build-astro
+          path: ./dist/astro/
       - name: 'Download artifact "Next.js"'
         uses: actions/download-artifact@v5
         with:

@@ -40,6 +40,24 @@ jobs:
         with:
           name: build-angular
           path: ./frameworks/angular/dist/
+  astro:
+    name: 'Astro'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v5
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: npm run build:ci --workspace=@porsche-design-system/astro
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-astro
+          path: ./frameworks/astro/dist/
   next-js:
     name: 'Next.js'
     runs-on: ubuntu-latest
