@@ -1,0 +1,12 @@
+- main:
+  - article "Pattern AI-Tag":
+    - button "AI-generated"
+    - img "Some alternative text for screen readers describing the image"
+    - heading "Pattern AI-Tag" [level=1]
+    - paragraph:
+      - text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum (
+      - button "AI-modified"
+      - text: ).
+    - paragraph: Lorem ipsum dolor sit amet, consetetur sadipscing elitr
+    - link "Some label":
+      - /url: "#"
