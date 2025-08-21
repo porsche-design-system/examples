@@ -4,14 +4,10 @@ import './style.css';
 // EXAMPLE CODE FOR DEMONSTRATION PURPOSE ONLY.
 const pPopover = document.querySelectorAll('p-popover');
 
-pPopover.forEach((el, i) => {
+for (const el of pPopover) {
   const button = el.querySelector('button');
   button.addEventListener('click', (e) => {
     el.open = !el.open;
     e.target.setAttribute('aria-expanded', el.open);
-  })
-  el.addEventListener('dismiss', (e) => {
-    button.setAttribute('aria-expanded', 'false');
-    e.target.open = false;
-  })
-})
+  });
+}
