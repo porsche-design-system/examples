@@ -12,9 +12,7 @@
   "dependencies": {
     "@astrojs/vue": "^5.1.0",
     "@porsche-design-system/components-js": "^3.29.0",
-    "@tailwindcss/vite": "^4.1.12",
     "astro": "^5.13.2",
-    "tailwindcss": "^4.1.12",
     "vue": "^3.5.19"
   },
   "volta": {
