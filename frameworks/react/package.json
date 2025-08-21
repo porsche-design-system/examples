@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@porsche-design-system/components-react": "^3.28.0",
+    "@porsche-design-system/components-react": "^3.29.0",
     "@tailwindcss/vite": "^4.1.12",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

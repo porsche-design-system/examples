@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
-    "@playwright/test": "^1.54.2",
+    "@playwright/test": "^1.55.0",
     "@tailwindcss/vite": "^4.1.12",
     "@types/node": "^24.3.0",
     "get-port": "^7.1.0",
