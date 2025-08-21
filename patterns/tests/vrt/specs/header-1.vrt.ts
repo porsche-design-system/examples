@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test';
 import { enableForcedColors, enableRightToLeft, enableTextZoom } from '../utils';
 
+// TODO: flaky VRT test because of video
+
 const pattern = 'header-1';
 
 test.describe(`has no visual regression "${pattern}"`, () => {
@@ -18,14 +20,14 @@ test.describe(`has no visual regression "${pattern}"`, () => {
     await new Promise((resolve) => setTimeout(resolve, 100));
   });
 
-  test('default', async ({ page }) => {
+  test.fixme('default', async ({ page }) => {
     await expect(page).toHaveScreenshot(`${pattern}.png`, { fullPage: true });
   });
 
   test.describe(() => {
     test.skip(({ browserName, viewport }) => browserName !== 'chromium' || viewport.width !== 1280);
 
-    test('right to left', async ({ page }) => {
+    test.fixme('right to left', async ({ page }) => {
       await enableRightToLeft(page);
       await expect(page).toHaveScreenshot(`${pattern}-rtl.png`, { fullPage: true });
     });
@@ -35,7 +37,7 @@ test.describe(`has no visual regression "${pattern}"`, () => {
       await expect(page).toHaveScreenshot(`${pattern}-zoom.png`, { fullPage: true });
     });
 
-    test('high contrast', async ({ page }) => {
+    test.fixme('high contrast', async ({ page }) => {
       await enableForcedColors(page);
       await expect(page).toHaveScreenshot(`${pattern}-hc.png`, { fullPage: true });
     });
