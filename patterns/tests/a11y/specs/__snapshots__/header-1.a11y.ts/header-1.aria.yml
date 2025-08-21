@@ -10,5 +10,4 @@
   - button "User"
   - status
 - main:
-  - heading "Pattern" [level=2]
-  - heading "Header" [level=1]
+  - heading "Pattern Header" [level=1]
