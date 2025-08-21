@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "dev:angular": "npm run start --workspace=@porsche-design-system/angular",
+    "dev:astro-vue": "npm run start --workspace=@porsche-design-system/astro-vue",
     "dev:next-js": "npm run dev --workspace=@porsche-design-system/next-js",
     "dev:react": "npm run dev --workspace=@porsche-design-system/react",
     "dev:react-router": "npm run dev --workspace=@porsche-design-system/react-router",
@@ -19,6 +20,7 @@
     "dev:templates": "npm run dev --workspace=@porsche-design-system/templates",
     "build": "npm run build --workspaces",
     "build:angular": "npm run build --workspace=@porsche-design-system/angular",
+    "build:astro-vue": "npm run build --workspace=@porsche-design-system/astro-vue",
     "build:next-js": "npm run build --workspace=@porsche-design-system/next-js",
     "build:react": "npm run build --workspace=@porsche-design-system/react",
     "build:react-router": "npm run build --workspace=@porsche-design-system/react-router",
@@ -27,6 +29,7 @@
     "build:patterns": "npm run build --workspace=@porsche-design-system/patterns",
     "build:templates": "npm run build --workspace=@porsche-design-system/templates",
     "preview:angular": "npm run watch --workspace=@porsche-design-system/angular",
+    "preview:astro-vue": "npm run watch --workspace=@porsche-design-system/astro-vue",
     "preview:next-js": "npm run start --workspace=@porsche-design-system/next-js",
     "preview:react": "npm run preview --workspace=@porsche-design-system/react",
     "preview:react-router": "npm run start --workspace=@porsche-design-system/react-router",
