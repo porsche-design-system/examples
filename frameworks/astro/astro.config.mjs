@@ -10,9 +10,7 @@ export default defineConfig({
     vue({
       template: {
         compilerOptions: {
-          isCustomElement: (tag) => {
-            return tag.startsWith('p-');
-          },
+          isCustomElement: (tag) => tag.startsWith('p-'),
         },
       },
     }),
