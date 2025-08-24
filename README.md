@@ -118,8 +118,8 @@ All available commands for developing, building and testing are listed in the **
 
 - `npm run dev:angular`
 - `npm run dev:astro`
-- `npm run dev:react`
 - `npm run dev:next-js`
+- `npm run dev:react`
 - `npm run dev:react-router`
 - `npm run dev:vanilla-js`
 - `npm run dev:vue`
@@ -130,8 +130,8 @@ All available commands for developing, building and testing are listed in the **
 
 - `npm run build:angular`
 - `npm run build:astro`
-- `npm run build:react`
 - `npm run build:next-js`
+- `npm run build:react`
 - `npm run build:react-router`
 - `npm run build:vanilla-js`
 - `npm run build:vue`
@@ -142,8 +142,8 @@ All available commands for developing, building and testing are listed in the **
 
 - `npm run preview:angular`
 - `npm run preview:astro`
-- `npm run preview:react`
 - `npm run preview:next-js`
+- `npm run preview:react`
 - `npm run preview:react-router`
 - `npm run preview:vanilla-js`
 - `npm run preview:vue`
