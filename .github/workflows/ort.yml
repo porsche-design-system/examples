@@ -12,23 +12,15 @@ on:
       - '!main'
 
 env:
-  OSO_PROJECT_NAME: porsche_design_system
   OSO_AWS_ECR_REGISTRY: 936427553375.dkr.ecr.eu-central-1.amazonaws.com
 
 jobs:
   ort:
     name: 'ORT'
     runs-on: ubuntu-latest
-    # container:
-    #   image: mcr.microsoft.com/playwright:v1.54.0-jammy
-    #   options: --user 1001
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
-      # - name: 'Install'
-      #   uses: ./.github/actions/install
-      # - name: 'Production Builds'
-      #   run: yarn build-prod
       - name: 'Install'
         uses: ./.github/actions/install
       - name: "Login to AWS ECR"
@@ -39,7 +31,7 @@ jobs:
           password: ${{ secrets.OSO_AWS_SECRET_ACCESS_KEY }}
       - name: "Analyze"
         run: |
-          docker run --user root -v "$PWD":/project ${{ env.OSO_AWS_ECR_REGISTRY }}/ort:latest analyze -i /project -o /project/ort --ort-option "ort.analyzer.enabledPackageManagers=Unmanaged" --ort-option "ort.analyzer.Unmanaged.projectsFile=/project/projects.yml"
+          docker run --user root -v "$PWD":/project ${{ env.OSO_AWS_ECR_REGISTRY }}/ort:latest analyze -i /project -o /project/ort
         shell: bash
       - name: "Report"
         run: |
@@ -50,11 +42,3 @@ jobs:
         with:
           name: ort-analysis
           path: ./ort
-      # - name: "Send ORT Analyzer Result to OSO"
-      #   run: |
-      #     zip -j analyzer-result.zip ort/analyzer-result.yml
-      #     curl -X POST https://${{ env.OSO_JENKINS_USER }}:${{ env.OSO_JENKINS_TOKEN }}@scanning-environment.opensourceofficeprod.aws.platform.porsche.cloud/job/ort-porsche-scancode/buildWithParameters --form ort/analyzer-result.zip=@analyzer-result.zip --form ProjectName=${{ env.OSO_PROJECT_NAME }} --fail
-      #   shell: bash
-      #   env:
-      #     OSO_JENKINS_USER: ${{ secrets.OSO_JENKINS_USER }}
-      #     OSO_JENKINS_TOKEN: ${{ secrets.OSO_JENKINS_TOKEN }}
