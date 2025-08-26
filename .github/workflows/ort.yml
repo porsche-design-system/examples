@@ -39,7 +39,7 @@ jobs:
           password: ${{ secrets.OSO_AWS_SECRET_ACCESS_KEY }}
       - name: "Analyze"
         run: |
-          docker run --user root -v "$PWD":/project ${{ env.OSO_AWS_ECR_REGISTRY }}/ort:latest analyze -i /project -o /project/ort -P ort.analyzer.enabledPackageManagers=Unmanaged -P ort.analyzer.Unmanaged.projectsFile=/project/projects.yml
+          docker run --user root -v "$PWD":/project ${{ env.OSO_AWS_ECR_REGISTRY }}/ort:latest analyze -i /project -o /project/ort --ort-option "ort.analyzer.enabledPackageManagers=Unmanaged" --ort-option "ort.analyzer.Unmanaged.projectsFile=/project/projects.yml"
         shell: bash
       - name: "Report"
         run: |
