@@ -29,6 +29,8 @@ jobs:
       #   uses: ./.github/actions/install
       # - name: 'Production Builds'
       #   run: yarn build-prod
+      - name: 'Install'
+        uses: ./.github/actions/install
       - name: "Login to AWS ECR"
         uses: docker/login-action@v3
         with:
@@ -37,7 +39,7 @@ jobs:
           password: ${{ secrets.OSO_AWS_SECRET_ACCESS_KEY }}
       - name: "Analyze"
         run: |
-          docker run --user root -v "$PWD":/project ${{ env.OSO_AWS_ECR_REGISTRY }}/ort:latest analyze -i /project -i /project/patterns -i /project/templates -o /project/ort
+          docker run --user root -v "$PWD":/project ${{ env.OSO_AWS_ECR_REGISTRY }}/ort:latest analyze -i /project -o /project/ort
         shell: bash
       - name: "Report"
         run: |
