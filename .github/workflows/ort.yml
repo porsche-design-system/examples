@@ -37,7 +37,7 @@ jobs:
           password: ${{ secrets.OSO_AWS_SECRET_ACCESS_KEY }}
       - name: "Analyze"
         run: |
-          docker run --user root -v "$PWD":/project ${{ env.OSO_AWS_ECR_REGISTRY }}/ort:latest analyze -i /project -o /project/ort --input-project patterns --input-project templates
+          docker run --user root -v "$PWD":/project ${{ env.OSO_AWS_ECR_REGISTRY }}/ort:latest analyze -i /project -i /project/patterns -i /project/templates -o /project/ort
         shell: bash
       - name: "Report"
         run: |
