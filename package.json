@@ -48,7 +48,7 @@
     "npm:clean": "npm cache clean --force"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.2",
+    "@biomejs/biome": "^2.2.4",
     "prettier": "^3.6.2"
   },
   "volta": {
