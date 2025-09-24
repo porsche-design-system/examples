@@ -1,13 +1,9 @@
 name: 'OSS Review Toolkit'
 
 on:
-  # schedule:
-  #   - cron: "0 0 1 * *" # at 00:00 on day-of-month 1
-  # workflow_dispatch: # enables manual run, - before manual run is triggered ensure step "Send ORT Analyzer Result to OSO" is disabled / commented out
-  push:
-    branches:
-      - '**'
-      - '!main'
+  schedule:
+    - cron: "0 0 1 * *" # at 00:00 on day-of-month 1
+  workflow_dispatch: # enables manual run, - before manual run is triggered ensure step "Send ORT Analyzer Result to OSO" is disabled / commented out
 
 env:
   OSO_AWS_ECR_REGISTRY: 936427553375.dkr.ecr.eu-central-1.amazonaws.com
