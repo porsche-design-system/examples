@@ -11,11 +11,11 @@ jobs:
     name: 'Build'
     uses: ./.github/workflows/build.yml
     with:
-      image: mcr.microsoft.com/playwright:v1.55.0
+      image: mcr.microsoft.com/playwright:v1.55.1
   test:
     name: 'Test'
     uses: ./.github/workflows/test.yml
     with:
-      image: mcr.microsoft.com/playwright:v1.55.0
+      image: mcr.microsoft.com/playwright:v1.55.1
     needs:
       - build

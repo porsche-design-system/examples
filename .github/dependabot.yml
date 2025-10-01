@@ -7,7 +7,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    # Add a group to consolidate all GitHub Actions updates
     groups:
       github-actions-updates:
         patterns:
@@ -18,7 +17,8 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    # Add a group to consolidate all npm updates
+    ignore:
+      - dependency-name: "@playwright/test"
     groups:
       npm-updates:
         patterns:
