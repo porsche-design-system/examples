@@ -16,12 +16,12 @@
   },
   "dependencies": {
     "@porsche-design-system/components-js": "^3.29.0",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
     "@playwright/test": "^1.55.0",
-    "@tailwindcss/vite": "^4.1.12",
+    "@tailwindcss/vite": "^4.1.13",
     "@types/node": "^24.3.0",
     "get-port": "^7.1.0",
     "tsx": "^4.20.5",
