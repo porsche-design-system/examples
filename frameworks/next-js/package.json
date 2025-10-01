@@ -20,7 +20,7 @@
     "@types/node": "^24.6.1",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
-    "serve": "^14.2.4",
+    "serve": "^14.2.5",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.3"
   },
