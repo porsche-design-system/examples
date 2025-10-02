@@ -55,8 +55,10 @@ jobs:
       - name: "Send"
         if: github.event_name == 'schedule'
         run: |
-          zip -j analyzer-result.zip ort/analyzer-result.yml
-          curl -u "${{ env.OSO_JENKINS_USER }}:${{ env.OSO_JENKINS_TOKEN }}" \
+          zip \
+            -j analyzer-result.zip ort/analyzer-result.yml
+          curl \
+            -u "${{ env.OSO_JENKINS_USER }}:${{ env.OSO_JENKINS_TOKEN }}" \
             -X POST \
             ${{ vars.OSO_JENKINS_URL }} \
             --form ort/analyzer-result.zip=@analyzer-result.zip \
