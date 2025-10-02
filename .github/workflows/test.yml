@@ -1,4 +1,4 @@
-name: 'Test (Patterns)'
+name: 'Test'
 
 on:
   workflow_call:
@@ -12,6 +12,139 @@ permissions:
   contents: read
 
 jobs:
+  # e2e-angular:
+  #   name: 'E2E (Angular)'
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     image: ${{ inputs.image }}
+  #     options: --user 1001
+  #   steps:
+  #     - name: 'Checkout'
+  #       uses: actions/checkout@v5
+  #     - name: 'Install'
+  #       uses: ./.github/actions/install
+  #     - name: 'Download artifact'
+  #       uses: actions/download-artifact@v5
+  #       with:
+  #         name: build-angular
+  #         path: ./frameworks/angular/dist
+  #     - name: 'E2E'
+  #       run: npm run test:e2e:angular
+  #       shell: bash
+  e2e-astro:
+    name: 'E2E (Astro)'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v5
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Download artifact'
+        uses: actions/download-artifact@v5
+        with:
+          name: build-astro
+          path: ./frameworks/astro/dist
+      - name: 'E2E'
+        run: npm run test:e2e:astro
+        shell: bash
+  e2e-next-js:
+    name: 'E2E (Next.js)'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v5
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Download artifact'
+        uses: actions/download-artifact@v5
+        with:
+          name: build-next-js
+          path: ./frameworks/next-js/dist
+      - name: 'E2E'
+        run: npm run test:e2e:next-js
+        shell: bash
+  e2e-react:
+    name: 'E2E (React)'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v5
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Download artifact'
+        uses: actions/download-artifact@v5
+        with:
+          name: build-react
+          path: ./frameworks/react/dist
+      - name: 'E2E'
+        run: npm run test:e2e:react
+        shell: bash
+  e2e-react-router:
+    name: 'E2E (React Router)'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v5
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Download artifact'
+        uses: actions/download-artifact@v5
+        with:
+          name: build-react-router
+          path: ./frameworks/react-router/dist
+      - name: 'E2E'
+        run: npm run test:e2e:react-router
+        shell: bash
+  e2e-vanilla-js:
+    name: 'E2E (Vanilla JS)'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v5
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Download artifact'
+        uses: actions/download-artifact@v5
+        with:
+          name: build-vanilla-js
+          path: ./frameworks/vanilla-js/dist
+      - name: 'E2E'
+        run: npm run test:e2e:vanilla-js
+        shell: bash
+  e2e-vue:
+    name: 'E2E (Vue)'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v5
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Download artifact'
+        uses: actions/download-artifact@v5
+        with:
+          name: build-vue
+          path: ./frameworks/vue/dist
+      - name: 'E2E'
+        run: npm run test:e2e:vue
+        shell: bash
   e2e-patterns:
     name: 'E2E (Patterns)'
     runs-on: ubuntu-latest
