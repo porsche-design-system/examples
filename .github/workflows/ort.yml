@@ -3,7 +3,6 @@ name: 'OSS Review Toolkit'
 on:
   schedule:
     - cron: "0 0 1 1/3 *" # at 00:00 on the first day of January, April, July, and October
-    - cron: "30 9 2 10 *"
   workflow_dispatch: # enables manual run (it won't send the ORT result to OSO Jenkins)
 
 permissions:
