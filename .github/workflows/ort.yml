@@ -3,7 +3,6 @@ name: 'OSS Review Toolkit'
 on:
   schedule:
     - cron: "0 0 1 1/3 *" # at 00:00 on the first day of January, April, July, and October
-    - cron: "30 9 2 10 *"
   workflow_dispatch: # enables manual run (it won't send the ORT result to OSO Jenkins)
 
 permissions:
@@ -56,8 +55,10 @@ jobs:
       - name: "Send"
         if: github.event_name == 'schedule'
         run: |
-          zip -j analyzer-result.zip ort/analyzer-result.yml
-          curl -u "${{ env.OSO_JENKINS_USER }}:${{ env.OSO_JENKINS_TOKEN }}" \
+          zip \
+            -j analyzer-result.zip ort/analyzer-result.yml
+          curl \
+            -u "${{ env.OSO_JENKINS_USER }}:${{ env.OSO_JENKINS_TOKEN }}" \
             -X POST \
             ${{ vars.OSO_JENKINS_URL }} \
             --form ort/analyzer-result.zip=@analyzer-result.zip \
