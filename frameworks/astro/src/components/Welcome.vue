@@ -1,6 +1,6 @@
 <template>
   <div class="welcome">
-    <p-text>Astro + Vue</p-text>
+    <p-heading>Porsche Design System</p-heading>
     <p-wordmark />
   </div>
 </template>
