@@ -8,7 +8,7 @@
     "build:ci": "NEXT_PUBLIC_BASE_PATH=/examples/next-js npm run build",
     "start": "serve dist",
     "lint": "next lint",
-    "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.tss"
+    "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
     "@porsche-design-system/components-react": "^3.29.0",
