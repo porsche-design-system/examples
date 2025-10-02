@@ -12,20 +12,20 @@ permissions:
   contents: read
 
 jobs:
-  # e2e-angular:
-  #   name: 'E2E (Angular)'
-  #   runs-on: ubuntu-latest
-  #   container:
-  #     image: ${{ inputs.image }}
-  #     options: --user 1001
-  #   steps:
-  #     - name: 'Checkout'
-  #       uses: actions/checkout@v5
-  #     - name: 'Install'
-  #       uses: ./.github/actions/install
-  #     - name: 'E2E'
-  #       run: npm run test:e2e:angular
-  #       shell: bash
+  e2e-angular:
+    name: 'E2E (Angular)'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v5
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'E2E'
+        run: npm run test:e2e:angular
+        shell: bash
   e2e-astro:
     name: 'E2E (Astro)'
     runs-on: ubuntu-latest
