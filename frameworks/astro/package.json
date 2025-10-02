@@ -8,9 +8,11 @@
     "build": "astro build",
     "build:ci": "ASTRO_PUBLIC_BASE_PATH=/examples/astro npm run build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
+    "@playwright/test": "^1.55.1",
     "@astrojs/vue": "^5.1.1",
     "@porsche-design-system/components-js": "^3.29.0",
     "astro": "^5.14.1",

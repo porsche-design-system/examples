@@ -12,9 +12,9 @@
     "build:ci": "VUE_PUBLIC_BASE_PATH=/examples/vue npm run build",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "test:e2e": "playwright test",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build"
+    "type-check": "vue-tsc --build",
+    "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
     "@porsche-design-system/components-vue": "^3.29.0",
