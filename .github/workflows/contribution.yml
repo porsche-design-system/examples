@@ -1,9 +1,13 @@
-name: 'Default branch'
+name: 'Contribution'
 
 on:
   push:
-    branches:
-      - 'main'
+
+permissions:
+  contents: write
+  actions: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
@@ -20,6 +24,7 @@ jobs:
       - build
   deploy:
     name: 'Deploy'
+    if: github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy.yml
     needs:
       - test
