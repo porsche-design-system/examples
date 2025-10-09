@@ -5,4 +5,5 @@ test('has title', async ({ page }) => {
 
   await expect(page).toHaveTitle('New React Router App');
   await expect(page.getByRole('heading', { name: 'Porsche Design System' })).toBeVisible();
+  await expect(page.locator('p-wordmark')).toBeVisible();
 });
