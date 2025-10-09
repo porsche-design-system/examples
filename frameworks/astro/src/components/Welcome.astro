@@ -3,7 +3,10 @@ import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
 ---
 
-<p-wordmark></p-wordmark>
+<div class="grid justify-items-center gap-fluid-md m-static-lg p-fluid-lg bg-surface rounded-lg">
+  <p-wordmark></p-wordmark>
+  <h1 class="prose-display-md">Porsche Design System</h1>
+</div>
 <div id="container">
 	<img id="background" src={background.src} alt="" fetchpriority="high" />
 	<main>
@@ -70,11 +73,6 @@ import background from '../assets/background.svg';
 		flex-direction: column;
 		justify-content: center;
 		padding: 16px;
-	}
-
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
 	}
 
 	#links {
