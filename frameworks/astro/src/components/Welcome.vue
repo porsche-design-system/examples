@@ -1,16 +1,7 @@
 <template>
-  <div class="welcome">
-    <p-heading>Porsche Design System</p-heading>
-    <p-wordmark />
+  <div class="grid justify-items-center gap-fluid-md m-static-lg p-fluid-lg bg-surface rounded-lg">
+    <p-wordmark></p-wordmark>
+    <h1 class="prose-display-md">Porsche Design System</h1>
+    <p class="prose-text-sm">Astro + Vue</p>
   </div>
 </template>
-
-<style scoped>
-  .welcome {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    align-items: center;
-    margin-block: 16px
-  }
-</style>

@@ -3,7 +3,11 @@ import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
 ---
 
-<p-wordmark></p-wordmark>
+<div class="grid justify-items-center gap-fluid-md m-static-lg p-fluid-lg bg-surface rounded-lg">
+  <p-wordmark></p-wordmark>
+  <h1 class="prose-display-md">Porsche Design System</h1>
+  <p class="prose-text-sm">Astro + JS</p>
+</div>
 <div id="container">
 	<img id="background" src={background.src} alt="" fetchpriority="high" />
 	<main>
@@ -72,11 +76,6 @@ import background from '../assets/background.svg';
 		padding: 16px;
 	}
 
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
-	}
-
 	#links {
 		display: flex;
 		gap: 16px;
@@ -131,14 +130,6 @@ import background from '../assets/background.svg';
 		font-weight: normal;
 		color: #111827;
 		font-size: 20px;
-	}
-
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
 	}
 
 	code {

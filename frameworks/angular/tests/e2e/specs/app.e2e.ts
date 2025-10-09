@@ -5,4 +5,5 @@ test('has title', async ({ page }) => {
 
   await expect(page).toHaveTitle('Angular');
   await expect(page.getByRole('heading', { name: 'Porsche Design System' })).toBeVisible();
+  await expect(page.locator('p-wordmark')).toHaveClass('hydrated');
 });
