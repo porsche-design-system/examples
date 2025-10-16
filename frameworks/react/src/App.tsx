@@ -1,40 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import viteLogo from '/vite.svg';
+import reactLogo from './assets/react.svg';
+import './App.css';
 import { PWordmark } from '@porsche-design-system/components-react';
+import { Form } from './Form.tsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div className="grid justify-items-center gap-fluid-md m-static-lg p-fluid-lg bg-surface rounded-lg">
-        <PWordmark />
-        <h1 className="prose-display-md">Porsche Design System</h1>
+    <main className="grid-template">
+      <div className="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-lg">
+        <PWordmark className="col-wide" />
+        <h1 className="prose-display-md col-wide">Porsche Design System</h1>
+        <div className="col-wide flex gap-4 items-center flex-col sm:flex-row">
+          <a href="https://vite.dev" target="_blank" rel="noopener">
+            <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+          <a href="https://react.dev" target="_blank" rel="noopener">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
       </div>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noopener">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noopener">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button type="button" onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <Form />
+    </main>
+  );
 }
 
-export default App
+export default App;
