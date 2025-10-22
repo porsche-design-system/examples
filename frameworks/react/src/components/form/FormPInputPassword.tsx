@@ -36,11 +36,11 @@ export const FormPInputPassword = <T extends FieldValues>({
           >
             {children}
             {messages ? (
-              <span slot="message">
+              <div slot="message">
                 {messages.map((msg) => (
-                  <div key={msg}>{msg}</div>
+                  <p key={msg}>{msg}</p>
                 ))}
-              </span>
+              </div>
             ) : (
               fieldState.error?.message && <span slot="message">{fieldState.error.message}</span>
             )}

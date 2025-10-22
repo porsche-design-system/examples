@@ -10,12 +10,13 @@ import {
   PSelect,
   PSelectOption,
 } from '@porsche-design-system/components-vue';
-import { toTypedSchema } from '@vee-validate/zod';
-import { useField, useForm } from 'vee-validate';
-import { z } from 'zod';
+import {toTypedSchema} from '@vee-validate/zod';
+import {useForm} from 'vee-validate';
+import {z} from 'zod';
+import {onUpdated} from "vue";
 
 const schema = z.object({
-  salutation: z.string().nonempty('Please enter your salutation'),
+  salutation: z.string({ required_error: 'Please enter your salutation' }).nonempty('Please enter your salutation'),
   title: z.string().optional(),
   firstname: z.string().nonempty('Please enter your first name'),
   lastname: z.string().nonempty('Please enter your last name'),
@@ -23,21 +24,28 @@ const schema = z.object({
   phone: z.string().optional(),
   privacyPolicy: z
     .boolean()
-    .refine((v) => v === true, 'Please accept our privacy policy so that we can process your request'),
-  password: z
-    .string()
-    .nonempty('Please enter your password')
-    .min(8, 'Must be at least 8 characters long')
-    .regex(/\d/, 'Must contain a number')
-    .regex(/[A-Z]/, 'Must contain an uppercase letter')
-    .regex(/[!@#$%^&*]/, 'Must contain a special character (!@#$%^&*)'),
+    .refine((v) => v, 'Please accept our privacy policy so that we can process your request'),
+  password: z.string().nonempty('Please enter your password').superRefine((value, ctx) => {
+    if (value.length < 8) {
+      ctx.addIssue({ code: 'custom', message: 'Must be at least 8 characters long' });
+    }
+    if (!/\d/.test(value)) {
+      ctx.addIssue({ code: 'custom', message: 'Must contain a number' });
+    }
+    if (!/[A-Z]/.test(value)) {
+      ctx.addIssue({ code: 'custom', message: 'Must contain an uppercase letter' });
+    }
+    if (!/[!@#$%^&*]/.test(value)) {
+      ctx.addIssue({ code: 'custom', message: 'Must contain a special character (!@#$%^&*)' });
+    }
+  }),
 });
 
-const { handleSubmit, resetForm } = useForm({
+const { handleSubmit, resetForm, defineField, errors, errorBag } = useForm({
   validationSchema: toTypedSchema(schema),
   initialValues: {
-    salutation: '',
-    title: '',
+    salutation: undefined,
+    title: undefined,
     firstname: '',
     lastname: '',
     email: '',
@@ -47,6 +55,15 @@ const { handleSubmit, resetForm } = useForm({
   },
 });
 
+const [salutation, salutationProps] = defineField('salutation');
+const [title, titleProps] = defineField('title');
+const [firstname, firstnameProps] = defineField('firstname');
+const [lastname, lastnameProps] = defineField('lastname');
+const [email, emailProps] = defineField('email');
+const [phone, phoneProps] = defineField('phone');
+const [password, passwordProps] = defineField('password');
+const [privacyPolicy, privacyPolicyProps] = defineField('privacyPolicy');
+
 const onSubmit = handleSubmit((values) => {
   console.log(values);
 });
@@ -55,67 +72,67 @@ const onReset = () => {
   resetForm();
 };
 
-const { value: salutation, errorMessage: salutationError, meta: salutationMeta } = useField('salutation');
-const { value: title, errorMessage: titleError, meta: titleMeta } = useField('title');
-const { value: firstname, errorMessage: firstnameError, meta: firstnameMeta } = useField('firstname');
-const { value: lastname, errorMessage: lastnameError, meta: lastnameMeta } = useField('lastname');
-const { value: email, errorMessage: emailError, meta: emailMeta } = useField('email');
-const { value: phone, errorMessage: phoneError, meta: phoneMeta } = useField('phone');
-const { value: password, errorMessage: passwordError, meta: passwordMeta } = useField('password');
-const { value: privacyPolicy, errorMessage: privacyPolicyError, meta: privacyPolicyMeta } = useField('privacyPolicy');
+onUpdated(() => {
+  console.log(errorBag);
+});
 </script>
 
 <template>
-  <form class="col-wide grid grid-cols-subgrid gap-y-fluid-md" @submit.prevent="onSubmit">
+  <form class="col-wide grid grid-cols-subgrid gap-y-fluid-md" @submit.prevent="onSubmit" novalidate>
     <PHeading class="col-wide">Register</PHeading>
 
     <PHeading size="medium" class="col-wide">Personal Data</PHeading>
 
     <PSelect
-        v-model="salutation"
+        v-model:value="salutation"
+        v-bind="salutationProps"
         :name="'salutation'"
         :label="'Salutation'"
         :required="true"
-        :state="salutationMeta.touched && salutationError ? 'error' : 'none'"
+        :state="errors.salutation ? 'error' : 'none'"
         class="col-wide xs:col-span-one-half sm:col-span-4"
     >
       <PSelectOption :value="'mr'">Mr.</PSelectOption>
       <PSelectOption :value="'mrs'">Mrs.</PSelectOption>
-      <span v-if="salutationMeta.touched && salutationError" slot="message">{{ salutationError }}</span>
+      <span v-if="errors.salutation" slot="message">{{ errors.salutation }}</span>
     </PSelect>
 
-    <PSelect name="title" v-model="title" label="Title" :state="titleMeta.touched && titleError ? 'error' : 'none'" class="col-wide xs:col-span-one-half sm:col-span-4">
+    <PSelect name="title" v-model:value="title" v-bind="titleProps" label="Title" :state="errors.title ? 'error' : 'none'" class="col-wide xs:col-span-one-half sm:col-span-4">
       <PSelectOption></PSelectOption>
       <PSelectOption :value="'dr'">Dr.</PSelectOption>
       <PSelectOption :value="'prof'">Prof.</PSelectOption>
       <PSelectOption :value="'prof-dr'">Prof. Dr.</PSelectOption>
-      <span v-if="titleMeta.touched && titleError" slot="message">{{ titleError }}</span>
+      <span v-if="errors.title" slot="message">{{ errors.title }}</span>
     </PSelect>
 
-    <PInputText name="firstname" v-model="firstname" label="First Name" :required="true" :state="firstnameMeta.touched && firstnameError ? 'error' : 'none'" class="col-wide sm:col-start-1 sm:col-span-one-half">
-      <span v-if="firstnameMeta.touched && firstnameError" slot="message">{{ firstnameError }}</span>
+    <PInputText name="firstname" v-model:value="firstname" v-bind="firstnameProps" label="First Name" :required="true" :state="errors.firstname ? 'error' : 'none'" class="col-wide sm:col-start-1 sm:col-span-one-half">
+      <span v-if="errors.firstname" slot="message">{{ errors.firstname }}</span>
     </PInputText>
 
-    <PInputText name="lastname" v-model="lastname" label="Last Name" :required="true" :state="lastnameMeta.touched && lastnameError ? 'error' : 'none'" class="col-wide sm:col-span-one-half">
-      <span v-if="lastnameMeta.touched && lastnameError" slot="message">{{ lastnameError }}</span>
+    <PInputText name="lastname" v-model:value="lastname" v-bind="lastnameProps" label="Last Name" :required="true" :state="errors.lastname ? 'error' : 'none'" class="col-wide sm:col-span-one-half">
+      <span v-if="errors.lastname" slot="message">{{ errors.lastname }}</span>
     </PInputText>
 
-    <PInputEmail name="email" v-model="email" label="Email" :required="true" :indicator="true" :state="emailMeta.touched && emailError ? 'error' : 'none'" class="col-wide sm:col-start-1 sm:col-span-one-half">
-      <span v-if="emailMeta.touched && emailError" slot="message">{{ emailError }}</span>
+    <PInputEmail name="email" v-model:value="email" v-bind="emailProps" label="Email" :required="true" :indicator="true" :state="errors.email ? 'error' : 'none'" class="col-wide sm:col-start-1 sm:col-span-one-half">
+      <span v-if="errors.email" slot="message">{{ errors.email }}</span>
     </PInputEmail>
 
-    <PInputTel name="phone" v-model="phone" label="Phone" :indicator="true" class="col-span-one-half" :state="phoneMeta.touched && phoneError ? 'error' : 'none'">
-      <span v-if="phoneMeta.touched && phoneError" slot="message">{{ phoneError }}</span>
+    <PInputTel name="phone" v-model:value="phone" v-bind="phoneProps" label="Phone" :indicator="true" class="col-wide sm:col-span-one-half" :state="errors.phone ? 'error' : 'none'">
+      <span v-if="errors.phone" slot="message">{{ errors.phone }}</span>
     </PInputTel>
 
     <PHeading size="medium" class="col-wide">Password</PHeading>
-    <PInputPassword name="password" v-model="password" label="Password" :required="true" :toggle="true" :state="passwordMeta.touched && passwordError ? 'error' : 'none'" class="col-wide sm:col-start-1 sm:col-span-one-half">
-      <span v-if="passwordMeta.touched && passwordError" slot="message">{{ passwordError }}</span>
+    <PInputPassword name="password" v-model:value="password" v-bind="passwordProps" label="Password" :required="true" :toggle="true" :state="errors.password ? 'error' : 'none'" class="col-wide sm:col-start-1 sm:col-span-one-half">
+      <div v-if="errorBag.password" slot="message">
+        <p v-for="(error, index) in errorBag.password" :key="index" class="error">
+          {{ error }}
+        </p>
+      </div>
     </PInputPassword>
 
-    <PCheckbox name="privacyPolicy" v-model="privacyPolicy" :required="true" :state="privacyPolicyMeta.touched && privacyPolicyError ? 'error' : 'none'" class="col-wide">
+    <PCheckbox name="privacyPolicy" v-model:checked="privacyPolicy" v-bind="privacyPolicyProps" :required="true" :state="errors.privacyPolicy ? 'error' : 'none'" class="col-wide">
       <span slot="label">I have read and understood the Privacy Policy</span>
-      <span v-if="privacyPolicyMeta.touched && privacyPolicyError" slot="message">{{ privacyPolicyError }}</span>
+      <span v-if="errors.privacyPolicy" slot="message">{{ errors.privacyPolicy }}</span>
     </PCheckbox>
 
     <div class="flex gap-fluid-sm">
