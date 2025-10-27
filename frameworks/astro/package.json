@@ -14,9 +14,9 @@
   "dependencies": {
     "@astrojs/vue": "^5.1.1",
     "@porsche-design-system/components-js": "^3.29.0",
-    "@tailwindcss/vite": "^4.1.15",
-    "astro": "^5.14.8",
-    "tailwindcss": "^4.1.15",
+    "@tailwindcss/vite": "^4.1.16",
+    "astro": "^5.15.1",
+    "tailwindcss": "^4.1.16",
     "vue": "^3.5.22"
   },
   "devDependencies": {
