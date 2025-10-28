@@ -23,13 +23,13 @@
   "devDependencies": {
     "@playwright/test": "^1.55.1",
     "@react-router/dev": "^7.9.4",
-    "@tailwindcss/vite": "^4.1.15",
-    "@types/node": "^24.9.1",
+    "@tailwindcss/vite": "^4.1.16",
+    "@types/node": "^24.9.2",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
-    "tailwindcss": "^4.1.15",
+    "tailwindcss": "^4.1.16",
     "typescript": "^5.9.3",
-    "vite": "^7.1.11",
+    "vite": "^7.1.12",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "volta": {
