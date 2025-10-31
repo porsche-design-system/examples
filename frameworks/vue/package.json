@@ -17,7 +17,7 @@
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
-    "@porsche-design-system/components-vue": "3.30.0-rc.1",
+    "@porsche-design-system/components-vue": "3.30.0-rc.3",
     "@vee-validate/zod": "^4.15.1",
     "pinia": "^3.0.3",
     "vee-validate": "^4.15.1",
