@@ -12,13 +12,14 @@
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
-    "@porsche-design-system/components-react": "^3.29.0",
+    "@porsche-design-system/components-react": "^3.30.0",
     "@react-router/node": "^7.9.4",
     "@react-router/serve": "^7.9.4",
     "isbot": "^5.1.31",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router": "^7.9.4"
+    "react-router": "^7.9.4",
+    "react-hook-form": "^7.65.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.1",
