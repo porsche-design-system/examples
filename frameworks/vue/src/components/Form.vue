@@ -10,10 +10,9 @@ import {
   PSelect,
   PSelectOption,
 } from '@porsche-design-system/components-vue';
-import {toTypedSchema} from '@vee-validate/zod';
-import {useForm} from 'vee-validate';
-import {z} from 'zod';
-import {onUpdated} from "vue";
+import { toTypedSchema } from '@vee-validate/zod';
+import { useForm } from 'vee-validate';
+import { z } from 'zod';
 
 const schema = z.object({
   salutation: z.string({ required_error: 'Please enter your salutation' }).nonempty('Please enter your salutation'),
@@ -22,23 +21,24 @@ const schema = z.object({
   lastname: z.string().nonempty('Please enter your last name'),
   email: z.string().email('Invalid email').nonempty('Please enter your email'),
   phone: z.string().optional(),
-  privacyPolicy: z
-    .boolean()
-    .refine((v) => v, 'Please accept our privacy policy so that we can process your request'),
-  password: z.string().nonempty('Please enter your password').superRefine((value, ctx) => {
-    if (value.length < 8) {
-      ctx.addIssue({ code: 'custom', message: 'Must be at least 8 characters long' });
-    }
-    if (!/\d/.test(value)) {
-      ctx.addIssue({ code: 'custom', message: 'Must contain a number' });
-    }
-    if (!/[A-Z]/.test(value)) {
-      ctx.addIssue({ code: 'custom', message: 'Must contain an uppercase letter' });
-    }
-    if (!/[!@#$%^&*]/.test(value)) {
-      ctx.addIssue({ code: 'custom', message: 'Must contain a special character (!@#$%^&*)' });
-    }
-  }),
+  privacyPolicy: z.boolean().refine((v) => v, 'Please accept our privacy policy so that we can process your request'),
+  password: z
+    .string()
+    .nonempty('Please enter your password')
+    .superRefine((value, ctx) => {
+      if (value.length < 8) {
+        ctx.addIssue({ code: 'custom', message: 'Must be at least 8 characters long' });
+      }
+      if (!/\d/.test(value)) {
+        ctx.addIssue({ code: 'custom', message: 'Must contain a number' });
+      }
+      if (!/[A-Z]/.test(value)) {
+        ctx.addIssue({ code: 'custom', message: 'Must contain an uppercase letter' });
+      }
+      if (!/[!@#$%^&*]/.test(value)) {
+        ctx.addIssue({ code: 'custom', message: 'Must contain a special character (!@#$%^&*)' });
+      }
+    }),
 });
 
 const { handleSubmit, resetForm, defineField, errors, errorBag } = useForm({
@@ -71,10 +71,6 @@ const onSubmit = handleSubmit((values) => {
 const onReset = () => {
   resetForm();
 };
-
-onUpdated(() => {
-  console.log(errorBag);
-});
 </script>
 
 <template>
