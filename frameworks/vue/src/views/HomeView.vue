@@ -5,10 +5,10 @@ import Form from '@/components/Form.vue';
 
 <template>
   <main class="grid-template">
-    <div class="grid justify-items-center col-span-full gap-fluid-md m-static-lg p-fluid-lg bg-surface rounded-lg">
-      <PWordmark />
-      <h1 class="prose-display-md">Porsche Design System</h1>
-      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <div class="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-lg">
+      <PWordmark class="col-wide" />
+      <h1 class="col-wide prose-display-md">Porsche Design System</h1>
+      <img alt="Vue logo" class="col-wide logo" src="@/assets/logo.svg" width="125" height="125" />
     </div>
     <Form />
   </main>
