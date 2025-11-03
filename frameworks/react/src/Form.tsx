@@ -87,7 +87,13 @@ export const Form = () => {
         rules={{ required: 'Please enter your email' }}
         className="col-wide sm:col-start-1 sm:col-span-one-half"
       />
-      <FormPInputTel name="phone" control={control} label="Phone" indicator={true} className="col-wide sm:col-span-one-half" />
+      <FormPInputTel
+        name="phone"
+        control={control}
+        label="Phone"
+        indicator={true}
+        className="col-wide sm:col-span-one-half"
+      />
 
       <PHeading size="medium" className="col-wide">
         Password
@@ -119,8 +125,10 @@ export const Form = () => {
         <span slot="label">I have read and understood the Privacy Policy</span>
       </FormPCheckbox>
       <div className="flex gap-fluid-sm">
-        <PButton type="submit">Submit</PButton>
-        <PButton type="reset" variant="secondary">
+        <PButton type="submit" className="shrink-0">
+          Submit
+        </PButton>
+        <PButton type="reset" variant="secondary" className="shrink-0">
           Reset
         </PButton>
       </div>
