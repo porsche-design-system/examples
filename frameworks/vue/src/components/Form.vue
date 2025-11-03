@@ -15,7 +15,7 @@ import { useForm } from 'vee-validate';
 import { z } from 'zod';
 
 const schema = z.object({
-  salutation: z.string({ required_error: 'Please enter your salutation' }).nonempty('Please enter your salutation'),
+  salutation: z.string({ error: 'Please enter your salutation' }).nonempty('Please enter your salutation'),
   title: z.string().optional(),
   firstname: z.string().nonempty('Please enter your first name'),
   lastname: z.string().nonempty('Please enter your last name'),
