@@ -132,8 +132,8 @@ const onReset = () => {
     </PCheckbox>
 
     <div class="flex gap-fluid-sm">
-      <PButton type="submit">Submit</PButton>
-      <PButton type="reset" variant="secondary" @click="onReset">Reset</PButton>
+      <PButton type="submit" class="shrink-0">Submit</PButton>
+      <PButton type="reset" variant="secondary" @click="onReset" class="shrink-0">Reset</PButton>
     </div>
   </form>
 </template>

@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
-  AbstractControl,
+  type AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  ValidationErrors,
-  Validators
+  type ValidationErrors,
+  Validators,
 } from '@angular/forms';
 import { PorscheDesignSystemModule } from '@porsche-design-system/components-angular';
 
@@ -84,8 +84,8 @@ import { PorscheDesignSystemModule } from '@porsche-design-system/components-ang
         }
       </p-checkbox>
       <div class="flex gap-fluid-sm">
-        <p-button type="submit">Submit</p-button>
-        <p-button type="reset" [variant]="'secondary'">Reset</p-button>
+        <p-button type="submit" class="shrink-0">Submit</p-button>
+        <p-button type="reset" [variant]="'secondary'" class="shrink-0">Reset</p-button>
       </div>
     </form>
   `,
@@ -112,10 +112,10 @@ export class FormPageComponent {
     const value = control.value || '';
     const errors: ValidationErrors = {};
     if (!value) return { required: true };
-    if (value.length < 8) errors["min"] = true;
-    if (!/\d/.test(value)) errors["number"] = true;
-    if (!/[A-Z]/.test(value)) errors["uppercase"] = true;
-    if (!/[!@#$%^&*]/.test(value)) errors["special"] = true;
+    if (value.length < 8) errors['min'] = true;
+    if (!/\d/.test(value)) errors['number'] = true;
+    if (!/[A-Z]/.test(value)) errors['uppercase'] = true;
+    if (!/[!@#$%^&*]/.test(value)) errors['special'] = true;
     return Object.keys(errors).length ? errors : null;
   }
 
