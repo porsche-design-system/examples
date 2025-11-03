@@ -5,5 +5,5 @@ test('has title', async ({ page }) => {
 
   await expect(page).toHaveTitle('Vite App');
   await expect(page.getByRole('heading', { name: 'Porsche Design System' })).toBeVisible();
-  await expect(page.locator('p-wordmark')).toHaveClass('hydrated');
+  await expect(page.locator('p-wordmark')).toHaveClass('col-wide hydrated');
 });

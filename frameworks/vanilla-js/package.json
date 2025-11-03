@@ -11,7 +11,7 @@
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
-    "@porsche-design-system/components-js": "^3.29.0"
+    "@porsche-design-system/components-js": "^3.30.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.1",
