@@ -125,8 +125,10 @@ export const Form = () => {
         <span slot="label">I have read and understood the Privacy Policy</span>
       </FormPCheckbox>
       <div className="flex gap-fluid-sm">
-        <PButton type="submit">Submit</PButton>
-        <PButton type="reset" variant="secondary">
+        <PButton type="submit" className="shrink-0">
+          Submit
+        </PButton>
+        <PButton type="reset" variant="secondary" className="shrink-0">
           Reset
         </PButton>
       </div>

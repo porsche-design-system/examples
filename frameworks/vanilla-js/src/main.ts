@@ -9,10 +9,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <h1 class="prose-display-md col-wide">Porsche Design System</h1>
         <div class="col-wide flex gap-4 items-center flex-col sm:flex-row">
          <a href="https://vite.dev" target="_blank">
-            <img src="${viteLogo}" class="logo" alt="Vite logo" />
+            <img src="${viteLogo}" class="logo" alt="Vite logo" width="50" />
           </a>
           <a href="https://www.typescriptlang.org/" target="_blank">
-            <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
+            <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" width="50" />
           </a>
         </div>
       </div>  
@@ -52,8 +52,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <span slot="label">I have read and understood the Privacy Policy</span>
       </p-checkbox>
       <div class="flex gap-fluid-sm">
-        <p-button type="submit">Submit</p-button>
-        <p-button type="reset" variant="secondary">Reset</p-button>
+        <p-button type="submit" class="shrink-0">Submit</p-button>
+        <p-button type="reset" variant="secondary" class="shrink-0">Reset</p-button>
       </div>
     </form>
     </main> 
