@@ -1,7 +1,6 @@
+import { PWordmark } from '@porsche-design-system/components-react';
 import viteLogo from '/vite.svg';
 import reactLogo from './assets/react.svg';
-import './App.css';
-import { PWordmark } from '@porsche-design-system/components-react';
 import { Form } from './Form.tsx';
 
 function App() {
@@ -12,10 +11,10 @@ function App() {
         <h1 className="prose-display-md col-wide">Porsche Design System</h1>
         <div className="col-wide flex gap-4 items-center flex-col sm:flex-row">
           <a href="https://vite.dev" target="_blank" rel="noopener">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
+            <img src={viteLogo} className="logo" alt="Vite logo" width={50} />
           </a>
           <a href="https://react.dev" target="_blank" rel="noopener">
-            <img src={reactLogo} className="logo react" alt="React logo" />
+            <img src={reactLogo} className="logo react" alt="React logo" width={50} />
           </a>
         </div>
       </div>

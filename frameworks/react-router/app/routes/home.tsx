@@ -16,7 +16,7 @@ export default function Home() {
         <h1 className="prose-display-md col-wide">Porsche Design System</h1>
         <div className="col-wide flex gap-4 items-center flex-col sm:flex-row">
           <a href="https://reactrouter.com/docs" target="_blank" rel="noopener">
-            <div className="w-[500px] max-w-[100vw] p-4">
+            <div className="w-[300px]">
               <img src={logoLight} alt="React Router" className="block w-full dark:hidden" />
               <img src={logoDark} alt="React Router" className="hidden w-full dark:block" />
             </div>
