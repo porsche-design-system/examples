@@ -122,7 +122,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Download artifact'
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: build-patterns
           path: ./patterns/dist
@@ -141,7 +141,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Download artifact'
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: build-patterns
           path: ./patterns/dist
@@ -160,7 +160,7 @@ jobs:
      - name: 'Install'
        uses: ./.github/actions/install
      - name: 'Download artifact'
-       uses: actions/download-artifact@v5
+       uses: actions/download-artifact@v6
        with:
          name: build-patterns
          path: ./patterns/dist
@@ -169,7 +169,7 @@ jobs:
        shell: bash
      - name: 'VRT Regression'
        if: failure()
-       uses: actions/upload-artifact@v4
+       uses: actions/upload-artifact@v5
        with:
          name: regression-vrt-patterns
          path: ./patterns/tests/vrt/test-results
