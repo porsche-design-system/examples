@@ -12,19 +12,19 @@
   },
   "dependencies": {
     "@porsche-design-system/components-react": "^3.30.0",
-    "next": "16.0.0",
+    "next": "16.0.3",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "react-hook-form": "^7.65.0"
+    "react-hook-form": "^7.66.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.1",
-    "@tailwindcss/postcss": "^4.1.15",
-    "@types/node": "^24.9.1",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.4",
+    "@types/react-dom": "^19.2.3",
     "serve": "^14.2.5",
-    "tailwindcss": "^4.1.15",
+    "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3"
   },
   "volta": {
