@@ -12,25 +12,25 @@
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
-    "@porsche-design-system/components-react": "^3.30.0",
-    "@react-router/node": "^7.9.4",
-    "@react-router/serve": "^7.9.4",
-    "isbot": "^5.1.31",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-router": "^7.9.4",
-    "react-hook-form": "^7.65.0"
+    "@porsche-design-system/components-react": "^3.31.0",
+    "@react-router/node": "^7.10.1",
+    "@react-router/serve": "^7.10.1",
+    "isbot": "^5.1.32",
+    "react": "^19.2.2",
+    "react-dom": "^19.2.2",
+    "react-router": "^7.10.1",
+    "react-hook-form": "^7.68.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.1",
-    "@react-router/dev": "^7.9.4",
-    "@tailwindcss/vite": "^4.1.15",
-    "@types/node": "^24.9.1",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
-    "tailwindcss": "^4.1.15",
+    "@react-router/dev": "^7.10.1",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "^25.0.0",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
-    "vite": "^7.1.11",
+    "vite": "^7.2.7",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "volta": {
