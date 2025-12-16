@@ -37,7 +37,9 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci --workspace=@porsche-design-system/angular
+        run: npm run build --workspace=@porsche-design-system/angular
+        env:
+          ANGULAR_PUBLIC_BASE_PATH: /examples/angular/
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v5
         with:
@@ -55,7 +57,9 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci --workspace=@porsche-design-system/astro
+        run: npm run build --workspace=@porsche-design-system/astro
+        env:
+          ASTRO_PUBLIC_BASE_PATH: /examples/astro
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v5
         with:
@@ -73,7 +77,9 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci --workspace=@porsche-design-system/next-js
+        run: npm run build --workspace=@porsche-design-system/next-js
+        env:
+          NEXT_PUBLIC_BASE_PATH: /examples/astro
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v5
         with:
@@ -91,7 +97,9 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci --workspace=@porsche-design-system/react
+        run: npm run build --workspace=@porsche-design-system/react
+        env:
+          REACT_PUBLIC_BASE_PATH: /examples/react
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v5
         with:
@@ -109,7 +117,9 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci --workspace=@porsche-design-system/react-router
+        run: npm run build --workspace=@porsche-design-system/react-router
+        env:
+          REACT_ROUTER_PUBLIC_BASE_PATH: /examples/react-router/
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v5
         with:
@@ -127,7 +137,9 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci --workspace=@porsche-design-system/vanilla-js
+        run: npm run build --workspace=@porsche-design-system/vanilla-js
+        env:
+          VANILLA_JS_PUBLIC_BASE_PATH: /examples/vanilla-js
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v5
         with:
@@ -145,7 +157,9 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci --workspace=@porsche-design-system/vue
+        run: npm run build --workspace=@porsche-design-system/vue
+        env:
+          VUE_PUBLIC_BASE_PATH: /examples/vue
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v5
         with:
@@ -163,7 +177,9 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci --workspace=@porsche-design-system/patterns
+        run: npm run build --workspace=@porsche-design-system/patterns
+        env:
+          PATTERNS_PUBLIC_BASE_PATH: /examples/patterns
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v5
         with:
@@ -181,7 +197,9 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
-        run: npm run build:ci --workspace=@porsche-design-system/templates
+        run: npm run build --workspace=@porsche-design-system/templates
+        env:
+          TEMPLATES_PUBLIC_BASE_PATH: /examples/templates
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v5
         with:
