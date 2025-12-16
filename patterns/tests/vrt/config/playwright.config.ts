@@ -39,10 +39,10 @@ export default defineConfig({
   outputDir: '../test-results',
   // https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json
   projects: [
-    {
-      name: 'iphone-15',
-      use: devices['iPhone 15'],
-    },
+    // {
+    //   name: 'iphone-15',
+    //   use: devices['iPhone 15'],
+    // },
     {
       name: 'ipad-pro-11',
       use: devices['iPad Pro 11'],
