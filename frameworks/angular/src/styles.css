@@ -2,3 +2,18 @@
 @import "@porsche-design-system/components-angular/index.css";
 @import "tailwindcss";
 @import "@porsche-design-system/components-react/tailwindcss";
+
+:is(
+    p-wordmark,
+    p-button,
+    p-checkbox,
+    p-icon,
+    p-heading,
+    p-select,
+    p-input-text,
+    p-input-tel,
+    p-input-email,
+    p-input-password
+  ):not(:defined) {
+  visibility: hidden;
+}

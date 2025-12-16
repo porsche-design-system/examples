@@ -1,3 +1,7 @@
 @import "@porsche-design-system/components-react";
 @import "tailwindcss";
 @import "@porsche-design-system/components-react/tailwindcss";
+
+:not(:defined, [data-ssr]) {
+  visibility: hidden;
+}
