@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build -- --base-href \"$ANGULAR_PUBLIC_BASE_PATH\"",
+    "build": "ng build --base-href \"$ANGULAR_PUBLIC_BASE_PATH\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
