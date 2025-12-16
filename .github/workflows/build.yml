@@ -79,7 +79,7 @@ jobs:
       - name: 'Build'
         run: npm run build --workspace=@porsche-design-system/next-js
         env:
-          NEXT_PUBLIC_BASE_PATH: "/examples/${{ github.ref_name }}/astro"
+          NEXT_PUBLIC_BASE_PATH: "/examples/${{ github.ref_name }}/next-js"
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v5
         with:
