@@ -3,79 +3,75 @@ name: 'Deploy'
 on:
   workflow_call:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+env:
+  BRANCH_BASE_PATH: ${{ github.ref_name == 'main' && 'nightly' || github.ref_name }}
 
 jobs:
   deploy:
     name: 'Examples'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v5
+        with:
+          ref: 'gh-pages'
+      - name: 'Clean'
+        run: |
+          rm -rf "./${{ env.BRANCH_BASE_PATH }}"
+        shell: bash
       - name: 'Download artifact "Patterns"'
         uses: actions/download-artifact@v6
         with:
           name: build-patterns
-          path: ./dist/patterns/
+          path: "./${{ env.BRANCH_BASE_PATH }}/patterns/"
       - name: 'Download artifact "Angular"'
         uses: actions/download-artifact@v6
         with:
           name: build-angular
-          path: ./dist/angular/
+          path: "./${{ env.BRANCH_BASE_PATH }}/angular/"
       - name: 'Download artifact "Astro"'
         uses: actions/download-artifact@v6
         with:
           name: build-astro
-          path: ./dist/astro/
+          path: "./${{ env.BRANCH_BASE_PATH }}/astro/"
       - name: 'Download artifact "Next.js"'
         uses: actions/download-artifact@v6
         with:
           name: build-next-js
-          path: ./dist/next-js/
+          path: "./${{ env.BRANCH_BASE_PATH }}/next-js/"
       - name: 'Download artifact "React"'
         uses: actions/download-artifact@v6
         with:
           name: build-react
-          path: ./dist/react/
+          path: "./${{ env.BRANCH_BASE_PATH }}/react/"
       - name: 'Download artifact "React Router"'
         uses: actions/download-artifact@v6
         with:
           name: build-react-router
-          path: ./dist/react-router/
+          path: "./${{ env.BRANCH_BASE_PATH }}/react-router/"
       - name: 'Download artifact "Vanilla JS"'
         uses: actions/download-artifact@v6
         with:
           name: build-vanilla-js
-          path: ./dist/vanilla-js/
+          path: "./${{ env.BRANCH_BASE_PATH }}/vanilla-js/"
       - name: 'Download artifact "Vue"'
         uses: actions/download-artifact@v6
         with:
           name: build-vue
-          path: ./dist/vue/
+          path: "./${{ env.BRANCH_BASE_PATH }}/vue/"
       - name: 'Download artifact "Templates"'
         uses: actions/download-artifact@v6
         with:
           name: build-templates
-          path: ./dist/templates/
-      - name: 'Setup GitHub Pages'
-        uses: actions/configure-pages@v5
-      - name: 'Upload GitHub Pages build artifact'
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: './dist'
-      - name: 'Deploy to GitHub Pages'
-        id: deployment
-        uses: actions/deploy-pages@v4
+          path: "./${{ env.BRANCH_BASE_PATH }}/templates/"
+      - name: 'Deploy'
+        run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git add -A
+          git commit -m "Automated deployment to GitHub Pages (${{ github.ref_name }}): ${{ github.sha }}" --allow-empty
+          git push origin gh-pages --force
+        shell: bash

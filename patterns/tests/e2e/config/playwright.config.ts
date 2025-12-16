@@ -45,7 +45,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run preview',
-    port: 4173,
+    command: 'npm run dev',
+    port: 5173,
   },
 });

@@ -5,7 +5,7 @@ const pattern = 'ai-tag-1';
 
 test.describe(`has no visual regression "${pattern}"`, () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/examples/patterns/ai-tag/1/');
+    await page.goto('/ai-tag/1/');
     await expect(page.locator('html')).toHaveClass(/hydrated/);
   });
 

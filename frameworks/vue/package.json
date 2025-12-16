@@ -9,7 +9,6 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
-    "build:ci": "VUE_PUBLIC_BASE_PATH=/examples/vue npm run build",
     "preview": "vite preview",
     "test:unit": "vitest",
     "build-only": "vite build",
