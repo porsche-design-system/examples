@@ -7,7 +7,7 @@ const pattern = 'header-1';
 
 test.describe(`has no visual regression "${pattern}"`, () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/examples/patterns/header/1/');
+    await page.goto('/header/1/');
 
     await expect(page.locator('html')).toHaveClass(/hydrated/);
 
