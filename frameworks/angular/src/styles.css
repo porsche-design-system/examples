@@ -1,3 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+@import "@porsche-design-system/components-angular/index.css";
 @import "tailwindcss";
 @import "@porsche-design-system/components-react/tailwindcss";
