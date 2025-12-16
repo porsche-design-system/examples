@@ -7,24 +7,24 @@ The projects are built using [WCAG 2.2 (AA)](https://www.w3.org/TR/WCAG22/) comp
 
 ### Frameworks
 
-- [Angular](https://porsche-design-system.github.io/examples/angular/)
-- [Astro](https://porsche-design-system.github.io/examples/astro/)
-- [Next.js](https://porsche-design-system.github.io/examples/next-js/)
-- [React](https://porsche-design-system.github.io/examples/react/)
-- [React Router](https://porsche-design-system.github.io/examples/react-router/)
-- [Vanilla JS](https://porsche-design-system.github.io/examples/vanilla-js/)
-- [Vue](https://porsche-design-system.github.io/examples/vue/)
+- [Angular](https://porsche-design-system.github.io/examples/v4/angular/)
+- [Astro](https://porsche-design-system.github.io/examples/v4/astro/)
+- [Next.js](https://porsche-design-system.github.io/examples/v4/next-js/)
+- [React](https://porsche-design-system.github.io/examples/v4/react/)
+- [React Router](https://porsche-design-system.github.io/examples/v4/react-router/)
+- [Vanilla JS](https://porsche-design-system.github.io/examples/v4/vanilla-js/)
+- [Vue](https://porsche-design-system.github.io/examples/v4/vue/)
 
 ### Patterns
 
-- [AI-Tag / 1](https://porsche-design-system.github.io/examples/patterns/ai-tag/1/)
-- [Header / 1](https://porsche-design-system.github.io/examples/patterns/header/1/)
-- [Header / 2](https://porsche-design-system.github.io/examples/patterns/header/2/)
-- [Footer](https://porsche-design-system.github.io/examples/patterns/footer/1/)
+- [AI-Tag / 1](https://porsche-design-system.github.io/examples/v4/patterns/ai-tag/1/)
+- [Header / 1](https://porsche-design-system.github.io/examples/v4/patterns/header/1/)
+- [Header / 2](https://porsche-design-system.github.io/examples/v4/patterns/header/2/)
+- [Footer](https://porsche-design-system.github.io/examples/v4/patterns/footer/1/)
 
 ### Templates
 
-- [Landing Page](https://porsche-design-system.github.io/examples/templates/landing-page/1/)
+- [Landing Page](https://porsche-design-system.github.io/examples/v4/templates/landing-page/1/)
 
 ## Getting started
 
