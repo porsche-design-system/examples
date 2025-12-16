@@ -6,6 +6,9 @@ on:
 permissions:
   contents: write
 
+env:
+  BRANCH_BASE_PATH: ${{ github.ref_name == 'main' && 'nightly' || github.ref_name }}
+
 jobs:
   deploy:
     name: 'Examples'
@@ -17,53 +20,53 @@ jobs:
           ref: 'gh-pages'
       - name: 'Clean'
         run: |
-          rm -rf "./${{ github.ref_name }}"
+          rm -rf "./${{ BRANCH_BASE_PATH }}"
         shell: bash
       - name: 'Download artifact "Patterns"'
         uses: actions/download-artifact@v6
         with:
           name: build-patterns
-          path: "./${{ github.ref_name }}/patterns/"
+          path: "./${{ BRANCH_BASE_PATH }}/patterns/"
       - name: 'Download artifact "Angular"'
         uses: actions/download-artifact@v6
         with:
           name: build-angular
-          path: "./${{ github.ref_name }}/angular/"
+          path: "./${{ BRANCH_BASE_PATH }}/angular/"
       - name: 'Download artifact "Astro"'
         uses: actions/download-artifact@v6
         with:
           name: build-astro
-          path: "./${{ github.ref_name }}/astro/"
+          path: "./${{ BRANCH_BASE_PATH }}/astro/"
       - name: 'Download artifact "Next.js"'
         uses: actions/download-artifact@v6
         with:
           name: build-next-js
-          path: "./${{ github.ref_name }}/next-js/"
+          path: "./${{ BRANCH_BASE_PATH }}/next-js/"
       - name: 'Download artifact "React"'
         uses: actions/download-artifact@v6
         with:
           name: build-react
-          path: "./${{ github.ref_name }}/react/"
+          path: "./${{ BRANCH_BASE_PATH }}/react/"
       - name: 'Download artifact "React Router"'
         uses: actions/download-artifact@v6
         with:
           name: build-react-router
-          path: "./${{ github.ref_name }}/react-router/"
+          path: "./${{ BRANCH_BASE_PATH }}/react-router/"
       - name: 'Download artifact "Vanilla JS"'
         uses: actions/download-artifact@v6
         with:
           name: build-vanilla-js
-          path: "./${{ github.ref_name }}/vanilla-js/"
+          path: "./${{ BRANCH_BASE_PATH }}/vanilla-js/"
       - name: 'Download artifact "Vue"'
         uses: actions/download-artifact@v6
         with:
           name: build-vue
-          path: "./${{ github.ref_name }}/vue/"
+          path: "./${{ BRANCH_BASE_PATH }}/vue/"
       - name: 'Download artifact "Templates"'
         uses: actions/download-artifact@v6
         with:
           name: build-templates
-          path: "./${{ github.ref_name }}/templates/"
+          path: "./${{ BRANCH_BASE_PATH }}/templates/"
       - name: 'Deploy'
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
