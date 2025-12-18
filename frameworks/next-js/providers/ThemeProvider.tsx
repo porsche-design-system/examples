@@ -1,5 +1,7 @@
+'use client';
+
 import { createContext, type PropsWithChildren, useEffect, useState } from 'react';
-import type { Theme } from '../models/theme.ts';
+import type { Theme } from '@/models/theme';
 
 interface ThemeContextProps {
   theme: Theme;

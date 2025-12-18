@@ -8,6 +8,7 @@ import {
   getMetaTagsAndIconLinks,
 } from '@porsche-design-system/components-react/partials';
 import { PorscheDesignSystemProvider } from '@porsche-design-system/components-react/ssr';
+import { ThemeProvider } from '@/providers/ThemeProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -42,8 +43,10 @@ export default function RootLayout({
         {/* injects favicon, apple touch icons, android touch icons, etc. */}
         {getMetaTagsAndIconLinks({ appTitle: 'Porsche', format: 'jsx' })}
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <PorscheDesignSystemProvider>{children}</PorscheDesignSystemProvider>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-canvas`}>
+        <ThemeProvider>
+          <PorscheDesignSystemProvider>{children}</PorscheDesignSystemProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
