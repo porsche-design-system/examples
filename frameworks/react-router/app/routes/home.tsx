@@ -15,7 +15,7 @@ export default function Home() {
   const { theme, setTheme } = useTheme();
   return (
     <main className="grid-template my-fluid-md">
-      <div className="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-lg">
+      <div className="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-4xl">
         <PWordmark className="col-wide" />
         <h1 className="prose-display-md col-wide">Porsche Design System</h1>
         <div className="col-wide flex gap-4 items-center flex-col sm:flex-row">
