@@ -1,6 +1,6 @@
-<main class="grid-template">
+<main class="grid-template my-fluid-md">
   <div
-    class="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-lg"
+    class="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-4xl"
   >
     <p-wordmark class="col-wide"></p-wordmark>
     <h1 class="col-wide prose-display-md">Porsche Design System</h1>
@@ -51,6 +51,11 @@
         </defs>
       </svg>
     </div>
+  </div>
+  <div
+    class="col-wide flex justify-items-center gap-fluid-md p-fluid-sm bg-surface rounded-2xl"
+  >
+    <theme-select />
   </div>
   <app-form-page class="col-wide grid grid-cols-subgrid" />
   <router-outlet />
