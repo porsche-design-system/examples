@@ -6,7 +6,7 @@ import {
   getFontLinks,
   getIconLinks,
   getInitialStyles,
-  getMetaTagsAndIconLinks
+  getMetaTagsAndIconLinks,
 } from '@porsche-design-system/components-js/partials';
 import tailwindcss from '@tailwindcss/vite';
 
