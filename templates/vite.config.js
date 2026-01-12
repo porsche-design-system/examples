@@ -44,7 +44,7 @@ const transformIndexHtmlPlugin = () => {
 };
 
 export default defineConfig({
-  base: '/examples/templates/',
+  base: process.env.TEMPLATES_PUBLIC_BASE_PATH || '',
   root: 'src',
   publicDir: '../public',
   emptyOutDir: true,

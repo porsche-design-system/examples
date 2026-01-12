@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:ci": "REACT_PUBLIC_BASE_PATH=/examples/react npm run build",
     "preview": "vite preview",
     "lint": "eslint .",
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
