@@ -9,11 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@porsche-design-system/components-js": "^3.29.0",
-    "tailwindcss": "^4.1.15"
+    "@porsche-design-system/components-js": "^3.31.0",
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.15",
+    "@tailwindcss/vite": "^4.1.18",
     "vite": "^7.1.11"
   },
   "volta": {
