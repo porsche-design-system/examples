@@ -86,7 +86,6 @@ const onReset = () => {
       :name="'accountType'"
       :label="'Account type'"
       v-model:value="accountType"
-      @update="(e) => accountType = e.detail.value"
       v-bind="accountTypeProps"
       :required="true"
       :state="errors.accountType ? 'error' : 'none'"
