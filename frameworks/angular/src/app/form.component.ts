@@ -21,7 +21,7 @@ import { PorscheDesignSystemModule } from '@porsche-design-system/components-ang
       <p-radio-group formControlName="accountType" [label]="'Account Type'" [required]="true" [state]="getState('accountType')" class="col-wide">
         <p-radio-group-option label="Personal" value="personal"></p-radio-group-option>
         <p-radio-group-option label="Businees" value="business"></p-radio-group-option>
-        @if (showError('salutation', 'required')) {
+        @if (showError('accountType', 'required')) {
           <span slot="message">Please select the account type</span>
         }
       </p-radio-group>
