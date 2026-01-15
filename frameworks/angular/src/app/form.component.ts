@@ -102,7 +102,7 @@ import { PorscheDesignSystemModule } from '@porsche-design-system/components-ang
 })
 export class FormPageComponent {
   form = new FormGroup({
-    accountType: new FormControl('personal', { nonNullable: true }),
+    accountType: new FormControl('', { nonNullable: true }),
     salutation: new FormControl(
       { value: undefined, disabled: false },
       { validators: Validators.required, nonNullable: true }
