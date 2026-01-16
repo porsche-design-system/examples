@@ -19,6 +19,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       
     <form id="registerForm" class="col-wide grid grid-cols-subgrid gap-y-fluid-md">
       <p-heading class="col-wide">Register</p-heading>
+      
+      <p-radio-group name="accountType" label="Account Type" required="true" class="col-wide">
+        <p-radio-group-option label="Personal" value="personal"></p-radio-group-option>
+        <p-radio-group-option label="Business" value="business"></p-radio-group-option>
+      </p-radio-group>
 
       <p-heading size="medium" class="col-wide">
         Personal Data
