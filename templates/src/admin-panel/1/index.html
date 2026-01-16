@@ -6,7 +6,7 @@
     <meta name="description" content="Admin Panel (Template)" />
     <title>Admin Panel (Template)</title>
   </head>
-  <body class="bg-canvas">
+  <body class="bg-surface">
 
     <p-canvas>
       <a href="#" slot="title">Admin Panel</a>
@@ -304,6 +304,12 @@
         <p-link-pure class="my-static-xs w-full" icon="information">
           <a href="#">Help</a>
         </p-link-pure>
+        <p-divider class="my-fluid-md"></p-divider>
+        <p-select name="theme" value="light" label="Theme" compact="true" onchange="documentElement.classList.remove('light', 'dark', 'auto'); documentElement.classList.add(this.value)">
+          <p-select-option value="light">Light</p-select-option>
+          <p-select-option value="dark">Dark</p-select-option>
+          <p-select-option value="auto">Auto</p-select-option>
+        </p-select>
         <p-divider class="my-fluid-md"></p-divider>
         <p-button class="w-full" icon="none">Logout</p-button>
       </div>
