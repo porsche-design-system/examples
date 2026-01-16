@@ -9,7 +9,7 @@
     <link rel="modulepreload" crossorigin href="/examples/v4/templates/assets/modulepreload-polyfill-B5Qt9EMX.js">
     <link rel="stylesheet" crossorigin href="/examples/v4/templates/assets/landing-page-1-DO8Cbgq6.css">
   <link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.0.0-alpha.0.436c965655daed9c7788.js as=script crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.display.3875e9cbcf49b2e322b8.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.text.45914f627b3a7ed5fa6c.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.carousel.6ae0c571835afeaf5f0a.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-tile.33e219a22c0e049cf19e.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-pure.dc085d522311f88ea6f9.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link.3d779af8ca938e1d37ac.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2 as=font type=font/woff2 crossorigin><link rel=prefetch href=https://cdn.ui.porsche.com/porsche-design-system/icons/arrow-right.872716b.svg as=image type=image/svg+xml crossorigin><meta property=og:title content="Examples by Porsche Design System"><meta property=og:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=twitter:title content="Examples by Porsche Design System"><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=theme-color content=#FFF media=(prefers-color-scheme:light)><meta name=theme-color content=#0E1418 media=(prefers-color-scheme:dark)><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Examples by Porsche Design System"><meta name=msapplication-TileImage content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/mstile-270x270.f58081f.png><meta name=msapplication-TileColor content=#FFF><link rel=icon sizes=any href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon.ed9a926.ico><link rel=icon type=image/png sizes=32x32 href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon-32x32.d42ac28.png><link rel=apple-touch-icon href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/apple-touch-icon-180x180.bdf11cc.png><link rel=manifest href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/manifest.b904b15.webmanifest></head>
-  <body class="bg-canvas">
+  <body class="bg-surface">
 
     <p-canvas>
       <a href="#" slot="title">Admin Panel</a>
@@ -307,6 +307,12 @@
         <p-link-pure class="my-static-xs w-full" icon="information">
           <a href="#">Help</a>
         </p-link-pure>
+        <p-divider class="my-fluid-md"></p-divider>
+        <p-select name="theme" value="light" label="Theme" compact="true" onchange="documentElement.classList.remove('light', 'dark', 'auto'); documentElement.classList.add(this.value)">
+          <p-select-option value="light">Light</p-select-option>
+          <p-select-option value="dark">Dark</p-select-option>
+          <p-select-option value="auto">Auto</p-select-option>
+        </p-select>
         <p-divider class="my-fluid-md"></p-divider>
         <p-button class="w-full" icon="none">Logout</p-button>
       </div>
