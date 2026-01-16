@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 // This configuration is only needed for a static build (SSG) to deploy this demo to GitHub Pages.
 const nextConfig: NextConfig = {

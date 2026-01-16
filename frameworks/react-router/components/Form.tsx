@@ -1,13 +1,15 @@
-import { PButton, PHeading, PSelectOption } from '@porsche-design-system/components-react/ssr';
+import { PButton, PHeading, PRadioGroupOption, PSelectOption } from '@porsche-design-system/components-react/ssr';
 import { type SubmitHandler, useForm } from 'react-hook-form';
 import { FormPCheckbox } from './form/FormPCheckbox';
 import { FormPInputEmail } from './form/FormPInputEmail';
 import { FormPInputPassword } from './form/FormPInputPassword';
 import { FormPInputTel } from './form/FormPInputTel';
 import { FormPInputText } from './form/FormPInputText';
+import { FormPRadioGroup } from './form/FormPRadioGroup';
 import { FormPSelect } from './form/FormPSelect';
 
 type FormData = {
+  accountType: '';
   salutation: string | undefined;
   title: string | undefined;
   firstname: string;
@@ -23,6 +25,7 @@ export const Form = () => {
     mode: 'onTouched', // Validate initially onBlur and then onChange
     criteriaMode: 'all', // Emit all field errors at once
     defaultValues: {
+      accountType: '',
       salutation: undefined,
       title: undefined,
       firstname: '',
@@ -41,6 +44,18 @@ export const Form = () => {
   return (
     <form className="col-wide grid grid-cols-subgrid gap-y-fluid-md" onSubmit={handleSubmit(onSubmit)} noValidate>
       <PHeading className="col-wide">Register</PHeading>
+
+      <FormPRadioGroup
+        name="accountType"
+        label="Account Type"
+        control={control}
+        required={true}
+        rules={{ required: 'Please select the account type' }}
+        className="col-wide"
+      >
+        <PRadioGroupOption label="Personal" value="personal" />
+        <PRadioGroupOption label="Business" value="business" />
+      </FormPRadioGroup>
 
       <PHeading size="medium" className="col-wide">
         Personal Data

@@ -18,9 +18,19 @@ import { PorscheDesignSystemModule } from '@porsche-design-system/components-ang
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="col-wide grid grid-cols-subgrid gap-y-fluid-md">
       <p-heading class="col-wide">Register</p-heading>
 
+      <p-radio-group formControlName="accountType" [label]="'Account Type'" [required]="true" [state]="getState('accountType')" class="col-wide">
+        <p-radio-group-option label="Personal" value="personal"></p-radio-group-option>
+        <p-radio-group-option label="Businees" value="business"></p-radio-group-option>
+        @if (showError('accountType', 'required')) {
+          <span slot="message">Please select the account type</span>
+        }
+      </p-radio-group>
+
       <p-heading [size]="'medium'" class="col-wide">
         Personal Data
       </p-heading>
+
+
       <p-select formControlName="salutation" [label]="'Salutation'" [required]="true" [state]="getState('salutation')" class="col-wide xs:col-span-one-half sm:col-span-4">
         <p-select-option value="mr">Mr.</p-select-option>
         <p-select-option value="mrs">Mrs.</p-select-option>
@@ -92,6 +102,7 @@ import { PorscheDesignSystemModule } from '@porsche-design-system/components-ang
 })
 export class FormPageComponent {
   form = new FormGroup({
+    accountType: new FormControl('', { nonNullable: true }),
     salutation: new FormControl(
       { value: undefined, disabled: false },
       { validators: Validators.required, nonNullable: true }

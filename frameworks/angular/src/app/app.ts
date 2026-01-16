@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PorscheDesignSystemModule } from '@porsche-design-system/components-angular';
-import {FormPageComponent} from './form.component';
+import { FormPageComponent } from './form.component';
 
 @Component({
   selector: 'app-root',
