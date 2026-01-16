@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Admin Panel (Template)" />
+    <title>Admin Panel (Template)</title>
+    <script type="module" crossorigin src="/examples/v4/templates/assets/admin-panel-1-BhFItxhV.js"></script>
+    <link rel="modulepreload" crossorigin href="/examples/v4/templates/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="stylesheet" crossorigin href="/examples/v4/templates/assets/landing-page-1-DO8Cbgq6.css">
+  <link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.0.0-alpha.0.436c965655daed9c7788.js as=script crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.display.3875e9cbcf49b2e322b8.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.text.45914f627b3a7ed5fa6c.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.carousel.6ae0c571835afeaf5f0a.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-tile.33e219a22c0e049cf19e.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-pure.dc085d522311f88ea6f9.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link.3d779af8ca938e1d37ac.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2 as=font type=font/woff2 crossorigin><link rel=prefetch href=https://cdn.ui.porsche.com/porsche-design-system/icons/arrow-right.872716b.svg as=image type=image/svg+xml crossorigin><meta property=og:title content="Examples by Porsche Design System"><meta property=og:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=twitter:title content="Examples by Porsche Design System"><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=theme-color content=#FFF media=(prefers-color-scheme:light)><meta name=theme-color content=#0E1418 media=(prefers-color-scheme:dark)><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Examples by Porsche Design System"><meta name=msapplication-TileImage content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/mstile-270x270.f58081f.png><meta name=msapplication-TileColor content=#FFF><link rel=icon sizes=any href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon.ed9a926.ico><link rel=icon type=image/png sizes=32x32 href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon-32x32.d42ac28.png><link rel=apple-touch-icon href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/apple-touch-icon-180x180.bdf11cc.png><link rel=manifest href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/manifest.b904b15.webmanifest></head>
+  <body class="bg-canvas">
+
+    <p-canvas>
+      <a href="#" slot="title">Admin Panel</a>
+
+      <p-button
+        slot="header-end"
+        icon="search"
+        variant="secondary"
+        compact="true"
+        hide-label="true"
+        onclick="document.querySelector('p-modal').open = true;"
+      >Open search</p-button>
+
+      <p-button
+        slot="header-end"
+        icon="user"
+        variant="secondary"
+        compact="true"
+        hide-label="true"
+        onclick="document.querySelector('p-canvas').sidebarEndOpen = true;"
+      >Open sidebar</p-button>
+
+      <div class="@container grid grid-cols-12 gap-x-fluid-md">
+
+        <div class="col-span-full flex gap-static-md items-center">
+          <p-heading size="x-large" tag="h1">Porsche Models</p-heading>
+          <p-button type="button" icon="plus" compact="true">Add model</p-button>
+        </div>
+
+        <p-tabs-bar class="col-span-full mt-fluid-lg" active-tab-index="0">
+          <button type="button">Overview</button>
+          <button type="button">Drafts</button>
+        </p-tabs-bar>
+
+        <p-popover class="col-span-full mt-fluid-md justify-self-start">
+          <p-button slot="button" variant="secondary" type="button" compact="true" icon="filter">Filter</p-button>
+          <form class="space-y-fluid-sm m-fluid-sm">
+            <p-checkbox label="Some label" name="some-name"></p-checkbox>
+            <p-checkbox label="Some label" name="some-name"></p-checkbox>
+            <p-checkbox label="Some label" name="some-name"></p-checkbox>
+            <p-checkbox label="Some label" name="some-name"></p-checkbox>
+            <p-checkbox label="Some label" name="some-name"></p-checkbox>
+          </form>
+        </p-popover>
+
+        <p-table class="col-span-full mt-fluid-sm" caption="Porsche Models">
+          <p-table-head>
+            <p-table-head-row>
+              <p-table-head-cell>Model</p-table-head-cell>
+              <p-table-head-cell>Interest</p-table-head-cell>
+              <p-table-head-cell>VIN</p-table-head-cell>
+              <p-table-head-cell>Purchase Intention</p-table-head-cell>
+              <p-table-head-cell>Status</p-table-head-cell>
+              <p-table-head-cell>Comment</p-table-head-cell>
+              <p-table-head-cell>Lead ID</p-table-head-cell>
+              <p-table-head-cell>Action</p-table-head-cell>
+            </p-table-head-row>
+          </p-table-head>
+          <p-table-body>
+            <p-table-row>
+              <p-table-cell>
+                <img
+                  src="https://porsche-design-system.github.io/dummyasset/718.png"
+                  width="80"
+                  height="45"
+                  alt="Some image description"
+                />
+              </p-table-cell>
+              <p-table-cell>New Car</p-table-cell>
+              <p-table-cell>
+                <p-link-pure underline="true" icon="none">
+                  <a href="https://porsche.com">5GAKVCKD8EJ335750</a>
+                </p-link-pure>
+              </p-table-cell>
+              <p-table-cell>08/2021</p-table-cell>
+              <p-table-cell>Won</p-table-cell>
+              <p-table-cell class="min-w-[10rem]" multiline="true">-</p-table-cell>
+              <p-table-cell>
+                0000824402
+                <p-popover>
+                  <p-text>Some additional content</p-text>
+                </p-popover>
+              </p-table-cell>
+              <p-table-cell class="flex gap-static-md">
+                <p-button-pure icon="edit">Edit</p-button-pure>
+                <p-button-pure icon="delete">Delete</p-button-pure>
+              </p-table-cell>
+            </p-table-row>
+            <p-table-row>
+              <p-table-cell>
+                <img
+                  src="https://porsche-design-system.github.io/dummyasset/911.png"
+                  width="80"
+                  height="45"
+                  alt="Some image description"
+                />
+              </p-table-cell>
+              <p-table-cell>Used Car</p-table-cell>
+              <p-table-cell>
+                <p-link-pure underline="true" icon="none">
+                  <a href="https://porsche.com">5GAKVCKD8EJ335750</a>
+                </p-link-pure>
+              </p-table-cell>
+              <p-table-cell>09/2021</p-table-cell>
+              <p-table-cell>Won</p-table-cell>
+              <p-table-cell class="min-w-[10rem]" multiline="true">-</p-table-cell>
+              <p-table-cell>
+                0000824408
+                <p-popover>
+                  <p-text>Some additional content</p-text>
+                </p-popover>
+              </p-table-cell>
+              <p-table-cell class="flex gap-static-md">
+                <p-button-pure icon="edit">Edit</p-button-pure>
+                <p-button-pure icon="delete">Delete</p-button-pure>
+              </p-table-cell>
+            </p-table-row>
+          </p-table-body>
+        </p-table>
+
+        <div class="col-span-full mt-fluid-lg grid grid-cols-subgrid gap-y-fluid-lg">
+          <div class="col-span-full @2xl:col-span-4 grid gap-fluid-sm">
+            <p-heading size="medium" tag="h2">Your Favorites</p-heading>
+            <ul class="grid gap-fluid-xs">
+              <li>
+                <p-link-pure>
+                  <a href="#">New Relic</a>
+                </p-link-pure>
+              </li>
+              <li>
+                <p-link-pure>
+                  <a href="#">Bise</a>
+                </p-link-pure>
+              </li>
+              <li>
+                <p-link-pure>
+                  <a href="#">AWS</a>
+                </p-link-pure>
+              </li>
+              <li>
+                <p-link-pure>
+                  <a href="#">GRBX Integration Manager</a>
+                </p-link-pure>
+              </li>
+              <li>
+                <p-link-pure>
+                  <a href="#">Cloud Documentation</a>
+                </p-link-pure>
+              </li>
+            </ul>
+          </div>
+          <div class="col-span-full @2xl:col-span-4 grid gap-fluid-sm">
+            <p-heading size="medium" tag="h2">Most Suggested</p-heading>
+            <ul class="grid gap-fluid-xs">
+              <li>
+                <p-link-pure>
+                  <a href="#">Grafana</a>
+                </p-link-pure>
+              </li>
+              <li>
+                <p-link-pure>
+                  <a href="#">New Relic</a>
+                </p-link-pure>
+              </li>
+              <li>
+                <p-link-pure>
+                  <a href="#">BISE Scanners</a>
+                </p-link-pure>
+              </li>
+              <li>
+                <p-link-pure>
+                  <a href="#">Integration Manager</a>
+                </p-link-pure>
+              </li>
+              <li>
+                <p-link-pure>
+                  <a href="#">Prisma Cloud</a>
+                </p-link-pure>
+              </li>
+            </ul>
+          </div>
+          <div class="col-span-full @2xl:col-span-4 grid gap-fluid-sm">
+            <p-heading size="medium" tag="h2">Quick Links</p-heading>
+            <ul class="grid gap-fluid-xs">
+              <li>
+                <p-link-pure>
+                  <a href="#">Tools & Services</a>
+                </p-link-pure>
+              </li>
+              <li>
+                <p-link-pure>
+                  <a href="#">Quick Guide</a>
+                </p-link-pure>
+              </li>
+              <li>
+                <p-link-pure>
+                  <a href="#">Integration Manager</a>
+                </p-link-pure>
+              </li>
+              <li>
+                <p-link-pure>
+                  <a href="#">Confluence</a>
+                </p-link-pure>
+              </li>
+              <li>
+                <p-link-pure>
+                  <a href="#">News</a>
+                </p-link-pure>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div slot="sidebar-start">
+        <nav aria-label="Main">
+          <p-accordion heading="Some category" heading-tag="h2" compact="true">
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+          </p-accordion>
+          <p-accordion heading="Some category" heading-tag="h2" compact="true">
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+          </p-accordion>
+          <p-accordion heading="Some category" heading-tag="h2" compact="true">
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+            <p-link-pure class="my-static-xs w-full" icon="none">
+              <a href="#">Some anchor</a>
+            </p-link-pure>
+          </p-accordion>
+        </nav>
+        <p-divider class="my-fluid-md"></p-divider>
+        <footer class="grid gap-static-xs justify-items-start">
+          <p-link-pure icon="none" size="xx-small" underline="true">
+            <a href="#">Privacy Policy</a>
+          </p-link-pure>
+          <p-link-pure icon="none" size="xx-small" underline="true">
+            <a href="#">Legal Notice</a>
+          </p-link-pure>
+          <p-link-pure icon="none" size="xx-small" underline="true">
+            <a href="#">License</a>
+          </p-link-pure>
+          <p-link-pure icon="none" size="xx-small" underline="true">
+            <a href="#">Accessibility Statement</a>
+          </p-link-pure>
+        </footer>
+      </div>
+
+      <div slot="sidebar-end">
+        <div class="flex gap-fluid-sm items-center">
+          <span class="w-16 h-16 aspect-square rounded-full bg-surface text-contrast-medium text-lg grid place-content-center">FP</span>
+          <p class="prose-text-sm">Ferdinand Porsche<br /><span class="text-contrast-medium">Admin</span></p>
+        </div>
+        <p-divider class="my-fluid-md"></p-divider>
+        <p-link-pure class="my-static-xs w-full" icon="user">
+          <a href="#">Account</a>
+        </p-link-pure>
+        <p-link-pure class="my-static-xs w-full" icon="configurate">
+          <a href="#">Settings</a>
+        </p-link-pure>
+        <p-link-pure class="my-static-xs w-full" icon="chart">
+          <a href="#">Analytics</a>
+        </p-link-pure>
+        <p-link-pure class="my-static-xs w-full" icon="information">
+          <a href="#">Help</a>
+        </p-link-pure>
+        <p-divider class="my-fluid-md"></p-divider>
+        <p-button class="w-full" icon="none">Logout</p-button>
+      </div>
+    </p-canvas>
+
+    <p-modal class="[--p-modal-width:min(50rem,80vw)]" open="false" aria="{ 'aria-label': 'Some heading' }">
+      <p-heading size="medium" tag="h2">What are you looking for?</p-heading>
+      <p-input-search class="mt-fluid-md" name="some-name" label="Search" indicator="true" clear="true" placeholder="Search" hide-label="true"></p-input-search>
+    </p-modal>
+
+  <script data-pds-loader-script>var porscheDesignSystem;(()=>{"use strict";var e={d:(t,n)=>{for(var o in n)e.o(n,o)&&!e.o(t,o)&&Object.defineProperty(t,o,{enumerable:!0,get:n[o]})},o:(e,t)=>Object.prototype.hasOwnProperty.call(e,t),r:e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}},t={};e.r(t),e.d(t,{load:()=>r});const n="porscheDesignSystem";function o(){return document[n]||(document[n]={}),document[n]}function s({script:e,version:t,prefix:s}){const r=function(e){const t=o(),{[e]:n}=t;if(!n){let n=()=>{};const o=new Promise((e=>n=e));t[e]={isInjected:!1,isReady:()=>o,readyResolve:n,prefixes:[],registerCustomElements:null}}return t[e]}(t),{isInjected:i,prefixes:c=[],registerCustomElements:d}=r,[p]=Object.entries(o()).filter((([e,n])=>e!==t&&"object"==typeof n&&n.prefixes.includes(s)));if(p)throw new Error(`[Porsche Design System v${t}] prefix '${s}' is already registered with version '${p[0]}' of the Porsche Design System. Please use a different one.\nTake a look at document.${n} for more details.`);i||(function(e){const t=document.createElement("script");t.src=e,t.setAttribute("crossorigin",""),document.body.appendChild(t)}(e),r.isInjected=!0),c.includes(s)||(c.push(s),d&&d(s))}const r=(e={})=>{const t="PORSCHE_DESIGN_SYSTEM_CDN";window[t]=e.cdn||window[t]||(window.location.origin.match(/\.cn$/)?"cn":"auto");const n="porscheDesignSystem";document[n]||(document[n]={}),document[n].cdn={url:"https://cdn.ui.porsche."+("cn"===window[t]?"cn":"com"),prefixes:[]},s({version:"4.0.0-alpha.0",script:document[n].cdn.url+"/porsche-design-system/components/porsche-design-system.v4.0.0-alpha.0.436c965655daed9c7788.js",prefix:e.prefix||""})};porscheDesignSystem=t})();porscheDesignSystem.load()</script></body>
+</html>
