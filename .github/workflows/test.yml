@@ -20,7 +20,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'E2E'
@@ -34,7 +34,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'E2E'
@@ -48,7 +48,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'E2E'
@@ -62,7 +62,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'E2E'
@@ -76,7 +76,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'E2E'
@@ -90,7 +90,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'E2E'
@@ -104,7 +104,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'E2E'
@@ -118,11 +118,11 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Download artifact'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: build-patterns
           path: ./patterns/dist
@@ -137,11 +137,11 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Download artifact'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: build-patterns
           path: ./patterns/dist
@@ -156,11 +156,11 @@ jobs:
      options: --user 1001
    steps:
      - name: 'Checkout'
-       uses: actions/checkout@v5
+       uses: actions/checkout@v6
      - name: 'Install'
        uses: ./.github/actions/install
      - name: 'Download artifact'
-       uses: actions/download-artifact@v6
+       uses: actions/download-artifact@v7
        with:
          name: build-patterns
          path: ./patterns/dist
@@ -169,7 +169,7 @@ jobs:
        shell: bash
      - name: 'VRT Regression'
        if: failure()
-       uses: actions/upload-artifact@v5
+       uses: actions/upload-artifact@v6
        with:
          name: regression-vrt-patterns
          path: ./patterns/tests/vrt/test-results
