@@ -56,6 +56,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         'landing-page-1': resolve(__dirname, 'src/landing-page/1/index.html'),
+        'admin-panel-1': resolve(__dirname, 'src/admin-panel/1/index.html'),
       },
     },
   },

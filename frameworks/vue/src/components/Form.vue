@@ -7,6 +7,8 @@ import {
   PInputPassword,
   PInputTel,
   PInputText,
+  PRadioGroup,
+  PRadioGroupOption,
   PSelect,
   PSelectOption,
 } from '@porsche-design-system/components-vue';
@@ -15,6 +17,7 @@ import { useForm } from 'vee-validate';
 import { z } from 'zod';
 
 const schema = z.object({
+  accountType: z.enum(['personal', 'business'], { required_error: 'Please select an account type' }),
   salutation: z.string({ required_error: 'Please enter your salutation' }).nonempty('Please enter your salutation'),
   title: z.string().optional(),
   firstname: z.string().nonempty('Please enter your first name'),
@@ -44,6 +47,7 @@ const schema = z.object({
 const { handleSubmit, resetForm, defineField, errors, errorBag } = useForm({
   validationSchema: toTypedSchema(schema),
   initialValues: {
+    accountType: undefined,
     salutation: undefined,
     title: undefined,
     firstname: '',
@@ -55,6 +59,7 @@ const { handleSubmit, resetForm, defineField, errors, errorBag } = useForm({
   },
 });
 
+const [accountType, accountTypeProps] = defineField('accountType');
 const [salutation, salutationProps] = defineField('salutation');
 const [title, titleProps] = defineField('title');
 const [firstname, firstnameProps] = defineField('firstname');
@@ -76,6 +81,20 @@ const onReset = () => {
 <template>
   <form class="col-wide grid grid-cols-subgrid gap-y-fluid-md" @submit.prevent="onSubmit" novalidate>
     <PHeading class="col-wide">Register</PHeading>
+
+    <PRadioGroup
+      :name="'accountType'"
+      :label="'Account type'"
+      v-model:value="accountType"
+      v-bind="accountTypeProps"
+      :required="true"
+      :state="errors.accountType ? 'error' : 'none'"
+      class="col-wide"
+    >
+      <PRadioGroupOption label="Personal" value="personal"></PRadioGroupOption>
+      <PRadioGroupOption label="Business" value="business"></PRadioGroupOption>
+      <span v-if="errors.accountType" slot="message">{{ errors.accountType }}</span>
+    </PRadioGroup>
 
     <PHeading size="medium" class="col-wide">Personal Data</PHeading>
 
