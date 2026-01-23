@@ -10,7 +10,7 @@
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
-    "@porsche-design-system/components-react": "^3.30.0",
+    "@porsche-design-system/components-react": "^3.32.0-rc.1",
     "next": "16.0.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
