@@ -17,17 +17,17 @@ import { useForm } from 'vee-validate';
 import { z } from 'zod';
 
 const schema = z.object({
-  accountType: z.enum(['personal', 'business'], { required_error: 'Please select an account type' }),
-  salutation: z.string({ required_error: 'Please enter your salutation' }).nonempty('Please enter your salutation'),
+  accountType: z.enum(['personal', 'business'], { error: 'Please select an account type' }),
+  salutation: z.string({ error: 'Please enter your salutation' }).min(1, 'Please enter your salutation'),
   title: z.string().optional(),
-  firstname: z.string().nonempty('Please enter your first name'),
-  lastname: z.string().nonempty('Please enter your last name'),
-  email: z.string().email('Invalid email').nonempty('Please enter your email'),
+  firstname: z.string().min(1, 'Please enter your first name'),
+  lastname: z.string().min(1, 'Please enter your last name'),
+  email: z.string().email('Invalid email').min(1, 'Please enter your email'),
   phone: z.string().optional(),
   privacyPolicy: z.boolean().refine((v) => v, 'Please accept our privacy policy so that we can process your request'),
   password: z
     .string()
-    .nonempty('Please enter your password')
+    .min(1, 'Please enter your password')
     .superRefine((value, ctx) => {
       if (value.length < 8) {
         ctx.addIssue({ code: 'custom', message: 'Must be at least 8 characters long' });
@@ -45,7 +45,8 @@ const schema = z.object({
 });
 
 const { handleSubmit, resetForm, defineField, errors, errorBag } = useForm({
-  validationSchema: toTypedSchema(schema),
+  validationSchema: toTypedSchema(schema as any), // TODO: type assertion needed due to missing types in @vee-validate/zod (which expects Zod v3 types instead of Zod v4)
+
   initialValues: {
     accountType: undefined,
     salutation: undefined,
