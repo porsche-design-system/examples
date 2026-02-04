@@ -6,7 +6,7 @@ import {
 } from '@porsche-design-system/components-react/partials';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import { defineConfig, type PluginOption } from 'vite';
 
 const transformIndexHtmlPlugin = () => {
   return {
@@ -30,5 +30,5 @@ const transformIndexHtmlPlugin = () => {
 
 export default defineConfig({
   base: process.env.REACT_PUBLIC_BASE_PATH || '',
-  plugins: [react(), transformIndexHtmlPlugin(), tailwindcss()],
+  plugins: [react() as PluginOption, transformIndexHtmlPlugin(), tailwindcss() as PluginOption],
 });

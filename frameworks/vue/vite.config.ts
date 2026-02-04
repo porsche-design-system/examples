@@ -8,7 +8,7 @@ import {
 import tailwindcss from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
-import { defineConfig } from 'vite';
+import { defineConfig, type PluginOption } from 'vite';
 import vueDevTools from 'vite-plugin-vue-devtools';
 
 const transformIndexHtmlPlugin = () => {
@@ -34,7 +34,13 @@ const transformIndexHtmlPlugin = () => {
 // https://vite.dev/config/
 export default defineConfig({
   base: process.env.VUE_PUBLIC_BASE_PATH || '',
-  plugins: [vue(), vueJsx(), vueDevTools(), transformIndexHtmlPlugin(), tailwindcss()],
+  plugins: [
+    vue(),
+    vueJsx() as PluginOption,
+    vueDevTools() as PluginOption,
+    transformIndexHtmlPlugin(),
+    tailwindcss() as PluginOption,
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

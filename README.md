@@ -25,6 +25,7 @@ The projects are built using [WCAG 2.2 (AA)](https://www.w3.org/TR/WCAG22/) comp
 ### Templates
 
 - [Landing Page](https://porsche-design-system.github.io/examples/v4/templates/landing-page/1/)
+- [Admin Panel](https://porsche-design-system.github.io/examples/v4/templates/admin-panel/1/)
 
 ## Getting started
 
