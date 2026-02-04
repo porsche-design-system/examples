@@ -1,8 +1,4 @@
 import { fileURLToPath, URL } from 'node:url';
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import vueJsx from '@vitejs/plugin-vue-jsx';
-import vueDevTools from 'vite-plugin-vue-devtools';
 import {
   getComponentChunkLinks,
   getFontFaceStyles,
@@ -12,6 +8,10 @@ import {
   getMetaTagsAndIconLinks,
 } from '@porsche-design-system/components-vue/partials';
 import tailwindcss from '@tailwindcss/vite';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
+import { defineConfig, type PluginOption } from 'vite';
+import vueDevTools from 'vite-plugin-vue-devtools';
 
 const transformIndexHtmlPlugin = () => {
   return {
@@ -40,7 +40,7 @@ const transformIndexHtmlPlugin = () => {
 // https://vite.dev/config/
 export default defineConfig({
   base: process.env.VUE_PUBLIC_BASE_PATH || '',
-  plugins: [vue(), vueJsx(), vueDevTools(), transformIndexHtmlPlugin(), tailwindcss()],
+  plugins: [vue(), vueJsx() as PluginOption, vueDevTools(), transformIndexHtmlPlugin(), tailwindcss() as PluginOption],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

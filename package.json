@@ -49,6 +49,7 @@
     "test:e2e:patterns": "npm run test:e2e --workspace=@porsche-design-system/patterns",
     "test:a11y:patterns": "npm run test:a11y --workspace=@porsche-design-system/patterns",
     "test:vrt:patterns": "npm run test:vrt --workspace=@porsche-design-system/patterns",
+    "npm:install": "npm install",
     "npm:outdated": "npm outdated --workspaces",
     "npm:upgrade": "npx npm-check-updates --workspaces -u && npm install",
     "npm:remove": "find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\;",
