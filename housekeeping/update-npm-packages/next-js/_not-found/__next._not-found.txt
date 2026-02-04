@@ -1,4 +1,4 @@
 1:"$Sreact.fragment"
-2:I[39756,["/examples/housekeeping/update-npm-packages/next-js/_next/static/chunks/ff1a16fafef87110.js","/examples/housekeeping/update-npm-packages/next-js/_next/static/chunks/b71c1cfea9076b4b.js"],"default"]
-3:I[37457,["/examples/housekeeping/update-npm-packages/next-js/_next/static/chunks/ff1a16fafef87110.js","/examples/housekeeping/update-npm-packages/next-js/_next/static/chunks/b71c1cfea9076b4b.js"],"default"]
-0:{"buildId":"qW4oZG-NdASAUCFJmKiGq","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
+2:I[39756,["/examples/housekeeping/update-npm-packages/next-js/_next/static/chunks/ff1a16fafef87110.js","/examples/housekeeping/update-npm-packages/next-js/_next/static/chunks/694836347d1e5ef3.js"],"default"]
+3:I[37457,["/examples/housekeeping/update-npm-packages/next-js/_next/static/chunks/ff1a16fafef87110.js","/examples/housekeeping/update-npm-packages/next-js/_next/static/chunks/694836347d1e5ef3.js"],"default"]
+0:{"buildId":"eswIraaVKUDgpooR7EZA7","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
