@@ -40,7 +40,13 @@ const transformIndexHtmlPlugin = () => {
 // https://vite.dev/config/
 export default defineConfig({
   base: process.env.VUE_PUBLIC_BASE_PATH || '',
-  plugins: [vue(), vueJsx() as PluginOption, vueDevTools(), transformIndexHtmlPlugin(), tailwindcss() as PluginOption],
+  plugins: [
+    vue(),
+    vueJsx() as PluginOption,
+    vueDevTools() as PluginOption,
+    transformIndexHtmlPlugin(),
+    tailwindcss() as PluginOption,
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
