@@ -14,7 +14,7 @@
     "test:vrt:write-snapshots": "tsx tests/vrt/scripts/writeSnapshots.ts"
   },
   "dependencies": {
-    "@porsche-design-system/components-js": "3.32.0-rc.2",
+    "@porsche-design-system/components-js": "3.32.0",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
