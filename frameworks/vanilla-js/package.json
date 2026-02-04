@@ -13,7 +13,7 @@
     "@porsche-design-system/components-js": "3.32.0-rc.2"
   },
   "devDependencies": {
-    "@playwright/test": "^1.55.1",
+    "@playwright/test": "^1.58.1",
     "@tailwindcss/vite": "^4.1.15",
     "tailwindcss": "^4.1.15",
     "typescript": "~5.9.3",
