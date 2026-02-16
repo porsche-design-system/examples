@@ -12,11 +12,11 @@
   },
   "dependencies": {
     "@astrojs/vue": "^5.1.4",
-    "@porsche-design-system/components-js": "3.32.0-rc.2",
+    "@porsche-design-system/components-js": "3.32.0",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.17.1",
+    "astro": "^5.17.2",
     "tailwindcss": "^4.1.18",
-    "vue": "^3.5.27"
+    "vue": "^3.5.28"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.1"
