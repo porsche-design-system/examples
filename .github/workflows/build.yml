@@ -23,7 +23,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Lint'
@@ -36,7 +36,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
@@ -44,7 +44,7 @@ jobs:
         env:
           ANGULAR_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/angular/"
       - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: build-angular
           path: ./frameworks/angular/dist/
@@ -56,7 +56,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
@@ -64,7 +64,7 @@ jobs:
         env:
           ASTRO_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/astro"
       - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: build-astro
           path: ./frameworks/astro/dist/
@@ -76,7 +76,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
@@ -84,7 +84,7 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/next-js"
       - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: build-next-js
           path: ./frameworks/next-js/dist/
@@ -96,7 +96,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
@@ -104,7 +104,7 @@ jobs:
         env:
           REACT_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/react"
       - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: build-react
           path: ./frameworks/react/dist/
@@ -116,7 +116,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
@@ -124,7 +124,7 @@ jobs:
         env:
           REACT_ROUTER_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/react-router/"
       - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: build-react-router
           path: ./frameworks/react-router/build/client/examples/react-router/
@@ -136,7 +136,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
@@ -144,7 +144,7 @@ jobs:
         env:
           VANILLA_JS_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/vanilla-js"
       - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: build-vanilla-js
           path: ./frameworks/vanilla-js/dist/
@@ -156,7 +156,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
@@ -164,7 +164,7 @@ jobs:
         env:
           VUE_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/vue"
       - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: build-vue
           path: ./frameworks/vue/dist/
@@ -176,7 +176,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
@@ -184,7 +184,7 @@ jobs:
         env:
           PATTERNS_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/patterns"
       - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: build-patterns
           path: ./patterns/dist/
@@ -196,7 +196,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build'
@@ -204,7 +204,7 @@ jobs:
         env:
           TEMPLATES_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/templates"
       - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: build-templates
           path: ./templates/dist/

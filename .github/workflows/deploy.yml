@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: 'gh-pages'
       - name: 'Clean'
@@ -23,47 +23,47 @@ jobs:
           rm -rf "./${{ env.BRANCH_BASE_PATH }}"
         shell: bash
       - name: 'Download artifact "Patterns"'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: build-patterns
           path: "./${{ env.BRANCH_BASE_PATH }}/patterns/"
       - name: 'Download artifact "Angular"'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: build-angular
           path: "./${{ env.BRANCH_BASE_PATH }}/angular/"
       - name: 'Download artifact "Astro"'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: build-astro
           path: "./${{ env.BRANCH_BASE_PATH }}/astro/"
       - name: 'Download artifact "Next.js"'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: build-next-js
           path: "./${{ env.BRANCH_BASE_PATH }}/next-js/"
       - name: 'Download artifact "React"'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: build-react
           path: "./${{ env.BRANCH_BASE_PATH }}/react/"
       - name: 'Download artifact "React Router"'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: build-react-router
           path: "./${{ env.BRANCH_BASE_PATH }}/react-router/"
       - name: 'Download artifact "Vanilla JS"'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: build-vanilla-js
           path: "./${{ env.BRANCH_BASE_PATH }}/vanilla-js/"
       - name: 'Download artifact "Vue"'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: build-vue
           path: "./${{ env.BRANCH_BASE_PATH }}/vue/"
       - name: 'Download artifact "Templates"'
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: build-templates
           path: "./${{ env.BRANCH_BASE_PATH }}/templates/"
