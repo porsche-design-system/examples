@@ -10,21 +10,21 @@
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
-    "@porsche-design-system/components-react": "3.32.0-rc.2",
-    "next": "16.1.6",
+    "@porsche-design-system/components-react": "3.33.0",
+    "next": "16.2.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "react-hook-form": "^7.71.1"
+    "react-hook-form": "^7.72.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.1",
-    "@tailwindcss/postcss": "^4.1.18",
-    "@types/node": "^25.2.0",
-    "@types/react": "^19.2.10",
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "serve": "^14.2.5",
-    "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3"
+    "serve": "^14.2.6",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.2"
   },
   "volta": {
     "extends": "../../package.json"
