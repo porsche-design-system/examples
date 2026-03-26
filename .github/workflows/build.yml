@@ -107,10 +107,17 @@ jobs:
       - run: npm run build --workspace=@porsche-design-system/react-router
         env:
           REACT_ROUTER_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/react-router/"
+      # React Router prerenders HTML under the basename path (build/client/examples/<branch>/react-router/)
+      # but Vite outputs assets at build/client/assets/. Copy assets alongside the prerendered HTML
+      # to create a self-contained artifact for deployment.
+      - run: |
+          PRERENDER_DIR="./frameworks/react-router/build/client/examples/${{ env.BRANCH_BASE_PATH }}/react-router"
+          cp -r ./frameworks/react-router/build/client/assets "$PRERENDER_DIR/assets"
+          cp ./frameworks/react-router/build/client/favicon.ico "$PRERENDER_DIR/" 2>/dev/null || true
       - uses: actions/upload-artifact@v7
         with:
           name: build-react-router
-          path: ./frameworks/react-router/build/client/examples/react-router/
+          path: ./frameworks/react-router/build/client/examples/${{ env.BRANCH_BASE_PATH }}/react-router/
   vanilla-js:
     name: 'Vanilla JS'
     runs-on: ubuntu-latest
