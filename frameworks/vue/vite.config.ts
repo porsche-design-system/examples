@@ -8,6 +8,7 @@ import {
 import tailwindcss from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
+import { Features } from 'lightningcss';
 import { defineConfig, type PluginOption } from 'vite';
 import vueDevTools from 'vite-plugin-vue-devtools';
 
@@ -41,6 +42,13 @@ export default defineConfig({
     transformIndexHtmlPlugin(),
     tailwindcss() as PluginOption,
   ],
+  css: {
+    transformer: 'lightningcss',
+    // Disables light-dark() polyfill of lightningcss which is broken https://github.com/porsche-design-system/porsche-design-system/issues/4257
+    lightningcss: {
+      exclude: Features.LightDark,
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

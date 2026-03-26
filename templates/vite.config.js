@@ -58,7 +58,7 @@ export default defineConfig({
     },
   },
   css: {
-    transformer: "lightningcss",
+    transformer: 'lightningcss',
     lightningcss: {
       exclude: Features.LightDark,
     },

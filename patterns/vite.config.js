@@ -7,6 +7,7 @@ import {
   getMetaTagsAndIconLinks,
 } from '@porsche-design-system/components-js/partials';
 import tailwindcss from '@tailwindcss/vite';
+import { Features } from 'lightningcss';
 import { defineConfig } from 'vite';
 
 const REGEX_HEAD = /<\/head>/;
@@ -46,6 +47,13 @@ export default defineConfig({
   emptyOutDir: true,
   server: {
     host: true,
+  },
+  css: {
+    transformer: 'lightningcss',
+    // Disables light-dark() polyfill of lightningcss which is broken https://github.com/porsche-design-system/porsche-design-system/issues/4257
+    lightningcss: {
+      exclude: Features.LightDark,
+    },
   },
   build: {
     outDir: '../dist/',

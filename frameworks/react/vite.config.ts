@@ -6,6 +6,7 @@ import {
 } from '@porsche-design-system/components-react/partials';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
+import { Features } from 'lightningcss';
 import { defineConfig } from 'vite';
 
 const transformIndexHtmlPlugin = () => {
@@ -30,5 +31,12 @@ const transformIndexHtmlPlugin = () => {
 
 export default defineConfig({
   base: process.env.REACT_PUBLIC_BASE_PATH || '',
+  css: {
+    transformer: 'lightningcss',
+    // Disables light-dark() polyfill of lightningcss which is broken https://github.com/porsche-design-system/porsche-design-system/issues/4257
+    lightningcss: {
+      exclude: Features.LightDark,
+    },
+  },
   plugins: [react(), transformIndexHtmlPlugin(), tailwindcss()],
 });
