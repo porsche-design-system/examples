@@ -26,7 +26,7 @@ const transformIndexHtmlPlugin = () => {
 
       const headPartials = [
         //`<meta http-equiv="Content-Security-Policy" content="${cspContent}"/>`, // disabled due to loading of H&N
-        getComponentChunkLinks({ components: ['display', 'text', 'carousel', 'link-tile', 'link-pure', 'link'] }),
+        getComponentChunkLinks({ components: ['heading', 'text', 'carousel', 'link-tile', 'link-pure', 'link'] }),
         getFontLinks(),
         getIconLinks(),
         getMetaTagsAndIconLinks({ appTitle: 'Examples by Porsche Design System' }),
