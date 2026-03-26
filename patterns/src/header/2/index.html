@@ -9,8 +9,8 @@
 
   <body>
     <header class="grid-template gap-y-0">
-      <div class="col-full flex justify-center py-static-xs px-static-md bg-surface dark">
-        <p class="prose-text-xs">All sizes shown for Porsche Lifestyle products are EU sizes</p>
+      <div class="scheme-dark col-full flex justify-center py-static-xs px-static-md bg-surface">
+        <p-text size="xs">All sizes shown for Porsche Lifestyle products are EU sizes</p-text>
       </div>
       <div class="col-wide grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-fluid-md items-center min-h-[80px]">
         <div class="flex flex-wrap gap-static-md items-center justify-start">
@@ -28,21 +28,21 @@
             <p-drilldown id="nav-drilldown">
               <p-drilldown-item identifier="id-1" label="Some Label (1)">
                 <p-drilldown-item identifier="id-1-1" label="Some Label (1-1)">
-                  <p-drilldown-link href="#">Some anchor (1-1)</p-drilldown-link>
-                  <p-drilldown-link href="#">Some anchor (1-1)</p-drilldown-link>
+                  <p-drilldown-link><a href="#">Some anchor (1-1)</a></p-drilldown-link>
+                  <p-drilldown-link><a href="#">Some anchor (1-1)</a></p-drilldown-link>
                 </p-drilldown-item>
-                <p-drilldown-link href="#">Some anchor (1)</p-drilldown-link>
-                <p-drilldown-link href="#">Some anchor (1)</p-drilldown-link>
-                <p-drilldown-link href="#">Some anchor (1)</p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (1)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (1)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (1)</a></p-drilldown-link>
               </p-drilldown-item>
               <p-drilldown-item identifier="id-2" label="Some Label (2)">
-                <p-drilldown-link href="#">Some anchor (2)</p-drilldown-link>
-                <p-drilldown-link href="#">Some anchor (2)</p-drilldown-link>
-                <p-drilldown-link href="#">Some anchor (2)</p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (2)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (2)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (2)</a></p-drilldown-link>
               </p-drilldown-item>
               <p-drilldown-item identifier="id-3" label="Some Label (3)">
-                <p-drilldown-link href="#">Some anchor (3)</p-drilldown-link>
-                <p-drilldown-link href="#">Some anchor (3)</p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (3)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (3)</a></p-drilldown-link>
               </p-drilldown-item>
             </p-drilldown>
           </nav>
@@ -91,10 +91,10 @@
           </p-button-pure>
         </div>
       </div>
-      <div class="col-full flex justify-center py-static-xs px-static-md border-t-thin border-contrast-low">
-        <p-tabs-bar>
+      <div class="col-full flex justify-center p-static-md border-t-thin border-contrast-low">
+        <p-tabs-bar compact="true">
           <a href="#">All categories</a>
-          <p-divider class="me-static-md" direction="vertical"></p-divider>
+          <p-divider class="mx-static-md" direction="vertical"></p-divider>
           <a href="#">Timepieces</a>
           <a href="#">Bags & Luggage</a>
           <a href="#">Heritage</a>
@@ -105,19 +105,17 @@
     </header>
 
     <main class="grid-template">
-      <div class="col-full grid grid-cols-subgrid items-end h-[clamp(480px,80vh,1000px)]">
+      <section class="scheme-dark col-full grid grid-cols-subgrid items-end h-[clamp(480px,80vh,1000px)]">
         <img
           class="col-span-full row-span-full min-w-full w-full min-h-full h-full object-cover object-center"
           src="/assets/trolley.webp"
           alt=""
         >
         <div class="col-extended row-span-full mb-fluid-lg dark">
-          <h1 class="grid">
-            <span class="prose-heading-lg">Pattern</span>
-            <span class="prose-display-lg">Header</span>
-          </h1>
+          <p-heading tag="h1" size="lg">Pattern</p-heading>
+          <p-heading tag="h2" size="4xl">Header</p-heading>
         </div>
-      </div>
+      </section>
     </main>
 
     <script type="module" src="main.js"></script>
