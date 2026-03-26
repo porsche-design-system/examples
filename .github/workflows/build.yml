@@ -22,12 +22,10 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'Lint'
-        run: npm run lint
+      - run: npm run lint
   angular:
     name: 'Angular'
     runs-on: ubuntu-latest
@@ -35,16 +33,13 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'Build'
-        run: npm run build --workspace=@porsche-design-system/angular
+      - run: npm run build --workspace=@porsche-design-system/angular
         env:
           ANGULAR_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/angular/"
-      - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: build-angular
           path: ./frameworks/angular/dist/
@@ -55,16 +50,13 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'Build'
-        run: npm run build --workspace=@porsche-design-system/astro
+      - run: npm run build --workspace=@porsche-design-system/astro
         env:
           ASTRO_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/astro"
-      - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: build-astro
           path: ./frameworks/astro/dist/
@@ -75,16 +67,13 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'Build'
-        run: npm run build --workspace=@porsche-design-system/next-js
+      - run: npm run build --workspace=@porsche-design-system/next-js
         env:
           NEXT_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/next-js"
-      - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: build-next-js
           path: ./frameworks/next-js/dist/
@@ -95,16 +84,13 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'Build'
-        run: npm run build --workspace=@porsche-design-system/react
+      - run: npm run build --workspace=@porsche-design-system/react
         env:
           REACT_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/react"
-      - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: build-react
           path: ./frameworks/react/dist/
@@ -115,16 +101,13 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'Build'
-        run: npm run build --workspace=@porsche-design-system/react-router
+      - run: npm run build --workspace=@porsche-design-system/react-router
         env:
           REACT_ROUTER_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/react-router/"
-      - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: build-react-router
           path: ./frameworks/react-router/build/client/examples/react-router/
@@ -135,16 +118,13 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'Build'
-        run: npm run build --workspace=@porsche-design-system/vanilla-js
+      - run: npm run build --workspace=@porsche-design-system/vanilla-js
         env:
           VANILLA_JS_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/vanilla-js"
-      - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: build-vanilla-js
           path: ./frameworks/vanilla-js/dist/
@@ -155,16 +135,13 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'Build'
-        run: npm run build --workspace=@porsche-design-system/vue
+      - run: npm run build --workspace=@porsche-design-system/vue
         env:
           VUE_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/vue"
-      - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: build-vue
           path: ./frameworks/vue/dist/
@@ -175,16 +152,13 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'Build'
-        run: npm run build --workspace=@porsche-design-system/patterns
+      - run: npm run build --workspace=@porsche-design-system/patterns
         env:
           PATTERNS_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/patterns"
-      - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: build-patterns
           path: ./patterns/dist/
@@ -195,16 +169,13 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'Build'
-        run: npm run build --workspace=@porsche-design-system/templates
+      - run: npm run build --workspace=@porsche-design-system/templates
         env:
           TEMPLATES_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/templates"
-      - name: 'Upload artifact'
-        uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: build-templates
           path: ./templates/dist/
