@@ -3,15 +3,15 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import { PorscheDesignSystemProvider } from '@porsche-design-system/components-react';
 import App from './App.tsx';
-import { ThemeProvider } from './providers/ThemeProvider.tsx';
+import { ColorSchemeProvider } from './providers/ColorSchemeProvider.tsx';
 
 // biome-ignore lint/style/noNonNullAssertion: ok
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider>
+    <ColorSchemeProvider>
       <PorscheDesignSystemProvider>
         <App />
       </PorscheDesignSystemProvider>
-    </ThemeProvider>
+    </ColorSchemeProvider>
   </StrictMode>
 );

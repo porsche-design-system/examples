@@ -1,13 +1,13 @@
 import { PWordmark } from '@porsche-design-system/components-react';
 import viteLogo from '/vite.svg';
 import reactLogo from './assets/react.svg';
-import { ThemeSelect } from './components/common/ThemeSelect.tsx';
+import { ColorSchemeSelect } from './components/common/ColorSchemeSelect.tsx';
 import { Form } from './Form.tsx';
-import { useTheme } from './hooks/useTheme.ts';
-import type { Theme } from './models/theme.ts';
+import { useColorScheme } from './hooks/useColorScheme.ts';
+import type { ColorScheme } from './models/colorScheme.ts';
 
 function App() {
-  const { theme, setTheme } = useTheme();
+  const { colorScheme, setColorScheme } = useColorScheme();
   return (
     <main className="grid-template my-fluid-md">
       <div className="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-4xl">
@@ -23,10 +23,10 @@ function App() {
         </div>
       </div>
       <div className="col-wide flex justify-items-center gap-fluid-md p-fluid-sm bg-surface rounded-2xl">
-        <ThemeSelect
+        <ColorSchemeSelect
           className="w-48"
-          value={theme}
-          onChange={(e) => setTheme((e.target as HTMLElement & { value: Theme }).value)}
+          value={colorScheme}
+          onChange={(e) => setColorScheme((e.target as HTMLElement & { value: ColorScheme }).value)}
         />
       </div>
       <Form />
