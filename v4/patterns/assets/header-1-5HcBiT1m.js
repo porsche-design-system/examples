@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-CSRv37U6.js";var e=document.getElementById(`nav-drilldown`);document.getElementById(`nav-button`).addEventListener(`click`,()=>{e.open=!0}),e.addEventListener(`dismiss`,e=>{e.target.open=!1}),e.addEventListener(`update`,e=>{e.target.activeIdentifier=e.detail.activeIdentifier});
