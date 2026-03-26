@@ -10,7 +10,7 @@ export default defineConfig(({ isSsrBuild }) => {
       'process.browser': JSON.stringify(!isSsrBuild),
     },
     build: {
-      assetsDir: 'examples/react-router',
+      assetsDir: 'examples/v4/react-router',
     },
     css: {
       transformer: 'lightningcss',
