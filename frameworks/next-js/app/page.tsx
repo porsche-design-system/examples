@@ -2,13 +2,13 @@
 
 import { PWordmark } from '@porsche-design-system/components-react/ssr';
 import Image from 'next/image';
-import { ThemeSelect } from '@/components/common/ThemeSelect';
+import { ColorSchemeSelect } from '@/components/common/ColorSchemeSelect';
 import { Form } from '@/components/Form';
-import { useTheme } from '@/hooks/useTheme';
-import type { Theme } from '@/models/theme';
+import { useColorScheme } from '@/hooks/useColorScheme';
+import type { ColorScheme } from '@/models/colorScheme';
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
+  const { colorScheme, setColorScheme } = useColorScheme();
   return (
     <main className="grid-template my-fluid-md">
       <div className="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-4xl">
@@ -28,10 +28,10 @@ export default function Home() {
         </div>
       </div>
       <div className="col-wide flex justify-items-center gap-fluid-md p-fluid-sm bg-surface rounded-2xl">
-        <ThemeSelect
+        <ColorSchemeSelect
           className="w-48"
-          value={theme}
-          onChange={(e) => setTheme((e.target as HTMLElement & { value: Theme }).value)}
+          value={colorScheme}
+          onChange={(e) => setColorScheme((e.target as HTMLElement & { value: ColorScheme }).value)}
         />
       </div>
       <Form />

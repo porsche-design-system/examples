@@ -8,7 +8,8 @@ import {
   getMetaTagsAndIconLinks,
 } from '@porsche-design-system/components-react/partials';
 import { PorscheDesignSystemProvider } from '@porsche-design-system/components-react/ssr';
-import { ThemeProvider } from '@/providers/ThemeProvider';
+import type React from 'react';
+import { ColorSchemeProvider } from '@/providers/ColorSchemeProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -44,9 +45,9 @@ export default function RootLayout({
         {getMetaTagsAndIconLinks({ appTitle: 'Porsche', format: 'jsx' })}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-canvas`}>
-        <ThemeProvider>
+        <ColorSchemeProvider>
           <PorscheDesignSystemProvider>{children}</PorscheDesignSystemProvider>
-        </ThemeProvider>
+        </ColorSchemeProvider>
       </body>
     </html>
   );
