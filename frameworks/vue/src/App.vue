@@ -2,12 +2,12 @@
 import { PorscheDesignSystemProvider } from '@porsche-design-system/components-vue';
 import { onMounted } from 'vue';
 import { RouterView } from 'vue-router';
-import { useThemeStore } from '@/stores/theme.ts';
+import { useColorSchemeStore } from '@/stores/color-scheme.ts';
 
-const themeStore = useThemeStore();
+const colorSchemeStore = useColorSchemeStore();
 
 onMounted(() => {
-  themeStore.initTheme();
+  colorSchemeStore.initColorScheme();
 });
 </script>
 

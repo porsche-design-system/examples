@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PWordmark } from '@porsche-design-system/components-vue';
-import ThemeSelect from '@/components/common/ThemeSelect.vue';
+import ColorSchemeSelect from '@/components/common/ColorSchemeSelect.vue';
 import Form from '@/components/Form.vue';
 </script>
 
@@ -12,7 +12,7 @@ import Form from '@/components/Form.vue';
       <img alt="Vue logo" class="col-wide logo" src="@/assets/logo.svg" width="70"  />
     </div>
     <div class="col-wide flex justify-items-center gap-fluid-md p-fluid-sm bg-surface rounded-2xl">
-      <ThemeSelect />
+      <ColorSchemeSelect />
     </div>
     <Form />
   </main>
