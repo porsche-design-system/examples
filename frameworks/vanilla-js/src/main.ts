@@ -1,9 +1,9 @@
 import './style.css';
 import viteLogo from '/vite.svg';
-import { initTheme, setupThemeSelect } from './theme.ts';
+import { initColorScheme, setupColorSchemeSelect } from './color-scheme.ts';
 import typescriptLogo from './typescript.svg';
 
-initTheme();
+initColorScheme();
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `  
     <main class="grid-template my-fluid-md">
@@ -21,10 +21,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </div>  
       
       <div class="col-wide flex justify-items-center gap-fluid-md p-fluid-sm bg-surface rounded-2xl">
-        <p-select name="theme" value="auto" label="Theme" compact="true" class="w-48">
-          <p-select-option value="light">Light</p-select-option>
-          <p-select-option value="dark">Dark</p-select-option>
-          <p-select-option value="auto">Auto</p-select-option>
+        <p-select name="color-scheme" value="scheme-light-dark" label="Color Scheme" compact="true" class="w-48">
+          <p-select-option value="scheme-light">Light</p-select-option>
+          <p-select-option value="scheme-dark">Dark</p-select-option>
+          <p-select-option value="scheme-light-dark">Light Dark</p-select-option>
         </p-select>
       </div>
       
@@ -78,28 +78,7 @@ export function setupForm(form: HTMLFormElement) {
 
     console.log(data);
   });
-
-  const THEME_TYPES = ['light', 'dark', 'auto'] as const;
-  type Theme = (typeof THEME_TYPES)[number];
-
-  const themeLocalStorageKey = 'theme';
-
-  const themeSelect: HTMLElement & { value: Theme } = document.querySelector('p-select[name="theme"]')!;
-
-  const storedTheme = localStorage.getItem(themeLocalStorageKey) as Theme | null;
-  if (storedTheme) {
-    themeSelect.value = storedTheme;
-    document.documentElement.classList.remove('light', 'dark', 'auto');
-    document.documentElement.classList.add(storedTheme);
-  }
-
-  themeSelect?.addEventListener('change', (e) => {
-    const theme = (e.target as HTMLElement & { value: Theme }).value;
-    document.documentElement.classList.remove('light', 'dark', 'auto');
-    document.documentElement.classList.add(theme);
-    localStorage.setItem('theme', theme);
-  });
 }
 
-setupThemeSelect('p-select[name="theme"]');
+setupColorSchemeSelect('p-select[name="color-scheme"]');
 setupForm(document.querySelector<HTMLFormElement>('#registerForm')!);
