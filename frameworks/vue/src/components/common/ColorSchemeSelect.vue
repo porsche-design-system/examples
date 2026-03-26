@@ -11,7 +11,7 @@ const onChange = (e: CustomEvent<SelectChangeEventDetail>) => {
 </script>
 
 <template>
-  <PSelect name="theme" :value="colorSchemeStore.colorScheme" label="Color Scheme" :compact="true" class="w-48" @change="onChange">
+  <PSelect name="color-scheme" :value="colorSchemeStore.colorScheme" label="Color Scheme" :compact="true" class="w-48" @change="onChange">
     <PSelectOption value="scheme-light">Light</PSelectOption>
     <PSelectOption value="scheme-dark">Dark</PSelectOption>
     <PSelectOption value="scheme-light-dark">Light Dark</PSelectOption>
