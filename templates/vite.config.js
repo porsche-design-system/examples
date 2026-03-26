@@ -7,6 +7,7 @@ import {
   getMetaTagsAndIconLinks,
 } from '@porsche-design-system/components-js/partials';
 import tailwindcss from '@tailwindcss/vite';
+import { Features } from 'lightningcss';
 import { defineConfig } from 'vite';
 
 const REGEX_HEAD = /<\/head>/;
@@ -54,6 +55,12 @@ export default defineConfig({
         'landing-page-1': resolve(__dirname, 'src/landing-page/1/index.html'),
         'admin-panel-1': resolve(__dirname, 'src/admin-panel/1/index.html'),
       },
+    },
+  },
+  css: {
+    transformer: "lightningcss",
+    lightningcss: {
+      exclude: Features.LightDark,
     },
   },
   plugins: [transformIndexHtmlPlugin(), tailwindcss()],
