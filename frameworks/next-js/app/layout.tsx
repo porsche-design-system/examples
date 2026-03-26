@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scheme-light-dark bg-canvas">
       <head>
         <base href={process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/` : '/'} />
         {/* preloads Porsche Next font (=> minimize FOUT) */}
@@ -44,7 +44,7 @@ export default function RootLayout({
         {/* injects favicon, apple touch icons, android touch icons, etc. */}
         {getMetaTagsAndIconLinks({ appTitle: 'Porsche', format: 'jsx' })}
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-canvas`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ColorSchemeProvider>
           <PorscheDesignSystemProvider>{children}</PorscheDesignSystemProvider>
         </ColorSchemeProvider>
