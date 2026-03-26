@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --base-href \"$ANGULAR_PUBLIC_BASE_PATH\"",
-    "watch": "ng build --watch --configuration development",
+    "prebuild": "node prebuild.mjs",
+    "start": "npm run prebuild && ng serve",
+    "build": "npm run prebuild && ng build --base-href \"$ANGULAR_PUBLIC_BASE_PATH\"",
+    "watch": "npm run prebuild && ng build --watch --configuration development",
     "test": "ng test",
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
@@ -33,7 +34,6 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2",
-    "@angular-builders/custom-webpack": "^21.0.3",
     "@angular/build": "^21.2.4",
     "@angular/cli": "^21.2.4",
     "@angular/compiler-cli": "^21.2.6",
