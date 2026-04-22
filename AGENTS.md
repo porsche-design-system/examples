@@ -17,6 +17,8 @@ This repository stores **project skills** under [`.agents/skills/`](.agents/skil
 | Next.js upgrade           | [`.agents/skills/next-upgrade/SKILL.md`](.agents/skills/next-upgrade/SKILL.md)                           | Version upgrades, codemods, official migration guides           |
 | Node.js best practices    | [`.agents/skills/nodejs-best-practices/SKILL.md`](.agents/skills/nodejs-best-practices/SKILL.md)         | General Node.js decisions and principles                        |
 | Playwright                | [`.agents/skills/playwright-best-practices/SKILL.md`](.agents/skills/playwright-best-practices/SKILL.md) | E2E, component tests, CI, flakiness, a11y testing               |
+| Porsche Design System     | [`.agents/skills/porsche-design-system/SKILL.md`](.agents/skills/porsche-design-system/SKILL.md)         | PDS v4 components, packages, SSR/Next imports, tokens, Tailwind |
+| Porsche DS accessibility  | [`.agents/skills/porsche-design-system/accessibility/SKILL.md`](.agents/skills/porsche-design-system/accessibility/SKILL.md) | `aria` prop, hideLabel, Shadow DOM limits, WCAG-focused PDS usage |
 | SEO                       | [`.agents/skills/seo/SKILL.md`](.agents/skills/seo/SKILL.md)                                             | Meta tags, structured data, search optimization                 |
 | Tailwind CSS patterns     | [`.agents/skills/tailwind-css-patterns/SKILL.md`](.agents/skills/tailwind-css-patterns/SKILL.md)         | Utility styling, responsive layouts, design-system CSS workflow |
 | TypeScript advanced types | [`.agents/skills/typescript-advanced-types/SKILL.md`](.agents/skills/typescript-advanced-types/SKILL.md) | Complex generics, conditional/mapped types                      |
