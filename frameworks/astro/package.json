@@ -12,14 +12,14 @@
   },
   "dependencies": {
     "@astrojs/vue": "^6.0.1",
-    "@porsche-design-system/components-js": "4.0.0-beta.4",
-    "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.0.8",
-    "tailwindcss": "^4.2.2",
-    "vue": "^3.5.31"
+    "@porsche-design-system/components-js": "4.0.0-rc.1",
+    "@tailwindcss/postcss": "^4.2.4",
+    "astro": "^6.1.8",
+    "tailwindcss": "^4.2.4",
+    "vue": "^3.5.32"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.2"
+    "@playwright/test": "^1.59.1"
   },
   "volta": {
     "extends": "../../package.json"

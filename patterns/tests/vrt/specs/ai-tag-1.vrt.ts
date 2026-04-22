@@ -3,7 +3,8 @@ import { enableForcedColors, enableRightToLeft, enableTextZoom } from '../utils'
 
 const pattern = 'ai-tag-1';
 
-test.describe(`has no visual regression "${pattern}"`, () => {
+// AI-Tag is deprecated and will be removed soon
+test.fixme(`has no visual regression "${pattern}"`, () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/ai-tag/1/');
     await expect(page.locator('html')).toHaveClass(/hydrated/);

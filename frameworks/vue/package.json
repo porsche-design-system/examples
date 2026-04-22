@@ -16,32 +16,32 @@
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
-    "@porsche-design-system/components-vue": "4.0.0-beta.4",
+    "@porsche-design-system/components-vue": "4.0.0-rc.1",
     "@vee-validate/zod": "^4.15.1",
     "pinia": "^3.0.4",
     "vee-validate": "^4.15.1",
-    "vue": "^3.5.31",
+    "vue": "^3.5.32",
     "vue-router": "^5.0.4",
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.2",
-    "@tailwindcss/vite": "^4.2.2",
+    "@playwright/test": "^1.59.1",
+    "@tailwindcss/vite": "^4.2.4",
     "@tsconfig/node22": "^22.0.5",
     "@types/jsdom": "^28.0.1",
-    "@types/node": "^25.5.0",
-    "@vitejs/plugin-vue": "^6.0.5",
+    "@types/node": "^25.6.0",
+    "@vitejs/plugin-vue": "^6.0.6",
     "@vitejs/plugin-vue-jsx": "^5.1.5",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.9.1",
-    "jsdom": "^29.0.1",
+    "jsdom": "^29.0.2",
     "npm-run-all2": "^8.0.4",
-    "tailwindcss": "^4.2.2",
-    "typescript": "~6.0.2",
-    "vite": "^8.0.3",
+    "tailwindcss": "^4.2.4",
+    "typescript": "~6.0.3",
+    "vite": "^8.0.9",
     "vite-plugin-vue-devtools": "^8.1.1",
-    "vitest": "^4.1.1",
-    "vue-tsc": "^3.2.6"
+    "vitest": "^4.1.5",
+    "vue-tsc": "^3.2.7"
   },
   "volta": {
     "extends": "../../package.json"
