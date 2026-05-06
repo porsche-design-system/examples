@@ -1,5 +1,5 @@
-:HL["/examples/housekeeping/remove-ai-tag/next-js/_next/static/chunks/d2c23c41a997c2cd.css","style"]
+:HL["/examples/housekeeping/remove-ai-tag/next-js/_next/static/chunks/0vnzo5wx1a7va.css","style"]
 :HL["https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v3.32.0-rc.2.a689e0fa147ebafc1052.js","script",{"crossOrigin":""}]
-0:{"buildId":"AIZtDouQK1EJcIxrpNAFx","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.0.0-rc.1.ea079fd9097cd48c81fa.js","script",{"crossOrigin":""}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"F7Xd0rndYXYoaw3wdkzC4"}
