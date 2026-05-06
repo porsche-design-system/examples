@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@porsche-design-system/components-js": "4.0.0-rc.1",
+    "@porsche-design-system/components-js": "4.1.0",
     "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
