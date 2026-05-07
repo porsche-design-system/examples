@@ -1,4 +1,4 @@
-# A11y UI Testing (Next.js)
+# PDS UI Testing (Next.js)
 
 This package is a minimal technical baseline for Porsche Design System integration.
 Each route intentionally contains only a PDS heading and simple links.
@@ -15,10 +15,10 @@ Each route intentionally contains only a PDS heading and simple links.
 Run from the repository root:
 
 ```bash
-npm run dev:a11y-ui-testing
-npm run build:a11y-ui-testing
-npm run preview:a11y-ui-testing
-npm run test:a11y:a11y-ui-testing
+npm run dev:pds-ui-testing
+npm run build:pds-ui-testing
+npm run preview:pds-ui-testing
+npm run test:a11y:pds-ui-testing
 ```
 
 ## Static export default
@@ -26,7 +26,7 @@ npm run test:a11y:a11y-ui-testing
 Static export is the default mode and is used for simple hosting:
 
 ```bash
-npm run build:a11y-ui-testing
+npm run build:pds-ui-testing
 ```
 
 `next.config.ts` defaults to:
@@ -40,8 +40,8 @@ npm run build:a11y-ui-testing
 To run and build in SSR mode, set:
 
 ```bash
-NEXT_OUTPUT_MODE=ssr npm run dev:a11y-ui-testing
-NEXT_OUTPUT_MODE=ssr npm run build:a11y-ui-testing
+NEXT_OUTPUT_MODE=ssr npm run dev:pds-ui-testing
+NEXT_OUTPUT_MODE=ssr npm run build:pds-ui-testing
 ```
 
 When `NEXT_OUTPUT_MODE=ssr`, `next.config.ts` disables static export behavior and uses standard SSR output.
@@ -51,7 +51,7 @@ When `NEXT_OUTPUT_MODE=ssr`, `next.config.ts` disables static export behavior an
 To serve under a sub-path:
 
 ```bash
-NEXT_PUBLIC_BASE_PATH=/examples/v4/a11y-ui-testing npm run build:a11y-ui-testing
+NEXT_PUBLIC_BASE_PATH=/examples/v4/pds-ui-testing npm run build:pds-ui-testing
 ```
 
 ## Coverage map

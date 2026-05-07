@@ -10,8 +10,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "A11y UI Testing",
-    template: "%s | A11y UI Testing",
+    default: "PDS UI Testing",
+    template: "%s | PDS UI Testing",
   },
   description:
     "Fake e-commerce flow for real-user accessibility testing of Porsche Design System components.",
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         {getComponentChunkLinks({ format: "jsx" })}
         {getIconLinks({ format: "jsx" })}
         {getMetaTagsAndIconLinks({
-          appTitle: "PDS A11y UI Testing",
+          appTitle: "PDS UI Testing",
           format: "jsx",
         })}
       </head>
