@@ -3,13 +3,14 @@ import {
   PLinkPure,
 } from "@porsche-design-system/components-react/ssr";
 import type { Metadata } from "next";
+import { detailSampleIds } from "../sample-ids";
 
 type DetailPageProps = {
   params: Promise<{ id: string }>;
 };
 
 export const generateStaticParams = () => {
-  return [{ id: "watch-001" }];
+  return detailSampleIds.map((id) => ({ id }));
 };
 
 export async function generateMetadata({

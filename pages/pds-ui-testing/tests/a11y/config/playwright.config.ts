@@ -34,5 +34,6 @@ export default defineConfig({
   webServer: {
     command: 'npm run dev',
     port: 3010,
+    reuseExistingServer: !process.env.CI,
   },
 });

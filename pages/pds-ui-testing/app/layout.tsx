@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   getComponentChunkLinks,
   getFontLinks,
@@ -8,13 +8,20 @@ import {
 import { PorscheDesignSystemProvider } from "@porsche-design-system/components-react/ssr";
 import "./globals.css";
 
+const APP_TITLE = "PDS UI Testing";
+
 export const metadata: Metadata = {
   title: {
-    default: "PDS UI Testing",
-    template: "%s | PDS UI Testing",
+    default: APP_TITLE,
+    template: `%s | ${APP_TITLE}`,
   },
   description:
-    "Fake e-commerce flow for real-user accessibility testing of Porsche Design System components.",
+    "Minimal technical baseline for accessibility testing of Porsche Design System components.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 type RootLayoutProps = {
@@ -35,10 +42,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         {getFontLinks({ format: "jsx" })}
         {getComponentChunkLinks({ format: "jsx" })}
         {getIconLinks({ format: "jsx" })}
-        {getMetaTagsAndIconLinks({
-          appTitle: "PDS UI Testing",
-          format: "jsx",
-        })}
+        {getMetaTagsAndIconLinks({ appTitle: APP_TITLE, format: "jsx" })}
       </head>
       <body>
         <PorscheDesignSystemProvider>{children}</PorscheDesignSystemProvider>

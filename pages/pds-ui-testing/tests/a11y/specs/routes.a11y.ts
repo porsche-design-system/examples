@@ -1,8 +1,10 @@
-import { expect, test } from '../utils';
 import { readdirSync } from 'node:fs';
+import { join } from 'node:path';
+import { detailSampleIds } from '../../../app/detail/sample-ids';
+import { expect, test } from '../utils';
 
 const dynamicSegmentSamples: Record<string, string> = {
-  '[id]': 'watch-001',
+  '[id]': detailSampleIds[0],
 };
 
 const isPageFile = (entryName: string): boolean => entryName === 'page.tsx';
@@ -13,7 +15,7 @@ const getPageRoutes = (dir: string, parentParts: string[] = []): string[] => {
 
   for (const entry of entries) {
     if (entry.isDirectory()) {
-      routes.push(...getPageRoutes(`${dir}/${entry.name}`, [...parentParts, entry.name]));
+      routes.push(...getPageRoutes(join(dir, entry.name), [...parentParts, entry.name]));
       continue;
     }
     if (entry.isFile() && isPageFile(entry.name)) {
@@ -25,10 +27,12 @@ const getPageRoutes = (dir: string, parentParts: string[] = []): string[] => {
   return routes;
 };
 
-const appDir = 'app';
+// __dirname is provided by Playwright's TS loader (CJS).
+const projectRoot = join(__dirname, '..', '..', '..');
+const appDir = join(projectRoot, 'app');
 const testRoutes = Array.from(new Set(getPageRoutes(appDir))).sort((a, b) => a.localeCompare(b));
 
-test.describe('A11y test shop', () => {
+test.describe('A11y route smoke tests', () => {
   for (const route of testRoutes) {
     test(`axe has no critical violations on ${route}`, async ({ page, makeAxeBuilder }) => {
       await page.goto(route);
