@@ -54,5 +54,51 @@
       "title": "Detail",
       "goToCheckout": "Go to checkout"
     }
+  },
+  "footer": {
+    "regionTitle": "Current Region / Language",
+    "regionMarket": "USA / English",
+    "regionChange": "Change",
+    "newsletterTitle": "Newsletter",
+    "newsletterCopy": "Latest news directly in your inbox.",
+    "subscribe": "Subscribe",
+    "newsletterLink": "More about the newsletter",
+    "contactTitle": "Contact",
+    "contactCopy": "Do you have any questions?",
+    "contactForm": "Contact Form",
+    "contactLink": "More contact options",
+    "socialTitle": "Social Media",
+    "socialCopy": "Get in touch with us on social media.",
+    "socialLabels": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "pinterest": "Pinterest",
+      "youtube": "YouTube",
+      "x": "X (Twitter)",
+      "linkedin": "LinkedIn"
+    },
+    "socialUrls": {
+      "facebook": "https://www.facebook.com/porsche",
+      "instagram": "https://www.instagram.com/porsche/",
+      "pinterest": "https://www.pinterest.com/porsche/",
+      "youtube": "https://www.youtube.com/user/Porsche",
+      "x": "https://twitter.com/Porsche",
+      "linkedin": "https://www.linkedin.com/company/porsche-ag/"
+    },
+    "companyTitle": "Company",
+    "companyLinks": {
+      "glance": "Porsche at a Glance",
+      "na": "Porsche Cars North America",
+      "sustainability": "Sustainability",
+      "career": "Career",
+      "press": "Press"
+    },
+    "legalCopyright": "© 2026 Porsche AG. All rights reserved.",
+    "legalNotice": "Legal notice",
+    "legalIcp": "MIIT ICP No. 10013326",
+    "legalEnv": "Environmental information disclosure",
+    "legalSecurity": "Public Security No. 31011502014993",
+    "legalDisclaimer": "Porsche strongly recommends to purchase cars and parts from authorised Porsche Centres only.",
+    "legalMoreInfo": "More information"
   }
 }
