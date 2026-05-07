@@ -41,6 +41,11 @@ jobs:
         with:
           name: build-next-js
           path: "./${{ env.BRANCH_BASE_PATH }}/next-js/"
+      - name: 'Download artifact "PDS UI Testing"'
+        uses: actions/download-artifact@v8
+        with:
+          name: build-pds-ui-testing
+          path: "./${{ env.BRANCH_BASE_PATH }}/pds-ui-testing/"
       - name: 'Download artifact "React"'
         uses: actions/download-artifact@v8
         with:
