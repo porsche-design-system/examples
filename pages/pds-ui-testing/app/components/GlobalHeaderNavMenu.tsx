@@ -12,10 +12,15 @@ import type {
   SelectedAriaAttributes,
   ButtonPureAriaAttribute,
 } from "@porsche-design-system/components-react/ssr";
+import type { Dictionary } from "@/app/i18n/get-dictionary";
 
 const SHOP_NAV_DRILLDOWN_ID = "shop-navigation-drilldown";
 
-export function GlobalHeaderNavMenu() {
+type Props = {
+  nav: Dictionary["nav"];
+};
+
+export function GlobalHeaderNavMenu({ nav }: Props) {
   const [open, setOpen] = useState(false);
   const [activeIdentifier, setActiveIdentifier] = useState<
     string | undefined
@@ -54,57 +59,57 @@ export function GlobalHeaderNavMenu() {
         size={{ base: "small", m: "medium" }}
         type="button"
       >
-        Menu
+        {nav.menu}
       </PButtonPure>
       <PDrilldown
         activeIdentifier={activeIdentifier}
-        aria={{ "aria-label": "Shop categories" }}
+        aria={{ "aria-label": nav.shopCategories }}
         id={SHOP_NAV_DRILLDOWN_ID}
         onDismiss={handleDismiss}
         onUpdate={handleUpdate}
         open={open}
       >
-        <PDrilldownItem identifier="women" label="Women">
-          <PDrilldownLink href="#shop/women">View all Women</PDrilldownLink>
+        <PDrilldownItem identifier="women" label={nav.women}>
+          <PDrilldownLink href="#shop/women">{nav.viewAllWomen}</PDrilldownLink>
         </PDrilldownItem>
-        <PDrilldownItem identifier="men" label="Men">
-          <PDrilldownLink href="#shop/men">View all Men</PDrilldownLink>
+        <PDrilldownItem identifier="men" label={nav.men}>
+          <PDrilldownLink href="#shop/men">{nav.viewAllMen}</PDrilldownLink>
         </PDrilldownItem>
-        <PDrilldownItem identifier="kids" label="Kids">
-          <PDrilldownLink href="#shop/kids">View all Kids</PDrilldownLink>
+        <PDrilldownItem identifier="kids" label={nav.kids}>
+          <PDrilldownLink href="#shop/kids">{nav.viewAllKids}</PDrilldownLink>
         </PDrilldownItem>
-        <PDrilldownItem identifier="accessories" label="Accessories">
+        <PDrilldownItem identifier="accessories" label={nav.accessories}>
           <PDrilldownLink href="#shop/accessories/clothing">
-            Clothing
+            {nav.clothing}
           </PDrilldownLink>
           <PDrilldownLink href="#shop/accessories/charging">
-            Charging Hardware
+            {nav.chargingHardware}
           </PDrilldownLink>
           <PDrilldownLink href="#shop/accessories">
-            View all products
+            {nav.viewAllProducts}
           </PDrilldownLink>
         </PDrilldownItem>
-        <PDrilldownItem identifier="model-cars" label="Model Cars">
+        <PDrilldownItem identifier="model-cars" label={nav.modelCars}>
           <PDrilldownLink href="#shop/model-cars">
-            View all Model Cars
+            {nav.viewAllModelCars}
           </PDrilldownLink>
         </PDrilldownItem>
         <PDrilldownItem
           identifier="porsche-originals"
-          label="Porsche Originals"
+          label={nav.porscheOriginals}
         >
           <PDrilldownLink href="#shop/porsche-originals">
-            View all Porsche Originals
+            {nav.viewAllPorscheOriginals}
           </PDrilldownLink>
         </PDrilldownItem>
-        <PDrilldownItem identifier="porsche-design" label="Porsche Design">
+        <PDrilldownItem identifier="porsche-design" label={nav.porscheDesign}>
           <PDrilldownLink href="#shop/porsche-design">
-            View all Porsche Design
+            {nav.viewAllPorscheDesign}
           </PDrilldownLink>
         </PDrilldownItem>
-        <PDrilldownItem identifier="new-releases" label="New releases">
+        <PDrilldownItem identifier="new-releases" label={nav.newReleases}>
           <PDrilldownLink href="#shop/new-releases">
-            View all new releases
+            {nav.viewAllNewReleases}
           </PDrilldownLink>
         </PDrilldownItem>
       </PDrilldown>

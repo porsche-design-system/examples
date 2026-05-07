@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "appTitle": "PDS UI Testing",
+    "description": "Minimale technische Basis für Barrierefreiheitstests von Porsche Design System Komponenten."
+  },
+  "nav": {
+    "main": "Hauptnavigation",
+    "menu": "Menü",
+    "shopCategories": "Shop-Kategorien",
+    "women": "Damen",
+    "men": "Herren",
+    "kids": "Kinder",
+    "accessories": "Accessoires",
+    "modelCars": "Modellautos",
+    "porscheOriginals": "Porsche Originals",
+    "porscheDesign": "Porsche Design",
+    "newReleases": "Neuheiten",
+    "viewAllWomen": "Alle Damen anzeigen",
+    "viewAllMen": "Alle Herren anzeigen",
+    "viewAllKids": "Alle Kinder anzeigen",
+    "clothing": "Bekleidung",
+    "chargingHardware": "Lade-Hardware",
+    "viewAllProducts": "Alle Produkte anzeigen",
+    "viewAllModelCars": "Alle Modellautos anzeigen",
+    "viewAllPorscheOriginals": "Alle Porsche Originals anzeigen",
+    "viewAllPorscheDesign": "Alle Porsche Design anzeigen",
+    "viewAllNewReleases": "Alle Neuheiten anzeigen"
+  },
+  "header": {
+    "crestLabel": "Porsche",
+    "shoppingCart": "Warenkorb",
+    "myPorsche": "My Porsche",
+    "language": "Sprache",
+    "localeNames": {
+      "en": "English",
+      "de": "Deutsch"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Startseite",
+      "goToOverview": "Zur Übersicht",
+      "goToCheckout": "Zur Kasse"
+    },
+    "overview": {
+      "title": "Übersicht",
+      "goToDetail": "Zum Detail"
+    },
+    "checkout": {
+      "title": "Kasse",
+      "goToHome": "Zur Startseite"
+    },
+    "detail": {
+      "title": "Detail",
+      "goToCheckout": "Zur Kasse"
+    }
+  }
+}

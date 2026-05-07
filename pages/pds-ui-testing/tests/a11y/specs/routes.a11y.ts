@@ -3,11 +3,31 @@ import { join } from 'node:path';
 import { detailSampleIds } from '../../../app/detail/sample-ids';
 import { expect, test } from '../utils';
 
-const dynamicSegmentSamples: Record<string, string> = {
+const dynamicSegmentSamples: Record<string, string | string[]> = {
+  '[locale]': ['en', 'de'],
   '[id]': detailSampleIds[0],
 };
 
 const isPageFile = (entryName: string): boolean => entryName === 'page.tsx';
+
+const expandResolvedParts = (parts: string[]): string[][] => {
+  return parts.reduce<string[][]>(
+    (acc, part) => {
+      const sample = dynamicSegmentSamples[part];
+      const options: string[] =
+        sample === undefined
+          ? [part]
+          : Array.isArray(sample)
+            ? sample
+            : [sample];
+      if (acc.length === 0) {
+        return options.map((value) => [value]);
+      }
+      return acc.flatMap((prefix) => options.map((value) => [...prefix, value]));
+    },
+    [],
+  );
+};
 
 const getPageRoutes = (dir: string, parentParts: string[] = []): string[] => {
   const entries = readdirSync(dir, { withFileTypes: true });
@@ -19,8 +39,9 @@ const getPageRoutes = (dir: string, parentParts: string[] = []): string[] => {
       continue;
     }
     if (entry.isFile() && isPageFile(entry.name)) {
-      const resolvedParts = parentParts.map((part) => dynamicSegmentSamples[part] ?? part);
-      routes.push(resolvedParts.length === 0 ? '/' : `/${resolvedParts.join('/')}`);
+      for (const resolvedParts of expandResolvedParts(parentParts)) {
+        routes.push(resolvedParts.length === 0 ? '/' : `/${resolvedParts.join('/')}`);
+      }
     }
   }
 

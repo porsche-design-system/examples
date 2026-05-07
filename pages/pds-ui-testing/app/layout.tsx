@@ -6,7 +6,7 @@ import {
   getMetaTagsAndIconLinks,
 } from "@porsche-design-system/components-react/partials";
 import { PorscheDesignSystemProvider } from "@porsche-design-system/components-react/ssr";
-import { GlobalHeader } from "./components/GlobalHeader";
+import { LocaleHtmlLang } from "./components/LocaleHtmlLang";
 import "./globals.css";
 
 const APP_TITLE = "PDS UI Testing";
@@ -46,10 +46,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         {getMetaTagsAndIconLinks({ appTitle: APP_TITLE, format: "jsx" })}
       </head>
       <body>
-        <PorscheDesignSystemProvider>
-          <GlobalHeader />
-          {children}
-        </PorscheDesignSystemProvider>
+        <LocaleHtmlLang />
+        <PorscheDesignSystemProvider>{children}</PorscheDesignSystemProvider>
       </body>
     </html>
   );

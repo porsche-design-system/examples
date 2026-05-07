@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "appTitle": "PDS UI Testing",
+    "description": "Minimal technical baseline for accessibility testing of Porsche Design System components."
+  },
+  "nav": {
+    "main": "Main",
+    "menu": "Menu",
+    "shopCategories": "Shop categories",
+    "women": "Women",
+    "men": "Men",
+    "kids": "Kids",
+    "accessories": "Accessories",
+    "modelCars": "Model Cars",
+    "porscheOriginals": "Porsche Originals",
+    "porscheDesign": "Porsche Design",
+    "newReleases": "New releases",
+    "viewAllWomen": "View all Women",
+    "viewAllMen": "View all Men",
+    "viewAllKids": "View all Kids",
+    "clothing": "Clothing",
+    "chargingHardware": "Charging Hardware",
+    "viewAllProducts": "View all products",
+    "viewAllModelCars": "View all Model Cars",
+    "viewAllPorscheOriginals": "View all Porsche Originals",
+    "viewAllPorscheDesign": "View all Porsche Design",
+    "viewAllNewReleases": "View all new releases"
+  },
+  "header": {
+    "crestLabel": "Porsche",
+    "shoppingCart": "Shopping cart",
+    "myPorsche": "My Porsche",
+    "language": "Language",
+    "localeNames": {
+      "en": "English",
+      "de": "Deutsch"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Home",
+      "goToOverview": "Go to overview",
+      "goToCheckout": "Go to checkout"
+    },
+    "overview": {
+      "title": "Overview",
+      "goToDetail": "Go to detail"
+    },
+    "checkout": {
+      "title": "Checkout",
+      "goToHome": "Go to home"
+    },
+    "detail": {
+      "title": "Detail",
+      "goToCheckout": "Go to checkout"
+    }
+  }
+}
