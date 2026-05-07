@@ -1,0 +1,5 @@
+.next/
+dist/
+out/
+playwright-report/
+tests/a11y/test-results/
