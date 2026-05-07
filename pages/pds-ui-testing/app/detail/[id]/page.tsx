@@ -26,7 +26,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
   return (
     <main data-testid="main-content">
       <PHeading tag="h1">Detail ({id})</PHeading>
-      <PLinkPure href="../../checkout/" icon="arrow-head-right">
+      <PLinkPure href="checkout/" icon="arrow-head-right">
         Go to checkout
       </PLinkPure>
     </main>

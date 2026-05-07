@@ -12,7 +12,7 @@ export default function CheckoutPage() {
   return (
     <main data-testid="main-content">
       <PHeading tag="h1">Checkout</PHeading>
-      <PLinkPure href="../" icon="arrow-head-right">
+      <PLinkPure href="./" icon="arrow-head-right">
         Go to home
       </PLinkPure>
     </main>
