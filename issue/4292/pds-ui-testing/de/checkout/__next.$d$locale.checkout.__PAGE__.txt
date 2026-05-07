@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[46310,["/examples/issue/4292/pds-ui-testing/_next/static/chunks/0u~r3i7vlq-yy.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/029ls~4ieul1a.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/0ldih.~zjy2ks.js"],"PHeading"]
+3:I[49635,["/examples/issue/4292/pds-ui-testing/_next/static/chunks/0u~r3i7vlq-yy.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/029ls~4ieul1a.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/0ldih.~zjy2ks.js"],"PLinkPure"]
+4:I[1333,["/examples/issue/4292/pds-ui-testing/_next/static/chunks/0u~r3i7vlq-yy.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/029ls~4ieul1a.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"data-testid":"main-content","children":[["$","$L2",null,{"tag":"h1","children":"Kasse"}],["$","$L3",null,{"href":"/examples/issue/4292/pds-ui-testing/de/","icon":"arrow-head-right","children":"Zur Startseite"}]]}],null,["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"vFhPeax0KJHcgaO5vj8ZX"}
+6:null
