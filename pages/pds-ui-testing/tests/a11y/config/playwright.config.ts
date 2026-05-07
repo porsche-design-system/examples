@@ -24,11 +24,11 @@ export default defineConfig({
   projects: [
     {
       name: 'Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      use: { ...devices['Desktop Chrome'] },
     },
     {
       name: 'Mobile Chrome',
-      use: { ...devices['Pixel 7'], channel: 'chrome' },
+      use: { ...devices['Pixel 7'] },
     },
   ],
   webServer: {
