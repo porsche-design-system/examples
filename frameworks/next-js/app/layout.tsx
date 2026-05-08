@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { PorscheDesignSystemProvider } from '@porsche-design-system/components-react/ssr';
 import {
   getComponentChunkLinks,
-  getFontFaceStyles,
   getFontLinks,
   getIconLinks,
-  getInitialStyles,
   getMetaTagsAndIconLinks,
 } from '@porsche-design-system/components-react/partials';
+import { PorscheDesignSystemProvider } from '@porsche-design-system/components-react/ssr';
+import type React from 'react';
+import { ColorSchemeProvider } from '@/providers/ColorSchemeProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -32,13 +32,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scheme-light-dark bg-canvas">
       <head>
         <base href={process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/` : '/'} />
-        {/* necessary for SSR support, injects stylesheet which defines visibility of pre-hydrated PDS components */}
-        {getInitialStyles({ format: 'jsx' })}
-        {/* injects stylesheet which defines Porsche Next CSS font-face definition (=> minimize FOUT) */}
-        {getFontFaceStyles({ format: 'jsx' })}
         {/* preloads Porsche Next font (=> minimize FOUT) */}
         {getFontLinks({ format: 'jsx' })}
         {/* preloads PDS component core chunk from CDN for PDS component hydration (=> improve loading performance) */}
@@ -49,7 +45,9 @@ export default function RootLayout({
         {getMetaTagsAndIconLinks({ appTitle: 'Porsche', format: 'jsx' })}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <PorscheDesignSystemProvider>{children}</PorscheDesignSystemProvider>
+        <ColorSchemeProvider>
+          <PorscheDesignSystemProvider>{children}</PorscheDesignSystemProvider>
+        </ColorSchemeProvider>
       </body>
     </html>
   );

@@ -1,2 +1,7 @@
+@import "@porsche-design-system/components-vue";
 @import "tailwindcss";
 @import "@porsche-design-system/components-vue/tailwindcss";
+
+:not(:defined) {
+  visibility: hidden;
+}

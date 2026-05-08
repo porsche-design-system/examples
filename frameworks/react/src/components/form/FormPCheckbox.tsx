@@ -1,5 +1,5 @@
 import {
-  type CheckboxUpdateEventDetail,
+  type CheckboxChangeEventDetail,
   PCheckbox,
   type PCheckboxProps,
 } from '@porsche-design-system/components-react';
@@ -28,7 +28,9 @@ export const FormPCheckbox = <T extends FieldValues>({
         <PCheckbox
           name={name}
           onBlur={onBlur}
-          onUpdate={(e: CustomEvent<CheckboxUpdateEventDetail>) => onChange(e.detail.checked)}
+          onChange={(e: CustomEvent<CheckboxChangeEventDetail>) =>
+            onChange((e.target as HTMLElement & { checked: boolean }).checked)
+          }
           checked={value}
           state={fieldState.error ? 'error' : 'none'}
           {...rest}

@@ -1,16 +1,10 @@
-<main class="grid-template">
-  <div
-    class="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-lg"
-  >
+<main class="grid-template my-fluid-md">
+  <div class="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-4xl">
     <p-wordmark class="col-wide"></p-wordmark>
     <h1 class="col-wide prose-display-md">Porsche Design System</h1>
     <div class="col-wide">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 982 239"
-        fill="none"
-        class="w-[10rem]"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 982 239" fill="none" class="w-[10rem]">
+        <title>Some alternative text for screen readers describing the element</title>
         <g clip-path="url(#a)">
           <path
             fill="url(#b)"
@@ -34,23 +28,21 @@
             <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5" />
             <stop offset="1" stop-color="#FF41F8" stop-opacity="0" />
           </radialGradient>
-          <linearGradient
-            id="b"
-            x1="0"
-            x2="982"
-            y1="192"
-            y2="192"
-            gradientUnits="userSpaceOnUse"
-          >
+          <linearGradient id="b" x1="0" x2="982" y1="192" y2="192" gradientUnits="userSpaceOnUse">
             <stop stop-color="#F0060B" />
             <stop offset="0" stop-color="#F0070C" />
             <stop offset=".526" stop-color="#CC26D5" />
             <stop offset="1" stop-color="#7702FF" />
           </linearGradient>
-          <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
+          <clipPath id="a">
+            <path fill="#fff" d="M0 0h982v239H0z" />
+          </clipPath>
         </defs>
       </svg>
     </div>
+  </div>
+  <div class="col-wide flex justify-items-center gap-fluid-md p-fluid-sm bg-surface rounded-2xl">
+    <color-scheme-select />
   </div>
   <app-form-page class="col-wide grid grid-cols-subgrid" />
   <router-outlet />
