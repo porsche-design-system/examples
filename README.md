@@ -7,24 +7,24 @@ The projects are built using [WCAG 2.2 (AA)](https://www.w3.org/TR/WCAG22/) comp
 
 ### Frameworks
 
-- [Angular](https://porsche-design-system.github.io/examples/v4/angular/)
-- [Astro](https://porsche-design-system.github.io/examples/v4/astro/)
-- [Next.js](https://porsche-design-system.github.io/examples/v4/next-js/)
-- [React](https://porsche-design-system.github.io/examples/v4/react/)
-- [React Router](https://porsche-design-system.github.io/examples/v4/react-router/)
-- [Vanilla JS](https://porsche-design-system.github.io/examples/v4/vanilla-js/)
-- [Vue](https://porsche-design-system.github.io/examples/v4/vue/)
+- [Angular](https://porsche-design-system.github.io/examples/main/angular/)
+- [Astro](https://porsche-design-system.github.io/examples/main/astro/)
+- [Next.js](https://porsche-design-system.github.io/examples/main/next-js/)
+- [React](https://porsche-design-system.github.io/examples/main/react/)
+- [React Router](https://porsche-design-system.github.io/examples/main/react-router/)
+- [Vanilla JS](https://porsche-design-system.github.io/examples/main/vanilla-js/)
+- [Vue](https://porsche-design-system.github.io/examples/main/vue/)
 
 ### Patterns
 
-- [Header / 1](https://porsche-design-system.github.io/examples/v3/patterns/header/1/)
-- [Header / 2](https://porsche-design-system.github.io/examples/v3/patterns/header/2/)
-- [Footer](https://porsche-design-system.github.io/examples/v3/patterns/footer/1/)
+- [Header / 1](https://porsche-design-system.github.io/examples/main/patterns/header/1/)
+- [Header / 2](https://porsche-design-system.github.io/examples/main/patterns/header/2/)
+- [Footer](https://porsche-design-system.github.io/examples/main/patterns/footer/1/)
 
 ### Templates
 
-- [Landing Page](https://porsche-design-system.github.io/examples/v4/templates/landing-page/1/)
-- [Admin Panel](https://porsche-design-system.github.io/examples/v4/templates/admin-panel/1/)
+- [Landing Page](https://porsche-design-system.github.io/examples/main/templates/landing-page/1/)
+- [Admin Panel](https://porsche-design-system.github.io/examples/main/templates/admin-panel/1/)
 
 ## Getting started
 
