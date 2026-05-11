@@ -7,6 +7,7 @@ import {
   PTag,
   PText,
 } from "@porsche-design-system/components-react/ssr";
+import type { CatalogProduct } from "@/app/data/get-catalog";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
 
 type HomeCopy = Dictionary["pages"]["home"];
@@ -23,14 +24,9 @@ const FEATURE_IMAGES = [
   "./home-feature-trunk.png",
 ] as const;
 
-const PRODUCT_IMAGES = [
-  "./home-product-keychain.jpg",
-  "./home-product-cap.jpg",
-  "./home-product-umbrella.jpg",
-] as const;
-
 type Props = {
   home: HomeCopy;
+  products: CatalogProduct[];
 };
 
 /**
@@ -46,7 +42,7 @@ type Props = {
  * gradient + chevron) with `PTag slot="header"` for badges on lifestyle tiles.
  * Plain `<img>` is the documented child pattern for the tile's default slot.
  */
-export function HomeLandingContent({ home }: Props) {
+export function HomeLandingContent({ home, products }: Props) {
   return (
     <>
       <section
@@ -67,8 +63,7 @@ export function HomeLandingContent({ home }: Props) {
             {home.shopTheLook}
           </PButton>
         </div>
-        {/* Porsche Grid: full-width row → basic band → thirds (basic area only). */}
-        <div className="col-basic grid grid-cols-subgrid mt-fluid-xl">
+        <div className="col-basic grid grid-cols-subgrid gap-fluid-md mt-fluid-xl">
           {home.lifestyleTiles.map((tile, index) => (
             <PLinkTile
               align="bottom"
@@ -115,10 +110,8 @@ export function HomeLandingContent({ home }: Props) {
             {home.trendingLinkLabel}
           </PLinkPure>
         </div>
-        {/* Porsche Grid: basic band → thirds (same pattern as lifestyle link tiles). */}
-        <div className="col-basic grid grid-cols-subgrid mt-fluid-xl">
-          {home.products.map((product, index) => (
-            // PLinkTileProduct is experimental in PDS v4 but shipped and usable.
+        <div className="col-basic grid grid-cols-subgrid gap-fluid-md mt-fluid-xl">
+          {products.map((product) => (
             <PLinkTileProduct
               aspectRatio="3/4"
               className="col-span-full md:col-span-one-third"
@@ -129,10 +122,7 @@ export function HomeLandingContent({ home }: Props) {
               price={product.price}
             >
               {/* biome-ignore lint/performance/noImgElement: PLinkTileProduct's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
-              <img
-                alt={product.imageAlt}
-                src={PRODUCT_IMAGES[index] ?? PRODUCT_IMAGES[0]}
-              />
+              <img alt={product.imageAlt} src={product.imageSrc} />
             </PLinkTileProduct>
           ))}
         </div>
@@ -142,8 +132,7 @@ export function HomeLandingContent({ home }: Props) {
         aria-label={home.featureGroupLabel}
         className="col-full grid grid-cols-subgrid mt-fluid-2xl"
       >
-        {/* Porsche Grid: wide band → halves (wide area division). */}
-        <div className="col-wide grid grid-cols-subgrid">
+        <div className="col-wide grid grid-cols-subgrid gap-fluid-md">
           {home.featureTiles.map((tile, index) => (
             <PLinkTile
               align="top"

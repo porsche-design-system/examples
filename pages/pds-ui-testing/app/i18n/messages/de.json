@@ -64,29 +64,6 @@
       "trendingHeading": "Beliebte Produkte",
       "trendingLinkLabel": "Alle Produkte anzeigen",
       "trendingLinkHref": "#products",
-      "products": [
-        {
-          "href": "#product-keychain",
-          "heading": "Leder-Schlüsselanhänger Wappen",
-          "price": "100,00 €",
-          "vatNote": "inkl. MwSt.",
-          "imageAlt": "Leder-Schlüsselanhänger mit Porsche-Wappen auf hellem Hintergrund"
-        },
-        {
-          "href": "#product-cap",
-          "heading": "Porsche Baseballkappe",
-          "price": "100,00 €",
-          "vatNote": "inkl. MwSt.",
-          "imageAlt": "Schwarze Porsche-Baseballkappe"
-        },
-        {
-          "href": "#product-umbrella",
-          "heading": "Porsche Regenschirm",
-          "price": "100,00 €",
-          "vatNote": "inkl. MwSt.",
-          "imageAlt": "Schwarzer Porsche-Regenschirm"
-        }
-      ],
       "featureGroupLabel": "Highlights",
       "featureTiles": [
         {

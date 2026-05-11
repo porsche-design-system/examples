@@ -64,29 +64,6 @@
       "trendingHeading": "Trending Products",
       "trendingLinkLabel": "View all products",
       "trendingLinkHref": "#products",
-      "products": [
-        {
-          "href": "#product-keychain",
-          "heading": "Leather Crest Keychain",
-          "price": "100.00 €",
-          "vatNote": "incl. VAT",
-          "imageAlt": "Leather Porsche crest keychain on a light background"
-        },
-        {
-          "href": "#product-cap",
-          "heading": "Porsche Baseball Cap",
-          "price": "100.00 €",
-          "vatNote": "incl. VAT",
-          "imageAlt": "Black Porsche baseball cap"
-        },
-        {
-          "href": "#product-umbrella",
-          "heading": "Porsche Umbrella",
-          "price": "100.00 €",
-          "vatNote": "incl. VAT",
-          "imageAlt": "Black Porsche umbrella"
-        }
-      ],
       "featureGroupLabel": "Featured stories",
       "featureTiles": [
         {

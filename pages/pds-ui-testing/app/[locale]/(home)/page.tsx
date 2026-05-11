@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/app/components/HomeHero";
 import { HomeLandingContent } from "@/app/components/HomeLandingContent";
-import { isLocale } from "@/app/i18n/config";
+import { getHomeCatalog } from "@/app/data/get-catalog";
+import { isLocale, type Locale } from "@/app/i18n/config";
 import { getDictionary } from "@/app/i18n/get-dictionary";
 
 type HomePageProps = {
@@ -13,14 +14,19 @@ export async function generateMetadata({
 }: HomePageProps): Promise<Metadata> {
   const { locale: raw } = await params;
   if (!isLocale(raw)) return {};
-  const dictionary = await getDictionary(raw);
+  const locale = raw as Locale;
+  const dictionary = await getDictionary(locale);
   return { title: dictionary.pages.home.title };
 }
 
 export default async function HomePage({ params }: HomePageProps) {
   const { locale: raw } = await params;
   if (!isLocale(raw)) return null;
-  const dictionary = await getDictionary(raw);
+  const locale = raw as Locale;
+  const [dictionary, catalog] = await Promise.all([
+    getDictionary(locale),
+    getHomeCatalog(locale),
+  ]);
   const { home } = dictionary.pages;
 
   return (
@@ -33,7 +39,7 @@ export default async function HomePage({ params }: HomePageProps) {
         ctaLabel={home.heroCta}
         heading={home.heroHeading}
       />
-      <HomeLandingContent home={home} />
+      <HomeLandingContent home={home} products={catalog.products} />
     </main>
   );
 }
