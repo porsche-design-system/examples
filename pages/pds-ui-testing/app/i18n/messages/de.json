@@ -33,21 +33,10 @@
   },
   "pages": {
     "home": {
-      "title": "Startseite",
-      "goToOverview": "Zur Übersicht",
-      "goToCheckout": "Zur Kasse"
+      "title": "Startseite"
     },
-    "overview": {
-      "title": "Übersicht",
-      "goToDetail": "Zum Detail"
-    },
-    "checkout": {
-      "title": "Kasse",
-      "goToHome": "Zur Startseite"
-    },
-    "detail": {
-      "title": "Detail",
-      "goToCheckout": "Zur Kasse"
+    "dummy": {
+      "notice": "Diese Seite ist nur ein Platzhalter ohne echte Inhalte und dient der Nutzbarkeits- und Barrierefreiheitstests."
     }
   },
   "footer": {

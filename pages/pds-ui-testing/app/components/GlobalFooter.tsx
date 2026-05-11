@@ -10,7 +10,7 @@ import {
 } from "@porsche-design-system/components-react/ssr";
 import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
-import { localeHomeHref } from "@/app/i18n/href";
+import { appHref, localeHomeHref } from "@/app/i18n/href";
 import { FooterLanguageChangeLink } from "./FooterLanguageChangeLink";
 
 type Props = {
@@ -38,19 +38,31 @@ export function GlobalFooter({ dictionary, locale }: Props) {
   const footerFlagName = footerFlagByLocale[locale];
 
   const companyEntries = [
-    { href: "#company/glance", label: footer.companyLinks.glance },
-    { href: "#company/pcna", label: footer.companyLinks.na },
     {
-      href: "#company/sustainability",
+      href: appHref(`/${locale}/company/glance/`),
+      label: footer.companyLinks.glance,
+    },
+    {
+      href: appHref(`/${locale}/company/pcna/`),
+      label: footer.companyLinks.na,
+    },
+    {
+      href: appHref(`/${locale}/company/sustainability/`),
       label: footer.companyLinks.sustainability,
     },
-    { href: "#company/career", label: footer.companyLinks.career },
-    { href: "#company/press", label: footer.companyLinks.press },
+    {
+      href: appHref(`/${locale}/company/career/`),
+      label: footer.companyLinks.career,
+    },
+    {
+      href: appHref(`/${locale}/company/press/`),
+      label: footer.companyLinks.press,
+    },
   ];
 
   return (
     <footer
-      className="grid-template gap-y-0 border-contrast-low border-t bg-canvas px-fluid-sm py-fluid-lg sm:px-fluid-md md:px-fluid-lg"
+      className="grid-template gap-y-0 bg-canvas py-fluid-lg"
       data-testid="global-footer"
     >
       <div className="col-wide flex flex-col gap-fluid-md">
@@ -174,7 +186,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
             <ul className="grid grid-cols-1 gap-y-static-xs sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-fluid-xl">
               {companyEntries.map(({ href, label }) => (
                 <li key={href}>
-                  <PLinkPure href={href} icon="none" size="medium">
+                  <PLinkPure href={href} icon="none">
                     {label}
                   </PLinkPure>
                 </li>
@@ -190,7 +202,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
             <PText size="small">{footer.legalCopyright}</PText>
             <div className="flex flex-wrap gap-x-fluid-sm gap-y-static-xs">
               <PLinkPure
-                href="#legal-notice"
+                href={appHref(`/${locale}/legal/notice/`)}
                 size="small"
                 icon="none"
                 underline={true}
@@ -198,7 +210,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
                 {footer.legalNotice}
               </PLinkPure>
               <PLinkPure
-                href="#legal-icp"
+                href={appHref(`/${locale}/legal/icp/`)}
                 size="small"
                 icon="none"
                 underline={true}
@@ -206,7 +218,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
                 {footer.legalIcp}
               </PLinkPure>
               <PLinkPure
-                href="#legal-environment"
+                href={appHref(`/${locale}/legal/environment/`)}
                 size="small"
                 icon="none"
                 underline={true}
@@ -214,14 +226,19 @@ export function GlobalFooter({ dictionary, locale }: Props) {
                 {footer.legalEnv}
               </PLinkPure>
             </div>
-            <PLinkPure href="#legal-security" size="small" underline={true}>
+            <PLinkPure
+              href={appHref(`/${locale}/legal/security/`)}
+              icon="none"
+              size="small"
+              underline={true}
+            >
               {footer.legalSecurity}
             </PLinkPure>
             <PText color="contrast-medium">
               {footer.legalDisclaimer}{" "}
               <PLinkPure
                 className="align-baseline"
-                href="#legal-more"
+                href={appHref(`/${locale}/legal/more/`)}
                 size="small"
                 underline={true}
                 icon="none"

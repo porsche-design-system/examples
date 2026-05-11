@@ -5,10 +5,10 @@ Each route intentionally contains only a PDS heading and simple links.
 
 ## Routes
 
-- `/` home
-- `/overview` overview
-- `/detail/[id]` detail
-- `/checkout` checkout
+- `/` redirects to the default locale home
+- `/[locale]/` home
+- `/[locale]/company/[companySlug]/` footer company placeholders
+- `/[locale]/legal/[legalSlug]/` footer legal placeholders
 
 ## Commands
 

@@ -33,21 +33,10 @@
   },
   "pages": {
     "home": {
-      "title": "Home",
-      "goToOverview": "Go to overview",
-      "goToCheckout": "Go to checkout"
+      "title": "Home"
     },
-    "overview": {
-      "title": "Overview",
-      "goToDetail": "Go to detail"
-    },
-    "checkout": {
-      "title": "Checkout",
-      "goToHome": "Go to home"
-    },
-    "detail": {
-      "title": "Detail",
-      "goToCheckout": "Go to checkout"
+    "dummy": {
+      "notice": "This page is a placeholder only. It has no real content and exists for usability and accessibility testing."
     }
   },
   "footer": {

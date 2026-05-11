@@ -20,7 +20,7 @@ export function GlobalHeader({ dictionary, locale }: Props) {
 
   return (
     <header
-      className="grid-template gap-y-0 bg-canvas border-contrast-low px-fluid-sm py-fluid-sm sm:px-fluid-md md:px-fluid-lg md:py-fluid-md"
+      className="grid-template gap-y-0 bg-canvas py-fluid-sm md:py-fluid-md"
       data-testid="global-header"
     >
       <div className="col-wide grid min-h-14 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-fluid-xs sm:min-h-18 sm:gap-fluid-md md:min-h-20">

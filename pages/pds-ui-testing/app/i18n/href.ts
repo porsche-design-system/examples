@@ -5,7 +5,7 @@ function normalizeBasePath(): string {
   return base.endsWith("/") && base.length > 1 ? base.slice(0, -1) : base;
 }
 
-/** Path must start with `/` (e.g. `/en/overview/`). Respects `NEXT_PUBLIC_BASE_PATH`. */
+/** Path must start with `/` (e.g. `/en/company/glance/`). Respects `NEXT_PUBLIC_BASE_PATH`. */
 export function appHref(path: string): string {
   const normalizedBase = normalizeBasePath();
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;

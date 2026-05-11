@@ -1,11 +1,11 @@
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { detailSampleIds } from '../../../app/detail/sample-ids';
 import { expect, test } from '../utils';
 
 const dynamicSegmentSamples: Record<string, string | string[]> = {
   '[locale]': ['en', 'de'],
-  '[id]': detailSampleIds[0],
+  '[companySlug]': ['glance', 'pcna', 'sustainability', 'career', 'press'],
+  '[legalSlug]': ['notice', 'icp', 'environment', 'security', 'more'],
 };
 
 const isPageFile = (entryName: string): boolean => entryName === 'page.tsx';
