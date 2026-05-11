@@ -1,0 +1,168 @@
+import {
+  PButton,
+  PHeading,
+  PLinkPure,
+  PLinkTile,
+  PLinkTileProduct,
+  PTag,
+  PText,
+} from "@porsche-design-system/components-react/ssr";
+import type { Dictionary } from "@/app/i18n/get-dictionary";
+
+type HomeCopy = Dictionary["pages"]["home"];
+
+/** Resolve against `<base href={NEXT_PUBLIC_BASE_PATH}/>` for static export in a subfolder. */
+const LIFESTYLE_IMAGES = [
+  "./home-lifestyle-timeless.jpg",
+  "./home-lifestyle-loyalist.jpg",
+  "./home-lifestyle-urbanist.jpg",
+] as const;
+
+const FEATURE_IMAGES = [
+  "./home-feature-roadster.png",
+  "./home-feature-trunk.png",
+] as const;
+
+const PRODUCT_IMAGES = [
+  "./home-product-keychain.jpg",
+  "./home-product-cap.jpg",
+  "./home-product-umbrella.jpg",
+] as const;
+
+type Props = {
+  home: HomeCopy;
+};
+
+/**
+ * Homepage sections from Figma landing frame (node 1:8387): intro, lifestyle tiles,
+ * trending products, and large feature tiles — excluding header, hero, and footer.
+ *
+ * Lifestyle and trending product tiles use the Porsche Grid (`col-full` →
+ * `col-basic` → `col-span-one-third`). Feature tiles use (`col-full` → `col-wide`
+ * → `col-span-one-half`), per PDS Tailwind grid docs — not arbitrary `grid-cols-*`
+ * counts.
+ *
+ * Lifestyle and feature rows use `PLinkTile` (description/label slots, built-in
+ * gradient + chevron) with `PTag slot="header"` for badges on lifestyle tiles.
+ * Plain `<img>` is the documented child pattern for the tile's default slot.
+ */
+export function HomeLandingContent({ home }: Props) {
+  return (
+    <>
+      <section
+        aria-labelledby="home-intro-heading"
+        className="col-full grid grid-cols-subgrid"
+      >
+        <div className="col-wide flex flex-col gap-fluid-sm items-center mt-fluid-2xl">
+          <h2 className="sr-only" id="home-intro-heading">
+            {home.introHeading}
+          </h2>
+          <PTag compact variant="primary">
+            {home.lookbookTag}
+          </PTag>
+          <PText className="max-w-[635px]" size="x-large" align="center">
+            {home.intro}
+          </PText>
+          <PButton type="button" variant="primary" className="mt-fluid-md">
+            {home.shopTheLook}
+          </PButton>
+        </div>
+        {/* Porsche Grid: full-width row → basic band → thirds (basic area only). */}
+        <div className="col-basic grid grid-cols-subgrid mt-fluid-xl">
+          {home.lifestyleTiles.map((tile, index) => (
+            <PLinkTile
+              align="bottom"
+              aspectRatio="3/4"
+              className="col-span-full md:col-span-one-third"
+              compact
+              description={tile.description}
+              gradient
+              href={tile.href}
+              key={tile.href}
+              label={tile.label}
+              size="large"
+            >
+              {tile.tagLabel ? (
+                <PTag compact slot="header" variant="success">
+                  {tile.tagLabel}
+                </PTag>
+              ) : null}
+              {/* biome-ignore lint/performance/noImgElement: PLinkTile's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
+              <img
+                alt=""
+                src={LIFESTYLE_IMAGES[index] ?? LIFESTYLE_IMAGES[0]}
+              />
+            </PLinkTile>
+          ))}
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="home-trending-heading"
+        className="col-full grid grid-cols-subgrid"
+        id="products"
+      >
+        <div className="col-wide flex flex-col items-center text-center mt-fluid-2xl">
+          <PHeading id="home-trending-heading" size="3xl" tag="h2">
+            {home.trendingHeading}
+          </PHeading>
+          <PLinkPure
+            href={home.trendingLinkHref}
+            icon="arrow-right"
+            underline={true}
+            className="mt-fluid-sm"
+          >
+            {home.trendingLinkLabel}
+          </PLinkPure>
+        </div>
+        {/* Porsche Grid: basic band → thirds (same pattern as lifestyle link tiles). */}
+        <div className="col-basic grid grid-cols-subgrid mt-fluid-xl">
+          {home.products.map((product, index) => (
+            // PLinkTileProduct is experimental in PDS v4 but shipped and usable.
+            <PLinkTileProduct
+              aspectRatio="3/4"
+              className="col-span-full md:col-span-one-third"
+              description={product.vatNote}
+              heading={product.heading}
+              href={product.href}
+              key={product.href}
+              price={product.price}
+            >
+              {/* biome-ignore lint/performance/noImgElement: PLinkTileProduct's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
+              <img
+                alt={product.imageAlt}
+                src={PRODUCT_IMAGES[index] ?? PRODUCT_IMAGES[0]}
+              />
+            </PLinkTileProduct>
+          ))}
+        </div>
+      </section>
+
+      <section
+        aria-label={home.featureGroupLabel}
+        className="col-full grid grid-cols-subgrid mt-fluid-2xl"
+      >
+        {/* Porsche Grid: wide band → halves (wide area division). */}
+        <div className="col-wide grid grid-cols-subgrid">
+          {home.featureTiles.map((tile, index) => (
+            <PLinkTile
+              align="top"
+              aspectRatio="3/4"
+              className="col-span-full md:col-span-one-half"
+              description={tile.description}
+              gradient
+              compact
+              href={tile.href}
+              key={tile.href}
+              label={tile.label}
+              size="large"
+            >
+              {/* biome-ignore lint/performance/noImgElement: PLinkTile's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
+              <img alt="" src={FEATURE_IMAGES[index] ?? FEATURE_IMAGES[0]} />
+            </PLinkTile>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}

@@ -37,7 +37,69 @@
       "title": "Startseite",
       "teaserAlt": "Personen an einem Foodtruck am Meer in der warmen Abendsonne.",
       "heroHeading": "Ikonisches Racing\nDesign bis zur\nPerfektion",
-      "heroCta": "Jetzt entdecken"
+      "heroCta": "Jetzt entdecken",
+      "lookbookTag": "Lookbook",
+      "introHeading": "Lookbook-Einstieg",
+      "intro": "Bringen Sie Schwung in Ihren Schritt und frischen Sie Ihre Garderobe mit inspirierten Looks aus dem Porsche-Katalog auf.",
+      "shopTheLook": "Look shoppen",
+      "lifestyleGroupLabel": "Lifestyle-Kategorien",
+      "lifestyleTiles": [
+        {
+          "href": "#lifestyle-timeless",
+          "label": "Timeless Enthusiast Lookbook öffnen",
+          "description": "Timeless Enthusiast",
+          "tagLabel": "Neu"
+        },
+        {
+          "href": "#lifestyle-loyalist",
+          "label": "The Loyalist Lookbook öffnen",
+          "description": "The Loyalist"
+        },
+        {
+          "href": "#lifestyle-urbanist",
+          "label": "Urbanist Lookbook öffnen",
+          "description": "Urbanist"
+        }
+      ],
+      "trendingHeading": "Beliebte Produkte",
+      "trendingLinkLabel": "Alle Produkte anzeigen",
+      "trendingLinkHref": "#products",
+      "products": [
+        {
+          "href": "#product-keychain",
+          "heading": "Leder-Schlüsselanhänger Wappen",
+          "price": "100,00 €",
+          "vatNote": "inkl. MwSt.",
+          "imageAlt": "Leder-Schlüsselanhänger mit Porsche-Wappen auf hellem Hintergrund"
+        },
+        {
+          "href": "#product-cap",
+          "heading": "Porsche Baseballkappe",
+          "price": "100,00 €",
+          "vatNote": "inkl. MwSt.",
+          "imageAlt": "Schwarze Porsche-Baseballkappe"
+        },
+        {
+          "href": "#product-umbrella",
+          "heading": "Porsche Regenschirm",
+          "price": "100,00 €",
+          "vatNote": "inkl. MwSt.",
+          "imageAlt": "Schwarzer Porsche-Regenschirm"
+        }
+      ],
+      "featureGroupLabel": "Highlights",
+      "featureTiles": [
+        {
+          "href": "#feature-roadster",
+          "label": "Roadster-Aluminum-Story lesen",
+          "description": "Manufactured like a Porsche. Der neue Roadster Aluminum."
+        },
+        {
+          "href": "#feature-trunk",
+          "label": "Faltbare Kofferraumboxen entdecken",
+          "description": "Faltbare Kofferraumboxen"
+        }
+      ]
     },
     "dummy": {
       "notice": "Diese Seite ist nur ein Platzhalter ohne echte Inhalte und dient der Nutzbarkeits- und Barrierefreiheitstests."

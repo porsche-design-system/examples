@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/app/components/HomeHero";
+import { HomeLandingContent } from "@/app/components/HomeLandingContent";
 import { isLocale } from "@/app/i18n/config";
 import { getDictionary } from "@/app/i18n/get-dictionary";
 
@@ -24,7 +25,7 @@ export default async function HomePage({ params }: HomePageProps) {
 
   return (
     <main
-      className="relative z-0 grid-template gap-y-fluid-md"
+      className="relative z-0 grid-template gap-y-0"
       data-testid="main-content"
     >
       <HomeHero
@@ -32,6 +33,7 @@ export default async function HomePage({ params }: HomePageProps) {
         ctaLabel={home.heroCta}
         heading={home.heroHeading}
       />
+      <HomeLandingContent home={home} />
     </main>
   );
 }
