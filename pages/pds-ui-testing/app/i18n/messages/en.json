@@ -45,25 +45,24 @@
       "lifestyleGroupLabel": "Lifestyle categories",
       "lifestyleTiles": [
         {
-          "href": "#lifestyle-timeless",
-          "label": "Open the Timeless Enthusiast lookbook",
+          "lifestyleTag": "timeless-enthusiast",
+          "label": "Open the Timeless Enthusiast product overview",
           "description": "Timeless Enthusiast",
           "tagLabel": "New"
         },
         {
-          "href": "#lifestyle-loyalist",
-          "label": "Open The Loyalist lookbook",
+          "lifestyleTag": "the-loyalist",
+          "label": "Open The Loyalist product overview",
           "description": "The Loyalist"
         },
         {
-          "href": "#lifestyle-urbanist",
-          "label": "Open the Urbanist lookbook",
+          "lifestyleTag": "urbanist",
+          "label": "Open the Urbanist product overview",
           "description": "Urbanist"
         }
       ],
       "trendingHeading": "Trending Products",
       "trendingLinkLabel": "View all products",
-      "trendingLinkHref": "#products",
       "featureGroupLabel": "Featured stories",
       "featureTiles": [
         {
@@ -77,6 +76,33 @@
           "description": "Foldable trunk organizers"
         }
       ]
+    },
+    "productList": {
+      "title": "All products",
+      "subtitle": "Default catalog listing for usability and accessibility testing.",
+      "notice": "This page shows every row from the static product catalog. Lifestyle overviews are filtered subsets of the same data (see `tags` on each product).",
+      "productsRegionLabel": "Full product catalog"
+    },
+    "lifestyleOverview": {
+      "notice": "This overview is a placeholder for usability and accessibility testing. Products are taken from the static catalog and filtered by the lifestyle tag shown above.",
+      "productsRegionLabel": "Products in this look",
+      "tags": {
+        "timeless-enthusiast": {
+          "title": "Timeless Enthusiast",
+          "subtitle": "Product overview for this look.",
+          "tagLabel": "Timeless Enthusiast"
+        },
+        "the-loyalist": {
+          "title": "The Loyalist",
+          "subtitle": "Product overview for this look.",
+          "tagLabel": "The Loyalist"
+        },
+        "urbanist": {
+          "title": "Urbanist",
+          "subtitle": "Product overview for this look.",
+          "tagLabel": "Urbanist"
+        }
+      }
     },
     "dummy": {
       "notice": "This page is a placeholder only. It has no real content and exists for usability and accessibility testing."

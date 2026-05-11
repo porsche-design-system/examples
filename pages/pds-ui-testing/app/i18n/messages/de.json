@@ -45,25 +45,24 @@
       "lifestyleGroupLabel": "Lifestyle-Kategorien",
       "lifestyleTiles": [
         {
-          "href": "#lifestyle-timeless",
-          "label": "Timeless Enthusiast Lookbook öffnen",
+          "lifestyleTag": "timeless-enthusiast",
+          "label": "Produktübersicht Timeless Enthusiast öffnen",
           "description": "Timeless Enthusiast",
           "tagLabel": "Neu"
         },
         {
-          "href": "#lifestyle-loyalist",
-          "label": "The Loyalist Lookbook öffnen",
+          "lifestyleTag": "the-loyalist",
+          "label": "Produktübersicht The Loyalist öffnen",
           "description": "The Loyalist"
         },
         {
-          "href": "#lifestyle-urbanist",
-          "label": "Urbanist Lookbook öffnen",
+          "lifestyleTag": "urbanist",
+          "label": "Produktübersicht Urbanist öffnen",
           "description": "Urbanist"
         }
       ],
       "trendingHeading": "Beliebte Produkte",
       "trendingLinkLabel": "Alle Produkte anzeigen",
-      "trendingLinkHref": "#products",
       "featureGroupLabel": "Highlights",
       "featureTiles": [
         {
@@ -77,6 +76,33 @@
           "description": "Faltbare Kofferraumboxen"
         }
       ]
+    },
+    "productList": {
+      "title": "Alle Produkte",
+      "subtitle": "Standard-Katalogliste für Nutzbarkeits- und Barrierefreiheitstests.",
+      "notice": "Diese Seite zeigt alle Einträge aus dem statischen Produktkatalog. Lifestyle-Übersichten sind gefilterte Teilmengen derselben Daten (siehe `tags` je Produkt).",
+      "productsRegionLabel": "Gesamter Produktkatalog"
+    },
+    "lifestyleOverview": {
+      "notice": "Diese Übersicht ist ein Platzhalter für Nutzbarkeits- und Barrierefreiheitstests. Die Produkte stammen aus dem statischen Katalog und werden nach dem oben genannten Lifestyle-Tag gefiltert.",
+      "productsRegionLabel": "Produkte zu diesem Look",
+      "tags": {
+        "timeless-enthusiast": {
+          "title": "Timeless Enthusiast",
+          "subtitle": "Produktübersicht für diesen Look.",
+          "tagLabel": "Timeless Enthusiast"
+        },
+        "the-loyalist": {
+          "title": "The Loyalist",
+          "subtitle": "Produktübersicht für diesen Look.",
+          "tagLabel": "The Loyalist"
+        },
+        "urbanist": {
+          "title": "Urbanist",
+          "subtitle": "Produktübersicht für diesen Look.",
+          "tagLabel": "Urbanist"
+        }
+      }
     },
     "dummy": {
       "notice": "Diese Seite ist nur ein Platzhalter ohne echte Inhalte und dient der Nutzbarkeits- und Barrierefreiheitstests."

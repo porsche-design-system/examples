@@ -39,7 +39,11 @@ export default async function HomePage({ params }: HomePageProps) {
         ctaLabel={home.heroCta}
         heading={home.heroHeading}
       />
-      <HomeLandingContent home={home} products={catalog.products} />
+      <HomeLandingContent
+        home={home}
+        locale={locale}
+        products={catalog.products}
+      />
     </main>
   );
 }

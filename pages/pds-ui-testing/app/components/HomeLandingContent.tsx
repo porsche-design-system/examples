@@ -8,24 +8,27 @@ import {
   PText,
 } from "@porsche-design-system/components-react/ssr";
 import type { CatalogProduct } from "@/app/data/get-catalog";
+import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
+import { appHref, productsIndexHref } from "@/app/i18n/href";
 
 type HomeCopy = Dictionary["pages"]["home"];
 
-/** Resolve against `<base href={NEXT_PUBLIC_BASE_PATH}/>` for static export in a subfolder. */
-const LIFESTYLE_IMAGES = [
-  "./home-lifestyle-timeless.jpg",
-  "./home-lifestyle-loyalist.jpg",
-  "./home-lifestyle-urbanist.jpg",
+/** Paths under `public/` (leading `/`); pass through {@link appHref} so `basePath` works. */
+const LIFESTYLE_IMAGE_PATHS = [
+  "/home-lifestyle-timeless.jpg",
+  "/home-lifestyle-loyalist.jpg",
+  "/home-lifestyle-urbanist.jpg",
 ] as const;
 
-const FEATURE_IMAGES = [
-  "./home-feature-roadster.png",
-  "./home-feature-trunk.png",
+const FEATURE_IMAGE_PATHS = [
+  "/home-feature-roadster.png",
+  "/home-feature-trunk.png",
 ] as const;
 
 type Props = {
   home: HomeCopy;
+  locale: Locale;
   products: CatalogProduct[];
 };
 
@@ -41,8 +44,10 @@ type Props = {
  * Lifestyle and feature rows use `PLinkTile` (description/label slots, built-in
  * gradient + chevron) with `PTag slot="header"` for badges on lifestyle tiles.
  * Plain `<img>` is the documented child pattern for the tile's default slot.
+ * Image `src` uses `appHref('/file-in-public.jpg')` so requests are not resolved
+ * relative to `/[locale]/` (which would 404 in DevTools even if a fallback showed a tile).
  */
-export function HomeLandingContent({ home, products }: Props) {
+export function HomeLandingContent({ home, locale, products }: Props) {
   return (
     <>
       <section
@@ -72,8 +77,8 @@ export function HomeLandingContent({ home, products }: Props) {
               compact
               description={tile.description}
               gradient
-              href={tile.href}
-              key={tile.href}
+              href={appHref(`/${locale}/lifestyle/${tile.lifestyleTag}/`)}
+              key={tile.lifestyleTag}
               label={tile.label}
               size="large"
             >
@@ -85,7 +90,7 @@ export function HomeLandingContent({ home, products }: Props) {
               {/* biome-ignore lint/performance/noImgElement: PLinkTile's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
               <img
                 alt=""
-                src={LIFESTYLE_IMAGES[index] ?? LIFESTYLE_IMAGES[0]}
+                src={appHref(LIFESTYLE_IMAGE_PATHS[index] ?? LIFESTYLE_IMAGE_PATHS[0])}
               />
             </PLinkTile>
           ))}
@@ -102,7 +107,7 @@ export function HomeLandingContent({ home, products }: Props) {
             {home.trendingHeading}
           </PHeading>
           <PLinkPure
-            href={home.trendingLinkHref}
+            href={productsIndexHref(locale)}
             icon="arrow-right"
             underline={true}
             className="mt-fluid-sm"
@@ -118,11 +123,11 @@ export function HomeLandingContent({ home, products }: Props) {
               description={product.vatNote}
               heading={product.heading}
               href={product.href}
-              key={product.href}
+              key={product.id}
               price={product.price}
             >
               {/* biome-ignore lint/performance/noImgElement: PLinkTileProduct's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
-              <img alt={product.imageAlt} src={product.imageSrc} />
+              <img alt={product.imageAlt} src={appHref(product.imageSrc)} />
             </PLinkTileProduct>
           ))}
         </div>
@@ -147,7 +152,10 @@ export function HomeLandingContent({ home, products }: Props) {
               size="large"
             >
               {/* biome-ignore lint/performance/noImgElement: PLinkTile's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
-              <img alt="" src={FEATURE_IMAGES[index] ?? FEATURE_IMAGES[0]} />
+              <img
+                alt=""
+                src={appHref(FEATURE_IMAGE_PATHS[index] ?? FEATURE_IMAGE_PATHS[0])}
+              />
             </PLinkTile>
           ))}
         </div>

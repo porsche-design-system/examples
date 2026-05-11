@@ -1,28 +1,37 @@
 {
   "products": [
     {
+      "id": "product-keychain",
+      "tags": ["timeless-enthusiast"],
+      "categories": ["accessories"],
       "href": "#product-keychain",
       "heading": "Leder-Schlüsselanhänger Wappen",
       "price": "100,00 €",
       "vatNote": "inkl. MwSt.",
       "imageAlt": "Leder-Schlüsselanhänger mit Porsche-Wappen auf hellem Hintergrund",
-      "imageSrc": "./home-product-keychain.jpg"
+      "imageSrc": "/home-product-keychain.jpg"
     },
     {
+      "id": "product-cap",
+      "tags": ["the-loyalist", "urbanist"],
+      "categories": ["apparel", "accessories"],
       "href": "#product-cap",
       "heading": "Porsche Baseballkappe",
       "price": "100,00 €",
       "vatNote": "inkl. MwSt.",
       "imageAlt": "Schwarze Porsche-Baseballkappe",
-      "imageSrc": "./home-product-cap.jpg"
+      "imageSrc": "/home-product-cap.jpg"
     },
     {
+      "id": "product-umbrella",
+      "tags": ["urbanist"],
+      "categories": ["accessories"],
       "href": "#product-umbrella",
       "heading": "Porsche Regenschirm",
       "price": "100,00 €",
       "vatNote": "inkl. MwSt.",
       "imageAlt": "Schwarzer Porsche-Regenschirm",
-      "imageSrc": "./home-product-umbrella.jpg"
+      "imageSrc": "/home-product-umbrella.jpg"
     }
   ]
 }

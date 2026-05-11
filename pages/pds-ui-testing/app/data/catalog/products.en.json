@@ -1,28 +1,37 @@
 {
   "products": [
     {
+      "id": "product-keychain",
+      "tags": ["timeless-enthusiast"],
+      "categories": ["accessories"],
       "href": "#product-keychain",
       "heading": "Leather Crest Keychain",
       "price": "100.00 €",
       "vatNote": "incl. VAT",
       "imageAlt": "Leather Porsche crest keychain on a light background",
-      "imageSrc": "./home-product-keychain.jpg"
+      "imageSrc": "/home-product-keychain.jpg"
     },
     {
+      "id": "product-cap",
+      "tags": ["the-loyalist", "urbanist"],
+      "categories": ["apparel", "accessories"],
       "href": "#product-cap",
       "heading": "Porsche Baseball Cap",
       "price": "100.00 €",
       "vatNote": "incl. VAT",
       "imageAlt": "Black Porsche baseball cap",
-      "imageSrc": "./home-product-cap.jpg"
+      "imageSrc": "/home-product-cap.jpg"
     },
     {
+      "id": "product-umbrella",
+      "tags": ["urbanist"],
+      "categories": ["accessories"],
       "href": "#product-umbrella",
       "heading": "Porsche Umbrella",
       "price": "100.00 €",
       "vatNote": "incl. VAT",
       "imageAlt": "Black Porsche umbrella",
-      "imageSrc": "./home-product-umbrella.jpg"
+      "imageSrc": "/home-product-umbrella.jpg"
     }
   ]
 }
