@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { FooterDummyPage } from "../../../../components/FooterDummyPage";
-import { isLocale } from "../../../../i18n/config";
-import { getDictionary } from "../../../../i18n/get-dictionary";
+import { FooterDummyPage } from "@/app/components/FooterDummyPage";
+import { isLocale } from "@/app/i18n/config";
+import { getDictionary } from "@/app/i18n/get-dictionary";
 
 const COMPANY_SLUGS = [
   "glance",

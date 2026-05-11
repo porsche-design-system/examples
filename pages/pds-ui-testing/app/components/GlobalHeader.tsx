@@ -1,7 +1,6 @@
 import {
   PCrest,
   PButtonPure,
-  PLinkPure,
   PWordmark,
 } from "@porsche-design-system/components-react/ssr";
 import type { Locale } from "@/app/i18n/config";
@@ -28,8 +27,8 @@ export function GlobalHeader({
     <header
       className={
         heroOverlay
-          ? "z-30 grid-template absolute inset-x-0 top-0 gap-y-0 px-fluid-sm py-fluid-sm sm:px-fluid-md md:px-fluid-lg md:py-fluid-md"
-          : "grid-template gap-y-0 bg-canvas py-fluid-sm md:py-fluid-md"
+          ? "z-30 grid-template absolute inset-x-0 top-0 px-fluid-sm py-fluid-sm sm:px-fluid-md md:px-fluid-lg md:py-fluid-md"
+          : "grid-template bg-canvas py-fluid-sm md:py-fluid-md"
       }
       data-testid="global-header"
     >
@@ -69,57 +68,32 @@ export function GlobalHeader({
               : "flex min-w-0 flex-wrap items-center justify-end gap-static-xs sm:gap-static-md"
           }
         >
-          {heroOverlay ? (
-            <>
-              <PButtonPure
-                className="p-static-xs -m-static-xs"
-                hideLabel
-                icon="star"
-                size={{ base: "small", m: "medium" }}
-                type="button"
-              >
-                {header.favorites}
-              </PButtonPure>
-              <PButtonPure
-                className="p-static-xs -m-static-xs"
-                hideLabel
-                icon="search"
-                size={{ base: "small", m: "medium" }}
-                type="button"
-              >
-                {header.search}
-              </PButtonPure>
-              <PLinkPure
-                className="p-static-xs -m-static-xs"
-                hideLabel
-                href="#my-porsche"
-                icon="user"
-                size={{ base: "small", m: "medium" }}
-              >
-                {header.myPorsche}
-              </PLinkPure>
-            </>
-          ) : (
-            <>
-              <PButtonPure
-                className="p-static-xs -m-static-xs"
-                hideLabel
-                icon="shopping-cart"
-                size={{ base: "small", m: "medium" }}
-              >
-                {header.shoppingCart}
-              </PButtonPure>
-              <PLinkPure
-                className="p-static-xs -m-static-xs"
-                hideLabel
-                href="#my-porsche"
-                icon="user"
-                size={{ base: "small", m: "medium" }}
-              >
-                {header.myPorsche}
-              </PLinkPure>
-            </>
-          )}
+          <PButtonPure
+            className="p-static-xs -m-static-xs"
+            hideLabel
+            icon="star"
+            size={{ base: "small", m: "medium" }}
+            type="button"
+          >
+            {header.favorites}
+          </PButtonPure>
+          <PButtonPure
+            className="p-static-xs -m-static-xs"
+            hideLabel
+            icon="search"
+            size={{ base: "small", m: "medium" }}
+            type="button"
+          >
+            {header.search}
+          </PButtonPure>
+          <PButtonPure
+            className="p-static-xs -m-static-xs"
+            hideLabel
+            icon="shopping-cart"
+            size={{ base: "small", m: "medium" }}
+          >
+            {header.shoppingCart}
+          </PButtonPure>
         </div>
       </div>
     </header>

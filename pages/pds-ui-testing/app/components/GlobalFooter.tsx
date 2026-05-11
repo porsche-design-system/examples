@@ -62,7 +62,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
 
   return (
     <footer
-      className="grid-template gap-y-0 bg-canvas py-fluid-lg"
+      className="grid-template bg-canvas py-fluid-lg"
       data-testid="global-footer"
     >
       <div className="col-wide flex flex-col gap-fluid-md">
@@ -80,7 +80,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
           </PHeading>
           <div className="flex flex-wrap items-center gap-fluid-xs">
             <PFlag className="shrink-0" name={footerFlagName} />
-            <span className="text-primary">{footer.regionMarket}</span>
+            <PText>{footer.regionMarket}</PText>
             <FooterLanguageChangeLink
               ariaLabelToDe={footer.changeLanguageAriaToDe}
               ariaLabelToEn={footer.changeLanguageAriaToEn}

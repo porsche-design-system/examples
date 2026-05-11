@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { HomeHero } from "../../components/HomeHero";
-import { isLocale } from "../../i18n/config";
-import { getDictionary } from "../../i18n/get-dictionary";
+import { HomeHero } from "@/app/components/HomeHero";
+import { isLocale } from "@/app/i18n/config";
+import { getDictionary } from "@/app/i18n/get-dictionary";
 
 type HomePageProps = {
   params: Promise<{ locale: string }>;

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { defaultLocale } from "../i18n/config";
-import "../globals.css";
+import { defaultLocale } from "@/app/i18n/config";
+import "@/app/globals.css";
 
 const APP_TITLE = "PDS UI Testing";
 

@@ -1,6 +1,6 @@
-import { GlobalHeader } from "../../components/GlobalHeader";
-import { isLocale, type Locale } from "../../i18n/config";
-import { getDictionary } from "../../i18n/get-dictionary";
+import { GlobalHeader } from "@/app/components/GlobalHeader";
+import { isLocale, type Locale } from "@/app/i18n/config";
+import { getDictionary } from "@/app/i18n/get-dictionary";
 
 type Props = {
   children: React.ReactNode;

@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { defaultLocale } from "../i18n/config";
+import { defaultLocale } from "@/app/i18n/config";
 
 /**
  * Root entry: redirects to the default locale home.

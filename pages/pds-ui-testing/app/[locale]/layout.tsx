@@ -7,10 +7,10 @@ import {
   getMetaTagsAndIconLinks,
 } from "@porsche-design-system/components-react/partials";
 import { PorscheDesignSystemProvider } from "@porsche-design-system/components-react/ssr";
-import { GlobalFooter } from "../components/GlobalFooter";
-import { isLocale, locales, type Locale } from "../i18n/config";
-import { getDictionary } from "../i18n/get-dictionary";
-import "../globals.css";
+import { GlobalFooter } from "@/app/components/GlobalFooter";
+import { isLocale, locales, type Locale } from "@/app/i18n/config";
+import { getDictionary } from "@/app/i18n/get-dictionary";
+import "@/app/globals.css";
 
 const APP_TITLE = "PDS UI Testing";
 
