@@ -1,5 +1,5 @@
-import { PHeading } from "@porsche-design-system/components-react/ssr";
 import type { Metadata } from "next";
+import { HomeHero } from "../components/HomeHero";
 import { isLocale } from "../i18n/config";
 import { getDictionary } from "../i18n/get-dictionary";
 
@@ -27,8 +27,15 @@ export default async function HomePage({ params }: HomePageProps) {
   const { home } = dictionary.pages;
 
   return (
-    <main data-testid="main-content">
-      <PHeading tag="h1">{home.title}</PHeading>
+    <main
+      className="relative z-0 grid-template gap-y-fluid-md"
+      data-testid="main-content"
+    >
+      <HomeHero
+        alt={home.teaserAlt}
+        ctaLabel={home.heroCta}
+        heading={home.heroHeading}
+      />
     </main>
   );
 }

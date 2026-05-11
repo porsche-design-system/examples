@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { GlobalFooter } from "../components/GlobalFooter";
-import { GlobalHeader } from "../components/GlobalHeader";
+import { GlobalHeaderGate } from "../components/GlobalHeaderGate";
 import { isLocale, type Locale } from "../i18n/config";
 import { getDictionary } from "../i18n/get-dictionary";
 
@@ -44,7 +44,7 @@ export default async function LocaleLayout({
 
   return (
     <>
-      <GlobalHeader dictionary={dictionary} locale={locale} />
+      <GlobalHeaderGate dictionary={dictionary} locale={locale} />
       {children}
       <GlobalFooter dictionary={dictionary} locale={locale} />
     </>

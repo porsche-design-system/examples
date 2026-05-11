@@ -18,9 +18,10 @@ const SHOP_NAV_DRILLDOWN_ID = "shop-navigation-drilldown";
 
 type Props = {
   nav: Dictionary["nav"];
+  menuButtonClassName?: string;
 };
 
-export function GlobalHeaderNavMenu({ nav }: Props) {
+export function GlobalHeaderNavMenu({ nav, menuButtonClassName }: Props) {
   const [open, setOpen] = useState(false);
   const [activeIdentifier, setActiveIdentifier] = useState<
     string | undefined
@@ -52,7 +53,11 @@ export function GlobalHeaderNavMenu({ nav }: Props) {
       <PButtonPure
         alignLabel="start"
         aria={menuButtonAria}
-        className="p-static-xs -m-static-xs"
+        className={
+          menuButtonClassName
+            ? `${menuButtonClassName} p-static-xs -m-static-xs`
+            : "p-static-xs -m-static-xs"
+        }
         hideLabel={{ base: true, s: false }}
         icon="menu-lines"
         onClick={toggleOpen}

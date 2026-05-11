@@ -6,7 +6,7 @@ Each route intentionally contains only a PDS heading and simple links.
 ## Routes
 
 - `/` redirects to the default locale home
-- `/[locale]/` home
+- `/[locale]/` home (full-bleed hero: `public/home-teaser.jpg`, Figma overlay copy + CTA, transparent header aligned to landing template)
 - `/[locale]/company/[companySlug]/` footer company placeholders
 - `/[locale]/legal/[legalSlug]/` footer legal placeholders
 

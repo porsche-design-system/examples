@@ -29,11 +29,16 @@
   "header": {
     "crestLabel": "Porsche",
     "shoppingCart": "Warenkorb",
+    "favorites": "Merkliste",
+    "search": "Suche",
     "myPorsche": "My Porsche"
   },
   "pages": {
     "home": {
-      "title": "Startseite"
+      "title": "Startseite",
+      "teaserAlt": "Personen an einem Foodtruck am Meer in der warmen Abendsonne.",
+      "heroHeading": "Ikonisches Racing\nDesign bis zur\nPerfektion",
+      "heroCta": "Jetzt entdecken"
     },
     "dummy": {
       "notice": "Diese Seite ist nur ein Platzhalter ohne echte Inhalte und dient der Nutzbarkeits- und Barrierefreiheitstests."

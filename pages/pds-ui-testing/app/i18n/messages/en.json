@@ -29,11 +29,16 @@
   "header": {
     "crestLabel": "Porsche",
     "shoppingCart": "Shopping cart",
+    "favorites": "Favorites",
+    "search": "Search",
     "myPorsche": "My Porsche"
   },
   "pages": {
     "home": {
-      "title": "Home"
+      "title": "Home",
+      "teaserAlt": "People at an outdoor food truck by the sea during a warm sunset.",
+      "heroHeading": "Iconic Racing\nDesign Taken To\nPerfection",
+      "heroCta": "Discover now"
     },
     "dummy": {
       "notice": "This page is a placeholder only. It has no real content and exists for usability and accessibility testing."
