@@ -29,12 +29,7 @@
   "header": {
     "crestLabel": "Porsche",
     "shoppingCart": "Shopping cart",
-    "myPorsche": "My Porsche",
-    "language": "Language",
-    "localeNames": {
-      "en": "English",
-      "de": "Deutsch"
-    }
+    "myPorsche": "My Porsche"
   },
   "pages": {
     "home": {
@@ -59,14 +54,14 @@
     "regionTitle": "Current Region / Language",
     "regionMarket": "USA / English",
     "regionChange": "Change",
+    "changeLanguageAriaToDe": "Switch site language to German",
+    "changeLanguageAriaToEn": "Switch site language to English",
     "newsletterTitle": "Newsletter",
     "newsletterCopy": "Latest news directly in your inbox.",
     "subscribe": "Subscribe",
-    "newsletterLink": "More about the newsletter",
     "contactTitle": "Contact",
     "contactCopy": "Do you have any questions?",
     "contactForm": "Contact Form",
-    "contactLink": "More contact options",
     "socialTitle": "Social Media",
     "socialCopy": "Get in touch with us on social media.",
     "socialLabels": {

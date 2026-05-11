@@ -8,7 +8,6 @@ import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
 import { localeHomeHref } from "@/app/i18n/href";
 import { GlobalHeaderNavMenu } from "./GlobalHeaderNavMenu";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 
 type Props = {
   dictionary: Dictionary;
@@ -47,11 +46,6 @@ export function GlobalHeader({ dictionary, locale }: Props) {
           />
         </div>
         <div className="flex min-w-0 flex-wrap items-center justify-end gap-static-xs sm:gap-static-md">
-          <LanguageSwitcher
-            languageLabel={header.language}
-            labels={header.localeNames}
-            locale={locale}
-          />
           <PButtonPure
             className="p-static-xs -m-static-xs"
             hideLabel
