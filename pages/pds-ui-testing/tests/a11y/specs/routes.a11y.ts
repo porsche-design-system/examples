@@ -29,13 +29,20 @@ const expandResolvedParts = (parts: string[]): string[][] => {
   );
 };
 
+const isRouteGroup = (entryName: string): boolean =>
+  entryName.startsWith('(') && entryName.endsWith(')');
+
 const getPageRoutes = (dir: string, parentParts: string[] = []): string[] => {
   const entries = readdirSync(dir, { withFileTypes: true });
   const routes: string[] = [];
 
   for (const entry of entries) {
     if (entry.isDirectory()) {
-      routes.push(...getPageRoutes(join(dir, entry.name), [...parentParts, entry.name]));
+      // Route groups (`(home)`, `(default)`, …) do not contribute URL segments.
+      const childParts = isRouteGroup(entry.name)
+        ? parentParts
+        : [...parentParts, entry.name];
+      routes.push(...getPageRoutes(join(dir, entry.name), childParts));
       continue;
     }
     if (entry.isFile() && isPageFile(entry.name)) {

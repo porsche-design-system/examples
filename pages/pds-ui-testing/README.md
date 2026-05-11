@@ -5,10 +5,27 @@ Each route intentionally contains only a PDS heading and simple links.
 
 ## Routes
 
-- `/` redirects to the default locale home
+- `/` server-side redirect to the default locale home (statically exported)
 - `/[locale]/` home (full-bleed hero: `public/home-teaser.jpg`, Figma overlay copy + CTA, transparent header aligned to landing template)
 - `/[locale]/company/[companySlug]/` footer company placeholders
 - `/[locale]/legal/[legalSlug]/` footer legal placeholders
+
+## App router layout
+
+Two root layouts live under `app/`:
+
+- `app/(entry)/` — minimal root for `/` (renders the redirect only)
+- `app/[locale]/` — root for all localized routes; sets `<html lang={locale}>`,
+  loads PDS partials, and renders the shared footer.
+
+Inside `[locale]/`, route groups switch the header variant without affecting
+URLs:
+
+- `app/[locale]/(home)/` — transparent overlay header (only the `/[locale]/` home page)
+- `app/[locale]/(default)/` — opaque default header (company / legal pages)
+
+`dynamicParams = false` on `[locale]/layout.tsx` rejects unknown locale segments
+at build time.
 
 ## Commands
 

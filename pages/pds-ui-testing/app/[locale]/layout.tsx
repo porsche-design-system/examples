@@ -1,13 +1,30 @@
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
+import {
+  getComponentChunkLinks,
+  getFontLinks,
+  getIconLinks,
+  getMetaTagsAndIconLinks,
+} from "@porsche-design-system/components-react/partials";
+import { PorscheDesignSystemProvider } from "@porsche-design-system/components-react/ssr";
 import { GlobalFooter } from "../components/GlobalFooter";
-import { GlobalHeaderGate } from "../components/GlobalHeaderGate";
-import { isLocale, type Locale } from "../i18n/config";
+import { isLocale, locales, type Locale } from "../i18n/config";
 import { getDictionary } from "../i18n/get-dictionary";
+import "../globals.css";
+
+const APP_TITLE = "PDS UI Testing";
+
+/** Reject any locale segment that is not in `locales`. */
+export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "de" }];
+  return locales.map((locale) => ({ locale }));
 }
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 type LocaleLayoutProps = {
   children: React.ReactNode;
@@ -18,9 +35,7 @@ export async function generateMetadata({
   params,
 }: LocaleLayoutProps): Promise<Metadata> {
   const { locale: raw } = await params;
-  if (!isLocale(raw)) {
-    return {};
-  }
+  if (!isLocale(raw)) return {};
   const dictionary = await getDictionary(raw);
   return {
     description: dictionary.meta.description,
@@ -31,22 +46,36 @@ export async function generateMetadata({
   };
 }
 
-export default async function LocaleLayout({
+export default async function LocaleRootLayout({
   children,
   params,
 }: LocaleLayoutProps) {
   const { locale: raw } = await params;
-  if (!isLocale(raw)) {
-    notFound();
-  }
+  if (!isLocale(raw)) notFound();
   const locale: Locale = raw;
   const dictionary = await getDictionary(locale);
 
   return (
-    <>
-      <GlobalHeaderGate dictionary={dictionary} locale={locale} />
-      {children}
-      <GlobalFooter dictionary={dictionary} locale={locale} />
-    </>
+    <html className="scheme-light-dark" lang={locale}>
+      <head>
+        <base
+          href={
+            process.env.NEXT_PUBLIC_BASE_PATH
+              ? `${process.env.NEXT_PUBLIC_BASE_PATH}/`
+              : "/"
+          }
+        />
+        {getFontLinks({ format: "jsx" })}
+        {getComponentChunkLinks({ format: "jsx" })}
+        {getIconLinks({ format: "jsx" })}
+        {getMetaTagsAndIconLinks({ appTitle: APP_TITLE, format: "jsx" })}
+      </head>
+      <body>
+        <PorscheDesignSystemProvider>
+          {children}
+          <GlobalFooter dictionary={dictionary} locale={locale} />
+        </PorscheDesignSystemProvider>
+      </body>
+    </html>
   );
 }

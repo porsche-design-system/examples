@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { FooterDummyPage } from "../../../components/FooterDummyPage";
-import { isLocale } from "../../../i18n/config";
-import { getDictionary } from "../../../i18n/get-dictionary";
+import { FooterDummyPage } from "../../../../components/FooterDummyPage";
+import { isLocale } from "../../../../i18n/config";
+import { getDictionary } from "../../../../i18n/get-dictionary";
 
 const LEGAL_SLUGS = [
   "notice",
