@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-2:I[46310,["/examples/issue/4292/pds-ui-testing/_next/static/chunks/0fug_n~jwo.4~.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/01oyo05qtcutc.js"],"PHeading"]
-3:I[75940,["/examples/issue/4292/pds-ui-testing/_next/static/chunks/0fug_n~jwo.4~.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/01oyo05qtcutc.js"],"PText"]
+2:I[46310,["/examples/issue/4292/pds-ui-testing/_next/static/chunks/0bhkrkobshvae.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/01oyo05qtcutc.js"],"PHeading"]
+3:I[75940,["/examples/issue/4292/pds-ui-testing/_next/static/chunks/0bhkrkobshvae.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/01oyo05qtcutc.js"],"PText"]
 4:I[1333,["/examples/issue/4292/pds-ui-testing/_next/static/chunks/16lrzye9q.ctr.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/0.0i~w~hmbg~z.js"],"OutletBoundary"]
 5:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"grid-template py-fluid-lg","data-testid":"main-content","children":["$","div",null,{"className":"col-wide flex max-w-prose flex-col gap-fluid-sm","children":[["$","$L2",null,{"tag":"h1","children":"Impressum"}],["$","$L3",null,{"children":"Diese Seite ist nur ein Platzhalter ohne echte Inhalte und dient der Nutzbarkeits- und Barrierefreiheitstests."}]]}]}],null,["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"VmR6zEb6_-B9T6FbRqBXz"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"grid-template py-fluid-lg","data-testid":"main-content","children":["$","div",null,{"className":"col-wide flex max-w-prose flex-col gap-fluid-sm","children":[["$","$L2",null,{"tag":"h1","children":"Impressum"}],["$","$L3",null,{"children":"Diese Seite ist nur ein Platzhalter ohne echte Inhalte und dient der Nutzbarkeits- und Barrierefreiheitstests."}]]}]}],null,["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"u-0ErPp1ThK0Rb042DYF5"}
 6:null
