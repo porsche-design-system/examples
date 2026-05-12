@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PButton, PHeading } from "@porsche-design-system/components-react/ssr";
+import { appHref } from "../i18n/href";
 
 type Props = {
   alt: string;
@@ -25,7 +26,7 @@ export function HomeHero({ alt, heading, ctaLabel }: Props) {
         fill
         priority
         sizes="(max-width: 1920px) 100vw, 1920px"
-        src="/home-teaser.jpg"
+        src={appHref("/home-teaser.jpg")}
       />
       <div className="z-2 col-extended row-span-full mb-fluid-xl flex flex-col gap-fluid-md items-start">
         <PHeading

@@ -112,10 +112,7 @@ export function HomeLandingContent({ home, locale, products }: Props) {
         </div>
       </section>
 
-      <section
-        className="col-full grid grid-cols-subgrid"
-        id="products"
-      >
+      <section className="col-full grid grid-cols-subgrid" id="products">
         <div className="col-wide flex flex-col items-center text-center mt-fluid-2xl">
           <PHeading id="home-trending-heading" size="3xl" tag="h2">
             {home.trendingHeading}
@@ -140,7 +137,7 @@ export function HomeLandingContent({ home, locale, products }: Props) {
             gradient
             pagination
           >
-            {products.slice(0, 3).map((product) => (
+            {products.slice(0, 5).map((product) => (
               <PLinkTileProduct
                 aspectRatio="3/4"
                 description={product.vatNote}
