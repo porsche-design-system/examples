@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
   PButton,
+  PDivider,
   PHeading,
   PLinkPure,
   PTag,
   PText,
 } from "@porsche-design-system/components-react/ssr";
 import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
+import { ProductSizeSelector } from "@/app/components/ProductSizeSelector";
 import {
   getCatalogProductBySlug,
   getHomeCatalog,
@@ -36,7 +38,9 @@ export async function generateStaticParams() {
   return params.flat();
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { locale: raw, productSlug } = await params;
   if (!isLocale(raw)) return {};
   const locale = raw as Locale;
@@ -83,17 +87,21 @@ export default async function ProductDetailPage({ params }: PageProps) {
     product.collections,
     productList.filters.collections as Record<string, string>,
   );
+  const isApparelProduct = product.categories.includes("apparel");
 
   return (
-    <main className="grid-template gap-y-fluid-xl py-fluid-lg" data-testid="main-content">
+    <main
+      className="grid-template gap-y-fluid-xl py-fluid-lg"
+      data-testid="main-content"
+    >
       <div className="col-wide">
         <PLinkPure href={productsIndexHref(locale)} icon="arrow-left">
           {productDetail.backToProducts}
         </PLinkPure>
       </div>
 
-      <section className="col-wide grid gap-fluid-lg md:grid-cols-2">
-        <div className="overflow-hidden rounded-lg bg-surface">
+      <section className="col-wide grid grid-cols-subgrid">
+        <div className="col-span-full md:col-span-one-half overflow-hidden rounded-lg bg-surface">
           {/* biome-ignore lint/performance/noImgElement: Product detail uses the same public demo assets as PDS tile slots. */}
           <img
             alt={primaryImage?.alt ?? ""}
@@ -102,13 +110,15 @@ export default async function ProductDetailPage({ params }: PageProps) {
           />
         </div>
 
-        <div className="flex flex-col gap-fluid-md">
+        <div className="col-span-full md:col-start-11 flex flex-col gap-fluid-md">
           <div className="flex flex-wrap gap-static-sm">
-            {[...categoryLabels, ...collectionLabels, ...tagLabels].map((label) => (
-              <PTag compact key={label}>
-                {label}
-              </PTag>
-            ))}
+            {[...categoryLabels, ...collectionLabels, ...tagLabels].map(
+              (label) => (
+                <PTag compact key={label}>
+                  {label}
+                </PTag>
+              ),
+            )}
           </div>
           <div className="grid gap-fluid-sm">
             <PHeading size="3xl" tag="h1">
@@ -124,13 +134,30 @@ export default async function ProductDetailPage({ params }: PageProps) {
               {product.vatNote}
             </PText>
           </div>
+          {isApparelProduct ? (
+            <>
+              <PDivider />
+              <section aria-labelledby="product-size-heading">
+                <PHeading id="product-size-heading" size="medium" tag="h2">
+                  {productDetail.sizes}
+                </PHeading>
+                <ProductSizeSelector label={productDetail.selectSize} />
+              </section>
+              <PDivider />
+            </>
+          ) : null}
           <div className="flex flex-wrap gap-static-sm">
-            <PButton type="button">{productDetail.addToCart}</PButton>
-            <PButton type="button" variant="secondary">
+            <PButton type="button" icon="shopping-cart">
+              {productDetail.addToCart}
+            </PButton>
+            <PButton type="button" variant="secondary" icon="heart">
               {productDetail.favorites}
             </PButton>
           </div>
-          <section aria-labelledby="product-detail-heading" className="grid gap-static-sm">
+          <section
+            aria-labelledby="product-detail-heading"
+            className="grid gap-static-sm"
+          >
             <PHeading id="product-detail-heading" size="medium" tag="h2">
               {productDetail.details}
             </PHeading>

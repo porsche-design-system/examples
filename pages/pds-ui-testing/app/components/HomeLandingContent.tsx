@@ -137,7 +137,7 @@ export function HomeLandingContent({ home, locale, products }: Props) {
             gradient
             pagination
           >
-            {products.slice(0, 5).map((product) => (
+            {products.slice(0, 3).map((product) => (
               <PLinkTileProduct
                 aspectRatio="3/4"
                 description={product.vatNote}

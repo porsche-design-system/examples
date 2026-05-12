@@ -128,6 +128,7 @@
           "porsche-design": "Porsche Design"
         },
         "flags": {
+          "new": "Neu",
           "new-release": "Neuheiten",
           "bestseller": "Bestseller",
           "limited-edition": "Limitierte Editionen",
@@ -146,6 +147,8 @@
       "addToCart": "In den Warenkorb",
       "favorites": "Zur Merkliste hinzufügen",
       "details": "Produktdetails",
+      "sizes": "Größen",
+      "selectSize": "Größe auswählen",
       "sku": "Artikelnummer",
       "relatedProducts": "Ähnliche Produkte"
     },

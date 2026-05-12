@@ -4,21 +4,11 @@
       "id": "product-keychain",
       "slug": "leather-crest-keychain",
       "sku": "WAP-050-090-0R",
-      "audiences": [
-        "unisex"
-      ],
-      "tags": [
-        "timeless-enthusiast"
-      ],
-      "categories": [
-        "accessories"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "featured"
-      ],
+      "audiences": ["unisex"],
+      "tags": ["timeless-enthusiast"],
+      "categories": ["accessories"],
+      "collections": ["porsche-originals"],
+      "flags": ["featured"],
       "name": "Leather Crest Keychain",
       "teaser": "A compact leather keychain with the Porsche crest.",
       "description": "A timeless everyday accessory with grained leather, precise stitching, and a polished Porsche crest.",
@@ -39,26 +29,11 @@
       "id": "product-cap",
       "slug": "porsche-design-baseball-cap",
       "sku": "WAP-080-001-0P",
-      "audiences": [
-        "men",
-        "women",
-        "unisex"
-      ],
-      "tags": [
-        "the-loyalist",
-        "urbanist"
-      ],
-      "categories": [
-        "apparel",
-        "accessories"
-      ],
-      "collections": [
-        "porsche-design"
-      ],
-      "flags": [
-        "new-release",
-        "trending"
-      ],
+      "audiences": ["men", "women", "unisex"],
+      "tags": ["urbanist"],
+      "categories": ["apparel", "accessories"],
+      "collections": ["porsche-design"],
+      "flags": ["new-release", "trending"],
       "name": "Porsche Design Baseball Cap",
       "teaser": "A clean cap for everyday city looks.",
       "description": "Sport-inspired Porsche styling with an adjustable fit, embroidered details, and a versatile silhouette.",
@@ -79,21 +54,11 @@
       "id": "product-umbrella",
       "slug": "porsche-umbrella",
       "sku": "WAP-050-081-0U",
-      "audiences": [
-        "unisex"
-      ],
-      "tags": [
-        "urbanist"
-      ],
-      "categories": [
-        "accessories"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "bestseller"
-      ],
+      "audiences": ["unisex"],
+      "tags": ["urbanist"],
+      "categories": ["accessories"],
+      "collections": ["porsche-originals"],
+      "flags": ["bestseller"],
       "name": "Porsche Umbrella",
       "teaser": "Weather protection with a minimal Porsche look.",
       "description": "A durable compact umbrella designed for daily use, with subtle Porsche branding and a comfortable handle.",
@@ -114,21 +79,11 @@
       "id": "product-womens-t-shirt-essential",
       "slug": "womens-t-shirt-essential",
       "sku": "WAP726XXL0NPOR",
-      "audiences": [
-        "women"
-      ],
-      "tags": [
-        "urbanist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "bestseller"
-      ],
+      "audiences": ["women"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["bestseller"],
       "name": "Women's T-Shirt - Essential",
       "teaser": "A white essential T-shirt with a women's Porsche crest badge.",
       "description": "T-shirt with women's crest badge, selected from the Porsche Shop women's clothing listing.",
@@ -149,21 +104,11 @@
       "id": "product-womens-sport-top-shadegreen",
       "slug": "womens-2-in-1-sport-top-cayenne-electric-shadegreen",
       "sku": "WAP2170XS0T0YG",
-      "audiences": [
-        "women"
-      ],
-      "tags": [
-        "urbanist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "new-release"
-      ],
+      "audiences": ["women"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["new", "new-release"],
       "name": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle",
       "teaser": "A shade green crop top with integrated sports bra.",
       "description": "Functional crop top with integrated sports bra from Porsche x PUMA, selected from the Porsche Shop women's clothing listing.",
@@ -184,21 +129,11 @@
       "id": "product-womens-crew-neck-jumper-black",
       "slug": "womens-crew-neck-jumper-cayenne-electric-black",
       "sku": "WAP21000S0T0YG",
-      "audiences": [
-        "women"
-      ],
-      "tags": [
-        "urbanist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "new-release"
-      ],
+      "audiences": ["women"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["new-release"],
       "name": "Crew-neck Jumper - Porsche Cayenne Electric Lifestyle",
       "teaser": "A black cropped jumper by Porsche x PUMA.",
       "description": "Cropped jumper by Porsche x PUMA with ribbed cuffs made of super-soft material.",
@@ -219,21 +154,11 @@
       "id": "product-womens-t-shirt-essential-black",
       "slug": "womens-essential-t-shirt-black",
       "sku": "WAP7970XL0E",
-      "audiences": [
-        "women"
-      ],
-      "tags": [
-        "the-loyalist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "bestseller"
-      ],
+      "audiences": ["women"],
+      "tags": ["the-loyalist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["bestseller"],
       "name": "T-Shirt - Essential",
       "teaser": "A black essential T-shirt for everyday Porsche looks.",
       "description": "Essential black T-shirt selected from the Porsche Shop women's clothing listing.",
@@ -254,21 +179,11 @@
       "id": "product-womens-leggings-shadegreen",
       "slug": "womens-7-8-leggings-cayenne-electric-shadegreen",
       "sku": "WAP2190XS0T0YG",
-      "audiences": [
-        "women"
-      ],
-      "tags": [
-        "urbanist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "new-release"
-      ],
+      "audiences": ["women"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["new-release"],
       "name": "7/8 Leggings - Porsche Cayenne Electric Lifestyle",
       "teaser": "Lightweight shade green 7/8 leggings with a high waist.",
       "description": "Lightweight 7/8 leggings from Porsche x PUMA with a high waist made from fast-drying material.",
@@ -289,21 +204,11 @@
       "id": "product-womens-sport-top-black",
       "slug": "womens-2-in-1-sport-top-cayenne-electric-black",
       "sku": "WAP21600M0T0YG",
-      "audiences": [
-        "women"
-      ],
-      "tags": [
-        "urbanist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "featured"
-      ],
+      "audiences": ["women"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["featured"],
       "name": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle",
       "teaser": "A black crop top with integrated sports bra.",
       "description": "Functional crop top with integrated sports bra from Porsche x PUMA in black.",
@@ -324,21 +229,11 @@
       "id": "product-womens-crew-neck-jumper-shadegreen",
       "slug": "womens-crew-neck-jumper-cayenne-electric-shadegreen",
       "sku": "WAP2110XS0T0YG",
-      "audiences": [
-        "women"
-      ],
-      "tags": [
-        "urbanist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "trending"
-      ],
+      "audiences": ["women"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["trending"],
       "name": "Crew-neck Jumper - Porsche Cayenne Electric Lifestyle",
       "teaser": "A shade green cropped jumper by Porsche x PUMA.",
       "description": "Cropped jumper by Porsche x PUMA in shade green with ribbed cuffs made of super-soft material.",
@@ -359,22 +254,11 @@
       "id": "product-classic-leather-jacket",
       "slug": "porsche-design-classic-leather-jacket",
       "sku": "PD-MEN-001",
-      "audiences": [
-        "men"
-      ],
-      "tags": [
-        "urbanist",
-        "timeless-enthusiast"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-design"
-      ],
-      "flags": [
-        "featured"
-      ],
+      "audiences": ["men"],
+      "tags": ["urbanist", "timeless-enthusiast"],
+      "categories": ["apparel"],
+      "collections": ["porsche-design"],
+      "flags": ["new", "featured"],
       "name": "Porsche Design Classic Leather Jacket",
       "teaser": "A premium leather jacket from the Porsche Design men's clothing range.",
       "description": "A Porsche Design menswear piece inspired by the Porsche Shop listing. Placeholder imagery is used until final product visuals are available.",
@@ -395,21 +279,11 @@
       "id": "product-long-sleeve-v-neck-shirt",
       "slug": "porsche-design-long-sleeve-v-neck-shirt",
       "sku": "PD-MEN-002",
-      "audiences": [
-        "men"
-      ],
-      "tags": [
-        "urbanist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-design"
-      ],
-      "flags": [
-        "new-release"
-      ],
+      "audiences": ["men"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-design"],
+      "flags": ["new-release"],
       "name": "Porsche Design Long-sleeve V-neck Shirt",
       "teaser": "A clean long-sleeve shirt for refined everyday looks.",
       "description": "A Porsche Design long-sleeve V-neck shirt selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available.",
@@ -430,21 +304,11 @@
       "id": "product-trench-coat",
       "slug": "porsche-design-trench-coat",
       "sku": "PD-MEN-003",
-      "audiences": [
-        "men"
-      ],
-      "tags": [
-        "urbanist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-design"
-      ],
-      "flags": [
-        "featured"
-      ],
+      "audiences": ["men"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-design"],
+      "flags": ["featured"],
       "name": "Porsche Design Trench Coat",
       "teaser": "A sharp outerwear piece for business and city wear.",
       "description": "A Porsche Design trench coat selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available.",
@@ -465,21 +329,11 @@
       "id": "product-crew-neck-pullover",
       "slug": "porsche-design-crew-neck-pullover",
       "sku": "PD-MEN-004",
-      "audiences": [
-        "men"
-      ],
-      "tags": [
-        "the-loyalist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-design"
-      ],
-      "flags": [
-        "trending"
-      ],
+      "audiences": ["men"],
+      "tags": ["the-loyalist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-design"],
+      "flags": ["trending"],
       "name": "Porsche Design Crew-neck Pullover",
       "teaser": "A comfortable pullover with understated Porsche Design character.",
       "description": "A Porsche Design crew-neck pullover selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available.",
@@ -500,21 +354,11 @@
       "id": "product-gumsole-trainers",
       "slug": "porsche-design-gumsole-trainers",
       "sku": "PD-MEN-005",
-      "audiences": [
-        "men"
-      ],
-      "tags": [
-        "urbanist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-design"
-      ],
-      "flags": [
-        "bestseller"
-      ],
+      "audiences": ["men"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-design"],
+      "flags": ["bestseller"],
       "name": "Porsche Design Gumsole Trainers",
       "teaser": "Dark brown trainers for a casual Porsche Design look.",
       "description": "Porsche Design Gumsole Trainers selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available.",
@@ -535,21 +379,11 @@
       "id": "product-kids-cap-essential",
       "slug": "kids-cap-essential",
       "sku": "WAP2000010RESS",
-      "audiences": [
-        "kids"
-      ],
-      "tags": [
-        "the-loyalist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "bestseller"
-      ],
+      "audiences": ["kids"],
+      "tags": ["the-loyalist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["bestseller"],
       "name": "Kids Cap - Essential",
       "teaser": "A red kids cap with the Porsche Crest on the front.",
       "description": "Stylish cap for kids with Porsche Crest on the front, selected from the Porsche Shop children's clothes listing.",
@@ -570,21 +404,11 @@
       "id": "product-kids-turbo-toddler-set",
       "slug": "porsche-turbo-toddler-set",
       "sku": "4056487070759",
-      "audiences": [
-        "kids"
-      ],
-      "tags": [
-        "timeless-enthusiast"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "featured"
-      ],
+      "audiences": ["kids"],
+      "tags": ["timeless-enthusiast"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["featured"],
       "name": "Porsche Turbo Toddler Set",
       "teaser": "A two-piece toddler set with Porsche Turbo vehicle print.",
       "description": "Stylish toddler set of two pieces with Porsche Turbo vehicle print, selected from the Porsche Shop children's clothes listing.",
@@ -605,21 +429,11 @@
       "id": "product-kids-hoodie-essential",
       "slug": "kids-hoodie-essential",
       "sku": "WAP2050980RESS",
-      "audiences": [
-        "kids"
-      ],
-      "tags": [
-        "the-loyalist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "new-release"
-      ],
+      "audiences": ["kids"],
+      "tags": ["the-loyalist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["new", "new-release"],
       "name": "Kids Hoodie - Essential",
       "teaser": "A grey hoodie for kids with the Porsche Crest.",
       "description": "Comfortable hoodie for kids with the iconic Porsche Crest on the chest and a kangaroo pocket.",
@@ -640,21 +454,11 @@
       "id": "product-kids-t-shirt-essential",
       "slug": "kids-t-shirt-essential",
       "sku": "WAP2061460RESS",
-      "audiences": [
-        "kids"
-      ],
-      "tags": [
-        "the-loyalist"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "trending"
-      ],
+      "audiences": ["kids"],
+      "tags": ["the-loyalist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["trending"],
       "name": "Kids T-Shirt - Essential",
       "teaser": "A grey T-shirt for kids with the Porsche Crest.",
       "description": "Comfortable T-shirt for kids with the iconic Porsche Crest on the chest.",
@@ -675,21 +479,11 @@
       "id": "product-kids-polo-shirt-turbo-no-1",
       "slug": "kids-polo-shirt-turbo-no-1",
       "sku": "WAP3591340RTN1",
-      "audiences": [
-        "kids"
-      ],
-      "tags": [
-        "timeless-enthusiast"
-      ],
-      "categories": [
-        "apparel"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "featured"
-      ],
+      "audiences": ["kids"],
+      "tags": ["timeless-enthusiast"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["featured"],
       "name": "Kids Polo Shirt - Turbo No. 1",
       "teaser": "A red kids polo shirt with Porsche lettering.",
       "description": "Soft polo shirt for children with iconic Porsche lettering.",
@@ -710,24 +504,11 @@
       "id": "product-roadster-aluminum-trolley-s",
       "slug": "roadster-aluminum-trolley-s",
       "sku": "4056487085630",
-      "audiences": [
-        "unisex"
-      ],
-      "tags": [
-        "urbanist",
-        "timeless-enthusiast"
-      ],
-      "categories": [
-        "accessories",
-        "bags-luggage"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "new-release",
-        "featured"
-      ],
+      "audiences": ["unisex"],
+      "tags": ["urbanist", "timeless-enthusiast"],
+      "categories": ["accessories", "bags-luggage"],
+      "collections": ["porsche-originals"],
+      "flags": ["new", "new-release", "featured"],
       "name": "Roadster Aluminum Trolley S",
       "teaser": "A premium silver aluminum suitcase inspired by the Porsche 911.",
       "description": "High-quality suitcase made of anodised aluminum from Porsche Design. Inspired by the aerodynamic shape of the 911.",
@@ -748,22 +529,11 @@
       "id": "product-roadster-hardcase-business-trolley-s",
       "slug": "roadster-hardcase-business-trolley-s",
       "sku": "4056487093376",
-      "audiences": [
-        "unisex"
-      ],
-      "tags": [
-        "urbanist"
-      ],
-      "categories": [
-        "accessories",
-        "bags-luggage"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "trending"
-      ],
+      "audiences": ["unisex"],
+      "tags": ["urbanist"],
+      "categories": ["accessories", "bags-luggage"],
+      "collections": ["porsche-originals"],
+      "flags": ["trending"],
       "name": "Roadster Hardcase Business Trolley S",
       "teaser": "A lightweight business trolley with smart travel features.",
       "description": "Lightweight business trolley with laptop compartment, USB port, smooth wheels and an ergonomic multi-stop telescopic handle.",
@@ -784,22 +554,11 @@
       "id": "product-travel-bag-heritage",
       "slug": "travel-bag-heritage",
       "sku": "WAP0350160RHWE",
-      "audiences": [
-        "unisex"
-      ],
-      "tags": [
-        "timeless-enthusiast"
-      ],
-      "categories": [
-        "accessories",
-        "bags-luggage"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "featured"
-      ],
+      "audiences": ["unisex"],
+      "tags": ["timeless-enthusiast"],
+      "categories": ["accessories", "bags-luggage"],
+      "collections": ["porsche-originals"],
+      "flags": ["featured"],
       "name": "Travel Bag - Heritage",
       "teaser": "A black Porsche travel bag with a spacious main compartment.",
       "description": "Modern travel bag from Porsche with spacious main compartment and two-way zip.",
@@ -820,22 +579,11 @@
       "id": "product-backpack-martini-racing",
       "slug": "backpack-martini-racing",
       "sku": "WAP0352010S0MR",
-      "audiences": [
-        "unisex"
-      ],
-      "tags": [
-        "the-loyalist"
-      ],
-      "categories": [
-        "accessories",
-        "bags-luggage"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "bestseller"
-      ],
+      "audiences": ["unisex"],
+      "tags": ["the-loyalist"],
+      "categories": ["accessories", "bags-luggage"],
+      "collections": ["porsche-originals"],
+      "flags": ["new", "bestseller"],
       "name": "Backpack - MARTINI RACING",
       "teaser": "A black Porsche backpack with laptop compartment and trolley link.",
       "description": "Spacious backpack from Porsche with 13-inch laptop compartment and practical trolley link.",
@@ -856,22 +604,11 @@
       "id": "product-retro-canvas-bag-porsche-fan-community",
       "slug": "retro-canvas-bag-porsche-fan-community",
       "sku": "WAP8100010TFWR",
-      "audiences": [
-        "unisex"
-      ],
-      "tags": [
-        "urbanist"
-      ],
-      "categories": [
-        "accessories",
-        "bags-luggage"
-      ],
-      "collections": [
-        "porsche-originals"
-      ],
-      "flags": [
-        "new-release"
-      ],
+      "audiences": ["unisex"],
+      "tags": ["urbanist"],
+      "categories": ["accessories", "bags-luggage"],
+      "collections": ["porsche-originals"],
+      "flags": ["new-release"],
       "name": "Retro Canvas Bag - Porsche Fan Community",
       "teaser": "A beige Porsche fabric bag with two handles and a striking print.",
       "description": "Porsche fabric bag with two handles and a striking print on one side.",

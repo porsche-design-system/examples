@@ -72,7 +72,7 @@ export function GlobalHeader({
           <PButtonPure
             className="p-static-xs -m-static-xs"
             hideLabel
-            icon="star"
+            icon="heart"
             size={{ base: "small", m: "medium" }}
             type="button"
           >

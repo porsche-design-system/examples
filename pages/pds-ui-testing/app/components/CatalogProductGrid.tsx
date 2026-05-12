@@ -1,4 +1,7 @@
-import { PLinkTileProduct } from "@porsche-design-system/components-react/ssr";
+import {
+  PLinkTileProduct,
+  PTag,
+} from "@porsche-design-system/components-react/ssr";
 import type { CatalogProduct } from "@/app/data/get-catalog";
 import type { Locale } from "@/app/i18n/config";
 import { appHref, productDetailHref } from "@/app/i18n/href";
@@ -9,6 +12,10 @@ type Props = {
   locale: Locale;
   products: CatalogProduct[];
 };
+
+function getNewFlagLabel(locale: Locale): string {
+  return locale === "de" ? "Neu" : "New";
+}
 
 /**
  * Porsche Grid product strip shared by the full catalog, filtered views, and
@@ -39,6 +46,11 @@ export function CatalogProductGrid({
               href={productDetailHref(locale, product.slug)}
               price={product.price.formatted}
             >
+              {product.flags.includes("new") ? (
+                <PTag compact slot="header">
+                  {getNewFlagLabel(locale)}
+                </PTag>
+              ) : null}
               {/* biome-ignore lint/performance/noImgElement: PLinkTileProduct default slot expects a bare <img>. */}
               <img
                 alt={product.images[0]?.alt ?? ""}
