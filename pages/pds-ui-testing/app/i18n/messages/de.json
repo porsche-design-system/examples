@@ -18,6 +18,7 @@
     "viewAllMen": "Alle Herren anzeigen",
     "viewAllKids": "Alle Kinder anzeigen",
     "clothing": "Bekleidung",
+    "bagsLuggage": "Taschen & Gepäck",
     "chargingHardware": "Lade-Hardware",
     "viewAllProducts": "Alle Produkte anzeigen",
     "viewAllPorscheOriginals": "Alle Porsche Originals anzeigen",
@@ -99,7 +100,8 @@
         },
         "categories": {
           "apparel": "Bekleidung",
-          "accessories": "Accessoires"
+          "accessories": "Accessoires",
+          "bags-luggage": "Taschen & Gepäck"
         },
         "collections": {
           "porsche-originals": "Porsche Originals",

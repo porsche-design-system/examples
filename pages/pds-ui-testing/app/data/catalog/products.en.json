@@ -132,6 +132,54 @@
       "price": { "amount": 130, "currency": "EUR", "formatted": "130.00 €" },
       "vatNote": "incl. VAT",
       "images": [{ "src": "/home-feature-trunk.png", "alt": "Foldable trunk organizer product scene" }]
+    },
+    {
+      "id": "product-weekender-bag",
+      "slug": "porsche-weekender-bag",
+      "sku": "WAP-035-110-0B",
+      "audiences": ["unisex"],
+      "tags": ["urbanist", "timeless-enthusiast"],
+      "categories": ["accessories", "bags-luggage"],
+      "collections": ["porsche-design"],
+      "flags": ["new-release", "featured"],
+      "name": "Porsche Weekender Bag",
+      "teaser": "A spacious travel bag for short trips.",
+      "description": "A versatile weekender with a roomy main compartment, understated Porsche Design details, and placeholder imagery until final product visuals are available.",
+      "price": { "amount": 240, "currency": "EUR", "formatted": "240.00 €" },
+      "vatNote": "incl. VAT",
+      "images": [{ "src": "/home-feature-trunk.png", "alt": "Placeholder visualization for Porsche Weekender Bag" }]
+    },
+    {
+      "id": "product-backpack",
+      "slug": "porsche-commuter-backpack",
+      "sku": "WAP-035-120-0B",
+      "audiences": ["unisex"],
+      "tags": ["urbanist"],
+      "categories": ["accessories", "bags-luggage"],
+      "collections": ["porsche-design"],
+      "flags": ["trending"],
+      "name": "Porsche Commuter Backpack",
+      "teaser": "A streamlined backpack for daily essentials.",
+      "description": "A city-ready backpack concept with practical organization, clean Porsche styling, and placeholder imagery until final product visuals are available.",
+      "price": { "amount": 190, "currency": "EUR", "formatted": "190.00 €" },
+      "vatNote": "incl. VAT",
+      "images": [{ "src": "/home-feature-trunk.png", "alt": "Placeholder visualization for Porsche Commuter Backpack" }]
+    },
+    {
+      "id": "product-trolley",
+      "slug": "porsche-cabin-trolley",
+      "sku": "WAP-035-130-0B",
+      "audiences": ["unisex"],
+      "tags": ["timeless-enthusiast"],
+      "categories": ["accessories", "bags-luggage"],
+      "collections": ["porsche-design"],
+      "flags": ["limited-edition"],
+      "name": "Porsche Cabin Trolley",
+      "teaser": "Compact luggage for business trips and weekend travel.",
+      "description": "A cabin trolley concept with a compact format, Porsche Design-inspired finishing, and placeholder imagery until final product visuals are available.",
+      "price": { "amount": 390, "currency": "EUR", "formatted": "390.00 €" },
+      "vatNote": "incl. VAT",
+      "images": [{ "src": "/home-feature-trunk.png", "alt": "Placeholder visualization for Porsche Cabin Trolley" }]
     }
   ]
 }

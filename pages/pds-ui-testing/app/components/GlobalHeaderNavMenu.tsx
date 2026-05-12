@@ -94,6 +94,11 @@ export function GlobalHeaderNavMenu({ locale, nav, menuButtonClassName }: Props)
           </PDrilldownLink>
         </PDrilldownItem>
         <PDrilldownItem identifier="accessories" label={nav.accessories}>
+          <PDrilldownLink
+            href={productsFilterHref(locale, { categories: ["bags-luggage"] })}
+          >
+            {nav.bagsLuggage}
+          </PDrilldownLink>
           <PDrilldownLink href={productsFilterHref(locale, { categories: ["accessories"] })}>
             {nav.chargingHardware}
           </PDrilldownLink>
