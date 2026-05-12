@@ -1,4 +1,4 @@
-:HL["/examples/issue/4292/pds-ui-testing/_next/static/chunks/136vz538vt14i.css","style"]
+:HL["/examples/issue/4292/pds-ui-testing/_next/static/chunks/15kpwbonvgzup.css","style"]
 :HL["https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.1.0.59dc31ee9c99f5a43eb5.js","script",{"crossOrigin":""}]
@@ -23,8 +23,15 @@
 :HL["/examples/issue/4292/pds-ui-testing/product-kids-t-shirt-essential.webp","image"]
 :HL["/examples/issue/4292/pds-ui-testing/product-kids-polo-shirt-turbo-no-1.webp","image"]
 :HL["/examples/issue/4292/pds-ui-testing/product-roadster-aluminum-trolley-s.webp","image"]
+:HL["/examples/issue/4292/pds-ui-testing/product-roadster-aluminum-trolley-m.webp","image"]
+:HL["/examples/issue/4292/pds-ui-testing/product-roadster-aluminum-trolley-l.webp","image"]
 :HL["/examples/issue/4292/pds-ui-testing/product-roadster-hardcase-business-trolley-s.webp","image"]
 :HL["/examples/issue/4292/pds-ui-testing/product-travel-bag-heritage.webp","image"]
 :HL["/examples/issue/4292/pds-ui-testing/product-backpack-martini-racing.webp","image"]
 :HL["/examples/issue/4292/pds-ui-testing/product-retro-canvas-bag-porsche-fan-community.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"locale","param":{"type":"d","key":"de","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"(default)","param":null,"prefetchHints":0,"slots":{"children":{"name":"products","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"6E_MLd1PcvrdWcWe8XUpQ"}
+:HL["/examples/issue/4292/pds-ui-testing/product-porsche-folding-luggage-compartment-box.webp","image"]
+:HL["/examples/issue/4292/pds-ui-testing/product-porsche-bicycle-rack.webp","image"]
+:HL["/examples/issue/4292/pds-ui-testing/product-porsche-performance-roof-box.webp","image"]
+:HL["/examples/issue/4292/pds-ui-testing/product-porsche-dog-blanket.webp","image"]
+:HL["/examples/issue/4292/pds-ui-testing/product-porsche-cool-bag.webp","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"locale","param":{"type":"d","key":"de","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"(default)","param":null,"prefetchHints":0,"slots":{"children":{"name":"products","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"6XzJ0ejm3fcoI3-H9zAqI"}

@@ -1,4 +1,4 @@
-:HL["/examples/issue/4292/pds-ui-testing/_next/static/chunks/136vz538vt14i.css","style"]
+:HL["/examples/issue/4292/pds-ui-testing/_next/static/chunks/15kpwbonvgzup.css","style"]
 :HL["https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.1.0.59dc31ee9c99f5a43eb5.js","script",{"crossOrigin":""}]
@@ -8,6 +8,8 @@
 :HL["/examples/issue/4292/pds-ui-testing/home-product-cap.jpg","image"]
 :HL["/examples/issue/4292/pds-ui-testing/product-womens-crew-neck-jumper-shadegreen.webp","image"]
 :HL["/examples/issue/4292/pds-ui-testing/product-crew-neck-pullover.webp","image"]
+:HL["/examples/issue/4292/pds-ui-testing/product-kids-t-shirt-essential.webp","image"]
+:HL["/examples/issue/4292/pds-ui-testing/product-roadster-hardcase-business-trolley-s.webp","image"]
 :HL["/examples/issue/4292/pds-ui-testing/home-feature-roadster.png","image"]
-:HL["/examples/issue/4292/pds-ui-testing/home-feature-trunk.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"locale","param":{"type":"d","key":"en","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"(home)","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"6E_MLd1PcvrdWcWe8XUpQ"}
+:HL["/examples/issue/4292/pds-ui-testing/home-feature-travel-transport.jpg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"locale","param":{"type":"d","key":"en","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"(home)","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"6XzJ0ejm3fcoI3-H9zAqI"}
