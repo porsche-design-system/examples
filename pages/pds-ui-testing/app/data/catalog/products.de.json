@@ -67,23 +67,89 @@
       "description": "Eine technische Lage für wechselhaftes Wetter, die klares Porsche Design mit komfortabler Alltagspassform verbindet.",
       "price": { "amount": 280, "currency": "EUR", "formatted": "280,00 €" },
       "vatNote": "inkl. MwSt.",
-      "images": [{ "src": "/home-lifestyle-urbanist.jpg", "alt": "Frau in dunklem Porsche-inspiriertem Outfit im Freien" }]
+      "images": [
+        { "src": "/home-lifestyle-urbanist.jpg", "alt": "Frau in dunklem Porsche-inspiriertem Outfit im Freien" }
+      ]
     },
     {
-      "id": "product-mens-polo",
-      "slug": "mens-essential-polo",
-      "sku": "WAP-720-001-0M",
+      "id": "product-classic-leather-jacket",
+      "slug": "porsche-design-classic-leather-jacket",
+      "sku": "PD-MEN-001",
+      "audiences": ["men"],
+      "tags": ["urbanist", "timeless-enthusiast"],
+      "categories": ["apparel"],
+      "collections": ["porsche-design"],
+      "flags": ["featured"],
+      "name": "Porsche Design Classic Leather Jacket",
+      "teaser": "Eine hochwertige Lederjacke aus der Porsche Design Herrenbekleidung.",
+      "description": "Ein Porsche Design Menswear-Artikel aus der Porsche Shop Liste. Platzhalterbild wird verwendet, bis finale Produktvisualisierungen verfügbar sind.",
+      "price": { "amount": 1990, "currency": "EUR", "formatted": "1.990,00 €" },
+      "vatNote": "inkl. MwSt.",
+      "images": [{ "src": "/product-classic-leather-jacket.webp", "alt": "Porsche Design Classic Leather Jacket" }]
+    },
+    {
+      "id": "product-long-sleeve-v-neck-shirt",
+      "slug": "porsche-design-long-sleeve-v-neck-shirt",
+      "sku": "PD-MEN-002",
+      "audiences": ["men"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-design"],
+      "flags": ["new-release"],
+      "name": "Porsche Design Long-sleeve V-neck Shirt",
+      "teaser": "Ein reduziertes Langarmshirt für gepflegte Alltagslooks.",
+      "description": "Ein Porsche Design Langarmshirt mit V-Ausschnitt aus der Herrenbekleidungsliste. Platzhalterbild wird verwendet, bis finale Produktvisualisierungen verfügbar sind.",
+      "price": { "amount": 180, "currency": "EUR", "formatted": "180,00 €" },
+      "vatNote": "inkl. MwSt.",
+      "images": [{ "src": "/product-long-sleeve-v-neck-shirt.webp", "alt": "Porsche Design Long-sleeve V-neck Shirt" }]
+    },
+    {
+      "id": "product-trench-coat",
+      "slug": "porsche-design-trench-coat",
+      "sku": "PD-MEN-003",
+      "audiences": ["men"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-design"],
+      "flags": ["featured"],
+      "name": "Porsche Design Trench Coat",
+      "teaser": "Ein prägnantes Outerwear-Piece für Business und Stadt.",
+      "description": "Ein Porsche Design Trenchcoat aus der Herrenbekleidungsliste. Platzhalterbild wird verwendet, bis finale Produktvisualisierungen verfügbar sind.",
+      "price": { "amount": 1350, "currency": "EUR", "formatted": "1.350,00 €" },
+      "vatNote": "inkl. MwSt.",
+      "images": [{ "src": "/product-trench-coat.webp", "alt": "Porsche Design Trench Coat" }]
+    },
+    {
+      "id": "product-crew-neck-pullover",
+      "slug": "porsche-design-crew-neck-pullover",
+      "sku": "PD-MEN-004",
       "audiences": ["men"],
       "tags": ["the-loyalist"],
       "categories": ["apparel"],
-      "collections": ["porsche-originals"],
-      "flags": ["bestseller"],
-      "name": "Herren Essential Polo",
-      "teaser": "Ein hochwertiges Polo-Shirt für Porsche-Enthusiasten.",
-      "description": "Weicher Baumwoll-Piqué, Regular Fit und dezente Wappendetails machen es zu einem verlässlichen Klassiker.",
-      "price": { "amount": 95, "currency": "EUR", "formatted": "95,00 €" },
+      "collections": ["porsche-design"],
+      "flags": ["trending"],
+      "name": "Porsche Design Crew-neck Pullover",
+      "teaser": "Ein komfortabler Pullover mit dezentem Porsche Design Charakter.",
+      "description": "Ein Porsche Design Rundhalspullover aus der Herrenbekleidungsliste. Platzhalterbild wird verwendet, bis finale Produktvisualisierungen verfügbar sind.",
+      "price": { "amount": 529, "currency": "EUR", "formatted": "529,00 €" },
       "vatNote": "inkl. MwSt.",
-      "images": [{ "src": "/home-lifestyle-loyalist.jpg", "alt": "Mann in lässiger Porsche-inspirierter Kleidung" }]
+      "images": [{ "src": "/product-crew-neck-pullover.webp", "alt": "Porsche Design Crew-neck Pullover" }]
+    },
+    {
+      "id": "product-gumsole-trainers",
+      "slug": "porsche-design-gumsole-trainers",
+      "sku": "PD-MEN-005",
+      "audiences": ["men"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-design"],
+      "flags": ["bestseller"],
+      "name": "Porsche Design Gumsole Trainers",
+      "teaser": "Dunkelbraune Trainer für einen lässigen Porsche Design Look.",
+      "description": "Porsche Design Gumsole Trainers aus der Herrenbekleidungsliste. Platzhalterbild wird verwendet, bis finale Produktvisualisierungen verfügbar sind.",
+      "price": { "amount": 460, "currency": "EUR", "formatted": "460,00 €" },
+      "vatNote": "inkl. MwSt.",
+      "images": [{ "src": "/product-gumsole-trainers.webp", "alt": "Porsche Design Gumsole Trainers" }]
     },
     {
       "id": "product-kids-hoodie",
@@ -115,7 +181,9 @@
       "description": "Ein Modell im Maßstab mit authentischen Proportionen, präziser Lackierung und sammlerorientierter Verpackung.",
       "price": { "amount": 65, "currency": "EUR", "formatted": "65,00 €" },
       "vatNote": "inkl. MwSt.",
-      "images": [{ "src": "/home-feature-roadster.png", "alt": "Detail eines silbernen Porsche-Modells auf hellem Hintergrund" }]
+      "images": [
+        { "src": "/home-feature-roadster.png", "alt": "Detail eines silbernen Porsche-Modells auf hellem Hintergrund" }
+      ]
     },
     {
       "id": "product-trunk-organizer",
