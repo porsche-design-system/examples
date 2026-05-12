@@ -54,21 +54,140 @@
       "images": [{ "src": "/home-product-umbrella.jpg", "alt": "Black Porsche umbrella" }]
     },
     {
-      "id": "product-womens-jacket",
-      "slug": "womens-motorsport-jacket",
-      "sku": "WAP-550-002-0W",
+      "id": "product-womens-t-shirt-essential",
+      "slug": "womens-t-shirt-essential",
+      "sku": "WAP726XXL0NPOR",
       "audiences": ["women"],
       "tags": ["urbanist"],
       "categories": ["apparel"],
       "collections": ["porsche-design"],
-      "flags": ["new-release", "featured"],
-      "name": "Women's Motorsport Jacket",
-      "teaser": "A lightweight jacket with motorsport-inspired lines.",
-      "description": "A technical layer for changing weather, combining clean Porsche Design styling with a comfortable everyday fit.",
-      "price": { "amount": 280, "currency": "EUR", "formatted": "280.00 €" },
+      "flags": ["bestseller"],
+      "name": "Women's T-Shirt - Essential",
+      "teaser": "A white essential T-shirt with a women's Porsche crest badge.",
+      "description": "T-shirt with women's crest badge, selected from the Porsche Shop women's clothing listing.",
+      "price": { "amount": 89, "currency": "EUR", "formatted": "89.00 €" },
+      "vatNote": "incl. VAT",
+      "images": [{ "src": "/product-womens-t-shirt-essential.webp", "alt": "Women's T-Shirt - Essential" }]
+    },
+    {
+      "id": "product-womens-sport-top-shadegreen",
+      "slug": "womens-2-in-1-sport-top-cayenne-electric-shadegreen",
+      "sku": "WAP2170XS0T0YG",
+      "audiences": ["women"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["new-release"],
+      "name": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle",
+      "teaser": "A shade green crop top with integrated sports bra.",
+      "description": "Functional crop top with integrated sports bra from Porsche x PUMA, selected from the Porsche Shop women's clothing listing.",
+      "price": { "amount": 62, "currency": "EUR", "formatted": "62.00 €" },
       "vatNote": "incl. VAT",
       "images": [
-        { "src": "/home-lifestyle-urbanist.jpg", "alt": "Woman wearing a dark Porsche-inspired outfit outdoors" }
+        {
+          "src": "/product-womens-sport-top-shadegreen.webp",
+          "alt": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle in shade green"
+        }
+      ]
+    },
+    {
+      "id": "product-womens-crew-neck-jumper-black",
+      "slug": "womens-crew-neck-jumper-cayenne-electric-black",
+      "sku": "WAP21000S0T0YG",
+      "audiences": ["women"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["new-release"],
+      "name": "Crew-neck Jumper - Porsche Cayenne Electric Lifestyle",
+      "teaser": "A black cropped jumper by Porsche x PUMA.",
+      "description": "Cropped jumper by Porsche x PUMA with ribbed cuffs made of super-soft material.",
+      "price": { "amount": 89, "currency": "EUR", "formatted": "89.00 €" },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-womens-crew-neck-jumper-black.webp",
+          "alt": "Crew-neck Jumper - Porsche Cayenne Electric Lifestyle in black"
+        }
+      ]
+    },
+    {
+      "id": "product-womens-t-shirt-essential-black",
+      "slug": "womens-essential-t-shirt-black",
+      "sku": "WAP7970XL0E",
+      "audiences": ["women"],
+      "tags": ["the-loyalist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["bestseller"],
+      "name": "T-Shirt - Essential",
+      "teaser": "A black essential T-shirt for everyday Porsche looks.",
+      "description": "Essential black T-shirt selected from the Porsche Shop women's clothing listing.",
+      "price": { "amount": 99, "currency": "EUR", "formatted": "99.00 €" },
+      "vatNote": "incl. VAT",
+      "images": [{ "src": "/product-womens-t-shirt-essential-black.webp", "alt": "T-Shirt - Essential in black" }]
+    },
+    {
+      "id": "product-womens-leggings-shadegreen",
+      "slug": "womens-7-8-leggings-cayenne-electric-shadegreen",
+      "sku": "WAP2190XS0T0YG",
+      "audiences": ["women"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["new-release"],
+      "name": "7/8 Leggings - Porsche Cayenne Electric Lifestyle",
+      "teaser": "Lightweight shade green 7/8 leggings with a high waist.",
+      "description": "Lightweight 7/8 leggings from Porsche x PUMA with a high waist made from fast-drying material.",
+      "price": { "amount": 79, "currency": "EUR", "formatted": "79.00 €" },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-womens-leggings-shadegreen.webp",
+          "alt": "7/8 Leggings - Porsche Cayenne Electric Lifestyle in shade green"
+        }
+      ]
+    },
+    {
+      "id": "product-womens-sport-top-black",
+      "slug": "womens-2-in-1-sport-top-cayenne-electric-black",
+      "sku": "WAP21600M0T0YG",
+      "audiences": ["women"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["featured"],
+      "name": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle",
+      "teaser": "A black crop top with integrated sports bra.",
+      "description": "Functional crop top with integrated sports bra from Porsche x PUMA in black.",
+      "price": { "amount": 62, "currency": "EUR", "formatted": "62.00 €" },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-womens-sport-top-black.webp",
+          "alt": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle in black"
+        }
+      ]
+    },
+    {
+      "id": "product-womens-crew-neck-jumper-shadegreen",
+      "slug": "womens-crew-neck-jumper-cayenne-electric-shadegreen",
+      "sku": "WAP2110XS0T0YG",
+      "audiences": ["women"],
+      "tags": ["urbanist"],
+      "categories": ["apparel"],
+      "collections": ["porsche-originals"],
+      "flags": ["trending"],
+      "name": "Crew-neck Jumper - Porsche Cayenne Electric Lifestyle",
+      "teaser": "A shade green cropped jumper by Porsche x PUMA.",
+      "description": "Cropped jumper by Porsche x PUMA in shade green with ribbed cuffs made of super-soft material.",
+      "price": { "amount": 89, "currency": "EUR", "formatted": "89.00 €" },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-womens-crew-neck-jumper-shadegreen.webp",
+          "alt": "Crew-neck Jumper - Porsche Cayenne Electric Lifestyle in shade green"
+        }
       ]
     },
     {
