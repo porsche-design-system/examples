@@ -19,6 +19,7 @@
     "viewAllKids": "Alle Kinder anzeigen",
     "clothing": "Bekleidung",
     "bagsLuggage": "Taschen & Gepäck",
+    "travelTransport": "Travel & Transport",
     "chargingHardware": "Lade-Hardware",
     "viewAllProducts": "Alle Produkte anzeigen",
     "viewAllPorscheOriginals": "Alle Porsche Originals anzeigen",
@@ -36,7 +37,19 @@
       "title": "Startseite",
       "teaserAlt": "Personen an einem Foodtruck am Meer in der warmen Abendsonne.",
       "heroHeading": "Ikonisches Racing\nDesign bis zur\nPerfektion",
-      "heroCta": "Jetzt entdecken",
+      "heroCta": "Mehr erfahren",
+      "heroModal": {
+        "eyebrow": "Von der Rennstrecke in den Alltag",
+        "title": "Was macht Racing Design ikonisch?",
+        "intro": "Es beginnt mit der Disziplin der Boxengasse: Jede Linie hat eine Aufgabe, jedes Material einen Grund und jedes Detail soll schnell wirken, selbst wenn es stillsteht.",
+        "highlights": [
+          "Kontrastnähte, markante Silhouetten und technische Oberflächen übertragen Motorsport-Präzision in tragbare Stücke.",
+          "Reiseaccessoires greifen die Logik der Garage auf: robuste Schalen, modularer Stauraum und Formen, die konstruiert statt dekoriert wirken.",
+          "Lifestyle-Tags helfen, nach Haltung zu shoppen: von zeitloser Zurückhaltung bis zu Sammlerleidenschaft und urbaner Performance."
+        ],
+        "outro": "So entsteht eine kuratierte Porsche Shop Story, in der Bekleidung, Gepäck und Accessoires wie eine zusammenhängende Kollektion wirken.",
+        "close": "Zur Kollektion"
+      },
       "lookbookTag": "Lookbook",
       "introHeading": "Lookbook-Einstieg",
       "intro": "Bringen Sie Schwung in Ihren Schritt und frischen Sie Ihre Garderobe mit inspirierten Looks aus dem Porsche-Katalog auf.",
@@ -122,7 +135,8 @@
         "categories": {
           "apparel": "Bekleidung",
           "accessories": "Accessoires",
-          "bags-luggage": "Taschen & Gepäck"
+          "bags-luggage": "Taschen & Gepäck",
+          "travel-transport": "Travel & Transport"
         },
         "collections": {
           "porsche-originals": "Porsche Originals",

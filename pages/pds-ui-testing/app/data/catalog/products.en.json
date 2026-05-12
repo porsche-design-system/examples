@@ -674,6 +674,131 @@
           "alt": "Retro Canvas Bag - Porsche Fan Community in beige"
         }
       ]
+    },
+    {
+      "id": "product-porsche-folding-luggage-compartment-box",
+      "slug": "porsche-folding-luggage-compartment-box",
+      "sku": "95B044009",
+      "audiences": ["unisex"],
+      "tags": ["urbanist"],
+      "categories": ["travel-transport"],
+      "collections": ["porsche-originals"],
+      "flags": ["featured"],
+      "name": "Porsche Folding Luggage Compartment Box",
+      "teaser": "A black foldable luggage compartment box for flexible storage.",
+      "description": "Foldable luggage compartment box from Porsche for practical storage in the vehicle.",
+      "price": {
+        "amount": 56,
+        "currency": "EUR",
+        "formatted": "56.00 €"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-porsche-folding-luggage-compartment-box.webp",
+          "alt": "Porsche Folding Luggage Compartment Box in black"
+        }
+      ]
+    },
+    {
+      "id": "product-porsche-bicycle-rack",
+      "slug": "porsche-bicycle-rack",
+      "sku": "95B044831",
+      "audiences": ["unisex"],
+      "tags": ["urbanist", "timeless-enthusiast"],
+      "categories": ["travel-transport"],
+      "collections": ["porsche-originals"],
+      "flags": ["trending"],
+      "name": "Porsche Bicycle Rack",
+      "teaser": "A bicycle rack for transporting bikes safely with your Porsche.",
+      "description": "Original Porsche bicycle rack for secure and convenient bike transport.",
+      "price": {
+        "amount": 443,
+        "currency": "EUR",
+        "formatted": "443.00 €"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-porsche-bicycle-rack.webp",
+          "alt": "Porsche Bicycle Rack"
+        }
+      ]
+    },
+    {
+      "id": "product-porsche-performance-roof-box",
+      "slug": "porsche-performance-roof-box",
+      "sku": "TE22MODOD0011",
+      "audiences": ["unisex"],
+      "tags": ["timeless-enthusiast"],
+      "categories": ["travel-transport"],
+      "collections": ["porsche-originals"],
+      "flags": ["bestseller"],
+      "name": "Porsche Performance roof box",
+      "teaser": "A high-gloss black roof box for extra travel storage.",
+      "description": "Porsche Performance roof box for additional storage on longer journeys and everyday adventures.",
+      "price": {
+        "amount": 2123,
+        "currency": "EUR",
+        "formatted": "2,123.00 €"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-porsche-performance-roof-box.webp",
+          "alt": "Porsche Performance roof box in high-gloss black"
+        }
+      ]
+    },
+    {
+      "id": "product-porsche-dog-blanket",
+      "slug": "porsche-dog-blanket",
+      "sku": "9Y0044893A",
+      "audiences": ["unisex"],
+      "tags": ["the-loyalist"],
+      "categories": ["travel-transport"],
+      "collections": ["porsche-originals"],
+      "flags": ["new"],
+      "name": "Porsche Dog Blanket",
+      "teaser": "A practical Porsche blanket for traveling with dogs.",
+      "description": "Porsche dog blanket for comfortable and protected vehicle journeys with pets.",
+      "price": {
+        "amount": 102,
+        "currency": "EUR",
+        "formatted": "102.00 €"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-porsche-dog-blanket.webp",
+          "alt": "Porsche Dog Blanket"
+        }
+      ]
+    },
+    {
+      "id": "product-porsche-cool-bag",
+      "slug": "porsche-cool-bag",
+      "sku": "TE21MODTD0004",
+      "audiences": ["unisex"],
+      "tags": ["urbanist"],
+      "categories": ["travel-transport"],
+      "collections": ["porsche-originals"],
+      "flags": ["featured"],
+      "name": "Porsche Cool Bag",
+      "teaser": "A black cool bag for travel, excursions and everyday transport.",
+      "description": "Porsche cool bag for keeping food and drinks chilled while traveling.",
+      "price": {
+        "amount": 314,
+        "currency": "EUR",
+        "formatted": "314.00 €"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-porsche-cool-bag.webp",
+          "alt": "Porsche Cool Bag in black"
+        }
+      ]
     }
   ]
 }

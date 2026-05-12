@@ -19,6 +19,7 @@
     "viewAllKids": "View all Kids",
     "clothing": "Apparel",
     "bagsLuggage": "Bags & Luggage",
+    "travelTransport": "Travel & Transport",
     "chargingHardware": "Charging Hardware",
     "viewAllProducts": "View all products",
     "viewAllPorscheOriginals": "View all Porsche Originals",
@@ -36,7 +37,19 @@
       "title": "Home",
       "teaserAlt": "People at an outdoor food truck by the sea during a warm sunset.",
       "heroHeading": "Iconic Racing\nDesign Taken To\nPerfection",
-      "heroCta": "Discover now",
+      "heroCta": "Discover more",
+      "heroModal": {
+        "eyebrow": "From track language to daily ritual",
+        "title": "What makes racing design iconic?",
+        "intro": "It starts with the discipline of the pit lane: every line has a job, every material needs a reason, and every detail should feel fast even when it stands still.",
+        "highlights": [
+          "Contrast stitching, bold silhouettes, and technical surfaces translate motorsport precision into wearable pieces.",
+          "Travel accessories borrow from the garage: durable shells, modular storage, and forms that feel engineered rather than decorated.",
+          "Lifestyle tags help you shop by attitude, from timeless understatement to loyal collector energy and urban performance."
+        ],
+        "outro": "The result is a curated Porsche shop story where apparel, luggage, and accessories behave like one connected collection.",
+        "close": "Browse the collection"
+      },
       "lookbookTag": "Lookbook",
       "introHeading": "Lookbook introduction",
       "intro": "Put a spring in your step and refresh your wardrobe with inspired looks from the Porsche catalogue.",
@@ -122,7 +135,8 @@
         "categories": {
           "apparel": "Apparel",
           "accessories": "Accessories",
-          "bags-luggage": "Bags & Luggage"
+          "bags-luggage": "Bags & Luggage",
+          "travel-transport": "Travel & Transport"
         },
         "collections": {
           "porsche-originals": "Porsche Originals",

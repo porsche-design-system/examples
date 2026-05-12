@@ -4,6 +4,7 @@ import { HomeLandingContent } from "@/app/components/HomeLandingContent";
 import { filterCatalogProducts, getHomeCatalog } from "@/app/data/get-catalog";
 import { isLocale, type Locale } from "@/app/i18n/config";
 import { getDictionary } from "@/app/i18n/get-dictionary";
+import { productsIndexHref } from "@/app/i18n/href";
 
 type HomePageProps = {
   params: Promise<{ locale: string }>;
@@ -41,6 +42,8 @@ export default async function HomePage({ params }: HomePageProps) {
         alt={home.teaserAlt}
         ctaLabel={home.heroCta}
         heading={home.heroHeading}
+        modal={home.heroModal}
+        productsHref={productsIndexHref(locale)}
       />
       <HomeLandingContent
         home={home}

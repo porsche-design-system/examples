@@ -383,6 +383,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
               icon="adjust"
               onClick={() => setIsFilterFlyoutOpen(true)}
               type="button"
+              aria={{ "aria-haspopup": "dialog" }}
             >
               {copy.filterButtonLabel}
             </PButton>

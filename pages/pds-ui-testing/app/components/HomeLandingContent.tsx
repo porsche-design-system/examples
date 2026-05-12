@@ -53,12 +53,16 @@ function allLifestyleTagsHref(locale: Locale): string {
 }
 
 function featureTileHref(locale: Locale, href: string, index: number): string {
-  return index === 0
-    ? productsFilterHref(locale, {
-        categories: ["bags-luggage"],
-        flags: ["featured"],
-      })
-    : href;
+  if (index === 0) {
+    return productsFilterHref(locale, {
+      categories: ["bags-luggage"],
+      flags: ["featured"],
+    });
+  }
+  if (index === 1) {
+    return productsFilterHref(locale, { categories: ["travel-transport"] });
+  }
+  return href;
 }
 
 /**
