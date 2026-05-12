@@ -1,5 +1,5 @@
 export const audienceSlugs = ["men", "women", "kids", "unisex"] as const;
-export const categorySlugs = ["apparel", "accessories", "model-cars"] as const;
+export const categorySlugs = ["apparel", "accessories"] as const;
 export const collectionSlugs = ["porsche-originals", "porsche-design"] as const;
 export const merchandisingFlagSlugs = [
   "new-release",

@@ -11,7 +11,6 @@
     "men": "Men",
     "kids": "Kids",
     "accessories": "Accessories",
-    "modelCars": "Model Cars",
     "porscheOriginals": "Porsche Originals",
     "porscheDesign": "Porsche Design",
     "newReleases": "New releases",
@@ -21,7 +20,6 @@
     "clothing": "Clothing",
     "chargingHardware": "Charging Hardware",
     "viewAllProducts": "View all products",
-    "viewAllModelCars": "View all Model Cars",
     "viewAllPorscheOriginals": "View all Porsche Originals",
     "viewAllPorscheDesign": "View all Porsche Design",
     "viewAllNewReleases": "View all new releases"
@@ -101,8 +99,7 @@
         },
         "categories": {
           "apparel": "Apparel",
-          "accessories": "Accessories",
-          "model-cars": "Model cars"
+          "accessories": "Accessories"
         },
         "collections": {
           "porsche-originals": "Porsche Originals",

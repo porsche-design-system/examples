@@ -103,11 +103,6 @@ export function GlobalHeaderNavMenu({ locale, nav, menuButtonClassName }: Props)
             {nav.viewAllProducts}
           </PDrilldownLink>
         </PDrilldownItem>
-        <PDrilldownItem identifier="model-cars" label={nav.modelCars}>
-          <PDrilldownLink href={productsFilterHref(locale, { categories: ["model-cars"] })}>
-            {nav.viewAllModelCars}
-          </PDrilldownLink>
-        </PDrilldownItem>
         <PDrilldownItem
           identifier="porsche-originals"
           label={nav.porscheOriginals}
