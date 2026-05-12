@@ -79,30 +79,56 @@
     },
     "productList": {
       "title": "Alle Produkte",
-      "subtitle": "Standard-Katalogliste für Nutzbarkeits- und Barrierefreiheitstests.",
-      "notice": "Diese Seite zeigt alle Einträge aus dem statischen Produktkatalog. Lifestyle-Übersichten sind gefilterte Teilmengen derselben Daten (siehe `tags` je Produkt).",
-      "productsRegionLabel": "Gesamter Produktkatalog"
-    },
-    "lifestyleOverview": {
-      "notice": "Diese Übersicht ist ein Platzhalter für Nutzbarkeits- und Barrierefreiheitstests. Die Produkte stammen aus dem statischen Katalog und werden nach dem oben genannten Lifestyle-Tag gefiltert.",
-      "productsRegionLabel": "Produkte zu diesem Look",
-      "tags": {
-        "timeless-enthusiast": {
-          "title": "Timeless Enthusiast",
-          "subtitle": "Produktübersicht für diesen Look.",
-          "tagLabel": "Timeless Enthusiast"
+      "subtitle": "Entdecken Sie den gesamten Porsche-Katalog oder filtern Sie nach Zielgruppe, Kategorie, Kollektion und Lifestyle.",
+      "notice": "Filter aktualisieren die Produktauswahl auf dieser Seite und bleiben als URL teilbar.",
+      "productsRegionLabel": "Gefilterter Produktkatalog",
+      "resultCount": "{count} Produkte",
+      "clearFilters": "Filter zurücksetzen",
+      "emptyTitle": "Keine Produkte gefunden",
+      "emptyText": "Entfernen Sie einen oder mehrere Filter, um mehr Produkte zu sehen.",
+      "filters": {
+        "title": "Produkte filtern",
+        "audience": "Zielgruppe",
+        "category": "Kategorie",
+        "collection": "Kollektion",
+        "flag": "Highlights",
+        "tag": "Lifestyle",
+        "audiences": {
+          "men": "Herren",
+          "women": "Damen",
+          "kids": "Kinder",
+          "unisex": "Unisex"
         },
-        "the-loyalist": {
-          "title": "The Loyalist",
-          "subtitle": "Produktübersicht für diesen Look.",
-          "tagLabel": "The Loyalist"
+        "categories": {
+          "apparel": "Bekleidung",
+          "accessories": "Accessoires",
+          "model-cars": "Modellautos"
         },
-        "urbanist": {
-          "title": "Urbanist",
-          "subtitle": "Produktübersicht für diesen Look.",
-          "tagLabel": "Urbanist"
+        "collections": {
+          "porsche-originals": "Porsche Originals",
+          "porsche-design": "Porsche Design"
+        },
+        "flags": {
+          "new-release": "Neuheiten",
+          "bestseller": "Bestseller",
+          "limited-edition": "Limitierte Editionen",
+          "featured": "Empfohlen",
+          "trending": "Beliebt"
+        },
+        "tags": {
+          "timeless-enthusiast": "Timeless Enthusiast",
+          "the-loyalist": "The Loyalist",
+          "urbanist": "Urbanist"
         }
       }
+    },
+    "productDetail": {
+      "backToProducts": "Zurück zu den Produkten",
+      "addToCart": "In den Warenkorb",
+      "favorites": "Zur Merkliste hinzufügen",
+      "details": "Produktdetails",
+      "sku": "Artikelnummer",
+      "relatedProducts": "Ähnliche Produkte"
     },
     "dummy": {
       "notice": "Diese Seite ist nur ein Platzhalter ohne echte Inhalte und dient der Nutzbarkeits- und Barrierefreiheitstests."

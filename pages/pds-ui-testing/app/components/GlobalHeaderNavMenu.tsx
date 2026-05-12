@@ -12,16 +12,19 @@ import type {
   SelectedAriaAttributes,
   ButtonPureAriaAttribute,
 } from "@porsche-design-system/components-react/ssr";
+import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
+import { productsFilterHref } from "@/app/i18n/href";
 
 const SHOP_NAV_DRILLDOWN_ID = "shop-navigation-drilldown";
 
 type Props = {
+  locale: Locale;
   nav: Dictionary["nav"];
   menuButtonClassName?: string;
 };
 
-export function GlobalHeaderNavMenu({ nav, menuButtonClassName }: Props) {
+export function GlobalHeaderNavMenu({ locale, nav, menuButtonClassName }: Props) {
   const [open, setOpen] = useState(false);
   const [activeIdentifier, setActiveIdentifier] = useState<
     string | undefined
@@ -75,27 +78,33 @@ export function GlobalHeaderNavMenu({ nav, menuButtonClassName }: Props) {
         open={open}
       >
         <PDrilldownItem identifier="women" label={nav.women}>
-          <PDrilldownLink href="#shop/women">{nav.viewAllWomen}</PDrilldownLink>
+          <PDrilldownLink href={productsFilterHref(locale, { audiences: ["women"] })}>
+            {nav.viewAllWomen}
+          </PDrilldownLink>
         </PDrilldownItem>
         <PDrilldownItem identifier="men" label={nav.men}>
-          <PDrilldownLink href="#shop/men">{nav.viewAllMen}</PDrilldownLink>
+          <PDrilldownLink href={productsFilterHref(locale, { audiences: ["men"] })}>
+            {nav.viewAllMen}
+          </PDrilldownLink>
         </PDrilldownItem>
         <PDrilldownItem identifier="kids" label={nav.kids}>
-          <PDrilldownLink href="#shop/kids">{nav.viewAllKids}</PDrilldownLink>
+          <PDrilldownLink href={productsFilterHref(locale, { audiences: ["kids"] })}>
+            {nav.viewAllKids}
+          </PDrilldownLink>
         </PDrilldownItem>
         <PDrilldownItem identifier="accessories" label={nav.accessories}>
-          <PDrilldownLink href="#shop/accessories/clothing">
+          <PDrilldownLink href={productsFilterHref(locale, { categories: ["apparel"] })}>
             {nav.clothing}
           </PDrilldownLink>
-          <PDrilldownLink href="#shop/accessories/charging">
+          <PDrilldownLink href={productsFilterHref(locale, { categories: ["accessories"] })}>
             {nav.chargingHardware}
           </PDrilldownLink>
-          <PDrilldownLink href="#shop/accessories">
+          <PDrilldownLink href={productsFilterHref(locale, { categories: ["accessories"] })}>
             {nav.viewAllProducts}
           </PDrilldownLink>
         </PDrilldownItem>
         <PDrilldownItem identifier="model-cars" label={nav.modelCars}>
-          <PDrilldownLink href="#shop/model-cars">
+          <PDrilldownLink href={productsFilterHref(locale, { categories: ["model-cars"] })}>
             {nav.viewAllModelCars}
           </PDrilldownLink>
         </PDrilldownItem>
@@ -103,17 +112,23 @@ export function GlobalHeaderNavMenu({ nav, menuButtonClassName }: Props) {
           identifier="porsche-originals"
           label={nav.porscheOriginals}
         >
-          <PDrilldownLink href="#shop/porsche-originals">
+          <PDrilldownLink
+            href={productsFilterHref(locale, {
+              collections: ["porsche-originals"],
+            })}
+          >
             {nav.viewAllPorscheOriginals}
           </PDrilldownLink>
         </PDrilldownItem>
         <PDrilldownItem identifier="porsche-design" label={nav.porscheDesign}>
-          <PDrilldownLink href="#shop/porsche-design">
+          <PDrilldownLink
+            href={productsFilterHref(locale, { collections: ["porsche-design"] })}
+          >
             {nav.viewAllPorscheDesign}
           </PDrilldownLink>
         </PDrilldownItem>
         <PDrilldownItem identifier="new-releases" label={nav.newReleases}>
-          <PDrilldownLink href="#shop/new-releases">
+          <PDrilldownLink href={productsFilterHref(locale, { flags: ["new-release"] })}>
             {nav.viewAllNewReleases}
           </PDrilldownLink>
         </PDrilldownItem>

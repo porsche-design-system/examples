@@ -8,9 +8,15 @@ import {
   PText,
 } from "@porsche-design-system/components-react/ssr";
 import type { CatalogProduct } from "@/app/data/get-catalog";
+import { isLifestyleTagSlug } from "@/app/data/catalog/taxonomy";
 import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
-import { appHref, productsIndexHref } from "@/app/i18n/href";
+import {
+  appHref,
+  productDetailHref,
+  productsFilterHref,
+  productsIndexHref,
+} from "@/app/i18n/href";
 
 type HomeCopy = Dictionary["pages"]["home"];
 
@@ -31,6 +37,12 @@ type Props = {
   locale: Locale;
   products: CatalogProduct[];
 };
+
+function lifestyleTileHref(locale: Locale, lifestyleTag: string): string {
+  return isLifestyleTagSlug(lifestyleTag)
+    ? productsFilterHref(locale, { tags: [lifestyleTag] })
+    : productsIndexHref(locale);
+}
 
 /**
  * Homepage sections from Figma landing frame (node 1:8387): intro, lifestyle tiles,
@@ -77,7 +89,7 @@ export function HomeLandingContent({ home, locale, products }: Props) {
               compact
               description={tile.description}
               gradient
-              href={appHref(`/${locale}/lifestyle/${tile.lifestyleTag}/`)}
+              href={lifestyleTileHref(locale, tile.lifestyleTag)}
               key={tile.lifestyleTag}
               label={tile.label}
               size="large"
@@ -121,13 +133,16 @@ export function HomeLandingContent({ home, locale, products }: Props) {
               aspectRatio="3/4"
               className="col-span-full md:col-span-one-third"
               description={product.vatNote}
-              heading={product.heading}
-              href={product.href}
+              heading={product.name}
+              href={productDetailHref(locale, product.slug)}
               key={product.id}
-              price={product.price}
+              price={product.price.formatted}
             >
               {/* biome-ignore lint/performance/noImgElement: PLinkTileProduct's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
-              <img alt={product.imageAlt} src={appHref(product.imageSrc)} />
+              <img
+                alt={product.images[0]?.alt ?? ""}
+                src={appHref(product.images[0]?.src ?? "/home-product-keychain.jpg")}
+              />
             </PLinkTileProduct>
           ))}
         </div>

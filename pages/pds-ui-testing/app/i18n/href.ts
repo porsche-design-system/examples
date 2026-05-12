@@ -1,4 +1,5 @@
 import type { Locale } from "./config";
+import type { CatalogFacetFilter } from "@/app/data/get-catalog";
 
 function normalizeBasePath(): string {
   const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -26,4 +27,24 @@ export function localeHomeHref(locale: Locale): string {
 /** Full product catalog index (`/[locale]/products/`). */
 export function productsIndexHref(locale: Locale): string {
   return appHref(`/${locale}/products/`);
+}
+
+export function productDetailHref(locale: Locale, slug: string): string {
+  return appHref(`/${locale}/products/${slug}/`);
+}
+
+export function productsFilterHref(
+  locale: Locale,
+  filter: CatalogFacetFilter,
+): string {
+  const params = new URLSearchParams();
+  if (filter.audiences?.length) params.set("audience", filter.audiences.join(","));
+  if (filter.categories?.length) params.set("category", filter.categories.join(","));
+  if (filter.collections?.length) {
+    params.set("collection", filter.collections.join(","));
+  }
+  if (filter.flags?.length) params.set("flag", filter.flags.join(","));
+  if (filter.tags?.length) params.set("tag", filter.tags.join(","));
+  const query = params.toString();
+  return `${productsIndexHref(locale)}${query ? `?${query}` : ""}`;
 }

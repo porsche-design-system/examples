@@ -1,63 +1,80 @@
 import { cache } from "react";
 import type { Locale } from "@/app/i18n/config";
 import type homeCatalogEn from "@/app/data/catalog/products.en.json";
-import type { LifestyleTagSlug } from "@/app/i18n/lifestyle-tags";
+import type {
+  AudienceSlug,
+  CategorySlug,
+  CollectionSlug,
+  LifestyleTagSlug,
+  MerchandisingFlagSlug,
+} from "@/app/data/catalog/taxonomy";
 
 export type HomeCatalog = typeof homeCatalogEn;
 export type CatalogProduct = HomeCatalog["products"][number];
 
-/**
- * Faceted filtering for the static JSON catalog.
- *
- * - **`tags`**: lifestyle / lookbook dimensions (curated routes like `/lifestyle/[tag]`).
- * - **`categories`**: merchandising dimensions (department, product type, …). Add
- *   more slugs in JSON and combine facets here; for static export, prefer **dedicated
- *   routes** per facet (or nested segments) over query strings so paths are
- *   prerenderable without a server.
- *
- * Next evolution: optional `collections: string[]` or a single `productSlug` for
- * `/products/[slug]` detail pages; keep listing filters as pure functions over
- * `getHomeCatalog()` output.
- */
 export type CatalogFacetFilter = {
-  lifestyleTag?: LifestyleTagSlug;
-  /** Product must include every category slug. */
-  categoriesMatchAll?: string[];
-  /** Product must include at least one category slug. */
-  categoriesMatchAny?: string[];
+  audiences?: AudienceSlug[];
+  categories?: CategorySlug[];
+  collections?: CollectionSlug[];
+  flags?: MerchandisingFlagSlug[];
+  tags?: LifestyleTagSlug[];
 };
+
+function hasAny<T extends string>(
+  productValues: readonly T[],
+  filterValues: readonly T[] | undefined,
+): boolean {
+  return filterValues === undefined || filterValues.length === 0
+    ? true
+    : filterValues.some((value) => productValues.includes(value));
+}
 
 export function filterCatalogProducts(
   products: CatalogProduct[],
   filter: CatalogFacetFilter,
 ): CatalogProduct[] {
-  const hasFacet =
-    filter.lifestyleTag !== undefined ||
-    (filter.categoriesMatchAll?.length ?? 0) > 0 ||
-    (filter.categoriesMatchAny?.length ?? 0) > 0;
+  const hasFacet = Object.values(filter).some((value) => (value?.length ?? 0) > 0);
   if (!hasFacet) return [...products];
 
   return products.filter((p) => {
-    if (
-      filter.lifestyleTag !== undefined &&
-      !p.tags.includes(filter.lifestyleTag)
-    ) {
-      return false;
-    }
-    const cats = p.categories;
-    const all = filter.categoriesMatchAll;
-    if (all?.length && !all.every((c) => cats.includes(c))) return false;
-    const any = filter.categoriesMatchAny;
-    if (any?.length && !any.some((c) => cats.includes(c))) return false;
-    return true;
+    return (
+      hasAny(p.audiences, filter.audiences) &&
+      hasAny(p.categories, filter.categories) &&
+      hasAny(p.collections, filter.collections) &&
+      hasAny(p.flags, filter.flags) &&
+      hasAny(p.tags, filter.tags)
+    );
   });
 }
 
-export function filterProductsByLifestyleTag(
+export function getCatalogProductBySlug(
   products: CatalogProduct[],
-  tag: LifestyleTagSlug,
+  slug: string,
+): CatalogProduct | undefined {
+  return products.find((product) => product.slug === slug);
+}
+
+export function getRelatedCatalogProducts(
+  products: CatalogProduct[],
+  product: CatalogProduct,
 ): CatalogProduct[] {
-  return filterCatalogProducts(products, { lifestyleTag: tag });
+  return products
+    .filter((candidate) => candidate.id !== product.id)
+    .map((candidate) => {
+      const score =
+        candidate.categories.filter((category) =>
+          product.categories.includes(category),
+        ).length * 3 +
+        candidate.tags.filter((tag) => product.tags.includes(tag)).length * 2 +
+        candidate.collections.filter((collection) =>
+          product.collections.includes(collection),
+        ).length;
+      return { product: candidate, score };
+    })
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+    .map(({ product }) => product);
 }
 
 const catalogs: Record<Locale, () => Promise<HomeCatalog>> = {
@@ -66,8 +83,8 @@ const catalogs: Record<Locale, () => Promise<HomeCatalog>> = {
 };
 
 /**
- * Homepage product catalog (locale-specific copy, shared asset paths).
- * Split from i18n messages so the catalog can grow without bloating UI strings.
+ * Locale-specific shop catalog, split from i18n messages so product data can grow
+ * without bloating UI copy.
  */
 export const getHomeCatalog = cache(async (locale: Locale): Promise<HomeCatalog> => {
   return catalogs[locale]();

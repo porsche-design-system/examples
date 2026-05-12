@@ -6,7 +6,7 @@ const dynamicSegmentSamples: Record<string, string | string[]> = {
   '[locale]': ['en', 'de'],
   '[companySlug]': ['glance', 'pcna', 'sustainability', 'career', 'press'],
   '[legalSlug]': ['notice', 'icp', 'environment', 'security', 'more'],
-  '[lifestyleTag]': ['timeless-enthusiast', 'the-loyalist', 'urbanist'],
+  '[productSlug]': ['porsche-baseball-cap'],
 };
 
 const isPageFile = (entryName: string): boolean => entryName === 'page.tsx';

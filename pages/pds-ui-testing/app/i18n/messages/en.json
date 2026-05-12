@@ -79,30 +79,56 @@
     },
     "productList": {
       "title": "All products",
-      "subtitle": "Default catalog listing for usability and accessibility testing.",
-      "notice": "This page shows every row from the static product catalog. Lifestyle overviews are filtered subsets of the same data (see `tags` on each product).",
-      "productsRegionLabel": "Full product catalog"
-    },
-    "lifestyleOverview": {
-      "notice": "This overview is a placeholder for usability and accessibility testing. Products are taken from the static catalog and filtered by the lifestyle tag shown above.",
-      "productsRegionLabel": "Products in this look",
-      "tags": {
-        "timeless-enthusiast": {
-          "title": "Timeless Enthusiast",
-          "subtitle": "Product overview for this look.",
-          "tagLabel": "Timeless Enthusiast"
+      "subtitle": "Shop the full Porsche catalog or narrow the result by audience, category, collection, and lifestyle.",
+      "notice": "Filters update the product result on this page and keep a shareable URL.",
+      "productsRegionLabel": "Filtered product catalog",
+      "resultCount": "{count} products",
+      "clearFilters": "Clear filters",
+      "emptyTitle": "No products found",
+      "emptyText": "Try removing one or more filters to see more products.",
+      "filters": {
+        "title": "Filter products",
+        "audience": "Audience",
+        "category": "Category",
+        "collection": "Collection",
+        "flag": "Highlights",
+        "tag": "Lifestyle",
+        "audiences": {
+          "men": "Men",
+          "women": "Women",
+          "kids": "Kids",
+          "unisex": "Unisex"
         },
-        "the-loyalist": {
-          "title": "The Loyalist",
-          "subtitle": "Product overview for this look.",
-          "tagLabel": "The Loyalist"
+        "categories": {
+          "apparel": "Apparel",
+          "accessories": "Accessories",
+          "model-cars": "Model cars"
         },
-        "urbanist": {
-          "title": "Urbanist",
-          "subtitle": "Product overview for this look.",
-          "tagLabel": "Urbanist"
+        "collections": {
+          "porsche-originals": "Porsche Originals",
+          "porsche-design": "Porsche Design"
+        },
+        "flags": {
+          "new-release": "New releases",
+          "bestseller": "Bestsellers",
+          "limited-edition": "Limited editions",
+          "featured": "Featured",
+          "trending": "Trending"
+        },
+        "tags": {
+          "timeless-enthusiast": "Timeless Enthusiast",
+          "the-loyalist": "The Loyalist",
+          "urbanist": "Urbanist"
         }
       }
+    },
+    "productDetail": {
+      "backToProducts": "Back to products",
+      "addToCart": "Add to cart",
+      "favorites": "Add to favorites",
+      "details": "Product details",
+      "sku": "SKU",
+      "relatedProducts": "Related products"
     },
     "dummy": {
       "notice": "This page is a placeholder only. It has no real content and exists for usability and accessibility testing."

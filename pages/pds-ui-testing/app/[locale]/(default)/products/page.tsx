@@ -31,11 +31,9 @@ export default async function ProductsIndexPage({ params }: PageProps) {
 
   return (
     <ProductsIndexContent
-      notice={productList.notice}
+      copy={productList}
+      locale={locale}
       products={catalog.products}
-      productsRegionLabel={productList.productsRegionLabel}
-      subtitle={productList.subtitle}
-      title={productList.title}
     />
   );
 }

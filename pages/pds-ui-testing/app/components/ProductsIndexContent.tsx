@@ -1,38 +1,45 @@
+import { Suspense } from "react";
 import { PHeading, PText } from "@porsche-design-system/components-react/ssr";
 import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
+import { ProductCatalogBrowser } from "@/app/components/ProductCatalogBrowser";
 import type { CatalogProduct } from "@/app/data/get-catalog";
+import type { Locale } from "@/app/i18n/config";
+import type { Dictionary } from "@/app/i18n/get-dictionary";
 
 type Props = {
-  title: string;
-  subtitle: string;
-  notice: string;
-  productsRegionLabel: string;
+  copy: Dictionary["pages"]["productList"];
+  locale: Locale;
   products: CatalogProduct[];
 };
 
 /** Default full-catalog listing (`/[locale]/products/`). */
 export function ProductsIndexContent({
-  title,
-  subtitle,
-  notice,
-  productsRegionLabel,
+  copy,
+  locale,
   products,
 }: Props) {
   return (
     <main className="grid-template gap-y-fluid-lg py-fluid-lg" data-testid="main-content">
       <div className="col-wide flex max-w-prose flex-col gap-fluid-sm">
         <PHeading size="3xl" tag="h1">
-          {title}
+          {copy.title}
         </PHeading>
         <PText color="contrast-medium" size="small">
-          {subtitle}
+          {copy.subtitle}
         </PText>
-        <PText>{notice}</PText>
+        <PText>{copy.notice}</PText>
       </div>
-      <CatalogProductGrid
-        products={products}
-        sectionAriaLabel={productsRegionLabel}
-      />
+      <Suspense
+        fallback={
+          <CatalogProductGrid
+            locale={locale}
+            products={products}
+            sectionAriaLabel={copy.productsRegionLabel}
+          />
+        }
+      >
+        <ProductCatalogBrowser copy={copy} locale={locale} products={products} />
+      </Suspense>
     </main>
   );
 }

@@ -1,19 +1,20 @@
 import { PLinkTileProduct } from "@porsche-design-system/components-react/ssr";
 import type { CatalogProduct } from "@/app/data/get-catalog";
-import { appHref } from "@/app/i18n/href";
+import type { Locale } from "@/app/i18n/config";
+import { appHref, productDetailHref } from "@/app/i18n/href";
 
 type Props = {
   /** Accessible name for the product grid region (e.g. “Products in this look”). */
   sectionAriaLabel: string;
+  locale: Locale;
   products: CatalogProduct[];
 };
 
 /**
- * Porsche Grid product strip shared by the full catalog (`/products`) and
- * filtered views (e.g. `/lifestyle/[tag]`). Listing pages use in-page `#id`
- * targets; detail routes can switch `href` later without changing layout.
+ * Porsche Grid product strip shared by the full catalog, filtered views, and
+ * related product sections.
  */
-export function CatalogProductGrid({ sectionAriaLabel, products }: Props) {
+export function CatalogProductGrid({ sectionAriaLabel, locale, products }: Props) {
   return (
     <section
       aria-label={sectionAriaLabel}
@@ -29,12 +30,15 @@ export function CatalogProductGrid({ sectionAriaLabel, products }: Props) {
             <PLinkTileProduct
               aspectRatio="3/4"
               description={product.vatNote}
-              heading={product.heading}
-              href={`#${product.id}`}
-              price={product.price}
+              heading={product.name}
+              href={productDetailHref(locale, product.slug)}
+              price={product.price.formatted}
             >
               {/* biome-ignore lint/performance/noImgElement: PLinkTileProduct default slot expects a bare <img>. */}
-              <img alt={product.imageAlt} src={appHref(product.imageSrc)} />
+              <img
+                alt={product.images[0]?.alt ?? ""}
+                src={appHref(product.images[0]?.src ?? "/home-product-keychain.jpg")}
+              />
             </PLinkTileProduct>
           </div>
         ))}

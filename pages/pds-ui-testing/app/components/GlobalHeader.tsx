@@ -40,6 +40,7 @@ export function GlobalHeader({
             id="main-navigation"
           >
             <GlobalHeaderNavMenu
+              locale={locale}
               menuButtonClassName={heroOverlay ? "scheme-dark" : undefined}
               nav={nav}
             />
