@@ -77,25 +77,23 @@ export function GlobalHeaderNavMenu({ locale, nav, menuButtonClassName }: Props)
         onUpdate={handleUpdate}
         open={open}
       >
-        <PDrilldownItem identifier="women" label={nav.women}>
+        <PDrilldownItem identifier="apparel" label={nav.clothing}>
+          <PDrilldownLink
+            href={productsFilterHref(locale, { categories: ["apparel"] })}
+          >
+            {nav.viewAllProducts}
+          </PDrilldownLink>
           <PDrilldownLink href={productsFilterHref(locale, { audiences: ["women"] })}>
             {nav.viewAllWomen}
           </PDrilldownLink>
-        </PDrilldownItem>
-        <PDrilldownItem identifier="men" label={nav.men}>
           <PDrilldownLink href={productsFilterHref(locale, { audiences: ["men"] })}>
             {nav.viewAllMen}
           </PDrilldownLink>
-        </PDrilldownItem>
-        <PDrilldownItem identifier="kids" label={nav.kids}>
           <PDrilldownLink href={productsFilterHref(locale, { audiences: ["kids"] })}>
             {nav.viewAllKids}
           </PDrilldownLink>
         </PDrilldownItem>
         <PDrilldownItem identifier="accessories" label={nav.accessories}>
-          <PDrilldownLink href={productsFilterHref(locale, { categories: ["apparel"] })}>
-            {nav.clothing}
-          </PDrilldownLink>
           <PDrilldownLink href={productsFilterHref(locale, { categories: ["accessories"] })}>
             {nav.chargingHardware}
           </PDrilldownLink>
