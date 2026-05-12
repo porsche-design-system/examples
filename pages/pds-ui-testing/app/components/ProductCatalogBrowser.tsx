@@ -1,8 +1,20 @@
 "use client";
 
-import { useMemo } from "react";
+import { type CSSProperties, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { PButton, PHeading, PTag, PText } from "@porsche-design-system/components-react/ssr";
+import {
+  PAccordion,
+  PButton,
+  PCheckbox,
+  PFlyout,
+  PHeading,
+  PIcon,
+  PSelect,
+  PSelectOption,
+  PTabsBar,
+  PTagDismissible,
+  PText,
+} from "@porsche-design-system/components-react/ssr";
 import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
 import {
   type CatalogFacetFilter,
@@ -46,6 +58,20 @@ type FacetDefinition<T extends string> = {
   isValid: (value: string) => value is T;
 };
 
+type SortKey = "recommended" | "price-asc" | "price-desc" | "name-asc";
+
+type QuickFilterDefinition = {
+  label: string;
+  filter: Pick<CatalogFacetFilter, "audiences" | "categories" | "collections">;
+};
+
+const sortKeys = [
+  "recommended",
+  "price-asc",
+  "price-desc",
+  "name-asc",
+] as const;
+
 function parseFacetValues<T extends string>(
   searchParams: URLSearchParams,
   param: string,
@@ -66,22 +92,82 @@ function buildFilter(searchParams: URLSearchParams): CatalogFacetFilter {
   };
 }
 
-function isSelected<T extends string>(selected: readonly T[] | undefined, value: T) {
+function isSelected<T extends string>(
+  selected: readonly T[] | undefined,
+  value: T,
+) {
   return selected?.includes(value) ?? false;
+}
+
+function formatCount(template: string, count: number): string {
+  return template.replace("{count}", String(count));
+}
+
+function formatFilterLabel(template: string, filterLabel: string): string {
+  return template.replace("{filter}", filterLabel);
+}
+
+function isSortKey(value: string | null): value is SortKey {
+  return sortKeys.includes(value as SortKey);
+}
+
+function getSortKey(searchParams: URLSearchParams): SortKey {
+  const sort = searchParams.get("sort");
+  return isSortKey(sort) ? sort : "recommended";
+}
+
+function sortProducts(
+  products: CatalogProduct[],
+  sortKey: SortKey,
+): CatalogProduct[] {
+  const sortedProducts = [...products];
+
+  switch (sortKey) {
+    case "price-asc":
+      return sortedProducts.sort((a, b) => a.price.amount - b.price.amount);
+    case "price-desc":
+      return sortedProducts.sort((a, b) => b.price.amount - a.price.amount);
+    case "name-asc":
+      return sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+    case "recommended":
+      return sortedProducts;
+  }
+}
+
+function areSameValues<T extends string>(
+  currentValues: readonly T[] | undefined,
+  expectedValues: readonly T[] | undefined,
+): boolean {
+  const current = currentValues ?? [];
+  const expected = expectedValues ?? [];
+  return (
+    current.length === expected.length &&
+    expected.every((value) => current.includes(value))
+  );
 }
 
 export function ProductCatalogBrowser({ copy, locale, products }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const [isFilterFlyoutOpen, setIsFilterFlyoutOpen] = useState(false);
+  const [openFacets, setOpenFacets] = useState<Record<string, boolean>>({
+    audiences: true,
+    categories: false,
+    collections: false,
+    flags: false,
+    tags: false,
+  });
 
-  const filter = useMemo(
-    () => buildFilter(searchParams),
-    [searchParams],
-  );
+  const filter = useMemo(() => buildFilter(searchParams), [searchParams]);
+  const sortKey = getSortKey(searchParams);
   const filteredProducts = useMemo(
     () => filterCatalogProducts(products, filter),
     [filter, products],
+  );
+  const sortedProducts = useMemo(
+    () => sortProducts(filteredProducts, sortKey),
+    [filteredProducts, sortKey],
   );
 
   const facets = useMemo(
@@ -137,6 +223,33 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
     [copy],
   );
 
+  const quickFilters = useMemo(
+    () =>
+      [
+        {
+          label: copy.quickFilters.all,
+          filter: {},
+        },
+        {
+          label: copy.quickFilters.womenApparel,
+          filter: { audiences: ["women"], categories: ["apparel"] },
+        },
+        {
+          label: copy.quickFilters.menApparel,
+          filter: { audiences: ["men"], categories: ["apparel"] },
+        },
+        {
+          label: copy.quickFilters.kidsApparel,
+          filter: { audiences: ["kids"], categories: ["apparel"] },
+        },
+        {
+          label: copy.quickFilters.porscheDesign,
+          filter: { collections: ["porsche-design"] },
+        },
+      ] satisfies QuickFilterDefinition[],
+    [copy],
+  );
+
   const activeFilters = facets.flatMap((facet) => {
     const selectedValues = filter[facet.key] ?? [];
     return selectedValues.map((value) => ({
@@ -164,73 +277,242 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
     }
 
     const query = params.toString();
-    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+    router.replace(query ? `${pathname}?${query}` : pathname, {
+      scroll: false,
+    });
+  }
+
+  function applyQuickFilter(quickFilter: QuickFilterDefinition) {
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete("audience");
+    params.delete("category");
+    params.delete("collection");
+
+    if (quickFilter.filter.audiences?.length) {
+      params.set("audience", quickFilter.filter.audiences.join(","));
+    }
+    if (quickFilter.filter.categories?.length) {
+      params.set("category", quickFilter.filter.categories.join(","));
+    }
+    if (quickFilter.filter.collections?.length) {
+      params.set("collection", quickFilter.filter.collections.join(","));
+    }
+
+    const query = params.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, {
+      scroll: false,
+    });
+  }
+
+  function updateSort(nextSortKey: SortKey) {
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (nextSortKey === "recommended") {
+      params.delete("sort");
+    } else {
+      params.set("sort", nextSortKey);
+    }
+
+    const query = params.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, {
+      scroll: false,
+    });
   }
 
   function clearFilters() {
-    router.replace(pathname, { scroll: false });
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete("audience");
+    params.delete("category");
+    params.delete("collection");
+    params.delete("flag");
+    params.delete("tag");
+
+    const query = params.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, {
+      scroll: false,
+    });
   }
+
+  function toggleFacetPanel(facetKey: keyof CatalogFacetFilter, open: boolean) {
+    setOpenFacets((current) => ({ ...current, [facetKey]: open }));
+  }
+
+  const activeQuickFilterIndex = quickFilters.findIndex(
+    ({ filter: quickFilter }) => {
+      return (
+        areSameValues(filter.audiences, quickFilter.audiences) &&
+        areSameValues(filter.categories, quickFilter.categories) &&
+        areSameValues(filter.collections, quickFilter.collections)
+      );
+    },
+  );
+
+  const resultCountLabel = formatCount(
+    copy.resultCount,
+    filteredProducts.length,
+  );
+  const showProductsLabel = formatCount(
+    copy.showProducts,
+    filteredProducts.length,
+  );
 
   return (
     <>
-      <section
-        aria-labelledby="product-filter-heading"
-        className="col-wide grid gap-fluid-md rounded-lg border border-solid border-neutral-contrast-low p-fluid-md"
-      >
-        <div className="flex flex-col gap-fluid-sm md:flex-row md:items-center md:justify-between">
-          <PHeading id="product-filter-heading" size="large" tag="h2">
-            {copy.filters.title}
-          </PHeading>
-          <PText color="contrast-medium">
-            {copy.resultCount.replace("{count}", String(filteredProducts.length))}
-          </PText>
+      <section aria-label={copy.toolbarLabel} className="col-basic grid">
+        <div className="flex justify-center">
+          <PTabsBar
+            activeTabIndex={
+              activeQuickFilterIndex >= 0 ? activeQuickFilterIndex : undefined
+            }
+            onUpdate={(event) => {
+              const quickFilter = quickFilters[event.detail.activeTabIndex];
+              if (quickFilter) applyQuickFilter(quickFilter);
+            }}
+          >
+            {quickFilters.map((quickFilter) => (
+              <button key={quickFilter.label} type="button">
+                {quickFilter.label}
+              </button>
+            ))}
+          </PTabsBar>
         </div>
 
-        <div className="grid gap-fluid-md md:grid-cols-2 lg:grid-cols-3">
-          {facets.map((facet) => (
-            <fieldset className="grid gap-static-sm" key={facet.param}>
-              <legend className="mb-static-xs font-semibold">{facet.legend}</legend>
-              {facet.values.map((value) => (
-                <label className="flex items-center gap-static-sm" key={value}>
-                  <input
-                    checked={isSelected(filter[facet.key], value)}
-                    onChange={(event) =>
-                      updateFacet(facet, value, event.currentTarget.checked)
-                    }
-                    type="checkbox"
-                  />
-                  <span>{facet.labels[value]}</span>
-                </label>
-              ))}
-            </fieldset>
-          ))}
+        <div className="flex flex-col gap-fluid-sm md:flex-row md:items-end md:justify-between mt-fluid-lg">
+          <div className="flex flex-wrap items-center gap-static-md">
+            <PButton
+              icon="adjust"
+              onClick={() => setIsFilterFlyoutOpen(true)}
+              type="button"
+            >
+              {copy.filterButtonLabel}
+            </PButton>
+            <PText color="contrast-medium" aria-live="polite">
+              {resultCountLabel}
+            </PText>
+          </div>
+          <div className="w-full md:w-[240px]">
+            <PSelect
+              label={copy.sort.label}
+              name="sort"
+              onChange={(event) => updateSort(event.detail.value as SortKey)}
+              value={sortKey}
+            >
+              <PSelectOption value="recommended">
+                {copy.sort.recommended}
+              </PSelectOption>
+              <PSelectOption value="price-asc">
+                {copy.sort.priceAsc}
+              </PSelectOption>
+              <PSelectOption value="price-desc">
+                {copy.sort.priceDesc}
+              </PSelectOption>
+              <PSelectOption value="name-asc">
+                {copy.sort.nameAsc}
+              </PSelectOption>
+            </PSelect>
+          </div>
         </div>
 
         {activeFilters.length > 0 ? (
-          <div className="flex flex-wrap items-center gap-static-sm">
+          <div className="flex flex-wrap items-center gap-static-sm mt-fluid-md">
             {activeFilters.map(({ facet, label, value }) => (
-              <button
-                className="cursor-pointer border-0 bg-transparent p-0"
+              <PTagDismissible
+                aria={{
+                  "aria-label": formatFilterLabel(copy.dismissFilter, label),
+                }}
+                compact
                 key={`${facet.param}-${value}`}
                 onClick={() => updateFacet(facet, value, false)}
-                type="button"
               >
-                <PTag compact>{label}</PTag>
-              </button>
+                {label}
+              </PTagDismissible>
             ))}
-            <PButton onClick={clearFilters} type="button" variant="secondary">
+            <PButton
+              onClick={clearFilters}
+              type="button"
+              compact
+              variant="secondary"
+              icon="delete"
+            >
               {copy.clearFilters}
             </PButton>
           </div>
         ) : null}
       </section>
 
-      {filteredProducts.length > 0 ? (
-        <CatalogProductGrid
-          locale={locale}
-          products={filteredProducts}
-          sectionAriaLabel={copy.productsRegionLabel}
-        />
+      <PFlyout
+        aria={{ "aria-label": copy.filters.title }}
+        footerBehavior="fixed"
+        onDismiss={() => setIsFilterFlyoutOpen(false)}
+        open={isFilterFlyoutOpen}
+        style={
+          {
+            "--p-flyout-width": "500px",
+          } as CSSProperties
+        }
+      >
+        <div className="grid gap-static-lg">
+          <div className="flex items-center gap-static-sm" slot="header">
+            <PIcon name="adjust" size="medium" />
+            <PHeading size="large" tag="h2">
+              {copy.filterButtonLabel}
+            </PHeading>
+          </div>
+
+          <div className="flex flex-col gap-static-sm">
+            {facets.map((facet) => (
+              <PAccordion
+                alignMarker="end"
+                background="surface"
+                key={facet.param}
+                onUpdate={(event) =>
+                  toggleFacetPanel(facet.key, event.detail.open)
+                }
+                open={openFacets[facet.key]}
+              >
+                <span slot="summary">{facet.legend}</span>
+                <div className="flex flex-col gap-static-sm">
+                  {facet.values.map((value) => {
+                    const selected = isSelected(filter[facet.key], value);
+
+                    return (
+                      <PCheckbox
+                        checked={selected}
+                        key={value}
+                        label={facet.labels[value]}
+                        name={facet.param}
+                        onChange={() => updateFacet(facet, value, !selected)}
+                        value={value}
+                      />
+                    );
+                  })}
+                </div>
+              </PAccordion>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex gap-static-sm" slot="footer">
+          {activeFilters.length > 0 ? (
+            <PButton onClick={clearFilters} type="button" variant="secondary">
+              {copy.clearFilters}
+            </PButton>
+          ) : null}
+          <PButton onClick={() => setIsFilterFlyoutOpen(false)} type="button">
+            {showProductsLabel}
+          </PButton>
+        </div>
+      </PFlyout>
+
+      {sortedProducts.length > 0 ? (
+        <>
+          <h2 className="sr-only">{copy.productsRegionLabel}</h2>
+          <CatalogProductGrid
+            locale={locale}
+            products={sortedProducts}
+            sectionAriaLabel={copy.productsRegionLabel}
+          />
+        </>
       ) : (
         <section className="col-wide grid gap-fluid-sm" role="status">
           <PHeading size="large" tag="h2">

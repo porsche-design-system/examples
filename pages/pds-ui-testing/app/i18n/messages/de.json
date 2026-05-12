@@ -62,6 +62,8 @@
       ],
       "trendingHeading": "Beliebte Produkte",
       "trendingLinkLabel": "Alle Produkte anzeigen",
+      "trendingCarouselPrevious": "Vorherige beliebte Produkte",
+      "trendingCarouselNext": "Nächste beliebte Produkte",
       "featureGroupLabel": "Highlights",
       "featureTiles": [
         {
@@ -82,9 +84,27 @@
       "notice": "Filter aktualisieren die Produktauswahl auf dieser Seite und bleiben als URL teilbar.",
       "productsRegionLabel": "Gefilterter Produktkatalog",
       "resultCount": "{count} Produkte",
+      "filterButtonLabel": "Filter",
+      "showProducts": "{count} Produkte anzeigen",
       "clearFilters": "Filter zurücksetzen",
+      "dismissFilter": "Filter {filter} entfernen",
+      "toolbarLabel": "Produktfilter und Sortierung",
       "emptyTitle": "Keine Produkte gefunden",
       "emptyText": "Entfernen Sie einen oder mehrere Filter, um mehr Produkte zu sehen.",
+      "quickFilters": {
+        "all": "Alle Produkte",
+        "womenApparel": "Damenbekleidung",
+        "menApparel": "Herrenbekleidung",
+        "kidsApparel": "Kinderbekleidung",
+        "porscheDesign": "Porsche Design"
+      },
+      "sort": {
+        "label": "Sortieren nach",
+        "recommended": "Empfohlen",
+        "priceAsc": "Preis: aufsteigend",
+        "priceDesc": "Preis: absteigend",
+        "nameAsc": "Name: A bis Z"
+      },
       "filters": {
         "title": "Produkte filtern",
         "audience": "Zielgruppe",

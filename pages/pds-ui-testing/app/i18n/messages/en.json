@@ -62,6 +62,8 @@
       ],
       "trendingHeading": "Trending Products",
       "trendingLinkLabel": "View all products",
+      "trendingCarouselPrevious": "Previous trending products",
+      "trendingCarouselNext": "Next trending products",
       "featureGroupLabel": "Featured stories",
       "featureTiles": [
         {
@@ -82,9 +84,27 @@
       "notice": "Filters update the product result on this page and keep a shareable URL.",
       "productsRegionLabel": "Filtered product catalog",
       "resultCount": "{count} products",
+      "filterButtonLabel": "Filter",
+      "showProducts": "Show {count} products",
       "clearFilters": "Clear filters",
+      "dismissFilter": "Remove {filter} filter",
+      "toolbarLabel": "Product filters and sorting",
       "emptyTitle": "No products found",
       "emptyText": "Try removing one or more filters to see more products.",
+      "quickFilters": {
+        "all": "All products",
+        "womenApparel": "Women apparel",
+        "menApparel": "Men apparel",
+        "kidsApparel": "Kids apparel",
+        "porscheDesign": "Porsche Design"
+      },
+      "sort": {
+        "label": "Sort by",
+        "recommended": "Recommended",
+        "priceAsc": "Price: low to high",
+        "priceDesc": "Price: high to low",
+        "nameAsc": "Name: A to Z"
+      },
       "filters": {
         "title": "Filter products",
         "audience": "Audience",

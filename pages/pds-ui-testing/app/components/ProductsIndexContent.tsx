@@ -19,15 +19,14 @@ export function ProductsIndexContent({
   products,
 }: Props) {
   return (
-    <main className="grid-template gap-y-fluid-lg py-fluid-lg" data-testid="main-content">
-      <div className="col-wide flex max-w-prose flex-col gap-fluid-sm">
+    <main className="grid-template gap-y-fluid-md py-fluid-lg" data-testid="main-content">
+      <div className="col-wide mx-auto flex max-w-[720px] flex-col items-center gap-fluid-sm text-center">
         <PHeading size="3xl" tag="h1">
           {copy.title}
         </PHeading>
         <PText color="contrast-medium" size="small">
           {copy.subtitle}
         </PText>
-        <PText>{copy.notice}</PText>
       </div>
       <Suspense
         fallback={

@@ -113,7 +113,6 @@ export function HomeLandingContent({ home, locale, products }: Props) {
       </section>
 
       <section
-        aria-labelledby="home-trending-heading"
         className="col-full grid grid-cols-subgrid"
         id="products"
       >
@@ -132,13 +131,16 @@ export function HomeLandingContent({ home, locale, products }: Props) {
         </div>
         <div className="col-full mt-fluid-lg">
           <PCarousel
-            aria={{ "aria-label": home.trendingHeading }}
-            slidesPerPage={{ base: 1, s: 2, m: 3 }}
+            intl={{
+              next: home.trendingCarouselNext,
+              prev: home.trendingCarouselPrevious,
+            }}
+            slidesPerPage={3}
             width="basic"
             gradient
             pagination
           >
-            {products.map((product) => (
+            {products.slice(0, 3).map((product) => (
               <PLinkTileProduct
                 aspectRatio="3/4"
                 description={product.vatNote}
