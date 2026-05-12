@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/app/components/HomeHero";
 import { HomeLandingContent } from "@/app/components/HomeLandingContent";
-import { getHomeCatalog } from "@/app/data/get-catalog";
+import { filterCatalogProducts, getHomeCatalog } from "@/app/data/get-catalog";
 import { isLocale, type Locale } from "@/app/i18n/config";
 import { getDictionary } from "@/app/i18n/get-dictionary";
 
@@ -28,6 +28,9 @@ export default async function HomePage({ params }: HomePageProps) {
     getHomeCatalog(locale),
   ]);
   const { home } = dictionary.pages;
+  const trendingProducts = filterCatalogProducts(catalog.products, {
+    flags: ["trending"],
+  });
 
   return (
     <main
@@ -42,7 +45,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <HomeLandingContent
         home={home}
         locale={locale}
-        products={catalog.products}
+        products={trendingProducts}
       />
     </main>
   );

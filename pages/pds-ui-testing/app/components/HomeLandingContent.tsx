@@ -1,5 +1,6 @@
 import {
   PButton,
+  PCarousel,
   PHeading,
   PLinkPure,
   PLinkTile,
@@ -48,7 +49,7 @@ function lifestyleTileHref(locale: Locale, lifestyleTag: string): string {
  * Homepage sections from Figma landing frame (node 1:8387): intro, lifestyle tiles,
  * trending products, and large feature tiles — excluding header, hero, and footer.
  *
- * Lifestyle and trending product tiles use the Porsche Grid (`col-full` →
+ * Lifestyle tiles use the Porsche Grid (`col-full` →
  * `col-basic` → `col-span-one-third`). Feature tiles use (`col-full` → `col-wide`
  * → `col-span-one-half`), per PDS Tailwind grid docs — not arbitrary `grid-cols-*`
  * counts.
@@ -102,7 +103,9 @@ export function HomeLandingContent({ home, locale, products }: Props) {
               {/* biome-ignore lint/performance/noImgElement: PLinkTile's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
               <img
                 alt=""
-                src={appHref(LIFESTYLE_IMAGE_PATHS[index] ?? LIFESTYLE_IMAGE_PATHS[0])}
+                src={appHref(
+                  LIFESTYLE_IMAGE_PATHS[index] ?? LIFESTYLE_IMAGE_PATHS[0],
+                )}
               />
             </PLinkTile>
           ))}
@@ -127,24 +130,33 @@ export function HomeLandingContent({ home, locale, products }: Props) {
             {home.trendingLinkLabel}
           </PLinkPure>
         </div>
-        <div className="col-basic grid grid-cols-subgrid gap-fluid-md mt-fluid-xl">
-          {products.map((product) => (
-            <PLinkTileProduct
-              aspectRatio="3/4"
-              className="col-span-full md:col-span-one-third"
-              description={product.vatNote}
-              heading={product.name}
-              href={productDetailHref(locale, product.slug)}
-              key={product.id}
-              price={product.price.formatted}
-            >
-              {/* biome-ignore lint/performance/noImgElement: PLinkTileProduct's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
-              <img
-                alt={product.images[0]?.alt ?? ""}
-                src={appHref(product.images[0]?.src ?? "/home-product-keychain.jpg")}
-              />
-            </PLinkTileProduct>
-          ))}
+        <div className="col-full mt-fluid-lg">
+          <PCarousel
+            aria={{ "aria-label": home.trendingHeading }}
+            slidesPerPage={{ base: 1, s: 2, m: 3 }}
+            width="basic"
+            gradient
+            pagination
+          >
+            {products.map((product) => (
+              <PLinkTileProduct
+                aspectRatio="3/4"
+                description={product.vatNote}
+                heading={product.name}
+                href={productDetailHref(locale, product.slug)}
+                key={product.id}
+                price={product.price.formatted}
+              >
+                {/* biome-ignore lint/performance/noImgElement: PLinkTileProduct's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
+                <img
+                  alt={product.images[0]?.alt ?? ""}
+                  src={appHref(
+                    product.images[0]?.src ?? "/home-product-keychain.jpg",
+                  )}
+                />
+              </PLinkTileProduct>
+            ))}
+          </PCarousel>
         </div>
       </section>
 
@@ -169,7 +181,9 @@ export function HomeLandingContent({ home, locale, products }: Props) {
               {/* biome-ignore lint/performance/noImgElement: PLinkTile's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
               <img
                 alt=""
-                src={appHref(FEATURE_IMAGE_PATHS[index] ?? FEATURE_IMAGE_PATHS[0])}
+                src={appHref(
+                  FEATURE_IMAGE_PATHS[index] ?? FEATURE_IMAGE_PATHS[0],
+                )}
               />
             </PLinkTile>
           ))}
