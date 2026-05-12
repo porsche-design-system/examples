@@ -14,7 +14,11 @@ type Props = {
  * Porsche Grid product strip shared by the full catalog, filtered views, and
  * related product sections.
  */
-export function CatalogProductGrid({ sectionAriaLabel, locale, products }: Props) {
+export function CatalogProductGrid({
+  sectionAriaLabel,
+  locale,
+  products,
+}: Props) {
   return (
     <section
       aria-label={sectionAriaLabel}
@@ -22,7 +26,8 @@ export function CatalogProductGrid({ sectionAriaLabel, locale, products }: Props
     >
       <div className="col-basic grid grid-cols-subgrid gap-fluid-md">
         {products.map((product) => (
-          <div
+          <article
+            aria-label={product.name}
             className="col-span-full scroll-mt-fluid-lg md:col-span-one-third"
             id={product.id}
             key={product.id}
@@ -37,10 +42,12 @@ export function CatalogProductGrid({ sectionAriaLabel, locale, products }: Props
               {/* biome-ignore lint/performance/noImgElement: PLinkTileProduct default slot expects a bare <img>. */}
               <img
                 alt={product.images[0]?.alt ?? ""}
-                src={appHref(product.images[0]?.src ?? "/home-product-keychain.jpg")}
+                src={appHref(
+                  product.images[0]?.src ?? "/home-product-keychain.jpg",
+                )}
               />
             </PLinkTileProduct>
-          </div>
+          </article>
         ))}
       </div>
     </section>
