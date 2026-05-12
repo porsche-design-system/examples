@@ -1,7 +1,7 @@
 import {
-  PButton,
   PCarousel,
   PHeading,
+  PLink,
   PLinkPure,
   PLinkTile,
   PLinkTileProduct,
@@ -9,7 +9,10 @@ import {
   PText,
 } from "@porsche-design-system/components-react/ssr";
 import type { CatalogProduct } from "@/app/data/get-catalog";
-import { isLifestyleTagSlug } from "@/app/data/catalog/taxonomy";
+import {
+  isLifestyleTagSlug,
+  lifestyleTagSlugs,
+} from "@/app/data/catalog/taxonomy";
 import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
 import {
@@ -30,19 +33,32 @@ const LIFESTYLE_IMAGE_PATHS = [
 
 const FEATURE_IMAGE_PATHS = [
   "/home-feature-roadster.png",
-  "/home-feature-trunk.png",
+  "/home-feature-travel-transport.jpg",
 ] as const;
 
 type Props = {
   home: HomeCopy;
   locale: Locale;
-  products: CatalogProduct[];
+  trendingProducts: CatalogProduct[];
 };
 
 function lifestyleTileHref(locale: Locale, lifestyleTag: string): string {
   return isLifestyleTagSlug(lifestyleTag)
     ? productsFilterHref(locale, { tags: [lifestyleTag] })
     : productsIndexHref(locale);
+}
+
+function allLifestyleTagsHref(locale: Locale): string {
+  return productsFilterHref(locale, { tags: [...lifestyleTagSlugs] });
+}
+
+function featureTileHref(locale: Locale, href: string, index: number): string {
+  return index === 0
+    ? productsFilterHref(locale, {
+        categories: ["bags-luggage"],
+        flags: ["featured"],
+      })
+    : href;
 }
 
 /**
@@ -60,7 +76,7 @@ function lifestyleTileHref(locale: Locale, lifestyleTag: string): string {
  * Image `src` uses `appHref('/file-in-public.jpg')` so requests are not resolved
  * relative to `/[locale]/` (which would 404 in DevTools even if a fallback showed a tile).
  */
-export function HomeLandingContent({ home, locale, products }: Props) {
+export function HomeLandingContent({ home, locale, trendingProducts }: Props) {
   return (
     <>
       <section
@@ -77,9 +93,13 @@ export function HomeLandingContent({ home, locale, products }: Props) {
           <PText className="max-w-[635px]" size="x-large" align="center">
             {home.intro}
           </PText>
-          <PButton type="button" variant="primary" className="mt-fluid-md">
+          <PLink
+            href={allLifestyleTagsHref(locale)}
+            variant="primary"
+            className="mt-fluid-md"
+          >
             {home.shopTheLook}
-          </PButton>
+          </PLink>
         </div>
         <div className="col-basic grid grid-cols-subgrid gap-fluid-md mt-fluid-xl">
           {home.lifestyleTiles.map((tile, index) => (
@@ -137,7 +157,7 @@ export function HomeLandingContent({ home, locale, products }: Props) {
             gradient
             pagination
           >
-            {products.slice(0, 3).map((product) => (
+            {trendingProducts.slice(0, 5).map((product) => (
               <PLinkTileProduct
                 aspectRatio="3/4"
                 description={product.vatNote}
@@ -160,10 +180,15 @@ export function HomeLandingContent({ home, locale, products }: Props) {
       </section>
 
       <section
-        aria-label={home.featureGroupLabel}
+        aria-labelledby="home-feature-heading"
         className="col-full grid grid-cols-subgrid mt-fluid-2xl"
       >
-        <div className="col-wide grid grid-cols-subgrid gap-fluid-md">
+        <div className="col-wide flex flex-col items-center text-center">
+          <PHeading id="home-feature-heading" size="3xl" tag="h2">
+            {home.featureHeading}
+          </PHeading>
+        </div>
+        <div className="col-wide grid grid-cols-subgrid gap-fluid-md mt-fluid-lg">
           {home.featureTiles.map((tile, index) => (
             <PLinkTile
               align="top"
@@ -172,7 +197,7 @@ export function HomeLandingContent({ home, locale, products }: Props) {
               description={tile.description}
               gradient
               compact
-              href={tile.href}
+              href={featureTileHref(locale, tile.href, index)}
               key={tile.href}
               label={tile.label}
               size="large"

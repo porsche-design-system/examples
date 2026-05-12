@@ -45,7 +45,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <HomeLandingContent
         home={home}
         locale={locale}
-        products={trendingProducts}
+        trendingProducts={trendingProducts}
       />
     </main>
   );

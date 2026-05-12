@@ -526,6 +526,56 @@
       ]
     },
     {
+      "id": "product-roadster-aluminum-trolley-m",
+      "slug": "roadster-aluminum-trolley-m",
+      "sku": "4056487085647",
+      "audiences": ["unisex"],
+      "tags": ["urbanist", "timeless-enthusiast"],
+      "categories": ["accessories", "bags-luggage"],
+      "collections": ["porsche-originals"],
+      "flags": ["new", "new-release", "featured"],
+      "name": "Roadster Aluminum Trolley M",
+      "teaser": "A premium black aluminum suitcase inspired by the Porsche 911.",
+      "description": "High-quality medium-size suitcase made of anodised aluminum from Porsche Design. Inspired by the aerodynamic shape of the 911.",
+      "price": {
+        "amount": 1850,
+        "currency": "EUR",
+        "formatted": "1,850.00 €"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-roadster-aluminum-trolley-m.webp",
+          "alt": "Roadster Aluminum Trolley M in black"
+        }
+      ]
+    },
+    {
+      "id": "product-roadster-aluminum-trolley-l",
+      "slug": "roadster-aluminum-trolley-l",
+      "sku": "4056487085654",
+      "audiences": ["unisex"],
+      "tags": ["urbanist", "timeless-enthusiast"],
+      "categories": ["accessories", "bags-luggage"],
+      "collections": ["porsche-originals"],
+      "flags": ["new", "new-release", "featured"],
+      "name": "Roadster Aluminum Trolley L",
+      "teaser": "A premium silver aluminum suitcase inspired by the Porsche 911.",
+      "description": "High-quality large suitcase made of anodised aluminum from Porsche Design. Inspired by the aerodynamic shape of the 911.",
+      "price": {
+        "amount": 1950,
+        "currency": "EUR",
+        "formatted": "1,950.00 €"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-roadster-aluminum-trolley-l.webp",
+          "alt": "Roadster Aluminum Trolley L in silver"
+        }
+      ]
+    },
+    {
       "id": "product-roadster-hardcase-business-trolley-s",
       "slug": "roadster-hardcase-business-trolley-s",
       "sku": "4056487093376",
@@ -558,7 +608,7 @@
       "tags": ["timeless-enthusiast"],
       "categories": ["accessories", "bags-luggage"],
       "collections": ["porsche-originals"],
-      "flags": ["featured"],
+      "flags": [""],
       "name": "Travel Bag - Heritage",
       "teaser": "A black Porsche travel bag with a spacious main compartment.",
       "description": "Modern travel bag from Porsche with spacious main compartment and two-way zip.",

@@ -65,6 +65,7 @@
       "trendingCarouselPrevious": "Vorherige beliebte Produkte",
       "trendingCarouselNext": "Nächste beliebte Produkte",
       "featureGroupLabel": "Highlights",
+      "featureHeading": "Empfohlene Produkte",
       "featureTiles": [
         {
           "href": "#feature-roadster",
@@ -72,9 +73,9 @@
           "description": "Manufactured like a Porsche. Der neue Roadster Aluminum."
         },
         {
-          "href": "#feature-trunk",
-          "label": "Faltbare Kofferraumboxen entdecken",
-          "description": "Faltbare Kofferraumboxen"
+          "href": "#feature-travel-transport",
+          "label": "Travel & Transport entdecken",
+          "description": "Travel & Transport"
         }
       ]
     },

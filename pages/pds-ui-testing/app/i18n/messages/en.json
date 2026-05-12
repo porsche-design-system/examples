@@ -65,6 +65,7 @@
       "trendingCarouselPrevious": "Previous trending products",
       "trendingCarouselNext": "Next trending products",
       "featureGroupLabel": "Featured stories",
+      "featureHeading": "Featured Products",
       "featureTiles": [
         {
           "href": "#feature-roadster",
@@ -72,9 +73,9 @@
           "description": "Manufactured like a Porsche. The new Roadster Aluminum."
         },
         {
-          "href": "#feature-trunk",
-          "label": "Discover foldable trunk organizers",
-          "description": "Foldable trunk organizers"
+          "href": "#feature-travel-transport",
+          "label": "Discover Travel & Transport",
+          "description": "Travel & Transport"
         }
       ]
     },
