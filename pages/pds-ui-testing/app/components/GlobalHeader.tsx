@@ -88,14 +88,6 @@ export function GlobalHeader({
           >
             {header.search}
           </PButtonPure>
-          <PButtonPure
-            className="p-static-xs -m-static-xs"
-            hideLabel
-            icon="shopping-cart"
-            size={{ base: "small", m: "medium" }}
-          >
-            {header.shoppingCart}
-          </PButtonPure>
         </div>
       </div>
     </header>

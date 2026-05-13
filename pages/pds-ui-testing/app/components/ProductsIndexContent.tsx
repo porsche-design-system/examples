@@ -15,10 +15,7 @@ type Props = {
 /** Default full-catalog listing (`/[locale]/products/`). */
 export function ProductsIndexContent({ copy, locale, products }: Props) {
   return (
-    <main
-      className="grid-template gap-y-fluid-md py-fluid-lg"
-      data-testid="main-content"
-    >
+    <main className="grid-template mt-fluid-xl" data-testid="main-content">
       <div className="col-wide mx-auto flex max-w-[720px] flex-col items-center gap-fluid-sm text-center">
         <PHeading size="3xl" tag="h1">
           {copy.title}

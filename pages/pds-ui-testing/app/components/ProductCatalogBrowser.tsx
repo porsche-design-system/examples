@@ -9,6 +9,7 @@ import {
   PFlyout,
   PHeading,
   PIcon,
+  PInlineNotification,
   PSelect,
   PSelectOption,
   PTabsBar,
@@ -565,14 +566,18 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
             sectionAriaLabel={copy.productsRegionLabel}
           />
         </>
-      ) : (
-        <section className="col-basic grid gap-fluid-sm" role="status">
-          <PHeading size="large" tag="h2">
-            {emptyTitleCopy}
-          </PHeading>
-          <PText>{emptyTextCopy}</PText>
-        </section>
-      )}
+      ) : null}
+      <section className="col-basic grid gap-fluid-sm" role="status">
+        {displayProducts.length === 0 ? (
+          <PInlineNotification
+            description={emptyTextCopy}
+            dismissButton={false}
+            heading={emptyTitleCopy}
+            headingTag="h2"
+            state="info"
+          />
+        ) : null}
+      </section>
     </>
   );
 }
