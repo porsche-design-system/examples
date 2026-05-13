@@ -461,35 +461,42 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
           </div>
 
           <div className="flex flex-col gap-static-sm">
-            {facets.map((facet) => (
-              <PAccordion
-                alignMarker="end"
-                background="surface"
-                key={facet.param}
-                onUpdate={(event) =>
-                  toggleFacetPanel(facet.key, event.detail.open)
-                }
-                open={openFacets[facet.key]}
-              >
-                <span slot="summary">{facet.legend}</span>
-                <div className="flex flex-col gap-static-sm">
-                  {facet.values.map((value) => {
-                    const selected = isSelected(filter[facet.key], value);
+            {/* Mount facet checkboxes only while the flyout is open so SSR does not
+                render PDS DSRCheckbox (native input with `checked` but no `onChange`),
+                which triggers React 19 dev warnings. Client-open uses the web component. */}
+            {isFilterFlyoutOpen
+              ? facets.map((facet) => (
+                  <PAccordion
+                    alignMarker="end"
+                    background="surface"
+                    key={facet.param}
+                    onUpdate={(event) =>
+                      toggleFacetPanel(facet.key, event.detail.open)
+                    }
+                    open={openFacets[facet.key]}
+                  >
+                    <span slot="summary">{facet.legend}</span>
+                    <div className="flex flex-col gap-static-sm">
+                      {facet.values.map((value) => {
+                        const selected = isSelected(filter[facet.key], value);
 
-                    return (
-                      <PCheckbox
-                        checked={selected}
-                        key={value}
-                        label={facet.labels[value]}
-                        name={facet.param}
-                        onChange={() => updateFacet(facet, value, !selected)}
-                        value={value}
-                      />
-                    );
-                  })}
-                </div>
-              </PAccordion>
-            ))}
+                        return (
+                          <PCheckbox
+                            checked={selected}
+                            key={value}
+                            label={facet.labels[value]}
+                            name={facet.param}
+                            onChange={() =>
+                              updateFacet(facet, value, !selected)
+                            }
+                            value={value}
+                          />
+                        );
+                      })}
+                    </div>
+                  </PAccordion>
+                ))
+              : null}
           </div>
         </div>
 

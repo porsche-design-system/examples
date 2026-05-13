@@ -100,7 +100,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
         </PLinkPure>
       </div>
 
-      <section className="col-wide grid grid-cols-subgrid">
+      <div className="col-wide grid grid-cols-subgrid">
         <div className="col-span-full md:col-span-one-half overflow-hidden rounded-lg bg-surface">
           {/* biome-ignore lint/performance/noImgElement: Product detail uses the same public demo assets as PDS tile slots. */}
           <img
@@ -110,7 +110,10 @@ export default async function ProductDetailPage({ params }: PageProps) {
           />
         </div>
 
-        <div className="col-span-full md:col-start-11 flex flex-col gap-fluid-md">
+        <section
+          aria-labelledby="product-detail-heading"
+          className="col-span-full md:col-start-11 flex flex-col gap-fluid-md"
+        >
           <div className="flex flex-wrap gap-static-sm">
             {[...categoryLabels, ...collectionLabels, ...tagLabels].map(
               (label) => (
@@ -137,12 +140,12 @@ export default async function ProductDetailPage({ params }: PageProps) {
           {isApparelProduct ? (
             <>
               <PDivider />
-              <section aria-labelledby="product-size-heading">
+              <div>
                 <PHeading id="product-size-heading" size="medium" tag="h2">
                   {productDetail.sizes}
                 </PHeading>
                 <ProductSizeSelector label={productDetail.selectSize} />
-              </section>
+              </div>
               <PDivider />
             </>
           ) : null}
@@ -154,10 +157,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
               {productDetail.favorites}
             </PButton>
           </div>
-          <section
-            aria-labelledby="product-detail-heading"
-            className="grid gap-static-sm"
-          >
+          <div className="grid gap-static-sm">
             <PHeading id="product-detail-heading" size="medium" tag="h2">
               {productDetail.details}
             </PHeading>
@@ -165,9 +165,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
             <PText color="contrast-medium" size="small">
               {productDetail.sku}: {product.sku}
             </PText>
-          </section>
-        </div>
-      </section>
+          </div>
+        </section>
+      </div>
 
       {relatedProducts.length > 0 ? (
         <>
