@@ -102,6 +102,10 @@
       "toolbarLabel": "Produktfilter und Sortierung",
       "emptyTitle": "Keine Produkte gefunden",
       "emptyText": "Entfernen Sie einen oder mehrere Filter, um mehr Produkte zu sehen.",
+      "favoritesOnlyLabel": "Merkliste",
+      "favoritesOnlyDismissAria": "Gesamten Katalog anzeigen; Filter Merkliste aufheben",
+      "favoritesEmptyTitle": "Noch keine Favoriten",
+      "favoritesEmptyText": "Speichern Sie Produkte über das Herz auf einer Kachel oder der Produktdetailseite. Favoriten gelten nur für diese Browser-Sitzung.",
       "quickFilters": {
         "all": "Alle Produkte",
         "womenApparel": "Damenbekleidung",

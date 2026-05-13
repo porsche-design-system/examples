@@ -29,6 +29,18 @@ export function productsIndexHref(locale: Locale): string {
   return appHref(`/${locale}/products/`);
 }
 
+/** Query flag on `productsIndexHref` to show only session-saved favorites (`?favorites=1`). */
+export const PRODUCTS_FAVORITES_QUERY = "favorites";
+export const PRODUCTS_FAVORITES_VALUE = "1";
+
+/** Full product catalog index filtered to favorited products (session). */
+export function productsFavoritesHref(locale: Locale): string {
+  const base = productsIndexHref(locale);
+  const params = new URLSearchParams();
+  params.set(PRODUCTS_FAVORITES_QUERY, PRODUCTS_FAVORITES_VALUE);
+  return `${base}?${params.toString()}`;
+}
+
 export function productDetailHref(locale: Locale, slug: string): string {
   return appHref(`/${locale}/products/${slug}/`);
 }

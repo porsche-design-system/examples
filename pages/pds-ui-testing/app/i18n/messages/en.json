@@ -102,6 +102,10 @@
       "toolbarLabel": "Product filters and sorting",
       "emptyTitle": "No products found",
       "emptyText": "Try removing one or more filters to see more products.",
+      "favoritesOnlyLabel": "Favorites",
+      "favoritesOnlyDismissAria": "Show full catalog; stop filtering by favorites",
+      "favoritesEmptyTitle": "No favorites yet",
+      "favoritesEmptyText": "Use the heart on a product tile or detail page to save items. Favorites are kept for this browser tab session only.",
       "quickFilters": {
         "all": "All products",
         "womenApparel": "Women apparel",

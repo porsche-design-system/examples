@@ -1,11 +1,12 @@
 import {
   PCrest,
   PButtonPure,
+  PLinkPure,
   PWordmark,
 } from "@porsche-design-system/components-react/ssr";
 import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
-import { localeHomeHref } from "@/app/i18n/href";
+import { localeHomeHref, productsFavoritesHref } from "@/app/i18n/href";
 import { GlobalHeaderNavMenu } from "./GlobalHeaderNavMenu";
 
 type Props = {
@@ -69,15 +70,15 @@ export function GlobalHeader({
               : "flex min-w-0 flex-wrap items-center justify-end gap-static-xs sm:gap-static-md"
           }
         >
-          <PButtonPure
+          <PLinkPure
             className="p-static-xs -m-static-xs"
             hideLabel
             icon="heart"
             size={{ base: "small", m: "medium" }}
-            type="button"
+            href={productsFavoritesHref(locale)}
           >
             {header.favorites}
-          </PButtonPure>
+          </PLinkPure>
           <PButtonPure
             className="p-static-xs -m-static-xs"
             hideLabel

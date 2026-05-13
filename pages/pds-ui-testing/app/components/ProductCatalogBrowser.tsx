@@ -16,6 +16,7 @@ import {
   PText,
 } from "@porsche-design-system/components-react/ssr";
 import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
+import { useProductFavorites } from "@/app/components/ProductFavoritesProvider";
 import {
   type CatalogFacetFilter,
   type CatalogProduct,
@@ -40,6 +41,10 @@ import {
 } from "@/app/data/catalog/taxonomy";
 import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
+import {
+  PRODUCTS_FAVORITES_QUERY,
+  PRODUCTS_FAVORITES_VALUE,
+} from "@/app/i18n/href";
 
 type ProductListCopy = Dictionary["pages"]["productList"];
 
@@ -150,6 +155,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const { favoriteSlugs, isFavorite } = useProductFavorites();
   const [isFilterFlyoutOpen, setIsFilterFlyoutOpen] = useState(false);
   const [openFacets, setOpenFacets] = useState<Record<string, boolean>>({
     audiences: true,
@@ -161,6 +167,8 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
 
   const filter = useMemo(() => buildFilter(searchParams), [searchParams]);
   const sortKey = getSortKey(searchParams);
+  const favoritesOnly =
+    searchParams.get(PRODUCTS_FAVORITES_QUERY) === PRODUCTS_FAVORITES_VALUE;
   const filteredProducts = useMemo(
     () => filterCatalogProducts(products, filter),
     [filter, products],
@@ -169,6 +177,10 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
     () => sortProducts(filteredProducts, sortKey),
     [filteredProducts, sortKey],
   );
+  const displayProducts = useMemo(() => {
+    if (!favoritesOnly) return sortedProducts;
+    return sortedProducts.filter((p) => isFavorite(p.slug));
+  }, [favoritesOnly, isFavorite, sortedProducts]);
 
   const facets = useMemo(
     () =>
@@ -287,6 +299,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
     params.delete("audience");
     params.delete("category");
     params.delete("collection");
+    params.delete(PRODUCTS_FAVORITES_QUERY);
 
     if (quickFilter.filter.audiences?.length) {
       params.set("audience", quickFilter.filter.audiences.join(","));
@@ -326,7 +339,17 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
     params.delete("collection");
     params.delete("flag");
     params.delete("tag");
+    params.delete(PRODUCTS_FAVORITES_QUERY);
 
+    const query = params.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, {
+      scroll: false,
+    });
+  }
+
+  function clearFavoritesOnly() {
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete(PRODUCTS_FAVORITES_QUERY);
     const query = params.toString();
     router.replace(query ? `${pathname}?${query}` : pathname, {
       scroll: false,
@@ -349,12 +372,21 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
 
   const resultCountLabel = formatCount(
     copy.resultCount,
-    filteredProducts.length,
+    displayProducts.length,
   );
   const showProductsLabel = formatCount(
     copy.showProducts,
-    filteredProducts.length,
+    displayProducts.length,
   );
+
+  const emptyNoFavoritesSaved =
+    favoritesOnly && favoriteSlugs.length === 0 && displayProducts.length === 0;
+  const emptyTitleCopy = emptyNoFavoritesSaved
+    ? copy.favoritesEmptyTitle
+    : copy.emptyTitle;
+  const emptyTextCopy = emptyNoFavoritesSaved
+    ? copy.favoritesEmptyText
+    : copy.emptyText;
 
   return (
     <>
@@ -414,8 +446,20 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
           </div>
         </div>
 
-        {activeFilters.length > 0 ? (
+        {activeFilters.length > 0 || favoritesOnly ? (
           <div className="flex flex-wrap items-center gap-static-sm mt-fluid-md">
+            {favoritesOnly ? (
+              <PTagDismissible
+                aria={{
+                  "aria-label": copy.favoritesOnlyDismissAria,
+                }}
+                compact
+                key="favorites-only"
+                onClick={clearFavoritesOnly}
+              >
+                {copy.favoritesOnlyLabel}
+              </PTagDismissible>
+            ) : null}
             {activeFilters.map(({ facet, label, value }) => (
               <PTagDismissible
                 aria={{
@@ -504,7 +548,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
           <PButton onClick={() => setIsFilterFlyoutOpen(false)} type="button">
             {showProductsLabel}
           </PButton>
-          {activeFilters.length > 0 ? (
+          {activeFilters.length > 0 || favoritesOnly ? (
             <PButton onClick={clearFilters} type="button" variant="secondary">
               {copy.clearFilters}
             </PButton>
@@ -512,21 +556,21 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
         </div>
       </PFlyout>
 
-      {sortedProducts.length > 0 ? (
+      {displayProducts.length > 0 ? (
         <>
           <h2 className="sr-only">{copy.productsRegionLabel}</h2>
           <CatalogProductGrid
             locale={locale}
-            products={sortedProducts}
+            products={displayProducts}
             sectionAriaLabel={copy.productsRegionLabel}
           />
         </>
       ) : (
-        <section className="col-wide grid gap-fluid-sm" role="status">
+        <section className="col-basic grid gap-fluid-sm" role="status">
           <PHeading size="large" tag="h2">
-            {copy.emptyTitle}
+            {emptyTitleCopy}
           </PHeading>
-          <PText>{copy.emptyText}</PText>
+          <PText>{emptyTextCopy}</PText>
         </section>
       )}
     </>
