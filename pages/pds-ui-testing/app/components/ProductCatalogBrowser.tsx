@@ -167,8 +167,9 @@ type FilterDismissibleTagProps = Omit<
 };
 
 /**
- * `p-tag-dismissible` emits a Stencil `dismiss` event; the SSR React wrapper does not
- * attach `useEventCallback` for it, so React `onClick` on the host often never runs.
+ * v4.1.0 `p-tag-dismissible` is a single shadow-DOM `<button>` (no `dismiss` custom event).
+ * Clicks must be handled with a native `click` listener on the host so they are not lost
+ * to React’s custom-element / shadow-tree event wiring.
  */
 function FilterDismissibleTag({
   onDismiss,
@@ -178,12 +179,12 @@ function FilterDismissibleTag({
   useEffect(() => {
     const el = hostRef.current;
     if (!el) return;
-    const handleDismiss = () => {
+    const handleClick = () => {
       onDismiss();
     };
-    el.addEventListener("dismiss", handleDismiss);
+    el.addEventListener("click", handleClick);
     return () => {
-      el.removeEventListener("dismiss", handleDismiss);
+      el.removeEventListener("click", handleClick);
     };
   }, [onDismiss]);
   return <PTagDismissible ref={hostRef} {...props} />;
