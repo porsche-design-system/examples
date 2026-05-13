@@ -175,6 +175,7 @@
         "priorityNormal": "Normal",
         "priorityHigh": "Hoch",
         "priorityUrgent": "Dringend",
+        "fieldsetRequestType": "Art der Anfrage",
         "fieldsetContact": "Kontaktdaten",
         "fieldsetLocation": "Standort & Erreichbarkeit",
         "fieldsetScheduling": "Optionale Terminierung (Demo-Felder)",
@@ -205,7 +206,7 @@
         "pinDescription": "Vier Ziffern nur für UI-Tests; kein echtes Geheimnis.",
         "passwordDemoLabel": "Demo-Passwortfeld",
         "passwordDemoDescription": "Zeigt PInputPassword im Formular; bitte kein echtes Passwort eingeben.",
-        "newsletter": "Ähnliche Produkte per E-Mail (Demo-Schalter)",
+        "newsletter": "Ähnliche Produkte per E-Mail",
         "privacy": "Ich stimme zu, dass meine Angaben für diese Demo-Anfrage verarbeitet werden.",
         "errors": {
           "formSummaryHeading": "Eingaben prüfen",

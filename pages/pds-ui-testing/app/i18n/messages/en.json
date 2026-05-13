@@ -175,6 +175,7 @@
         "priorityNormal": "Normal",
         "priorityHigh": "High",
         "priorityUrgent": "Urgent",
+        "fieldsetRequestType": "Type of request",
         "fieldsetContact": "Contact details",
         "fieldsetLocation": "Location & reachability",
         "fieldsetScheduling": "Optional scheduling (demo fields)",
@@ -205,7 +206,7 @@
         "pinDescription": "Four digits for UI testing only; not used as a real secret.",
         "passwordDemoLabel": "Demo password field",
         "passwordDemoDescription": "Illustrates PInputPassword in the form; do not enter a real password.",
-        "newsletter": "Email me about similar products (demo switch)",
+        "newsletter": "Email me about similar products",
         "privacy": "I agree that my details may be processed for this demo inquiry.",
         "errors": {
           "formSummaryHeading": "Check your entries",

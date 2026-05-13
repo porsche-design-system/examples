@@ -269,60 +269,64 @@ export function ProductInquiryFlyout({
                       state="error"
                     />
                   ) : null}
-                  <PRadioGroup
-                    label={copy.inquiryTypeLabel}
-                    message={errors.inquiryType ?? ""}
-                    name="inquiry-type"
-                    onChange={(e) => {
-                      setForm((s) => ({
-                        ...s,
-                        inquiryType: pdsStringValue(e),
-                      }));
-                      clearError("inquiryType");
-                    }}
-                    required
-                    state={errors.inquiryType ? "error" : "none"}
-                    value={form.inquiryType}
-                  >
-                    <PRadioGroupOption
-                      label={copy.inquiryTypeQuote}
-                      value="quote"
-                    />
-                    <PRadioGroupOption
-                      label={copy.inquiryTypeAvailability}
-                      value="availability"
-                    />
-                    <PRadioGroupOption
-                      label={copy.inquiryTypeSupport}
-                      value="support"
-                    />
-                  </PRadioGroup>
+                  <PFieldset label={copy.fieldsetRequestType}>
+                    <div className="mt-static-md grid gap-static-md">
+                      <PRadioGroup
+                        label={copy.inquiryTypeLabel}
+                        message={errors.inquiryType ?? ""}
+                        name="inquiry-type"
+                        onChange={(e) => {
+                          setForm((s) => ({
+                            ...s,
+                            inquiryType: pdsStringValue(e),
+                          }));
+                          clearError("inquiryType");
+                        }}
+                        required
+                        state={errors.inquiryType ? "error" : "none"}
+                        value={form.inquiryType}
+                      >
+                        <PRadioGroupOption
+                          label={copy.inquiryTypeQuote}
+                          value="quote"
+                        />
+                        <PRadioGroupOption
+                          label={copy.inquiryTypeAvailability}
+                          value="availability"
+                        />
+                        <PRadioGroupOption
+                          label={copy.inquiryTypeSupport}
+                          value="support"
+                        />
+                      </PRadioGroup>
 
-                  <PSegmentedControl
-                    columns={{ base: 1, s: 3 }}
-                    label={copy.priorityLabel}
-                    name="inquiry-priority"
-                    onChange={(e) =>
-                      setForm((s) => ({
-                        ...s,
-                        priority: pdsStringValue(e),
-                      }))
-                    }
-                    value={form.priority}
-                  >
-                    <PSegmentedControlItem
-                      label={copy.priorityNormal}
-                      value="normal"
-                    />
-                    <PSegmentedControlItem
-                      label={copy.priorityHigh}
-                      value="high"
-                    />
-                    <PSegmentedControlItem
-                      label={copy.priorityUrgent}
-                      value="urgent"
-                    />
-                  </PSegmentedControl>
+                      <PSegmentedControl
+                        columns={{ base: 1, s: 3 }}
+                        label={copy.priorityLabel}
+                        name="inquiry-priority"
+                        onChange={(e) =>
+                          setForm((s) => ({
+                            ...s,
+                            priority: pdsStringValue(e),
+                          }))
+                        }
+                        value={form.priority}
+                      >
+                        <PSegmentedControlItem
+                          label={copy.priorityNormal}
+                          value="normal"
+                        />
+                        <PSegmentedControlItem
+                          label={copy.priorityHigh}
+                          value="high"
+                        />
+                        <PSegmentedControlItem
+                          label={copy.priorityUrgent}
+                          value="urgent"
+                        />
+                      </PSegmentedControl>
+                    </div>
+                  </PFieldset>
 
                   <PDivider />
 
@@ -493,6 +497,8 @@ export function ProductInquiryFlyout({
                         rows={5}
                         state={errors.message ? "error" : "none"}
                         value={form.message}
+                        counter
+                        maxLength={50}
                       />
                       <PSwitch
                         checked={form.newsletter}
