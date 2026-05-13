@@ -7,4 +7,4 @@
 :HL["/examples/issue/4292/pds-ui-testing/home-lifestyle-urbanist.jpg","image"]
 :HL["/examples/issue/4292/pds-ui-testing/home-feature-roadster.png","image"]
 :HL["/examples/issue/4292/pds-ui-testing/home-feature-travel-transport.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"locale","param":{"type":"d","key":"de","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"(home)","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"s6jkfyhKFwPI-zk2Br0wj"}
+0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"locale","param":{"type":"d","key":"de","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"(home)","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"s3Oe6L8uMkapOQD4160dX"}
