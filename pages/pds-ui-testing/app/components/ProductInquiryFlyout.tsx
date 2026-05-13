@@ -1,6 +1,6 @@
 "use client";
 
-import { type CSSProperties, useCallback, useEffect, useState } from "react";
+import { type CSSProperties, useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   PButton,
   PCheckbox,
@@ -59,6 +59,28 @@ type InquiryFieldErrorKey =
   | "privacy";
 
 export type InquiryFieldErrors = Partial<Record<InquiryFieldErrorKey, string>>;
+
+/** Visual / logical order for “first invalid field” focus after submit. */
+const INQUIRY_ERROR_FIELD_ORDER: InquiryFieldErrorKey[] = [
+  "inquiryType",
+  "firstName",
+  "lastName",
+  "email",
+  "message",
+  "privacy",
+];
+
+function focusInquiryFieldHost(host: HTMLElement | null | undefined): void {
+  if (!host) return;
+  host.scrollIntoView({ block: "nearest", inline: "nearest" });
+  host.focus();
+  const root = host.shadowRoot;
+  if (!root) return;
+  const inner = root.querySelector<HTMLElement>(
+    'input:not([type="hidden"]), textarea, button:not([disabled])',
+  );
+  if (inner && document.activeElement !== inner) inner.focus();
+}
 
 type PostSubmitPhase = "idle" | "pending" | "done";
 
@@ -154,6 +176,17 @@ export function ProductInquiryFlyout({
   const [errors, setErrors] = useState<InquiryFieldErrors>({});
   const [postSubmitPhase, setPostSubmitPhase] =
     useState<PostSubmitPhase>("idle");
+  const fieldHostsRef = useRef<
+    Partial<Record<InquiryFieldErrorKey, HTMLElement | null>>
+  >({});
+  const shouldFocusFirstErrorRef = useRef(false);
+
+  const assignFieldHostRef = useCallback(
+    (key: InquiryFieldErrorKey) => (instance: HTMLElement | null) => {
+      fieldHostsRef.current[key] = instance;
+    },
+    [],
+  );
 
   const clearError = useCallback((key: InquiryFieldErrorKey) => {
     setErrors((prev) => {
@@ -182,10 +215,25 @@ export function ProductInquiryFlyout({
   const handleSubmit = useCallback(() => {
     const next = validateInquiryForm(form, copy.errors);
     setErrors(next);
-    if (hasValidationErrors(next)) return;
+    if (hasValidationErrors(next)) {
+      shouldFocusFirstErrorRef.current = true;
+      return;
+    }
     setErrors({});
     setPostSubmitPhase("pending");
   }, [form, copy.errors]);
+
+  useLayoutEffect(() => {
+    if (!shouldFocusFirstErrorRef.current) return;
+    if (!hasValidationErrors(errors)) return;
+    shouldFocusFirstErrorRef.current = false;
+    const firstKey = INQUIRY_ERROR_FIELD_ORDER.find(
+      (key) => errors[key] != null && errors[key] !== "",
+    );
+    if (!firstKey) return;
+    const host = fieldHostsRef.current[firstKey];
+    requestAnimationFrame(() => focusInquiryFieldHost(host));
+  }, [errors]);
 
   const handleDismiss = useCallback(() => {
     resetAndClose();
@@ -272,6 +320,7 @@ export function ProductInquiryFlyout({
                   <PFieldset label={copy.fieldsetRequestType}>
                     <div className="mt-static-md grid gap-static-md">
                       <PRadioGroup
+                        ref={assignFieldHostRef("inquiryType")}
                         label={copy.inquiryTypeLabel}
                         message={errors.inquiryType ?? ""}
                         name="inquiry-type"
@@ -333,6 +382,7 @@ export function ProductInquiryFlyout({
                   <PFieldset label={copy.fieldsetContact}>
                     <div className="mt-static-md grid gap-static-md md:grid-cols-2">
                       <PInputText
+                        ref={assignFieldHostRef("firstName")}
                         autoComplete="given-name"
                         label={copy.firstName}
                         message={errors.firstName ?? ""}
@@ -356,6 +406,7 @@ export function ProductInquiryFlyout({
                         value={form.firstName}
                       />
                       <PInputText
+                        ref={assignFieldHostRef("lastName")}
                         autoComplete="family-name"
                         label={copy.lastName}
                         message={errors.lastName ?? ""}
@@ -378,29 +429,30 @@ export function ProductInquiryFlyout({
                         state={errors.lastName ? "error" : "none"}
                         value={form.lastName}
                       />
-                      <PInputEmail
-                        autoComplete="email"
-                        label={copy.email}
-                        message={errors.email ?? ""}
-                        name="inquiry-email"
-                        onChange={(e) => {
-                          setForm((s) => ({
-                            ...s,
-                            email: pdsStringValue(e),
-                          }));
-                          clearError("email");
-                        }}
-                        onInput={(e) => {
-                          setForm((s) => ({
-                            ...s,
-                            email: pdsStringValue(e),
-                          }));
-                          clearError("email");
-                        }}
-                        required
-                        state={errors.email ? "error" : "none"}
-                        value={form.email}
-                      />
+                  <PInputEmail
+                    ref={assignFieldHostRef("email")}
+                    autoComplete="email"
+                    label={copy.email}
+                    message={errors.email ?? ""}
+                    name="inquiry-email"
+                    onChange={(e) => {
+                      setForm((s) => ({
+                        ...s,
+                        email: pdsStringValue(e),
+                      }));
+                      clearError("email");
+                    }}
+                    onInput={(e) => {
+                      setForm((s) => ({
+                        ...s,
+                        email: pdsStringValue(e),
+                      }));
+                      clearError("email");
+                    }}
+                    required
+                    state={errors.email ? "error" : "none"}
+                    value={form.email}
+                  />
                       <PInputTel
                         autoComplete="tel"
                         label={copy.phone}
@@ -475,6 +527,7 @@ export function ProductInquiryFlyout({
                         </PMultiSelectOption>
                       </PMultiSelect>
                       <PTextarea
+                        ref={assignFieldHostRef("message")}
                         label={copy.message}
                         message={errors.message ?? ""}
                         name="inquiry-message"
@@ -512,6 +565,7 @@ export function ProductInquiryFlyout({
                         {copy.newsletter}
                       </PSwitch>
                       <PCheckbox
+                        ref={assignFieldHostRef("privacy")}
                         checked={form.privacyAccepted}
                         label={copy.privacy}
                         message={errors.privacy ?? ""}
