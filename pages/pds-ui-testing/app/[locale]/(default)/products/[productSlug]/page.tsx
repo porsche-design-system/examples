@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
-  PButton,
   PDivider,
   PHeading,
   PLinkPure,
@@ -9,6 +8,7 @@ import {
   PText,
 } from "@porsche-design-system/components-react/ssr";
 import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
+import { ProductDetailFavoriteButton } from "@/app/components/ProductDetailFavoriteButton";
 import { ProductInquiryFlyout } from "@/app/components/ProductInquiryFlyout";
 import { ProductSizeSelector } from "@/app/components/ProductSizeSelector";
 import {
@@ -159,9 +159,11 @@ export default async function ProductDetailPage({ params }: PageProps) {
               )}
               productName={product.name}
             />
-            <PButton type="button" variant="secondary" icon="heart" hideLabel>
-              {productDetail.favorites}
-            </PButton>
+            <ProductDetailFavoriteButton
+              labelAdd={productDetail.favorites}
+              labelRemove={productDetail.favoritesRemove}
+              productSlug={product.slug}
+            />
           </div>
           <div className="grid gap-static-sm">
             <PHeading id="product-detail-heading" size="medium" tag="h2">

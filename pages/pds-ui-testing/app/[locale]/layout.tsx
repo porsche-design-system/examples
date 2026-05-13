@@ -8,6 +8,7 @@ import {
 } from "@porsche-design-system/components-react/partials";
 import { PorscheDesignSystemProvider } from "@porsche-design-system/components-react/ssr";
 import { GlobalFooter } from "@/app/components/GlobalFooter";
+import { ProductFavoritesProvider } from "@/app/components/ProductFavoritesProvider";
 import { isLocale, locales, type Locale } from "@/app/i18n/config";
 import { getDictionary } from "@/app/i18n/get-dictionary";
 import "@/app/globals.css";
@@ -72,7 +73,7 @@ export default async function LocaleRootLayout({
       </head>
       <body>
         <PorscheDesignSystemProvider>
-          {children}
+          <ProductFavoritesProvider>{children}</ProductFavoritesProvider>
           <GlobalFooter dictionary={dictionary} locale={locale} />
         </PorscheDesignSystemProvider>
       </body>

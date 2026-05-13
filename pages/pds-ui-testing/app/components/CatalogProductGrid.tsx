@@ -1,10 +1,7 @@
-import {
-  PLinkTileProduct,
-  PTag,
-} from "@porsche-design-system/components-react/ssr";
+import { PTag } from "@porsche-design-system/components-react/ssr";
+import { FavoriteLinkTileProduct } from "@/app/components/FavoriteLinkTileProduct";
 import type { CatalogProduct } from "@/app/data/get-catalog";
 import type { Locale } from "@/app/i18n/config";
-import { appHref, productDetailHref } from "@/app/i18n/href";
 
 type Props = {
   /** Accessible name for the product grid region (e.g. “Products in this look”). */
@@ -39,26 +36,13 @@ export function CatalogProductGrid({
             id={product.id}
             key={product.id}
           >
-            <PLinkTileProduct
-              aspectRatio="3/4"
-              description={product.vatNote}
-              heading={product.name}
-              href={productDetailHref(locale, product.slug)}
-              price={product.price.formatted}
-            >
+            <FavoriteLinkTileProduct locale={locale} product={product}>
               {product.flags.includes("new") ? (
                 <PTag compact slot="header">
                   {getNewFlagLabel(locale)}
                 </PTag>
               ) : null}
-              {/* biome-ignore lint/performance/noImgElement: PLinkTileProduct default slot expects a bare <img>. */}
-              <img
-                alt={product.images[0]?.alt ?? ""}
-                src={appHref(
-                  product.images[0]?.src ?? "/home-product-keychain.jpg",
-                )}
-              />
-            </PLinkTileProduct>
+            </FavoriteLinkTileProduct>
           </article>
         ))}
       </div>

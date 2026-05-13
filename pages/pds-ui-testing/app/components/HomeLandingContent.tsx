@@ -4,10 +4,10 @@ import {
   PLink,
   PLinkPure,
   PLinkTile,
-  PLinkTileProduct,
   PTag,
   PText,
 } from "@porsche-design-system/components-react/ssr";
+import { FavoriteLinkTileProduct } from "@/app/components/FavoriteLinkTileProduct";
 import type { CatalogProduct } from "@/app/data/get-catalog";
 import {
   isLifestyleTagSlug,
@@ -17,7 +17,6 @@ import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
 import {
   appHref,
-  productDetailHref,
   productsFilterHref,
   productsIndexHref,
 } from "@/app/i18n/href";
@@ -162,22 +161,11 @@ export function HomeLandingContent({ home, locale, trendingProducts }: Props) {
             pagination
           >
             {trendingProducts.slice(0, 5).map((product) => (
-              <PLinkTileProduct
-                aspectRatio="3/4"
-                description={product.vatNote}
-                heading={product.name}
-                href={productDetailHref(locale, product.slug)}
+              <FavoriteLinkTileProduct
                 key={product.id}
-                price={product.price.formatted}
-              >
-                {/* biome-ignore lint/performance/noImgElement: PLinkTileProduct's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
-                <img
-                  alt={product.images[0]?.alt ?? ""}
-                  src={appHref(
-                    product.images[0]?.src ?? "/home-product-keychain.jpg",
-                  )}
-                />
-              </PLinkTileProduct>
+                locale={locale}
+                product={product}
+              />
             ))}
           </PCarousel>
         </div>
