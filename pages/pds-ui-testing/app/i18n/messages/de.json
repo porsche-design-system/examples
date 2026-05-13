@@ -14,17 +14,14 @@
     "porscheOriginals": "Porsche Originals",
     "porscheDesign": "Porsche Design",
     "newReleases": "Neuheiten",
-    "viewAllWomen": "Alle Damen anzeigen",
-    "viewAllMen": "Alle Herren anzeigen",
-    "viewAllKids": "Alle Kinder anzeigen",
+    "viewAllWomen": "Damen",
+    "viewAllMen": "Herren",
+    "viewAllKids": "Kinder",
     "clothing": "Bekleidung",
     "bagsLuggage": "Taschen & Gepäck",
-    "travelTransport": "Travel & Transport",
+    "travelTransport": "Reise & Transport",
     "chargingHardware": "Lade-Hardware",
-    "viewAllProducts": "Alle Produkte anzeigen",
-    "viewAllPorscheOriginals": "Alle Porsche Originals anzeigen",
-    "viewAllPorscheDesign": "Alle Porsche Design anzeigen",
-    "viewAllNewReleases": "Alle Neuheiten anzeigen"
+    "viewAllProducts": "Alle Produkte anzeigen"
   },
   "header": {
     "crestLabel": "Porsche",

@@ -13,18 +13,15 @@
     "accessories": "Accessories",
     "porscheOriginals": "Porsche Originals",
     "porscheDesign": "Porsche Design",
-    "newReleases": "New releases",
-    "viewAllWomen": "View all Women",
-    "viewAllMen": "View all Men",
-    "viewAllKids": "View all Kids",
+    "newReleases": "New Releases",
+    "viewAllWomen": "Women",
+    "viewAllMen": "Men",
+    "viewAllKids": "Kids",
     "clothing": "Apparel",
     "bagsLuggage": "Bags & Luggage",
     "travelTransport": "Travel & Transport",
     "chargingHardware": "Charging Hardware",
-    "viewAllProducts": "View all products",
-    "viewAllPorscheOriginals": "View all Porsche Originals",
-    "viewAllPorscheDesign": "View all Porsche Design",
-    "viewAllNewReleases": "View all new releases"
+    "viewAllProducts": "View all products"
   },
   "header": {
     "crestLabel": "Porsche",

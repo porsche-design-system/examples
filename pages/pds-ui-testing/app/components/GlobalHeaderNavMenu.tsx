@@ -24,7 +24,11 @@ type Props = {
   menuButtonClassName?: string;
 };
 
-export function GlobalHeaderNavMenu({ locale, nav, menuButtonClassName }: Props) {
+export function GlobalHeaderNavMenu({
+  locale,
+  nav,
+  menuButtonClassName,
+}: Props) {
   const [open, setOpen] = useState(false);
   const [activeIdentifier, setActiveIdentifier] = useState<
     string | undefined
@@ -54,7 +58,6 @@ export function GlobalHeaderNavMenu({ locale, nav, menuButtonClassName }: Props)
   return (
     <>
       <PButtonPure
-        alignLabel="start"
         aria={menuButtonAria}
         className={
           menuButtonClassName
@@ -79,18 +82,24 @@ export function GlobalHeaderNavMenu({ locale, nav, menuButtonClassName }: Props)
       >
         <PDrilldownItem identifier="apparel" label={nav.clothing}>
           <PDrilldownLink
+            href={productsFilterHref(locale, { audiences: ["women"] })}
+          >
+            {nav.viewAllWomen}
+          </PDrilldownLink>
+          <PDrilldownLink
+            href={productsFilterHref(locale, { audiences: ["men"] })}
+          >
+            {nav.viewAllMen}
+          </PDrilldownLink>
+          <PDrilldownLink
+            href={productsFilterHref(locale, { audiences: ["kids"] })}
+          >
+            {nav.viewAllKids}
+          </PDrilldownLink>
+          <PDrilldownLink
             href={productsFilterHref(locale, { categories: ["apparel"] })}
           >
             {nav.viewAllProducts}
-          </PDrilldownLink>
-          <PDrilldownLink href={productsFilterHref(locale, { audiences: ["women"] })}>
-            {nav.viewAllWomen}
-          </PDrilldownLink>
-          <PDrilldownLink href={productsFilterHref(locale, { audiences: ["men"] })}>
-            {nav.viewAllMen}
-          </PDrilldownLink>
-          <PDrilldownLink href={productsFilterHref(locale, { audiences: ["kids"] })}>
-            {nav.viewAllKids}
           </PDrilldownLink>
         </PDrilldownItem>
         <PDrilldownItem identifier="accessories" label={nav.accessories}>
@@ -106,37 +115,36 @@ export function GlobalHeaderNavMenu({ locale, nav, menuButtonClassName }: Props)
           >
             {nav.travelTransport}
           </PDrilldownLink>
-          <PDrilldownLink href={productsFilterHref(locale, { categories: ["accessories"] })}>
+          <PDrilldownLink
+            href={productsFilterHref(locale, { categories: ["accessories"] })}
+          >
             {nav.chargingHardware}
           </PDrilldownLink>
-          <PDrilldownLink href={productsFilterHref(locale, { categories: ["accessories"] })}>
+          <PDrilldownLink
+            href={productsFilterHref(locale, { categories: ["accessories"] })}
+          >
             {nav.viewAllProducts}
           </PDrilldownLink>
         </PDrilldownItem>
-        <PDrilldownItem
-          identifier="porsche-originals"
-          label={nav.porscheOriginals}
+        <PDrilldownLink
+          href={productsFilterHref(locale, {
+            collections: ["porsche-originals"],
+          })}
         >
-          <PDrilldownLink
-            href={productsFilterHref(locale, {
-              collections: ["porsche-originals"],
-            })}
-          >
-            {nav.viewAllPorscheOriginals}
-          </PDrilldownLink>
-        </PDrilldownItem>
-        <PDrilldownItem identifier="porsche-design" label={nav.porscheDesign}>
-          <PDrilldownLink
-            href={productsFilterHref(locale, { collections: ["porsche-design"] })}
-          >
-            {nav.viewAllPorscheDesign}
-          </PDrilldownLink>
-        </PDrilldownItem>
-        <PDrilldownItem identifier="new-releases" label={nav.newReleases}>
-          <PDrilldownLink href={productsFilterHref(locale, { flags: ["new-release"] })}>
-            {nav.viewAllNewReleases}
-          </PDrilldownLink>
-        </PDrilldownItem>
+          {nav.porscheOriginals}
+        </PDrilldownLink>
+        <PDrilldownLink
+          href={productsFilterHref(locale, {
+            collections: ["porsche-design"],
+          })}
+        >
+          {nav.porscheDesign}
+        </PDrilldownLink>
+        <PDrilldownLink
+          href={productsFilterHref(locale, { flags: ["new-release"] })}
+        >
+          {nav.newReleases}
+        </PDrilldownLink>
       </PDrilldown>
     </>
   );
