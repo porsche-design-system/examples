@@ -1,9 +1,6 @@
-:HL["/examples/issue/4292/pds-ui-testing/_next/static/chunks/0~20w~~8_z4__.css","style"]
+:HL["/examples/issue/4292/pds-ui-testing/_next/static/chunks/173w49a079h69.css","style"]
 :HL["https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.1.0.59dc31ee9c99f5a43eb5.js","script",{"crossOrigin":""}]
 :HL["/examples/issue/4292/pds-ui-testing/home-product-umbrella.jpg","image"]
-:HL["/examples/issue/4292/pds-ui-testing/product-roadster-aluminum-trolley-s.webp","image"]
-:HL["/examples/issue/4292/pds-ui-testing/product-roadster-aluminum-trolley-m.webp","image"]
-:HL["/examples/issue/4292/pds-ui-testing/product-roadster-aluminum-trolley-l.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"locale","param":{"type":"d","key":"de","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"(default)","param":null,"prefetchHints":0,"slots":{"children":{"name":"products","param":null,"prefetchHints":0,"slots":{"children":{"name":"productSlug","param":{"type":"d","key":"porsche-umbrella","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}}}},"staleTime":300,"buildId":"9BVdHXuKGFAvTA8c83XZ1"}
+0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"locale","param":{"type":"d","key":"de","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"(default)","param":null,"prefetchHints":0,"slots":{"children":{"name":"products","param":null,"prefetchHints":0,"slots":{"children":{"name":"productSlug","param":{"type":"d","key":"porsche-umbrella","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}}}},"staleTime":300,"buildId":"_KMC1RdaBB6_13zY0o8M5"}
