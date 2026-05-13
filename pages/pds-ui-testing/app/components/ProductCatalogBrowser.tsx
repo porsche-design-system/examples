@@ -1,6 +1,13 @@
 "use client";
 
-import { type CSSProperties, useMemo, useState } from "react";
+import {
+  type ComponentProps,
+  type CSSProperties,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   PAccordion,
@@ -150,6 +157,36 @@ function areSameValues<T extends string>(
     current.length === expected.length &&
     expected.every((value) => current.includes(value))
   );
+}
+
+type FilterDismissibleTagProps = Omit<
+  ComponentProps<typeof PTagDismissible>,
+  "ref"
+> & {
+  onDismiss: () => void;
+};
+
+/**
+ * `p-tag-dismissible` emits a Stencil `dismiss` event; the SSR React wrapper does not
+ * attach `useEventCallback` for it, so React `onClick` on the host often never runs.
+ */
+function FilterDismissibleTag({
+  onDismiss,
+  ...props
+}: FilterDismissibleTagProps) {
+  const hostRef = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    const el = hostRef.current;
+    if (!el) return;
+    const handleDismiss = () => {
+      onDismiss();
+    };
+    el.addEventListener("dismiss", handleDismiss);
+    return () => {
+      el.removeEventListener("dismiss", handleDismiss);
+    };
+  }, [onDismiss]);
+  return <PTagDismissible ref={hostRef} {...props} />;
 }
 
 export function ProductCatalogBrowser({ copy, locale, products }: Props) {
@@ -450,28 +487,28 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
         {activeFilters.length > 0 || favoritesOnly ? (
           <div className="flex flex-wrap items-center gap-static-sm mt-fluid-md">
             {favoritesOnly ? (
-              <PTagDismissible
+              <FilterDismissibleTag
                 aria={{
                   "aria-label": copy.favoritesOnlyDismissAria,
                 }}
                 compact
                 key="favorites-only"
-                onClick={clearFavoritesOnly}
+                onDismiss={clearFavoritesOnly}
               >
                 {copy.favoritesOnlyLabel}
-              </PTagDismissible>
+              </FilterDismissibleTag>
             ) : null}
             {activeFilters.map(({ facet, label, value }) => (
-              <PTagDismissible
+              <FilterDismissibleTag
                 aria={{
                   "aria-label": formatFilterLabel(copy.dismissFilter, label),
                 }}
                 compact
                 key={`${facet.param}-${value}`}
-                onClick={() => updateFacet(facet, value, false)}
+                onDismiss={() => updateFacet(facet, value, false)}
               >
                 {label}
-              </PTagDismissible>
+              </FilterDismissibleTag>
             ))}
             <PButton
               onClick={clearFilters}
