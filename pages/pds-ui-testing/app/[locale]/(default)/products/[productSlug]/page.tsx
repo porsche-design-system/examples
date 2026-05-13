@@ -9,6 +9,7 @@ import {
   PText,
 } from "@porsche-design-system/components-react/ssr";
 import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
+import { ProductInquiryFlyout } from "@/app/components/ProductInquiryFlyout";
 import { ProductSizeSelector } from "@/app/components/ProductSizeSelector";
 import {
   getCatalogProductBySlug,
@@ -150,13 +151,14 @@ export default async function ProductDetailPage({ params }: PageProps) {
             </>
           ) : null}
           <div className="flex flex-wrap gap-static-sm">
-            <PButton
-              type="button"
-              icon="none"
-              aria={{ "aria-haspopup": "dialog" }}
-            >
-              {productDetail.addToCart}
-            </PButton>
+            <ProductInquiryFlyout
+              copy={productDetail.inquiry}
+              productImageAlt={primaryImage?.alt ?? ""}
+              productImageSrc={appHref(
+                primaryImage?.src ?? "/home-product-keychain.jpg",
+              )}
+              productName={product.name}
+            />
             <PButton type="button" variant="secondary" icon="heart" hideLabel>
               {productDetail.favorites}
             </PButton>
