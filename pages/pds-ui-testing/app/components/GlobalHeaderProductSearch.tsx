@@ -1,6 +1,13 @@
 "use client";
 
-import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import {
+  CSSProperties,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { usePathname } from "next/navigation";
 import {
   PButton,
@@ -150,6 +157,10 @@ export function GlobalHeaderProductSearch({
   const showSearching =
     trimmed.length >= MIN_QUERY_LEN && trimmed !== deferredTrimmed;
 
+  const MODAL_STYLE = {
+    "--p-modal-width": "min(100vw - 2rem, 760px)",
+  } as CSSProperties;
+
   return (
     <>
       <PButtonPure
@@ -169,6 +180,8 @@ export function GlobalHeaderProductSearch({
         backdrop="blur"
         onDismiss={() => setOpen(false)}
         open={open}
+        className="scheme-light"
+        style={MODAL_STYLE}
       >
         <div className="flex flex-col gap-fluid-md">
           <div className="grid gap-static-xs">
@@ -192,7 +205,7 @@ export function GlobalHeaderProductSearch({
             value={query}
           />
 
-          <div className="min-h-[120px] overflow-y-auto pr-static-xs">
+          <div className="min-h-[120px]">
             {loadError ? (
               <PText color="contrast-medium">{copy.loadError}</PText>
             ) : products.length === 0 ? (
