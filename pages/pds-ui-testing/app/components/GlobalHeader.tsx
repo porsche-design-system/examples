@@ -1,6 +1,5 @@
 import {
   PCrest,
-  PButtonPure,
   PLinkPure,
   PWordmark,
 } from "@porsche-design-system/components-react/ssr";
@@ -8,6 +7,7 @@ import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
 import { localeHomeHref, productsFavoritesHref } from "@/app/i18n/href";
 import { GlobalHeaderNavMenu } from "./GlobalHeaderNavMenu";
+import { GlobalHeaderProductSearch } from "./GlobalHeaderProductSearch";
 
 type Props = {
   dictionary: Dictionary;
@@ -79,15 +79,12 @@ export function GlobalHeader({
           >
             {header.favorites}
           </PLinkPure>
-          <PButtonPure
-            className="p-static-xs -m-static-xs"
-            hideLabel
-            icon="search"
-            size={{ base: "small", m: "medium" }}
-            type="button"
-          >
-            {header.search}
-          </PButtonPure>
+          <GlobalHeaderProductSearch
+            copy={header.searchModal}
+            label={header.search}
+            locale={locale}
+            triggerSchemeClassName={heroOverlay ? "scheme-dark" : undefined}
+          />
         </div>
       </div>
     </header>

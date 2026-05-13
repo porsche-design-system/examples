@@ -27,7 +27,21 @@
     "crestLabel": "Porsche",
     "shoppingCart": "Warenkorb",
     "favorites": "Merkliste",
-    "search": "Suche"
+    "search": "Suche",
+    "searchModal": {
+      "ariaLabel": "Produktsuche",
+      "title": "Katalog durchsuchen",
+      "subtitle": "Finden Sie Produkte nach Name, Kategorie oder Kollektion",
+      "queryLabel": "Produktsuche",
+      "queryPlaceholder": "z. B. „Cap“, „Gepäck“, „Porsche Design“, etc.",
+      "hint": "Mindestens 2 Zeichen. Treffer werden beim Tippen gewichtet und sortiert.",
+      "loading": "Katalog wird geladen…",
+      "loadError": "Die Produktliste konnte nicht geladen werden. Bitte später erneut versuchen.",
+      "emptyPrompt": "Tippen Sie los, um Vorschläge aus dem gesamten Katalog zu sehen.",
+      "searching": "Suche läuft…",
+      "noMatches": "Keine Treffer für diese Suche. Anderes Wort probieren oder alle Produkte anzeigen.",
+      "close": "Schließen"
+    }
   },
   "pages": {
     "home": {

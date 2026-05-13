@@ -27,7 +27,21 @@
     "crestLabel": "Porsche",
     "shoppingCart": "Shopping cart",
     "favorites": "Favorites",
-    "search": "Search"
+    "search": "Search",
+    "searchModal": {
+      "ariaLabel": "Search products",
+      "title": "Search the catalog",
+      "subtitle": "Find products by name, category or collection",
+      "queryLabel": "Search items",
+      "queryPlaceholder": "Try “cap”, “luggage”, “Porsche Design”, etc.",
+      "hint": "Type at least 2 characters. Ranked matches update as you type.",
+      "loading": "Loading catalog…",
+      "loadError": "Could not load the product list. Try again later.",
+      "emptyPrompt": "Start typing to see ranked suggestions from the full catalog.",
+      "searching": "Searching…",
+      "noMatches": "No products match that search. Try another word or browse all products.",
+      "close": "Close"
+    }
   },
   "pages": {
     "home": {
