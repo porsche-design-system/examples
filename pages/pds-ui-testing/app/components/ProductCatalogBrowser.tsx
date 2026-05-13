@@ -501,14 +501,14 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
         </div>
 
         <div className="flex gap-static-sm" slot="footer">
+          <PButton onClick={() => setIsFilterFlyoutOpen(false)} type="button">
+            {showProductsLabel}
+          </PButton>
           {activeFilters.length > 0 ? (
             <PButton onClick={clearFilters} type="button" variant="secondary">
               {copy.clearFilters}
             </PButton>
           ) : null}
-          <PButton onClick={() => setIsFilterFlyoutOpen(false)} type="button">
-            {showProductsLabel}
-          </PButton>
         </div>
       </PFlyout>
 

@@ -150,10 +150,14 @@ export default async function ProductDetailPage({ params }: PageProps) {
             </>
           ) : null}
           <div className="flex flex-wrap gap-static-sm">
-            <PButton type="button" icon="shopping-cart">
+            <PButton
+              type="button"
+              icon="none"
+              aria={{ "aria-haspopup": "dialog" }}
+            >
               {productDetail.addToCart}
             </PButton>
-            <PButton type="button" variant="secondary" icon="heart">
+            <PButton type="button" variant="secondary" icon="heart" hideLabel>
               {productDetail.favorites}
             </PButton>
           </div>
