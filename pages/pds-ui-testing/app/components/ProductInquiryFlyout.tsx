@@ -179,11 +179,87 @@ function focusInquiryFieldHost(host: HTMLElement | null | undefined): void {
   if (inner && document.activeElement !== inner) inner.focus();
 }
 
-/** Moves focus to the first form control in the active step (natural tab order). */
-function focusFirstInStepPanel(panel: HTMLElement | null | undefined): void {
-  if (!panel) return;
-  const host = panel.querySelector<HTMLElement>(STEP_FIELD_HOST_SELECTOR);
-  focusInquiryFieldHost(host);
+type PdsStencilHost = HTMLElement & {
+  componentOnReady?: () => Promise<void>;
+};
+
+const STEP_FIRST_FIELD: Partial<Record<InquiryStepId, InquiryFieldErrorKey>> = {
+  requestType: "inquiryType",
+  contact: "firstName",
+};
+
+function isFocusInsideHost(host: HTMLElement): boolean {
+  const active = document.activeElement;
+  if (!active) return false;
+  return active === host || host.shadowRoot?.contains(active) === true;
+}
+
+async function waitForStencilHost(host: PdsStencilHost): Promise<void> {
+  const tag = host.localName;
+  if (tag && customElements.get(tag) == null) {
+    await customElements.whenDefined(tag);
+  }
+  if (typeof host.componentOnReady === "function") {
+    await host.componentOnReady();
+  }
+}
+
+function resolveFirstFieldHost(
+  panel: HTMLElement,
+  stepId: InquiryStepId,
+  fieldHosts: Partial<Record<InquiryFieldErrorKey, HTMLElement | null>>,
+): HTMLElement | null {
+  const mappedKey = STEP_FIRST_FIELD[stepId];
+  if (mappedKey && fieldHosts[mappedKey]) {
+    return fieldHosts[mappedKey] ?? null;
+  }
+  return panel.querySelector<HTMLElement>(STEP_FIELD_HOST_SELECTOR);
+}
+
+/**
+ * Focuses the first field of a step after navigation. Retries until the step panel
+ * is mounted, Stencil hosts are ready, and focus leaves the footer control.
+ */
+async function focusFirstFieldInStep(
+  stepId: InquiryStepId,
+  getPanel: () => HTMLElement | null,
+  fieldHosts: Partial<Record<InquiryFieldErrorKey, HTMLElement | null>>,
+): Promise<boolean> {
+  for (let attempt = 0; attempt < 10; attempt++) {
+    await new Promise<void>((resolve) => {
+      requestAnimationFrame(() => resolve());
+    });
+
+    const panel = getPanel();
+    if (!panel) continue;
+
+    const host = resolveFirstFieldHost(panel, stepId, fieldHosts);
+    if (!host) continue;
+
+    try {
+      await waitForStencilHost(host as PdsStencilHost);
+    } catch {
+      // Host disconnected during navigation; retry on next frame.
+      continue;
+    }
+
+    const previous = document.activeElement;
+    if (
+      previous instanceof HTMLElement &&
+      previous !== host &&
+      !host.contains(previous)
+    ) {
+      previous.blur();
+    }
+
+    focusInquiryFieldHost(host);
+
+    if (isFocusInsideHost(host)) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 type PostSubmitPhase = "idle" | "pending" | "done";
@@ -301,7 +377,8 @@ export function ProductInquiryFlyout({
   >({});
   const stepPanelRefs = useRef<(HTMLElement | null)[]>([]);
   const shouldFocusFirstErrorRef = useRef(false);
-  const shouldFocusStepFirstFieldRef = useRef(false);
+  const pendingFocusStepIndexRef = useRef<number | null>(null);
+  const focusStepSessionRef = useRef(0);
   const focusStepIndexRef = useRef(0);
   const activeStepIndex = getActiveStepIndex(steps);
 
@@ -322,7 +399,11 @@ export function ProductInquiryFlyout({
   const navigateToStep = useCallback(
     (targetIndex: number, options?: { focusFirstField?: boolean }) => {
       setSteps((prev) => setActiveStepIndex([...prev], targetIndex));
-      shouldFocusStepFirstFieldRef.current = options?.focusFirstField !== false;
+      if (options?.focusFirstField !== false) {
+        pendingFocusStepIndexRef.current = targetIndex;
+      } else {
+        pendingFocusStepIndexRef.current = null;
+      }
     },
     [],
   );
@@ -337,6 +418,8 @@ export function ProductInquiryFlyout({
   }, []);
 
   const resetAndClose = useCallback(() => {
+    pendingFocusStepIndexRef.current = null;
+    focusStepSessionRef.current += 1;
     setForm(initialFormState());
     setErrors({});
     setSteps(createInquirySteps(copy));
@@ -403,10 +486,22 @@ export function ProductInquiryFlyout({
   );
 
   useLayoutEffect(() => {
-    if (!shouldFocusStepFirstFieldRef.current) return;
-    shouldFocusStepFirstFieldRef.current = false;
-    const panel = stepPanelRefs.current[activeStepIndex];
-    requestAnimationFrame(() => focusFirstInStepPanel(panel));
+    const targetIndex = pendingFocusStepIndexRef.current;
+    if (targetIndex === null || targetIndex !== activeStepIndex) return;
+
+    const session = ++focusStepSessionRef.current;
+    const stepId = INQUIRY_STEP_IDS[targetIndex];
+
+    void (async () => {
+      const focused = await focusFirstFieldInStep(
+        stepId,
+        () => stepPanelRefs.current[targetIndex] ?? null,
+        fieldHostsRef.current,
+      );
+
+      if (focusStepSessionRef.current !== session) return;
+      if (focused) pendingFocusStepIndexRef.current = null;
+    })();
   }, [activeStepIndex]);
 
   useLayoutEffect(() => {
