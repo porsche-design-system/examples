@@ -31,6 +31,8 @@
     "favoritesAriaCount": "Merkliste, {count} Artikel gespeichert",
     "favoritesLiveEmpty": "Keine Favoriten gespeichert",
     "favoritesLiveCount": "{count} Favoriten gespeichert",
+    "favoritesToastAdded": "Zur Merkliste hinzugefügt",
+    "favoritesToastRemoved": "Von der Merkliste entfernt",
     "search": "Suche",
     "searchModal": {
       "ariaLabel": "Produktsuche",

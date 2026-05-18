@@ -31,6 +31,8 @@
     "favoritesAriaCount": "Favorites, {count} items saved",
     "favoritesLiveEmpty": "No favorites saved",
     "favoritesLiveCount": "{count} favorites saved",
+    "favoritesToastAdded": "Added to favorites",
+    "favoritesToastRemoved": "Removed from favorites",
     "search": "Search",
     "searchModal": {
       "ariaLabel": "Search products",
