@@ -21,7 +21,7 @@ async function waitForPdsReady(page: import("@playwright/test").Page) {
   });
 }
 
-test.describe("filter chip dismiss (preview / static export)", () => {
+test.describe("product catalog filters (static preview)", () => {
   test("removes ?audience=men when Men chip is clicked", async ({ page }) => {
     await page.goto("/en/products/?audience=men", {
       waitUntil: "networkidle",
@@ -31,20 +31,6 @@ test.describe("filter chip dismiss (preview / static export)", () => {
     const chip = page.getByRole("button", { name: /remove men filter/i });
     await expect(chip).toBeVisible({ timeout: 10000 });
     await waitForPdsReady(page);
-
-    const listenersBefore = await page.evaluate(() => {
-      const host = document.querySelector("p-tag-dismissible");
-      if (!host) return { found: false, hasClickListener: null };
-      return {
-        found: true,
-        localName: host.localName,
-        hasDataSsr: host.hasAttribute("data-ssr"),
-        isDefined: host.localName in customElements,
-      };
-    });
-
-    expect(listenersBefore.found).toBe(true);
-
     await chip.click();
 
     await expect(page).toHaveURL(/\/en\/products\/?$/);

@@ -36,6 +36,7 @@ npm run dev:pds-ui-testing
 npm run build:pds-ui-testing
 npm run preview:pds-ui-testing
 npm run test:a11y:pds-ui-testing
+npm run test:e2e:pds-ui-testing
 ```
 
 ## Static export default

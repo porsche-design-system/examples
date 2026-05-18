@@ -128,6 +128,22 @@ jobs:
           path: ./patterns/dist
       - run: npm run test:a11y:patterns
         shell: bash
+  e2e-pds-ui-testing:
+    name: 'E2E (PDS UI Testing)'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - uses: actions/checkout@v6
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - uses: actions/download-artifact@v8
+        with:
+          name: build-pds-ui-testing
+          path: ./pages/pds-ui-testing/dist
+      - run: npm run test:e2e:pds-ui-testing
+        shell: bash
   a11y-pds-ui-testing:
     name: 'A11y (PDS UI Testing)'
     runs-on: ubuntu-latest
