@@ -1,5 +1,6 @@
 import { cache } from "react";
 import { isReducedProduct } from "@/app/data/catalog-price";
+import { productHasNewReleaseFlag } from "@/app/data/catalog-product-flags";
 import type { Locale } from "@/app/i18n/config";
 import type homeCatalogEn from "@/app/data/catalog/products.en.json";
 import type {
@@ -37,6 +38,7 @@ function matchesMerchandisingFlags(
   if (!filterFlags || filterFlags.length === 0) return true;
   return filterFlags.some((flag) => {
     if (flag === "reduced") return isReducedProduct(product);
+    if (flag === "new-release") return productHasNewReleaseFlag(product);
     return product.flags.includes(flag);
   });
 }

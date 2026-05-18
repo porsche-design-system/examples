@@ -3,6 +3,7 @@ import {
   FavoriteLinkTileProduct,
   type TilePricingCopy,
 } from "@/app/components/FavoriteLinkTileProduct";
+import { productHasNewReleaseFlag } from "@/app/data/catalog-product-flags";
 import type { CatalogProduct } from "@/app/data/get-catalog";
 import type { Locale } from "@/app/i18n/config";
 
@@ -10,19 +11,17 @@ type Props = {
   /** Accessible name for the product grid region (e.g. “Products in this look”). */
   sectionAriaLabel: string;
   locale: Locale;
+  newReleaseTagLabel: string;
   pricingCopy?: TilePricingCopy;
   products: CatalogProduct[];
 };
-
-function getNewFlagLabel(locale: Locale): string {
-  return locale === "de" ? "Neu" : "New";
-}
 
 /**
  * Porsche Grid product strip shared by the full catalog, filtered views, and
  * related product sections.
  */
 export function CatalogProductGrid({
+  newReleaseTagLabel,
   pricingCopy,
   sectionAriaLabel,
   locale,
@@ -46,9 +45,9 @@ export function CatalogProductGrid({
               pricingCopy={pricingCopy}
               product={product}
             >
-              {product.flags.includes("new") ? (
+              {productHasNewReleaseFlag(product) ? (
                 <PTag compact slot="header">
-                  {getNewFlagLabel(locale)}
+                  {newReleaseTagLabel}
                 </PTag>
               ) : null}
             </FavoriteLinkTileProduct>

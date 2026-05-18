@@ -12,6 +12,7 @@ import { ProductDetailFavoriteButton } from "@/app/components/ProductDetailFavor
 import { ProductDetailPrice } from "@/app/components/ProductDetailPrice";
 import { ProductInquiryFlyout } from "@/app/components/ProductInquiryFlyout";
 import { ProductSizeSelector } from "@/app/components/ProductSizeSelector";
+import { productHasNewReleaseFlag } from "@/app/data/catalog-product-flags";
 import {
   getCatalogProductBySlug,
   getHomeCatalog,
@@ -117,6 +118,11 @@ export default async function ProductDetailPage({ params }: PageProps) {
           className="col-span-full md:col-start-11 flex flex-col gap-fluid-md"
         >
           <div className="flex flex-wrap gap-static-sm">
+            {productHasNewReleaseFlag(product) ? (
+              <PTag compact key="new-release">
+                {productList.newReleaseTag}
+              </PTag>
+            ) : null}
             {[...categoryLabels, ...collectionLabels, ...tagLabels].map(
               (label) => (
                 <PTag compact key={label}>
@@ -183,6 +189,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
           </div>
           <CatalogProductGrid
             locale={locale}
+            newReleaseTagLabel={productList.newReleaseTag}
             pricingCopy={productList.pricing}
             products={relatedProducts}
             sectionAriaLabel={productDetail.relatedProducts}

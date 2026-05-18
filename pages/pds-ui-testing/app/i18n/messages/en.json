@@ -124,6 +124,7 @@
       "favoritesOnlyDismissAria": "Show full catalog; stop filtering by favorites",
       "favoritesEmptyTitle": "No favorites yet",
       "favoritesEmptyText": "Use the heart on a product tile or detail page to save items. Favorites are kept for this browser tab session only.",
+      "newReleaseTag": "New",
       "pricing": {
         "tileAnchorSale": "sale price {price}",
         "tileAnchorOriginal": "original price",
@@ -167,7 +168,6 @@
           "porsche-design": "Porsche Design"
         },
         "flags": {
-          "new": "New",
           "new-release": "New releases",
           "bestseller": "Bestsellers",
           "reduced": "Reduced prices",

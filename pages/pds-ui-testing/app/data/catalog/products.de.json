@@ -181,7 +181,6 @@
         "porsche-originals"
       ],
       "flags": [
-        "new",
         "new-release"
       ],
       "name": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle",
@@ -393,8 +392,8 @@
         "porsche-design"
       ],
       "flags": [
-        "new",
-        "featured"
+        "featured",
+        "new-release"
       ],
       "name": "Porsche Design Classic Leather Jacket",
       "teaser": "Eine hochwertige Lederjacke aus der Porsche Design Herrenbekleidung.",
@@ -649,7 +648,6 @@
         "porsche-originals"
       ],
       "flags": [
-        "new",
         "new-release"
       ],
       "name": "Kids Hoodie - Essential",
@@ -757,7 +755,6 @@
         "porsche-originals"
       ],
       "flags": [
-        "new",
         "new-release",
         "featured"
       ],
@@ -801,7 +798,6 @@
         "porsche-originals"
       ],
       "flags": [
-        "new",
         "new-release",
         "featured"
       ],
@@ -840,7 +836,6 @@
         "porsche-originals"
       ],
       "flags": [
-        "new",
         "new-release",
         "featured"
       ],
@@ -950,8 +945,8 @@
         "porsche-originals"
       ],
       "flags": [
-        "new",
-        "bestseller"
+        "bestseller",
+        "new-release"
       ],
       "name": "Backpack - MARTINI RACING",
       "teaser": "Ein schwarzer Porsche Rucksack mit Laptopfach und Trolley-Link.",
@@ -1138,7 +1133,7 @@
         "porsche-originals"
       ],
       "flags": [
-        "new"
+        "new-release"
       ],
       "name": "Porsche Dog Blanket",
       "teaser": "Eine praktische Porsche Decke für Reisen mit Hunden.",

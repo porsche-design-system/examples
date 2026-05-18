@@ -124,6 +124,7 @@
       "favoritesOnlyDismissAria": "Gesamten Katalog anzeigen; Filter Merkliste aufheben",
       "favoritesEmptyTitle": "Noch keine Favoriten",
       "favoritesEmptyText": "Speichern Sie Produkte über das Herz auf einer Kachel oder der Produktdetailseite. Favoriten gelten nur für diese Browser-Sitzung.",
+      "newReleaseTag": "Neu",
       "pricing": {
         "tileAnchorSale": "Aktionspreis {price}",
         "tileAnchorOriginal": "Ursprünglicher Preis",
@@ -167,7 +168,6 @@
           "porsche-design": "Porsche Design"
         },
         "flags": {
-          "new": "Neu",
           "new-release": "Neuheiten",
           "bestseller": "Bestseller",
           "reduced": "Reduzierte Preise",

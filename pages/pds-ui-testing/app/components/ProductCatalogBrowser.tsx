@@ -609,6 +609,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
           <h2 className="sr-only">{copy.productsRegionLabel}</h2>
           <CatalogProductGrid
             locale={locale}
+            newReleaseTagLabel={copy.newReleaseTag}
             pricingCopy={copy.pricing}
             products={displayProducts}
             sectionAriaLabel={copy.productsRegionLabel}

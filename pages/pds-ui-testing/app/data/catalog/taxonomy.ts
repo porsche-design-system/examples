@@ -7,7 +7,6 @@ export const categorySlugs = [
 ] as const;
 export const collectionSlugs = ["porsche-originals", "porsche-design"] as const;
 export const merchandisingFlagSlugs = [
-  "new",
   "new-release",
   "bestseller",
   "reduced",
