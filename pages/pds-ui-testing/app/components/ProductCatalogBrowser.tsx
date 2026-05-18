@@ -3,12 +3,12 @@
 import {
   type ComponentProps,
   type CSSProperties,
+  useCallback,
   useEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   PAccordion,
   PButton,
@@ -24,6 +24,7 @@ import {
   PText,
 } from "@porsche-design-system/components-react/ssr";
 import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
+import { useCatalogQueryParams } from "@/app/components/use-catalog-query-params";
 import { useProductFavorites } from "@/app/components/ProductFavoritesProvider";
 import {
   type CatalogFacetFilter,
@@ -165,6 +166,12 @@ function areSameValues<T extends string>(
   );
 }
 
+const TAG_DISMISSIBLE = "p-tag-dismissible";
+
+type PdsStencilHost = HTMLElement & {
+  componentOnReady?: () => Promise<void>;
+};
+
 type FilterDismissibleTagProps = Omit<
   ComponentProps<typeof PTagDismissible>,
   "ref"
@@ -176,30 +183,62 @@ type FilterDismissibleTagProps = Omit<
  * v4.1.0 `p-tag-dismissible` is a single shadow-DOM `<button>` (no `dismiss` custom event).
  * Clicks must be handled with a native `click` listener on the host so they are not lost
  * to React’s custom-element / shadow-tree event wiring.
+ *
+ * Uses a callback ref and waits for the Stencil host to be defined and ready. A plain
+ * `useEffect` + object ref can run before the custom element upgrades (common on static
+ * preview loads with URL query filters), leaving chips visible but not interactive.
  */
 function FilterDismissibleTag({
   onDismiss,
   ...props
 }: FilterDismissibleTagProps) {
-  const hostRef = useRef<HTMLElement | null>(null);
-  useEffect(() => {
-    const el = hostRef.current;
-    if (!el) return;
+  const onDismissRef = useRef(onDismiss);
+  onDismissRef.current = onDismiss;
+  const cleanupRef = useRef<(() => void) | null>(null);
+
+  const hostRef = useCallback((host: HTMLElement | null) => {
+    cleanupRef.current?.();
+    cleanupRef.current = null;
+    if (!host) return;
+
+    const session = { cancelled: false };
     const handleClick = () => {
-      onDismiss();
+      onDismissRef.current();
     };
-    el.addEventListener("click", handleClick);
-    return () => {
-      el.removeEventListener("click", handleClick);
+
+    const attach = () => {
+      if (session.cancelled) return;
+      host.addEventListener("click", handleClick);
     };
-  }, [onDismiss]);
+
+    cleanupRef.current = () => {
+      session.cancelled = true;
+      host.removeEventListener("click", handleClick);
+    };
+
+    void (async () => {
+      if (host.localName !== TAG_DISMISSIBLE) {
+        await customElements.whenDefined(TAG_DISMISSIBLE);
+      }
+      if (session.cancelled) return;
+
+      const stencilHost = host as PdsStencilHost;
+      if (typeof stencilHost.componentOnReady === "function") {
+        await stencilHost.componentOnReady();
+      }
+      if (session.cancelled) return;
+
+      attach();
+    })();
+  }, []);
+
+  useEffect(() => () => cleanupRef.current?.(), []);
+
   return <PTagDismissible ref={hostRef} {...props} />;
 }
 
 export function ProductCatalogBrowser({ copy, locale, products }: Props) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const { params, replaceParams } = useCatalogQueryParams();
   const { favoriteSlugs, isFavorite } = useProductFavorites();
   const [isFilterFlyoutOpen, setIsFilterFlyoutOpen] = useState(false);
   const [openFacets, setOpenFacets] = useState<Record<string, boolean>>({
@@ -210,10 +249,10 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
     tags: false,
   });
 
-  const filter = useMemo(() => buildFilter(searchParams), [searchParams]);
-  const sortKey = getSortKey(searchParams);
+  const filter = useMemo(() => buildFilter(params), [params]);
+  const sortKey = getSortKey(params);
   const favoritesOnly =
-    searchParams.get(PRODUCTS_FAVORITES_QUERY) === PRODUCTS_FAVORITES_VALUE;
+    params.get(PRODUCTS_FAVORITES_QUERY) === PRODUCTS_FAVORITES_VALUE;
   const filteredProducts = useMemo(
     () => filterCatalogProducts(products, filter),
     [filter, products],
@@ -316,93 +355,83 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
     }));
   });
 
-  function updateFacet<T extends string>(
-    facet: FacetDefinition<T>,
-    value: T,
-    checked: boolean,
-  ) {
-    const params = new URLSearchParams(searchParams.toString());
-    params.delete("reduced");
-    const selected = parseFacetValues(params, facet.param, facet.isValid);
-    const nextValues = checked
-      ? Array.from(new Set([...selected, value]))
-      : selected.filter((selectedValue) => selectedValue !== value);
+  const updateFacet = useCallback(
+    <T extends string>(
+      facet: FacetDefinition<T>,
+      value: T,
+      checked: boolean,
+    ) => {
+      const next = new URLSearchParams(params.toString());
+      next.delete("reduced");
+      const selected = parseFacetValues(next, facet.param, facet.isValid);
+      const nextValues = checked
+        ? Array.from(new Set([...selected, value]))
+        : selected.filter((selectedValue) => selectedValue !== value);
 
-    if (nextValues.length > 0) {
-      params.set(facet.param, nextValues.join(","));
-    } else {
-      params.delete(facet.param);
-    }
+      if (nextValues.length > 0) {
+        next.set(facet.param, nextValues.join(","));
+      } else {
+        next.delete(facet.param);
+      }
 
-    const query = params.toString();
-    router.replace(query ? `${pathname}?${query}` : pathname, {
-      scroll: false,
-    });
-  }
+      replaceParams(next);
+    },
+    [params, replaceParams],
+  );
 
-  function applyQuickFilter(quickFilter: QuickFilterDefinition) {
-    const params = new URLSearchParams(searchParams.toString());
-    params.delete("audience");
-    params.delete("category");
-    params.delete("collection");
-    params.delete(PRODUCTS_FAVORITES_QUERY);
-    params.delete("reduced");
+  const applyQuickFilter = useCallback(
+    (quickFilter: QuickFilterDefinition) => {
+      const next = new URLSearchParams();
+      next.delete(PRODUCTS_FAVORITES_QUERY);
+      next.delete("reduced");
 
-    if (quickFilter.filter.audiences?.length) {
-      params.set("audience", quickFilter.filter.audiences.join(","));
-    }
-    if (quickFilter.filter.categories?.length) {
-      params.set("category", quickFilter.filter.categories.join(","));
-    }
-    if (quickFilter.filter.collections?.length) {
-      params.set("collection", quickFilter.filter.collections.join(","));
-    }
+      if (quickFilter.filter.audiences?.length) {
+        next.set("audience", quickFilter.filter.audiences.join(","));
+      }
+      if (quickFilter.filter.categories?.length) {
+        next.set("category", quickFilter.filter.categories.join(","));
+      }
+      if (quickFilter.filter.collections?.length) {
+        next.set("collection", quickFilter.filter.collections.join(","));
+      }
 
-    const query = params.toString();
-    router.replace(query ? `${pathname}?${query}` : pathname, {
-      scroll: false,
-    });
-  }
+      replaceParams(next);
+    },
+    [replaceParams],
+  );
 
-  function updateSort(nextSortKey: SortKey) {
-    const params = new URLSearchParams(searchParams.toString());
+  const updateSort = useCallback(
+    (nextSortKey: SortKey) => {
+      const next = new URLSearchParams(params.toString());
 
-    if (nextSortKey === "recommended") {
-      params.delete("sort");
-    } else {
-      params.set("sort", nextSortKey);
-    }
+      if (nextSortKey === "recommended") {
+        next.delete("sort");
+      } else {
+        next.set("sort", nextSortKey);
+      }
 
-    const query = params.toString();
-    router.replace(query ? `${pathname}?${query}` : pathname, {
-      scroll: false,
-    });
-  }
+      replaceParams(next);
+    },
+    [params, replaceParams],
+  );
 
-  function clearFilters() {
-    const params = new URLSearchParams(searchParams.toString());
-    params.delete("audience");
-    params.delete("category");
-    params.delete("collection");
-    params.delete("flag");
-    params.delete("tag");
-    params.delete(PRODUCTS_FAVORITES_QUERY);
-    params.delete("reduced");
+  const clearFilters = useCallback(() => {
+    const next = new URLSearchParams(params.toString());
+    next.delete("audience");
+    next.delete("category");
+    next.delete("collection");
+    next.delete("flag");
+    next.delete("tag");
+    next.delete(PRODUCTS_FAVORITES_QUERY);
+    next.delete("reduced");
+    replaceParams(next);
+  }, [params, replaceParams]);
 
-    const query = params.toString();
-    router.replace(query ? `${pathname}?${query}` : pathname, {
-      scroll: false,
-    });
-  }
-
-  function clearFavoritesOnly() {
-    const params = new URLSearchParams(searchParams.toString());
-    params.delete(PRODUCTS_FAVORITES_QUERY);
-    const query = params.toString();
-    router.replace(query ? `${pathname}?${query}` : pathname, {
-      scroll: false,
-    });
-  }
+  const clearFavoritesOnly = useCallback(() => {
+    const next = new URLSearchParams(params.toString());
+    next.delete(PRODUCTS_FAVORITES_QUERY);
+    replaceParams(next);
+  }, [params, replaceParams]);
 
   function toggleFacetPanel(facetKey: keyof CatalogFacetFilter, open: boolean) {
     setOpenFacets((current) => ({ ...current, [facetKey]: open }));

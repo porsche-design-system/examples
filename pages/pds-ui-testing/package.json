@@ -6,7 +6,8 @@
     "dev": "next dev --port 3010",
     "build": "next build",
     "preview": "serve dist",
-    "test:a11y": "playwright test --config=tests/a11y/config/playwright.config.ts"
+    "test:a11y": "playwright test --config=tests/a11y/config/playwright.config.ts",
+    "test:filters": "playwright test --config=tests/filter-chip-dismiss.config.ts"
   },
   "dependencies": {
     "@porsche-design-system/components-react": "^4.1.0",
