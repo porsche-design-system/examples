@@ -9,6 +9,7 @@ import {
 } from "@porsche-design-system/components-react/ssr";
 import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
 import { ProductDetailFavoriteButton } from "@/app/components/ProductDetailFavoriteButton";
+import { ProductDetailPrice } from "@/app/components/ProductDetailPrice";
 import { ProductInquiryFlyout } from "@/app/components/ProductInquiryFlyout";
 import { ProductSizeSelector } from "@/app/components/ProductSizeSelector";
 import {
@@ -130,14 +131,10 @@ export default async function ProductDetailPage({ params }: PageProps) {
             </PHeading>
             <PText color="contrast-medium">{product.teaser}</PText>
           </div>
-          <div className="grid gap-static-xs">
-            <PText size="large" weight="semibold">
-              {product.price.formatted}
-            </PText>
-            <PText color="contrast-medium" size="small">
-              {product.vatNote}
-            </PText>
-          </div>
+          <ProductDetailPrice
+            copy={productList.pricing}
+            product={product}
+          />
           {isApparelProduct ? (
             <>
               <PDivider />
@@ -186,6 +183,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
           </div>
           <CatalogProductGrid
             locale={locale}
+            pricingCopy={productList.pricing}
             products={relatedProducts}
             sectionAriaLabel={productDetail.relatedProducts}
           />

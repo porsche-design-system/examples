@@ -96,11 +96,17 @@ function parseFacetValues<T extends string>(
 }
 
 function buildFilter(searchParams: URLSearchParams): CatalogFacetFilter {
+  const flags = parseFacetValues(searchParams, "flag", isMerchandisingFlagSlug);
+  // Legacy share links: `?reduced=1` maps to the Highlights flag `reduced`.
+  if (searchParams.get("reduced") === "1" && !flags.includes("reduced")) {
+    flags.push("reduced");
+  }
+
   return {
     audiences: parseFacetValues(searchParams, "audience", isAudienceSlug),
     categories: parseFacetValues(searchParams, "category", isCategorySlug),
     collections: parseFacetValues(searchParams, "collection", isCollectionSlug),
-    flags: parseFacetValues(searchParams, "flag", isMerchandisingFlagSlug),
+    flags,
     tags: parseFacetValues(searchParams, "tag", isLifestyleTagSlug),
   };
 }
@@ -316,6 +322,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
     checked: boolean,
   ) {
     const params = new URLSearchParams(searchParams.toString());
+    params.delete("reduced");
     const selected = parseFacetValues(params, facet.param, facet.isValid);
     const nextValues = checked
       ? Array.from(new Set([...selected, value]))
@@ -339,6 +346,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
     params.delete("category");
     params.delete("collection");
     params.delete(PRODUCTS_FAVORITES_QUERY);
+    params.delete("reduced");
 
     if (quickFilter.filter.audiences?.length) {
       params.set("audience", quickFilter.filter.audiences.join(","));
@@ -379,6 +387,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
     params.delete("flag");
     params.delete("tag");
     params.delete(PRODUCTS_FAVORITES_QUERY);
+    params.delete("reduced");
 
     const query = params.toString();
     router.replace(query ? `${pathname}?${query}` : pathname, {
@@ -600,6 +609,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
           <h2 className="sr-only">{copy.productsRegionLabel}</h2>
           <CatalogProductGrid
             locale={locale}
+            pricingCopy={copy.pricing}
             products={displayProducts}
             sectionAriaLabel={copy.productsRegionLabel}
           />

@@ -48,6 +48,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <HomeLandingContent
         home={home}
         locale={locale}
+        tilePricingCopy={dictionary.pages.productList.pricing}
         trendingProducts={trendingProducts}
       />
     </main>

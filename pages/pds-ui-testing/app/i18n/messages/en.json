@@ -124,6 +124,11 @@
       "favoritesOnlyDismissAria": "Show full catalog; stop filtering by favorites",
       "favoritesEmptyTitle": "No favorites yet",
       "favoritesEmptyText": "Use the heart on a product tile or detail page to save items. Favorites are kept for this browser tab session only.",
+      "pricing": {
+        "tileAnchorSale": "sale price {price}",
+        "tileAnchorOriginal": "original price",
+        "detailAriaReduced": "Sale price {salePrice}, originally {originalPrice}"
+      },
       "quickFilters": {
         "all": "All products",
         "womenApparel": "Women apparel",
@@ -165,6 +170,7 @@
           "new": "New",
           "new-release": "New releases",
           "bestseller": "Bestsellers",
+          "reduced": "Reduced prices",
           "limited-edition": "Limited editions",
           "featured": "Featured",
           "trending": "Trending"

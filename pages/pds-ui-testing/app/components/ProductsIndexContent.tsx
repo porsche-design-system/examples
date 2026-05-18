@@ -28,6 +28,7 @@ export function ProductsIndexContent({ copy, locale, products }: Props) {
         fallback={
           <CatalogProductGrid
             locale={locale}
+            pricingCopy={copy.pricing}
             products={products}
             sectionAriaLabel={copy.productsRegionLabel}
           />

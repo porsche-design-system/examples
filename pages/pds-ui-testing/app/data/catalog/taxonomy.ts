@@ -10,6 +10,7 @@ export const merchandisingFlagSlugs = [
   "new",
   "new-release",
   "bestseller",
+  "reduced",
   "limited-edition",
   "featured",
   "trending",

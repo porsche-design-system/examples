@@ -7,7 +7,10 @@ import {
   PTag,
   PText,
 } from "@porsche-design-system/components-react/ssr";
-import { FavoriteLinkTileProduct } from "@/app/components/FavoriteLinkTileProduct";
+import {
+  FavoriteLinkTileProduct,
+  type TilePricingCopy,
+} from "@/app/components/FavoriteLinkTileProduct";
 import type { CatalogProduct } from "@/app/data/get-catalog";
 import {
   isLifestyleTagSlug,
@@ -38,6 +41,7 @@ const FEATURE_IMAGE_PATHS = [
 type Props = {
   home: HomeCopy;
   locale: Locale;
+  tilePricingCopy: TilePricingCopy;
   trendingProducts: CatalogProduct[];
 };
 
@@ -79,7 +83,12 @@ function featureTileHref(locale: Locale, href: string, index: number): string {
  * Image `src` uses `appHref('/file-in-public.jpg')` so requests are not resolved
  * relative to `/[locale]/` (which would 404 in DevTools even if a fallback showed a tile).
  */
-export function HomeLandingContent({ home, locale, trendingProducts }: Props) {
+export function HomeLandingContent({
+  home,
+  locale,
+  tilePricingCopy,
+  trendingProducts,
+}: Props) {
   return (
     <>
       <section
@@ -164,6 +173,7 @@ export function HomeLandingContent({ home, locale, trendingProducts }: Props) {
               <FavoriteLinkTileProduct
                 key={product.id}
                 locale={locale}
+                pricingCopy={tilePricingCopy}
                 product={product}
               />
             ))}

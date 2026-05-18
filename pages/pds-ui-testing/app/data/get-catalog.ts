@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { isReducedProduct } from "@/app/data/catalog-price";
 import type { Locale } from "@/app/i18n/config";
 import type homeCatalogEn from "@/app/data/catalog/products.en.json";
 import type {
@@ -29,11 +30,25 @@ function hasAny<T extends string>(
     : filterValues.some((value) => productValues.includes(value));
 }
 
+function matchesMerchandisingFlags(
+  product: CatalogProduct,
+  filterFlags: readonly MerchandisingFlagSlug[] | undefined,
+): boolean {
+  if (!filterFlags || filterFlags.length === 0) return true;
+  return filterFlags.some((flag) => {
+    if (flag === "reduced") return isReducedProduct(product);
+    return product.flags.includes(flag);
+  });
+}
+
 export function filterCatalogProducts(
   products: CatalogProduct[],
   filter: CatalogFacetFilter,
 ): CatalogProduct[] {
-  const hasFacet = Object.values(filter).some((value) => (value?.length ?? 0) > 0);
+  const hasFacet = Object.values(filter).some((value) => {
+    const length = (value as readonly string[] | undefined)?.length ?? 0;
+    return length > 0;
+  });
   if (!hasFacet) return [...products];
 
   return products.filter((p) => {
@@ -41,7 +56,7 @@ export function filterCatalogProducts(
       hasAny(p.audiences, filter.audiences) &&
       hasAny(p.categories, filter.categories) &&
       hasAny(p.collections, filter.collections) &&
-      hasAny(p.flags, filter.flags) &&
+      matchesMerchandisingFlags(p, filter.flags) &&
       hasAny(p.tags, filter.tags)
     );
   });

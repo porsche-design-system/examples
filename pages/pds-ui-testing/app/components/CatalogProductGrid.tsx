@@ -1,5 +1,8 @@
 import { PTag } from "@porsche-design-system/components-react/ssr";
-import { FavoriteLinkTileProduct } from "@/app/components/FavoriteLinkTileProduct";
+import {
+  FavoriteLinkTileProduct,
+  type TilePricingCopy,
+} from "@/app/components/FavoriteLinkTileProduct";
 import type { CatalogProduct } from "@/app/data/get-catalog";
 import type { Locale } from "@/app/i18n/config";
 
@@ -7,6 +10,7 @@ type Props = {
   /** Accessible name for the product grid region (e.g. “Products in this look”). */
   sectionAriaLabel: string;
   locale: Locale;
+  pricingCopy?: TilePricingCopy;
   products: CatalogProduct[];
 };
 
@@ -19,6 +23,7 @@ function getNewFlagLabel(locale: Locale): string {
  * related product sections.
  */
 export function CatalogProductGrid({
+  pricingCopy,
   sectionAriaLabel,
   locale,
   products,
@@ -36,7 +41,11 @@ export function CatalogProductGrid({
             id={product.id}
             key={product.id}
           >
-            <FavoriteLinkTileProduct locale={locale} product={product}>
+            <FavoriteLinkTileProduct
+              locale={locale}
+              pricingCopy={pricingCopy}
+              product={product}
+            >
               {product.flags.includes("new") ? (
                 <PTag compact slot="header">
                   {getNewFlagLabel(locale)}
