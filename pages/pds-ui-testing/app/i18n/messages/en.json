@@ -271,6 +271,8 @@
         "successDescription": "Your form was sent successfully and your product inquiry has been placed (demo only; no data is transmitted).",
         "successClose": "Close dialog",
         "submit": "Submit inquiry",
+        "stepPrevious": "Previous step",
+        "stepNext": "Next step",
         "close": "Close"
       }
     },

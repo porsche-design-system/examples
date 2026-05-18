@@ -271,6 +271,8 @@
         "successDescription": "Ihr Formular wurde erfolgreich übermittelt und Ihre Produktanfrage wurde erfasst (nur Demo; es werden keine Daten übertragen).",
         "successClose": "Dialog schließen",
         "submit": "Anfrage abschicken",
+        "stepPrevious": "Vorheriger Schritt",
+        "stepNext": "Nächster Schritt",
         "close": "Schließen"
       }
     },
