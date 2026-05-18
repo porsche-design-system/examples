@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 function readWindowSearchParams(): URLSearchParams {
@@ -28,6 +28,15 @@ export function useCatalogQueryParams() {
   });
 
   const searchParamsKey = searchParams.toString();
+
+  // Static export hydrates with empty server search params; read the real URL once on mount.
+  useLayoutEffect(() => {
+    const windowParams = readWindowSearchParams();
+    setParams((prev) => {
+      if (prev.toString() === windowParams.toString()) return prev;
+      return windowParams;
+    });
+  }, []);
 
   // Re-sync when Next reports a navigation (e.g. dev) that changed the query string.
   useEffect(() => {
