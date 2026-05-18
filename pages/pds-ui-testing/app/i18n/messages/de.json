@@ -192,6 +192,21 @@
       "details": "Produktdetails",
       "sizes": "Größen",
       "selectSize": "Größe auswählen",
+      "sizeComparison": {
+        "triggerLabel": "Internationale Größenvergleichstabelle",
+        "heading": "Internationale Größentabelle",
+        "modalAriaLabel": "Internationale Größentabelle",
+        "close": "Schließen",
+        "tableCaption": "Internationaler Bekleidungs-Größenvergleich nach Region",
+        "columns": {
+          "size": "Größe",
+          "eu": "EU",
+          "us": "US",
+          "uk": "UK",
+          "fr": "FR",
+          "it": "IT"
+        }
+      },
       "sku": "Artikelnummer",
       "relatedProducts": "Ähnliche Produkte",
       "inquiry": {

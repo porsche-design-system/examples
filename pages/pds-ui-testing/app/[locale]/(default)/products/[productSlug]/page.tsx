@@ -11,6 +11,7 @@ import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
 import { ProductDetailFavoriteButton } from "@/app/components/ProductDetailFavoriteButton";
 import { ProductDetailPrice } from "@/app/components/ProductDetailPrice";
 import { ProductInquiryFlyout } from "@/app/components/ProductInquiryFlyout";
+import { ProductSizeComparisonSheet } from "@/app/components/ProductSizeComparisonSheet";
 import { ProductSizeSelector } from "@/app/components/ProductSizeSelector";
 import { productHasNewReleaseFlag } from "@/app/data/catalog-product-flags";
 import {
@@ -144,11 +145,12 @@ export default async function ProductDetailPage({ params }: PageProps) {
           {isApparelProduct ? (
             <>
               <PDivider />
-              <div>
+              <div className="grid gap-static-sm">
                 <PHeading id="product-size-heading" size="medium" tag="h2">
                   {productDetail.sizes}
                 </PHeading>
                 <ProductSizeSelector label={productDetail.selectSize} />
+                <ProductSizeComparisonSheet copy={productDetail.sizeComparison} />
               </div>
               <PDivider />
             </>

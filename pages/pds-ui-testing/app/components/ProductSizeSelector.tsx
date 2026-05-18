@@ -5,12 +5,11 @@ import {
   PSegmentedControl,
   PSegmentedControlItem,
 } from "@porsche-design-system/components-react/ssr";
+import { apparelSizes } from "@/app/data/apparel-size-chart";
 
 type ProductSizeSelectorProps = {
   label: string;
 };
-
-const apparelSizes = ["XS", "S", "M", "L", "XL", "XXL"] as const;
 
 export function ProductSizeSelector({
   label,
