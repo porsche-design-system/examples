@@ -11,9 +11,7 @@ type ProductSizeSelectorProps = {
   label: string;
 };
 
-export function ProductSizeSelector({
-  label,
-}: ProductSizeSelectorProps) {
+export function ProductSizeSelector({ label }: ProductSizeSelectorProps) {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const selectedSizeValue = selectedSize ?? undefined;
 
@@ -25,6 +23,7 @@ export function ProductSizeSelector({
         name="product-size"
         onChange={(event) => setSelectedSize(String(event.detail.value))}
         value={selectedSizeValue}
+        noWrap
       >
         {apparelSizes.map((size) => (
           <PSegmentedControlItem key={size} label={size} value={size} />

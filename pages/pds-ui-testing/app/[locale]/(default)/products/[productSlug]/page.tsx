@@ -132,25 +132,24 @@ export default async function ProductDetailPage({ params }: PageProps) {
               ),
             )}
           </div>
-          <div className="grid gap-fluid-sm">
+          <div className="flex flex-col items-start gap-fluid-sm">
             <PHeading size="3xl" tag="h1">
               {product.name}
             </PHeading>
             <PText color="contrast-medium">{product.teaser}</PText>
           </div>
-          <ProductDetailPrice
-            copy={productList.pricing}
-            product={product}
-          />
+          <ProductDetailPrice copy={productList.pricing} product={product} />
           {isApparelProduct ? (
             <>
               <PDivider />
-              <div className="grid gap-static-sm">
+              <div className="flex flex-col items-start gap-static-sm">
                 <PHeading id="product-size-heading" size="medium" tag="h2">
                   {productDetail.sizes}
                 </PHeading>
                 <ProductSizeSelector label={productDetail.selectSize} />
-                <ProductSizeComparisonSheet copy={productDetail.sizeComparison} />
+                <ProductSizeComparisonSheet
+                  copy={productDetail.sizeComparison}
+                />
               </div>
               <PDivider />
             </>
@@ -170,7 +169,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
               productSlug={product.slug}
             />
           </div>
-          <div className="grid gap-static-sm">
+          <div className="flex flex-col items-start gap-static-sm">
             <PHeading id="product-detail-heading" size="medium" tag="h2">
               {productDetail.details}
             </PHeading>

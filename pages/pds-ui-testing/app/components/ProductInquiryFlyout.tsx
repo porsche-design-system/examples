@@ -56,7 +56,7 @@ type Props = {
 };
 
 const FLYOUT_STYLE = {
-  "--p-flyout-width": "min(100vw - 2rem, 760px)",
+  "--p-flyout-width": "min(100vw, 760px)",
 } as CSSProperties;
 
 const INQUIRY_TYPES = ["quote", "availability", "support"] as const;
@@ -147,6 +147,26 @@ const INQUIRY_ERROR_FIELD_ORDER: InquiryFieldErrorKey[] = [
   "privacy",
 ];
 
+/** PDS form hosts in visual order within a step panel. */
+const STEP_FIELD_HOST_SELECTOR = [
+  "p-radio-group",
+  "p-segmented-control",
+  "p-input-text",
+  "p-input-email",
+  "p-input-tel",
+  "p-select",
+  "p-multi-select",
+  "p-textarea",
+  "p-switch",
+  "p-checkbox",
+  "p-input-date",
+  "p-input-time",
+  "p-input-month",
+  "p-input-week",
+  "p-pin-code",
+  "p-input-password",
+].join(", ");
+
 function focusInquiryFieldHost(host: HTMLElement | null | undefined): void {
   if (!host) return;
   host.scrollIntoView({ block: "nearest", inline: "nearest" });
@@ -157,6 +177,13 @@ function focusInquiryFieldHost(host: HTMLElement | null | undefined): void {
     'input:not([type="hidden"]), textarea, button:not([disabled])',
   );
   if (inner && document.activeElement !== inner) inner.focus();
+}
+
+/** Moves focus to the first form control in the active step (natural tab order). */
+function focusFirstInStepPanel(panel: HTMLElement | null | undefined): void {
+  if (!panel) return;
+  const host = panel.querySelector<HTMLElement>(STEP_FIELD_HOST_SELECTOR);
+  focusInquiryFieldHost(host);
 }
 
 type PostSubmitPhase = "idle" | "pending" | "done";
@@ -272,13 +299,30 @@ export function ProductInquiryFlyout({
   const fieldHostsRef = useRef<
     Partial<Record<InquiryFieldErrorKey, HTMLElement | null>>
   >({});
+  const stepPanelRefs = useRef<(HTMLElement | null)[]>([]);
   const shouldFocusFirstErrorRef = useRef(false);
+  const shouldFocusStepFirstFieldRef = useRef(false);
   const focusStepIndexRef = useRef(0);
   const activeStepIndex = getActiveStepIndex(steps);
 
   const assignFieldHostRef = useCallback(
     (key: InquiryFieldErrorKey) => (instance: HTMLElement | null) => {
       fieldHostsRef.current[key] = instance;
+    },
+    [],
+  );
+
+  const assignStepPanelRef = useCallback(
+    (index: number) => (instance: HTMLElement | null) => {
+      stepPanelRefs.current[index] = instance;
+    },
+    [],
+  );
+
+  const navigateToStep = useCallback(
+    (targetIndex: number, options?: { focusFirstField?: boolean }) => {
+      setSteps((prev) => setActiveStepIndex([...prev], targetIndex));
+      shouldFocusStepFirstFieldRef.current = options?.focusFirstField !== false;
     },
     [],
   );
@@ -316,19 +360,19 @@ export function ProductInquiryFlyout({
         (key) => next[key] != null && next[key] !== "",
       );
       const stepIndex = firstKey ? getStepIndexForField(firstKey) : 0;
-      setSteps((prev) => setActiveStepIndex([...prev], stepIndex));
+      navigateToStep(stepIndex, { focusFirstField: false });
       focusStepIndexRef.current = stepIndex;
       shouldFocusFirstErrorRef.current = true;
       return;
     }
     setErrors({});
     setPostSubmitPhase("pending");
-  }, [form, copy.errors]);
+  }, [form, copy.errors, navigateToStep]);
 
   const handlePrevStep = useCallback(() => {
     if (activeStepIndex === 0) return;
-    setSteps((prev) => setActiveStepIndex([...prev], activeStepIndex - 1));
-  }, [activeStepIndex]);
+    navigateToStep(activeStepIndex - 1);
+  }, [activeStepIndex, navigateToStep]);
 
   const handleNextStep = useCallback(() => {
     const stepErrors = validateInquiryStep(form, copy.errors, activeStepIndex);
@@ -346,17 +390,24 @@ export function ProductInquiryFlyout({
       return next;
     });
     if (activeStepIndex < steps.length - 1) {
-      setSteps((prev) => setActiveStepIndex([...prev], activeStepIndex + 1));
+      navigateToStep(activeStepIndex + 1);
     }
-  }, [activeStepIndex, copy.errors, form, steps.length]);
+  }, [activeStepIndex, copy.errors, form, navigateToStep, steps.length]);
 
   const handleStepperUpdate = useCallback(
     (event: CustomEvent<StepperHorizontalUpdateEventDetail>) => {
       const { activeStepIndex: targetIndex } = event.detail;
-      setSteps((prev) => setActiveStepIndex([...prev], targetIndex));
+      navigateToStep(targetIndex);
     },
-    [],
+    [navigateToStep],
   );
+
+  useLayoutEffect(() => {
+    if (!shouldFocusStepFirstFieldRef.current) return;
+    shouldFocusStepFirstFieldRef.current = false;
+    const panel = stepPanelRefs.current[activeStepIndex];
+    requestAnimationFrame(() => focusFirstInStepPanel(panel));
+  }, [activeStepIndex]);
 
   useLayoutEffect(() => {
     if (!shouldFocusFirstErrorRef.current) return;
@@ -465,281 +516,290 @@ export function ProductInquiryFlyout({
                   </PStepperHorizontal>
 
                   {activeStepIndex === 0 ? (
-                    <PFieldset label={copy.fieldsetRequestType}>
-                      <div className="mt-static-md grid gap-static-md">
-                        <PRadioGroup
-                          ref={assignFieldHostRef("inquiryType")}
-                          label={copy.inquiryTypeLabel}
-                          message={errors.inquiryType ?? ""}
-                          name="inquiry-type"
-                          onChange={(e) => {
-                            setForm((s) => ({
-                              ...s,
-                              inquiryType: pdsStringValue(e),
-                            }));
-                            clearError("inquiryType");
-                          }}
-                          required
-                          state={errors.inquiryType ? "error" : "none"}
-                          value={form.inquiryType}
-                        >
-                          <PRadioGroupOption
-                            label={copy.inquiryTypeQuote}
-                            value="quote"
-                          />
-                          <PRadioGroupOption
-                            label={copy.inquiryTypeAvailability}
-                            value="availability"
-                          />
-                          <PRadioGroupOption
-                            label={copy.inquiryTypeSupport}
-                            value="support"
-                          />
-                        </PRadioGroup>
+                    <div ref={assignStepPanelRef(0)}>
+                      <PFieldset label={copy.fieldsetRequestType}>
+                        <div className="mt-static-md grid gap-static-md">
+                          <PRadioGroup
+                            ref={assignFieldHostRef("inquiryType")}
+                            label={copy.inquiryTypeLabel}
+                            message={errors.inquiryType ?? ""}
+                            name="inquiry-type"
+                            onChange={(e) => {
+                              setForm((s) => ({
+                                ...s,
+                                inquiryType: pdsStringValue(e),
+                              }));
+                              clearError("inquiryType");
+                            }}
+                            required
+                            state={errors.inquiryType ? "error" : "none"}
+                            value={form.inquiryType}
+                          >
+                            <PRadioGroupOption
+                              label={copy.inquiryTypeQuote}
+                              value="quote"
+                            />
+                            <PRadioGroupOption
+                              label={copy.inquiryTypeAvailability}
+                              value="availability"
+                            />
+                            <PRadioGroupOption
+                              label={copy.inquiryTypeSupport}
+                              value="support"
+                            />
+                          </PRadioGroup>
 
-                        <PSegmentedControl
-                          columns={{ base: 1, s: 3 }}
-                          label={copy.priorityLabel}
-                          name="inquiry-priority"
-                          onChange={(e) =>
-                            setForm((s) => ({
-                              ...s,
-                              priority: pdsStringValue(e),
-                            }))
-                          }
-                          value={form.priority}
-                        >
-                          <PSegmentedControlItem value="normal">
-                            {copy.priorityNormal}
-                          </PSegmentedControlItem>
-                          <PSegmentedControlItem value="high">
-                            {copy.priorityHigh}
-                          </PSegmentedControlItem>
-                          <PSegmentedControlItem value="urgent">
-                            {copy.priorityUrgent}
-                          </PSegmentedControlItem>
-                        </PSegmentedControl>
-                      </div>
-                    </PFieldset>
+                          <PSegmentedControl
+                            columns={{ base: 1, s: 3 }}
+                            label={copy.priorityLabel}
+                            name="inquiry-priority"
+                            onChange={(e) =>
+                              setForm((s) => ({
+                                ...s,
+                                priority: pdsStringValue(e),
+                              }))
+                            }
+                            value={form.priority}
+                          >
+                            <PSegmentedControlItem value="normal">
+                              {copy.priorityNormal}
+                            </PSegmentedControlItem>
+                            <PSegmentedControlItem value="high">
+                              {copy.priorityHigh}
+                            </PSegmentedControlItem>
+                            <PSegmentedControlItem value="urgent">
+                              {copy.priorityUrgent}
+                            </PSegmentedControlItem>
+                          </PSegmentedControl>
+                        </div>
+                      </PFieldset>
+                    </div>
                   ) : null}
 
                   {activeStepIndex === 1 ? (
-                    <PFieldset label={copy.fieldsetContact}>
-                      <div className="mt-static-md grid gap-static-md md:grid-cols-2">
-                        <PInputText
-                          ref={assignFieldHostRef("firstName")}
-                          autoComplete="given-name"
-                          label={copy.firstName}
-                          message={errors.firstName ?? ""}
-                          name="inquiry-first-name"
-                          onChange={(e) => {
-                            setForm((s) => ({
-                              ...s,
-                              firstName: pdsStringValue(e),
-                            }));
-                            clearError("firstName");
-                          }}
-                          onInput={(e) => {
-                            setForm((s) => ({
-                              ...s,
-                              firstName: pdsStringValue(e),
-                            }));
-                            clearError("firstName");
-                          }}
-                          required
-                          state={errors.firstName ? "error" : "none"}
-                          value={form.firstName}
-                        />
-                        <PInputText
-                          ref={assignFieldHostRef("lastName")}
-                          autoComplete="family-name"
-                          label={copy.lastName}
-                          message={errors.lastName ?? ""}
-                          name="inquiry-last-name"
-                          onChange={(e) => {
-                            setForm((s) => ({
-                              ...s,
-                              lastName: pdsStringValue(e),
-                            }));
-                            clearError("lastName");
-                          }}
-                          onInput={(e) => {
-                            setForm((s) => ({
-                              ...s,
-                              lastName: pdsStringValue(e),
-                            }));
-                            clearError("lastName");
-                          }}
-                          required
-                          state={errors.lastName ? "error" : "none"}
-                          value={form.lastName}
-                        />
-                        <PInputEmail
-                          ref={assignFieldHostRef("email")}
-                          autoComplete="email"
-                          label={copy.email}
-                          message={errors.email ?? ""}
-                          name="inquiry-email"
-                          onChange={(e) => {
-                            setForm((s) => ({
-                              ...s,
-                              email: pdsStringValue(e),
-                            }));
-                            clearError("email");
-                          }}
-                          onInput={(e) => {
-                            setForm((s) => ({
-                              ...s,
-                              email: pdsStringValue(e),
-                            }));
-                            clearError("email");
-                          }}
-                          required
-                          state={errors.email ? "error" : "none"}
-                          value={form.email}
-                        />
-                        <PInputTel
-                          autoComplete="tel"
-                          label={copy.phone}
-                          name="inquiry-phone"
-                          onChange={(e) =>
-                            setForm((s) => ({
-                              ...s,
-                              phone: pdsStringValue(e),
-                            }))
-                          }
-                          onInput={(e) =>
-                            setForm((s) => ({
-                              ...s,
-                              phone: pdsStringValue(e),
-                            }))
-                          }
-                          value={form.phone}
-                        />
-                      </div>
-                    </PFieldset>
+                    <div ref={assignStepPanelRef(1)}>
+                      <PFieldset label={copy.fieldsetContact}>
+                        <div className="mt-static-md grid gap-static-md md:grid-cols-2">
+                          <PInputText
+                            ref={assignFieldHostRef("firstName")}
+                            autoComplete="given-name"
+                            label={copy.firstName}
+                            message={errors.firstName ?? ""}
+                            name="inquiry-first-name"
+                            onChange={(e) => {
+                              setForm((s) => ({
+                                ...s,
+                                firstName: pdsStringValue(e),
+                              }));
+                              clearError("firstName");
+                            }}
+                            onInput={(e) => {
+                              setForm((s) => ({
+                                ...s,
+                                firstName: pdsStringValue(e),
+                              }));
+                              clearError("firstName");
+                            }}
+                            required
+                            state={errors.firstName ? "error" : "none"}
+                            value={form.firstName}
+                          />
+                          <PInputText
+                            ref={assignFieldHostRef("lastName")}
+                            autoComplete="family-name"
+                            label={copy.lastName}
+                            message={errors.lastName ?? ""}
+                            name="inquiry-last-name"
+                            onChange={(e) => {
+                              setForm((s) => ({
+                                ...s,
+                                lastName: pdsStringValue(e),
+                              }));
+                              clearError("lastName");
+                            }}
+                            onInput={(e) => {
+                              setForm((s) => ({
+                                ...s,
+                                lastName: pdsStringValue(e),
+                              }));
+                              clearError("lastName");
+                            }}
+                            required
+                            state={errors.lastName ? "error" : "none"}
+                            value={form.lastName}
+                          />
+                          <PInputEmail
+                            ref={assignFieldHostRef("email")}
+                            autoComplete="email"
+                            label={copy.email}
+                            message={errors.email ?? ""}
+                            name="inquiry-email"
+                            onChange={(e) => {
+                              setForm((s) => ({
+                                ...s,
+                                email: pdsStringValue(e),
+                              }));
+                              clearError("email");
+                            }}
+                            onInput={(e) => {
+                              setForm((s) => ({
+                                ...s,
+                                email: pdsStringValue(e),
+                              }));
+                              clearError("email");
+                            }}
+                            required
+                            state={errors.email ? "error" : "none"}
+                            value={form.email}
+                          />
+                          <PInputTel
+                            autoComplete="tel"
+                            label={copy.phone}
+                            name="inquiry-phone"
+                            onChange={(e) =>
+                              setForm((s) => ({
+                                ...s,
+                                phone: pdsStringValue(e),
+                              }))
+                            }
+                            onInput={(e) =>
+                              setForm((s) => ({
+                                ...s,
+                                phone: pdsStringValue(e),
+                              }))
+                            }
+                            value={form.phone}
+                          />
+                        </div>
+                      </PFieldset>
+                    </div>
                   ) : null}
 
                   {activeStepIndex === 2 ? (
-                    <PFieldset label={copy.fieldsetLocation}>
-                      <div className="mt-static-md grid gap-static-md">
-                        <PSelect
-                          label={copy.country}
-                          name="inquiry-country"
-                          onChange={(e) =>
-                            setForm((s) => ({
-                              ...s,
-                              country: pdsStringValue(e),
-                            }))
-                          }
-                          value={form.country}
-                        >
-                          <POptgroup label={copy.countryGroupOther}>
-                            <PSelectOption value="us">
-                              {copy.countryUs}
-                            </PSelectOption>
-                          </POptgroup>
-                          <POptgroup label={copy.countryGroupEurope}>
-                            <PSelectOption value="de">
-                              {copy.countryDe}
-                            </PSelectOption>
-                            <PSelectOption value="at">
-                              {copy.countryAt}
-                            </PSelectOption>
-                            <PSelectOption value="ch">
-                              {copy.countryCh}
-                            </PSelectOption>
-                          </POptgroup>
-                        </PSelect>
-                        <PMultiSelect
-                          description={copy.contactChannelsDescription}
-                          label={copy.contactChannels}
-                          name="inquiry-channels"
-                          onChange={(e) =>
-                            setForm((s) => ({
-                              ...s,
-                              channels: pdsStringArrayValue(e),
-                            }))
-                          }
-                          value={form.channels}
-                        >
-                          <PMultiSelectOption value="email">
-                            {copy.channelEmail}
-                          </PMultiSelectOption>
-                          <PMultiSelectOption value="phone">
-                            {copy.channelPhone}
-                          </PMultiSelectOption>
-                          <PMultiSelectOption value="sms">
-                            {copy.channelSms}
-                          </PMultiSelectOption>
-                        </PMultiSelect>
-                        <PTextarea
-                          ref={assignFieldHostRef("message")}
-                          label={copy.message}
-                          message={errors.message ?? ""}
-                          name="inquiry-message"
-                          onChange={(e) => {
-                            setForm((s) => ({
-                              ...s,
-                              message: pdsStringValue(e),
-                            }));
-                            clearError("message");
-                          }}
-                          onInput={(e) => {
-                            setForm((s) => ({
-                              ...s,
-                              message: pdsStringValue(e),
-                            }));
-                            clearError("message");
-                          }}
-                          placeholder={copy.messagePlaceholder}
-                          required
-                          rows={5}
-                          state={errors.message ? "error" : "none"}
-                          value={form.message}
-                          counter
-                          maxLength={50}
-                        />
-                        <PSwitch
-                          checked={form.newsletter}
-                          onUpdate={(e) =>
-                            setForm((s) => ({
-                              ...s,
-                              newsletter: pdsSwitchChecked(e),
-                            }))
-                          }
-                        >
-                          {copy.newsletter}
-                        </PSwitch>
-                        <PCheckbox
-                          ref={assignFieldHostRef("privacy")}
-                          checked={form.privacyAccepted}
-                          label={copy.privacy}
-                          message={errors.privacy ?? ""}
-                          name="inquiry-privacy"
-                          onChange={(e) => {
-                            setForm((s) => ({
-                              ...s,
-                              privacyAccepted: pdsCheckboxChecked(
-                                e,
-                                s.privacyAccepted,
-                              ),
-                            }));
-                            clearError("privacy");
-                          }}
-                          required
-                          state={errors.privacy ? "error" : "none"}
-                        >
-                          <PPopover slot="label-after">
-                            {copy.privacyPopover}
-                          </PPopover>
-                        </PCheckbox>
-                      </div>
-                    </PFieldset>
+                    <div ref={assignStepPanelRef(2)}>
+                      <PFieldset label={copy.fieldsetLocation}>
+                        <div className="mt-static-md grid gap-static-md">
+                          <PSelect
+                            label={copy.country}
+                            name="inquiry-country"
+                            onChange={(e) =>
+                              setForm((s) => ({
+                                ...s,
+                                country: pdsStringValue(e),
+                              }))
+                            }
+                            value={form.country}
+                          >
+                            <POptgroup label={copy.countryGroupOther}>
+                              <PSelectOption value="us">
+                                {copy.countryUs}
+                              </PSelectOption>
+                            </POptgroup>
+                            <POptgroup label={copy.countryGroupEurope}>
+                              <PSelectOption value="de">
+                                {copy.countryDe}
+                              </PSelectOption>
+                              <PSelectOption value="at">
+                                {copy.countryAt}
+                              </PSelectOption>
+                              <PSelectOption value="ch">
+                                {copy.countryCh}
+                              </PSelectOption>
+                            </POptgroup>
+                          </PSelect>
+                          <PMultiSelect
+                            description={copy.contactChannelsDescription}
+                            label={copy.contactChannels}
+                            name="inquiry-channels"
+                            onChange={(e) =>
+                              setForm((s) => ({
+                                ...s,
+                                channels: pdsStringArrayValue(e),
+                              }))
+                            }
+                            value={form.channels}
+                          >
+                            <PMultiSelectOption value="email">
+                              {copy.channelEmail}
+                            </PMultiSelectOption>
+                            <PMultiSelectOption value="phone">
+                              {copy.channelPhone}
+                            </PMultiSelectOption>
+                            <PMultiSelectOption value="sms">
+                              {copy.channelSms}
+                            </PMultiSelectOption>
+                          </PMultiSelect>
+                          <PTextarea
+                            ref={assignFieldHostRef("message")}
+                            label={copy.message}
+                            message={errors.message ?? ""}
+                            name="inquiry-message"
+                            onChange={(e) => {
+                              setForm((s) => ({
+                                ...s,
+                                message: pdsStringValue(e),
+                              }));
+                              clearError("message");
+                            }}
+                            onInput={(e) => {
+                              setForm((s) => ({
+                                ...s,
+                                message: pdsStringValue(e),
+                              }));
+                              clearError("message");
+                            }}
+                            placeholder={copy.messagePlaceholder}
+                            required
+                            rows={5}
+                            state={errors.message ? "error" : "none"}
+                            value={form.message}
+                            counter
+                            maxLength={50}
+                          />
+                          <PSwitch
+                            checked={form.newsletter}
+                            onUpdate={(e) =>
+                              setForm((s) => ({
+                                ...s,
+                                newsletter: pdsSwitchChecked(e),
+                              }))
+                            }
+                          >
+                            {copy.newsletter}
+                          </PSwitch>
+                          <PCheckbox
+                            ref={assignFieldHostRef("privacy")}
+                            checked={form.privacyAccepted}
+                            label={copy.privacy}
+                            message={errors.privacy ?? ""}
+                            name="inquiry-privacy"
+                            onChange={(e) => {
+                              setForm((s) => ({
+                                ...s,
+                                privacyAccepted: pdsCheckboxChecked(
+                                  e,
+                                  s.privacyAccepted,
+                                ),
+                              }));
+                              clearError("privacy");
+                            }}
+                            required
+                            state={errors.privacy ? "error" : "none"}
+                          >
+                            <PPopover slot="label-after">
+                              {copy.privacyPopover}
+                            </PPopover>
+                          </PCheckbox>
+                        </div>
+                      </PFieldset>
+                    </div>
                   ) : null}
 
                   {activeStepIndex === 3 ? (
-                    <div className="grid gap-static-md">
+                    <div
+                      className="grid gap-static-md"
+                      ref={assignStepPanelRef(3)}
+                    >
                       <PFieldset label={copy.fieldsetScheduling}>
                         <PText
                           className="mt-static-sm"
