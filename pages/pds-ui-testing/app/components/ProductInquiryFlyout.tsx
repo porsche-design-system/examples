@@ -1,6 +1,13 @@
 "use client";
 
-import { type CSSProperties, useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  type CSSProperties,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import {
   PButton,
   PCheckbox,
@@ -21,6 +28,7 @@ import {
   PMultiSelectOption,
   POptgroup,
   PPinCode,
+  PPopover,
   PRadioGroup,
   PRadioGroupOption,
   PSegmentedControl,
@@ -361,18 +369,15 @@ export function ProductInquiryFlyout({
                         }
                         value={form.priority}
                       >
-                        <PSegmentedControlItem
-                          label={copy.priorityNormal}
-                          value="normal"
-                        />
-                        <PSegmentedControlItem
-                          label={copy.priorityHigh}
-                          value="high"
-                        />
-                        <PSegmentedControlItem
-                          label={copy.priorityUrgent}
-                          value="urgent"
-                        />
+                        <PSegmentedControlItem value="normal">
+                          {copy.priorityNormal}
+                        </PSegmentedControlItem>
+                        <PSegmentedControlItem value="high">
+                          {copy.priorityHigh}
+                        </PSegmentedControlItem>
+                        <PSegmentedControlItem value="urgent">
+                          {copy.priorityUrgent}
+                        </PSegmentedControlItem>
                       </PSegmentedControl>
                     </div>
                   </PFieldset>
@@ -429,30 +434,30 @@ export function ProductInquiryFlyout({
                         state={errors.lastName ? "error" : "none"}
                         value={form.lastName}
                       />
-                  <PInputEmail
-                    ref={assignFieldHostRef("email")}
-                    autoComplete="email"
-                    label={copy.email}
-                    message={errors.email ?? ""}
-                    name="inquiry-email"
-                    onChange={(e) => {
-                      setForm((s) => ({
-                        ...s,
-                        email: pdsStringValue(e),
-                      }));
-                      clearError("email");
-                    }}
-                    onInput={(e) => {
-                      setForm((s) => ({
-                        ...s,
-                        email: pdsStringValue(e),
-                      }));
-                      clearError("email");
-                    }}
-                    required
-                    state={errors.email ? "error" : "none"}
-                    value={form.email}
-                  />
+                      <PInputEmail
+                        ref={assignFieldHostRef("email")}
+                        autoComplete="email"
+                        label={copy.email}
+                        message={errors.email ?? ""}
+                        name="inquiry-email"
+                        onChange={(e) => {
+                          setForm((s) => ({
+                            ...s,
+                            email: pdsStringValue(e),
+                          }));
+                          clearError("email");
+                        }}
+                        onInput={(e) => {
+                          setForm((s) => ({
+                            ...s,
+                            email: pdsStringValue(e),
+                          }));
+                          clearError("email");
+                        }}
+                        required
+                        state={errors.email ? "error" : "none"}
+                        value={form.email}
+                      />
                       <PInputTel
                         autoComplete="tel"
                         label={copy.phone}
@@ -582,7 +587,11 @@ export function ProductInquiryFlyout({
                         }}
                         required
                         state={errors.privacy ? "error" : "none"}
-                      />
+                      >
+                        <PPopover slot="label-after">
+                          {copy.privacyPopover}
+                        </PPopover>
+                      </PCheckbox>
                     </div>
                   </PFieldset>
 

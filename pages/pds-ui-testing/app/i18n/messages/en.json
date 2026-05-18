@@ -254,6 +254,7 @@
         "passwordDemoDescription": "Illustrates PInputPassword in the form; do not enter a real password.",
         "newsletter": "Email me about similar products",
         "privacy": "I agree that my details may be processed for this demo inquiry.",
+        "privacyPopover": "This is a demo form only: your details are not stored or sent to any server. The checkbox simulates consent so we can test validation and this information popover in the Porsche Design System.",
         "errors": {
           "formSummaryHeading": "Check your entries",
           "formSummary": "Some required fields are missing or invalid. Review the messages below.",
