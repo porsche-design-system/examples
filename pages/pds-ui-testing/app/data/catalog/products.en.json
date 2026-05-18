@@ -24,8 +24,8 @@
       "description": "A timeless everyday accessory with grained leather, precise stitching, and a polished Porsche crest.",
       "price": {
         "amount": 79,
-        "currency": "EUR",
-        "formatted": "79.00 €"
+        "currency": "USD",
+        "formatted": "$79.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -36,8 +36,8 @@
       ],
       "priceOriginal": {
         "amount": 100,
-        "currency": "EUR",
-        "formatted": "100.00 €"
+        "currency": "USD",
+        "formatted": "$100.00"
       }
     },
     {
@@ -68,8 +68,8 @@
       "description": "Sport-inspired Porsche styling with an adjustable fit, embroidered details, and a versatile silhouette.",
       "price": {
         "amount": 75,
-        "currency": "EUR",
-        "formatted": "75.00 €"
+        "currency": "USD",
+        "formatted": "$75.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -80,8 +80,8 @@
       ],
       "priceOriginal": {
         "amount": 100,
-        "currency": "EUR",
-        "formatted": "100.00 €"
+        "currency": "USD",
+        "formatted": "$100.00"
       }
     },
     {
@@ -108,8 +108,8 @@
       "description": "A durable compact umbrella designed for daily use, with subtle Porsche branding and a comfortable handle.",
       "price": {
         "amount": 69,
-        "currency": "EUR",
-        "formatted": "69.00 €"
+        "currency": "USD",
+        "formatted": "$69.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -120,8 +120,8 @@
       ],
       "priceOriginal": {
         "amount": 89,
-        "currency": "EUR",
-        "formatted": "89.00 €"
+        "currency": "USD",
+        "formatted": "$89.00"
       }
     },
     {
@@ -148,8 +148,8 @@
       "description": "T-shirt with women's crest badge, selected from the Porsche Shop women's clothing listing.",
       "price": {
         "amount": 71,
-        "currency": "EUR",
-        "formatted": "71.00 €"
+        "currency": "USD",
+        "formatted": "$71.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -160,8 +160,8 @@
       ],
       "priceOriginal": {
         "amount": 89,
-        "currency": "EUR",
-        "formatted": "89.00 €"
+        "currency": "USD",
+        "formatted": "$89.00"
       }
     },
     {
@@ -188,8 +188,8 @@
       "description": "Functional crop top with integrated sports bra from Porsche x PUMA, selected from the Porsche Shop women's clothing listing.",
       "price": {
         "amount": 62,
-        "currency": "EUR",
-        "formatted": "62.00 €"
+        "currency": "USD",
+        "formatted": "$62.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -223,8 +223,8 @@
       "description": "Cropped jumper by Porsche x PUMA with ribbed cuffs made of super-soft material.",
       "price": {
         "amount": 89,
-        "currency": "EUR",
-        "formatted": "89.00 €"
+        "currency": "USD",
+        "formatted": "$89.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -258,8 +258,8 @@
       "description": "Essential black T-shirt selected from the Porsche Shop women's clothing listing.",
       "price": {
         "amount": 99,
-        "currency": "EUR",
-        "formatted": "99.00 €"
+        "currency": "USD",
+        "formatted": "$99.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -293,8 +293,8 @@
       "description": "Lightweight 7/8 leggings from Porsche x PUMA with a high waist made from fast-drying material.",
       "price": {
         "amount": 79,
-        "currency": "EUR",
-        "formatted": "79.00 €"
+        "currency": "USD",
+        "formatted": "$79.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -328,8 +328,8 @@
       "description": "Functional crop top with integrated sports bra from Porsche x PUMA in black.",
       "price": {
         "amount": 62,
-        "currency": "EUR",
-        "formatted": "62.00 €"
+        "currency": "USD",
+        "formatted": "$62.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -363,8 +363,8 @@
       "description": "Cropped jumper by Porsche x PUMA in shade green with ribbed cuffs made of super-soft material.",
       "price": {
         "amount": 89,
-        "currency": "EUR",
-        "formatted": "89.00 €"
+        "currency": "USD",
+        "formatted": "$89.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -400,8 +400,8 @@
       "description": "A Porsche Design menswear piece inspired by the Porsche Shop listing. Placeholder imagery is used until final product visuals are available.",
       "price": {
         "amount": 1590,
-        "currency": "EUR",
-        "formatted": "1,590.00 €"
+        "currency": "USD",
+        "formatted": "$1,590.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -412,8 +412,8 @@
       ],
       "priceOriginal": {
         "amount": 1990,
-        "currency": "EUR",
-        "formatted": "1,990.00 €"
+        "currency": "USD",
+        "formatted": "$1,990.00"
       }
     },
     {
@@ -440,8 +440,8 @@
       "description": "A Porsche Design long-sleeve V-neck shirt selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available.",
       "price": {
         "amount": 180,
-        "currency": "EUR",
-        "formatted": "180.00 €"
+        "currency": "USD",
+        "formatted": "$180.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -475,8 +475,8 @@
       "description": "A Porsche Design trench coat selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available.",
       "price": {
         "amount": 1350,
-        "currency": "EUR",
-        "formatted": "1,350.00 €"
+        "currency": "USD",
+        "formatted": "$1,350.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -510,8 +510,8 @@
       "description": "A Porsche Design crew-neck pullover selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available.",
       "price": {
         "amount": 529,
-        "currency": "EUR",
-        "formatted": "529.00 €"
+        "currency": "USD",
+        "formatted": "$529.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -545,8 +545,8 @@
       "description": "Porsche Design Gumsole Trainers selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available.",
       "price": {
         "amount": 460,
-        "currency": "EUR",
-        "formatted": "460.00 €"
+        "currency": "USD",
+        "formatted": "$460.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -580,8 +580,8 @@
       "description": "Stylish cap for kids with Porsche Crest on the front, selected from the Porsche Shop children's clothes listing.",
       "price": {
         "amount": 39,
-        "currency": "EUR",
-        "formatted": "39.00 €"
+        "currency": "USD",
+        "formatted": "$39.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -592,8 +592,8 @@
       ],
       "priceOriginal": {
         "amount": 50,
-        "currency": "EUR",
-        "formatted": "50.00 €"
+        "currency": "USD",
+        "formatted": "$50.00"
       }
     },
     {
@@ -620,8 +620,8 @@
       "description": "Stylish toddler set of two pieces with Porsche Turbo vehicle print, selected from the Porsche Shop children's clothes listing.",
       "price": {
         "amount": 50,
-        "currency": "EUR",
-        "formatted": "50.00 €"
+        "currency": "USD",
+        "formatted": "$50.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -655,8 +655,8 @@
       "description": "Comfortable hoodie for kids with the iconic Porsche Crest on the chest and a kangaroo pocket.",
       "price": {
         "amount": 130,
-        "currency": "EUR",
-        "formatted": "130.00 €"
+        "currency": "USD",
+        "formatted": "$130.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -690,8 +690,8 @@
       "description": "Comfortable T-shirt for kids with the iconic Porsche Crest on the chest.",
       "price": {
         "amount": 75,
-        "currency": "EUR",
-        "formatted": "75.00 €"
+        "currency": "USD",
+        "formatted": "$75.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -725,8 +725,8 @@
       "description": "Soft polo shirt for children with iconic Porsche lettering.",
       "price": {
         "amount": 80,
-        "currency": "EUR",
-        "formatted": "80.00 €"
+        "currency": "USD",
+        "formatted": "$80.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -763,8 +763,8 @@
       "description": "High-quality suitcase made of anodised aluminum from Porsche Design. Inspired by the aerodynamic shape of the 911.",
       "price": {
         "amount": 1290,
-        "currency": "EUR",
-        "formatted": "1,290.00 €"
+        "currency": "USD",
+        "formatted": "$1,290.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -775,8 +775,8 @@
       ],
       "priceOriginal": {
         "amount": 1650,
-        "currency": "EUR",
-        "formatted": "1,650.00 €"
+        "currency": "USD",
+        "formatted": "$1,650.00"
       }
     },
     {
@@ -806,8 +806,8 @@
       "description": "High-quality medium-size suitcase made of anodised aluminum from Porsche Design. Inspired by the aerodynamic shape of the 911.",
       "price": {
         "amount": 1850,
-        "currency": "EUR",
-        "formatted": "1,850.00 €"
+        "currency": "USD",
+        "formatted": "$1,850.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -844,8 +844,8 @@
       "description": "High-quality large suitcase made of anodised aluminum from Porsche Design. Inspired by the aerodynamic shape of the 911.",
       "price": {
         "amount": 1950,
-        "currency": "EUR",
-        "formatted": "1,950.00 €"
+        "currency": "USD",
+        "formatted": "$1,950.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -880,8 +880,8 @@
       "description": "Lightweight business trolley with laptop compartment, USB port, smooth wheels and an ergonomic multi-stop telescopic handle.",
       "price": {
         "amount": 590,
-        "currency": "EUR",
-        "formatted": "590.00 €"
+        "currency": "USD",
+        "formatted": "$590.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -916,8 +916,8 @@
       "description": "Modern travel bag from Porsche with spacious main compartment and two-way zip.",
       "price": {
         "amount": 635,
-        "currency": "EUR",
-        "formatted": "635.00 €"
+        "currency": "USD",
+        "formatted": "$635.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -953,8 +953,8 @@
       "description": "Spacious backpack from Porsche with 13-inch laptop compartment and practical trolley link.",
       "price": {
         "amount": 149,
-        "currency": "EUR",
-        "formatted": "149.00 €"
+        "currency": "USD",
+        "formatted": "$149.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -965,8 +965,8 @@
       ],
       "priceOriginal": {
         "amount": 199,
-        "currency": "EUR",
-        "formatted": "199.00 €"
+        "currency": "USD",
+        "formatted": "$199.00"
       }
     },
     {
@@ -994,8 +994,8 @@
       "description": "Porsche fabric bag with two handles and a striking print on one side.",
       "price": {
         "amount": 39,
-        "currency": "EUR",
-        "formatted": "39.00 €"
+        "currency": "USD",
+        "formatted": "$39.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -1029,8 +1029,8 @@
       "description": "Foldable luggage compartment box from Porsche for practical storage in the vehicle.",
       "price": {
         "amount": 56,
-        "currency": "EUR",
-        "formatted": "56.00 €"
+        "currency": "USD",
+        "formatted": "$56.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -1065,8 +1065,8 @@
       "description": "Original Porsche bicycle rack for secure and convenient bike transport.",
       "price": {
         "amount": 443,
-        "currency": "EUR",
-        "formatted": "443.00 €"
+        "currency": "USD",
+        "formatted": "$443.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -1100,8 +1100,8 @@
       "description": "Porsche Performance roof box for additional storage on longer journeys and everyday adventures.",
       "price": {
         "amount": 1699,
-        "currency": "EUR",
-        "formatted": "1,699.00 €"
+        "currency": "USD",
+        "formatted": "$1,699.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -1112,8 +1112,8 @@
       ],
       "priceOriginal": {
         "amount": 2123,
-        "currency": "EUR",
-        "formatted": "2,123.00 €"
+        "currency": "USD",
+        "formatted": "$2,123.00"
       }
     },
     {
@@ -1140,8 +1140,8 @@
       "description": "Porsche dog blanket for comfortable and protected vehicle journeys with pets.",
       "price": {
         "amount": 102,
-        "currency": "EUR",
-        "formatted": "102.00 €"
+        "currency": "USD",
+        "formatted": "$102.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -1175,8 +1175,8 @@
       "description": "Porsche cool bag for keeping food and drinks chilled while traveling.",
       "price": {
         "amount": 249,
-        "currency": "EUR",
-        "formatted": "249.00 €"
+        "currency": "USD",
+        "formatted": "$249.00"
       },
       "vatNote": "incl. VAT",
       "images": [
@@ -1187,8 +1187,8 @@
       ],
       "priceOriginal": {
         "amount": 314,
-        "currency": "EUR",
-        "formatted": "314.00 €"
+        "currency": "USD",
+        "formatted": "$314.00"
       }
     }
   ]
