@@ -27,6 +27,10 @@
     "crestLabel": "Porsche",
     "shoppingCart": "Shopping cart",
     "favorites": "Favorites",
+    "favoritesAriaEmpty": "Favorites, no items saved yet",
+    "favoritesAriaCount": "Favorites, {count} items saved",
+    "favoritesLiveEmpty": "No favorites saved",
+    "favoritesLiveCount": "{count} favorites saved",
     "search": "Search",
     "searchModal": {
       "ariaLabel": "Search products",

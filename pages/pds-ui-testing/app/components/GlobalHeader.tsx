@@ -1,11 +1,8 @@
-import {
-  PCrest,
-  PLinkPure,
-  PWordmark,
-} from "@porsche-design-system/components-react/ssr";
+import { PCrest, PWordmark } from "@porsche-design-system/components-react/ssr";
 import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
-import { localeHomeHref, productsFavoritesHref } from "@/app/i18n/href";
+import { localeHomeHref } from "@/app/i18n/href";
+import { GlobalHeaderFavoritesLink } from "./GlobalHeaderFavoritesLink";
 import { GlobalHeaderNavMenu } from "./GlobalHeaderNavMenu";
 import { GlobalHeaderProductSearch } from "./GlobalHeaderProductSearch";
 
@@ -70,15 +67,16 @@ export function GlobalHeader({
               : "flex min-w-0 flex-wrap items-center justify-end gap-static-xs sm:gap-static-md"
           }
         >
-          <PLinkPure
-            className="p-static-xs -m-static-xs"
-            hideLabel
-            icon="heart"
-            size={{ base: "small", m: "medium" }}
-            href={productsFavoritesHref(locale)}
-          >
-            {header.favorites}
-          </PLinkPure>
+          <GlobalHeaderFavoritesLink
+            copy={{
+              favorites: header.favorites,
+              favoritesAriaCount: header.favoritesAriaCount,
+              favoritesAriaEmpty: header.favoritesAriaEmpty,
+              favoritesLiveCount: header.favoritesLiveCount,
+              favoritesLiveEmpty: header.favoritesLiveEmpty,
+            }}
+            locale={locale}
+          />
           <GlobalHeaderProductSearch
             copy={header.searchModal}
             label={header.search}
