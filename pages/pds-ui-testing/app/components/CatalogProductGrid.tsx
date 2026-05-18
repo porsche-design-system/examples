@@ -1,4 +1,4 @@
-import { PTag } from "@porsche-design-system/components-react/ssr";
+import { PPopover, PTag } from "@porsche-design-system/components-react/ssr";
 import {
   FavoriteLinkTileProduct,
   type TilePricingCopy,
@@ -45,11 +45,12 @@ export function CatalogProductGrid({
               pricingCopy={pricingCopy}
               product={product}
             >
-              {productHasNewReleaseFlag(product) ? (
-                <PTag compact slot="header">
-                  {newReleaseTagLabel}
-                </PTag>
-              ) : null}
+              <span slot="header">
+                {productHasNewReleaseFlag(product) ? (
+                  <PTag compact>{newReleaseTagLabel}</PTag>
+                ) : null}
+                <PPopover>{product.description}</PPopover>
+              </span>
             </FavoriteLinkTileProduct>
           </article>
         ))}
