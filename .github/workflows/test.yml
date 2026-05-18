@@ -138,10 +138,7 @@ jobs:
       - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - uses: actions/download-artifact@v8
-        with:
-          name: build-pds-ui-testing
-          path: ./pages/pds-ui-testing/dist
+      # Build is done in Playwright webServer without NEXT_PUBLIC_BASE_PATH (deploy artifact uses base path).
       - run: npm run test:e2e:pds-ui-testing
         shell: bash
   a11y-pds-ui-testing:

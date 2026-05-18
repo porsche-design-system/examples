@@ -28,11 +28,11 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: process.env.CI
-      ? `npx serve dist -l ${E2E_PORT}`
-      : `npm run build && npx serve dist -l ${E2E_PORT}`,
+    // Deploy artifacts set NEXT_PUBLIC_BASE_PATH; E2E must serve from site root so
+    // `/_next` and client hydration match the URLs under test (see filter-chip-dismiss).
+    command: `NEXT_PUBLIC_BASE_PATH= npm run build && npx serve dist -l ${E2E_PORT}`,
     port: E2E_PORT,
     reuseExistingServer: !process.env.CI,
-    timeout: process.env.CI ? 60_000 : 120_000,
+    timeout: process.env.CI ? 120_000 : 120_000,
   },
 });
