@@ -1,25 +1,5 @@
 import { expect, test } from "@playwright/test";
-
-async function waitForPdsReady(page: import("@playwright/test").Page) {
-  await page.waitForFunction(async () => {
-    const hosts = Array.from(
-      document.querySelectorAll("p-tag-dismissible"),
-    ) as Array<HTMLElement & { componentOnReady?: () => Promise<void> }>;
-
-    if (hosts.length === 0) return false;
-
-    await Promise.all(
-      hosts.map(async (host) => {
-        await customElements.whenDefined("p-tag-dismissible");
-        if (typeof host.componentOnReady === "function") {
-          await host.componentOnReady();
-        }
-      }),
-    );
-
-    return true;
-  });
-}
+import { waitForPdsHosts } from "../utils/pds";
 
 /** Waits until URL-driven filter chips are in the DOM (static export hydrates params on mount). */
 async function waitForFilterChips(page: import("@playwright/test").Page) {
@@ -28,7 +8,7 @@ async function waitForFilterChips(page: import("@playwright/test").Page) {
     undefined,
     { timeout: 10000 },
   );
-  await waitForPdsReady(page);
+  await waitForPdsHosts(page, "p-tag-dismissible");
 }
 
 test.describe("product catalog filters (static preview)", () => {

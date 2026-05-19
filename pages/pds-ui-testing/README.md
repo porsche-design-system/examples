@@ -38,6 +38,8 @@ npm run preview:pds-ui-testing
 npm run test:a11y:pds-ui-testing
 npm run test:e2e:pds-ui-testing
 npm run test:unit:pds-ui-testing
+
+E2E specs under `tests/e2e/specs/` cover catalog filter chips, header product search, and session favorites (detail page → favorites catalog view).
 ```
 
 Unit tests (Vitest + Testing Library) live under `tests/unit/` and cover catalog data helpers, URL query/sort/search logic (`app/lib/`), product inquiry validation, i18n href builders, taxonomy guards, favorites session storage, `ProductFavoritesProvider`, `useCatalogQueryParams`, and `ProductDetailPrice`. Run from this package with `npm run test:unit` or `npm run test:unit:watch`.
