@@ -51,8 +51,21 @@ import {
 import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
 import {
+  areSameFacetValues,
+  buildCatalogFilterFromParams,
+  formatCatalogCount,
+  formatCatalogFilterLabel,
+  isFacetValueSelected,
+  isFavoritesOnlyQuery,
+  parseFacetValues,
+} from "@/app/lib/catalog-query";
+import {
+  type CatalogSortKey,
+  getCatalogSortKey,
+  sortCatalogProducts,
+} from "@/app/lib/catalog-sort";
+import {
   PRODUCTS_FAVORITES_QUERY,
-  PRODUCTS_FAVORITES_VALUE,
 } from "@/app/i18n/href";
 
 type ProductListCopy = Dictionary["pages"]["productList"];
@@ -72,99 +85,10 @@ type FacetDefinition<T extends string> = {
   isValid: (value: string) => value is T;
 };
 
-type SortKey = "recommended" | "price-asc" | "price-desc" | "name-asc";
-
 type QuickFilterDefinition = {
   label: string;
   filter: Pick<CatalogFacetFilter, "audiences" | "categories" | "collections">;
 };
-
-const sortKeys = [
-  "recommended",
-  "price-asc",
-  "price-desc",
-  "name-asc",
-] as const;
-
-function parseFacetValues<T extends string>(
-  searchParams: URLSearchParams,
-  param: string,
-  isValid: (value: string) => value is T,
-): T[] {
-  const raw = searchParams.get(param);
-  if (!raw) return [];
-  return raw.split(",").filter(isValid);
-}
-
-function buildFilter(searchParams: URLSearchParams): CatalogFacetFilter {
-  const flags = parseFacetValues(searchParams, "flag", isMerchandisingFlagSlug);
-  // Legacy share links: `?reduced=1` maps to the Highlights flag `reduced`.
-  if (searchParams.get("reduced") === "1" && !flags.includes("reduced")) {
-    flags.push("reduced");
-  }
-
-  return {
-    audiences: parseFacetValues(searchParams, "audience", isAudienceSlug),
-    categories: parseFacetValues(searchParams, "category", isCategorySlug),
-    collections: parseFacetValues(searchParams, "collection", isCollectionSlug),
-    flags,
-    tags: parseFacetValues(searchParams, "tag", isLifestyleTagSlug),
-  };
-}
-
-function isSelected<T extends string>(
-  selected: readonly T[] | undefined,
-  value: T,
-) {
-  return selected?.includes(value) ?? false;
-}
-
-function formatCount(template: string, count: number): string {
-  return template.replace("{count}", String(count));
-}
-
-function formatFilterLabel(template: string, filterLabel: string): string {
-  return template.replace("{filter}", filterLabel);
-}
-
-function isSortKey(value: string | null): value is SortKey {
-  return sortKeys.includes(value as SortKey);
-}
-
-function getSortKey(searchParams: URLSearchParams): SortKey {
-  const sort = searchParams.get("sort");
-  return isSortKey(sort) ? sort : "recommended";
-}
-
-function sortProducts(
-  products: CatalogProduct[],
-  sortKey: SortKey,
-): CatalogProduct[] {
-  const sortedProducts = [...products];
-
-  switch (sortKey) {
-    case "price-asc":
-      return sortedProducts.sort((a, b) => a.price.amount - b.price.amount);
-    case "price-desc":
-      return sortedProducts.sort((a, b) => b.price.amount - a.price.amount);
-    case "name-asc":
-      return sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
-    case "recommended":
-      return sortedProducts;
-  }
-}
-
-function areSameValues<T extends string>(
-  currentValues: readonly T[] | undefined,
-  expectedValues: readonly T[] | undefined,
-): boolean {
-  const current = currentValues ?? [];
-  const expected = expectedValues ?? [];
-  return (
-    current.length === expected.length &&
-    expected.every((value) => current.includes(value))
-  );
-}
 
 const TAG_DISMISSIBLE = "p-tag-dismissible";
 
@@ -249,16 +173,15 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
     tags: false,
   });
 
-  const filter = useMemo(() => buildFilter(params), [params]);
-  const sortKey = getSortKey(params);
-  const favoritesOnly =
-    params.get(PRODUCTS_FAVORITES_QUERY) === PRODUCTS_FAVORITES_VALUE;
+  const filter = useMemo(() => buildCatalogFilterFromParams(params), [params]);
+  const sortKey = getCatalogSortKey(params);
+  const favoritesOnly = isFavoritesOnlyQuery(params);
   const filteredProducts = useMemo(
     () => filterCatalogProducts(products, filter),
     [filter, products],
   );
   const sortedProducts = useMemo(
-    () => sortProducts(filteredProducts, sortKey),
+    () => sortCatalogProducts(filteredProducts, sortKey),
     [filteredProducts, sortKey],
   );
   const displayProducts = useMemo(() => {
@@ -401,7 +324,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
   );
 
   const updateSort = useCallback(
-    (nextSortKey: SortKey) => {
+    (nextSortKey: CatalogSortKey) => {
       const next = new URLSearchParams(params.toString());
 
       if (nextSortKey === "recommended") {
@@ -440,18 +363,18 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
   const activeQuickFilterIndex = quickFilters.findIndex(
     ({ filter: quickFilter }) => {
       return (
-        areSameValues(filter.audiences, quickFilter.audiences) &&
-        areSameValues(filter.categories, quickFilter.categories) &&
-        areSameValues(filter.collections, quickFilter.collections)
+        areSameFacetValues(filter.audiences, quickFilter.audiences) &&
+        areSameFacetValues(filter.categories, quickFilter.categories) &&
+        areSameFacetValues(filter.collections, quickFilter.collections)
       );
     },
   );
 
-  const resultCountLabel = formatCount(
+  const resultCountLabel = formatCatalogCount(
     copy.resultCount,
     displayProducts.length,
   );
-  const showProductsLabel = formatCount(
+  const showProductsLabel = formatCatalogCount(
     copy.showProducts,
     displayProducts.length,
   );
@@ -504,7 +427,9 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
             <PSelect
               label={copy.sort.label}
               name="sort"
-              onChange={(event) => updateSort(event.detail.value as SortKey)}
+              onChange={(event) =>
+                updateSort(event.detail.value as CatalogSortKey)
+              }
               value={sortKey}
             >
               <PSelectOption value="recommended">
@@ -540,7 +465,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
             {activeFilters.map(({ facet, label, value }) => (
               <FilterDismissibleTag
                 aria={{
-                  "aria-label": formatFilterLabel(copy.dismissFilter, label),
+                  "aria-label": formatCatalogFilterLabel(copy.dismissFilter, label),
                 }}
                 compact
                 key={`${facet.param}-${value}`}
@@ -599,7 +524,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
                     <span slot="summary">{facet.legend}</span>
                     <div className="flex flex-col gap-static-sm">
                       {facet.values.map((value) => {
-                        const selected = isSelected(filter[facet.key], value);
+                        const selected = isFacetValueSelected(filter[facet.key], value);
 
                         return (
                           <PCheckbox

@@ -40,10 +40,33 @@ import {
   PSwitch,
   PText,
   PTextarea,
-  type StepperHorizontalItemState,
   type StepperHorizontalUpdateEventDetail,
 } from "@porsche-design-system/components-react/ssr";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
+import {
+  createInitialInquiryFormState,
+  createInquirySteps,
+  getActiveInquiryStepIndex,
+  getFirstInquiryErrorKeyForStep,
+  getInquiryStepIndexForField,
+  hasInquiryValidationErrors,
+  INQUIRY_ERROR_FIELD_ORDER,
+  INQUIRY_STEP_FIELDS,
+  INQUIRY_STEP_IDS,
+  pdsCheckboxChecked,
+  pdsStringArrayValue,
+  pdsStringValue,
+  pdsSwitchChecked,
+  setActiveInquiryStepIndex,
+  validateInquiryForm,
+  validateInquiryStep,
+  type InquiryFieldErrorKey,
+  type InquiryFieldErrors,
+  type InquiryStepConfig,
+  type InquiryStepId,
+} from "@/app/lib/product-inquiry";
+
+export type { InquiryFieldErrors };
 
 export type ProductInquiryCopy =
   Dictionary["pages"]["productDetail"]["inquiry"];
@@ -58,94 +81,6 @@ type Props = {
 const FLYOUT_STYLE = {
   "--p-flyout-width": "min(100vw, 760px)",
 } as CSSProperties;
-
-const INQUIRY_TYPES = ["quote", "availability", "support"] as const;
-
-type InquiryFieldErrorKey =
-  | "inquiryType"
-  | "firstName"
-  | "lastName"
-  | "email"
-  | "message"
-  | "privacy";
-
-const INQUIRY_STEP_IDS = [
-  "requestType",
-  "contact",
-  "location",
-  "scheduling",
-] as const;
-
-type InquiryStepId = (typeof INQUIRY_STEP_IDS)[number];
-
-const STEP_FIELDS: Record<InquiryStepId, InquiryFieldErrorKey[]> = {
-  requestType: ["inquiryType"],
-  contact: ["firstName", "lastName", "email"],
-  location: ["message", "privacy"],
-  scheduling: [],
-};
-
-type InquiryStepConfig = {
-  state?: StepperHorizontalItemState;
-  name: string;
-};
-
-function createInquirySteps(copy: ProductInquiryCopy): InquiryStepConfig[] {
-  return [
-    { state: "current", name: copy.fieldsetRequestType },
-    { name: copy.fieldsetContact },
-    { name: copy.fieldsetLocation },
-    { name: copy.fieldsetScheduling },
-  ];
-}
-
-function getActiveStepIndex(steps: InquiryStepConfig[]): number {
-  const index = steps.findIndex((step) => step.state === "current");
-  return index === -1 ? 0 : index;
-}
-
-function setActiveStepIndex(
-  steps: InquiryStepConfig[],
-  targetIndex: number,
-): InquiryStepConfig[] {
-  return steps.map((step, index) => {
-    const next = { ...step };
-    if (index < targetIndex) {
-      next.state = "complete";
-    } else if (index === targetIndex) {
-      next.state = "current";
-    } else {
-      delete next.state;
-    }
-    return next;
-  });
-}
-
-function getStepIndexForField(key: InquiryFieldErrorKey): number {
-  return INQUIRY_STEP_IDS.findIndex((stepId) =>
-    STEP_FIELDS[stepId].includes(key),
-  );
-}
-
-function getFirstErrorKeyForStep(
-  errors: InquiryFieldErrors,
-  stepIndex: number,
-): InquiryFieldErrorKey | undefined {
-  const keys = STEP_FIELDS[INQUIRY_STEP_IDS[stepIndex]];
-  return keys.find((key) => errors[key] != null && errors[key] !== "");
-}
-
-export type InquiryFieldErrors = Partial<Record<InquiryFieldErrorKey, string>>;
-
-/** Visual / logical order for “first invalid field” focus after submit. */
-const INQUIRY_ERROR_FIELD_ORDER: InquiryFieldErrorKey[] = [
-  "inquiryType",
-  "firstName",
-  "lastName",
-  "email",
-  "message",
-  "privacy",
-];
 
 /** PDS form hosts in visual order within a step panel. */
 const STEP_FIELD_HOST_SELECTOR = [
@@ -264,100 +199,6 @@ async function focusFirstFieldInStep(
 
 type PostSubmitPhase = "idle" | "pending" | "done";
 
-function hasValidationErrors(errors: InquiryFieldErrors): boolean {
-  return Object.values(errors).some((m) => m != null && m !== "");
-}
-
-function validateInquiryForm(
-  f: ReturnType<typeof initialFormState>,
-  err: ProductInquiryCopy["errors"],
-): InquiryFieldErrors {
-  const errors: InquiryFieldErrors = {};
-  if (
-    !INQUIRY_TYPES.includes(f.inquiryType as (typeof INQUIRY_TYPES)[number])
-  ) {
-    errors.inquiryType = err.inquiryTypeRequired;
-  }
-  if (!f.firstName.trim()) errors.firstName = err.firstNameRequired;
-  if (!f.lastName.trim()) errors.lastName = err.lastNameRequired;
-  if (!f.email.trim()) errors.email = err.emailRequired;
-  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())) {
-    errors.email = err.emailInvalid;
-  }
-  if (!f.message.trim()) errors.message = err.messageRequired;
-  if (!f.privacyAccepted) errors.privacy = err.privacyRequired;
-  return errors;
-}
-
-function validateInquiryStep(
-  form: ReturnType<typeof initialFormState>,
-  err: ProductInquiryCopy["errors"],
-  stepIndex: number,
-): InquiryFieldErrors {
-  const allErrors = validateInquiryForm(form, err);
-  const stepErrors: InquiryFieldErrors = {};
-  for (const key of STEP_FIELDS[INQUIRY_STEP_IDS[stepIndex]]) {
-    if (allErrors[key]) stepErrors[key] = allErrors[key];
-  }
-  return stepErrors;
-}
-
-function pdsStringValue(event: CustomEvent): string {
-  const detail = (event as unknown as CustomEvent<{ value?: unknown }>).detail;
-  if (detail != null && "value" in detail && detail.value !== undefined) {
-    return String(detail.value);
-  }
-  const target = event.target as unknown as { value?: unknown };
-  if (target != null && typeof target.value === "string") {
-    return target.value;
-  }
-  return "";
-}
-
-function pdsStringArrayValue(event: CustomEvent): string[] {
-  const detail = (event as unknown as CustomEvent<{ value?: unknown }>).detail;
-  if (detail != null && "value" in detail) {
-    const value = detail.value;
-    if (Array.isArray(value)) return value as string[];
-  }
-  return [];
-}
-
-function pdsCheckboxChecked(event: CustomEvent, previous: boolean): boolean {
-  const detail = (event as unknown as CustomEvent<{ checked?: boolean }>)
-    .detail;
-  if (typeof detail?.checked === "boolean") return detail.checked;
-  return !previous;
-}
-
-function pdsSwitchChecked(event: CustomEvent): boolean {
-  return Boolean(
-    (event as unknown as CustomEvent<{ checked: boolean }>).detail.checked,
-  );
-}
-
-function initialFormState() {
-  return {
-    inquiryType: "quote",
-    priority: "normal",
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    country: "us",
-    channels: [] as string[],
-    preferredDate: "",
-    preferredTime: "",
-    preferredMonth: "",
-    preferredWeek: "",
-    message: "",
-    pin: "",
-    passwordDemo: "",
-    newsletter: false,
-    privacyAccepted: false,
-  };
-}
-
 export function ProductInquiryFlyout({
   copy,
   productName,
@@ -365,7 +206,7 @@ export function ProductInquiryFlyout({
   productImageAlt,
 }: Props) {
   const [open, setOpen] = useState(false);
-  const [form, setForm] = useState(initialFormState);
+  const [form, setForm] = useState(createInitialInquiryFormState);
   const [errors, setErrors] = useState<InquiryFieldErrors>({});
   const [steps, setSteps] = useState<InquiryStepConfig[]>(() =>
     createInquirySteps(copy),
@@ -380,7 +221,7 @@ export function ProductInquiryFlyout({
   const pendingFocusStepIndexRef = useRef<number | null>(null);
   const focusStepSessionRef = useRef(0);
   const focusStepIndexRef = useRef(0);
-  const activeStepIndex = getActiveStepIndex(steps);
+  const activeStepIndex = getActiveInquiryStepIndex(steps);
 
   const assignFieldHostRef = useCallback(
     (key: InquiryFieldErrorKey) => (instance: HTMLElement | null) => {
@@ -398,7 +239,7 @@ export function ProductInquiryFlyout({
 
   const navigateToStep = useCallback(
     (targetIndex: number, options?: { focusFirstField?: boolean }) => {
-      setSteps((prev) => setActiveStepIndex([...prev], targetIndex));
+      setSteps((prev) => setActiveInquiryStepIndex([...prev], targetIndex));
       if (options?.focusFirstField !== false) {
         pendingFocusStepIndexRef.current = targetIndex;
       } else {
@@ -420,7 +261,7 @@ export function ProductInquiryFlyout({
   const resetAndClose = useCallback(() => {
     pendingFocusStepIndexRef.current = null;
     focusStepSessionRef.current += 1;
-    setForm(initialFormState());
+    setForm(createInitialInquiryFormState());
     setErrors({});
     setSteps(createInquirySteps(copy));
     setPostSubmitPhase("idle");
@@ -438,11 +279,11 @@ export function ProductInquiryFlyout({
   const handleSubmit = useCallback(() => {
     const next = validateInquiryForm(form, copy.errors);
     setErrors(next);
-    if (hasValidationErrors(next)) {
+    if (hasInquiryValidationErrors(next)) {
       const firstKey = INQUIRY_ERROR_FIELD_ORDER.find(
         (key) => next[key] != null && next[key] !== "",
       );
-      const stepIndex = firstKey ? getStepIndexForField(firstKey) : 0;
+      const stepIndex = firstKey ? getInquiryStepIndexForField(firstKey) : 0;
       navigateToStep(stepIndex, { focusFirstField: false });
       focusStepIndexRef.current = stepIndex;
       shouldFocusFirstErrorRef.current = true;
@@ -459,7 +300,7 @@ export function ProductInquiryFlyout({
 
   const handleNextStep = useCallback(() => {
     const stepErrors = validateInquiryStep(form, copy.errors, activeStepIndex);
-    if (hasValidationErrors(stepErrors)) {
+    if (hasInquiryValidationErrors(stepErrors)) {
       setErrors((prev) => ({ ...prev, ...stepErrors }));
       focusStepIndexRef.current = activeStepIndex;
       shouldFocusFirstErrorRef.current = true;
@@ -467,7 +308,7 @@ export function ProductInquiryFlyout({
     }
     setErrors((prev) => {
       const next = { ...prev };
-      for (const key of STEP_FIELDS[INQUIRY_STEP_IDS[activeStepIndex]]) {
+      for (const key of INQUIRY_STEP_FIELDS[INQUIRY_STEP_IDS[activeStepIndex]]) {
         delete next[key];
       }
       return next;
@@ -506,10 +347,10 @@ export function ProductInquiryFlyout({
 
   useLayoutEffect(() => {
     if (!shouldFocusFirstErrorRef.current) return;
-    if (!hasValidationErrors(errors)) return;
+    if (!hasInquiryValidationErrors(errors)) return;
     shouldFocusFirstErrorRef.current = false;
     const firstKey =
-      getFirstErrorKeyForStep(errors, focusStepIndexRef.current) ??
+      getFirstInquiryErrorKeyForStep(errors, focusStepIndexRef.current) ??
       INQUIRY_ERROR_FIELD_ORDER.find(
         (key) => errors[key] != null && errors[key] !== "",
       );
@@ -529,7 +370,7 @@ export function ProductInquiryFlyout({
         icon="shopping-cart"
         aria={{ "aria-haspopup": "dialog" }}
         onClick={() => {
-          setForm(initialFormState());
+          setForm(createInitialInquiryFormState());
           setErrors({});
           setSteps(createInquirySteps(copy));
           setPostSubmitPhase("idle");
@@ -593,7 +434,7 @@ export function ProductInquiryFlyout({
                 </div>
               ) : (
                 <>
-                  {hasValidationErrors(errors) ? (
+                  {hasInquiryValidationErrors(errors) ? (
                     <PInlineNotification
                       description={copy.errors.formSummary}
                       dismissButton={false}

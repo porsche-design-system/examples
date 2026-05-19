@@ -40,7 +40,7 @@ npm run test:e2e:pds-ui-testing
 npm run test:unit:pds-ui-testing
 ```
 
-Unit tests (Vitest) live under `tests/unit/` and cover catalog data helpers, i18n href builders, taxonomy guards, and favorites session storage. Run from this package with `npm run test:unit` or `npm run test:unit:watch`.
+Unit tests (Vitest) live under `tests/unit/` and cover catalog data helpers, URL query/sort/search logic (`app/lib/`), product inquiry validation, i18n href builders, taxonomy guards, and favorites session storage. Run from this package with `npm run test:unit` or `npm run test:unit:watch`.
 
 ## Static export default
 
