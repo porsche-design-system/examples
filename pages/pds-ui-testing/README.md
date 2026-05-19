@@ -42,6 +42,8 @@ npm run test:unit:pds-ui-testing
 
 Unit tests (Vitest + Testing Library) live under `tests/unit/` and cover catalog data helpers, URL query/sort/search logic (`app/lib/`), product inquiry validation, i18n href builders, taxonomy guards, favorites session storage, `ProductFavoritesProvider`, `useCatalogQueryParams`, and `ProductDetailPrice`. Run from this package with `npm run test:unit` or `npm run test:unit:watch`.
 
+CI runs them in the **Contribution** workflow (`.github/workflows/contribution.yml`) as job **Unit (PDS UI Testing)** via `npm run test:unit:pds-ui-testing` (no build artifact required).
+
 ## Static export default
 
 Static export is the default mode and is used for simple hosting:
