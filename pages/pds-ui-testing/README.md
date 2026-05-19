@@ -89,6 +89,10 @@ E2E and a11y both build with `NEXT_PUBLIC_BASE_PATH=` cleared so client hydratio
 
 CI runs all three in the **Contribution** workflow (`.github/workflows/contribution.yml`).
 
+#### Manual accessibility / usability sessions
+
+For moderated testing with assistive technology users (screen readers, keyboard-only, zoom), use **[ACCESSIBILITY-TEST-PLAN.md](./ACCESSIBILITY-TEST-PLAN.md)**. It describes session goals, demo-app limitations, step-by-step flows for every page area and PDS component, and how to record findings. Automated axe tests complement but do not replace that plan.
+
 ## Static export default
 
 Static export is the default mode and is used for simple hosting:
