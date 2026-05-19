@@ -2,7 +2,10 @@
 
 import type { MouseEvent } from "react";
 import { PLinkPure } from "@porsche-design-system/components-react/ssr";
-import { PAGE_HEADING_ID, skipToPageHeading } from "@/app/constants/a11y";
+import {
+  PAGE_HEADING_ID,
+  skipToPageHeading,
+} from "@/app/lib/skip-to-page-heading";
 
 type Props = {
   label: string;

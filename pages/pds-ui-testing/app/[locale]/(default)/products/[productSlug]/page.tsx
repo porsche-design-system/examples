@@ -8,7 +8,7 @@ import {
   PText,
 } from "@porsche-design-system/components-react/ssr";
 import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
-import { PAGE_HEADING_ID } from "@/app/constants/a11y";
+import { PAGE_HEADING_ID } from "@/app/lib/skip-to-page-heading";
 import { ProductDetailFavoriteButton } from "@/app/components/ProductDetailFavoriteButton";
 import { ProductDetailPrice } from "@/app/components/ProductDetailPrice";
 import { ProductInquiryFlyout } from "@/app/components/ProductInquiryFlyout";

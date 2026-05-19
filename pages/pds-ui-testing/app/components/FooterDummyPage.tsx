@@ -1,5 +1,5 @@
 import { PHeading, PText } from "@porsche-design-system/components-react/ssr";
-import { PAGE_HEADING_ID } from "@/app/constants/a11y";
+import { PAGE_HEADING_ID } from "@/app/lib/skip-to-page-heading";
 
 type Props = {
   title: string;
