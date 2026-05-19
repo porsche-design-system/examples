@@ -1,7 +1,7 @@
 "use client";
 
 import { PButton } from "@porsche-design-system/components-react/ssr";
-import { useProductFavorites } from "@/app/components/ProductFavoritesProvider";
+import { useProductFavorites } from "@/app/components/favorites/ProductFavoritesProvider";
 
 type Props = {
   productSlug: string;

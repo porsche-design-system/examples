@@ -1,4 +1,4 @@
-import { GlobalHeader } from "@/app/components/GlobalHeader";
+import { GlobalHeader } from "@/app/components/header/GlobalHeader";
 import { isLocale, type Locale } from "@/app/i18n/config";
 import { getDictionary } from "@/app/i18n/get-dictionary";
 

@@ -4,8 +4,8 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
   ProductFavoritesProvider,
   useProductFavorites,
-} from "@/app/components/ProductFavoritesProvider";
-import { writeFavoriteProductSlugs } from "@/app/components/product-favorites-storage";
+} from "@/app/components/favorites/ProductFavoritesProvider";
+import { writeFavoriteProductSlugs } from "@/app/lib/product-favorites-storage";
 import { createMockSessionStorage } from "./helpers/mock-session-storage";
 
 function createWrapper() {

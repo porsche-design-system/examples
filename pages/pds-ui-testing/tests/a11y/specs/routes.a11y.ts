@@ -51,6 +51,12 @@ const projectRoot = join(__dirname, '..', '..', '..');
 const appDir = join(projectRoot, 'app');
 const testRoutes = Array.from(new Set(getPageRoutes(appDir))).sort((a, b) => a.localeCompare(b));
 
+/** Static export uses `trailingSlash: true`; serve expects trailing slashes on paths. */
+const toStaticExportPath = (route: string): string => {
+  if (route === '/') return route;
+  return route.endsWith('/') ? route : `${route}/`;
+};
+
 const waitForPorscheDesignSystemComponents = async (page: Page): Promise<void> => {
   await page.waitForFunction(
     async () => {
@@ -80,7 +86,7 @@ const waitForPorscheDesignSystemComponents = async (page: Page): Promise<void> =
 test.describe('A11y route smoke tests', () => {
   for (const route of testRoutes) {
     test(`axe has no critical violations on ${route}`, async ({ page, makeAxeBuilder }) => {
-      await page.goto(route);
+      await page.goto(toStaticExportPath(route), { waitUntil: 'networkidle' });
       await expect(page.getByTestId('main-content')).toBeVisible();
       await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
       await waitForPorscheDesignSystemComponents(page);

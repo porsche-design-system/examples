@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { FooterDummyPage } from "@/app/components/FooterDummyPage";
+import { FooterDummyPage } from "@/app/components/layout/FooterDummyPage";
 import { isLocale } from "@/app/i18n/config";
 import { getDictionary } from "@/app/i18n/get-dictionary";
 

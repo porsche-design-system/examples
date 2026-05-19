@@ -23,9 +23,9 @@ import {
   PTagDismissible,
   PText,
 } from "@porsche-design-system/components-react/ssr";
-import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
-import { useCatalogQueryParams } from "@/app/components/use-catalog-query-params";
-import { useProductFavorites } from "@/app/components/ProductFavoritesProvider";
+import { CatalogProductGrid } from "@/app/components/catalog/CatalogProductGrid";
+import { useProductFavorites } from "@/app/components/favorites/ProductFavoritesProvider";
+import { useCatalogQueryParams } from "@/app/hooks/use-catalog-query-params";
 import {
   type CatalogFacetFilter,
   type CatalogProduct,

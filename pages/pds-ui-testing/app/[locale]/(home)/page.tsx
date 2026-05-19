@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { HomeHero } from "@/app/components/HomeHero";
-import { HomeLandingContent } from "@/app/components/HomeLandingContent";
+import { HomeHero } from "@/app/components/home/HomeHero";
+import { HomeLandingContent } from "@/app/components/home/HomeLandingContent";
 import { filterCatalogProducts, getHomeCatalog } from "@/app/data/get-catalog";
 import { isLocale, type Locale } from "@/app/i18n/config";
 import { getDictionary } from "@/app/i18n/get-dictionary";

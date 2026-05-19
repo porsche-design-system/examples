@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ProductsIndexContent } from "@/app/components/ProductsIndexContent";
+import { ProductsIndexContent } from "@/app/components/catalog/ProductsIndexContent";
 import { getHomeCatalog } from "@/app/data/get-catalog";
 import { isLocale, type Locale } from "@/app/i18n/config";
 import { getDictionary } from "@/app/i18n/get-dictionary";

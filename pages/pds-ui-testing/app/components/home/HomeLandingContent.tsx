@@ -10,7 +10,7 @@ import {
 import {
   FavoriteLinkTileProduct,
   type TilePricingCopy,
-} from "@/app/components/FavoriteLinkTileProduct";
+} from "@/app/components/favorites/FavoriteLinkTileProduct";
 import type { CatalogProduct } from "@/app/data/get-catalog";
 import {
   isLifestyleTagSlug,
@@ -144,7 +144,11 @@ export function HomeLandingContent({
         </div>
       </section>
 
-      <section className="col-full grid grid-cols-subgrid" id="products">
+      <section
+        aria-labelledby="home-trending-heading"
+        className="col-full grid grid-cols-subgrid"
+        id="products"
+      >
         <div className="col-wide flex flex-col items-center text-center mt-fluid-2xl">
           <PHeading id="home-trending-heading" size="3xl" tag="h2">
             {home.trendingHeading}

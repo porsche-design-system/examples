@@ -1,6 +1,6 @@
 import { act, renderHook, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { useCatalogQueryParams } from "@/app/components/use-catalog-query-params";
+import { useCatalogQueryParams } from "@/app/hooks/use-catalog-query-params";
 
 const pathname = "/en/products/";
 let searchParamsString = "";

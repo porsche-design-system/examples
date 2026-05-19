@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import type { ReactNode } from "react";
 import { describe, expect, it, vi } from "vitest";
-import { ProductDetailPrice } from "@/app/components/ProductDetailPrice";
+import { ProductDetailPrice } from "@/app/components/product/ProductDetailPrice";
 import { createCatalogProduct } from "./fixtures/catalog-product";
 
 vi.mock("@porsche-design-system/components-react/ssr", () => ({

@@ -2,7 +2,7 @@ import { PPopover, PTag } from "@porsche-design-system/components-react/ssr";
 import {
   FavoriteLinkTileProduct,
   type TilePricingCopy,
-} from "@/app/components/FavoriteLinkTileProduct";
+} from "@/app/components/favorites/FavoriteLinkTileProduct";
 import { productHasNewReleaseFlag } from "@/app/data/catalog-product-flags";
 import type { CatalogProduct } from "@/app/data/get-catalog";
 import type { Locale } from "@/app/i18n/config";

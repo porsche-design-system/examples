@@ -13,7 +13,7 @@ import {
 } from "@porsche-design-system/components-react/ssr";
 import { PAGE_HEADING_ID } from "@/app/lib/skip-to-page-heading";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
-import { appHref } from "../i18n/href";
+import { appHref } from "@/app/i18n/href";
 
 type HeroModalCopy = Dictionary["pages"]["home"]["heroModal"];
 

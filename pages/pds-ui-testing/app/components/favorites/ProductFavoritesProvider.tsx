@@ -12,7 +12,7 @@ import {
 import {
   readFavoriteProductSlugs,
   writeFavoriteProductSlugs,
-} from "@/app/components/product-favorites-storage";
+} from "@/app/lib/product-favorites-storage";
 
 type ProductFavoritesContextValue = {
   /** Slugs currently in session favorites (empty until hydrated on client). */

@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   readFavoriteProductSlugs,
   writeFavoriteProductSlugs,
-} from "@/app/components/product-favorites-storage";
+} from "@/app/lib/product-favorites-storage";
 import { withMockSessionStorage } from "./helpers/mock-session-storage";
 
 describe("product-favorites-storage", () => {

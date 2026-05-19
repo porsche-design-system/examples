@@ -9,7 +9,7 @@ import {
 import type { CatalogProduct } from "@/app/data/get-catalog";
 import type { Locale } from "@/app/i18n/config";
 import { appHref, productDetailHref } from "@/app/i18n/href";
-import { useProductFavorites } from "@/app/components/ProductFavoritesProvider";
+import { useProductFavorites } from "@/app/components/favorites/ProductFavoritesProvider";
 
 export type TilePricingCopy = {
   tileAnchorOriginal: string;

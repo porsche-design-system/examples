@@ -5,7 +5,7 @@ import {
   useToastManager,
 } from "@porsche-design-system/components-react/ssr";
 import { useEffect, useRef } from "react";
-import { useProductFavorites } from "@/app/components/ProductFavoritesProvider";
+import { useProductFavorites } from "@/app/components/favorites/ProductFavoritesProvider";
 
 export type FavoriteToastCopy = {
   added: string;

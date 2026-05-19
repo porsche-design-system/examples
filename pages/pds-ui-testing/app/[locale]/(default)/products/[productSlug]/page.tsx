@@ -7,13 +7,13 @@ import {
   PTag,
   PText,
 } from "@porsche-design-system/components-react/ssr";
-import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
+import { CatalogProductGrid } from "@/app/components/catalog/CatalogProductGrid";
+import { ProductDetailFavoriteButton } from "@/app/components/product/ProductDetailFavoriteButton";
+import { ProductDetailPrice } from "@/app/components/product/ProductDetailPrice";
+import { ProductInquiryFlyout } from "@/app/components/product/ProductInquiryFlyout";
+import { ProductSizeComparisonSheet } from "@/app/components/product/ProductSizeComparisonSheet";
+import { ProductSizeSelector } from "@/app/components/product/ProductSizeSelector";
 import { PAGE_HEADING_ID } from "@/app/lib/skip-to-page-heading";
-import { ProductDetailFavoriteButton } from "@/app/components/ProductDetailFavoriteButton";
-import { ProductDetailPrice } from "@/app/components/ProductDetailPrice";
-import { ProductInquiryFlyout } from "@/app/components/ProductInquiryFlyout";
-import { ProductSizeComparisonSheet } from "@/app/components/ProductSizeComparisonSheet";
-import { ProductSizeSelector } from "@/app/components/ProductSizeSelector";
 import { productHasNewReleaseFlag } from "@/app/data/catalog-product-flags";
 import {
   getCatalogProductBySlug,
@@ -115,10 +115,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
           />
         </div>
 
-        <section
-          aria-labelledby="product-detail-heading"
-          className="col-span-full md:col-start-11 flex flex-col gap-fluid-md"
-        >
+        <div className="col-span-full md:col-start-11 flex flex-col gap-fluid-md">
           <div className="flex flex-wrap gap-static-sm">
             {productHasNewReleaseFlag(product) ? (
               <PTag compact key="new-release">
@@ -170,7 +167,10 @@ export default async function ProductDetailPage({ params }: PageProps) {
               productSlug={product.slug}
             />
           </div>
-          <div className="flex flex-col items-start gap-static-sm">
+          <section
+            aria-labelledby="product-detail-heading"
+            className="flex flex-col items-start gap-static-sm"
+          >
             <PHeading id="product-detail-heading" size="medium" tag="h2">
               {productDetail.details}
             </PHeading>
@@ -178,8 +178,8 @@ export default async function ProductDetailPage({ params }: PageProps) {
             <PText color="contrast-medium" size="small">
               {productDetail.sku}: {product.sku}
             </PText>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
 
       {relatedProducts.length > 0 ? (
