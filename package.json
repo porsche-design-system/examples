@@ -55,6 +55,7 @@
     "test:vrt:patterns": "npm run test:vrt --workspace=@porsche-design-system/patterns",
     "test:a11y:pds-ui-testing": "npm run test:a11y --workspace=@porsche-design-system/pds-ui-testing",
     "test:e2e:pds-ui-testing": "npm run test:e2e --workspace=@porsche-design-system/pds-ui-testing",
+    "test:unit:pds-ui-testing": "npm run test:unit --workspace=@porsche-design-system/pds-ui-testing",
     "npm:install": "npm install",
     "npm:outdated": "npm outdated --workspaces",
     "npm:upgrade": "npx npm-check-updates --workspaces -u && npm install",
