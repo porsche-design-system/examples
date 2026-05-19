@@ -39,7 +39,7 @@ export function ProductDetailPrice({ copy, product }: Props) {
         <PText size="large" weight="semibold">
           {product.price.formatted}
         </PText>
-        <PText aria-hidden="true" color="contrast-medium" size="large">
+        <PText color="contrast-medium" size="large">
           <s aria-hidden="true">{product.priceOriginal.formatted}</s>
           <span className="sr-only">{reducedAriaLabel}</span>
         </PText>
