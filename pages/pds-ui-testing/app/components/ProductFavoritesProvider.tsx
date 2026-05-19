@@ -17,6 +17,8 @@ import {
 type ProductFavoritesContextValue = {
   /** Slugs currently in session favorites (empty until hydrated on client). */
   favoriteSlugs: readonly string[];
+  /** True after session favorites were read from storage (avoids false add/remove on load). */
+  isHydrated: boolean;
   isFavorite: (slug: string) => boolean;
   setLiked: (slug: string, liked: boolean) => void;
   /** Toggles favorite from UI where `like` event detail may be missing or unreliable. */
@@ -33,6 +35,7 @@ export function ProductFavoritesProvider({ children }: { children: ReactNode }) 
     setSlugs(readFavoriteProductSlugs());
   }, []);
 
+  const isHydrated = slugs !== null;
   const favoriteSlugList = useMemo(() => slugs ?? [], [slugs]);
   const favoriteSlugSet = useMemo(
     () => new Set(favoriteSlugList),
@@ -71,11 +74,12 @@ export function ProductFavoritesProvider({ children }: { children: ReactNode }) 
   const value = useMemo(
     () => ({
       favoriteSlugs: favoriteSlugList,
+      isHydrated,
       isFavorite,
       setLiked,
       toggleFavorite,
     }),
-    [favoriteSlugList, isFavorite, setLiked, toggleFavorite],
+    [favoriteSlugList, isHydrated, isFavorite, setLiked, toggleFavorite],
   );
 
   return (

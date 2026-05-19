@@ -21,11 +21,13 @@ type Props = {
  * Kept separate from {@link ProductFavoritesProvider} so tile/detail favorite toggles stay unchanged.
  */
 export function ProductFavoriteToasts({ copy }: Props) {
-  const { favoriteSlugs } = useProductFavorites();
+  const { favoriteSlugs, isHydrated } = useProductFavorites();
   const { addMessage } = useToastManager();
   const previousSlugsRef = useRef<readonly string[] | null>(null);
 
   useEffect(() => {
+    if (!isHydrated) return;
+
     if (previousSlugsRef.current === null) {
       previousSlugsRef.current = favoriteSlugs;
       return;
@@ -52,7 +54,7 @@ export function ProductFavoriteToasts({ copy }: Props) {
         state: "warning",
       });
     }
-  }, [addMessage, copy.added, copy.removed, favoriteSlugs]);
+  }, [addMessage, copy.added, copy.removed, favoriteSlugs, isHydrated]);
 
   return <PToast />;
 }
