@@ -6,3 +6,14 @@
 :not(:defined, [data-ssr]) {
   visibility: hidden;
 }
+
+.skip-to-content {
+  position: absolute;
+  top: -1000px;
+  opacity: 0;
+}
+
+.skip-to-content:focus-within {
+  top: -100%;
+  opacity: 1;
+}

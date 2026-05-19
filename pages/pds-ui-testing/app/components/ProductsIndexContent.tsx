@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { PHeading, PText } from "@porsche-design-system/components-react/ssr";
 import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
+import { PAGE_HEADING_ID } from "@/app/constants/a11y";
 import { ProductCatalogBrowser } from "@/app/components/ProductCatalogBrowser";
 import type { CatalogProduct } from "@/app/data/get-catalog";
 import type { Locale } from "@/app/i18n/config";
@@ -17,7 +18,7 @@ export function ProductsIndexContent({ copy, locale, products }: Props) {
   return (
     <main className="grid-template mt-fluid-xl" data-testid="main-content">
       <div className="col-wide mx-auto flex max-w-[720px] flex-col items-center gap-fluid-sm text-center">
-        <PHeading size="3xl" tag="h1">
+        <PHeading id={PAGE_HEADING_ID} size="3xl" tag="h1">
           {copy.title}
         </PHeading>
         <PText color="contrast-medium" size="small">

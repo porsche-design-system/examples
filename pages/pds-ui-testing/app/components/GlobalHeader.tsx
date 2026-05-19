@@ -5,6 +5,7 @@ import { localeHomeHref } from "@/app/i18n/href";
 import { GlobalHeaderFavoritesLink } from "./GlobalHeaderFavoritesLink";
 import { GlobalHeaderNavMenu } from "./GlobalHeaderNavMenu";
 import { GlobalHeaderProductSearch } from "./GlobalHeaderProductSearch";
+import { GlobalHeaderSkipLink } from "./GlobalHeaderSkipLink";
 
 type Props = {
   dictionary: Dictionary;
@@ -31,7 +32,11 @@ export function GlobalHeader({
       data-testid="global-header"
     >
       <div className="col-wide grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-fluid-xs sm:gap-fluid-md">
-        <div className="flex min-w-0 flex-wrap items-center justify-start gap-static-xs sm:gap-static-sm">
+        <div className="relative flex min-w-0 flex-wrap items-center justify-start gap-static-xs sm:gap-static-sm">
+          <GlobalHeaderSkipLink
+            label={header.skipToMainHeading}
+            menuButtonClassName={heroOverlay ? "scheme-dark" : undefined}
+          />
           <nav
             aria-label={nav.main}
             className="flex min-w-0 items-center"

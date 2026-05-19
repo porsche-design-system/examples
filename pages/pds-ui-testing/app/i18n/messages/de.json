@@ -24,6 +24,7 @@
     "viewAllProducts": "Alle Produkte anzeigen"
   },
   "header": {
+    "skipToMainHeading": "Zur Hauptüberschrift springen",
     "crestLabel": "Porsche",
     "shoppingCart": "Warenkorb",
     "favorites": "Merkliste",

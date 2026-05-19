@@ -8,6 +8,7 @@ import {
   PText,
 } from "@porsche-design-system/components-react/ssr";
 import { CatalogProductGrid } from "@/app/components/CatalogProductGrid";
+import { PAGE_HEADING_ID } from "@/app/constants/a11y";
 import { ProductDetailFavoriteButton } from "@/app/components/ProductDetailFavoriteButton";
 import { ProductDetailPrice } from "@/app/components/ProductDetailPrice";
 import { ProductInquiryFlyout } from "@/app/components/ProductInquiryFlyout";
@@ -133,7 +134,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
             )}
           </div>
           <div className="flex flex-col items-start gap-fluid-sm">
-            <PHeading size="3xl" tag="h1">
+            <PHeading id={PAGE_HEADING_ID} size="3xl" tag="h1">
               {product.name}
             </PHeading>
             <PText color="contrast-medium">{product.teaser}</PText>

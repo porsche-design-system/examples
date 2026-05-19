@@ -11,8 +11,9 @@ import {
   PTextList,
   PTextListItem,
 } from "@porsche-design-system/components-react/ssr";
-import { appHref } from "../i18n/href";
+import { PAGE_HEADING_ID } from "@/app/constants/a11y";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
+import { appHref } from "../i18n/href";
 
 type HeroModalCopy = Dictionary["pages"]["home"]["heroModal"];
 
@@ -41,7 +42,7 @@ export function HomeHero({
   return (
     <section
       className="scheme-dark z-0 rounded-b-4xl h-[clamp(480px,80vh,1000px)] col-full sm:col-wide grid grid-cols-subgrid items-end relative before:absolute before:inset-[0_0_80%_0] before:z-1 before:pointer-events-none before:bg-linear-to-b before:from-canvas before:to-transparent after:absolute after:inset-[50%_0_0_0] after:z-1 after:pointer-events-none after:bg-linear-to-t after:from-canvas after:to-transparent after:rounded-b-4xl"
-      aria-labelledby="home-hero-heading"
+      aria-labelledby={PAGE_HEADING_ID}
     >
       {/* Root-absolute `public/` path; Next `Image` applies `basePath`. Avoid `./` — it resolves under `/en/` and 404s. */}
       <Image
@@ -56,7 +57,7 @@ export function HomeHero({
         <PHeading
           className="whitespace-pre-line text-start"
           color="primary"
-          id="home-hero-heading"
+          id={PAGE_HEADING_ID}
           size="x-large"
           tag="h1"
           weight="semibold"
