@@ -90,9 +90,7 @@
               <p-table-cell class="min-w-[10rem]" multiline="true">-</p-table-cell>
               <p-table-cell>
                 0000824402
-                <p-popover>
-                  <p-text>Some additional content</p-text>
-                </p-popover>
+                <p-popover> <p-text>Some additional content</p-text> </p-popover>
               </p-table-cell>
               <p-table-cell class="flex gap-static-md">
                 <p-button-pure type="button" icon="edit">Edit</p-button-pure>
@@ -117,9 +115,7 @@
               <p-table-cell class="min-w-[10rem]" multiline="true">-</p-table-cell>
               <p-table-cell>
                 0000824408
-                <p-popover>
-                  <p-text>Some additional content</p-text>
-                </p-popover>
+                <p-popover> <p-text>Some additional content</p-text> </p-popover>
               </p-table-cell>
               <p-table-cell class="flex gap-static-md">
                 <p-button-pure type="button" icon="edit">Edit</p-button-pure>
@@ -320,6 +316,15 @@
         <p-divider class="my-fluid-md"></p-divider>
         <p-button class="w-full" type="button" icon="none">Logout</p-button>
       </div>
+      <div
+        slot="background"
+        style="
+    height: 500px;
+    background: aliceblue;
+    width: 100%;
+    position: absolute;
+"
+      ></div>
     </p-canvas>
 
     <p-modal class="[--p-modal-width:min(50rem,80vw)]" open="false" aria="{ 'aria-label': 'Some heading' }">

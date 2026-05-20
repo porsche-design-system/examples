@@ -82,6 +82,106 @@ const FLYOUT_STYLE = {
   "--p-flyout-width": "min(100vw, 760px)",
 } as CSSProperties;
 
+type CountryLabelKey = keyof Pick<
+  ProductInquiryCopy,
+  | "countryUs"
+  | "countryCa"
+  | "countryMx"
+  | "countryBr"
+  | "countryDe"
+  | "countryAt"
+  | "countryCh"
+  | "countryFr"
+  | "countryGb"
+  | "countryIt"
+  | "countryEs"
+  | "countryNl"
+  | "countryBe"
+  | "countryPl"
+  | "countrySe"
+  | "countryNo"
+  | "countryDk"
+  | "countryFi"
+  | "countryIe"
+  | "countryPt"
+  | "countryCz"
+  | "countryHu"
+  | "countryRo"
+  | "countryJp"
+  | "countryCn"
+  | "countryIn"
+  | "countrySg"
+  | "countryKr"
+  | "countryAu"
+  | "countryAe"
+  | "countryZa"
+>;
+
+type CountryGroupKey = keyof Pick<
+  ProductInquiryCopy,
+  | "countryGroupAmericas"
+  | "countryGroupEurope"
+  | "countryGroupAsiaPacific"
+  | "countryGroupMiddleEastAfrica"
+>;
+
+const COUNTRY_GROUPS: {
+  groupKey: CountryGroupKey;
+  options: { value: string; labelKey: CountryLabelKey }[];
+}[] = [
+  {
+    groupKey: "countryGroupAmericas",
+    options: [
+      { value: "us", labelKey: "countryUs" },
+      { value: "ca", labelKey: "countryCa" },
+      { value: "mx", labelKey: "countryMx" },
+      { value: "br", labelKey: "countryBr" },
+    ],
+  },
+  {
+    groupKey: "countryGroupEurope",
+    options: [
+      { value: "de", labelKey: "countryDe" },
+      { value: "at", labelKey: "countryAt" },
+      { value: "ch", labelKey: "countryCh" },
+      { value: "fr", labelKey: "countryFr" },
+      { value: "gb", labelKey: "countryGb" },
+      { value: "it", labelKey: "countryIt" },
+      { value: "es", labelKey: "countryEs" },
+      { value: "nl", labelKey: "countryNl" },
+      { value: "be", labelKey: "countryBe" },
+      { value: "pl", labelKey: "countryPl" },
+      { value: "se", labelKey: "countrySe" },
+      { value: "no", labelKey: "countryNo" },
+      { value: "dk", labelKey: "countryDk" },
+      { value: "fi", labelKey: "countryFi" },
+      { value: "ie", labelKey: "countryIe" },
+      { value: "pt", labelKey: "countryPt" },
+      { value: "cz", labelKey: "countryCz" },
+      { value: "hu", labelKey: "countryHu" },
+      { value: "ro", labelKey: "countryRo" },
+    ],
+  },
+  {
+    groupKey: "countryGroupAsiaPacific",
+    options: [
+      { value: "jp", labelKey: "countryJp" },
+      { value: "cn", labelKey: "countryCn" },
+      { value: "in", labelKey: "countryIn" },
+      { value: "sg", labelKey: "countrySg" },
+      { value: "kr", labelKey: "countryKr" },
+      { value: "au", labelKey: "countryAu" },
+    ],
+  },
+  {
+    groupKey: "countryGroupMiddleEastAfrica",
+    options: [
+      { value: "ae", labelKey: "countryAe" },
+      { value: "za", labelKey: "countryZa" },
+    ],
+  },
+];
+
 /** PDS form hosts in visual order within a step panel. */
 const STEP_FIELD_HOST_SELECTOR = [
   "p-radio-group",
@@ -615,56 +715,55 @@ export function ProductInquiryFlyout({
                     <div ref={assignStepPanelRef(2)}>
                       <PFieldset label={copy.fieldsetLocation}>
                         <div className="mt-static-md grid gap-static-md">
-                          <PSelect
+                          <PMultiSelect
                             label={copy.country}
                             name="inquiry-country"
                             onChange={(e) =>
                               setForm((s) => ({
                                 ...s,
-                                country: pdsStringValue(e),
+                                country: pdsStringArrayValue(e),
                               }))
                             }
                             value={form.country}
                           >
-                            <POptgroup label={copy.countryGroupOther}>
-                              <PSelectOption value="us">
-                                {copy.countryUs}
-                              </PSelectOption>
-                            </POptgroup>
-                            <POptgroup label={copy.countryGroupEurope}>
-                              <PSelectOption value="de">
-                                {copy.countryDe}
-                              </PSelectOption>
-                              <PSelectOption value="at">
-                                {copy.countryAt}
-                              </PSelectOption>
-                              <PSelectOption value="ch">
-                                {copy.countryCh}
-                              </PSelectOption>
-                            </POptgroup>
-                          </PSelect>
-                          <PMultiSelect
+                            {COUNTRY_GROUPS.map(({ groupKey, options }) => (
+                              <POptgroup
+                                key={groupKey}
+                                label={copy[groupKey]}
+                              >
+                                {options.map(({ value, labelKey }) => (
+                                  <PMultiSelectOption
+                                    key={value}
+                                    value={value}
+                                  >
+                                    {copy[labelKey]}
+                                  </PMultiSelectOption>
+                                ))}
+                              </POptgroup>
+                            ))}
+                          </PMultiSelect>
+                          <PSelect
                             description={copy.contactChannelsDescription}
                             label={copy.contactChannels}
                             name="inquiry-channels"
                             onChange={(e) =>
                               setForm((s) => ({
                                 ...s,
-                                channels: pdsStringArrayValue(e),
+                                channels: pdsStringValue(e),
                               }))
                             }
                             value={form.channels}
                           >
-                            <PMultiSelectOption value="email">
+                            <PSelectOption value="email">
                               {copy.channelEmail}
-                            </PMultiSelectOption>
-                            <PMultiSelectOption value="phone">
+                            </PSelectOption>
+                            <PSelectOption value="phone">
                               {copy.channelPhone}
-                            </PMultiSelectOption>
-                            <PMultiSelectOption value="sms">
+                            </PSelectOption>
+                            <PSelectOption value="sms">
                               {copy.channelSms}
-                            </PMultiSelectOption>
-                          </PMultiSelect>
+                            </PSelectOption>
+                          </PSelect>
                           <PTextarea
                             ref={assignFieldHostRef("message")}
                             label={copy.message}

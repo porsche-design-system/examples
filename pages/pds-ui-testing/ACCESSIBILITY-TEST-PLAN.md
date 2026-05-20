@@ -359,7 +359,7 @@ Open via inquiry / cart button on detail page.
 | 3 | Try **Next** without required fields | Error summary `PInlineNotification`; focus moves to first invalid field |
 | 4 | Complete step 1, go to **Step 2 — Contact** | `PInputText` (first/last), `PInputEmail`, optional `PInputTel`; stepper updates |
 | 5 | Use stepper to jump steps | `PStepperHorizontal` — current step announced; focus moves into new panel |
-| 6 | **Step 3 — Location** | `PSelect` with `POptgroup`, `PMultiSelect`, `PTextarea` (counter/max length), `PSwitch`, `PCheckbox` + `PPopover` on privacy |
+| 6 | **Step 3 — Location** | `PMultiSelect` with `POptgroup`, `PSelect`, `PTextarea` (counter/max length), `PSwitch`, `PCheckbox` + `PPopover` on privacy |
 | 7 | **Step 4 — Scheduling** | `PInputDate`, `PInputTime`, `PInputMonth`, `PInputWeek`, `PPinCode`, `PInputPassword` (demo fields) |
 | 8 | Submit valid form | `PSpinner` + polite status; then success `PInlineNotification` |
 | 9 | Close flyout | Focus return; form resets on reopen |
@@ -475,7 +475,7 @@ Adjust pace for participant preference; **inquiry flyout (§8.5)** is the highes
 
 | Area | Components |
 |------|------------|
-| Header | `PCrest`, `PWordmark`, `PButtonPure`, `PDrilldown*`, `PLinkPure`, `PModal`, `PInputSearch` |
+| Header | `PCrest`, `PWordmark`, `PButtonPure`, `PDrilldown`, `PLinkPure`, `PModal`, `PInputSearch` |
 | Home | `PHeading`, `PButton`, `PModal`, `PTextList`, `PLink`, `PLinkTile`, `PCarousel`, `PLinkTileProduct` |
 | Catalog | `PTabsBar`, `PSelect`, `PFlyout`, `PAccordion`, `PCheckbox`, `PTagDismissible`, `PInlineNotification`, `PLinkTileProduct`, `PPopover`, `PTag` |
 | Detail | `PLinkPure`, `PTag`, inquiry flyout form set (§8.5), `PSegmentedControl`, `PSheet`, `PTable*` |

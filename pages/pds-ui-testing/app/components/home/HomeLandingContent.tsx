@@ -168,9 +168,8 @@ export function HomeLandingContent({
               next: home.trendingCarouselNext,
               prev: home.trendingCarouselPrevious,
             }}
-            slidesPerPage={3}
+            slidesPerPage={{ base: 1, s: 2, m: 3 }}
             width="basic"
-            gradient
             pagination
           >
             {trendingProducts.slice(0, 5).map((product) => (
