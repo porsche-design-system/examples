@@ -26,7 +26,9 @@ export function ProductSizeSelector({ label }: ProductSizeSelectorProps) {
         noWrap
       >
         {apparelSizes.map((size) => (
-          <PSegmentedControlItem key={size} label={size} value={size} />
+          <PSegmentedControlItem key={size} value={size}>
+            {size}
+          </PSegmentedControlItem>
         ))}
       </PSegmentedControl>
     </div>
