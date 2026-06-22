@@ -17,7 +17,6 @@ The projects are built using [WCAG 2.2 (AA)](https://www.w3.org/TR/WCAG22/) comp
 
 ### Patterns
 
-- [AI-Tag / 1](https://porsche-design-system.github.io/examples/v4/patterns/ai-tag/1/)
 - [Header / 1](https://porsche-design-system.github.io/examples/v4/patterns/header/1/)
 - [Header / 2](https://porsche-design-system.github.io/examples/v4/patterns/header/2/)
 - [Footer](https://porsche-design-system.github.io/examples/v4/patterns/footer/1/)
