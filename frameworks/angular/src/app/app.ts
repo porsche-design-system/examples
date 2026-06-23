@@ -6,12 +6,7 @@ import { FormPageComponent } from './form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    PorscheDesignSystemModule,
-    FormPageComponent,
-    ColorSchemeSelectComponent,
-  ],
+  imports: [RouterOutlet, PorscheDesignSystemModule, FormPageComponent, ColorSchemeSelectComponent],
   templateUrl: './app.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.css',

@@ -5,6 +5,7 @@ import typescriptLogo from './typescript.svg';
 
 initColorScheme();
 
+// biome-ignore lint/style/noNonNullAssertion: #app is statically present in index.html
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `  
     <main class="grid-template my-fluid-md">
       <div class="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-4xl">
@@ -81,4 +82,5 @@ export function setupForm(form: HTMLFormElement) {
 }
 
 setupColorSchemeSelect('p-select[name="color-scheme"]');
+// biome-ignore lint/style/noNonNullAssertion: #registerForm is rendered into #app above
 setupForm(document.querySelector<HTMLFormElement>('#registerForm')!);

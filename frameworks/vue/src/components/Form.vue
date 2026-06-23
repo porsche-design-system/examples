@@ -45,7 +45,8 @@ const schema = z.object({
 });
 
 const { handleSubmit, resetForm, defineField, errors, errorBag } = useForm({
-  validationSchema: toTypedSchema(schema as any), // TODO: type assertion needed due to missing types in @vee-validate/zod (which expects Zod v3 types instead of Zod v4)
+  // biome-ignore lint/suspicious/noExplicitAny: type assertion needed due to missing types in @vee-validate/zod (which expects Zod v3 types instead of Zod v4)
+  validationSchema: toTypedSchema(schema as any),
 
   initialValues: {
     accountType: undefined,
