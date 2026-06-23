@@ -1,13 +1,13 @@
 {
   "name": "@porsche-design-system/examples",
-  "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "private": true,
   "workspaces": [
     "frameworks/*",
     "patterns",
     "templates"
   ],
+  "type": "module",
   "scripts": {
     "dev:angular": "npm run start --workspace=@porsche-design-system/angular",
     "dev:astro": "npm run dev --workspace=@porsche-design-system/astro",
