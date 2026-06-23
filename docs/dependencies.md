@@ -84,6 +84,9 @@ Use `npm run npm:audit` (plain `npm audit`) to review advisories. **Do not run `
 "repair" a transitive advisory by **downgrading a hoisted dev tool**, which then violates our pinned tooling and can
 abort with `ERESOLVE` under [strict peer resolution](#strict-peer-dependency-resolution).
 
+> To **report** a security vulnerability (as opposed to routinely auditing dependencies), follow the disclosure process
+> in [`SECURITY.md`](../SECURITY.md) — do not open a public issue.
+
 ### Remediation policy
 
 - For a **genuinely fixable** advisory, add a pinned [`overrides`](#strict-peer-dependency-resolution) entry in the root
