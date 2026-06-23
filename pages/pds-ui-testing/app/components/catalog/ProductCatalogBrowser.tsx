@@ -64,9 +64,7 @@ import {
   getCatalogSortKey,
   sortCatalogProducts,
 } from "@/app/lib/catalog-sort";
-import {
-  PRODUCTS_FAVORITES_QUERY,
-} from "@/app/i18n/href";
+import { PRODUCTS_FAVORITES_QUERY } from "@/app/i18n/href";
 
 type ProductListCopy = Dictionary["pages"]["productList"];
 
@@ -391,7 +389,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
   return (
     <>
       <section aria-label={copy.toolbarLabel} className="col-basic grid">
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-fluid-md">
           <PTabsBar
             activeTabIndex={
               activeQuickFilterIndex >= 0 ? activeQuickFilterIndex : undefined
@@ -465,7 +463,10 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
             {activeFilters.map(({ facet, label, value }) => (
               <FilterDismissibleTag
                 aria={{
-                  "aria-label": formatCatalogFilterLabel(copy.dismissFilter, label),
+                  "aria-label": formatCatalogFilterLabel(
+                    copy.dismissFilter,
+                    label,
+                  ),
                 }}
                 compact
                 key={`${facet.param}-${value}`}
@@ -524,7 +525,10 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
                     <span slot="summary">{facet.legend}</span>
                     <div className="flex flex-col gap-static-sm">
                       {facet.values.map((value) => {
-                        const selected = isFacetValueSelected(filter[facet.key], value);
+                        const selected = isFacetValueSelected(
+                          filter[facet.key],
+                          value,
+                        );
 
                         return (
                           <PCheckbox
@@ -570,7 +574,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
           />
         </>
       ) : null}
-      <section className="col-basic grid gap-fluid-sm" role="status">
+      <div className="col-basic grid gap-fluid-sm empty:hidden" role="status">
         {displayProducts.length === 0 ? (
           <PInlineNotification
             description={emptyTextCopy}
@@ -580,7 +584,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
             state="info"
           />
         ) : null}
-      </section>
+      </div>
     </>
   );
 }

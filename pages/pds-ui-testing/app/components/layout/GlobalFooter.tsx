@@ -62,7 +62,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
 
   return (
     <footer
-      className="grid-template bg-canvas mt-fluid-2xl"
+      className="grid-template bg-canvas py-fluid-lg mt-fluid-xl scheme-dark"
       data-testid="global-footer"
     >
       <div className="col-wide flex flex-col gap-fluid-md">
