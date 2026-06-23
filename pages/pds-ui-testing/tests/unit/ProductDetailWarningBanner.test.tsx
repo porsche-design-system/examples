@@ -26,7 +26,7 @@ vi.mock("@porsche-design-system/components-react/ssr", () => ({
         data-heading-tag={headingTag}
         data-state={state}
         data-testid="warning-banner"
-        role="alert"
+        role="status"
       >
         <h2>{heading}</h2>
         <p>{description}</p>
@@ -40,17 +40,17 @@ vi.mock("@porsche-design-system/components-react/ssr", () => ({
 }));
 
 const copy = {
-  heading: "California Proposition 65 Warning",
+  heading: "Limited availability",
   description:
-    "This product can expose you to chemicals known to the State of California to cause cancer or reproductive harm. See product details for the full notice.",
+    "This item is running low on stock. Please inquire about availability before placing an order.",
 } as const;
 
 describe("ProductDetailWarningBanner", () => {
-  it("renders a warning banner with heading and description", () => {
+  it("renders an info banner with heading and description", () => {
     render(<ProductDetailWarningBanner copy={copy} />);
 
     const banner = screen.getByTestId("warning-banner");
-    expect(banner).toHaveAttribute("data-state", "warning");
+    expect(banner).toHaveAttribute("data-state", "info");
     expect(banner).toHaveAttribute("data-heading-tag", "h2");
     expect(
       screen.getByRole("heading", {

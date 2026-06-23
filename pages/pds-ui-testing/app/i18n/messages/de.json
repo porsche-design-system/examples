@@ -203,11 +203,11 @@
         "material": "Material",
         "careInstructions": "Pflegehinweise",
         "itemNumber": "Artikelnummer",
-        "warning": "WARNUNG"
+        "info": "INFO"
       },
-      "warningBanner": {
-        "heading": "Kalifornien Proposition 65 Warnung",
-        "description": "Dieses Produkt kann Sie Chemikalien aussetzen, die im US-Bundesstaat Kalifornien als krebserregend oder fortpflanzungsschädigend gelten. Den vollständigen Hinweis finden Sie in den Produktdetails."
+      "infoBanner": {
+        "heading": "Begrenzte Verfügbarkeit",
+        "description": "Dieses Produkt ist nur noch begrenzt verfügbar. Bitte erkundigen Sie sich vor der Bestellung nach der Verfügbarkeit."
       },
       "sizes": "Größen",
       "selectSize": "Größe auswählen",

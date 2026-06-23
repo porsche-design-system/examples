@@ -9,11 +9,11 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const catalogDir = join(__dirname, "../app/data/catalog");
 
-const PROP65_WARNING_EN =
-  "Components of some products can expose you to chemicals including Bisphenol A (BPA), Diisononyl Phthalate, Lead and Nickel which are known to the State of California to cause cancer, reproductive harm or birth defects. For more information visit www.P65Warnings.ca.gov";
+const PRODUCT_INFO_EN =
+  "Limited availability. This item is running low on stock.";
 
-const PROP65_WARNING_DE =
-  "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov";
+const PRODUCT_INFO_DE =
+  "Begrenzte Verfügbarkeit. Dieses Produkt ist bald ausverkauft.";
 
 /** @type {Record<string, { en: object; de: object }>} */
 const OVERRIDES = {
@@ -42,7 +42,7 @@ const OVERRIDES = {
         { label: "Size", value: "146/152" },
         { label: "Color", value: "Grey" },
       ],
-      warning: PROP65_WARNING_EN,
+      info: PRODUCT_INFO_EN,
     },
     de: {
       description: {
@@ -68,7 +68,7 @@ const OVERRIDES = {
         { label: "Größe", value: "146/152" },
         { label: "Farbe", value: "Grau" },
       ],
-      warning: PROP65_WARNING_DE,
+      info: PRODUCT_INFO_DE,
     },
   },
 };
@@ -114,7 +114,7 @@ function buildDetails(product, locale) {
           { label: "Color", value: "As shown" },
           { label: "Fit", value: "Regular" },
         ],
-        warning: PROP65_WARNING_EN,
+        info: PRODUCT_INFO_EN,
       },
       de: {
         description: {
@@ -140,7 +140,7 @@ function buildDetails(product, locale) {
           { label: "Farbe", value: "Wie abgebildet" },
           { label: "Passform", value: "Regular" },
         ],
-        warning: PROP65_WARNING_DE,
+        info: PRODUCT_INFO_DE,
       },
     },
     bags: {

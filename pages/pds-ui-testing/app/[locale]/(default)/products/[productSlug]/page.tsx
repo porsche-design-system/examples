@@ -118,9 +118,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
         </div>
 
         <div className="col-span-full md:col-start-11 flex flex-col gap-fluid-md">
-          {product.details.warning ? (
-            <ProductDetailWarningBanner copy={productDetail.warningBanner} />
-          ) : null}
+          <ProductDetailWarningBanner copy={productDetail.infoBanner} showBanner={product.details.info ? true : false} />
           <div className="flex flex-wrap gap-static-sm">
             {productHasNewReleaseFlag(product) ? (
               <PTag compact key="new-release">

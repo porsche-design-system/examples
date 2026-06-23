@@ -116,12 +116,12 @@ export function ProductDetailSections({ product, copy, locale }: Props) {
           {details.generalCharacteristics.map(({ label, value }) => (
             <LabeledField key={label} label={label} value={value} />
           ))}
-          {details.warning ? (
+          {details.info ? (
             <div className="flex flex-col gap-static-xs">
               <PText size="small" weight="semibold">
-                {copy.detailsFields.warning}
+                {copy.detailsFields.info}
               </PText>
-              <PText size="small">{details.warning}</PText>
+              <PText size="small">{details.info}</PText>
             </div>
           ) : null}
         </div>

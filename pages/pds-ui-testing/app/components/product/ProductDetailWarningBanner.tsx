@@ -5,14 +5,15 @@ import { PBanner } from "@porsche-design-system/components-react/ssr";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
 
 export type ProductDetailWarningBannerCopy =
-  Dictionary["pages"]["productDetail"]["warningBanner"];
+  Dictionary["pages"]["productDetail"]["infoBanner"];
 
 type Props = {
   copy: ProductDetailWarningBannerCopy;
+  showBanner: boolean;
 };
 
-export function ProductDetailWarningBanner({ copy }: Props) {
-  const [open, setOpen] = useState(true);
+export function ProductDetailWarningBanner({ copy, showBanner }: Props) {
+  const [open, setOpen] = useState(showBanner);
 
   return (
     <PBanner
@@ -22,7 +23,7 @@ export function ProductDetailWarningBanner({ copy }: Props) {
       headingTag="h2"
       onDismiss={() => setOpen(false)}
       open={open}
-      state="warning"
+      state="info"
     />
   );
 }
