@@ -191,6 +191,20 @@
       "favorites": "Zur Merkliste hinzufügen",
       "favoritesRemove": "Von der Merkliste entfernen",
       "details": "Produktdetails",
+      "detailsSections": {
+        "description": "Beschreibung",
+        "dimensionsAndWeight": "Abmessungen und Gewicht",
+        "materialAndCare": "Material und Pflegehinweise",
+        "generalCharacteristics": "Allgemeine Merkmale"
+      },
+      "detailsFields": {
+        "dimensions": "Abmessungen",
+        "weight": "Gewicht",
+        "material": "Material",
+        "careInstructions": "Pflegehinweise",
+        "itemNumber": "Artikelnummer",
+        "warning": "WARNUNG"
+      },
       "sizes": "Größen",
       "selectSize": "Größe auswählen",
       "sizeComparison": {

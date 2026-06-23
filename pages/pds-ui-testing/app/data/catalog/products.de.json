@@ -38,6 +38,36 @@
         "amount": 100,
         "currency": "EUR",
         "formatted": "100,00 €"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Ein zeitloses Accessoire für jeden Tag mit genarbtem Leder, präzisen Nähten und poliertem Porsche-Wappen. Ein raffiniertes Porsche-Lifestyle-Accessoire für den täglichen Gebrauch."
+          ],
+          "bullets": [
+            "Hochwertige Materialien und präzise Verarbeitung.",
+            "Dezentes Porsche-Branding.",
+            "Ideal als Geschenk oder persönliches Accessoire."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "120 mm x 80 mm x 25 mm",
+          "weight": "85 g"
+        },
+        "materialAndCare": {
+          "material": "Leder / Metall / Synthetik (modellabhängig)",
+          "careInstructions": "Mit einem weichen, trockenen Tuch abwischen. Vor Feuchtigkeit und direkter Sonneneinstrahlung schützen."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Kollektion",
+            "value": "Porsche Lifestyle"
+          }
+        ]
       }
     },
     {
@@ -82,6 +112,37 @@
         "amount": 100,
         "currency": "EUR",
         "formatted": "100,00 €"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Sportlich inspirierter Porsche-Stil mit verstellbarer Passform, gestickten Details und vielseitiger Silhouette. Mit Liebe zum Detail gefertigt, spiegelt dieses Porsche Design Baseballkappe die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Porsche Design Baseballkappe aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
       }
     },
     {
@@ -122,6 +183,36 @@
         "amount": 89,
         "currency": "EUR",
         "formatted": "89,00 €"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Ein robuster Kompakt-Regenschirm für den täglichen Einsatz mit dezentem Porsche-Branding und komfortablem Griff. Ein raffiniertes Porsche-Lifestyle-Accessoire für den täglichen Gebrauch."
+          ],
+          "bullets": [
+            "Hochwertige Materialien und präzise Verarbeitung.",
+            "Dezentes Porsche-Branding.",
+            "Ideal als Geschenk oder persönliches Accessoire."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "120 mm x 80 mm x 25 mm",
+          "weight": "85 g"
+        },
+        "materialAndCare": {
+          "material": "Leder / Metall / Synthetik (modellabhängig)",
+          "careInstructions": "Mit einem weichen, trockenen Tuch abwischen. Vor Feuchtigkeit und direkter Sonneneinstrahlung schützen."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Kollektion",
+            "value": "Porsche Lifestyle"
+          }
+        ]
       }
     },
     {
@@ -162,6 +253,37 @@
         "amount": 89,
         "currency": "EUR",
         "formatted": "89,00 €"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "T-Shirt mit Damen-Wappenbadge aus der Porsche Shop Damenbekleidungsliste. Mit Liebe zum Detail gefertigt, spiegelt dieses Damen T-Shirt - Essential die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Damen T-Shirt - Essential aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
       }
     },
     {
@@ -197,7 +319,38 @@
           "src": "/product-womens-sport-top-shadegreen.webp",
           "alt": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle in shadegreen"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Funktionales Crop-Top mit integriertem Sport-BH von Porsche x PUMA aus der Porsche Shop Damenbekleidungsliste. Mit Liebe zum Detail gefertigt, spiegelt dieses 2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges 2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-womens-crew-neck-jumper-black",
@@ -232,7 +385,38 @@
           "src": "/product-womens-crew-neck-jumper-black.webp",
           "alt": "Crew-neck Jumper - Porsche Cayenne Electric Lifestyle in Schwarz"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Cropped Jumper von Porsche x PUMA mit Rippbündchen aus besonders weichem Material. Mit Liebe zum Detail gefertigt, spiegelt dieses Crew-neck Jumper - Porsche Cayenne Electric Lifestyle die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Crew-neck Jumper - Porsche Cayenne Electric Lifestyle aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-womens-t-shirt-essential-black",
@@ -267,7 +451,38 @@
           "src": "/product-womens-t-shirt-essential-black.webp",
           "alt": "T-Shirt - Essential in Schwarz"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Schwarzes Essential T-Shirt aus der Porsche Shop Damenbekleidungsliste. Mit Liebe zum Detail gefertigt, spiegelt dieses T-Shirt - Essential die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges T-Shirt - Essential aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-womens-leggings-shadegreen",
@@ -302,7 +517,38 @@
           "src": "/product-womens-leggings-shadegreen.webp",
           "alt": "7/8 Leggings - Porsche Cayenne Electric Lifestyle in shadegreen"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Leichte 7/8 Leggings von Porsche x PUMA mit hohem Bund aus schnelltrocknendem Material. Mit Liebe zum Detail gefertigt, spiegelt dieses 7/8 Leggings - Porsche Cayenne Electric Lifestyle die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges 7/8 Leggings - Porsche Cayenne Electric Lifestyle aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-womens-sport-top-black",
@@ -337,7 +583,38 @@
           "src": "/product-womens-sport-top-black.webp",
           "alt": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle in Schwarz"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Funktionales Crop-Top mit integriertem Sport-BH von Porsche x PUMA in Schwarz. Mit Liebe zum Detail gefertigt, spiegelt dieses 2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges 2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-womens-crew-neck-jumper-shadegreen",
@@ -372,7 +649,38 @@
           "src": "/product-womens-crew-neck-jumper-shadegreen.webp",
           "alt": "Crew-neck Jumper - Porsche Cayenne Electric Lifestyle in shadegreen"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Cropped Jumper von Porsche x PUMA in shadegreen mit Rippbündchen aus besonders weichem Material. Mit Liebe zum Detail gefertigt, spiegelt dieses Crew-neck Jumper - Porsche Cayenne Electric Lifestyle die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Crew-neck Jumper - Porsche Cayenne Electric Lifestyle aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-classic-leather-jacket",
@@ -414,6 +722,37 @@
         "amount": 1990,
         "currency": "EUR",
         "formatted": "1.990,00 €"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Ein Porsche Design Menswear-Artikel aus der Porsche Shop Liste. Platzhalterbild wird verwendet, bis finale Produktvisualisierungen verfügbar sind. Mit Liebe zum Detail gefertigt, spiegelt dieses Porsche Design Classic Leather Jacket die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Porsche Design Classic Leather Jacket aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
       }
     },
     {
@@ -449,7 +788,38 @@
           "src": "/product-long-sleeve-v-neck-shirt.webp",
           "alt": "Porsche Design Long-sleeve V-neck Shirt"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Ein Porsche Design Langarmshirt mit V-Ausschnitt aus der Herrenbekleidungsliste. Platzhalterbild wird verwendet, bis finale Produktvisualisierungen verfügbar sind. Mit Liebe zum Detail gefertigt, spiegelt dieses Porsche Design Long-sleeve V-neck Shirt die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Porsche Design Long-sleeve V-neck Shirt aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-trench-coat",
@@ -484,7 +854,38 @@
           "src": "/product-trench-coat.webp",
           "alt": "Porsche Design Trench Coat"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Ein Porsche Design Trenchcoat aus der Herrenbekleidungsliste. Platzhalterbild wird verwendet, bis finale Produktvisualisierungen verfügbar sind. Mit Liebe zum Detail gefertigt, spiegelt dieses Porsche Design Trench Coat die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Porsche Design Trench Coat aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-crew-neck-pullover",
@@ -519,7 +920,38 @@
           "src": "/product-crew-neck-pullover.webp",
           "alt": "Porsche Design Crew-neck Pullover"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Ein Porsche Design Rundhalspullover aus der Herrenbekleidungsliste. Platzhalterbild wird verwendet, bis finale Produktvisualisierungen verfügbar sind. Mit Liebe zum Detail gefertigt, spiegelt dieses Porsche Design Crew-neck Pullover die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Porsche Design Crew-neck Pullover aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-gumsole-trainers",
@@ -554,7 +986,38 @@
           "src": "/product-gumsole-trainers.webp",
           "alt": "Porsche Design Gumsole Trainers"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Porsche Design Gumsole Trainers aus der Herrenbekleidungsliste. Platzhalterbild wird verwendet, bis finale Produktvisualisierungen verfügbar sind. Mit Liebe zum Detail gefertigt, spiegelt dieses Porsche Design Gumsole Trainers die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Porsche Design Gumsole Trainers aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-kids-cap-essential",
@@ -594,6 +1057,37 @@
         "amount": 50,
         "currency": "EUR",
         "formatted": "50,00 €"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Stylische Kappe für Kinder mit Porsche-Wappen auf der Vorderseite aus der Porsche Shop Kinderbekleidungsliste. Mit Liebe zum Detail gefertigt, spiegelt dieses Kids Cap - Essential die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Kids Cap - Essential aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
       }
     },
     {
@@ -629,7 +1123,38 @@
           "src": "/product-kids-turbo-toddler-set.webp",
           "alt": "Porsche Turbo Toddler Set"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Stylisches zweiteiliges Kleinkind-Set mit Porsche Turbo Fahrzeugprint aus der Porsche Shop Kinderbekleidungsliste. Mit Liebe zum Detail gefertigt, spiegelt dieses Porsche Turbo Toddler Set die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Porsche Turbo Toddler Set aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-kids-hoodie-essential",
@@ -664,7 +1189,38 @@
           "src": "/product-kids-hoodie-essential.webp",
           "alt": "Kids Hoodie - Essential in Grau"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Komfortabler Hoodie für Kinder mit ikonischem Porsche-Wappen auf der Brust und Kängurutasche. Mit Liebe zum Detail gefertigt, spiegelt dieses Kids Hoodie - Essential die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Kids Hoodie - Essential aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-kids-t-shirt-essential",
@@ -699,7 +1255,38 @@
           "src": "/product-kids-t-shirt-essential.webp",
           "alt": "Kids T-Shirt - Essential in Grau"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Minimalismus trifft Eleganz: die Essential Collection mit einem einzigartigen Design, das den Porsche-Geist in seiner raffiniertesten Form einfängt. Das bequeme T-Shirt für Kinder besticht durch Porsche-Schriftzug im unteren Rückenbereich in Kontrastfarben. Das Highlight des Shirts ist das auf die Brust genähte Porsche-Wappen. Das darunter angebrachte Horn ist ein verspieltes Detail, das bei Shirts bis Größe 122/128 angenäht ist."
+          ],
+          "bullets": [
+            "Bequemes T-Shirt für Kinder mit Porsche-Wappen auf der Brust.",
+            "Kontrastfarbiger unterer Rücken mit Porsche-Schriftzug.",
+            "Horn unter dem Wappen angenäht, bis Größe 122/128."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "320 mm x 235 mm x 20 mm",
+          "weight": "180 g"
+        },
+        "materialAndCare": {
+          "material": "100 % Baumwolle, gestrickt",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Auf links waschen. Nicht wringen. Nicht bleichen. Nicht im Trockner trocknen. Warm bügeln. Nicht chemisch reinigen."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Größe",
+            "value": "146/152"
+          },
+          {
+            "label": "Farbe",
+            "value": "Grau"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-kids-polo-shirt-turbo-no-1",
@@ -734,7 +1321,38 @@
           "src": "/product-kids-polo-shirt-turbo-no-1.webp",
           "alt": "Kids Polo Shirt - Turbo No. 1 in Rot"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Weiches Poloshirt für Kinder mit ikonischem Porsche-Schriftzug. Mit Liebe zum Detail gefertigt, spiegelt dieses Kids Polo Shirt - Turbo No. 1 die raffinierte Porsche-Lifestyle-Ästhetik wider."
+          ],
+          "bullets": [
+            "Hochwertiges Kids Polo Shirt - Turbo No. 1 aus der Porsche-Kollektion.",
+            "Für Komfort und tägliches Tragen konzipiert.",
+            "Dezente Porsche-Branding-Details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Gefaltet: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Baumwollmischung",
+          "careInstructions": "Maschinenwäsche 30 °C. Mit ähnlichen Farben waschen. Nicht bleichen. Nicht im Trockner trocknen. Bei niedriger Temperatur bügeln."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Passform",
+            "value": "Regular"
+          }
+        ],
+        "warning": "Bestandteile einiger Produkte können Sie Chemikalien einschließlich Bisphenol A (BPA), Diisononylphthalat, Blei und Nickel aussetzen, die im US-Bundesstaat Kalifornien als krebserregend, fortpflanzungsschädigend oder geburtsfehlerverursachend gelten. Weitere Informationen unter www.P65Warnings.ca.gov"
+      }
     },
     {
       "id": "product-roadster-aluminum-trolley-s",
@@ -777,6 +1395,36 @@
         "amount": 1650,
         "currency": "EUR",
         "formatted": "1.650,00 €"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Hochwertiger Koffer aus eloxiertem Aluminium von Porsche Design. Inspiriert von der aerodynamischen Form des 911. Für Reisen und den täglichen Gebrauch nach Porsche-Qualitätsstandards gefertigt."
+          ],
+          "bullets": [
+            "Robuste Konstruktion für häufigen Gebrauch.",
+            "Praktische Fächer und Organisation.",
+            "Unverwechselbare Porsche-Designsprache."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2,8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / Polycarbonat / Nylon (modellabhängig)",
+          "careInstructions": "Mit einem feuchten Tuch abwischen. Keine scheuernden Reiniger verwenden. Trocken lagern."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Volumen",
+            "value": "Ca. 35–45 L"
+          }
+        ]
       }
     },
     {
@@ -815,7 +1463,37 @@
           "src": "/product-roadster-aluminum-trolley-m.webp",
           "alt": "Roadster Aluminum Trolley M in Schwarz"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Hochwertiger mittelgroßer Koffer aus eloxiertem Aluminium von Porsche Design. Inspiriert von der aerodynamischen Form des 911. Für Reisen und den täglichen Gebrauch nach Porsche-Qualitätsstandards gefertigt."
+          ],
+          "bullets": [
+            "Robuste Konstruktion für häufigen Gebrauch.",
+            "Praktische Fächer und Organisation.",
+            "Unverwechselbare Porsche-Designsprache."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2,8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / Polycarbonat / Nylon (modellabhängig)",
+          "careInstructions": "Mit einem feuchten Tuch abwischen. Keine scheuernden Reiniger verwenden. Trocken lagern."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Volumen",
+            "value": "Ca. 35–45 L"
+          }
+        ]
+      }
     },
     {
       "id": "product-roadster-aluminum-trolley-l",
@@ -853,7 +1531,37 @@
           "src": "/product-roadster-aluminum-trolley-l.webp",
           "alt": "Roadster Aluminum Trolley L in Silber"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Hochwertiger großer Koffer aus eloxiertem Aluminium von Porsche Design. Inspiriert von der aerodynamischen Form des 911. Für Reisen und den täglichen Gebrauch nach Porsche-Qualitätsstandards gefertigt."
+          ],
+          "bullets": [
+            "Robuste Konstruktion für häufigen Gebrauch.",
+            "Praktische Fächer und Organisation.",
+            "Unverwechselbare Porsche-Designsprache."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2,8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / Polycarbonat / Nylon (modellabhängig)",
+          "careInstructions": "Mit einem feuchten Tuch abwischen. Keine scheuernden Reiniger verwenden. Trocken lagern."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Volumen",
+            "value": "Ca. 35–45 L"
+          }
+        ]
+      }
     },
     {
       "id": "product-roadster-hardcase-business-trolley-s",
@@ -889,7 +1597,37 @@
           "src": "/product-roadster-hardcase-business-trolley-s.webp",
           "alt": "Roadster Hardcase Business Trolley S in Mattschwarz"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Leichter Business-Trolley mit Laptopfach, USB-Anschluss, leichtgängigen Rollen und ergonomischem mehrstufigem Teleskopgriff. Für Reisen und den täglichen Gebrauch nach Porsche-Qualitätsstandards gefertigt."
+          ],
+          "bullets": [
+            "Robuste Konstruktion für häufigen Gebrauch.",
+            "Praktische Fächer und Organisation.",
+            "Unverwechselbare Porsche-Designsprache."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2,8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / Polycarbonat / Nylon (modellabhängig)",
+          "careInstructions": "Mit einem feuchten Tuch abwischen. Keine scheuernden Reiniger verwenden. Trocken lagern."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Volumen",
+            "value": "Ca. 35–45 L"
+          }
+        ]
+      }
     },
     {
       "id": "product-travel-bag-heritage",
@@ -925,7 +1663,37 @@
           "src": "/product-travel-bag-heritage.webp",
           "alt": "Travel Bag - Heritage in Schwarz"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Moderne Reisetasche von Porsche mit geräumigem Hauptfach und Zwei-Wege-Reißverschluss. Für Reisen und den täglichen Gebrauch nach Porsche-Qualitätsstandards gefertigt."
+          ],
+          "bullets": [
+            "Robuste Konstruktion für häufigen Gebrauch.",
+            "Praktische Fächer und Organisation.",
+            "Unverwechselbare Porsche-Designsprache."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2,8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / Polycarbonat / Nylon (modellabhängig)",
+          "careInstructions": "Mit einem feuchten Tuch abwischen. Keine scheuernden Reiniger verwenden. Trocken lagern."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Volumen",
+            "value": "Ca. 35–45 L"
+          }
+        ]
+      }
     },
     {
       "id": "product-backpack-martini-racing",
@@ -967,6 +1735,36 @@
         "amount": 199,
         "currency": "EUR",
         "formatted": "199,00 €"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Geräumiger Rucksack von Porsche mit 13-Zoll-Laptopfach und praktischem Trolley-Link. Für Reisen und den täglichen Gebrauch nach Porsche-Qualitätsstandards gefertigt."
+          ],
+          "bullets": [
+            "Robuste Konstruktion für häufigen Gebrauch.",
+            "Praktische Fächer und Organisation.",
+            "Unverwechselbare Porsche-Designsprache."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2,8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / Polycarbonat / Nylon (modellabhängig)",
+          "careInstructions": "Mit einem feuchten Tuch abwischen. Keine scheuernden Reiniger verwenden. Trocken lagern."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Volumen",
+            "value": "Ca. 35–45 L"
+          }
+        ]
       }
     },
     {
@@ -1003,7 +1801,37 @@
           "src": "/product-retro-canvas-bag-porsche-fan-community.webp",
           "alt": "Retro Canvas Bag - Porsche Fan Community in Beige"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Porsche Stofftasche mit zwei Henkeln und markantem Print auf einer Seite. Für Reisen und den täglichen Gebrauch nach Porsche-Qualitätsstandards gefertigt."
+          ],
+          "bullets": [
+            "Robuste Konstruktion für häufigen Gebrauch.",
+            "Praktische Fächer und Organisation.",
+            "Unverwechselbare Porsche-Designsprache."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2,8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / Polycarbonat / Nylon (modellabhängig)",
+          "careInstructions": "Mit einem feuchten Tuch abwischen. Keine scheuernden Reiniger verwenden. Trocken lagern."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          },
+          {
+            "label": "Volumen",
+            "value": "Ca. 35–45 L"
+          }
+        ]
+      }
     },
     {
       "id": "product-porsche-folding-luggage-compartment-box",
@@ -1038,7 +1866,37 @@
           "src": "/product-porsche-folding-luggage-compartment-box.webp",
           "alt": "Porsche Folding Luggage Compartment Box in Schwarz"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Faltbare Kofferraumbox von Porsche für praktische Aufbewahrung im Fahrzeug. Ein originales Porsche-Zubehörteil für die nahtlose Integration in Ihr Fahrzeug."
+          ],
+          "bullets": [
+            "Echte Porsche-Qualität und Passform.",
+            "Für den praktischen Alltagsgebrauch konzipiert.",
+            "Einfache Montage oder Einrichtung."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Genaue Abmessungen siehe Produktverpackung",
+          "weight": "Je nach Konfiguration"
+        },
+        "materialAndCare": {
+          "material": "Hochwertige Materialien in Automobilqualität",
+          "careInstructions": "Gemäß beiliegender Anleitung reinigen. Aggressive Chemikalien auf empfindlichen Oberflächen vermeiden."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Kompatibilität",
+            "value": "Porsche-Fahrzeuge (siehe Handbuch)"
+          },
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          }
+        ]
+      }
     },
     {
       "id": "product-porsche-bicycle-rack",
@@ -1074,7 +1932,37 @@
           "src": "/product-porsche-bicycle-rack.webp",
           "alt": "Porsche Bicycle Rack"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Original Porsche Fahrradträger für sicheren und komfortablen Fahrradtransport. Ein originales Porsche-Zubehörteil für die nahtlose Integration in Ihr Fahrzeug."
+          ],
+          "bullets": [
+            "Echte Porsche-Qualität und Passform.",
+            "Für den praktischen Alltagsgebrauch konzipiert.",
+            "Einfache Montage oder Einrichtung."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Genaue Abmessungen siehe Produktverpackung",
+          "weight": "Je nach Konfiguration"
+        },
+        "materialAndCare": {
+          "material": "Hochwertige Materialien in Automobilqualität",
+          "careInstructions": "Gemäß beiliegender Anleitung reinigen. Aggressive Chemikalien auf empfindlichen Oberflächen vermeiden."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Kompatibilität",
+            "value": "Porsche-Fahrzeuge (siehe Handbuch)"
+          },
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          }
+        ]
+      }
     },
     {
       "id": "product-porsche-performance-roof-box",
@@ -1114,6 +2002,36 @@
         "amount": 2123,
         "currency": "EUR",
         "formatted": "2.123,00 €"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Porsche Performance Dachbox für zusätzlichen Stauraum auf längeren Reisen und alltäglichen Abenteuern. Ein originales Porsche-Zubehörteil für die nahtlose Integration in Ihr Fahrzeug."
+          ],
+          "bullets": [
+            "Echte Porsche-Qualität und Passform.",
+            "Für den praktischen Alltagsgebrauch konzipiert.",
+            "Einfache Montage oder Einrichtung."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Genaue Abmessungen siehe Produktverpackung",
+          "weight": "Je nach Konfiguration"
+        },
+        "materialAndCare": {
+          "material": "Hochwertige Materialien in Automobilqualität",
+          "careInstructions": "Gemäß beiliegender Anleitung reinigen. Aggressive Chemikalien auf empfindlichen Oberflächen vermeiden."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Kompatibilität",
+            "value": "Porsche-Fahrzeuge (siehe Handbuch)"
+          },
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          }
+        ]
       }
     },
     {
@@ -1149,7 +2067,37 @@
           "src": "/product-porsche-dog-blanket.webp",
           "alt": "Porsche Dog Blanket"
         }
-      ]
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Porsche Hundedecke für komfortable und geschützte Fahrten mit Haustieren. Ein originales Porsche-Zubehörteil für die nahtlose Integration in Ihr Fahrzeug."
+          ],
+          "bullets": [
+            "Echte Porsche-Qualität und Passform.",
+            "Für den praktischen Alltagsgebrauch konzipiert.",
+            "Einfache Montage oder Einrichtung."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Genaue Abmessungen siehe Produktverpackung",
+          "weight": "Je nach Konfiguration"
+        },
+        "materialAndCare": {
+          "material": "Hochwertige Materialien in Automobilqualität",
+          "careInstructions": "Gemäß beiliegender Anleitung reinigen. Aggressive Chemikalien auf empfindlichen Oberflächen vermeiden."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Kompatibilität",
+            "value": "Porsche-Fahrzeuge (siehe Handbuch)"
+          },
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          }
+        ]
+      }
     },
     {
       "id": "product-porsche-cool-bag",
@@ -1189,6 +2137,36 @@
         "amount": 314,
         "currency": "EUR",
         "formatted": "314,00 €"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Porsche Kühltasche, um Speisen und Getränke unterwegs kühl zu halten. Ein originales Porsche-Zubehörteil für die nahtlose Integration in Ihr Fahrzeug."
+          ],
+          "bullets": [
+            "Echte Porsche-Qualität und Passform.",
+            "Für den praktischen Alltagsgebrauch konzipiert.",
+            "Einfache Montage oder Einrichtung."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Genaue Abmessungen siehe Produktverpackung",
+          "weight": "Je nach Konfiguration"
+        },
+        "materialAndCare": {
+          "material": "Hochwertige Materialien in Automobilqualität",
+          "careInstructions": "Gemäß beiliegender Anleitung reinigen. Aggressive Chemikalien auf empfindlichen Oberflächen vermeiden."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Kompatibilität",
+            "value": "Porsche-Fahrzeuge (siehe Handbuch)"
+          },
+          {
+            "label": "Farbe",
+            "value": "Wie abgebildet"
+          }
+        ]
       }
     }
   ]

@@ -191,6 +191,20 @@
       "favorites": "Add to favorites",
       "favoritesRemove": "Remove from favorites",
       "details": "Product details",
+      "detailsSections": {
+        "description": "Description",
+        "dimensionsAndWeight": "Dimensions and weight",
+        "materialAndCare": "Material and care instructions",
+        "generalCharacteristics": "General characteristics"
+      },
+      "detailsFields": {
+        "dimensions": "Dimensions",
+        "weight": "Weight",
+        "material": "Material",
+        "careInstructions": "Care Instructions",
+        "itemNumber": "Item no.",
+        "warning": "WARNING"
+      },
       "sizes": "Sizes",
       "selectSize": "Select size",
       "sizeComparison": {

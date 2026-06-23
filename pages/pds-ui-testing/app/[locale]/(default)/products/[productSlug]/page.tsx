@@ -8,6 +8,7 @@ import {
   PText,
 } from "@porsche-design-system/components-react/ssr";
 import { CatalogProductGrid } from "@/app/components/catalog/CatalogProductGrid";
+import { ProductDetailSections } from "@/app/components/product/ProductDetailSections";
 import { ProductDetailFavoriteButton } from "@/app/components/product/ProductDetailFavoriteButton";
 import { ProductDetailPrice } from "@/app/components/product/ProductDetailPrice";
 import { ProductInquiryFlyout } from "@/app/components/product/ProductInquiryFlyout";
@@ -106,11 +107,11 @@ export default async function ProductDetailPage({ params }: PageProps) {
       </div>
 
       <div className="col-wide grid grid-cols-subgrid">
-        <div className="col-span-full md:col-span-one-half overflow-hidden rounded-lg bg-surface">
+        <div className="col-span-full md:col-span-one-half overflow-hidden rounded-2xl">
           {/* biome-ignore lint/performance/noImgElement: Product detail uses the same public demo assets as PDS tile slots. */}
           <img
             alt={primaryImage?.alt ?? ""}
-            className="aspect-3/4 h-full w-full object-cover"
+            className="aspect-3/4 h-auto w-full object-cover rounded-2xl"
             src={appHref(primaryImage?.src ?? "/home-product-keychain.jpg")}
           />
         </div>
@@ -152,6 +153,19 @@ export default async function ProductDetailPage({ params }: PageProps) {
               <PDivider />
             </>
           ) : null}
+          <section
+            aria-labelledby="product-details-section-heading"
+            className="flex w-full flex-col items-start gap-fluid-md"
+          >
+            <PHeading
+              id="product-details-section-heading"
+              size="medium"
+              tag="h2"
+            >
+              {productDetail.details}
+            </PHeading>
+            <ProductDetailSections copy={productDetail} product={product} />
+          </section>
           <div className="flex flex-wrap gap-static-sm">
             <ProductInquiryFlyout
               copy={productDetail.inquiry}
@@ -167,25 +181,13 @@ export default async function ProductDetailPage({ params }: PageProps) {
               productSlug={product.slug}
             />
           </div>
-          <section
-            aria-labelledby="product-detail-heading"
-            className="flex flex-col items-start gap-static-sm"
-          >
-            <PHeading id="product-detail-heading" size="medium" tag="h2">
-              {productDetail.details}
-            </PHeading>
-            <PText>{product.description}</PText>
-            <PText color="contrast-medium" size="small">
-              {productDetail.sku}: {product.sku}
-            </PText>
-          </section>
         </div>
       </div>
 
       {relatedProducts.length > 0 ? (
         <>
           <div className="col-wide">
-            <PHeading size="2xl" tag="h2">
+            <PHeading size="2xl" tag="h2" align="center">
               {productDetail.relatedProducts}
             </PHeading>
           </div>
