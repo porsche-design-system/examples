@@ -15,6 +15,12 @@ We update our npm packages regularly. Updates are driven by [`syncpack`](#syncpa
 do **not** edit versions in each `package.json` by hand, as syncpack keeps the version ranges consistent across all
 workspaces.
 
+> **Automation & cadence**: The npm update task runs **weekly** (Mondays 06:00 UTC), dispatched to the Copilot coding
+> agent by [`.github/workflows/weekly-dependency-agent.yml`](../.github/workflows/weekly-dependency-agent.yml), which
+> follows the [agent runbook](runbooks/dependency-updates-agent.md). It can also be triggered manually. Dependabot
+> ([`.github/dependabot.yml`](../.github/dependabot.yml)) is scoped to **GitHub Actions** updates only and does not manage
+> npm dependencies, to avoid competing update PRs.
+
 1. Switch to the **project root directory** and make sure you pulled the latest version.
 2. Run `npm run npm:outdated` to see which dependencies have newer versions available (held-back deps are excluded
    automatically, see [Held-back dependencies](#held-back-dependencies)).

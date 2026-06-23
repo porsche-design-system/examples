@@ -10,8 +10,12 @@
 
 - **Goal**: Bump non-held-back npm dependencies to their newest compatible versions, keep the lockfile consistent, and
   open a **single reviewable pull request** with passing builds/tests.
-- **Scope**: npm dependencies across the workspaces (`frameworks/*`, `patterns`, `templates`). This repo has no
-  Dependabot or GitHub Actions automation — the update is run on demand.
+- **Scope**: npm dependencies across the workspaces (`frameworks/*`, `patterns`, `templates`). This task runs **weekly**,
+  dispatched to the Copilot coding agent by
+  [`.github/workflows/weekly-dependency-agent.yml`](../../.github/workflows/weekly-dependency-agent.yml) (Mondays 06:00
+  UTC); it can also be triggered manually. Dependabot is scoped to **GitHub Actions** updates only
+  ([`.github/dependabot.yml`](../../.github/dependabot.yml)) and deliberately does **not** touch npm, so there is a single
+  source of truth for npm updates.
 
 ## Hard rules — never do these
 
