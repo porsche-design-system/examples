@@ -205,6 +205,10 @@
         "itemNumber": "Item no.",
         "warning": "WARNING"
       },
+      "warningBanner": {
+        "heading": "California Proposition 65 Warning",
+        "description": "This product can expose you to chemicals known to the State of California to cause cancer or reproductive harm. See product details for the full notice."
+      },
       "sizes": "Sizes",
       "selectSize": "Select size",
       "sizeComparison": {

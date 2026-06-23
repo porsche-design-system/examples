@@ -205,6 +205,10 @@
         "itemNumber": "Artikelnummer",
         "warning": "WARNUNG"
       },
+      "warningBanner": {
+        "heading": "Kalifornien Proposition 65 Warnung",
+        "description": "Dieses Produkt kann Sie Chemikalien aussetzen, die im US-Bundesstaat Kalifornien als krebserregend oder fortpflanzungsschädigend gelten. Den vollständigen Hinweis finden Sie in den Produktdetails."
+      },
       "sizes": "Größen",
       "selectSize": "Größe auswählen",
       "sizeComparison": {

@@ -10,6 +10,7 @@ import {
 import { CatalogProductGrid } from "@/app/components/catalog/CatalogProductGrid";
 import { ProductDetailSections } from "@/app/components/product/ProductDetailSections";
 import { ProductDetailFavoriteButton } from "@/app/components/product/ProductDetailFavoriteButton";
+import { ProductDetailWarningBanner } from "@/app/components/product/ProductDetailWarningBanner";
 import { ProductDetailPrice } from "@/app/components/product/ProductDetailPrice";
 import { ProductInquiryFlyout } from "@/app/components/product/ProductInquiryFlyout";
 import { ProductSizeComparisonSheet } from "@/app/components/product/ProductSizeComparisonSheet";
@@ -117,6 +118,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
         </div>
 
         <div className="col-span-full md:col-start-11 flex flex-col gap-fluid-md">
+          {product.details.warning ? (
+            <ProductDetailWarningBanner copy={productDetail.warningBanner} />
+          ) : null}
           <div className="flex flex-wrap gap-static-sm">
             {productHasNewReleaseFlag(product) ? (
               <PTag compact key="new-release">

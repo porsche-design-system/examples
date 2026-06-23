@@ -310,7 +310,7 @@ Work through each block **once** on any page (e.g. home).
 
 ## 8. Product detail — `/[locale]/products/[productSlug]/`
 
-Run **§8.1–8.6** on a non-apparel product, then **§8.7** on an apparel product.
+Run **§8.1–8.7** on a non-apparel product, then **§8.8** on an apparel product.
 
 ### 8.1 Wayfinding and overview
 
@@ -322,7 +322,19 @@ Run **§8.1–8.6** on a non-apparel product, then **§8.7** on an apparel produ
 
 **PDS:** `PLinkPure`, `PHeading`, `PText`, `PTag`.
 
-### 8.2 Image and price
+### 8.2 Prop 65 warning banner
+
+On any product with warning data (e.g. `/en/products/porsche-design-baseball-cap/`):
+
+| Step | Action | What to observe |
+|------|--------|-----------------|
+| 1 | Open product detail | `PBanner` in **warning** state appears (fixed top on `s` breakpoint and up); heading and short description announced |
+| 2 | Dismiss banner | Close button works; banner hides; focus is not trapped |
+| 3 | Expand **General characteristics** accordion | Full Prop 65 legal text still available in product details |
+
+**PDS:** `PBanner`.
+
+### 8.3 Image and price
 
 | Step | Action | What to observe |
 |------|--------|-----------------|
@@ -331,7 +343,7 @@ Run **§8.1–8.6** on a non-apparel product, then **§8.7** on an apparel produ
 
 **App:** `ProductDetailPrice`; native `img`.
 
-### 8.3 Favorites on detail
+### 8.4 Favorites on detail
 
 | Step | Action | What to observe |
 |------|--------|-----------------|
@@ -339,7 +351,7 @@ Run **§8.1–8.6** on a non-apparel product, then **§8.7** on an apparel produ
 
 **PDS:** `PButton` or similar favorite control.
 
-### 8.4 Product details accordion
+### 8.5 Product details accordion
 
 | Step | Action | What to observe |
 |------|--------|-----------------|
@@ -349,7 +361,7 @@ Run **§8.1–8.6** on a non-apparel product, then **§8.7** on an apparel produ
 
 **PDS:** `PAccordion`, `PHeading`, `PText`, `PTextList`, `PTextListItem`.
 
-### 8.5 Related products
+### 8.6 Related products
 
 | Step | Action | What to observe |
 |------|--------|-----------------|
@@ -358,7 +370,7 @@ Run **§8.1–8.6** on a non-apparel product, then **§8.7** on an apparel produ
 
 **PDS:** `CatalogProductGrid` / `PLinkTileProduct`.
 
-### 8.6 Product inquiry flyout (critical — many PDS form components)
+### 8.7 Product inquiry flyout (critical — many PDS form components)
 
 Open via inquiry / cart button on detail page.
 
@@ -376,7 +388,7 @@ Open via inquiry / cart button on detail page.
 
 **PDS:** `PFlyout`, `PStepperHorizontal`, `PStepperHorizontalItem`, `PFieldset`, `PRadioGroup`, `PRadioGroupOption`, `PSegmentedControl`, `PSegmentedControlItem`, all inputs listed above, `PInlineNotification`, `PSpinner`, `PButton`.
 
-### 8.7 Apparel only — size selector
+### 8.8 Apparel only — size selector
 
 On `/en/products/womens-t-shirt-essential/` (or similar):
 
@@ -477,7 +489,7 @@ npm run test:a11y:pds-ui-testing
 | 75–85 min | Footer placeholders + language (§9–10) if time |
 | 85–90 min | Debrief: hardest tasks, PDS vs app, quotes |
 
-Adjust pace for participant preference; **inquiry flyout (§8.6)** is the highest-value PDS coverage.
+Adjust pace for participant preference; **inquiry flyout (§8.7)** is the highest-value PDS coverage.
 
 ---
 
@@ -488,9 +500,9 @@ Adjust pace for participant preference; **inquiry flyout (§8.6)** is the highes
 | Header | `PCrest`, `PWordmark`, `PButtonPure`, `PDrilldown`, `PLinkPure`, `PModal`, `PInputSearch` |
 | Home | `PHeading`, `PButton`, `PModal`, `PTextList`, `PLink`, `PLinkTile`, `PCarousel`, `PLinkTileProduct` |
 | Catalog | `PTabsBar`, `PSelect`, `PFlyout`, `PAccordion`, `PCheckbox`, `PTagDismissible`, `PInlineNotification`, `PLinkTileProduct`, `PPopover`, `PTag` |
-| Detail | `PLinkPure`, `PTag`, `PAccordion`, inquiry flyout form set (§8.6), `PSegmentedControl`, `PSheet`, `PTable*` |
+| Detail | `PLinkPure`, `PTag`, `PBanner`, `PAccordion`, inquiry flyout form set (§8.7), `PSegmentedControl`, `PSheet`, `PTable*` |
 | Footer | `PHeading`, `PFlag`, `PText`, `PButton`, `PLink`, `PLinkPure`, `PDivider`, `PWordmark` |
-| Global | `PToast`, favorites live region |
+| Global | `PToast`, `PBanner`, favorites live region |
 
 For component API details, use the [Porsche Design System documentation](https://designsystem.porsche.com/).
 
