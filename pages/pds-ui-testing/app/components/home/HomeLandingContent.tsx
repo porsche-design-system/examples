@@ -4,6 +4,7 @@ import {
   PLink,
   PLinkPure,
   PLinkTile,
+  PAiTag,
   PTag,
   PText,
 } from "@porsche-design-system/components-react/ssr";
@@ -131,7 +132,9 @@ export function HomeLandingContent({
                 <PTag compact slot="header" variant="success">
                   {tile.tagLabel}
                 </PTag>
-              ) : null}
+              ) : (
+                <PAiTag slot="header" />
+              )}
               {/* biome-ignore lint/performance/noImgElement: PLinkTile's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
               <img
                 alt=""
