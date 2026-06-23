@@ -24,4 +24,3 @@ mkdirSync('.generated', { recursive: true });
 writeFileSync('.generated/index.html', transformed);
 
 console.log('Generated .generated/index.html with PDS partials.');
-
