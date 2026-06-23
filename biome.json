@@ -47,6 +47,14 @@
       }
     }
   },
+  "html": {
+    "formatter": {
+      "enabled": true
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
   "javascript": {
     "formatter": {
       "jsxQuoteStyle": "double",
