@@ -47,7 +47,7 @@ const copy = {
 
 describe("ProductDetailWarningBanner", () => {
   it("renders an info banner with heading and description", () => {
-    render(<ProductDetailWarningBanner copy={copy} />);
+    render(<ProductDetailWarningBanner copy={copy} showBanner={true} />);
 
     const banner = screen.getByTestId("warning-banner");
     expect(banner).toHaveAttribute("data-state", "info");
@@ -62,7 +62,7 @@ describe("ProductDetailWarningBanner", () => {
   });
 
   it("dismisses the banner when the close button is clicked", () => {
-    render(<ProductDetailWarningBanner copy={copy} />);
+    render(<ProductDetailWarningBanner copy={copy} showBanner={true} />);
 
     fireEvent.click(screen.getByRole("button", { name: "Close banner" }));
 
