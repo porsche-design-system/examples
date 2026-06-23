@@ -27,6 +27,13 @@ const normalizedBase = basePath && !basePath.endsWith('/') ? `${basePath}/` : ba
 
 export default defineConfig({
   base: normalizedBase,
+  // React Router prerenders by starting a Vite preview server and issuing HTTP requests to it. In CI containers the
+  // default `localhost` host can bind to IPv6 (`::1`) while the prerender request connects to IPv4 (`127.0.0.1`)
+  // (or vice versa), causing `ECONNREFUSED`. Pin the preview host to IPv4 loopback so the bind address and the
+  // request target always match. (Local dev/preview use `react-router dev` / `react-router-serve`, not this server.)
+  preview: {
+    host: '127.0.0.1',
+  },
   css: {
     transformer: 'lightningcss',
     // Disables light-dark() polyfill of lightningcss which is broken https://github.com/porsche-design-system/porsche-design-system/issues/4257
