@@ -19,12 +19,10 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'E2E'
-        run: npm run test:e2e:angular
+      - run: npm run test:e2e:angular
         shell: bash
   e2e-astro:
     name: 'E2E (Astro)'
@@ -33,12 +31,10 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'E2E'
-        run: npm run test:e2e:astro
+      - run: npm run test:e2e:astro
         shell: bash
   e2e-next-js:
     name: 'E2E (Next.js)'
@@ -47,12 +43,10 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'E2E'
-        run: npm run test:e2e:next-js
+      - run: npm run test:e2e:next-js
         shell: bash
   e2e-react:
     name: 'E2E (React)'
@@ -61,12 +55,10 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'E2E'
-        run: npm run test:e2e:react
+      - run: npm run test:e2e:react
         shell: bash
   e2e-react-router:
     name: 'E2E (React Router)'
@@ -75,12 +67,10 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'E2E'
-        run: npm run test:e2e:react-router
+      - run: npm run test:e2e:react-router
         shell: bash
   e2e-vanilla-js:
     name: 'E2E (Vanilla JS)'
@@ -89,12 +79,10 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'E2E'
-        run: npm run test:e2e:vanilla-js
+      - run: npm run test:e2e:vanilla-js
         shell: bash
   e2e-vue:
     name: 'E2E (Vue)'
@@ -103,12 +91,10 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'E2E'
-        run: npm run test:e2e:vue
+      - run: npm run test:e2e:vue
         shell: bash
   e2e-patterns:
     name: 'E2E (Patterns)'
@@ -117,17 +103,14 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'Download artifact'
-        uses: actions/download-artifact@v6
+      - uses: actions/download-artifact@v8
         with:
           name: build-patterns
           path: ./patterns/dist
-      - name: 'E2E'
-        run: npm run test:e2e:patterns
+      - run: npm run test:e2e:patterns
         shell: bash
   a11y-patterns:
     name: 'A11y (Patterns)'
@@ -136,17 +119,14 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install'
         uses: ./.github/actions/install
-      - name: 'Download artifact'
-        uses: actions/download-artifact@v6
+      - uses: actions/download-artifact@v8
         with:
           name: build-patterns
           path: ./patterns/dist
-      - name: 'A11y'
-        run: npm run test:a11y:patterns
+      - run: npm run test:a11y:patterns
         shell: bash
   vrt-patterns:
    name: 'VRT (Patterns)'
@@ -155,21 +135,18 @@ jobs:
      image: ${{ inputs.image }}
      options: --user 1001
    steps:
-     - name: 'Checkout'
-       uses: actions/checkout@v5
+     - uses: actions/checkout@v6
      - name: 'Install'
        uses: ./.github/actions/install
-     - name: 'Download artifact'
-       uses: actions/download-artifact@v6
+     - uses: actions/download-artifact@v8
        with:
          name: build-patterns
          path: ./patterns/dist
-     - name: 'VRT'
-       run: npm run test:vrt:patterns
+     - run: npm run test:vrt:patterns
        shell: bash
      - name: 'VRT Regression'
        if: failure()
-       uses: actions/upload-artifact@v5
+       uses: actions/upload-artifact@v7
        with:
          name: regression-vrt-patterns
          path: ./patterns/tests/vrt/test-results

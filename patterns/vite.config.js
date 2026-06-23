@@ -1,15 +1,14 @@
 import { resolve } from 'node:path';
 import {
   getComponentChunkLinks,
-  getFontFaceStyles,
   getFontLinks,
   getIconLinks,
-  getInitialStyles,
   getLoaderScript,
   getMetaTagsAndIconLinks,
 } from '@porsche-design-system/components-js/partials';
-import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
+import { Features } from 'lightningcss';
+import { defineConfig } from 'vite';
 
 const REGEX_HEAD = /<\/head>/;
 const REGEX_BODY = /<\/body>/;
@@ -28,9 +27,7 @@ const transformIndexHtmlPlugin = () => {
 
       const headPartials = [
         //`<meta http-equiv="Content-Security-Policy" content="${cspContent}"/>`, // disabled due to loading of H&N
-        getInitialStyles(),
         getComponentChunkLinks({ components: ['display', 'text', 'carousel', 'link-tile', 'link-pure', 'link'] }),
-        getFontFaceStyles(),
         getFontLinks(),
         getIconLinks(),
         getMetaTagsAndIconLinks({ appTitle: 'Examples by Porsche Design System' }),
@@ -50,6 +47,13 @@ export default defineConfig({
   emptyOutDir: true,
   server: {
     host: true,
+  },
+  css: {
+    transformer: 'lightningcss',
+    // Disables light-dark() polyfill of lightningcss which is broken https://github.com/porsche-design-system/porsche-design-system/issues/4257
+    lightningcss: {
+      exclude: Features.LightDark,
+    },
   },
   build: {
     outDir: '../dist/',

@@ -11,15 +11,15 @@
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
-    "@astrojs/vue": "^5.1.4",
-    "@porsche-design-system/components-js": "3.32.0-rc.2",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.17.1",
-    "tailwindcss": "^4.1.18",
-    "vue": "^3.5.27"
+    "@astrojs/vue": "^6.0.1",
+    "@porsche-design-system/components-js": "4.1.0",
+    "@tailwindcss/postcss": "^4.2.4",
+    "astro": "^6.1.8",
+    "tailwindcss": "^4.2.4",
+    "vue": "^3.5.32"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.1"
+    "@playwright/test": "^1.59.1"
   },
   "volta": {
     "extends": "../../package.json"

@@ -1,4 +1,4 @@
-import { PSelect, type PSelectProps, type SelectUpdateEventDetail } from '@porsche-design-system/components-react/ssr';
+import { PSelect, type PSelectProps } from '@porsche-design-system/components-react/ssr';
 import type { PropsWithChildren } from 'react';
 import { type Control, Controller, type ControllerProps, type FieldValues, type Path } from 'react-hook-form';
 
@@ -24,7 +24,7 @@ export const FormPSelect = <T extends FieldValues>({
         <PSelect
           name={name}
           onBlur={onBlur}
-          onUpdate={(e: CustomEvent<SelectUpdateEventDetail>) => onChange(e.detail.value)}
+          onChange={onChange}
           value={value}
           state={fieldState.error ? 'error' : 'none'}
           {...rest}
