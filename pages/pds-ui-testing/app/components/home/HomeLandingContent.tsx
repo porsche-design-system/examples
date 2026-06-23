@@ -133,7 +133,10 @@ export function HomeLandingContent({
                   {tile.tagLabel}
                 </PTag>
               ) : (
-                <PAiTag slot="header" />
+                <PAiTag
+                  slot="header"
+                  locale={locale === "en" ? "en_US" : "de_DE"}
+                />
               )}
               {/* biome-ignore lint/performance/noImgElement: PLinkTile's default slot expects a bare <img>; next/image's wrapper breaks the slot. */}
               <img

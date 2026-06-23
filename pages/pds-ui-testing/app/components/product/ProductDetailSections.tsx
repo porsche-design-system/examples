@@ -12,6 +12,7 @@ import {
   type AccordionUpdateEventDetail,
 } from "@porsche-design-system/components-react/ssr";
 import type { CatalogProduct } from "@/app/data/get-catalog";
+import type { Locale } from "@/app/i18n/config";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
 
 export type ProductDetailSectionsCopy = Dictionary["pages"]["productDetail"];
@@ -25,6 +26,7 @@ type PanelKey =
 type Props = {
   product: CatalogProduct;
   copy: ProductDetailSectionsCopy;
+  locale: Locale;
 };
 
 function LabeledField({ label, value }: { label: string; value: string }) {
@@ -38,7 +40,7 @@ function LabeledField({ label, value }: { label: string; value: string }) {
   );
 }
 
-export function ProductDetailSections({ product, copy }: Props) {
+export function ProductDetailSections({ product, copy, locale }: Props) {
   const { details } = product;
   const [openPanels, setOpenPanels] = useState<Record<PanelKey, boolean>>({
     description: false,
@@ -142,7 +144,12 @@ export function ProductDetailSections({ product, copy }: Props) {
           <PHeading slot="summary" size="small" tag="h3" weight="semibold">
             {title}
           </PHeading>
-          {key === "description" && <PAiTag slot="summary-after" />}
+          {key === "description" && (
+            <PAiTag
+              slot="summary-after"
+              locale={locale === "en" ? "en_US" : "de_DE"}
+            />
+          )}
           {content}
         </PAccordion>
       ))}
