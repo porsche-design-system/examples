@@ -50,16 +50,24 @@
     "test:a11y:patterns": "npm run test:a11y --workspace=@porsche-design-system/patterns",
     "test:vrt:patterns": "npm run test:vrt --workspace=@porsche-design-system/patterns",
     "npm:install": "npm install",
-    "npm:outdated": "npm outdated --workspaces",
-    "npm:upgrade": "npx npm-check-updates --workspaces -u && npm install",
+    "npm:lint": "syncpack lint",
+    "npm:lint:fix": "syncpack fix",
+    "npm:list": "syncpack list --show all --sort count",
+    "npm:format": "syncpack format --check",
+    "npm:format:fix": "syncpack format",
+    "npm:outdated": "syncpack update --check --dependencies '!@porsche-design-system/**'",
+    "npm:update": "syncpack update --interactive --dependencies '!@porsche-design-system/**'",
+    "npm:audit": "npm audit",
     "npm:remove": "find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\;",
     "npm:clean": "npm cache clean --force"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.12",
-    "prettier": "^3.8.3"
+    "prettier": "^3.8.3",
+    "syncpack": "^15.3.2"
   },
   "volta": {
-    "node": "24.14.1"
+    "node": "24.15.0",
+    "npm": "11.12.1"
   }
 }
