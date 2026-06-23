@@ -168,7 +168,11 @@ export default async function ProductDetailPage({ params }: PageProps) {
             >
               {productDetail.details}
             </PHeading>
-            <ProductDetailSections copy={productDetail} product={product} />
+            <ProductDetailSections
+              copy={productDetail}
+              product={product}
+              locale={locale}
+            />
           </section>
           <div className="flex flex-wrap gap-static-sm">
             <ProductInquiryFlyout
