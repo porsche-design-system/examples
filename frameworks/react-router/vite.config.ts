@@ -2,7 +2,6 @@ import { reactRouter } from '@react-router/dev/vite';
 import tailwindcss from '@tailwindcss/vite';
 import { Features } from 'lightningcss';
 import { defineConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig(({ isSsrBuild }) => {
   // Ensure base path ends with '/' since the React Router Vite plugin reads
@@ -23,6 +22,10 @@ export default defineConfig(({ isSsrBuild }) => {
         exclude: Features.LightDark,
       },
     },
-    plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+    // Native tsconfig paths resolution (replaces the deprecated vite-tsconfig-paths plugin in Vite 8).
+    resolve: {
+      tsconfigPaths: true,
+    },
+    plugins: [tailwindcss(), reactRouter()],
   };
 });
