@@ -49,7 +49,7 @@ export function CatalogProductGrid({
                 {productHasNewReleaseFlag(product) ? (
                   <PTag compact>{newReleaseTagLabel}</PTag>
                 ) : null}
-                <PPopover>{product.description}</PPopover>
+                <PPopover className="z-1">{product.description}</PPopover>
               </span>
             </FavoriteLinkTileProduct>
           </article>
