@@ -55,8 +55,8 @@
     "npm:list": "syncpack list --show all --sort count",
     "npm:format": "syncpack format --check",
     "npm:format:fix": "syncpack format",
-    "npm:outdated": "syncpack update --check --dependencies '!@porsche-design-system/**'",
-    "npm:update": "syncpack update --interactive --dependencies '!@porsche-design-system/**'",
+    "npm:outdated": "syncpack update --check",
+    "npm:update": "syncpack update --interactive",
     "npm:audit": "npm audit",
     "npm:remove": "find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\;",
     "npm:clean": "npm cache clean --force"
