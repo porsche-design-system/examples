@@ -16,13 +16,10 @@ vi.mock("@porsche-design-system/components-react/ssr", () => ({
       {children}
     </div>
   ),
-  PHeading: ({
-    children,
-    slot,
-  }: {
-    children?: ReactNode;
-    slot?: string;
-  }) => <h3 data-slot={slot}>{children}</h3>,
+  PHeading: ({ children, slot }: { children?: ReactNode; slot?: string }) => (
+    <h3 data-slot={slot}>{children}</h3>
+  ),
+  PAiTag: () => "",
   PText: ({ children }: { children?: ReactNode }) => <p>{children}</p>,
   PTextList: ({ children }: { children?: ReactNode }) => <ul>{children}</ul>,
   PTextListItem: ({ children }: { children?: ReactNode }) => (
@@ -55,7 +52,9 @@ describe("ProductDetailSections", () => {
 
     expect(screen.getByText("Description")).toBeInTheDocument();
     expect(screen.getByText("Dimensions and weight")).toBeInTheDocument();
-    expect(screen.getByText("Material and care instructions")).toBeInTheDocument();
+    expect(
+      screen.getByText("Material and care instructions"),
+    ).toBeInTheDocument();
     expect(screen.getByText("General characteristics")).toBeInTheDocument();
     expect(screen.getByText("Item no.: WAP-TEST-001")).toBeInTheDocument();
     expect(screen.getByText("Extended test description.")).toBeInTheDocument();
