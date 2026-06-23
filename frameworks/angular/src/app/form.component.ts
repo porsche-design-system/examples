@@ -123,10 +123,10 @@ export class FormPageComponent {
     const value = control.value || '';
     const errors: ValidationErrors = {};
     if (!value) return { required: true };
-    if (value.length < 8) errors.min = true;
-    if (!/\d/.test(value)) errors.number = true;
-    if (!/[A-Z]/.test(value)) errors.uppercase = true;
-    if (!/[!@#$%^&*]/.test(value)) errors.special = true;
+    if (value.length < 8) errors['min'] = true;
+    if (!/\d/.test(value)) errors['number'] = true;
+    if (!/[A-Z]/.test(value)) errors['uppercase'] = true;
+    if (!/[!@#$%^&*]/.test(value)) errors['special'] = true;
     return Object.keys(errors).length ? errors : null;
   }
 

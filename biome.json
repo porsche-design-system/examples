@@ -138,6 +138,16 @@
           }
         }
       }
+    },
+    {
+      "includes": ["frameworks/angular/**"],
+      "linter": {
+        "rules": {
+          "complexity": {
+            "useLiteralKeys": "off"
+          }
+        }
+      }
     }
   ]
 }
