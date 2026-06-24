@@ -9,7 +9,7 @@ import {
 import { PorscheDesignSystemProvider } from "@porsche-design-system/components-react/ssr";
 import { ProductFavoriteToasts } from "@/app/components/favorites/ProductFavoriteToasts";
 import { ProductFavoritesProvider } from "@/app/components/favorites/ProductFavoritesProvider";
-import { GlobalFooter } from "@/app/components/layout/GlobalFooter";
+import { GlobalFooter } from "@/app/components/footer/GlobalFooter";
 import { isLocale, locales, type Locale } from "@/app/i18n/config";
 import { getDictionary } from "@/app/i18n/get-dictionary";
 import "@/app/globals.css";
