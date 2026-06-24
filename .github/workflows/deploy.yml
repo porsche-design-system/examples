@@ -2,12 +2,17 @@ name: 'Deploy'
 
 on:
   workflow_call:
+    inputs:
+      gh-pages-slug:
+        description: 'Deploy target slug (e.g. "nightly", "pr-123", "v4"), used as the gh-pages folder.'
+        required: true
+        type: string
 
 permissions:
   contents: write
 
 env:
-  BRANCH_BASE_PATH: ${{ github.ref_name == 'main' && 'nightly' || github.ref_name }}
+  BRANCH_BASE_PATH: ${{ inputs.gh-pages-slug }}
 
 jobs:
   deploy:
