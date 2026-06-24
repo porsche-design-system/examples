@@ -1,12 +1,11 @@
-"use client";
+'use client';
 
-import { useCallback, useEffect, useLayoutEffect, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import { appHref } from '@/app/i18n/href';
 
 function readWindowSearchParams(): URLSearchParams {
-  return new URLSearchParams(
-    typeof window === "undefined" ? "" : window.location.search,
-  );
+  return new URLSearchParams(typeof window === 'undefined' ? '' : window.location.search);
 }
 
 /**
@@ -15,13 +14,17 @@ function readWindowSearchParams(): URLSearchParams {
  * In static export preview (`output: "export"`), `router.replace` alone does not always
  * update `useSearchParams()` when the page is opened with a query string. Local state
  * plus `history.replaceState` ensures filter chips and the product grid react immediately.
+ *
+ * `usePathname()` omits `NEXT_PUBLIC_BASE_PATH`; `history.replaceState` with a leading
+ * `/` is resolved from the site origin, not `<base href>`. Prepend the base path via
+ * {@link appHref} so GitHub Pages deploys under a sub-path keep the correct URL.
  */
 export function useCatalogQueryParams() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const [params, setParams] = useState<URLSearchParams>(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       return readWindowSearchParams();
     }
     return new URLSearchParams(searchParams.toString());
@@ -48,23 +51,24 @@ export function useCatalogQueryParams() {
     const onPopState = () => {
       setParams(readWindowSearchParams());
     };
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
   const replaceParams = useCallback(
     (next: URLSearchParams) => {
       const snapshot = new URLSearchParams(next.toString());
       const query = snapshot.toString();
-      const href = query ? `${pathname}?${query}` : pathname;
+      const pathWithBase = appHref(pathname);
+      const href = query ? `${pathWithBase}?${query}` : pathWithBase;
 
       setParams(snapshot);
 
-      if (typeof window !== "undefined") {
-        window.history.replaceState(window.history.state, "", href);
+      if (typeof window !== 'undefined') {
+        window.history.replaceState(window.history.state, '', href);
       }
     },
-    [pathname],
+    [pathname]
   );
 
   return { params, replaceParams };
