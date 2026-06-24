@@ -44,6 +44,7 @@ export default async function HomePage({ params }: HomePageProps) {
         heading={home.heroHeading}
         modal={home.heroModal}
         productsHref={productsIndexHref(locale)}
+        locale={locale}
       />
       <HomeLandingContent
         home={home}

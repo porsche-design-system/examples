@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import {
+  PAiTag,
   PButton,
   PHeading,
   PLink,
@@ -14,6 +15,7 @@ import {
 import { PAGE_HEADING_ID } from "@/app/lib/skip-to-page-heading";
 import type { Dictionary } from "@/app/i18n/get-dictionary";
 import { appHref } from "@/app/i18n/href";
+import type { Locale } from "@/app/i18n/config";
 
 type HeroModalCopy = Dictionary["pages"]["home"]["heroModal"];
 
@@ -24,6 +26,7 @@ type Props = {
   ctaLabel: string;
   modal: HeroModalCopy;
   productsHref: string;
+  locale: Locale;
 };
 
 /**
@@ -36,6 +39,7 @@ export function HomeHero({
   ctaLabel,
   modal,
   productsHref,
+  locale,
 }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -104,6 +108,7 @@ export function HomeHero({
           </div>
         </PModal>
       </div>
+      <PAiTag locale={locale === "en" ? "en_US" : "de_DE"} className="absolute z-3 right-fluid-md bottom-fluid-md"/>
     </section>
   );
 }
