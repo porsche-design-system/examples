@@ -54,6 +54,7 @@ export function HomeHero({
         className="object-cover rounded-b-4xl"
         fill
         priority
+        fetchPriority="high"
         sizes="(max-width: 1920px) 100vw, 1920px"
         src={appHref("/home-teaser.jpg")}
       />
@@ -98,17 +99,17 @@ export function HomeHero({
             </PTextList>
             <PText color="contrast-medium">{modal.outro}</PText>
             <div>
-              <PLink
-                href={productsHref}
-                variant="secondary"
-              >
+              <PLink href={productsHref} variant="secondary">
                 {modal.close}
               </PLink>
             </div>
           </div>
         </PModal>
       </div>
-      <PAiTag locale={locale === "en" ? "en_US" : "de_DE"} className="absolute z-3 right-fluid-md bottom-fluid-md"/>
+      <PAiTag
+        locale={locale === "en" ? "en_US" : "de_DE"}
+        className="absolute z-3 right-fluid-md bottom-fluid-md"
+      />
     </section>
   );
 }
