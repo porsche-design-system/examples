@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/examples/pr-226/pds-ui-testing/_next/static/chunks/1d4h-sglyo8ft.js","/examples/pr-226/pds-ui-testing/_next/static/chunks/14mumt5_n0xhi.js"],"ViewportBoundary"]
+3:I[97367,["/examples/pr-226/pds-ui-testing/_next/static/chunks/1d4h-sglyo8ft.js","/examples/pr-226/pds-ui-testing/_next/static/chunks/14mumt5_n0xhi.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Porsche at a Glance | PDS UI Testing"}],["$","meta","1",{"name":"description","content":"Minimal technical baseline for accessibility testing of Porsche Design System components."}]]}]}]}],null]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"R4-ttEcLOO-UYiWBiQf-z"}
