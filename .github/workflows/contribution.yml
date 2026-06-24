@@ -68,6 +68,11 @@ jobs:
       - build
   deploy:
     name: 'Deploy'
+    # Elevate at the call site: the workflow-level default is `contents: read`, but the reusable
+    # deploy.yml pushes to gh-pages and therefore needs `contents: write`. A called reusable
+    # workflow can never exceed the permissions granted by the calling job, so we grant it here.
+    permissions:
+      contents: write
     # gh-pages writes are NOT possible on pull_request events from forks (read-only token),
     # and we must not attempt them. Run deploy only for:
     #   - any push event (always from a trusted branch, see `on.push.branches`)
