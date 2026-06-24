@@ -57,6 +57,7 @@ export function HomeHero({
         fetchPriority="high"
         sizes="(max-width: 1920px) 100vw, 1920px"
         src={appHref("/home-teaser.jpg")}
+        aria-describedby="ai-tag-hero"
       />
       <div className="z-2 col-extended row-span-full mb-fluid-xl flex flex-col gap-fluid-md items-start">
         <PHeading
@@ -109,6 +110,7 @@ export function HomeHero({
       <PAiTag
         locale={locale === "en" ? "en_US" : "de_DE"}
         className="absolute z-3 right-fluid-md bottom-fluid-md"
+        id="ai-tag-hero"
       />
     </section>
   );

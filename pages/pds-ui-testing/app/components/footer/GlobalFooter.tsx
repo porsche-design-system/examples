@@ -112,8 +112,6 @@ export function GlobalFooter({ dictionary, locale }: Props) {
                     hideLabel
                     href={footer.socialUrls[key]}
                     icon={icon}
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     {footer.socialLabels[key]}
                   </PLink>
