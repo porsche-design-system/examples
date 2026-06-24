@@ -7,12 +7,16 @@ on:
         description: 'Docker image to be used in workflow.'
         required: true
         type: string
+      gh-pages-slug:
+        description: 'Deploy target slug (e.g. "nightly", "pr-123", "v4"), used as the base path segment.'
+        required: true
+        type: string
 
 permissions:
   contents: read
 
 env:
-  BRANCH_BASE_PATH: ${{ github.ref_name == 'main' && 'nightly' || github.ref_name }}
+  BRANCH_BASE_PATH: ${{ inputs.gh-pages-slug }}
 
 jobs:
   lint:

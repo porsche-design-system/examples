@@ -1,18 +1,64 @@
 name: 'Contribution'
 
+# Triggers:
+# - push: only on protected/version branches → full pipeline incl. deploy
+# - pull_request: every PR (incl. forks) → build + test always;
+#     - deploy is gated below to keep gh-pages writes out of fork PRs.
 on:
   push:
+    branches:
+      - main
+      - 'v[0-9]'      # v0–v9
+      - 'v[0-9][0-9]' # v10–v99
+  pull_request:
 
+# Principle of least privilege at workflow level; individual jobs (incl. reusable workflows
+# called via `uses:`) elevate as needed via their own `permissions:` block.
 permissions:
-  contents: write
-  actions: read
+  contents: read
+
+# Cancel in-flight runs on the same ref when superseded by a newer commit — but only for
+# pull_request events. Never cancel a `push` run on main/v* version branches: that would
+# risk killing an in-progress deploy to gh-pages.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
+  context:
+    name: 'Context'
+    # Resolve the deployment target (used as both the build-time base path AND the
+    # gh-pages folder at deploy time) ONCE here, so build and deploy can never disagree.
+    #
+    # Strategy:
+    #   - pull_request → "pr-<number>"  (avoids "<n>/merge" with embedded slash
+    #                                    that github.ref_name would yield)
+    #   - push to main → "nightly"
+    #   - push to other branches (v*) → branch name
+    runs-on: ubuntu-latest
+    outputs:
+      gh-pages-slug: ${{ steps.resolve.outputs.gh-pages-slug }}
+    steps:
+      - name: 'Resolve'
+        id: resolve
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            gh_pages_slug="pr-${{ github.event.pull_request.number }}"
+          elif [[ "${{ github.ref_name }}" == "main" ]]; then
+            gh_pages_slug="nightly"
+          else
+            gh_pages_slug="${{ github.ref_name }}"
+          fi
+          echo "gh-pages-slug=${gh_pages_slug}" >> "$GITHUB_OUTPUT"
+          echo "Resolved deploy target: ${gh_pages_slug}"
   build:
     name: 'Build'
     uses: ./.github/workflows/build.yml
     with:
       image: mcr.microsoft.com/playwright:v1.61.0
+      gh-pages-slug: ${{ needs.context.outputs.gh-pages-slug }}
+    needs:
+      - context
   test:
     name: 'Test'
     uses: ./.github/workflows/test.yml
@@ -22,7 +68,22 @@ jobs:
       - build
   deploy:
     name: 'Deploy'
-    if: github.actor != 'dependabot[bot]'
+    # Elevate at the call site: the workflow-level default is `contents: read`, but the reusable
+    # deploy.yml pushes to gh-pages and therefore needs `contents: write`. A called reusable
+    # workflow can never exceed the permissions granted by the calling job, so we grant it here.
+    permissions:
+      contents: write
+    # gh-pages writes are NOT possible on pull_request events from forks (read-only token),
+    # and we must not attempt them. Run deploy only for:
+    #   - any push event (always from a trusted branch, see `on.push.branches`)
+    #   - pull_request events whose head is in this repository (internal PRs), excluding dependabot
+    if: >-
+      github.event_name == 'push' ||
+      (github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]')
     uses: ./.github/workflows/deploy.yml
+    with:
+      gh-pages-slug: ${{ needs.context.outputs.gh-pages-slug }}
     needs:
+      - context
+      - build
       - test
