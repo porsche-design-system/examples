@@ -3,7 +3,9 @@ import {
   PRODUCTS_FAVORITES_QUERY,
   PRODUCTS_FAVORITES_VALUE,
   appHref,
+  contactHref,
   localeHomeHref,
+  newsletterHref,
   productDetailHref,
   productsFavoritesHref,
   productsFilterHref,
@@ -54,6 +56,16 @@ describe("href helpers", () => {
       expect(productsFavoritesHref("en")).toBe(
         `/en/products/?${PRODUCTS_FAVORITES_QUERY}=${PRODUCTS_FAVORITES_VALUE}`,
       );
+    });
+
+    it("builds newsletter href with trailing slash", () => {
+      expect(newsletterHref("en")).toBe("/en/newsletter/");
+      expect(newsletterHref("de")).toBe("/de/newsletter/");
+    });
+
+    it("builds contact href with trailing slash", () => {
+      expect(contactHref("en")).toBe("/en/contact/");
+      expect(contactHref("de")).toBe("/de/contact/");
     });
   });
 
