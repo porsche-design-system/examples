@@ -30,7 +30,7 @@ export const FormPInputPassword = <T extends FieldValues>({
             name={name}
             onBlur={onBlur}
             onInput={(e) => {
-              onChange((e as any).detail.target.value); // TODO: Change to onChange and target.value after PDS update
+              onChange((e.detail.target as HTMLInputElement).value); // TODO: Change to onChange and target.value after PDS update
             }}
             value={value}
             state={fieldState.error ? 'error' : 'none'}

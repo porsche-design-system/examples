@@ -176,3 +176,11 @@ Any command can also be executed in a Docker container by running it with `./doc
 - `./docker.sh npm run test:a11y:patterns`
 - `./docker.sh npm run test:vrt:patterns`
 - …
+
+---
+
+## Security
+
+Found a vulnerability? Please **do not** open a public issue. Report it privately via GitHub's security advisories — see
+our [Security Policy](./SECURITY.md) for the process, scope and response times.
+

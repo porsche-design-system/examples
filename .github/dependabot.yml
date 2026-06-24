@@ -1,4 +1,10 @@
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+#
+# Scope: GitHub Actions only. npm dependency updates are intentionally NOT handled
+# here — they run weekly via the Copilot coding agent
+# (.github/workflows/weekly-dependency-agent.yml), which follows
+# docs/runbooks/dependency-updates-agent.md (syncpack flow, held-back deps, single PR).
+# Keeping both would produce competing npm PRs.
 
 version: 2
 updates:
@@ -12,14 +18,3 @@ updates:
         patterns:
           - "*"
 
-  # Maintain dependencies for npm
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    ignore:
-      - dependency-name: "@playwright/test"
-    groups:
-      npm-updates:
-        patterns:
-          - "*"
