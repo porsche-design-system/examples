@@ -26,7 +26,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       - run: npm run lint
@@ -37,7 +37,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       - run: npm run build --workspace=@porsche-design-system/angular
@@ -54,7 +54,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       - run: npm run build --workspace=@porsche-design-system/astro
@@ -71,7 +71,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       - run: npm run build --workspace=@porsche-design-system/next-js
@@ -88,7 +88,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       - run: npm run build --workspace=@porsche-design-system/react
@@ -105,7 +105,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       - run: npm run build --workspace=@porsche-design-system/react-router
@@ -129,7 +129,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       - run: npm run build --workspace=@porsche-design-system/vanilla-js
@@ -146,7 +146,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       - run: npm run build --workspace=@porsche-design-system/vue
@@ -163,7 +163,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       - run: npm run build --workspace=@porsche-design-system/patterns
@@ -180,7 +180,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       - run: npm run build --workspace=@porsche-design-system/templates
