@@ -17,7 +17,7 @@ After a session, the team should be able to answer:
 | Question | Example evidence |
 |----------|------------------|
 | Can users **orient** on each page (landmarks, headings, page title)? | Participant finds the main heading without sighted help |
-| Can users **complete core tasks** (browse, filter, open a product, start an inquiry)? | Task completed within a reasonable time; no dead ends |
+| Can users **complete core tasks** (browse, filter, open a product, start an inquiry, use footer forms)? | Task completed within a reasonable time; no dead ends |
 | Are **PDS components** announced and operable as expected? | Radio groups, flyouts, steppers, tiles behave predictably in NVDA/VoiceOver |
 | Where do users **stall, misinterpret, or fail**? | Timestamped notes, quotes, severity |
 | Are issues **PDS-specific**, **app-integration**, or **content/demo**? | Tagged findings (see §10) |
@@ -27,6 +27,7 @@ After a session, the team should be able to answer:
 - Legal WCAG conformance sign-off for a live Porsche shop
 - Performance, visual design critique, or copywriting quality (except where copy blocks understanding)
 - Backend, payment, account, or real order flows (they do not exist)
+- Real newsletter delivery, contact routing, or server-side form storage (demo forms only)
 
 ---
 
@@ -35,7 +36,7 @@ After a session, the team should be able to answer:
 | Aspect | Detail |
 |--------|--------|
 | **Stack** | Next.js App Router, static export, React 19, PDS v4 (`@porsche-design-system/components-react`) |
-| **Pattern** | Demo e-commerce: home → catalog → product detail → inquiry |
+| **Pattern** | Demo e-commerce: home → catalog → product detail → inquiry; footer newsletter and contact forms |
 | **Locales** | `en` (default), `de` — URLs are `/en/…` and `/de/…` |
 | **Persistence** | Favorites stored in **session storage** only (lost when the tab closes) |
 | **Hosting** | Local dev (`http://localhost:3010`) or static preview after build |
@@ -47,6 +48,8 @@ After a session, the team should be able to answer:
 | `/[locale]/` | Home — transparent header, hero, lifestyle tiles, carousel, feature tiles |
 | `/[locale]/products/` | Product catalog — filters, sort, favorites filter, product grid |
 | `/[locale]/products/[productSlug]/` | Product detail — pricing, sizes (apparel), inquiry flyout, related products |
+| `/[locale]/newsletter/` | Newsletter subscription — validated demo form, dummy submit result |
+| `/[locale]/contact/` | Contact form — validated demo form, dummy submit result |
 | `/[locale]/company/[companySlug]/` | Footer placeholder (5 slugs) |
 | `/[locale]/legal/[legalSlug]/` | Footer placeholder (5 slugs) |
 
@@ -56,6 +59,11 @@ After a session, the team should be able to answer:
 - **Apparel (sizes + size chart):** `/en/products/womens-t-shirt-essential/`
 - **Reduced price (sale copy on tile):** any product with a strikethrough price in the catalog
 
+**Suggested footer form entry points (English):**
+
+- **Newsletter:** `/en/newsletter/` (footer **Subscribe**)
+- **Contact:** `/en/contact/` (footer **Contact Form**)
+
 ---
 
 ## 3. Important: this is not a real application
@@ -63,8 +71,8 @@ After a session, the team should be able to answer:
 Please set this expectation with participants **before** the session:
 
 1. **Content is fictional or placeholder** — product names, prices, legal text, and company pages are for layout and component coverage only.
-2. **Functionality is reduced** — newsletter subscribe, contact form, and social links do not perform real actions; footer company/legal pages show a short “dummy” notice.
-3. **Forms do not submit to a server** — the product inquiry flyout validates locally, shows a loading state, then a success message. No email is sent and no data is stored server-side.
+2. **Social links are external only** — footer social icons open real Porsche network URLs in a new tab; they are not part of the demo shop flow.
+3. **Forms do not submit to a server** — the product inquiry flyout, newsletter page, and contact page validate locally, show a loading state, then a success message. No email is sent and no data is stored server-side.
 4. **Search is client-side** over a static JSON catalog — results are demo data, not live inventory.
 5. **Favorites are session-only** — refreshing may clear state depending on browser settings; this is intentional for testing.
 6. **Do not report “missing checkout” or “wrong legal text”** as accessibility defects unless they hide information from assistive technology.
@@ -174,13 +182,13 @@ Work through each block **once** on any page (e.g. home).
 | Area | Components | What to observe |
 |------|------------|-----------------|
 | Region / language | `PHeading`, `PFlag`, `PText`, language link | Headings structure; language switch announces target language |
-| Newsletter | `PHeading`, `PText`, `PButton` | Button is present; no real signup — note if users expect confirmation |
-| Contact | `PButton` | Same as above |
+| Newsletter | `PHeading`, `PText`, `PLink` | Secondary link navigates to `/[locale]/newsletter/` (see §9.1) |
+| Contact | `PHeading`, `PText`, `PLink` | Secondary link navigates to `/[locale]/contact/` (see §9.2) |
 | Social | `PLink` list with `aria-label` per network | Icon-only links have accessible names; `target="_blank"` |
 | Company links | `nav` + `PLinkPure` | Five links; each opens placeholder page with h1 + notice |
 | Legal row | `PLinkPure`, disclaimer text | Links to legal placeholders |
 
-**PDS:** `PHeading`, `PFlag`, `PText`, `PButton`, `PLink`, `PLinkPure`, `PDivider`, `PWordmark`.
+**PDS:** `PHeading`, `PFlag`, `PText`, `PLink`, `PLinkPure`, `PDivider`, `PWordmark`.
 
 ### 5.7 Favorites toast (global)
 
@@ -403,7 +411,41 @@ On `/en/products/womens-t-shirt-essential/` (or similar):
 
 ---
 
-## 9. Placeholder pages (footer targets)
+## 9. Footer-linked pages
+
+### 9.1 Newsletter subscription — `/[locale]/newsletter/`
+
+Reach via footer **Subscribe** link (English) / **Anmelden** (German), or open `/en/newsletter/` directly.
+
+| Step | Action | What to observe |
+|------|--------|-----------------|
+| 1 | Skip to main | **h1** “Newsletter” (localized); intro copy explains demo-only behaviour |
+| 2 | Tab through form | `PFieldset` groups fields; first name and email are required |
+| 3 | Submit empty form | Error summary `PInlineNotification`; field messages; focus moves to first invalid field |
+| 4 | Enter invalid email | Email field error state and message |
+| 5 | Complete required fields and privacy | `PCheckbox` with `PPopover` on label-after for consent info |
+| 6 | Submit valid form | `PSpinner` + polite `role="status"` region (~5 s); then success `PInlineNotification` |
+| 7 | Activate “Subscribe another email” | Form resets to initial state |
+
+**PDS:** `PHeading`, `PText`, `PFieldset`, `PInputText`, `PInputEmail`, `PCheckbox`, `PPopover`, `PInlineNotification`, `PSpinner`, `PButton`.
+
+### 9.2 Contact form — `/[locale]/contact/`
+
+Reach via footer **Contact Form** link, or open `/en/contact/` directly.
+
+| Step | Action | What to observe |
+|------|--------|-----------------|
+| 1 | Skip to main | **h1** “Contact” (localized); intro copy explains demo-only behaviour |
+| 2 | Tab through contact fieldset | First name, last name, and email in a responsive grid |
+| 3 | Submit empty form | Error summary; per-field messages; focus on first invalid field |
+| 4 | Complete contact fields; leave message empty | Message `PTextarea` shows required error |
+| 5 | Fill message and accept privacy | `PTextarea` counter/max length (500); `PCheckbox` + `PPopover` |
+| 6 | Submit valid form | `PSpinner` + polite status (~5 s); then success notification |
+| 7 | Activate “Send another message” | Form resets |
+
+**PDS:** `PHeading`, `PText`, `PFieldset`, `PInputText`, `PInputEmail`, `PTextarea`, `PCheckbox`, `PPopover`, `PInlineNotification`, `PSpinner`, `PButton`.
+
+### 9.3 Placeholder pages (company & legal)
 
 Quick pass — one company and one legal page is enough unless time allows all ten.
 
@@ -411,7 +453,7 @@ Quick pass — one company and one legal page is enough unless time allows all t
 |------|--------|-----------------|
 | 1 | From footer, open e.g. `/en/company/glance/` | **h1** title; short notice that page is a placeholder |
 | 2 | Open e.g. `/en/legal/notice/` | Same pattern |
-| 3 | Confirm header/footer still usable | Skip link, nav, language switch |
+| 3 | Confirm header/footer still usable | Skip link, nav, language switch; newsletter/contact links still work |
 
 **App:** `FooterDummyPage` — `PHeading`, `PText`.
 
@@ -486,10 +528,10 @@ npm run test:a11y:pds-ui-testing
 | 10–25 min | Home + global chrome (§5–6) |
 | 25–50 min | Catalog: filter, sort, favorites, open product (§7) |
 | 50–75 min | Product detail + inquiry flyout + apparel sizes (§8) |
-| 75–85 min | Footer placeholders + language (§9–10) if time |
+| 75–85 min | Footer newsletter + contact forms + placeholders (§9); language (§10) if time |
 | 85–90 min | Debrief: hardest tasks, PDS vs app, quotes |
 
-Adjust pace for participant preference; **inquiry flyout (§8.7)** is the highest-value PDS coverage.
+Adjust pace for participant preference; **inquiry flyout (§8.7)** covers the widest PDS form set. **Newsletter (§9.1)** and **contact (§9.2)** are shorter standalone form scenarios worth including when time allows.
 
 ---
 
@@ -498,14 +540,16 @@ Adjust pace for participant preference; **inquiry flyout (§8.7)** is the highes
 | Area | Components |
 |------|------------|
 | Header | `PCrest`, `PWordmark`, `PButtonPure`, `PDrilldown`, `PLinkPure`, `PModal`, `PInputSearch` |
-| Home | `PHeading`, `PButton`, `PModal`, `PTextList`, `PLink`, `PLinkTile`, `PCarousel`, `PLinkTileProduct` |
+| Home | `PHeading`, `PButton`, `PModal`, `PTextList`, `PLink`, `PLinkTile`, `PCarousel`, `PLinkTileProduct`, `PAiTag` |
 | Catalog | `PTabsBar`, `PSelect`, `PFlyout`, `PAccordion`, `PCheckbox`, `PTagDismissible`, `PInlineNotification`, `PLinkTileProduct`, `PPopover`, `PTag` |
-| Detail | `PLinkPure`, `PTag`, `PBanner`, `PAccordion`, inquiry flyout form set (§8.7), `PSegmentedControl`, `PSheet`, `PTable*` |
-| Footer | `PHeading`, `PFlag`, `PText`, `PButton`, `PLink`, `PLinkPure`, `PDivider`, `PWordmark` |
+| Detail | `PLinkPure`, `PTag`, `PBanner`, `PAccordion`, inquiry flyout form set (§8.7), `PSegmentedControl`, `PSheet`, `PTable*`, `PAiTag` |
+| Newsletter | `PFieldset`, `PInputText`, `PInputEmail`, `PCheckbox`, `PPopover`, `PInlineNotification`, `PSpinner`, `PButton` (§9.1) |
+| Contact | `PFieldset`, `PInputText`, `PInputEmail`, `PTextarea`, `PCheckbox`, `PPopover`, `PInlineNotification`, `PSpinner`, `PButton` (§9.2) |
+| Footer | `PHeading`, `PFlag`, `PText`, `PLink`, `PLinkPure`, `PDivider`, `PWordmark` |
 | Global | `PToast`, `PBanner`, favorites live region |
 
 For component API details, use the [Porsche Design System documentation](https://designsystem.porsche.com/).
 
 ---
 
-*Document version: 1.0 — aligned with `pds-ui-testing` App Router structure and PDS v4.1.*
+*Document version: 1.1 — aligned with `pds-ui-testing` App Router structure, footer newsletter/contact forms, and PDS v4.*

@@ -1,6 +1,6 @@
 # PDS UI Testing (Next.js)
 
-Demo shop and technical baseline for Porsche Design System integration with Next.js App Router, static export, and i18n. It exercises catalog browsing, product detail, session favorites, header search, and a multi-step inquiry flyout.
+Demo shop and technical baseline for Porsche Design System integration with Next.js App Router, static export, and i18n. It exercises catalog browsing, product detail, session favorites, header search, a multi-step inquiry flyout, and footer-linked newsletter and contact demo forms.
 
 ## Routes
 
@@ -8,6 +8,8 @@ Demo shop and technical baseline for Porsche Design System integration with Next
 - `/[locale]/` — home (hero, lifestyle tiles, trending products; transparent header)
 - `/[locale]/products/` — product catalog (filters, sort, favorites view)
 - `/[locale]/products/[productSlug]/` — product detail (inquiry flyout, sizes for apparel)
+- `/[locale]/newsletter/` — newsletter subscription (validated demo form, dummy submit result)
+- `/[locale]/contact/` — contact form (validated demo form, dummy submit result)
 - `/[locale]/company/[companySlug]/` — footer company placeholders
 - `/[locale]/legal/[legalSlug]/` — footer legal placeholders
 
@@ -20,18 +22,20 @@ app/
   (entry)/              # Minimal root for `/` redirect only
   [locale]/             # Locale shell: <html>, PDS provider, footer, favorites
     (home)/             # Transparent header (home only)
-    (default)/          # Opaque header (products, company, legal)
+    (default)/          # Opaque header (products, newsletter, contact, company, legal)
   components/
     header/             # GlobalHeader, skip link, nav, search, favorites link
     catalog/            # Catalog browser, grid, products index shell
     product/            # Detail price, inquiry flyout, size tools
     favorites/          # Provider, toasts, favorite product tiles
     home/               # Hero, landing sections
-    layout/             # GlobalFooter, footer placeholders, language switch
+    footer/             # GlobalFooter, footer placeholders, language switch
+    newsletter/         # Newsletter subscription form
+    contact/            # Contact form
   data/                 # Catalog JSON and helpers
   hooks/                # Client hooks (e.g. catalog URL query sync)
   i18n/                 # Locale config, dictionaries, href builders
-  lib/                  # Pure logic (query, search, inquiry validation, a11y scroll)
+  lib/                  # Pure logic (query, search, form validation, a11y scroll)
 ```
 
 ### Naming conventions
@@ -50,7 +54,7 @@ Two root layouts live under `app/` (no single `app/layout.tsx`):
 Inside `[locale]/`, route groups switch the header variant without affecting URLs:
 
 - `app/[locale]/(home)/` — transparent overlay header (only the `/[locale]/` home page)
-- `app/[locale]/(default)/` — opaque default header (products, company, legal)
+- `app/[locale]/(default)/` — opaque default header (products, newsletter, contact, company, legal)
 
 `dynamicParams = false` on `[locale]/layout.tsx` rejects unknown locale segments at build time.
 
@@ -79,11 +83,11 @@ npm run test:a11y
 
 ### Testing
 
-| Layer | Tool | What it covers |
-|-------|------|----------------|
-| Unit | Vitest + Testing Library | `app/lib/`, `app/data/`, i18n hrefs, favorites storage/provider, `useCatalogQueryParams`, `ProductDetailPrice`, skip-to-heading |
-| E2E | Playwright on static `dist` (port 3456) | Filter chip dismiss, header product search, session favorites |
-| A11y | Playwright + axe on static `dist` (port 3456) | All `page.tsx` routes (discovered from `app/`), zero axe violations; Chrome + mobile |
+| Layer | Tool                                          | What it covers                                                                                                                                                              |
+| ----- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unit  | Vitest + Testing Library                      | `app/lib/` (catalog, search, inquiry/newsletter/contact validation), i18n hrefs, favorites storage/provider, `useCatalogQueryParams`, `ProductDetailPrice`, skip-to-heading |
+| E2E   | Playwright on static `dist` (port 3456)       | Filter chip dismiss, header product search, session favorites                                                                                                               |
+| A11y  | Playwright + axe on static `dist` (port 3456) | All `page.tsx` routes (discovered from `app/`), zero axe violations; Chrome + mobile                                                                                        |
 
 E2E and a11y both build with `NEXT_PUBLIC_BASE_PATH=` cleared so client hydration matches URLs under test.
 
