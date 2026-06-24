@@ -326,6 +326,56 @@
     },
     "dummy": {
       "notice": "Diese Seite ist nur ein Platzhalter ohne echte Inhalte und dient der Nutzbarkeits- und Barrierefreiheitstests."
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "intro": "Melden Sie sich an, um die neuesten Porsche-News und Updates in Ihrem Posteingang zu erhalten. Dies ist nur ein Demo-Formular — es werden keine Daten übermittelt.",
+      "fieldsetLabel": "Ihre Angaben",
+      "firstName": "Vorname",
+      "email": "E-Mail-Adresse",
+      "privacy": "Ich stimme zu, dass meine Angaben für diese Demo-Anmeldung verarbeitet werden dürfen.",
+      "privacyPopover": "Dies ist nur ein Demo-Formular: Ihre Angaben werden nicht gespeichert oder an einen Server gesendet. Das Kontrollkästchen simuliert die Einwilligung, damit wir Validierung und dieses Informations-Popover im Porsche Design System testen können.",
+      "submit": "Anmelden",
+      "submittingHint": "Anmeldung läuft…",
+      "successHeading": "Anmeldung bestätigt",
+      "successDescription": "Ihre Anmeldung war erfolgreich (nur Demo; es werden keine Daten übermittelt).",
+      "subscribeAgain": "Weitere E-Mail anmelden",
+      "errors": {
+        "formSummaryHeading": "Eingaben prüfen",
+        "formSummary": "Einige Pflichtfelder fehlen oder sind ungültig. Bitte prüfen Sie die Hinweise unten.",
+        "emailRequired": "Geben Sie Ihre E-Mail-Adresse ein.",
+        "emailInvalid": "Geben Sie eine gültige E-Mail-Adresse ein.",
+        "firstNameRequired": "Geben Sie Ihren Vornamen ein.",
+        "privacyRequired": "Bestätigen Sie, dass Sie der Verarbeitung Ihrer Angaben zustimmen."
+      }
+    },
+    "contact": {
+      "title": "Kontakt",
+      "intro": "Senden Sie uns eine Nachricht und wir melden uns bei Ihnen. Dies ist nur ein Demo-Formular — es werden keine Daten übermittelt.",
+      "fieldsetContact": "Ihre Angaben",
+      "fieldsetMessage": "Ihre Nachricht",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail-Adresse",
+      "message": "Nachricht",
+      "messagePlaceholder": "Wie können wir Ihnen helfen?",
+      "privacy": "Ich stimme zu, dass meine Angaben für diese Demo-Kontaktanfrage verarbeitet werden dürfen.",
+      "privacyPopover": "Dies ist nur ein Demo-Formular: Ihre Angaben werden nicht gespeichert oder an einen Server gesendet. Das Kontrollkästchen simuliert die Einwilligung, damit wir Validierung und dieses Informations-Popover im Porsche Design System testen können.",
+      "submit": "Nachricht senden",
+      "submittingHint": "Nachricht wird gesendet…",
+      "successHeading": "Nachricht gesendet",
+      "successDescription": "Ihre Nachricht wurde erfolgreich gesendet (nur Demo; es werden keine Daten übermittelt).",
+      "sendAnother": "Weitere Nachricht senden",
+      "errors": {
+        "formSummaryHeading": "Eingaben prüfen",
+        "formSummary": "Einige Pflichtfelder fehlen oder sind ungültig. Bitte prüfen Sie die Hinweise unten.",
+        "firstNameRequired": "Geben Sie Ihren Vornamen ein.",
+        "lastNameRequired": "Geben Sie Ihren Nachnamen ein.",
+        "emailRequired": "Geben Sie Ihre E-Mail-Adresse ein.",
+        "emailInvalid": "Geben Sie eine gültige E-Mail-Adresse ein.",
+        "messageRequired": "Geben Sie eine Nachricht ein.",
+        "privacyRequired": "Bestätigen Sie, dass Sie der Verarbeitung Ihrer Angaben zustimmen."
+      }
     }
   },
   "footer": {

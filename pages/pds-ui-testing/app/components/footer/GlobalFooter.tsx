@@ -1,5 +1,4 @@
 import {
-  PButton,
   PDivider,
   PFlag,
   PHeading,
@@ -7,11 +6,11 @@ import {
   PLinkPure,
   PText,
   PWordmark,
-} from "@porsche-design-system/components-react/ssr";
-import type { Locale } from "@/app/i18n/config";
-import type { Dictionary } from "@/app/i18n/get-dictionary";
-import { appHref, localeHomeHref } from "@/app/i18n/href";
-import { FooterLanguageChangeLink } from "./FooterLanguageChangeLink";
+} from '@porsche-design-system/components-react/ssr';
+import type { Locale } from '@/app/i18n/config';
+import type { Dictionary } from '@/app/i18n/get-dictionary';
+import { appHref, contactHref, localeHomeHref, newsletterHref } from '@/app/i18n/href';
+import { FooterLanguageChangeLink } from './FooterLanguageChangeLink';
 
 type Props = {
   dictionary: Dictionary;
@@ -19,17 +18,17 @@ type Props = {
 };
 
 const SOCIAL_ICONS = [
-  { icon: "logo-facebook", key: "facebook" as const },
-  { icon: "logo-instagram", key: "instagram" as const },
-  { icon: "logo-pinterest", key: "pinterest" as const },
-  { icon: "logo-youtube", key: "youtube" as const },
-  { icon: "logo-x", key: "x" as const },
-  { icon: "logo-linkedin", key: "linkedin" as const },
+  { icon: 'logo-facebook', key: 'facebook' as const },
+  { icon: 'logo-instagram', key: 'instagram' as const },
+  { icon: 'logo-pinterest', key: 'pinterest' as const },
+  { icon: 'logo-youtube', key: 'youtube' as const },
+  { icon: 'logo-x', key: 'x' as const },
+  { icon: 'logo-linkedin', key: 'linkedin' as const },
 ] as const;
 
-const footerFlagByLocale: Record<Locale, "us" | "de"> = {
-  en: "us",
-  de: "de",
+const footerFlagByLocale: Record<Locale, 'us' | 'de'> = {
+  en: 'us',
+  de: 'de',
 };
 
 export function GlobalFooter({ dictionary, locale }: Props) {
@@ -61,21 +60,10 @@ export function GlobalFooter({ dictionary, locale }: Props) {
   ];
 
   return (
-    <footer
-      className="grid-template bg-canvas py-fluid-lg mt-fluid-xl scheme-dark"
-      data-testid="global-footer"
-    >
+    <footer className="grid-template bg-canvas py-fluid-lg mt-fluid-xl scheme-dark" data-testid="global-footer">
       <div className="col-wide flex flex-col gap-fluid-md">
-        <section
-          aria-labelledby="footer-region-heading"
-          className="flex flex-col gap-fluid-sm"
-        >
-          <PHeading
-            id="footer-region-heading"
-            size="large"
-            tag="h2"
-            weight="semibold"
-          >
+        <section aria-labelledby="footer-region-heading" className="flex flex-col gap-fluid-sm">
+          <PHeading id="footer-region-heading" size="large" tag="h2" weight="semibold">
             {footer.regionTitle}
           </PHeading>
           <div className="flex flex-wrap items-center gap-fluid-xs">
@@ -91,71 +79,36 @@ export function GlobalFooter({ dictionary, locale }: Props) {
         </section>
 
         <div className="grid grid-cols-1 gap-fluid-xl md:grid-cols-3 md:gap-fluid-lg">
-          <section
-            aria-labelledby="footer-newsletter-heading"
-            className="flex max-w-prose flex-col gap-fluid-sm"
-          >
-            <PHeading
-              id="footer-newsletter-heading"
-              size="large"
-              tag="h2"
-              weight="semibold"
-            >
+          <section aria-labelledby="footer-newsletter-heading" className="flex max-w-prose flex-col gap-fluid-sm">
+            <PHeading id="footer-newsletter-heading" size="large" tag="h2" weight="semibold">
               {footer.newsletterTitle}
             </PHeading>
             <PText>{footer.newsletterCopy}</PText>
-            <PButton
-              className="w-full max-w-md"
-              type="button"
-              variant="secondary"
-            >
+            <PLink className="w-full max-w-md" href={newsletterHref(locale)} variant="secondary">
               {footer.subscribe}
-            </PButton>
+            </PLink>
           </section>
 
-          <section
-            aria-labelledby="footer-contact-heading"
-            className="flex max-w-prose flex-col gap-fluid-sm"
-          >
-            <PHeading
-              id="footer-contact-heading"
-              size="large"
-              tag="h2"
-              weight="semibold"
-            >
+          <section aria-labelledby="footer-contact-heading" className="flex max-w-prose flex-col gap-fluid-sm">
+            <PHeading id="footer-contact-heading" size="large" tag="h2" weight="semibold">
               {footer.contactTitle}
             </PHeading>
             <PText>{footer.contactCopy}</PText>
-            <PButton
-              className="w-full max-w-md"
-              type="button"
-              variant="secondary"
-            >
+            <PLink className="w-full max-w-md" href={contactHref(locale)} variant="secondary">
               {footer.contactForm}
-            </PButton>
+            </PLink>
           </section>
 
-          <section
-            aria-labelledby="footer-social-heading"
-            className="flex max-w-prose flex-col gap-fluid-sm"
-          >
-            <PHeading
-              id="footer-social-heading"
-              size="large"
-              tag="h2"
-              weight="semibold"
-            >
+          <section aria-labelledby="footer-social-heading" className="flex max-w-prose flex-col gap-fluid-sm">
+            <PHeading id="footer-social-heading" size="large" tag="h2" weight="semibold">
               {footer.socialTitle}
             </PHeading>
             <PText>{footer.socialCopy}</PText>
-            <ul
-              aria-label={footer.socialTitle}
-              className="m-0 flex list-none flex-wrap gap-static-xs p-0"
-            >
+            <ul aria-label={footer.socialTitle} className="m-0 flex list-none flex-wrap gap-static-xs p-0">
               {SOCIAL_ICONS.map(({ icon, key }) => (
                 <li key={key}>
                   <PLink
-                    aria={{ "aria-label": footer.socialLabels[key] }}
+                    aria={{ 'aria-label': footer.socialLabels[key] }}
                     hideLabel
                     href={footer.socialUrls[key]}
                     icon={icon}
@@ -170,16 +123,8 @@ export function GlobalFooter({ dictionary, locale }: Props) {
           </section>
         </div>
 
-        <section
-          aria-labelledby="footer-company-heading"
-          className="flex flex-col gap-fluid-sm"
-        >
-          <PHeading
-            id="footer-company-heading"
-            size="large"
-            tag="h2"
-            weight="semibold"
-          >
+        <section aria-labelledby="footer-company-heading" className="flex flex-col gap-fluid-sm">
+          <PHeading id="footer-company-heading" size="large" tag="h2" weight="semibold">
             {footer.companyTitle}
           </PHeading>
           <nav aria-label={footer.companyTitle}>
@@ -201,41 +146,21 @@ export function GlobalFooter({ dictionary, locale }: Props) {
           <div className="flex flex-col gap-static-sm">
             <PText size="small">{footer.legalCopyright}</PText>
             <div className="flex flex-wrap gap-x-fluid-sm gap-y-static-xs">
-              <PLinkPure
-                href={appHref(`/${locale}/legal/notice/`)}
-                size="small"
-                icon="none"
-                underline={true}
-              >
+              <PLinkPure href={appHref(`/${locale}/legal/notice/`)} size="small" icon="none" underline={true}>
                 {footer.legalNotice}
               </PLinkPure>
-              <PLinkPure
-                href={appHref(`/${locale}/legal/icp/`)}
-                size="small"
-                icon="none"
-                underline={true}
-              >
+              <PLinkPure href={appHref(`/${locale}/legal/icp/`)} size="small" icon="none" underline={true}>
                 {footer.legalIcp}
               </PLinkPure>
-              <PLinkPure
-                href={appHref(`/${locale}/legal/environment/`)}
-                size="small"
-                icon="none"
-                underline={true}
-              >
+              <PLinkPure href={appHref(`/${locale}/legal/environment/`)} size="small" icon="none" underline={true}>
                 {footer.legalEnv}
               </PLinkPure>
             </div>
-            <PLinkPure
-              href={appHref(`/${locale}/legal/security/`)}
-              icon="none"
-              size="small"
-              underline={true}
-            >
+            <PLinkPure href={appHref(`/${locale}/legal/security/`)} icon="none" size="small" underline={true}>
               {footer.legalSecurity}
             </PLinkPure>
             <PText color="contrast-medium">
-              {footer.legalDisclaimer}{" "}
+              {footer.legalDisclaimer}{' '}
               <PLinkPure
                 className="align-baseline"
                 href={appHref(`/${locale}/legal/more/`)}
