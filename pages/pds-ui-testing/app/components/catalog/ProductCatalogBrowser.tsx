@@ -493,6 +493,8 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
         footerBehavior="fixed"
         onDismiss={() => setIsFilterFlyoutOpen(false)}
         open={isFilterFlyoutOpen}
+        background="surface"
+        backdrop="shading"
         style={
           {
             "--p-flyout-width": "500px",
@@ -515,7 +517,7 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
               ? facets.map((facet) => (
                   <PAccordion
                     alignMarker="end"
-                    background="surface"
+                    background="canvas"
                     key={facet.param}
                     onUpdate={(event) =>
                       toggleFacetPanel(facet.key, event.detail.open)
