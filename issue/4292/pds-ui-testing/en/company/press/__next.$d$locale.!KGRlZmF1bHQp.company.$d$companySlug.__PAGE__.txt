@@ -1,7 +1,0 @@
-1:"$Sreact.fragment"
-2:I[46310,["/examples/issue/4292/pds-ui-testing/_next/static/chunks/0a95jzc1xyciw.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/1u0oupg_nt926.js"],"PHeading"]
-3:I[75940,["/examples/issue/4292/pds-ui-testing/_next/static/chunks/0a95jzc1xyciw.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/1u0oupg_nt926.js"],"PText"]
-4:I[97367,["/examples/issue/4292/pds-ui-testing/_next/static/chunks/1d4h-sglyo8ft.js","/examples/issue/4292/pds-ui-testing/_next/static/chunks/14mumt5_n0xhi.js"],"OutletBoundary"]
-5:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"grid-template py-fluid-lg","data-testid":"main-content","children":["$","div",null,{"className":"col-wide flex max-w-prose flex-col gap-fluid-sm","children":[["$","$L2",null,{"id":"page-heading","tag":"h1","children":"Press"}],["$","$L3",null,{"children":"This page is a placeholder only. It has no real content and exists for usability and accessibility testing."}]]}]}],null,["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"5laE_58qyS_Sp4MZna0Gl"}
-6:null
