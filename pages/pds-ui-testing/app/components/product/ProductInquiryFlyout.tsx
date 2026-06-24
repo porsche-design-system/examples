@@ -933,6 +933,7 @@ export function ProductInquiryFlyout({
                         description={copy.passwordDemoDescription}
                         label={copy.passwordDemoLabel}
                         name="inquiry-password-demo"
+                        toggle={true}
                         onChange={(e) =>
                           setForm((s) => ({
                             ...s,
