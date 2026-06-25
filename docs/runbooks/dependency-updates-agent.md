@@ -26,7 +26,7 @@
 | Edit dependency versions in any `package.json` by hand           | `syncpack` owns version ranges across all workspaces.                                              |
 | Edit `package-lock.json` by hand                                 | Regenerate it via `npm install` only.                                                              |
 | Upgrade held-back deps by selecting them in `npm run npm:update` | `@playwright/test` stays pinned — update it deliberately (see below).                              |
-| Bump `@porsche-design-system/components-*`                       | These track a published PDS release; bump them only when adopting a new release.                   |
+| Bump `@porsche-design-system/components-*` across a **major**    | Minor/patch PDS updates are routine; a **major** PDS upgrade is a deliberate, human-led adoption.   |
 | Push directly to `main`                                          | Always open a PR for human review.                                                                 |
 
 ## Held-back dependencies (special handling)
@@ -69,6 +69,11 @@ npm run npm:update
 - **Group related upgrades** — do not bump everything blindly. If React types are updated, also check React itself; keep
   the `@angular/*` family in lockstep.
 - Do not select `@playwright/test`.
+- **`@porsche-design-system/components-*`** are bumped routinely to the **latest stable** within the current major. A
+  `versionGroups` entry in [`.syncpackrc.json`](../../.syncpackrc.json) keeps every framework variant
+  (`-js`, `-react`, `-angular`, `-vue`) on the **same** version, so select them together. Never select a pre-release
+  (`-rc`, `-beta`, `-alpha`) and never cross a **major** (e.g. `4.x → 5.x`) — a major PDS upgrade is a deliberate,
+  human-led adoption (see [Stop conditions](#stop-conditions-hand-back-to-a-human)).
 
 ### 4. Refresh the lockfile and verify the install
 

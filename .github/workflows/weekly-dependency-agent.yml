@@ -18,6 +18,17 @@
 #    Use a user token (personal access token or OAuth token) instead."
 # Provide a fine-grained or classic PAT as the `GH_COPILOT_AGENT_TOKEN` repo secret
 # (Settings → Secrets and variables → Actions). See the runbook for setup steps.
+# The PAT must also be SSO-authorized for the org (PAT page → Configure SSO →
+# Authorize); without that, the agent fails to start the assigned issue.
+#
+# Why it is safe to disable "Require approval for workflow runs" for Copilot pushes:
+# the agent's PRs only trigger `contribution.yml`, whose `build`/`test` jobs run with a
+# workflow-level `contents: read` token. The single `contents: write` path (the gh-pages
+# `deploy` job) explicitly excludes bot actors (`dependabot[bot]`, `copilot-swe-agent[bot]`,
+# `Copilot`). No custom Actions secret is exposed to PR-triggered jobs — the secret-bearing
+# workflows (`ort.yml`, this file) run only on `schedule`/`workflow_dispatch`, never on a PR.
+# So a Copilot PR can neither write to the repo nor read Actions secrets; the only exposed
+# token is the read-only `GITHUB_TOKEN`.
 name: 'Weekly Dependency Agent'
 
 on:
