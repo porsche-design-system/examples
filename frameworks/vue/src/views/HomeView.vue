@@ -6,7 +6,7 @@ import Form from '@/components/Form.vue';
 
 <template>
   <main class="grid-template my-fluid-md">
-    <div class="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-4xl">
+    <div class="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-3xl">
       <PWordmark class="col-wide" />
       <h1 class="col-wide prose-display-md">Porsche Design System</h1>
       <img alt="Vue logo" class="col-wide logo" src="@/assets/logo.svg" width="70"  />

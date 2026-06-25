@@ -10,7 +10,7 @@ function App() {
   const { colorScheme, setColorScheme } = useColorScheme();
   return (
     <main className="grid-template my-fluid-md">
-      <div className="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-4xl">
+      <div className="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-3xl">
         <PWordmark className="col-wide" />
         <h1 className="prose-display-md col-wide">Porsche Design System</h1>
         <div className="col-wide flex gap-4 items-center flex-col sm:flex-row">
