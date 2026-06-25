@@ -71,11 +71,10 @@ When a third-party package declares a peer dependency range that conflicts with 
 dependency has a security advisory, resolve it explicitly via the `overrides` field in the root
 [`package.json`](../package.json) instead of disabling peer-dependency checks globally.
 
-The current `overrides` force vulnerable transitive dependencies up to their first patched release using per-major
-version-selector keys (e.g. `"brace-expansion@5.x": "5.0.6"`, `"postcss@8.x": "8.5.15"`). After adding or changing an
-override, delete `package-lock.json` **and** `node_modules` and re-run `npm install`; a plain `npm install` only
-re-resolves changed nodes, so stale transitive entries keep their old (vulnerable) versions and the override appears to
-have no effect.
+Add overrides using per-major version-selector keys (e.g. `"brace-expansion@5.x": "5.0.6"`,
+`"postcss@8.x": "8.5.15"`). After adding or changing an override, delete `package-lock.json` **and** `node_modules`
+and re-run `npm install`; a plain `npm install` only re-resolves changed nodes, so stale transitive entries keep their
+old (vulnerable) versions and the override appears to have no effect.
 
 ## Auditing dependencies (`npm audit`)
 
