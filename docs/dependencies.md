@@ -37,6 +37,11 @@ workspaces.
 [Held-back dependencies](#held-back-dependencies). Angular is updated through this normal syncpack flow; running its
 framework **migrations** is described in [Updating Angular](#updating-angular).
 
+The `@porsche-design-system/components-*` packages are bumped through this normal syncpack flow to the **latest stable**
+within the current major. A `versionGroups` entry in [`.syncpackrc.json`](../.syncpackrc.json) keeps every framework
+variant (`-js`, `-react`, `-angular`, `-vue`) on the **same** version, so pick them together. Do **not** select a
+pre-release or cross a **major** (e.g. `4.x → 5.x`) — a major PDS upgrade is a deliberate, human-led adoption.
+
 ### Syncpack helper scripts
 
 [`syncpack`](https://syncpack.dev) is pinned as a root `devDependency` (do **not** rely on an unpinned `npx syncpack`,

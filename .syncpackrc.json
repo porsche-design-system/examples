@@ -41,6 +41,18 @@
     "volta"
   ],
   "sortAz": ["dependencies", "devDependencies", "peerDependencies"],
+  "versionGroups": [
+    {
+      "label": "Porsche Design System components — keep every framework variant on the same version",
+      "dependencies": [
+        "@porsche-design-system/components-js",
+        "@porsche-design-system/components-react",
+        "@porsche-design-system/components-angular",
+        "@porsche-design-system/components-vue"
+      ],
+      "policy": "sameRange"
+    }
+  ],
   "updateGroups": [
     {
       "label": "Held-back dependencies — upgraded deliberately, not via automated checks",
