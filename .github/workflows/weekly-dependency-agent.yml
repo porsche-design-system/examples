@@ -108,14 +108,33 @@ jobs:
           # the real number into the body before assigning, so the agent reads a
           # final body that tells it to `Closes #<number>` (auto-closing this
           # issue when its PR merges).
+          # Declare first, then assign on its own line: with a combined
+          # `ISSUE_URL="$(...)"` the assignment's exit status masks a failing
+          # command substitution, so `set -e` would NOT abort on a failed
+          # `gh issue create`. Splitting it lets errexit catch the failure.
+          ISSUE_URL=
           ISSUE_URL="$(gh issue create \
             --title "chore(deps): weekly npm dependency updates ($(date +%F))" \
             --label "dependencies" \
             --body-file issue-body.md)"
 
+          # Defense in depth: bail out loudly if creation produced no URL,
+          # otherwise an empty value would yield a bogus issue number below.
+          if [ -z "$ISSUE_URL" ]; then
+            echo "::error::gh issue create returned an empty URL — aborting." >&2
+            exit 1
+          fi
+
           # `gh issue create` prints the issue URL; the trailing path segment is
           # the issue number.
           ISSUE_NUMBER="${ISSUE_URL##*/}"
+
+          # Guard against a malformed URL: the parsed number must be numeric
+          # before we run any `gh issue edit` against it.
+          if ! printf '%s' "$ISSUE_NUMBER" | grep -Eq '^[0-9]+$'; then
+            echo "::error::Could not parse a numeric issue number from '$ISSUE_URL' — aborting." >&2
+            exit 1
+          fi
 
           # Substitute the now-known number, update the body, then assign the
           # agent last so it picks up the finalized instructions.
