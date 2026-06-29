@@ -8,7 +8,7 @@ initColorScheme();
 // biome-ignore lint/style/noNonNullAssertion: #app is statically present in index.html
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `  
     <main class="grid-template my-fluid-md">
-      <div class="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-4xl">
+      <div class="col-wide grid grid-cols-subgrid justify-items-center gap-fluid-md p-fluid-lg bg-surface rounded-3xl">
         <p-wordmark class="col-wide"></p-wordmark>
         <h1 class="prose-display-md col-wide">Porsche Design System</h1>
         <div class="col-wide flex gap-4 items-center flex-col sm:flex-row">

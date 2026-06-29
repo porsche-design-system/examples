@@ -68,25 +68,19 @@
     "npm:remove": "find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\;",
     "npm:clean": "npm cache clean --force"
   },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.1",
+    "prettier": "^3.9.1",
+    "syncpack": "^15.3.2"
+  },
   "overrides": {
+    "@babel/core@7.x": "7.29.7",
     "@vee-validate/zod": {
       "zod": "^4.4.3"
     },
-    "brace-expansion@5.x": "5.0.6",
-    "esbuild@0.27.x": "0.28.1",
-    "fast-uri@3.x": "3.1.2",
-    "js-cookie@3.x": "3.0.8",
-    "piscina@5.x": "5.2.0",
-    "postcss@8.x": "8.5.15",
-    "qs@6.x": "6.15.2",
-    "tmp@0.2.x": "0.2.7",
-    "undici@7.x": "7.28.0",
-    "ws@8.x": "8.21.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.5.0",
-    "prettier": "^3.8.4",
-    "syncpack": "^15.3.2"
+    "next": {
+      "postcss": "^8.5.10"
+    }
   },
   "volta": {
     "node": "24.15.0",

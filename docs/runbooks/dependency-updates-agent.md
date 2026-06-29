@@ -26,7 +26,7 @@
 | Edit dependency versions in any `package.json` by hand           | `syncpack` owns version ranges across all workspaces.                                              |
 | Edit `package-lock.json` by hand                                 | Regenerate it via `npm install` only.                                                              |
 | Upgrade held-back deps by selecting them in `npm run npm:update` | `@playwright/test` stays pinned — update it deliberately (see below).                              |
-| Bump `@porsche-design-system/components-*`                       | These track a published PDS release; bump them only when adopting a new release.                   |
+| Bump `@porsche-design-system/components-*` across a **major**    | Minor/patch PDS updates are routine; a **major** PDS upgrade is a deliberate, human-led adoption.   |
 | Push directly to `main`                                          | Always open a PR for human review.                                                                 |
 
 ## Held-back dependencies (special handling)
@@ -69,6 +69,11 @@ npm run npm:update
 - **Group related upgrades** — do not bump everything blindly. If React types are updated, also check React itself; keep
   the `@angular/*` family in lockstep.
 - Do not select `@playwright/test`.
+- **`@porsche-design-system/components-*`** are bumped routinely to the **latest stable** within the current major. A
+  `versionGroups` entry in [`.syncpackrc.json`](../../.syncpackrc.json) keeps every framework variant
+  (`-js`, `-react`, `-angular`, `-vue`) on the **same** version, so select them together. Never select a pre-release
+  (`-rc`, `-beta`, `-alpha`) and never cross a **major** (e.g. `4.x → 5.x`) — a major PDS upgrade is a deliberate,
+  human-led adoption (see [Stop conditions](#stop-conditions-hand-back-to-a-human)).
 
 ### 4. Refresh the lockfile and verify the install
 
@@ -201,6 +206,30 @@ Keep these on the **same** version (npm `X.Y.Z` ↔ image `vX.Y.Z`):
 
 Commit the bumped `package.json` files, `package-lock.json`, the Docker image change, and any regenerated VRT snapshots
 **together**. If snapshots change beyond what the browser bump explains, **stop** and hand off.
+
+## Output contract
+
+Deliver the result as a **single pull request** the maintainers can review and merge:
+
+- **One PR** containing all dependency changes from this run (no direct pushes to `main`).
+- **Target the default branch** (`main`) — closing keywords only auto-close issues when the PR merges into the default
+  branch.
+- **Close the dispatching issue automatically.** GitHub pre-fills
+  [`.github/pull_request_template.md`](../../.github/pull_request_template.md) into the PR body, which already contains a
+  [closing-keyword](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)
+  placeholder under **Related Issue**:
+
+  ```text
+  Closes #<issue-number>
+  ```
+
+  Replace `<issue-number>` with the number of the issue you were assigned. The keyword must stay in the **PR
+  description** (not a commit message or a plain `#123` mention); without it, merging the PR will **not** close the
+  issue, leaving stale dependency tasks open.
+- **PR description** must summarize: which dependencies were bumped (grouped), any `overrides` added or removed, any
+  advisories from `npm run npm:audit`, and which builds/tests you ran (and any you could not reproduce, e.g. VRT).
+- **Keep the PR template.** Preserve the pre-filled template (CLA checklist + Related Issue) and add your summary around
+  it rather than replacing it wholesale.
 
 ## Stop conditions (hand back to a human)
 
