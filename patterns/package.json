@@ -24,7 +24,7 @@
     "@types/node": "^26.0.1",
     "get-port": "^7.2.0",
     "tsx": "^4.22.4",
-    "vite": "^8.0.16"
+    "vite": "^8.1.0"
   },
   "volta": {
     "extends": "../package.json"
