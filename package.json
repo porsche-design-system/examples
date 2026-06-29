@@ -69,6 +69,7 @@
     "npm:clean": "npm cache clean --force"
   },
   "devDependencies": {
+    "@astrojs/compiler-binding": "0.2.3",
     "@biomejs/biome": "^2.5.1",
     "@tailwindcss/oxide": "4.3.1",
     "lightningcss": "1.32.0",
