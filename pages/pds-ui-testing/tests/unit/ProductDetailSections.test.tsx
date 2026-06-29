@@ -1,7 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import type { ReactNode } from "react";
 import { describe, expect, it, vi } from "vitest";
-import { ProductDetailSections } from "@/app/components/product/ProductDetailSections";
+import {
+  ProductDetailSections,
+  type ProductDetailSectionsCopy,
+} from "@/app/components/product/ProductDetailSections";
 import { createCatalogProduct } from "./fixtures/catalog-product";
 
 vi.mock("@porsche-design-system/components-react/ssr", () => ({
@@ -40,15 +43,24 @@ const copy = {
     material: "Material",
     careInstructions: "Care Instructions",
     itemNumber: "Item no.",
-    warning: "WARNING",
+    info: "INFO",
   },
-} as const;
+} as const satisfies Pick<
+  ProductDetailSectionsCopy,
+  "detailsSections" | "detailsFields"
+>;
 
 describe("ProductDetailSections", () => {
   it("renders accordion panel summaries and item number", () => {
     const product = createCatalogProduct({ sku: "WAP-TEST-001" });
 
-    render(<ProductDetailSections copy={copy} product={product} />);
+    render(
+      <ProductDetailSections
+        copy={copy as ProductDetailSectionsCopy}
+        locale="en"
+        product={product}
+      />,
+    );
 
     expect(screen.getByText("Description")).toBeInTheDocument();
     expect(screen.getByText("Dimensions and weight")).toBeInTheDocument();
