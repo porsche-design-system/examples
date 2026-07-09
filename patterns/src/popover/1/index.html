@@ -96,24 +96,21 @@
               <p-heading tag="h2" size="md">Welcome, John Doe</p-heading>
               <div class="space-y-fluid-xs">
                 <p-text size="small" color="contrast-medium">Services</p-text>
-                <div class="flex flex-col gap-static-xs">
-                  <p-link-pure stretch="true" icon="none"><a href="#">My Porsche App</a></p-link-pure>
-                  <p-link-pure stretch="true" icon="none">
+                <div class="flex flex-col">
+                  <p-link-pure class="py-static-xs" stretch="true" icon="none"><a href="#">My Porsche App</a></p-link-pure>
+                  <p-link-pure class="py-static-xs" stretch="true" icon="none">
                     <a href="#">
                       Messages
-                      <span
-                        class="ml-static-xs w-6 h-6 aspect-square rounded-full bg-surface text-contrast-medium text-xs inline-grid place-content-center align-middle"
-                        >3</span
-                      >
+                      <p-tag class="ml-static-xs" variant="secondary" compact="true">3</p-tag>
                     </a>
                   </p-link-pure>
-                  <p-link-pure stretch="true" icon="none"><a href="#">Find Connect Services</a></p-link-pure>
+                  <p-link-pure class="py-static-xs" stretch="true" icon="none"><a href="#">Find Connect Services</a></p-link-pure>
                 </div>
               </div>
               <div class="space-y-fluid-xs">
                 <p-text size="small" color="contrast-medium">Settings</p-text>
-                <div class="flex flex-col gap-static-xs">
-                  <p-link-pure stretch="true" icon="none"><a href="#">Profile settings</a></p-link-pure>
+                <div class="flex flex-col">
+                  <p-link-pure class="py-static-xs" stretch="true" icon="none"><a href="#">Profile settings</a></p-link-pure>
                 </div>
               </div>
               <p-button class="w-full" type="button" variant="secondary" icon="none">Logout</p-button>
@@ -155,6 +152,32 @@
         </p-button>
       </section>
     </main>
+
+    <p-sheet id="profile-sheet" aria="{'aria-label': 'User profile'}">
+      <p-heading slot="header" tag="h2" size="large">Welcome, John Doe</p-heading>
+      <div class="space-y-fluid-md">
+        <div class="space-y-fluid-xs">
+          <p-text size="small" color="contrast-medium">Services</p-text>
+          <div class="flex flex-col">
+            <p-link-pure class="py-static-xs" stretch="true" icon="none"><a href="#">My Porsche App</a></p-link-pure>
+            <p-link-pure class="py-static-xs" stretch="true" icon="none">
+              <a href="#">
+                Messages
+                <p-tag class="ml-static-xs" variant="secondary" compact="true">3</p-tag>
+              </a>
+            </p-link-pure>
+            <p-link-pure class="py-static-xs" stretch="true" icon="none"><a href="#">Find Connect Services</a></p-link-pure>
+          </div>
+        </div>
+        <div class="space-y-fluid-xs">
+          <p-text size="small" color="contrast-medium">Settings</p-text>
+          <div class="flex flex-col">
+            <p-link-pure class="py-static-xs" stretch="true" icon="none"><a href="#">Profile settings</a></p-link-pure>
+          </div>
+        </div>
+        <p-button class="w-full" type="button" variant="secondary" icon="none">Logout</p-button>
+      </div>
+    </p-sheet>
 
     <script type="module" src="main.js"></script>
   </body>

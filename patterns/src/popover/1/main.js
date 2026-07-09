@@ -9,9 +9,13 @@ const marketPopover = document.getElementById('market-popover');
 const marketButton = document.getElementById('market-button');
 const marketClose = document.getElementById('market-close');
 const profilePopover = document.getElementById('profile-popover');
+const profileSheet = document.getElementById('profile-sheet');
 const profileButton = document.getElementById('profile-button');
 const video = document.querySelector('video');
 const pauseButton = document.getElementById('pause-button');
+
+// Responsive: use popover on desktop (≥ 480px), sheet on mobile (< 480px)
+const desktopQuery = window.matchMedia('(min-width: 480px)');
 
 navButton.addEventListener('click', () => {
   navDrilldown.open = true;
@@ -25,19 +29,27 @@ navDrilldown.addEventListener('update', (e) => {
   e.target.activeIdentifier = e.detail.activeIdentifier;
 });
 
-// Both popovers run in controlled mode so we own their open state. The local market popover is shown on load, the
-// profile popover starts closed. Opening one always closes the other, so only a single popover is ever open.
+// The local market popover is shown on load, profile starts closed.
+// Opening one always closes the other.
 marketPopover.open = true;
 profilePopover.open = false;
+profileSheet.open = false;
 
 marketButton.addEventListener('click', () => {
   marketPopover.open = !marketPopover.open;
   profilePopover.open = false;
+  profileSheet.open = false;
 });
 
 profileButton.addEventListener('click', () => {
-  profilePopover.open = !profilePopover.open;
   marketPopover.open = false;
+  if (desktopQuery.matches) {
+    profilePopover.open = !profilePopover.open;
+    profileSheet.open = false;
+  } else {
+    profileSheet.open = !profileSheet.open;
+    profilePopover.open = false;
+  }
 });
 
 marketPopover.addEventListener('dismiss', (e) => {
@@ -46,6 +58,27 @@ marketPopover.addEventListener('dismiss', (e) => {
 
 profilePopover.addEventListener('dismiss', (e) => {
   e.target.open = false;
+});
+
+profileSheet.addEventListener('dismiss', () => {
+  profileSheet.open = false;
+});
+
+// Transfer open state between popover and sheet when crossing the breakpoint
+desktopQuery.addEventListener('change', (e) => {
+  if (e.matches) {
+    // Crossed to desktop: if sheet was open, close it and open popover
+    if (profileSheet.open) {
+      profileSheet.open = false;
+      profilePopover.open = true;
+    }
+  } else {
+    // Crossed to mobile: if popover was open, close it and open sheet
+    if (profilePopover.open) {
+      profilePopover.open = false;
+      profileSheet.open = true;
+    }
+  }
 });
 
 marketClose.addEventListener('click', () => {
@@ -61,6 +94,12 @@ for (const button of marketPopover.querySelectorAll('p-button')) {
 for (const button of profilePopover.querySelectorAll('p-button')) {
   button.addEventListener('click', () => {
     profilePopover.open = false;
+  });
+}
+
+for (const button of profileSheet.querySelectorAll('p-button')) {
+  button.addEventListener('click', () => {
+    profileSheet.open = false;
   });
 }
 
