@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" class="scheme-light-dark bg-canvas">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Popover (Pattern)">
+    <title>Popover (Pattern)</title>
+  </head>
+
+  <body>
+    <main class="grid-template">
+      <section class="col-wide py-fluid-lg space-y-fluid-md">
+        <p-heading tag="h1" size="xl">Priority navigation</p-heading>
+        <p-text>
+          Resize the frame &mdash; navigation items that no longer fit collapse into the &ldquo;More&rdquo; popover,
+          keeping the bar on a single line.
+        </p-text>
+
+        <nav id="priority-nav" aria-label="Repository" class="overflow-hidden border-b border-contrast-lower">
+          <ul
+            id="nav-primary"
+            class="flex flex-nowrap items-center gap-static-md list-none m-0 p-0 min-h-[52px] whitespace-nowrap [&>li]:shrink-0"
+          >
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Code</a></p-link-pure></li>
+            <li data-nav-item>
+              <p-link-pure icon="none">
+                <a href="#">
+                  Issues
+                  <span class="ml-static-xs px-static-xs rounded-full bg-surface text-contrast-medium text-xs align-middle"
+                    >23</span
+                  >
+                </a>
+              </p-link-pure>
+            </li>
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Pull requests</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Agents</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Actions</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Projects</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Security and quality</a></p-link-pure></li>
+            <li data-nav-item data-submenu>
+              <!-- Bar representation: a dropdown popover. -->
+              <div data-bar>
+                <p-popover id="insights-popover">
+                  <p-button-pure slot="button" type="button" icon="arrow-head-down" align-label="start">
+                    Insights
+                  </p-button-pure>
+                  <ul class="flex flex-col gap-static-xs list-none m-0 p-0 min-w-[200px]">
+                    <li><p-link-pure icon="none"><a href="#">Pulse</a></p-link-pure></li>
+                    <li><p-link-pure icon="none"><a href="#">Contributors</a></p-link-pure></li>
+                    <li><p-link-pure icon="none"><a href="#">Community Standards</a></p-link-pure></li>
+                    <li><p-link-pure icon="none"><a href="#">Traffic</a></p-link-pure></li>
+                    <li><p-link-pure icon="none"><a href="#">Commits</a></p-link-pure></li>
+                  </ul>
+                </p-popover>
+              </div>
+              <!-- Overflow representation: inline, indented group (no nested popover). -->
+              <div data-overflow hidden class="space-y-static-xs">
+                <p-text size="small" color="contrast-medium">Insights</p-text>
+                <ul class="flex flex-col gap-static-xs list-none m-0 p-0 ps-static-sm">
+                  <li><p-link-pure icon="none"><a href="#">Pulse</a></p-link-pure></li>
+                  <li><p-link-pure icon="none"><a href="#">Contributors</a></p-link-pure></li>
+                  <li><p-link-pure icon="none"><a href="#">Community Standards</a></p-link-pure></li>
+                  <li><p-link-pure icon="none"><a href="#">Traffic</a></p-link-pure></li>
+                  <li><p-link-pure icon="none"><a href="#">Commits</a></p-link-pure></li>
+                </ul>
+              </div>
+            </li>
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Settings</a></p-link-pure></li>
+            <li id="nav-more-item" class="ms-auto" hidden>
+              <p-popover id="more-popover">
+                <p-button slot="button" type="button" variant="secondary" compact="true" icon="arrow-head-down">
+                  More
+                </p-button>
+                <ul id="nav-overflow" class="flex flex-col gap-static-xs list-none m-0 p-0 min-w-[220px]"></ul>
+              </p-popover>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </main>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

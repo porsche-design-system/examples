@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="scheme-light-dark bg-canvas">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Popover (Pattern)">
+    <title>Popover (Pattern)</title>
+  </head>
+
+  <body>
+    <header class="grid-template border-b border-contrast-lower">
+      <div class="col-wide flex items-center justify-between gap-fluid-md min-h-[64px]">
+        <p-wordmark href="#"></p-wordmark>
+
+        <div class="flex items-center">
+          <!-- Desktop (>= sm): account menu as a popover anchored to the icon. -->
+          <p-popover id="profile-popover" class="max-sm:hidden">
+            <p-button-pure slot="button" type="button" icon="user" hide-label="true">Account</p-button-pure>
+            <div class="w-[300px] max-w-[80vw] space-y-fluid-sm p-fluid-sm">
+              <p-heading tag="h2" size="small">Welcome, John Doe</p-heading>
+              <div class="flex flex-col gap-static-xs">
+                <p-link-pure stretch="true" icon="user"><a href="#">Account</a></p-link-pure>
+                <p-link-pure stretch="true" icon="configurate"><a href="#">Settings</a></p-link-pure>
+                <p-link-pure stretch="true" icon="logout"><a href="#">Logout</a></p-link-pure>
+              </div>
+            </div>
+          </p-popover>
+
+          <!-- Mobile (< sm): same trigger opens a bottom sheet instead. -->
+          <p-button-pure id="sheet-trigger" class="sm:hidden" type="button" icon="user" hide-label="true">
+            Account
+          </p-button-pure>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid-template">
+      <section class="col-wide py-fluid-lg space-y-fluid-md">
+        <p-heading tag="h1" size="xl">Responsive disclosure</p-heading>
+        <p-text>
+          The account menu opens as a popover on desktop. Below the <code>sm</code> breakpoint (760px) the same trigger
+          opens a bottom sheet instead, which is easier to reach on touch devices. Resize the frame and open the account
+          icon in the header.
+        </p-text>
+      </section>
+    </main>
+
+    <p-sheet id="profile-sheet" aria="{ 'aria-label': 'Account' }">
+      <p-heading slot="header" tag="h2" size="small">Welcome, John Doe</p-heading>
+      <div class="flex flex-col gap-static-xs">
+        <p-link-pure stretch="true" icon="user"><a href="#">Account</a></p-link-pure>
+        <p-link-pure stretch="true" icon="configurate"><a href="#">Settings</a></p-link-pure>
+        <p-link-pure stretch="true" icon="logout"><a href="#">Logout</a></p-link-pure>
+      </div>
+    </p-sheet>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
