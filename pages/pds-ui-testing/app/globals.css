@@ -14,6 +14,7 @@
 }
 
 .skip-to-content:focus-within {
-  top: -100%;
+  position: static;
+  top: 0;
   opacity: 1;
 }
