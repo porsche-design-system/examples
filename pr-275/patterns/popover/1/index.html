@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Popover (Pattern)">
     <title>Popover (Pattern)</title>
-    <script type="module" crossorigin src="/examples/pr-275/patterns/assets/popover-1-DzmL9oIh.js"></script>
+    <script type="module" crossorigin src="/examples/pr-275/patterns/assets/popover-1-TByAAVD-.js"></script>
     <link rel="modulepreload" crossorigin href="/examples/pr-275/patterns/assets/modulepreload-polyfill-Dezn_h7o.js">
-    <link rel="stylesheet" crossorigin href="/examples/pr-275/patterns/assets/header-1-BgiPII8Y.css">
+    <link rel="stylesheet" crossorigin href="/examples/pr-275/patterns/assets/header-1-B6t9ajBL.css">
   <link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.4.0-rc.1.2585d8ce3d0e3afd2950.js as=script crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.display.54cf2ed6e6434366cc21.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.text.2052360b9b848c93c4e3.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.carousel.74744f24fa068453434b.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-tile.b4ff563743d1441be421.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-pure.6c5458a4ebc138c52492.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link.bd758f61542f8ecb3631.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2 as=font type=font/woff2 crossorigin><link rel=prefetch href=https://cdn.ui.porsche.com/porsche-design-system/icons/arrow-right.872716b.svg as=image type=image/svg+xml crossorigin><meta property=og:title content="Examples by Porsche Design System"><meta property=og:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=twitter:title content="Examples by Porsche Design System"><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=theme-color content=#FFF media=(prefers-color-scheme:light)><meta name=theme-color content=#0E1418 media=(prefers-color-scheme:dark)><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Examples by Porsche Design System"><meta name=msapplication-TileImage content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/mstile-270x270.f58081f.png><meta name=msapplication-TileColor content=#FFF><link rel=icon sizes=any href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon.ed9a926.ico><link rel=icon type=image/png sizes=32x32 href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon-32x32.d42ac28.png><link rel=apple-touch-icon href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/apple-touch-icon-180x180.bdf11cc.png><link rel=manifest href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/manifest.b904b15.webmanifest></head>
 
   <body>
@@ -52,7 +52,10 @@
         <p-crest class="scheme-dark sm:hidden" href="#"></p-crest>
         <p-wordmark class="scheme-dark max-sm:hidden" href="#"></p-wordmark>
         <div class="scheme-dark flex flex-wrap gap-static-md items-center justify-end">
-          <p-popover id="market-popover">
+          <p-popover
+            id="market-popover"
+            class="[--p-popover-max-w:22rem] [--p-popover-px:var(--spacing-static-md)] [--p-popover-py:var(--spacing-static-md)]"
+          >
             <p-button-pure
               id="market-button"
               slot="button"
@@ -64,7 +67,7 @@
             >
               Local Market
             </p-button-pure>
-            <div class="max-w-[320px] space-y-fluid-sm">
+            <div class="grid gap-fluid-sm">
               <div class="flex gap-static-md items-start">
                 <p-text>Do you want to switch to your local market for correct content and pricing?</p-text>
                 <p-button-pure
@@ -83,7 +86,10 @@
               </div>
             </div>
           </p-popover>
-          <p-popover id="profile-popover">
+          <p-popover
+            id="profile-popover"
+            class="[--p-popover-w:22rem] [--p-popover-max-w:80vw] [--p-popover-px:var(--spacing-static-lg)] [--p-popover-py:var(--spacing-static-lg)]"
+          >
             <p-button-pure
               id="profile-button"
               slot="button"
@@ -95,28 +101,34 @@
             >
               User
             </p-button-pure>
-            <div class="w-[324px] max-w-[80vw] space-y-fluid-md p-fluid-sm">
+            <div class="grid gap-fluid-md">
               <p-heading tag="h2" size="md">Welcome, John Doe</p-heading>
-              <div class="space-y-fluid-xs">
-                <p-text size="small" color="contrast-medium">Services</p-text>
-                <div class="flex flex-col">
-                  <p-link-pure class="py-static-xs" stretch="true" icon="none"><a href="#">My Porsche App</a></p-link-pure>
+              <div class="grid gap-fluid-xs">
+                <p-heading tag="h3" size="sm" color="contrast-medium">Services</p-heading>
+                <div class="grid gap-static-xs">
+                  <p-link-pure class="py-static-xs" stretch="true" icon="none">
+                    <a href="#">My Porsche App</a>
+                  </p-link-pure>
                   <p-link-pure class="py-static-xs" stretch="true" icon="none">
                     <a href="#">
                       Messages
-                      <p-tag class="ml-static-xs" variant="secondary" compact="true">3</p-tag>
+                      <p-tag class="ms-static-xs" variant="secondary" compact="true">3</p-tag>
                     </a>
                   </p-link-pure>
-                  <p-link-pure class="py-static-xs" stretch="true" icon="none"><a href="#">Find Connect Services</a></p-link-pure>
+                  <p-link-pure class="py-static-xs" stretch="true" icon="none">
+                    <a href="#">Find Connect Services</a>
+                  </p-link-pure>
                 </div>
               </div>
-              <div class="space-y-fluid-xs">
-                <p-text size="small" color="contrast-medium">Settings</p-text>
-                <div class="flex flex-col">
-                  <p-link-pure class="py-static-xs" stretch="true" icon="none"><a href="#">Profile settings</a></p-link-pure>
+              <div class="grid gap-fluid-xs">
+                <p-heading tag="h3" size="sm" color="contrast-medium">Settings</p-heading>
+                <div class="grid gap-static-xs">
+                  <p-link-pure class="py-static-xs" stretch="true" icon="none">
+                    <a href="#">Profile settings</a>
+                  </p-link-pure>
                 </div>
               </div>
-              <p-button class="w-full" type="button" variant="secondary" icon="none">Logout</p-button>
+              <p-button type="button" variant="secondary" icon="none">Logout</p-button>
             </div>
           </p-popover>
         </div>
@@ -157,28 +169,34 @@
     </main>
 
     <p-sheet id="profile-sheet" aria="{'aria-label': 'User profile'}">
-      <p-heading slot="header" tag="h2" size="large">Welcome, John Doe</p-heading>
-      <div class="space-y-fluid-md">
-        <div class="space-y-fluid-xs">
-          <p-text size="small" color="contrast-medium">Services</p-text>
-          <div class="flex flex-col">
-            <p-link-pure class="py-static-xs" stretch="true" icon="none"><a href="#">My Porsche App</a></p-link-pure>
+      <p-heading slot="header" tag="h2" size="lg">Welcome, John Doe</p-heading>
+      <div class="grid gap-fluid-md">
+        <div class="grid gap-fluid-xs">
+          <p-heading tag="h3" size="sm" color="contrast-medium">Services</p-heading>
+          <div class="grid gap-static-xs">
+            <p-link-pure class="py-static-xs" stretch="true" icon="none">
+              <a href="#">My Porsche App</a>
+            </p-link-pure>
             <p-link-pure class="py-static-xs" stretch="true" icon="none">
               <a href="#">
                 Messages
-                <p-tag class="ml-static-xs" variant="secondary" compact="true">3</p-tag>
+                <p-tag class="ms-static-xs" variant="secondary" compact="true">3</p-tag>
               </a>
             </p-link-pure>
-            <p-link-pure class="py-static-xs" stretch="true" icon="none"><a href="#">Find Connect Services</a></p-link-pure>
+            <p-link-pure class="py-static-xs" stretch="true" icon="none">
+              <a href="#">Find Connect Services</a>
+            </p-link-pure>
           </div>
         </div>
-        <div class="space-y-fluid-xs">
-          <p-text size="small" color="contrast-medium">Settings</p-text>
-          <div class="flex flex-col">
-            <p-link-pure class="py-static-xs" stretch="true" icon="none"><a href="#">Profile settings</a></p-link-pure>
+        <div class="grid gap-fluid-xs">
+          <p-heading tag="h3" size="sm" color="contrast-medium">Settings</p-heading>
+          <div class="grid gap-static-xs">
+            <p-link-pure class="py-static-xs" stretch="true" icon="none">
+              <a href="#">Profile settings</a>
+            </p-link-pure>
           </div>
         </div>
-        <p-button class="w-full" type="button" variant="secondary" icon="none">Logout</p-button>
+        <p-button type="button" variant="secondary" icon="none">Logout</p-button>
       </div>
     </p-sheet>
 

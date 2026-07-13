@@ -1,1 +1,0 @@
-import"./modulepreload-polyfill-Dezn_h7o.js";var e=document.getElementById(`profile-sheet`);document.getElementById(`sheet-trigger`).addEventListener(`click`,()=>{e.open=!0}),e.addEventListener(`dismiss`,()=>{e.open=!1});
