@@ -65,7 +65,6 @@ export default defineConfig({
         'popover-1': resolve(__dirname, 'src/popover/1/index.html'),
         'popover-2': resolve(__dirname, 'src/popover/2/index.html'),
         'popover-3': resolve(__dirname, 'src/popover/3/index.html'),
-        'popover-4': resolve(__dirname, 'src/popover/4/index.html'),
       },
     },
   },
