@@ -5,83 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Popover (Pattern)">
     <title>Popover (Pattern)</title>
-    <script type="module" crossorigin src="/examples/pr-275/patterns/assets/popover-3-BHmJA_h3.js"></script>
+    <script type="module" crossorigin src="/examples/pr-275/patterns/assets/popover-3-BayDIBOQ.js"></script>
     <link rel="modulepreload" crossorigin href="/examples/pr-275/patterns/assets/modulepreload-polyfill-Dezn_h7o.js">
-    <link rel="modulepreload" crossorigin href="/examples/pr-275/patterns/assets/esm-BUw-Ad67.js">
-    <link rel="stylesheet" crossorigin href="/examples/pr-275/patterns/assets/header-1-CAAUMXOU.css">
+    <link rel="stylesheet" crossorigin href="/examples/pr-275/patterns/assets/header-1-C0nQQD94.css">
   <link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.4.0-rc.1.2585d8ce3d0e3afd2950.js as=script crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.display.54cf2ed6e6434366cc21.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.text.2052360b9b848c93c4e3.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.carousel.74744f24fa068453434b.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-tile.b4ff563743d1441be421.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-pure.6c5458a4ebc138c52492.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link.bd758f61542f8ecb3631.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2 as=font type=font/woff2 crossorigin><link rel=prefetch href=https://cdn.ui.porsche.com/porsche-design-system/icons/arrow-right.872716b.svg as=image type=image/svg+xml crossorigin><meta property=og:title content="Examples by Porsche Design System"><meta property=og:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=twitter:title content="Examples by Porsche Design System"><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=theme-color content=#FFF media=(prefers-color-scheme:light)><meta name=theme-color content=#0E1418 media=(prefers-color-scheme:dark)><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Examples by Porsche Design System"><meta name=msapplication-TileImage content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/mstile-270x270.f58081f.png><meta name=msapplication-TileColor content=#FFF><link rel=icon sizes=any href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon.ed9a926.ico><link rel=icon type=image/png sizes=32x32 href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon-32x32.d42ac28.png><link rel=apple-touch-icon href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/apple-touch-icon-180x180.bdf11cc.png><link rel=manifest href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/manifest.b904b15.webmanifest></head>
 
   <body>
     <header class="grid-template border-b border-contrast-lower">
-      <div class="col-wide grid grid-cols-[auto_1fr_auto] items-center gap-fluid-md min-h-[64px]">
-        <p-popover data-tour-step>
-          <p-button-pure slot="button" type="button" icon="menu-lines" hide-label="true">Menu</p-button-pure>
-          <div class="max-w-[300px] space-y-static-sm">
-            <div class="flex items-start justify-between gap-static-md">
-              <p-text size="x-small" color="contrast-medium">Step 1 of 4</p-text>
-              <p-button-pure class="shrink-0" type="button" icon="close" hide-label="true" data-tour="skip">
-                Close
-              </p-button-pure>
-            </div>
-            <p-heading tag="h2" size="small">Main navigation</p-heading>
-            <p-text>Open the menu to explore every section of the site.</p-text>
-            <div class="flex gap-static-sm pt-static-xs">
-              <p-button type="button" compact="true" data-tour="next">Next</p-button>
-            </div>
-          </div>
-        </p-popover>
-
-        <p-wordmark class="justify-self-center" href="#"></p-wordmark>
-
-        <div class="flex items-center gap-static-md justify-self-end">
-          <p-popover data-tour-step>
-            <p-button-pure slot="button" type="button" icon="search" hide-label="true">Search</p-button-pure>
-            <div class="max-w-[300px] space-y-static-sm">
-              <div class="flex items-start justify-between gap-static-md">
-                <p-text size="x-small" color="contrast-medium">Step 2 of 4</p-text>
+      <div class="col-wide grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-fluid-md items-center min-h-[80px]">
+        <div class="flex flex-wrap gap-static-md items-center justify-start">
+          <p-popover
+            class="[--p-popover-w:20rem] [--p-popover-px:var(--spacing-static-md)] [--p-popover-py:var(--spacing-static-md)]"
+            open="true"
+            data-tour-step
+          >
+            <p-button-pure
+              slot="button"
+              class="p-static-xs -m-static-xs"
+              type="button"
+              icon="menu-lines"
+              hide-label="{base: true, s: false}"
+            >
+              Menu
+            </p-button-pure>
+            <div class="grid gap-fluid-sm">
+              <div class="flex items-center justify-between gap-static-md">
+                <p-text size="xs" color="contrast-medium">Step 1 of 4</p-text>
                 <p-button-pure class="shrink-0" type="button" icon="close" hide-label="true" data-tour="skip">
-                  Close
+                  Dismiss tips
                 </p-button-pure>
               </div>
-              <p-heading tag="h2" size="small">Search</p-heading>
+              <p-heading tag="h2" size="sm">Main navigation</p-heading>
+              <p-text>Open the menu to explore every section of the site.</p-text>
+              <div class="flex gap-static-sm">
+                <p-button type="button" compact="true" data-tour="next">Next</p-button>
+              </div>
+            </div>
+          </p-popover>
+        </div>
+        <p-crest class="sm:hidden" href="#"></p-crest>
+        <p-wordmark class="max-sm:hidden" href="#"></p-wordmark>
+        <div class="flex flex-wrap gap-static-md items-center justify-end">
+          <p-popover
+            class="[--p-popover-w:20rem] [--p-popover-px:var(--spacing-static-md)] [--p-popover-py:var(--spacing-static-md)]"
+            data-tour-step
+          >
+            <p-button-pure slot="button" class="p-static-xs -m-static-xs" type="button" icon="search" hide-label="true"
+              >Search</p-button-pure
+            >
+            <div class="grid gap-fluid-sm">
+              <div class="flex items-center justify-between gap-static-md">
+                <p-text size="xs" color="contrast-medium">Step 2 of 4</p-text>
+                <p-button-pure class="shrink-0" type="button" icon="close" hide-label="true" data-tour="skip">
+                  Dismiss tips
+                </p-button-pure>
+              </div>
+              <p-heading tag="h2" size="sm">Search</p-heading>
               <p-text>Find models, dealers and content from anywhere on the site.</p-text>
-              <div class="flex gap-static-sm pt-static-xs">
+              <div class="flex gap-static-sm">
                 <p-button type="button" variant="secondary" compact="true" data-tour="back">Back</p-button>
                 <p-button type="button" compact="true" data-tour="next">Next</p-button>
               </div>
             </div>
           </p-popover>
-
-          <p-popover data-tour-step>
-            <p-button-pure slot="button" type="button" icon="bell" hide-label="true">Notifications</p-button-pure>
-            <div class="max-w-[300px] space-y-static-sm">
-              <div class="flex items-start justify-between gap-static-md">
-                <p-text size="x-small" color="contrast-medium">Step 3 of 4</p-text>
+          <p-popover
+            class="[--p-popover-w:20rem] [--p-popover-px:var(--spacing-static-md)] [--p-popover-py:var(--spacing-static-md)]"
+            data-tour-step
+          >
+            <p-button-pure slot="button" class="p-static-xs -m-static-xs" type="button" icon="bell" hide-label="true"
+              >Notifications</p-button-pure
+            >
+            <div class="grid gap-fluid-sm">
+              <div class="flex items-center justify-between gap-static-md">
+                <p-text size="xs" color="contrast-medium">Step 3 of 4</p-text>
                 <p-button-pure class="shrink-0" type="button" icon="close" hide-label="true" data-tour="skip">
-                  Close
+                  Dismiss tips
                 </p-button-pure>
               </div>
-              <p-heading tag="h2" size="small">Notifications</p-heading>
+              <p-heading tag="h2" size="sm">Notifications</p-heading>
               <p-text>Your latest updates and messages appear right here.</p-text>
-              <div class="flex gap-static-sm pt-static-xs">
+              <div class="flex gap-static-sm">
                 <p-button type="button" variant="secondary" compact="true" data-tour="back">Back</p-button>
                 <p-button type="button" compact="true" data-tour="next">Next</p-button>
               </div>
             </div>
           </p-popover>
-
-          <p-popover data-tour-step>
-            <p-button-pure slot="button" type="button" icon="user" hide-label="true">Account</p-button-pure>
-            <div class="max-w-[300px] space-y-static-sm">
-              <div class="flex items-start justify-between gap-static-md">
-                <p-text size="x-small" color="contrast-medium">Step 4 of 4</p-text>
+          <p-popover
+            class="[--p-popover-w:20rem] [--p-popover-px:var(--spacing-static-md)] [--p-popover-py:var(--spacing-static-md)]"
+            data-tour-step
+          >
+            <p-button-pure slot="button" class="p-static-xs -m-static-xs" type="button" icon="user" hide-label="true"
+              >Account</p-button-pure
+            >
+            <div class="grid gap-fluid-sm">
+              <div class="flex items-center justify-between gap-static-md">
+                <p-text size="xs" color="contrast-medium">Step 4 of 4</p-text>
                 <p-button-pure class="shrink-0" type="button" icon="close" hide-label="true" data-tour="skip">
-                  Close
+                  Dismiss tips
                 </p-button-pure>
               </div>
-              <p-heading tag="h2" size="small">Your account</p-heading>
+              <p-heading tag="h2" size="sm">Your account</p-heading>
               <p-text>Manage your profile, orders and settings from here.</p-text>
-              <div class="flex gap-static-sm pt-static-xs">
+              <div class="flex gap-static-sm">
                 <p-button type="button" variant="secondary" compact="true" data-tour="back">Back</p-button>
                 <p-button type="button" compact="true" data-tour="next">Done</p-button>
               </div>
@@ -92,7 +117,7 @@
     </header>
 
     <main class="grid-template">
-      <section class="col-wide py-fluid-lg space-y-fluid-md">
+      <section class="col-wide my-fluid-lg space-y-fluid-md">
         <p-heading tag="h1" size="xl">Feature tour</p-heading>
         <p-text>
           On first visit, a sequence of popovers walks the user through the key areas of the interface, one step at a
