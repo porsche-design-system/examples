@@ -7,7 +7,7 @@ const navDrilldown = document.getElementById('nav-drilldown');
 const navButton = document.getElementById('nav-button');
 const marketPopover = document.getElementById('market-popover');
 const marketButton = document.getElementById('market-button');
-const marketClose = document.getElementById('market-close');
+const marketDismiss = document.getElementById('market-dismiss');
 const profilePopover = document.getElementById('profile-popover');
 const profileSheet = document.getElementById('profile-sheet');
 const profileButton = document.getElementById('profile-button');
@@ -41,6 +41,14 @@ marketButton.addEventListener('click', () => {
   profileSheet.open = false;
 });
 
+marketDismiss.addEventListener('click', () => {
+  marketPopover.open = false;
+});
+
+marketPopover.addEventListener('dismiss', () => {
+  marketPopover.open = false;
+});
+
 profileButton.addEventListener('click', () => {
   marketPopover.open = false;
   if (desktopQuery.matches) {
@@ -52,12 +60,8 @@ profileButton.addEventListener('click', () => {
   }
 });
 
-marketPopover.addEventListener('dismiss', (e) => {
-  e.target.open = false;
-});
-
-profilePopover.addEventListener('dismiss', (e) => {
-  e.target.open = false;
+profilePopover.addEventListener('dismiss', () => {
+  profilePopover.open = false;
 });
 
 profileSheet.addEventListener('dismiss', () => {
@@ -80,28 +84,6 @@ desktopQuery.addEventListener('change', (e) => {
     }
   }
 });
-
-marketClose.addEventListener('click', () => {
-  marketPopover.open = false;
-});
-
-for (const button of marketPopover.querySelectorAll('p-button')) {
-  button.addEventListener('click', () => {
-    marketPopover.open = false;
-  });
-}
-
-for (const button of profilePopover.querySelectorAll('p-button')) {
-  button.addEventListener('click', () => {
-    profilePopover.open = false;
-  });
-}
-
-for (const button of profileSheet.querySelectorAll('p-button')) {
-  button.addEventListener('click', () => {
-    profileSheet.open = false;
-  });
-}
 
 if (pauseButton && video instanceof HTMLVideoElement) {
   pauseButton.addEventListener('click', () => {
