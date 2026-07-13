@@ -19,37 +19,38 @@
         <nav id="priority-nav" aria-label="Repository" class="overflow-hidden border-b border-contrast-lower">
           <ul
             id="nav-primary"
-            class="flex flex-nowrap items-center gap-static-md list-none m-0 p-0 min-h-[52px] whitespace-nowrap [&>li]:shrink-0"
+            class="flex flex-nowrap items-center gap-static-md list-none m-0 p-0 ps-static-xs min-h-[52px] whitespace-nowrap [&>li]:shrink-0"
           >
-            <li data-nav-item><p-link-pure icon="none"><a href="#">Code</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure class="p-static-2xs" icon="none"><a href="#">Code</a></p-link-pure></li>
             <li data-nav-item>
-              <p-link-pure icon="none">
+              <p-link-pure class="p-static-2xs" icon="none">
                 <a href="#">
                   Issues
-                  <span class="ml-static-xs px-static-xs rounded-full bg-surface text-contrast-medium text-xs align-middle"
-                    >23</span
-                  >
+                  <p-tag class="ml-static-xs" variant="secondary" compact="true">23</p-tag>
                 </a>
               </p-link-pure>
             </li>
-            <li data-nav-item><p-link-pure icon="none"><a href="#">Pull requests</a></p-link-pure></li>
-            <li data-nav-item><p-link-pure icon="none"><a href="#">Agents</a></p-link-pure></li>
-            <li data-nav-item><p-link-pure icon="none"><a href="#">Actions</a></p-link-pure></li>
-            <li data-nav-item><p-link-pure icon="none"><a href="#">Projects</a></p-link-pure></li>
-            <li data-nav-item><p-link-pure icon="none"><a href="#">Security and quality</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure class="p-static-2xs" icon="none"><a href="#">Pull requests</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure class="p-static-2xs" icon="none"><a href="#">Agents</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure class="p-static-2xs" icon="none"><a href="#">Actions</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure class="p-static-2xs" icon="none"><a href="#">Projects</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure class="p-static-2xs" icon="none"><a href="#">Security and quality</a></p-link-pure></li>
             <li data-nav-item data-submenu>
               <!-- Bar representation: a dropdown popover. -->
               <div data-bar>
-                <p-popover id="insights-popover">
+                <p-popover
+                  id="insights-popover"
+                  style="--p-popover-min-w: 200px; --p-popover-py: var(--p-spacing-static-md); --p-popover-px: var(--p-spacing-static-md)"
+                >
                   <p-button-pure slot="button" type="button" icon="arrow-head-down" align-label="start">
                     Insights
                   </p-button-pure>
-                  <ul class="flex flex-col gap-static-xs list-none m-0 p-0 min-w-[200px]">
-                    <li><p-link-pure icon="none"><a href="#">Pulse</a></p-link-pure></li>
-                    <li><p-link-pure icon="none"><a href="#">Contributors</a></p-link-pure></li>
-                    <li><p-link-pure icon="none"><a href="#">Community Standards</a></p-link-pure></li>
-                    <li><p-link-pure icon="none"><a href="#">Traffic</a></p-link-pure></li>
-                    <li><p-link-pure icon="none"><a href="#">Commits</a></p-link-pure></li>
+                  <ul class="flex flex-col gap-static-xs list-none m-0 p-0">
+                    <li><p-link-pure class="p-static-2xs" icon="none"><a href="#">Pulse</a></p-link-pure></li>
+                    <li><p-link-pure class="p-static-2xs" icon="none"><a href="#">Contributors</a></p-link-pure></li>
+                    <li><p-link-pure class="p-static-2xs" icon="none"><a href="#">Community Standards</a></p-link-pure></li>
+                    <li><p-link-pure class="p-static-2xs" icon="none"><a href="#">Traffic</a></p-link-pure></li>
+                    <li><p-link-pure class="p-static-2xs" icon="none"><a href="#">Commits</a></p-link-pure></li>
                   </ul>
                 </p-popover>
               </div>
@@ -57,21 +58,24 @@
               <div data-overflow hidden class="space-y-static-xs">
                 <p-text size="small" color="contrast-medium">Insights</p-text>
                 <ul class="flex flex-col gap-static-xs list-none m-0 p-0 ps-static-sm">
-                  <li><p-link-pure icon="none"><a href="#">Pulse</a></p-link-pure></li>
-                  <li><p-link-pure icon="none"><a href="#">Contributors</a></p-link-pure></li>
-                  <li><p-link-pure icon="none"><a href="#">Community Standards</a></p-link-pure></li>
-                  <li><p-link-pure icon="none"><a href="#">Traffic</a></p-link-pure></li>
-                  <li><p-link-pure icon="none"><a href="#">Commits</a></p-link-pure></li>
+                  <li><p-link-pure class="p-static-2xs" icon="none"><a href="#">Pulse</a></p-link-pure></li>
+                  <li><p-link-pure class="p-static-2xs" icon="none"><a href="#">Contributors</a></p-link-pure></li>
+                  <li><p-link-pure class="p-static-2xs" icon="none"><a href="#">Community Standards</a></p-link-pure></li>
+                  <li><p-link-pure class="p-static-2xs" icon="none"><a href="#">Traffic</a></p-link-pure></li>
+                  <li><p-link-pure class="p-static-2xs" icon="none"><a href="#">Commits</a></p-link-pure></li>
                 </ul>
               </div>
             </li>
-            <li data-nav-item><p-link-pure icon="none"><a href="#">Settings</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure class="p-static-2xs" icon="none"><a href="#">Settings</a></p-link-pure></li>
             <li id="nav-more-item" class="ms-auto" hidden>
-              <p-popover id="more-popover">
+              <p-popover
+                id="more-popover"
+                style="--p-popover-min-w: 220px; --p-popover-py: var(--p-spacing-static-md); --p-popover-px: var(--p-spacing-static-md)"
+              >
                 <p-button slot="button" type="button" variant="secondary" compact="true" icon="arrow-head-down">
                   More
                 </p-button>
-                <ul id="nav-overflow" class="flex flex-col gap-static-xs list-none m-0 p-0 min-w-[220px]"></ul>
+                <ul id="nav-overflow" class="flex flex-col gap-static-xs list-none m-0 p-0"></ul>
               </p-popover>
             </li>
           </ul>

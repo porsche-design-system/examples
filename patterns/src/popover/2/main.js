@@ -8,6 +8,8 @@ const primary = document.getElementById('nav-primary');
 const overflow = document.getElementById('nav-overflow');
 const moreItem = document.getElementById('nav-more-item');
 
+const morePopover = document.getElementById('more-popover');
+
 // Captured once, in their original order, so we can freely move them between the bar and the overflow popover.
 const items = Array.from(primary.querySelectorAll('[data-nav-item]'));
 
