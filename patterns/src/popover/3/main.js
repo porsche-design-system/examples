@@ -1,5 +1,4 @@
 import './style.css';
-import { componentsReady } from '@porsche-design-system/components-js';
 
 // DO NOT USE IN PRODUCTION!
 // EXAMPLE CODE FOR DEMONSTRATION PURPOSE ONLY.
@@ -7,7 +6,7 @@ import { componentsReady } from '@porsche-design-system/components-js';
 const steps = Array.from(document.querySelectorAll('[data-tour-step]'));
 const restartButton = document.getElementById('restart-tour');
 
-let current = -1;
+let current = 0;
 
 // Controlled mode: we own every step's open state, so exactly one coachmark is visible at a time. An index outside
 // the range (e.g. -1) closes them all and ends the tour.
@@ -42,6 +41,3 @@ for (const step of steps) {
 }
 
 restartButton.addEventListener('click', () => showStep(0));
-
-// Start the tour on load.
-componentsReady().then(() => showStep(0));
