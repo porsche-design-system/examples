@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" class="scheme-light-dark bg-canvas">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Popover (Pattern)">
+    <title>Popover (Pattern)</title>
+    <script type="module" crossorigin src="/examples/pr-275/patterns/assets/popover-2-De7rmpjR.js"></script>
+    <link rel="modulepreload" crossorigin href="/examples/pr-275/patterns/assets/modulepreload-polyfill-Dezn_h7o.js">
+    <link rel="modulepreload" crossorigin href="/examples/pr-275/patterns/assets/esm-BUw-Ad67.js">
+    <link rel="stylesheet" crossorigin href="/examples/pr-275/patterns/assets/header-1-BgiPII8Y.css">
+  <link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.4.0-rc.1.2585d8ce3d0e3afd2950.js as=script crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.display.54cf2ed6e6434366cc21.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.text.2052360b9b848c93c4e3.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.carousel.74744f24fa068453434b.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-tile.b4ff563743d1441be421.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-pure.6c5458a4ebc138c52492.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link.bd758f61542f8ecb3631.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2 as=font type=font/woff2 crossorigin><link rel=prefetch href=https://cdn.ui.porsche.com/porsche-design-system/icons/arrow-right.872716b.svg as=image type=image/svg+xml crossorigin><meta property=og:title content="Examples by Porsche Design System"><meta property=og:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=twitter:title content="Examples by Porsche Design System"><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=theme-color content=#FFF media=(prefers-color-scheme:light)><meta name=theme-color content=#0E1418 media=(prefers-color-scheme:dark)><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Examples by Porsche Design System"><meta name=msapplication-TileImage content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/mstile-270x270.f58081f.png><meta name=msapplication-TileColor content=#FFF><link rel=icon sizes=any href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon.ed9a926.ico><link rel=icon type=image/png sizes=32x32 href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon-32x32.d42ac28.png><link rel=apple-touch-icon href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/apple-touch-icon-180x180.bdf11cc.png><link rel=manifest href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/manifest.b904b15.webmanifest></head>
+
+  <body>
+    <main class="grid-template">
+      <section class="col-wide py-fluid-lg space-y-fluid-md">
+        <p-heading tag="h1" size="xl">Priority navigation</p-heading>
+        <p-text>
+          Resize the frame &mdash; navigation items that no longer fit collapse into the &ldquo;More&rdquo; popover,
+          keeping the bar on a single line.
+        </p-text>
+
+        <nav id="priority-nav" aria-label="Repository" class="overflow-hidden border-b border-contrast-lower">
+          <ul
+            id="nav-primary"
+            class="flex flex-nowrap items-center gap-static-md list-none m-0 p-0 min-h-[52px] whitespace-nowrap [&>li]:shrink-0"
+          >
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Code</a></p-link-pure></li>
+            <li data-nav-item>
+              <p-link-pure icon="none">
+                <a href="#">
+                  Issues
+                  <span class="ml-static-xs px-static-xs rounded-full bg-surface text-contrast-medium text-xs align-middle"
+                    >23</span
+                  >
+                </a>
+              </p-link-pure>
+            </li>
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Pull requests</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Agents</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Actions</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Projects</a></p-link-pure></li>
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Security and quality</a></p-link-pure></li>
+            <li data-nav-item data-submenu>
+              <!-- Bar representation: a dropdown popover. -->
+              <div data-bar>
+                <p-popover id="insights-popover">
+                  <p-button-pure slot="button" type="button" icon="arrow-head-down" align-label="start">
+                    Insights
+                  </p-button-pure>
+                  <ul class="flex flex-col gap-static-xs list-none m-0 p-0 min-w-[200px]">
+                    <li><p-link-pure icon="none"><a href="#">Pulse</a></p-link-pure></li>
+                    <li><p-link-pure icon="none"><a href="#">Contributors</a></p-link-pure></li>
+                    <li><p-link-pure icon="none"><a href="#">Community Standards</a></p-link-pure></li>
+                    <li><p-link-pure icon="none"><a href="#">Traffic</a></p-link-pure></li>
+                    <li><p-link-pure icon="none"><a href="#">Commits</a></p-link-pure></li>
+                  </ul>
+                </p-popover>
+              </div>
+              <!-- Overflow representation: inline, indented group (no nested popover). -->
+              <div data-overflow hidden class="space-y-static-xs">
+                <p-text size="small" color="contrast-medium">Insights</p-text>
+                <ul class="flex flex-col gap-static-xs list-none m-0 p-0 ps-static-sm">
+                  <li><p-link-pure icon="none"><a href="#">Pulse</a></p-link-pure></li>
+                  <li><p-link-pure icon="none"><a href="#">Contributors</a></p-link-pure></li>
+                  <li><p-link-pure icon="none"><a href="#">Community Standards</a></p-link-pure></li>
+                  <li><p-link-pure icon="none"><a href="#">Traffic</a></p-link-pure></li>
+                  <li><p-link-pure icon="none"><a href="#">Commits</a></p-link-pure></li>
+                </ul>
+              </div>
+            </li>
+            <li data-nav-item><p-link-pure icon="none"><a href="#">Settings</a></p-link-pure></li>
+            <li id="nav-more-item" class="ms-auto" hidden>
+              <p-popover id="more-popover">
+                <p-button slot="button" type="button" variant="secondary" compact="true" icon="arrow-head-down">
+                  More
+                </p-button>
+                <ul id="nav-overflow" class="flex flex-col gap-static-xs list-none m-0 p-0 min-w-[220px]"></ul>
+              </p-popover>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </main>
+
+  <script data-pds-loader-script>var porscheDesignSystem;(()=>{"use strict";const e={d:(t,r)=>{if(Array.isArray(r))for(var n=0;n<r.length;){var o=r[n++],s=r[n++];e.o(t,o)?0===s&&n++:0===s?Object.defineProperty(t,o,{enumerable:!0,value:r[n++]}):Object.defineProperty(t,o,{enumerable:!0,get:s})}else for(var o in r)e.o(r,o)&&!e.o(t,o)&&Object.defineProperty(t,o,{enumerable:!0,get:r[o]})},o:(e,t)=>Object.prototype.hasOwnProperty.call(e,t),r:e=>{Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}};let t={};e.r(t),e.d(t,{load:()=>s});const r="porscheDesignSystem";function n(){return document[r]||(document[r]={}),document[r]}function o({script:e,version:t,prefix:o}){const s=function(e){const t=n(),{[e]:r}=t;if(!r){let r=()=>{};const n=new Promise(e=>r=e);t[e]={isInjected:!1,isReady:()=>n,readyResolve:r,prefixes:[],registerCustomElements:null}}return t[e]}(t),{isInjected:i,prefixes:c=[],registerCustomElements:d}=s,[u]=Object.entries(n()).filter(([e,r])=>e!==t&&"object"==typeof r&&r.prefixes.includes(o));if(u)throw new Error(`[Porsche Design System v${t}] prefix '${o}' is already registered with version '${u[0]}' of the Porsche Design System. Please use a different one.\nTake a look at document.${r} for more details.`);i||(function(e){const t=document.createElement("script");t.src=e,t.setAttribute("crossorigin",""),document.body.appendChild(t)}(e),s.isInjected=!0),c.includes(o)||(c.push(o),d&&d(o))}const s=(e={})=>{const t="PORSCHE_DESIGN_SYSTEM_CDN";window[t]=e.cdn||window[t]||(window.location.origin.match(/\.cn$/)?"cn":"auto");const r="porscheDesignSystem";document[r]||(document[r]={}),document[r].cdn={url:"https://cdn.ui.porsche."+("cn"===window[t]?"cn":"com"),prefixes:[]},o({version:"4.4.0-rc.1",script:document[r].cdn.url+"/porsche-design-system/components/porsche-design-system.v4.4.0-rc.1.2585d8ce3d0e3afd2950.js",prefix:e.prefix||""})};porscheDesignSystem=t})();porscheDesignSystem.load()</script></body>
+</html>
