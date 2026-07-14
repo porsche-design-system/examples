@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" class="scheme-light-dark bg-canvas">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Popover (Pattern)">
+    <title>Popover (Pattern)</title>
+  </head>
+
+  <body>
+    <header
+      class="z-1 grid-template absolute inset-x-0 before:absolute before:inset-[0_0_-60px_0] before:-z-1 before:pointer-events-none before:bg-fade-to-b"
+    >
+      <div class="col-wide grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-fluid-md items-center min-h-[80px]">
+        <div class="flex flex-wrap gap-static-md items-center justify-start">
+          <nav aria-label="Main">
+            <p-button-pure
+              id="nav-button"
+              class="scheme-dark p-static-xs -m-static-xs"
+              type="button"
+              icon="menu-lines"
+              hide-label="{base: true, s: false}"
+              aria="{'aria-haspopup': 'dialog'}"
+            >
+              Menu
+            </p-button-pure>
+            <p-drilldown id="nav-drilldown">
+              <p-drilldown-item identifier="id-1" label="Some Label (1)">
+                <p-drilldown-item identifier="id-1-1" label="Some Label (1-1)">
+                  <p-drilldown-link><a href="#">Some anchor (1-1)</a></p-drilldown-link>
+                  <p-drilldown-link><a href="#">Some anchor (1-1)</a></p-drilldown-link>
+                </p-drilldown-item>
+                <p-drilldown-link><a href="#">Some anchor (1)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (1)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (1)</a></p-drilldown-link>
+              </p-drilldown-item>
+              <p-drilldown-item identifier="id-2" label="Some Label (2)">
+                <p-drilldown-link><a href="#">Some anchor (2)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (2)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (2)</a></p-drilldown-link>
+              </p-drilldown-item>
+              <p-drilldown-item identifier="id-3" label="Some Label (3)">
+                <p-drilldown-link><a href="#">Some anchor (3)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (3)</a></p-drilldown-link>
+              </p-drilldown-item>
+            </p-drilldown>
+          </nav>
+        </div>
+        <p-crest class="scheme-dark sm:hidden" href="#"></p-crest>
+        <p-wordmark class="scheme-dark max-sm:hidden" href="#"></p-wordmark>
+        <div class="scheme-dark flex flex-wrap gap-static-md items-center justify-end">
+          <p-popover
+            id="market-popover"
+            class="[--p-popover-w:22rem] [--p-popover-px:var(--spacing-static-md)] [--p-popover-py:var(--spacing-static-md)]"
+          >
+            <p-button-pure
+              id="market-button"
+              slot="button"
+              class="p-static-xs -m-static-xs"
+              title="Local Market"
+              type="button"
+              icon="globe"
+              hide-label="true"
+            >
+              Local Market
+            </p-button-pure>
+            <div class="grid gap-fluid-sm">
+              <div class="flex gap-static-md items-start">
+                <p-text>Do you want to switch to your local market for correct content and pricing?</p-text>
+                <p-button-pure
+                  id="market-dismiss"
+                  class="shrink-0 p-static-xs -m-static-xs"
+                  type="button"
+                  icon="close"
+                  hide-label="true"
+                >
+                  Dismiss market popover
+                </p-button-pure>
+              </div>
+              <div class="flex flex-wrap gap-static-sm">
+                <p-button type="button" compact="true">Go to Local Market</p-button>
+                <p-button type="button" variant="secondary" compact="true">International</p-button>
+              </div>
+            </div>
+          </p-popover>
+          <p-popover
+            id="profile-popover"
+            class="[--p-popover-w:22rem] [--p-popover-px:var(--spacing-static-lg)] [--p-popover-py:var(--spacing-static-lg)]"
+          >
+            <p-button-pure
+              id="profile-button"
+              slot="button"
+              class="p-static-xs -m-static-xs"
+              title="User"
+              type="button"
+              icon="user"
+              hide-label="true"
+            >
+              User
+            </p-button-pure>
+            <div class="grid gap-fluid-md">
+              <p-heading tag="h2" size="md">Welcome, John Doe</p-heading>
+              <div class="grid gap-fluid-xs">
+                <p-heading tag="h3" size="sm" color="contrast-medium">Services</p-heading>
+                <div class="grid gap-static-xs">
+                  <p-link-pure class="py-static-xs" stretch="true" icon="none">
+                    <a href="#">My Porsche App</a>
+                  </p-link-pure>
+                  <p-link-pure class="py-static-xs" stretch="true" icon="none">
+                    <a href="#">
+                      Messages
+                      <p-tag class="ms-static-xs" variant="secondary" compact="true">3</p-tag>
+                    </a>
+                  </p-link-pure>
+                  <p-link-pure class="py-static-xs" stretch="true" icon="none">
+                    <a href="#">Find Connect Services</a>
+                  </p-link-pure>
+                </div>
+              </div>
+              <div class="grid gap-fluid-xs">
+                <p-heading tag="h3" size="sm" color="contrast-medium">Settings</p-heading>
+                <div class="grid gap-static-xs">
+                  <p-link-pure class="py-static-xs" stretch="true" icon="none">
+                    <a href="#">Profile settings</a>
+                  </p-link-pure>
+                </div>
+              </div>
+              <p-button type="button" variant="secondary" icon="none">Logout</p-button>
+            </div>
+          </p-popover>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid-template">
+      <section class="scheme-dark z-0 col-full grid grid-cols-subgrid items-end h-[clamp(480px,80vh,1000px)]">
+        <video
+          class="z-0 col-span-full row-span-full min-w-full w-full min-h-full h-full object-cover object-center"
+          poster="/assets/mood-porsche-gts.webp"
+          loop
+          muted
+          autoplay
+          playsinline
+          aria-hidden="true"
+        >
+          <source src="/assets/mood-porsche-gts.mp4" type="video/mp4">
+          <source src="/assets/mood-porsche-gts.webm" type="video/webm">
+        </video>
+        <div class="z-1 col-extended row-span-full mb-fluid-lg">
+          <p-heading tag="h1" size="3xl">
+            <span class="text-md block">Pattern</span>
+            Popover
+          </p-heading>
+        </div>
+        <p-button
+          class="z-2 col-wide place-self-end row-span-full mb-fluid-lg"
+          variant="secondary"
+          compact="true"
+          hide-label="true"
+          icon="pause"
+          id="pause-button"
+        >
+          Pause Video
+        </p-button>
+      </section>
+    </main>
+
+    <p-sheet id="profile-sheet" aria="{'aria-label': 'User profile'}">
+      <p-heading slot="header" tag="h2" size="lg">Welcome, John Doe</p-heading>
+      <div class="grid gap-fluid-md">
+        <div class="grid gap-fluid-xs">
+          <p-heading tag="h3" size="sm" color="contrast-medium">Services</p-heading>
+          <div class="grid gap-static-xs">
+            <p-link-pure class="py-static-xs" stretch="true" icon="none">
+              <a href="#">My Porsche App</a>
+            </p-link-pure>
+            <p-link-pure class="py-static-xs" stretch="true" icon="none">
+              <a href="#">
+                Messages
+                <p-tag class="ms-static-xs" variant="secondary" compact="true">3</p-tag>
+              </a>
+            </p-link-pure>
+            <p-link-pure class="py-static-xs" stretch="true" icon="none">
+              <a href="#">Find Connect Services</a>
+            </p-link-pure>
+          </div>
+        </div>
+        <div class="grid gap-fluid-xs">
+          <p-heading tag="h3" size="sm" color="contrast-medium">Settings</p-heading>
+          <div class="grid gap-static-xs">
+            <p-link-pure class="py-static-xs" stretch="true" icon="none">
+              <a href="#">Profile settings</a>
+            </p-link-pure>
+          </div>
+        </div>
+        <p-button type="button" variant="secondary" icon="none">Logout</p-button>
+      </div>
+    </p-sheet>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
