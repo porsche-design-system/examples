@@ -21,8 +21,8 @@
           aria-label="Repository"
         >
           <ul
-            id="nav-primary"
-            class="flex items-center gap-static-md min-h-[3rem] whitespace-nowrap border-b border-contrast-lower [&>li]:shrink-0"
+            id="nav-bar"
+            class="flex items-center gap-static-md min-h-[3rem] whitespace-nowrap border-b border-contrast-lower *:shrink-0"
           >
             <li>
               <p-link-pure class="p-static-xs -m-static-xs" icon="none">
@@ -72,7 +72,7 @@
                 <a href="#">Some Item 9</a>
               </p-link-pure>
             </li>
-            <li id="nav-more-item" class="ms-auto" hidden>
+            <li id="more-trigger" class="ms-auto" hidden>
               <p-popover
                 id="more-popover"
                 class="[--p-popover-w:240px] [--p-popover-py:var(--spacing-static-md)] [--p-popover-px:var(--spacing-static-md)]"
@@ -87,7 +87,7 @@
                 >
                   More
                 </p-button>
-                <ul id="more-list" class="grid gap-static-md [&>li]:grid"></ul>
+                <ul id="overflow-list" class="grid gap-static-md *:grid"></ul>
               </p-popover>
             </li>
           </ul>
