@@ -37,6 +37,11 @@ workspaces.
 [Held-back dependencies](#held-back-dependencies). Angular is updated through this normal syncpack flow; running its
 framework **migrations** is described in [Updating Angular](#updating-angular).
 
+The `@porsche-design-system/components-*` packages are bumped through this normal syncpack flow to the **latest stable**
+within the current major. A `versionGroups` entry in [`.syncpackrc.json`](../.syncpackrc.json) keeps every framework
+variant (`-js`, `-react`, `-angular`, `-vue`) on the **same** version, so pick them together. Do **not** select a
+pre-release or cross a **major** (e.g. `4.x → 5.x`) — a major PDS upgrade is a deliberate, human-led adoption.
+
 ### Syncpack helper scripts
 
 [`syncpack`](https://syncpack.dev) is pinned as a root `devDependency` (do **not** rely on an unpinned `npx syncpack`,
@@ -71,11 +76,10 @@ When a third-party package declares a peer dependency range that conflicts with 
 dependency has a security advisory, resolve it explicitly via the `overrides` field in the root
 [`package.json`](../package.json) instead of disabling peer-dependency checks globally.
 
-The current `overrides` force vulnerable transitive dependencies up to their first patched release using per-major
-version-selector keys (e.g. `"brace-expansion@5.x": "5.0.6"`, `"postcss@8.x": "8.5.15"`). After adding or changing an
-override, delete `package-lock.json` **and** `node_modules` and re-run `npm install`; a plain `npm install` only
-re-resolves changed nodes, so stale transitive entries keep their old (vulnerable) versions and the override appears to
-have no effect.
+Add overrides using per-major version-selector keys (e.g. `"brace-expansion@5.x": "5.0.6"`,
+`"postcss@8.x": "8.5.15"`). After adding or changing an override, delete `package-lock.json` **and** `node_modules`
+and re-run `npm install`; a plain `npm install` only re-resolves changed nodes, so stale transitive entries keep their
+old (vulnerable) versions and the override appears to have no effect.
 
 ## Auditing dependencies (`npm audit`)
 

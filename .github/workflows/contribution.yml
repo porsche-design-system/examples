@@ -68,18 +68,28 @@ jobs:
       - build
   deploy:
     name: 'Deploy'
+    # gh-pages writes are NOT possible on pull_request events from forks (read-only token),
+    # and we must not attempt them. Run deploy only for:
+    #   - any push event (always from a trusted branch, see `on.push.branches`)
+    #   - pull_request events whose head is in this repository (internal PRs), excluding bot-authored
+    #     PRs (dependabot, Copilot coding agent). Defense-in-depth: even an approved bot PR must never
+    #     reach the `contents: write` gh-pages push — keep that path closed to automation-authored code.
+    #
+    # We gate on the PR *author* (`github.event.pull_request.user.login`), NOT on `github.actor`:
+    # `github.actor` is whoever triggered the current run (e.g. a maintainer pushing a commit to, or
+    # re-running, a bot's PR), so it does not reliably identify an automation-authored PR. The PR
+    # author is stable regardless of who later pushes or re-runs the workflow.
+    if: >-
+      github.event_name == 'push' ||
+      (github.event.pull_request.head.repo.full_name == github.repository &&
+       github.event.pull_request.user.login != 'dependabot[bot]' &&
+       github.event.pull_request.user.login != 'copilot-swe-agent[bot]' &&
+       github.event.pull_request.user.login != 'Copilot')
     # Elevate at the call site: the workflow-level default is `contents: read`, but the reusable
     # deploy.yml pushes to gh-pages and therefore needs `contents: write`. A called reusable
     # workflow can never exceed the permissions granted by the calling job, so we grant it here.
     permissions:
       contents: write
-    # gh-pages writes are NOT possible on pull_request events from forks (read-only token),
-    # and we must not attempt them. Run deploy only for:
-    #   - any push event (always from a trusted branch, see `on.push.branches`)
-    #   - pull_request events whose head is in this repository (internal PRs), excluding dependabot
-    if: >-
-      github.event_name == 'push' ||
-      (github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]')
     uses: ./.github/workflows/deploy.yml
     with:
       gh-pages-slug: ${{ needs.context.outputs.gh-pages-slug }}
