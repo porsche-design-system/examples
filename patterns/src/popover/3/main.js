@@ -12,9 +12,9 @@ let current = 0;
 // the range (e.g. -1) closes them all and ends the tour.
 const showStep = (index) => {
   current = index;
-  steps.forEach((step, i) => {
+  for (const [i, step] of steps.entries()) {
     step.open = i === index;
-  });
+  }
 };
 
 const endTour = () => showStep(-1);
