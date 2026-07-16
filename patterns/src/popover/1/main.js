@@ -52,9 +52,14 @@ marketButton.addEventListener('click', () => {
   setExpanded(profileButton, false);
 });
 
-marketDismiss.addEventListener('click', () => {
+marketDismiss.addEventListener('click', (e) => {
   marketPopover.open = false;
   setExpanded(marketButton, false);
+  // Return focus to the trigger only for keyboard activation (Enter/Space), where `detail` is 0. Mouse clicks report
+  // `detail >= 1`, so pointer users aren't forced back onto the trigger.
+  if (e.detail === 0) {
+    marketButton.focus();
+  }
 });
 
 marketPopover.addEventListener('dismiss', () => {
