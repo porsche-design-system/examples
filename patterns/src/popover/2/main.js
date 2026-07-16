@@ -6,14 +6,42 @@ import { componentsReady } from '@porsche-design-system/components-js';
 
 const navBar = document.getElementById('nav-bar');
 const moreTrigger = document.getElementById('more-trigger');
+const morePopover = document.getElementById('more-popover');
+const moreButton = document.getElementById('more-button');
 const overflowList = document.getElementById('overflow-list');
 
 const fits = () => navBar.scrollWidth <= navBar.clientWidth;
 
+// Keep the trigger button's `aria-expanded` in sync with the open state of the popover it controls.
+const setExpanded = (isExpanded) => {
+  moreButton.aria = { 'aria-expanded': isExpanded };
+};
+
+// Controlled mode: we own the popover's open state so we always know whether it is expanded. Setting `open` (even to
+// `false` on load) opts the popover into controlled mode, where visibility follows the prop and we drive it via the
+// slotted button. This lets us mirror the state onto `aria-expanded` for assistive technology.
+morePopover.open = false;
+setExpanded(false);
+
+moreButton.addEventListener('click', () => {
+  morePopover.open = !morePopover.open;
+  setExpanded(morePopover.open);
+});
+
+// Escape, outside click or focus leaving the popover requests a close in controlled mode.
+morePopover.addEventListener('dismiss', () => {
+  morePopover.open = false;
+  setExpanded(false);
+});
+
 // The trigger needs to be visible to reserve its own space while we measure overflow. It is only hidden again once
-// the overflow list ends up empty.
+// the overflow list ends up empty. A hidden trigger can't be expanded, so close the popover and reset its ARIA state.
 const syncTrigger = () => {
   moreTrigger.hidden = overflowList.children.length === 0;
+  if (moreTrigger.hidden && morePopover.open) {
+    morePopover.open = false;
+    setExpanded(false);
+  }
 };
 
 // Incremental & idempotent: instead of emptying the overflow list on every resize (which makes an open popover
