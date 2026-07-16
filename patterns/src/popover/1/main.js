@@ -17,12 +17,19 @@ const pauseButton = document.getElementById('pause-button');
 // Responsive: use popover on desktop (≥ 480px), sheet on mobile (< 480px)
 const desktopQuery = window.matchMedia('(min-width: 480px)');
 
+// Keep a trigger button's `aria-expanded` in sync with the open state of the disclosure it controls.
+const setExpanded = (button, isExpanded) => {
+  button.aria = { 'aria-haspopup': 'dialog', 'aria-expanded': isExpanded };
+};
+
 navButton.addEventListener('click', () => {
   navDrilldown.open = true;
+  setExpanded(navButton, true);
 });
 
 navDrilldown.addEventListener('dismiss', (e) => {
   e.target.open = false;
+  setExpanded(navButton, false);
 });
 
 navDrilldown.addEventListener('update', (e) => {
@@ -34,23 +41,30 @@ navDrilldown.addEventListener('update', (e) => {
 marketPopover.open = true;
 profilePopover.open = false;
 profileSheet.open = false;
+setExpanded(marketButton, true);
+setExpanded(profileButton, false);
 
 marketButton.addEventListener('click', () => {
   marketPopover.open = !marketPopover.open;
   profilePopover.open = false;
   profileSheet.open = false;
+  setExpanded(marketButton, marketPopover.open);
+  setExpanded(profileButton, false);
 });
 
 marketDismiss.addEventListener('click', () => {
   marketPopover.open = false;
+  setExpanded(marketButton, false);
 });
 
 marketPopover.addEventListener('dismiss', () => {
   marketPopover.open = false;
+  setExpanded(marketButton, false);
 });
 
 profileButton.addEventListener('click', () => {
   marketPopover.open = false;
+  setExpanded(marketButton, false);
   if (desktopQuery.matches) {
     profilePopover.open = !profilePopover.open;
     profileSheet.open = false;
@@ -58,14 +72,17 @@ profileButton.addEventListener('click', () => {
     profileSheet.open = !profileSheet.open;
     profilePopover.open = false;
   }
+  setExpanded(profileButton, profilePopover.open || profileSheet.open);
 });
 
 profilePopover.addEventListener('dismiss', () => {
   profilePopover.open = false;
+  setExpanded(profileButton, false);
 });
 
 profileSheet.addEventListener('dismiss', () => {
   profileSheet.open = false;
+  setExpanded(profileButton, false);
 });
 
 // Transfer open state between popover and sheet when crossing the breakpoint
@@ -83,6 +100,7 @@ desktopQuery.addEventListener('change', (e) => {
       profileSheet.open = true;
     }
   }
+  setExpanded(profileButton, profilePopover.open || profileSheet.open);
 });
 
 if (pauseButton && video instanceof HTMLVideoElement) {
