@@ -19,7 +19,7 @@ const desktopQuery = window.matchMedia('(min-width: 480px)');
 
 // Keep a trigger button's `aria-expanded` in sync with the open state of the disclosure it controls.
 const setExpanded = (button, isExpanded) => {
-  button.aria = { 'aria-haspopup': 'dialog', 'aria-expanded': isExpanded };
+  button.aria = { 'aria-expanded': isExpanded };
 };
 
 navButton.addEventListener('click', () => {

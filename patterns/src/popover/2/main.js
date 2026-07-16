@@ -14,7 +14,7 @@ const fits = () => navBar.scrollWidth <= navBar.clientWidth;
 
 // Keep the trigger button's `aria-expanded` in sync with the open state of the popover it controls.
 const setExpanded = (isExpanded) => {
-  moreButton.aria = { 'aria-haspopup': 'dialog', 'aria-expanded': isExpanded };
+  moreButton.aria = { 'aria-expanded': isExpanded };
 };
 
 // Controlled mode: we own the popover's open state so we always know whether it is expanded. Setting `open` (even to
