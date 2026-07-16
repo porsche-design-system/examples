@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" class="scheme-light-dark bg-canvas">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Popover (Pattern)">
+    <title>Popover (Pattern)</title>
+    <script type="module" crossorigin src="/examples/pr-280/patterns/assets/popover-3-C4RclZLs.js"></script>
+    <link rel="modulepreload" crossorigin href="/examples/pr-280/patterns/assets/modulepreload-polyfill-Dezn_h7o.js">
+    <link rel="stylesheet" crossorigin href="/examples/pr-280/patterns/assets/header-1-C1Rs_t2r.css">
+  <link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.4.0.6061434ac0cf4528ac11.js as=script crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.display.a5900e8584dca0d9e1b0.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.text.df4c757e1ba9f21773d3.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.carousel.651eade44c3de95f0a0c.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-tile.e42e291fa764d22e3ff0.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-pure.b398275973692b609eb5.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link.3b509423f438568859a2.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2 as=font type=font/woff2 crossorigin><link rel=prefetch href=https://cdn.ui.porsche.com/porsche-design-system/icons/arrow-right.872716b.svg as=image type=image/svg+xml crossorigin><meta property=og:title content="Examples by Porsche Design System"><meta property=og:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=twitter:title content="Examples by Porsche Design System"><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=theme-color content=#FFF media=(prefers-color-scheme:light)><meta name=theme-color content=#0E1418 media=(prefers-color-scheme:dark)><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Examples by Porsche Design System"><meta name=msapplication-TileImage content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/mstile-270x270.f58081f.png><meta name=msapplication-TileColor content=#FFF><link rel=icon sizes=any href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon.ed9a926.ico><link rel=icon type=image/png sizes=32x32 href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon-32x32.d42ac28.png><link rel=apple-touch-icon href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/apple-touch-icon-180x180.bdf11cc.png><link rel=manifest href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/manifest.b904b15.webmanifest></head>
+
+  <body>
+    <header class="grid-template border-b border-contrast-lower">
+      <div class="col-wide grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-fluid-md items-center min-h-[80px]">
+        <div class="flex flex-wrap gap-static-md items-center justify-start">
+          <p-popover class="[--p-popover-w:20rem]" open="true" data-tour-step>
+            <p-button-pure
+              slot="button"
+              class="p-static-xs -m-static-xs"
+              type="button"
+              icon="menu-lines"
+              hide-label="{base: true, s: false}"
+            >
+              Menu
+            </p-button-pure>
+            <div class="grid gap-static-sm">
+              <div class="flex items-center justify-between gap-static-md">
+                <p-text size="xs" color="contrast-medium">Step 1 of 4</p-text>
+                <p-button-pure
+                  class="shrink-0 p-static-xs -m-static-xs"
+                  type="button"
+                  icon="close"
+                  hide-label="true"
+                  data-tour="skip"
+                >
+                  Dismiss tips
+                </p-button-pure>
+              </div>
+              <p-heading tag="h2" size="sm" weight="semibold">Main navigation</p-heading>
+              <p-text>Open the menu to explore every section of the site.</p-text>
+              <div class="flex gap-static-sm">
+                <p-button type="button" compact="true" data-tour="next">Next</p-button>
+              </div>
+            </div>
+          </p-popover>
+        </div>
+        <p-crest class="sm:hidden" href="#"></p-crest>
+        <p-wordmark class="max-sm:hidden" href="#"></p-wordmark>
+        <div class="flex flex-wrap gap-static-md items-center justify-end">
+          <p-popover class="[--p-popover-w:20rem]" data-tour-step>
+            <p-button-pure slot="button" class="p-static-xs -m-static-xs" type="button" icon="search" hide-label="true"
+              >Search</p-button-pure
+            >
+            <div class="grid gap-static-sm">
+              <div class="flex items-center justify-between gap-static-md">
+                <p-text size="xs" color="contrast-medium">Step 2 of 4</p-text>
+                <p-button-pure
+                  class="shrink-0 p-static-xs -m-static-xs"
+                  type="button"
+                  icon="close"
+                  hide-label="true"
+                  data-tour="skip"
+                >
+                  Dismiss tips
+                </p-button-pure>
+              </div>
+              <p-heading tag="h2" size="sm" weight="semibold">Search</p-heading>
+              <p-text>Find models, dealers and content from anywhere on the site.</p-text>
+              <div class="flex gap-static-sm">
+                <p-button type="button" variant="secondary" compact="true" data-tour="back">Back</p-button>
+                <p-button type="button" compact="true" data-tour="next">Next</p-button>
+              </div>
+            </div>
+          </p-popover>
+          <p-popover class="[--p-popover-w:20rem]" data-tour-step>
+            <p-button-pure slot="button" class="p-static-xs -m-static-xs" type="button" icon="bell" hide-label="true"
+              >Notifications</p-button-pure
+            >
+            <div class="grid gap-static-sm">
+              <div class="flex items-center justify-between gap-static-md">
+                <p-text size="xs" color="contrast-medium">Step 3 of 4</p-text>
+                <p-button-pure
+                  class="shrink-0 p-static-xs -m-static-xs"
+                  type="button"
+                  icon="close"
+                  hide-label="true"
+                  data-tour="skip"
+                >
+                  Dismiss tips
+                </p-button-pure>
+              </div>
+              <p-heading tag="h2" size="sm" weight="semibold">Notifications</p-heading>
+              <p-text>Your latest updates and messages appear right here.</p-text>
+              <div class="flex gap-static-sm">
+                <p-button type="button" variant="secondary" compact="true" data-tour="back">Back</p-button>
+                <p-button type="button" compact="true" data-tour="next">Next</p-button>
+              </div>
+            </div>
+          </p-popover>
+          <p-popover class="[--p-popover-w:20rem]" data-tour-step>
+            <p-button-pure slot="button" class="p-static-xs -m-static-xs" type="button" icon="user" hide-label="true"
+              >Account</p-button-pure
+            >
+            <div class="grid gap-static-sm">
+              <div class="flex items-center justify-between gap-static-md">
+                <p-text size="xs" color="contrast-medium">Step 4 of 4</p-text>
+                <p-button-pure
+                  class="shrink-0 p-static-xs -m-static-xs"
+                  type="button"
+                  icon="close"
+                  hide-label="true"
+                  data-tour="skip"
+                >
+                  Dismiss tips
+                </p-button-pure>
+              </div>
+              <p-heading tag="h2" size="sm" weight="semibold">Your account</p-heading>
+              <p-text>Manage your profile, orders and settings from here.</p-text>
+              <div class="flex gap-static-sm">
+                <p-button type="button" variant="secondary" compact="true" data-tour="back">Back</p-button>
+                <p-button type="button" compact="true" data-tour="next">Done</p-button>
+              </div>
+            </div>
+          </p-popover>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid-template">
+      <section class="col-wide my-fluid-lg space-y-fluid-md">
+        <p-heading tag="h1" size="xl">Feature tour</p-heading>
+        <p-text>
+          On first visit, a sequence of popovers walks the user through the key areas of the interface, one step at a
+          time. Only a single step is open at once.
+        </p-text>
+        <p-button id="restart-tour" type="button" variant="secondary" icon="refresh">Restart tour</p-button>
+      </section>
+    </main>
+
+  <script data-pds-loader-script>var porscheDesignSystem;(()=>{"use strict";const e={d:(t,n)=>{if(Array.isArray(n))for(var o=0;o<n.length;){var r=n[o++],s=n[o++];e.o(t,r)?0===s&&o++:0===s?Object.defineProperty(t,r,{enumerable:!0,value:n[o++]}):Object.defineProperty(t,r,{enumerable:!0,get:s})}else for(var r in n)e.o(n,r)&&!e.o(t,r)&&Object.defineProperty(t,r,{enumerable:!0,get:n[r]})},o:(e,t)=>Object.prototype.hasOwnProperty.call(e,t),r:e=>{Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}};let t={};e.r(t),e.d(t,{load:()=>s});const n="porscheDesignSystem";function o(){return document[n]||(document[n]={}),document[n]}function r({script:e,version:t,prefix:r}){const s=function(e){const t=o(),{[e]:n}=t;if(!n){let n=()=>{};const o=new Promise(e=>n=e);t[e]={isInjected:!1,isReady:()=>o,readyResolve:n,prefixes:[],registerCustomElements:null}}return t[e]}(t),{isInjected:i,prefixes:c=[],registerCustomElements:d}=s,[u]=Object.entries(o()).filter(([e,n])=>e!==t&&"object"==typeof n&&n.prefixes.includes(r));if(u)throw new Error(`[Porsche Design System v${t}] prefix '${r}' is already registered with version '${u[0]}' of the Porsche Design System. Please use a different one.\nTake a look at document.${n} for more details.`);i||(function(e){const t=document.createElement("script");t.src=e,t.setAttribute("crossorigin",""),document.body.appendChild(t)}(e),s.isInjected=!0),c.includes(r)||(c.push(r),d&&d(r))}const s=(e={})=>{const t="PORSCHE_DESIGN_SYSTEM_CDN";window[t]=e.cdn||window[t]||(window.location.origin.match(/\.cn$/)?"cn":"auto");const n="porscheDesignSystem";document[n]||(document[n]={}),document[n].cdn={url:"https://cdn.ui.porsche."+("cn"===window[t]?"cn":"com"),prefixes:[]},r({version:"4.4.0",script:document[n].cdn.url+"/porsche-design-system/components/porsche-design-system.v4.4.0.6061434ac0cf4528ac11.js",prefix:e.prefix||""})};porscheDesignSystem=t})();porscheDesignSystem.load()</script></body>
+</html>
