@@ -20,7 +20,7 @@
               type="button"
               icon="menu-lines"
               hide-label="{base: true, s: false}"
-              aria="{'aria-haspopup': 'dialog'}"
+              aria="{'aria-haspopup': 'dialog', 'aria-expanded': false}"
             >
               Menu
             </p-button-pure>
@@ -49,10 +49,7 @@
         <p-crest class="scheme-dark sm:hidden" href="#"></p-crest>
         <p-wordmark class="scheme-dark max-sm:hidden" href="#"></p-wordmark>
         <div class="scheme-dark flex flex-wrap gap-static-md items-center justify-end">
-          <p-popover
-            id="market-popover"
-            class="[--p-popover-w:22rem] [--p-popover-px:var(--spacing-static-md)] [--p-popover-py:var(--spacing-static-md)]"
-          >
+          <p-popover id="market-popover" class="[--p-popover-w:22rem]">
             <p-button-pure
               id="market-button"
               slot="button"
@@ -61,6 +58,7 @@
               type="button"
               icon="globe"
               hide-label="true"
+              aria="{'aria-expanded': true}"
             >
               Local Market
             </p-button-pure>
@@ -95,6 +93,7 @@
               type="button"
               icon="user"
               hide-label="true"
+              aria="{'aria-expanded': false}"
             >
               User
             </p-button-pure>
