@@ -1,0 +1,5 @@
+:HL["/examples/pr-284/next-js/_next/static/chunks/0n7xrrw8ph_h7.css","style"]
+:HL["https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.4.0.6061434ac0cf4528ac11.js","script",{"crossOrigin":""}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"NaBH6FaW9SHkF9yoxnUjv"}
