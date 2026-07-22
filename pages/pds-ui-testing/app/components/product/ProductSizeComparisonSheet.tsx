@@ -82,7 +82,7 @@ export function ProductSizeComparisonSheet({ copy }: Props) {
         onDismiss={() => setOpen(false)}
         open={open}
       >
-        <PHeading size="large" slot="header" tag="h2">
+        <PHeading size="lg" slot="header" tag="h2">
           {copy.heading}
         </PHeading>
 

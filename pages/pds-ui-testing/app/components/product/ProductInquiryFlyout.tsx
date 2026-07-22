@@ -498,10 +498,10 @@ export function ProductInquiryFlyout({
               />
             </div>
             <div className="grid min-w-0 gap-static-xs">
-              <PHeading size="small" tag="h2">
+              <PHeading size="sm" tag="h2">
                 {productName}
               </PHeading>
-              <PText color="contrast-medium" size="small">
+              <PText color="contrast-medium" size="sm">
                 {copy.subtitle}
               </PText>
             </div>
@@ -525,9 +525,9 @@ export function ProductInquiryFlyout({
               >
                 <PSpinner
                   aria={{ "aria-label": copy.submittingHint }}
-                  size="large"
+                  size="lg"
                 />
-                <PText color="contrast-medium" size="small">
+                <PText color="contrast-medium" size="sm">
                   {copy.submittingHint}
                 </PText>
               </div>
@@ -838,7 +838,7 @@ export function ProductInquiryFlyout({
                       <PText
                         className="mt-static-sm"
                         color="contrast-medium"
-                        size="small"
+                        size="sm"
                       >
                         {copy.schedulingHint}
                       </PText>

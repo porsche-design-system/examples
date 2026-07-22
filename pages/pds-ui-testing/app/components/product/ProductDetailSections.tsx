@@ -32,7 +32,7 @@ type Props = {
 function LabeledField({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col gap-static-xs">
-      <PText size="small" weight="semibold">
+      <PText size="sm" weight="semibold">
         {label}
       </PText>
       <PText>{value}</PText>
@@ -70,7 +70,7 @@ export function ProductDetailSections({ product, copy, locale }: Props) {
               ))}
             </PTextList>
           ) : null}
-          <PText color="contrast-medium" size="small">
+          <PText color="contrast-medium" size="sm">
             {copy.detailsFields.itemNumber}: {product.sku}
           </PText>
         </div>
@@ -118,10 +118,10 @@ export function ProductDetailSections({ product, copy, locale }: Props) {
           ))}
           {details.info ? (
             <div className="flex flex-col gap-static-xs">
-              <PText size="small" weight="semibold">
+              <PText size="sm" weight="semibold">
                 {copy.detailsFields.info}
               </PText>
-              <PText size="small">{details.info}</PText>
+              <PText size="sm">{details.info}</PText>
             </div>
           ) : null}
         </div>
@@ -141,7 +141,7 @@ export function ProductDetailSections({ product, copy, locale }: Props) {
           }
           open={openPanels[key]}
         >
-          <PHeading slot="summary" size="small" tag="h3" weight="semibold">
+          <PHeading slot="summary" size="sm" tag="h3" weight="semibold">
             {title}
           </PHeading>
           {key === "description" && (

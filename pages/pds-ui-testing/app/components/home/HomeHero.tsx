@@ -64,7 +64,7 @@ export function HomeHero({
           className="whitespace-pre-line text-start"
           color="primary"
           id={PAGE_HEADING_ID}
-          size="x-large"
+          size="xl"
           tag="h1"
           weight="semibold"
         >
@@ -85,7 +85,7 @@ export function HomeHero({
         >
           <div className="grid gap-fluid-md">
             <div className="grid gap-static-sm">
-              <PText color="contrast-medium" size="small" weight="semibold">
+              <PText color="contrast-medium" size="sm" weight="semibold">
                 {modal.eyebrow}
               </PText>
               <PHeading size="2xl" tag="h2">

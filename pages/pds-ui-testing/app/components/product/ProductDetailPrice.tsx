@@ -18,10 +18,10 @@ export function ProductDetailPrice({ copy, product }: Props) {
   if (!isReducedProduct(product)) {
     return (
       <div className="grid gap-static-xs">
-        <PText size="large" weight="semibold">
+        <PText size="lg" weight="semibold">
           {product.price.formatted}
         </PText>
-        <PText color="contrast-medium" size="small">
+        <PText color="contrast-medium" size="sm">
           {product.vatNote}
         </PText>
       </div>
@@ -36,15 +36,15 @@ export function ProductDetailPrice({ copy, product }: Props) {
   return (
     <div className="grid gap-static-xs">
       <div className="flex flex-wrap items-baseline gap-static-xs">
-        <PText size="large" weight="semibold">
+        <PText size="lg" weight="semibold">
           {product.price.formatted}
         </PText>
-        <PText color="contrast-medium" size="large">
+        <PText color="contrast-medium" size="lg">
           <s aria-hidden="true">{product.priceOriginal.formatted}</s>
           <span className="sr-only">{reducedAriaLabel}</span>
         </PText>
       </div>
-      <PText color="contrast-medium" size="small">
+      <PText color="contrast-medium" size="sm">
         {product.vatNote}
       </PText>
     </div>

@@ -503,8 +503,8 @@ export function ProductCatalogBrowser({ copy, locale, products }: Props) {
       >
         <div className="grid gap-static-lg">
           <div className="flex items-center gap-static-sm" slot="header">
-            <PIcon name="adjust" size="medium" />
-            <PHeading size="large" tag="h2">
+            <PIcon name="adjust" size="md" />
+            <PHeading size="lg" tag="h2">
               {copy.filterButtonLabel}
             </PHeading>
           </div>

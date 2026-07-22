@@ -63,7 +63,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
     <footer className="grid-template bg-canvas py-fluid-lg mt-fluid-xl scheme-dark" data-testid="global-footer">
       <div className="col-wide flex flex-col gap-fluid-md">
         <section aria-labelledby="footer-region-heading" className="flex flex-col gap-fluid-sm">
-          <PHeading id="footer-region-heading" size="large" tag="h2" weight="semibold">
+          <PHeading id="footer-region-heading" size="lg" tag="h2" weight="semibold">
             {footer.regionTitle}
           </PHeading>
           <div className="flex flex-wrap items-center gap-fluid-xs">
@@ -80,7 +80,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
 
         <div className="grid grid-cols-1 gap-fluid-xl md:grid-cols-3 md:gap-fluid-lg">
           <section aria-labelledby="footer-newsletter-heading" className="flex max-w-prose flex-col gap-fluid-sm">
-            <PHeading id="footer-newsletter-heading" size="large" tag="h2" weight="semibold">
+            <PHeading id="footer-newsletter-heading" size="lg" tag="h2" weight="semibold">
               {footer.newsletterTitle}
             </PHeading>
             <PText>{footer.newsletterCopy}</PText>
@@ -90,7 +90,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
           </section>
 
           <section aria-labelledby="footer-contact-heading" className="flex max-w-prose flex-col gap-fluid-sm">
-            <PHeading id="footer-contact-heading" size="large" tag="h2" weight="semibold">
+            <PHeading id="footer-contact-heading" size="lg" tag="h2" weight="semibold">
               {footer.contactTitle}
             </PHeading>
             <PText>{footer.contactCopy}</PText>
@@ -100,7 +100,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
           </section>
 
           <section aria-labelledby="footer-social-heading" className="flex max-w-prose flex-col gap-fluid-sm">
-            <PHeading id="footer-social-heading" size="large" tag="h2" weight="semibold">
+            <PHeading id="footer-social-heading" size="lg" tag="h2" weight="semibold">
               {footer.socialTitle}
             </PHeading>
             <PText>{footer.socialCopy}</PText>
@@ -122,7 +122,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
         </div>
 
         <section aria-labelledby="footer-company-heading" className="flex flex-col gap-fluid-sm">
-          <PHeading id="footer-company-heading" size="large" tag="h2" weight="semibold">
+          <PHeading id="footer-company-heading" size="lg" tag="h2" weight="semibold">
             {footer.companyTitle}
           </PHeading>
           <nav aria-label={footer.companyTitle}>
@@ -142,19 +142,19 @@ export function GlobalFooter({ dictionary, locale }: Props) {
 
         <div className="flex flex-col gap-fluid-md">
           <div className="flex flex-col gap-static-sm">
-            <PText size="small">{footer.legalCopyright}</PText>
+            <PText size="sm">{footer.legalCopyright}</PText>
             <div className="flex flex-wrap gap-x-fluid-sm gap-y-static-xs">
-              <PLinkPure href={appHref(`/${locale}/legal/notice/`)} size="small" icon="none" underline={true}>
+              <PLinkPure href={appHref(`/${locale}/legal/notice/`)} size="sm" icon="none" underline={true}>
                 {footer.legalNotice}
               </PLinkPure>
-              <PLinkPure href={appHref(`/${locale}/legal/icp/`)} size="small" icon="none" underline={true}>
+              <PLinkPure href={appHref(`/${locale}/legal/icp/`)} size="sm" icon="none" underline={true}>
                 {footer.legalIcp}
               </PLinkPure>
-              <PLinkPure href={appHref(`/${locale}/legal/environment/`)} size="small" icon="none" underline={true}>
+              <PLinkPure href={appHref(`/${locale}/legal/environment/`)} size="sm" icon="none" underline={true}>
                 {footer.legalEnv}
               </PLinkPure>
             </div>
-            <PLinkPure href={appHref(`/${locale}/legal/security/`)} icon="none" size="small" underline={true}>
+            <PLinkPure href={appHref(`/${locale}/legal/security/`)} icon="none" size="sm" underline={true}>
               {footer.legalSecurity}
             </PLinkPure>
             <PText color="contrast-medium">
@@ -162,7 +162,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
               <PLinkPure
                 className="align-baseline"
                 href={appHref(`/${locale}/legal/more/`)}
-                size="small"
+                size="sm"
                 underline={true}
                 icon="none"
               >

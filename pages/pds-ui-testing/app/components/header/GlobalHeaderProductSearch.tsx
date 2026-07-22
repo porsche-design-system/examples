@@ -120,7 +120,7 @@ export function GlobalHeaderProductSearch({
         hideLabel
         icon="search"
         onClick={() => setOpen(true)}
-        size={{ base: "small", m: "medium" }}
+        size={{ base: "sm", m: "md" }}
         type="button"
       >
         {label}
@@ -136,10 +136,10 @@ export function GlobalHeaderProductSearch({
       >
         <div className="flex flex-col gap-fluid-md">
           <div className="grid gap-static-xs">
-            <PHeading size="large" tag="h2">
+            <PHeading size="lg" tag="h2">
               {copy.title}
             </PHeading>
-            <PText color="contrast-medium" size="small">
+            <PText color="contrast-medium" size="sm">
               {copy.subtitle}
             </PText>
           </div>
@@ -164,7 +164,7 @@ export function GlobalHeaderProductSearch({
             ) : showPrompt ? (
               <PText color="contrast-medium">{copy.emptyPrompt}</PText>
             ) : showSearching ? (
-              <PText color="contrast-medium" size="small">
+              <PText color="contrast-medium" size="sm">
                 {copy.searching}
               </PText>
             ) : results.length === 0 ? (
@@ -189,7 +189,7 @@ export function GlobalHeaderProductSearch({
                               img?.src ?? "/home-product-keychain.jpg",
                             )}
                           />
-                          <PText color="contrast-medium" size="small">
+                          <PText color="contrast-medium" size="sm">
                             <span className="font-semibold">
                               {product.name}
                             </span>

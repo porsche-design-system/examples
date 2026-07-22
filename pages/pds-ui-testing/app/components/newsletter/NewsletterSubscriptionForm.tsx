@@ -130,8 +130,8 @@ export function NewsletterSubscriptionForm({ copy }: Props) {
             className="flex min-h-[200px] flex-col items-center justify-center gap-static-md py-fluid-lg"
             role="status"
           >
-            <PSpinner aria={{ 'aria-label': copy.submittingHint }} size="large" />
-            <PText color="contrast-medium" size="small">
+            <PSpinner aria={{ 'aria-label': copy.submittingHint }} size="lg" />
+            <PText color="contrast-medium" size="sm">
               {copy.submittingHint}
             </PText>
           </div>

@@ -144,7 +144,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
             <>
               <PDivider />
               <div className="flex flex-col items-start gap-static-sm">
-                <PHeading id="product-size-heading" size="medium" tag="h2">
+                <PHeading id="product-size-heading" size="md" tag="h2">
                   {productDetail.sizes}
                 </PHeading>
                 <ProductSizeSelector label={productDetail.selectSize} />
@@ -161,7 +161,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
           >
             <PHeading
               id="product-details-section-heading"
-              size="medium"
+              size="md"
               tag="h2"
             >
               {productDetail.details}

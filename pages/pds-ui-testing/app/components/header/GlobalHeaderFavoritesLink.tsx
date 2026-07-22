@@ -46,7 +46,7 @@ export function GlobalHeaderFavoritesLink({ copy, locale }: Props) {
         hideLabel
         href={href}
         icon="heart"
-        size={{ base: "small", m: "medium" }}
+        size={{ base: "sm", m: "md" }}
       >
         {copy.favorites}
       </PLinkPure>

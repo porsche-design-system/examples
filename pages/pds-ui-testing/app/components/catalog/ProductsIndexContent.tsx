@@ -21,7 +21,7 @@ export function ProductsIndexContent({ copy, locale, products }: Props) {
         <PHeading id={PAGE_HEADING_ID} size="3xl" tag="h1">
           {copy.title}
         </PHeading>
-        <PText color="contrast-medium" size="small">
+        <PText color="contrast-medium" size="sm">
           {copy.subtitle}
         </PText>
       </div>

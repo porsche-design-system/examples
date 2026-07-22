@@ -103,7 +103,7 @@ export function HomeLandingContent({
           <PTag compact variant="primary">
             {home.lookbookTag}
           </PTag>
-          <PText className="max-w-[635px]" size="x-large" align="center">
+          <PText className="max-w-[635px]" size="xl" align="center">
             {home.intro}
           </PText>
           <PLink
@@ -177,6 +177,9 @@ export function HomeLandingContent({
             slidesPerPage={{ base: 1, s: 2, m: 3 }}
             width="basic"
             pagination
+            aria={{
+              "aria-label": "Trending Products",
+            }}
           >
             {trendingProducts.slice(0, 5).map((product) => (
               <FavoriteLinkTileProduct

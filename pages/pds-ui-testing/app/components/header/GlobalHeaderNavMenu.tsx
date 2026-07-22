@@ -67,7 +67,7 @@ export function GlobalHeaderNavMenu({
         hideLabel={{ base: true, s: false }}
         icon="menu-lines"
         onClick={toggleOpen}
-        size={{ base: "small", m: "medium" }}
+        size={{ base: "sm", m: "md" }}
         type="button"
       >
         {nav.menu}
