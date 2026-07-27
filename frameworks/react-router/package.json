@@ -11,7 +11,7 @@
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
-    "@porsche-design-system/components-react": "4.4.0",
+    "@porsche-design-system/components-react": "^4.5.0",
     "@react-router/node": "^8.2.0",
     "@react-router/serve": "^8.2.0",
     "isbot": "^5.2.0",
