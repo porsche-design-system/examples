@@ -9,11 +9,7 @@
 
   <body>
     <footer class="grid-template gap-y-fluid-xl justify-items-center py-fluid-lg bg-surface">
-      <section
-        id="feedback"
-        class="col-extended grid gap-fluid-md justify-items-center max-w-prose"
-        aria-labelledby="feedback-question"
-      >
+      <section id="feedback" class="col-extended grid gap-fluid-md max-w-prose" aria-labelledby="feedback-question">
         <p-heading
           id="feedback-question"
           class="focus-visible:outline outline-focus outline-offset-2 rounded-md"
@@ -26,8 +22,13 @@
         </p-heading>
 
         <form id="feedback-form" class="grid gap-fluid-md justify-items-center">
-          <div class="grid md:grid-cols-[auto_minmax(20rem,1fr)_auto] items-center gap-static-md">
-            <p-text class="row-2 md:row-auto col-1 md:col-auto justify-self-start" size="small" color="contrast-medium">
+          <div class="w-full grid md:grid-cols-[auto_minmax(320px,1fr)_auto] items-center gap-static-md">
+            <p-text
+              class="row-2 md:row-auto col-1 md:col-auto justify-self-start"
+              size="small"
+              align="start"
+              color="contrast-medium"
+            >
               Very dissatisfied
             </p-text>
             <p-segmented-control
@@ -43,7 +44,12 @@
               <p-segmented-control-item value="4">4</p-segmented-control-item>
               <p-segmented-control-item value="5">5</p-segmented-control-item>
             </p-segmented-control>
-            <p-text class="row-2 md:row-auto col-2 md:col-auto justify-self-end" size="small" color="contrast-medium">
+            <p-text
+              class="row-2 md:row-auto col-2 md:col-auto justify-self-end"
+              size="small"
+              align="end"
+              color="contrast-medium"
+            >
               Very satisfied
             </p-text>
           </div>
