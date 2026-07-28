@@ -9,7 +9,7 @@
 
   <body>
     <main class="grid-template gap-y-fluid-xl justify-items-center py-fluid-lg bg-surface">
-      <section class="col-extended grid gap-fluid-md justify-items-center max-w-prose">
+      <section class="col-extended grid gap-fluid-md justify-items-center max-w-prose" aria-label="Feedback">
         <div class="grid gap-static-xs justify-items-center">
           <p-heading tag="h2" size="md" align="center">Your opinion matters</p-heading>
           <p-text color="contrast-medium" align="center">Help us improve this page.</p-text>
@@ -31,8 +31,8 @@
       </div>
     </main>
 
-    <p-modal id="feedback-modal" aria="{'aria-label': 'Feedback on this page'}">
-      <section id="feedback" class="col-extended grid gap-fluid-md max-w-prose" aria-label="Feedback">
+    <p-modal id="feedback-modal" aria="{'aria-label': 'Feedback'}">
+      <div class="col-extended grid gap-fluid-md max-w-prose">
         <p-heading
           id="feedback-question"
           class="focus-visible:outline outline-focus outline-offset-2 rounded-md"
@@ -109,7 +109,7 @@
           <p-text align="center">Your feedback helps us continuously improve our page.</p-text>
           <p-button id="feedback-close" type="button" variant="secondary">Close</p-button>
         </div>
-      </section>
+      </div>
     </p-modal>
 
     <script type="module" src="main.js"></script>
