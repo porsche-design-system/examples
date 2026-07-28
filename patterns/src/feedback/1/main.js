@@ -3,12 +3,12 @@ import './style.css';
 // DO NOT USE IN PRODUCTION!
 // EXAMPLE CODE FOR DEMONSTRATION PURPOSE ONLY. No data is sent anywhere.
 
+const question = document.getElementById('feedback-question');
 const form = document.getElementById('feedback-form');
 const rating = document.getElementById('feedback-rating');
 const comment = document.getElementById('feedback-comment');
 const submit = document.getElementById('feedback-submit');
 const thanks = document.getElementById('feedback-thanks');
-const question = document.getElementById('feedback-question');
 const restart = document.getElementById('feedback-restart');
 
 // Choosing a rating reveals the optional free-text field and the submit button.
