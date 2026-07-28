@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de" class="scheme-light-dark bg-canvas">
+<html lang="en" class="scheme-light-dark bg-canvas">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,8 @@
       <!-- A trigger opens the feedback form inside a modal. -->
       <section class="col-extended grid gap-fluid-md justify-items-center">
         <div class="grid gap-static-xs justify-items-center">
-          <p-heading tag="h2" size="medium" align="center" class="max-w-[560px]">Ihre Meinung zählt</p-heading>
-          <p-text color="contrast-medium" align="center" class="max-w-[560px]">
-            Helfen Sie uns, diese Seite zu verbessern.
-          </p-text>
+          <p-heading tag="h2" size="medium" align="center" class="max-w-[560px]">Your opinion matters</p-heading>
+          <p-text color="contrast-medium" align="center" class="max-w-[560px]"> Help us improve this page. </p-text>
         </div>
         <p-button
           id="feedback-trigger"
@@ -24,7 +22,7 @@
           icon="none"
           aria="{'aria-haspopup': 'dialog'}"
         >
-          Feedback geben
+          Give feedback
         </p-button>
       </section>
 
@@ -36,21 +34,23 @@
       </div>
     </footer>
 
-    <p-modal id="feedback-modal" aria="{'aria-label': 'Feedback zu dieser Seite'}">
+    <p-modal id="feedback-modal" aria="{'aria-label': 'Feedback on this page'}">
       <div class="grid gap-fluid-md justify-items-center">
         <p-heading id="feedback-question" tag="h2" size="medium" align="center" class="max-w-[560px]">
-          Wie zufrieden sind Sie mit den auf dieser Seite dargestellten Informationen?
+          How satisfied are you with the information shown on this page?
         </p-heading>
 
         <form id="feedback-form" class="grid gap-fluid-md justify-items-center w-full">
           <div class="grid gap-static-sm justify-items-center w-full">
             <div class="flex w-full items-center justify-center gap-static-md">
-              <p-text size="small" color="contrast-medium" class="hidden md:block whitespace-nowrap">Sehr unzufrieden</p-text>
+              <p-text size="small" color="contrast-medium" class="hidden md:block whitespace-nowrap"
+                >Very dissatisfied</p-text
+              >
               <p-segmented-control
                 id="feedback-rating"
                 class="w-full md:w-[20rem] md:shrink-0"
                 columns="5"
-                label="Wie zufrieden sind Sie mit den auf dieser Seite dargestellten Informationen?"
+                label="How satisfied are you with the information shown on this page?"
                 hide-label="true"
               >
                 <p-segmented-control-item value="1">1</p-segmented-control-item>
@@ -59,11 +59,13 @@
                 <p-segmented-control-item value="4">4</p-segmented-control-item>
                 <p-segmented-control-item value="5">5</p-segmented-control-item>
               </p-segmented-control>
-              <p-text size="small" color="contrast-medium" class="hidden md:block whitespace-nowrap">Sehr zufrieden</p-text>
+              <p-text size="small" color="contrast-medium" class="hidden md:block whitespace-nowrap"
+                >Very satisfied</p-text
+              >
             </div>
             <div class="flex md:hidden w-full justify-between gap-static-md">
-              <p-text size="small" color="contrast-medium">Sehr unzufrieden</p-text>
-              <p-text size="small" color="contrast-medium" align="end">Sehr zufrieden</p-text>
+              <p-text size="small" color="contrast-medium">Very dissatisfied</p-text>
+              <p-text size="small" color="contrast-medium" align="end">Very satisfied</p-text>
             </div>
           </div>
 
@@ -72,7 +74,7 @@
               id="feedback-comment"
               name="comment"
               class="w-full"
-              label="Welche zwei Dinge könnten wir tun, um diese Seite besser zu machen?"
+              label="What two things could we do to make this page better?"
               rows="4"
             ></p-textarea>
           </div>
