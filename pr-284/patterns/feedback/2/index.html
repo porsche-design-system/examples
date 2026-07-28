@@ -11,7 +11,7 @@
   <link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.5.0.e9ec1eb3efc438fd4e3d.js as=script crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.display.8fbdc9dc759899c26d1b.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.text.3ffca32e63f6dfbb4020.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.carousel.bb474698a37eac39cb30.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-tile.19b68193f1c3c025c9e8.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-pure.6db0872c3c5bf797b257.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link.c670d681f505102174f6.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2 as=font type=font/woff2 crossorigin><link rel=prefetch href=https://cdn.ui.porsche.com/porsche-design-system/icons/arrow-right.872716b.svg as=image type=image/svg+xml crossorigin><meta property=og:title content="Examples by Porsche Design System"><meta property=og:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=twitter:title content="Examples by Porsche Design System"><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=theme-color content=#FFF media=(prefers-color-scheme:light)><meta name=theme-color content=#0E1418 media=(prefers-color-scheme:dark)><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Examples by Porsche Design System"><meta name=msapplication-TileImage content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/mstile-270x270.f58081f.png><meta name=msapplication-TileColor content=#FFF><link rel=icon sizes=any href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon.ed9a926.ico><link rel=icon type=image/png sizes=32x32 href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon-32x32.d42ac28.png><link rel=apple-touch-icon href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/apple-touch-icon-180x180.bdf11cc.png><link rel=manifest href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/manifest.b904b15.webmanifest></head>
 
   <body>
-    <footer class="grid-template gap-y-fluid-xl justify-items-center py-fluid-lg bg-surface">
+    <main class="grid-template gap-y-fluid-xl justify-items-center py-fluid-lg bg-surface">
       <section class="col-extended grid gap-fluid-md justify-items-center max-w-prose">
         <div class="grid gap-static-xs justify-items-center">
           <p-heading tag="h2" size="md" align="center">Your opinion matters</p-heading>
@@ -32,10 +32,10 @@
         <p-wordmark href="#"></p-wordmark>
         <p-text size="xs" color="contrast-medium" align="center">&copy; 2026 Dr. Ing. h.c. F. Porsche AG.</p-text>
       </div>
-    </footer>
+    </main>
 
     <p-modal id="feedback-modal" aria="{'aria-label': 'Feedback on this page'}">
-      <section id="feedback" class="col-extended grid gap-fluid-md max-w-prose" aria-labelledby="feedback-question">
+      <section id="feedback" class="col-extended grid gap-fluid-md max-w-prose" aria-label="Feedback">
         <p-heading
           id="feedback-question"
           class="focus-visible:outline outline-focus outline-offset-2 rounded-md"
@@ -61,14 +61,16 @@
               id="feedback-rating"
               class="row-1 md:row-auto col-span-2 md:col-auto"
               columns="5"
-              label="How satisfied are you with the information shown on this page?"
+              label="Select your satisfaction from the scale 1 (very dissatisfied) to 5 (very satisfied)"
               hide-label="true"
             >
-              <p-segmented-control-item value="1">1</p-segmented-control-item>
-              <p-segmented-control-item value="2">2</p-segmented-control-item>
-              <p-segmented-control-item value="3">3</p-segmented-control-item>
-              <p-segmented-control-item value="4">4</p-segmented-control-item>
-              <p-segmented-control-item value="5">5</p-segmented-control-item>
+              <p-segmented-control-item value="1" aria="{ 'aria-label': 'Very dissatisfied' }"
+                >1</p-segmented-control-item
+              >
+              <p-segmented-control-item value="2" aria="{ 'aria-label': 'Dissatisfied' }">2</p-segmented-control-item>
+              <p-segmented-control-item value="3" aria="{ 'aria-label': 'Neutral' }">3</p-segmented-control-item>
+              <p-segmented-control-item value="4" aria="{ 'aria-label': 'Satisfied' }">4</p-segmented-control-item>
+              <p-segmented-control-item value="5" aria="{ 'aria-label': 'Very satisfied' }">5</p-segmented-control-item>
             </p-segmented-control>
             <p-text
               class="row-2 md:row-auto col-2 md:col-auto justify-self-end"
