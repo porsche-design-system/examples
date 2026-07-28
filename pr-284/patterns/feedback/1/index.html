@@ -1,82 +1,99 @@
 <!doctype html>
-<html lang="de" class="scheme-light-dark bg-canvas">
+<html lang="en" class="scheme-light-dark bg-canvas">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Feedback (Pattern)">
     <title>Feedback (Pattern)</title>
-    <script type="module" crossorigin src="/examples/pr-284/patterns/assets/feedback-1-CaCZwavC.js"></script>
+    <script type="module" crossorigin src="/examples/pr-284/patterns/assets/feedback-1-6OJKa2Yv.js"></script>
     <link rel="modulepreload" crossorigin href="/examples/pr-284/patterns/assets/modulepreload-polyfill-Dezn_h7o.js">
-    <link rel="stylesheet" crossorigin href="/examples/pr-284/patterns/assets/header-1-CsZk34Y_.css">
+    <link rel="stylesheet" crossorigin href="/examples/pr-284/patterns/assets/header-1-C1WeO1fG.css">
   <link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.4.0.6061434ac0cf4528ac11.js as=script crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.display.a5900e8584dca0d9e1b0.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.text.df4c757e1ba9f21773d3.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.carousel.651eade44c3de95f0a0c.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-tile.e42e291fa764d22e3ff0.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-pure.b398275973692b609eb5.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link.3b509423f438568859a2.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2 as=font type=font/woff2 crossorigin><link rel=prefetch href=https://cdn.ui.porsche.com/porsche-design-system/icons/arrow-right.872716b.svg as=image type=image/svg+xml crossorigin><meta property=og:title content="Examples by Porsche Design System"><meta property=og:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=twitter:title content="Examples by Porsche Design System"><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=theme-color content=#FFF media=(prefers-color-scheme:light)><meta name=theme-color content=#0E1418 media=(prefers-color-scheme:dark)><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Examples by Porsche Design System"><meta name=msapplication-TileImage content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/mstile-270x270.f58081f.png><meta name=msapplication-TileColor content=#FFF><link rel=icon sizes=any href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon.ed9a926.ico><link rel=icon type=image/png sizes=32x32 href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon-32x32.d42ac28.png><link rel=apple-touch-icon href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/apple-touch-icon-180x180.bdf11cc.png><link rel=manifest href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/manifest.b904b15.webmanifest></head>
 
   <body>
-    <footer class="grid-template py-fluid-lg bg-surface">
-      <!-- Satisfaction rating, placed at the end of the page. -->
-      <section
-        id="feedback"
-        class="col-extended grid gap-fluid-md justify-items-center"
-        aria-labelledby="feedback-question"
-      >
-        <p-heading id="feedback-question" tag="h2" size="medium" align="center" class="max-w-[560px]">
-          Wie zufrieden sind Sie mit den auf dieser Seite dargestellten Informationen?
+    <footer class="grid-template gap-y-fluid-xl justify-items-center py-fluid-lg bg-surface">
+      <section id="feedback" class="col-extended grid gap-fluid-md max-w-prose" aria-labelledby="feedback-question">
+        <p-heading
+          id="feedback-question"
+          class="focus-visible:outline outline-focus outline-offset-2 rounded-md"
+          tag="h2"
+          size="md"
+          align="center"
+          tabindex="-1"
+        >
+          How satisfied are you with the information shown on this page?
         </p-heading>
 
         <form id="feedback-form" class="grid gap-fluid-md justify-items-center">
-          <div class="grid gap-static-sm justify-items-center w-full">
-            <div class="flex w-full items-center justify-center gap-static-md">
-              <p-text size="small" color="contrast-medium" class="hidden md:block whitespace-nowrap">Sehr unzufrieden</p-text>
-              <p-segmented-control
-                id="feedback-rating"
-                class="w-full md:w-[20rem] md:shrink-0"
-                columns="5"
-                label="Wie zufrieden sind Sie mit den auf dieser Seite dargestellten Informationen?"
-                hide-label="true"
-              >
-                <p-segmented-control-item value="1">1</p-segmented-control-item>
-                <p-segmented-control-item value="2">2</p-segmented-control-item>
-                <p-segmented-control-item value="3">3</p-segmented-control-item>
-                <p-segmented-control-item value="4">4</p-segmented-control-item>
-                <p-segmented-control-item value="5">5</p-segmented-control-item>
-              </p-segmented-control>
-              <p-text size="small" color="contrast-medium" class="hidden md:block whitespace-nowrap">Sehr zufrieden</p-text>
-            </div>
-            <div class="flex md:hidden w-full justify-between gap-static-md">
-              <p-text size="small" color="contrast-medium">Sehr unzufrieden</p-text>
-              <p-text size="small" color="contrast-medium" align="end">Sehr zufrieden</p-text>
-            </div>
+          <div class="w-full grid md:grid-cols-[auto_minmax(320px,1fr)_auto] items-center gap-static-md">
+            <p-text
+              class="row-2 md:row-auto col-1 md:col-auto justify-self-start"
+              size="small"
+              align="start"
+              color="contrast-medium"
+            >
+              Very dissatisfied
+            </p-text>
+            <p-segmented-control
+              id="feedback-rating"
+              class="row-1 md:row-auto col-span-2 md:col-auto"
+              columns="5"
+              label="How satisfied are you with the information shown on this page?"
+              hide-label="true"
+            >
+              <p-segmented-control-item value="1">1</p-segmented-control-item>
+              <p-segmented-control-item value="2">2</p-segmented-control-item>
+              <p-segmented-control-item value="3">3</p-segmented-control-item>
+              <p-segmented-control-item value="4">4</p-segmented-control-item>
+              <p-segmented-control-item value="5">5</p-segmented-control-item>
+            </p-segmented-control>
+            <p-text
+              class="row-2 md:row-auto col-2 md:col-auto justify-self-end"
+              size="small"
+              align="end"
+              color="contrast-medium"
+            >
+              Very satisfied
+            </p-text>
           </div>
-
-          <div id="feedback-detail" class="w-full max-w-[620px] grid gap-fluid-md justify-items-center" hidden>
-            <p-textarea
-              id="feedback-comment"
-              name="comment"
-              class="w-full"
-              label="Welche zwei Dinge könnten wir tun, um diese Seite besser zu machen?"
-              rows="4"
-            ></p-textarea>
-            <p-button id="feedback-submit" type="button" icon="none">Feedback absenden</p-button>
-          </div>
+          <p-textarea
+            id="feedback-comment"
+            class="w-full"
+            name="comment"
+            label="What two things could we do to make this page better?"
+            rows="4"
+            hidden
+          ></p-textarea>
+          <p-button id="feedback-submit" type="button" hidden>Submit feedback</p-button>
         </form>
 
         <div
           id="feedback-thanks"
-          class="grid gap-fluid-md justify-items-center text-center max-w-[480px]"
+          class="grid gap-fluid-md justify-items-center"
+          aria-live="polite"
+          aria-atomic="true"
           hidden
         >
-          <p-heading tag="h2" size="medium">Vielen Dank für Ihr Feedback</p-heading>
-          <p-text>Ihr Feedback hilft uns unsere Seite permanent zu verbessern.</p-text>
+          <p-heading
+            id="feedback-thanks-heading"
+            class="focus-visible:outline outline-focus outline-offset-2 rounded-md"
+            tag="h2"
+            size="md"
+            align="center"
+            tabindex="-1"
+          >
+            Thank you for your feedback
+          </p-heading>
+          <p-text align="center">Your feedback helps us continuously improve our page.</p-text>
           <p-button id="feedback-restart" type="button" variant="secondary" icon="refresh">
-            Neues Feedback geben
+            Give new feedback
           </p-button>
         </div>
       </section>
 
-      <div class="col-extended grid gap-fluid-md justify-items-center mt-fluid-lg">
+      <div class="col-extended grid gap-fluid-md justify-items-center">
         <p-wordmark href="#"></p-wordmark>
-        <p-text size="x-small" color="contrast-medium" align="center">
-          &copy; 2026 Dr. Ing. h.c. F. Porsche AG.
-        </p-text>
+        <p-text size="xs" color="contrast-medium" align="center">&copy; 2026 Dr. Ing. h.c. F. Porsche AG.</p-text>
       </div>
     </footer>
 
