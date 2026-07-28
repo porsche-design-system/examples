@@ -1,0 +1,17 @@
+- contentinfo:
+  - region "How satisfied are you with the information shown on this page?":
+    - heading "How satisfied are you with the information shown on this page?" [level=2]
+    - paragraph: Very dissatisfied
+    - group "How satisfied are you with the information shown on this page?":
+      - text: ""
+      - button "1"
+      - button "2"
+      - button "3"
+      - button "4"
+      - button "5"
+      - alert
+    - paragraph: Very satisfied
+  - link "Porsche":
+    - /url: "#"
+    - img "Porsche"
+  - paragraph: /© \d+ Dr\. Ing\. h\.c\. F\. Porsche AG\./

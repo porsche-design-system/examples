@@ -9,6 +9,7 @@ const rating = document.getElementById('feedback-rating');
 const comment = document.getElementById('feedback-comment');
 const submit = document.getElementById('feedback-submit');
 const thanks = document.getElementById('feedback-thanks');
+const thanksHeading = document.getElementById('feedback-thanks-heading');
 const restart = document.getElementById('feedback-restart');
 
 // Choosing a rating reveals the optional free-text field and the submit button.
@@ -26,17 +27,21 @@ submit.addEventListener('click', () => {
     form.hidden = true;
     question.hidden = true;
     thanks.hidden = false;
+    // Move focus to the confirmation so keyboard and screen reader users are informed.
+    thanksHeading.focus();
   }, 1200);
 });
 
 // Restart the flow so another rating can be given.
 restart.addEventListener('click', () => {
-  rating.value = undefined;
-  comment.value = undefined;
+  rating.value = '';
+  comment.value = '';
   submit.loading = false;
   submit.hidden = true;
   comment.hidden = true;
   thanks.hidden = true;
   question.hidden = false;
   form.hidden = false;
+  // Return focus to the question so the flow is re-announced and can be repeated from the start.
+  question.focus();
 });

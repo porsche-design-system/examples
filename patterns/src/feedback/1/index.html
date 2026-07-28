@@ -14,7 +14,14 @@
         class="col-extended grid gap-fluid-md justify-items-center max-w-prose"
         aria-labelledby="feedback-question"
       >
-        <p-heading id="feedback-question" tag="h2" size="md" align="center">
+        <p-heading
+          id="feedback-question"
+          class="focus-visible:outline outline-focus outline-offset-2 rounded-md"
+          tag="h2"
+          size="md"
+          align="center"
+          tabindex="-1"
+        >
           How satisfied are you with the information shown on this page?
         </p-heading>
 
@@ -51,8 +58,23 @@
           <p-button id="feedback-submit" type="button" hidden>Submit feedback</p-button>
         </form>
 
-        <div id="feedback-thanks" class="grid gap-fluid-md justify-items-center" hidden>
-          <p-heading tag="h2" size="md" align="center">Thank you for your feedback</p-heading>
+        <div
+          id="feedback-thanks"
+          class="grid gap-fluid-md justify-items-center"
+          aria-live="polite"
+          aria-atomic="true"
+          hidden
+        >
+          <p-heading
+            id="feedback-thanks-heading"
+            class="focus-visible:outline outline-focus outline-offset-2 rounded-md"
+            tag="h2"
+            size="md"
+            align="center"
+            tabindex="-1"
+          >
+            Thank you for your feedback
+          </p-heading>
           <p-text align="center">Your feedback helps us continuously improve our page.</p-text>
           <p-button id="feedback-restart" type="button" variant="secondary" icon="refresh">
             Give new feedback
