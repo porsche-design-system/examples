@@ -8,8 +8,8 @@
   </head>
 
   <body>
-    <footer class="grid-template gap-y-fluid-xl justify-items-center py-fluid-lg bg-surface">
-      <section id="feedback" class="col-extended grid gap-fluid-md max-w-prose" aria-labelledby="feedback-question">
+    <main class="grid-template gap-y-fluid-xl justify-items-center py-fluid-lg bg-surface">
+      <section id="feedback" class="col-extended grid gap-fluid-md max-w-prose" aria-label="Feedback">
         <p-heading
           id="feedback-question"
           class="focus-visible:outline outline-focus outline-offset-2 rounded-md"
@@ -35,14 +35,16 @@
               id="feedback-rating"
               class="row-1 md:row-auto col-span-2 md:col-auto"
               columns="5"
-              label="How satisfied are you with the information shown on this page?"
+              label="Select your satisfaction from the scale 1 (very dissatisfied) to 5 (very satisfied)"
               hide-label="true"
             >
-              <p-segmented-control-item value="1">1</p-segmented-control-item>
-              <p-segmented-control-item value="2">2</p-segmented-control-item>
-              <p-segmented-control-item value="3">3</p-segmented-control-item>
-              <p-segmented-control-item value="4">4</p-segmented-control-item>
-              <p-segmented-control-item value="5">5</p-segmented-control-item>
+              <p-segmented-control-item value="1" aria="{ 'aria-label': 'Very dissatisfied' }"
+                >1</p-segmented-control-item
+              >
+              <p-segmented-control-item value="2" aria="{ 'aria-label': 'Dissatisfied' }">2</p-segmented-control-item>
+              <p-segmented-control-item value="3" aria="{ 'aria-label': 'Neutral' }">3</p-segmented-control-item>
+              <p-segmented-control-item value="4" aria="{ 'aria-label': 'Satisfied' }">4</p-segmented-control-item>
+              <p-segmented-control-item value="5" aria="{ 'aria-label': 'Very satisfied' }">5</p-segmented-control-item>
             </p-segmented-control>
             <p-text
               class="row-2 md:row-auto col-2 md:col-auto justify-self-end"
@@ -92,7 +94,7 @@
         <p-wordmark href="#"></p-wordmark>
         <p-text size="xs" color="contrast-medium" align="center">&copy; 2026 Dr. Ing. h.c. F. Porsche AG.</p-text>
       </div>
-    </footer>
+    </main>
 
     <script type="module" src="main.js"></script>
   </body>
