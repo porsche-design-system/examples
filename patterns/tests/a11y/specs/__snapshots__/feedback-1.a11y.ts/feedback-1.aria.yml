@@ -1,16 +1,14 @@
 - main:
   - region "Feedback":
     - heading "How satisfied are you with the information shown on this page?" [level=2]
-    - paragraph: Very dissatisfied
     - group "Select your satisfaction from the scale 1 (very dissatisfied) to 5 (very satisfied)":
       - text: ""
-      - button "Very dissatisfied": "1"
-      - button "Dissatisfied": "2"
-      - button "Neutral": "3"
-      - button "Satisfied": "4"
-      - button "Very satisfied": "5"
+      - button "1 (very dissatisfied)"
+      - button "2 (dissatisfied)"
+      - button "3 (neutral)"
+      - button "4 (satisfied)"
+      - button "5 (very satisfied)"
       - alert
-    - paragraph: Very satisfied
   - link "Porsche":
     - /url: "#"
     - img "Porsche"
