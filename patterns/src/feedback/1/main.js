@@ -13,27 +13,22 @@ const thanksHeading = document.getElementById('feedback-thanks-heading');
 const restart = document.getElementById('feedback-restart');
 
 // Choosing a rating reveals the optional free-text field and the submit button.
-rating.addEventListener('change', () => {
+const revealCommentAndSubmit = () => {
   comment.hidden = false;
   submit.hidden = false;
-});
+};
 
-submit.addEventListener('click', () => {
-  // Simulate a short server round-trip: show a loading spinner while "submitting",
-  // then reveal the confirmation. In a real integration the request would happen here.
-  submit.loading = true;
-  window.setTimeout(() => {
-    submit.loading = false;
-    form.hidden = true;
-    question.hidden = true;
-    thanks.hidden = false;
-    // Move focus to the confirmation so keyboard and screen reader users are informed.
-    thanksHeading.focus();
-  }, 1200);
-});
+// Reveal the confirmation once the "submission" has completed.
+const showConfirmation = () => {
+  submit.loading = false;
+  form.hidden = true;
+  question.hidden = true;
+  thanks.hidden = false;
+  // Move focus to the confirmation so keyboard and screen reader users are informed.
+  thanksHeading.focus();
+};
 
-// Restart the flow so another rating can be given.
-restart.addEventListener('click', () => {
+const restartFeedback = () => {
   rating.value = '';
   comment.value = '';
   submit.loading = false;
@@ -44,4 +39,13 @@ restart.addEventListener('click', () => {
   form.hidden = false;
   // Return focus to the question so the flow is re-announced and can be repeated from the start.
   question.focus();
+};
+
+rating.addEventListener('change', revealCommentAndSubmit);
+submit.addEventListener('click', () => {
+  // Simulate a short server round-trip: show a loading spinner while "submitting",
+  // then reveal the confirmation. In a real integration the request would happen here.
+  submit.loading = true;
+  window.setTimeout(showConfirmation, 1200);
 });
+restart.addEventListener('click', restartFeedback);

@@ -5,51 +5,63 @@ import './style.css';
 
 const trigger = document.getElementById('feedback-trigger');
 const modal = document.getElementById('feedback-modal');
-const rating = document.getElementById('feedback-rating');
-const detail = document.getElementById('feedback-detail');
-const form = document.getElementById('feedback-form');
-const submit = document.getElementById('feedback-submit');
 const close = document.getElementById('feedback-close');
-const thanks = document.getElementById('feedback-thanks');
 const question = document.getElementById('feedback-question');
+const form = document.getElementById('feedback-form');
+const rating = document.getElementById('feedback-rating');
+const comment = document.getElementById('feedback-comment');
+const submit = document.getElementById('feedback-submit');
+const thanks = document.getElementById('feedback-thanks');
+const thanksHeading = document.getElementById('feedback-thanks-heading');
 
-// The trigger opens the feedback modal.
-trigger.addEventListener('click', () => {
+const openModal = () => {
   modal.open = true;
-});
+};
 
-// Choosing a rating reveals the optional free-text field and the submit button.
-rating.addEventListener('change', () => {
-  detail.hidden = false;
-  submit.hidden = false;
-});
-
-submit.addEventListener('click', () => {
-  // Simulate a short server round-trip: show a loading spinner while "submitting",
-  // then reveal the confirmation. In a real integration the request would happen here.
-  submit.loading = true;
-  window.setTimeout(() => {
-    submit.loading = false;
-    form.hidden = true;
-    question.hidden = true;
-    thanks.hidden = false;
-    submit.hidden = true;
-    close.hidden = false;
-  }, 1200);
-});
-
-// Closing resets the flow so the next open starts fresh.
 const closeModal = () => {
   modal.open = false;
-  rating.value = undefined;
-  detail.hidden = true;
+};
+
+// Resetting the flow so the next open starts fresh is deferred until the modal
+// is fully hidden. The `motionHiddenEnd` event fires once the close animation has
+// finished, preventing the content from visibly snapping back mid-transition.
+const resetFeedback = () => {
+  rating.value = '';
+  comment.value = '';
   thanks.hidden = true;
   question.hidden = false;
+  comment.hidden = true;
   form.hidden = false;
   submit.loading = false;
   submit.hidden = true;
   close.hidden = true;
 };
 
+// Choosing a rating reveals the optional free-text field and the submit button.
+const revealCommentAndSubmit = () => {
+  comment.hidden = false;
+  submit.hidden = false;
+};
+
+// Reveal the confirmation once the "submission" has completed.
+const showConfirmation = () => {
+  submit.loading = false;
+  form.hidden = true;
+  question.hidden = true;
+  thanks.hidden = false;
+  close.hidden = false;
+  // Move focus to the confirmation so keyboard and screen reader users are informed.
+  thanksHeading.focus();
+};
+
+trigger.addEventListener('click', openModal);
 close.addEventListener('click', closeModal);
 modal.addEventListener('dismiss', closeModal);
+modal.addEventListener('motionHiddenEnd', resetFeedback);
+rating.addEventListener('change', revealCommentAndSubmit);
+submit.addEventListener('click', () => {
+  // Simulate a short server round-trip: show a loading spinner while "submitting",
+  // then reveal the confirmation. In a real integration the request would happen here.
+  submit.loading = true;
+  window.setTimeout(showConfirmation, 1200);
+});
