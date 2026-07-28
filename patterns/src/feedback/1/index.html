@@ -24,7 +24,7 @@
         <form id="feedback-form" class="grid gap-fluid-md justify-items-center">
           <div class="w-full grid md:grid-cols-[auto_minmax(320px,1fr)_auto] items-center gap-static-md">
             <p-text
-              class="row-2 md:row-auto col-1 md:col-auto justify-self-start"
+              class="max-sm:hidden row-2 md:row-auto col-1 md:col-auto justify-self-start"
               size="small"
               align="start"
               color="contrast-medium"
@@ -34,20 +34,26 @@
             <p-segmented-control
               id="feedback-rating"
               class="row-1 md:row-auto col-span-2 md:col-auto"
-              columns="5"
+              columns="{base: 1, s: 5}"
               label="Select your satisfaction from the scale 1 (very dissatisfied) to 5 (very satisfied)"
               hide-label="true"
             >
-              <p-segmented-control-item value="1" aria="{ 'aria-label': 'Very dissatisfied' }"
-                >1</p-segmented-control-item
+              <p-segmented-control-item value="1"
+                >1 <span class="sm:sr-only">(very dissatisfied)</span></p-segmented-control-item
               >
-              <p-segmented-control-item value="2" aria="{ 'aria-label': 'Dissatisfied' }">2</p-segmented-control-item>
-              <p-segmented-control-item value="3" aria="{ 'aria-label': 'Neutral' }">3</p-segmented-control-item>
-              <p-segmented-control-item value="4" aria="{ 'aria-label': 'Satisfied' }">4</p-segmented-control-item>
-              <p-segmented-control-item value="5" aria="{ 'aria-label': 'Very satisfied' }">5</p-segmented-control-item>
+              <p-segmented-control-item value="2"
+                >2 <span class="sm:sr-only">(dissatisfied)</span></p-segmented-control-item
+              >
+              <p-segmented-control-item value="3">3 <span class="sm:sr-only">(neutral)</span></p-segmented-control-item>
+              <p-segmented-control-item value="4"
+                >4 <span class="sm:sr-only">(satisfied)</span></p-segmented-control-item
+              >
+              <p-segmented-control-item value="5"
+                >5 <span class="sm:sr-only">(very satisfied)</span></p-segmented-control-item
+              >
             </p-segmented-control>
             <p-text
-              class="row-2 md:row-auto col-2 md:col-auto justify-self-end"
+              class="max-sm:hidden row-2 md:row-auto col-2 md:col-auto justify-self-end"
               size="small"
               align="end"
               color="contrast-medium"
