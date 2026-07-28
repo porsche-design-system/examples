@@ -3,9 +3,9 @@ import './style.css';
 // DO NOT USE IN PRODUCTION!
 // EXAMPLE CODE FOR DEMONSTRATION PURPOSE ONLY. No data is sent anywhere.
 
-const rating = document.getElementById('feedback-rating');
-const detail = document.getElementById('feedback-detail');
 const form = document.getElementById('feedback-form');
+const rating = document.getElementById('feedback-rating');
+const comment = document.getElementById('feedback-comment');
 const submit = document.getElementById('feedback-submit');
 const thanks = document.getElementById('feedback-thanks');
 const question = document.getElementById('feedback-question');
@@ -13,7 +13,8 @@ const restart = document.getElementById('feedback-restart');
 
 // Choosing a rating reveals the optional free-text field and the submit button.
 rating.addEventListener('change', () => {
-  detail.hidden = false;
+  comment.hidden = false;
+  submit.hidden = false;
 });
 
 submit.addEventListener('click', () => {
@@ -31,8 +32,10 @@ submit.addEventListener('click', () => {
 // Restart the flow so another rating can be given.
 restart.addEventListener('click', () => {
   rating.value = undefined;
+  comment.value = undefined;
   submit.loading = false;
-  detail.hidden = true;
+  submit.hidden = true;
+  comment.hidden = true;
   thanks.hidden = true;
   question.hidden = false;
   form.hidden = false;

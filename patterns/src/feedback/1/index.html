@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de" class="scheme-light-dark bg-canvas">
+<html lang="en" class="scheme-light-dark bg-canvas">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,72 +8,61 @@
   </head>
 
   <body>
-    <footer class="grid-template py-fluid-lg bg-surface">
-      <!-- Satisfaction rating, placed at the end of the page. -->
+    <footer class="grid-template gap-y-fluid-xl justify-items-center py-fluid-lg bg-surface">
       <section
         id="feedback"
-        class="col-extended grid gap-fluid-md justify-items-center"
+        class="col-extended grid gap-fluid-md justify-items-center max-w-prose"
         aria-labelledby="feedback-question"
       >
-        <p-heading id="feedback-question" tag="h2" size="medium" align="center" class="max-w-[560px]">
+        <p-heading id="feedback-question" tag="h2" size="md" align="center">
           Wie zufrieden sind Sie mit den auf dieser Seite dargestellten Informationen?
         </p-heading>
 
         <form id="feedback-form" class="grid gap-fluid-md justify-items-center">
-          <div class="grid gap-static-sm justify-items-center w-full">
-            <div class="flex w-full items-center justify-center gap-static-md">
-              <p-text size="small" color="contrast-medium" class="hidden md:block whitespace-nowrap">Sehr unzufrieden</p-text>
-              <p-segmented-control
-                id="feedback-rating"
-                class="w-full md:w-[20rem] md:shrink-0"
-                columns="5"
-                label="Wie zufrieden sind Sie mit den auf dieser Seite dargestellten Informationen?"
-                hide-label="true"
-              >
-                <p-segmented-control-item value="1">1</p-segmented-control-item>
-                <p-segmented-control-item value="2">2</p-segmented-control-item>
-                <p-segmented-control-item value="3">3</p-segmented-control-item>
-                <p-segmented-control-item value="4">4</p-segmented-control-item>
-                <p-segmented-control-item value="5">5</p-segmented-control-item>
-              </p-segmented-control>
-              <p-text size="small" color="contrast-medium" class="hidden md:block whitespace-nowrap">Sehr zufrieden</p-text>
-            </div>
-            <div class="flex md:hidden w-full justify-between gap-static-md">
-              <p-text size="small" color="contrast-medium">Sehr unzufrieden</p-text>
-              <p-text size="small" color="contrast-medium" align="end">Sehr zufrieden</p-text>
-            </div>
+          <div class="grid md:grid-cols-[auto_1fr_auto] items-center gap-static-md">
+            <p-text class="row-2 md:row-auto col-1 md:col-auto justify-self-start" size="small" color="contrast-medium">
+              Sehr unzufrieden
+            </p-text>
+            <p-segmented-control
+              id="feedback-rating"
+              class="row-1 md:row-auto col-span-2 md:col-auto"
+              columns="5"
+              label="Wie zufrieden sind Sie mit den auf dieser Seite dargestellten Informationen?"
+              hide-label="true"
+            >
+              <p-segmented-control-item value="1">1</p-segmented-control-item>
+              <p-segmented-control-item value="2">2</p-segmented-control-item>
+              <p-segmented-control-item value="3">3</p-segmented-control-item>
+              <p-segmented-control-item value="4">4</p-segmented-control-item>
+              <p-segmented-control-item value="5">5</p-segmented-control-item>
+            </p-segmented-control>
+            <p-text class="row-2 md:row-auto col-2 md:col-auto justify-self-end" size="small" color="contrast-medium">
+              Sehr zufrieden
+            </p-text>
           </div>
-
-          <div id="feedback-detail" class="w-full max-w-[620px] grid gap-fluid-md justify-items-center" hidden>
-            <p-textarea
-              id="feedback-comment"
-              name="comment"
-              class="w-full"
-              label="Welche zwei Dinge könnten wir tun, um diese Seite besser zu machen?"
-              rows="4"
-            ></p-textarea>
-            <p-button id="feedback-submit" type="button" icon="none">Feedback absenden</p-button>
-          </div>
+          <p-textarea
+            id="feedback-comment"
+            class="w-full"
+            name="comment"
+            label="What two things could we do to make this page better?"
+            rows="4"
+            hidden
+          ></p-textarea>
+          <p-button id="feedback-submit" type="button" hidden>Submit feedback</p-button>
         </form>
 
-        <div
-          id="feedback-thanks"
-          class="grid gap-fluid-md justify-items-center text-center max-w-[480px]"
-          hidden
-        >
-          <p-heading tag="h2" size="medium">Vielen Dank für Ihr Feedback</p-heading>
-          <p-text>Ihr Feedback hilft uns unsere Seite permanent zu verbessern.</p-text>
+        <div id="feedback-thanks" class="grid gap-fluid-md justify-items-center" hidden>
+          <p-heading tag="h2" size="md" align="center">Thank you for your feedback</p-heading>
+          <p-text align="center">Your feedback helps us continuously improve our page.</p-text>
           <p-button id="feedback-restart" type="button" variant="secondary" icon="refresh">
-            Neues Feedback geben
+            Give new feedback
           </p-button>
         </div>
       </section>
 
-      <div class="col-extended grid gap-fluid-md justify-items-center mt-fluid-lg">
+      <div class="col-extended grid gap-fluid-md justify-items-center">
         <p-wordmark href="#"></p-wordmark>
-        <p-text size="x-small" color="contrast-medium" align="center">
-          &copy; 2026 Dr. Ing. h.c. F. Porsche AG.
-        </p-text>
+        <p-text size="xs" color="contrast-medium" align="center">&copy; 2026 Dr. Ing. h.c. F. Porsche AG.</p-text>
       </div>
     </footer>
 
