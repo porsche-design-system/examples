@@ -1,0 +1,15 @@
+- main:
+  - region "Feedback":
+    - heading "How satisfied are you with the information shown on this page?" [level=2]
+    - group "Select your satisfaction from the scale 1 (very dissatisfied) to 5 (very satisfied)":
+      - text: ""
+      - button "1 (very dissatisfied)"
+      - button "2 (dissatisfied)"
+      - button "3 (neutral)"
+      - button "4 (satisfied)"
+      - button "5 (very satisfied)"
+      - alert
+  - link "Porsche":
+    - /url: "#"
+    - img "Porsche"
+  - paragraph: /© \d+ Dr\. Ing\. h\.c\. F\. Porsche AG\./
