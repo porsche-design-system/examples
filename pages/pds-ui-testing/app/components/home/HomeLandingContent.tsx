@@ -178,7 +178,7 @@ export function HomeLandingContent({
             width="basic"
             pagination
             aria={{
-              "aria-label": "Trending Products",
+              'aria-label': home.trendingCarouselLabel,
             }}
           >
             {trendingProducts.slice(0, 5).map((product) => (
