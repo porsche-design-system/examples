@@ -1,30 +1,21 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import {
-  PDivider,
-  PHeading,
-  PLinkPure,
-  PTag,
-  PText,
-} from "@porsche-design-system/components-react/ssr";
-import { CatalogProductGrid } from "@/app/components/catalog/CatalogProductGrid";
-import { ProductDetailSections } from "@/app/components/product/ProductDetailSections";
-import { ProductDetailFavoriteButton } from "@/app/components/product/ProductDetailFavoriteButton";
-import { ProductDetailWarningBanner } from "@/app/components/product/ProductDetailWarningBanner";
-import { ProductDetailPrice } from "@/app/components/product/ProductDetailPrice";
-import { ProductInquiryFlyout } from "@/app/components/product/ProductInquiryFlyout";
-import { ProductSizeComparisonSheet } from "@/app/components/product/ProductSizeComparisonSheet";
-import { ProductSizeSelector } from "@/app/components/product/ProductSizeSelector";
-import { PAGE_HEADING_ID } from "@/app/lib/skip-to-page-heading";
-import { productHasNewReleaseFlag } from "@/app/data/catalog-product-flags";
-import {
-  getCatalogProductBySlug,
-  getHomeCatalog,
-  getRelatedCatalogProducts,
-} from "@/app/data/get-catalog";
-import { isLocale, locales, type Locale } from "@/app/i18n/config";
-import { getDictionary } from "@/app/i18n/get-dictionary";
-import { appHref, productsIndexHref } from "@/app/i18n/href";
+import { PDivider, PHeading, PLinkPure, PTag, PText } from '@porsche-design-system/components-react/ssr';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { CatalogProductGrid } from '@/app/components/catalog/CatalogProductGrid';
+import { MainContent } from '@/app/components/layout/MainContent';
+import { ProductDetailFavoriteButton } from '@/app/components/product/ProductDetailFavoriteButton';
+import { ProductDetailPrice } from '@/app/components/product/ProductDetailPrice';
+import { ProductDetailSections } from '@/app/components/product/ProductDetailSections';
+import { ProductDetailWarningBanner } from '@/app/components/product/ProductDetailWarningBanner';
+import { ProductInquiryFlyout } from '@/app/components/product/ProductInquiryFlyout';
+import { ProductSizeComparisonSheet } from '@/app/components/product/ProductSizeComparisonSheet';
+import { ProductSizeSelector } from '@/app/components/product/ProductSizeSelector';
+import { productHasNewReleaseFlag } from '@/app/data/catalog-product-flags';
+import { getCatalogProductBySlug, getHomeCatalog, getRelatedCatalogProducts } from '@/app/data/get-catalog';
+import { isLocale, type Locale, locales } from '@/app/i18n/config';
+import { getDictionary } from '@/app/i18n/get-dictionary';
+import { appHref, productsIndexHref } from '@/app/i18n/href';
+import { PAGE_HEADING_ID } from '@/app/lib/skip-to-page-heading';
 
 export const dynamicParams = false;
 
@@ -40,21 +31,16 @@ export async function generateStaticParams() {
         locale,
         productSlug: product.slug,
       }));
-    }),
+    })
   );
   return params.flat();
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale: raw, productSlug } = await params;
   if (!isLocale(raw)) return {};
   const locale = raw as Locale;
-  const [dictionary, catalog] = await Promise.all([
-    getDictionary(locale),
-    getHomeCatalog(locale),
-  ]);
+  const [dictionary, catalog] = await Promise.all([getDictionary(locale), getHomeCatalog(locale)]);
   const product = getCatalogProductBySlug(catalog.products, productSlug);
   if (!product) return {};
   return {
@@ -72,35 +58,20 @@ export default async function ProductDetailPage({ params }: PageProps) {
   if (!isLocale(raw)) return null;
   const locale: Locale = raw;
 
-  const [dictionary, catalog] = await Promise.all([
-    getDictionary(locale),
-    getHomeCatalog(locale),
-  ]);
+  const [dictionary, catalog] = await Promise.all([getDictionary(locale), getHomeCatalog(locale)]);
   const product = getCatalogProductBySlug(catalog.products, productSlug);
   if (!product) notFound();
 
   const relatedProducts = getRelatedCatalogProducts(catalog.products, product);
   const { productDetail, productList } = dictionary.pages;
   const primaryImage = product.images[0];
-  const categoryLabels = labelsFor(
-    product.categories,
-    productList.filters.categories as Record<string, string>,
-  );
-  const tagLabels = labelsFor(
-    product.tags,
-    productList.filters.tags as Record<string, string>,
-  );
-  const collectionLabels = labelsFor(
-    product.collections,
-    productList.filters.collections as Record<string, string>,
-  );
-  const isApparelProduct = product.categories.includes("apparel");
+  const categoryLabels = labelsFor(product.categories, productList.filters.categories as Record<string, string>);
+  const tagLabels = labelsFor(product.tags, productList.filters.tags as Record<string, string>);
+  const collectionLabels = labelsFor(product.collections, productList.filters.collections as Record<string, string>);
+  const isApparelProduct = product.categories.includes('apparel');
 
   return (
-    <main
-      className="grid-template gap-y-fluid-xl py-fluid-lg"
-      data-testid="main-content"
-    >
+    <MainContent className="grid-template gap-y-fluid-xl py-fluid-lg">
       <div className="col-wide">
         <PLinkPure href={productsIndexHref(locale)} icon="arrow-left">
           {productDetail.backToProducts}
@@ -111,27 +82,28 @@ export default async function ProductDetailPage({ params }: PageProps) {
         <div className="col-span-full md:col-span-one-half overflow-hidden rounded-2xl">
           {/* biome-ignore lint/performance/noImgElement: Product detail uses the same public demo assets as PDS tile slots. */}
           <img
-            alt={primaryImage?.alt ?? ""}
+            alt={primaryImage?.alt ?? ''}
             className="aspect-3/4 h-auto w-full object-cover rounded-2xl"
-            src={appHref(primaryImage?.src ?? "/home-product-keychain.jpg")}
+            src={appHref(primaryImage?.src ?? '/home-product-keychain.jpg')}
           />
         </div>
 
         <div className="col-span-full md:col-start-11 flex flex-col gap-fluid-md">
-          <ProductDetailWarningBanner copy={productDetail.infoBanner} showBanner={product.details.info ? true : false} />
+          <ProductDetailWarningBanner
+            copy={productDetail.infoBanner}
+            showBanner={product.details.info ? true : false}
+          />
           <div className="flex flex-wrap gap-static-sm">
             {productHasNewReleaseFlag(product) ? (
               <PTag compact key="new-release">
                 {productList.newReleaseTag}
               </PTag>
             ) : null}
-            {[...categoryLabels, ...collectionLabels, ...tagLabels].map(
-              (label) => (
-                <PTag compact key={label}>
-                  {label}
-                </PTag>
-              ),
-            )}
+            {[...categoryLabels, ...collectionLabels, ...tagLabels].map((label) => (
+              <PTag compact key={label}>
+                {label}
+              </PTag>
+            ))}
           </div>
           <div className="flex flex-col items-start gap-fluid-sm">
             <PHeading id={PAGE_HEADING_ID} size="3xl" tag="h1">
@@ -148,9 +120,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
                   {productDetail.sizes}
                 </PHeading>
                 <ProductSizeSelector label={productDetail.selectSize} />
-                <ProductSizeComparisonSheet
-                  copy={productDetail.sizeComparison}
-                />
+                <ProductSizeComparisonSheet copy={productDetail.sizeComparison} />
               </div>
               <PDivider />
             </>
@@ -159,26 +129,16 @@ export default async function ProductDetailPage({ params }: PageProps) {
             aria-labelledby="product-details-section-heading"
             className="flex w-full flex-col items-start gap-fluid-md"
           >
-            <PHeading
-              id="product-details-section-heading"
-              size="md"
-              tag="h2"
-            >
+            <PHeading id="product-details-section-heading" size="md" tag="h2">
               {productDetail.details}
             </PHeading>
-            <ProductDetailSections
-              copy={productDetail}
-              product={product}
-              locale={locale}
-            />
+            <ProductDetailSections copy={productDetail} product={product} locale={locale} />
           </section>
           <div className="flex flex-wrap gap-static-sm">
             <ProductInquiryFlyout
               copy={productDetail.inquiry}
-              productImageAlt={primaryImage?.alt ?? ""}
-              productImageSrc={appHref(
-                primaryImage?.src ?? "/home-product-keychain.jpg",
-              )}
+              productImageAlt={primaryImage?.alt ?? ''}
+              productImageSrc={appHref(primaryImage?.src ?? '/home-product-keychain.jpg')}
               productName={product.name}
             />
             <ProductDetailFavoriteButton
@@ -206,6 +166,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
           />
         </>
       ) : null}
-    </main>
+    </MainContent>
   );
 }

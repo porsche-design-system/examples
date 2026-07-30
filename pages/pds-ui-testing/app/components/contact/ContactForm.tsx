@@ -14,6 +14,7 @@ import {
   PTextarea,
 } from '@porsche-design-system/components-react/ssr';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { MainContent } from '@/app/components/layout/MainContent';
 import type { Dictionary } from '@/app/i18n/get-dictionary';
 import {
   CONTACT_ERROR_FIELD_ORDER,
@@ -104,7 +105,7 @@ export function ContactForm({ copy }: Props) {
   }, []);
 
   return (
-    <main className="grid-template py-fluid-lg" data-testid="main-content">
+    <MainContent className="grid-template py-fluid-lg">
       <div className="col-wide flex max-w-prose flex-col gap-fluid-md">
         <div className="flex flex-col gap-fluid-sm">
           <PHeading id={PAGE_HEADING_ID} tag="h1">
@@ -288,6 +289,6 @@ export function ContactForm({ copy }: Props) {
           </form>
         )}
       </div>
-    </main>
+    </MainContent>
   );
 }

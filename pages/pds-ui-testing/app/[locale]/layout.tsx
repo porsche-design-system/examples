@@ -1,20 +1,21 @@
-import type { Metadata, Viewport } from "next";
-import { notFound } from "next/navigation";
 import {
   getComponentChunkLinks,
   getFontLinks,
   getIconLinks,
   getMetaTagsAndIconLinks,
-} from "@porsche-design-system/components-react/partials";
-import { PorscheDesignSystemProvider } from "@porsche-design-system/components-react/ssr";
-import { ProductFavoriteToasts } from "@/app/components/favorites/ProductFavoriteToasts";
-import { ProductFavoritesProvider } from "@/app/components/favorites/ProductFavoritesProvider";
-import { GlobalFooter } from "@/app/components/footer/GlobalFooter";
-import { isLocale, locales, type Locale } from "@/app/i18n/config";
-import { getDictionary } from "@/app/i18n/get-dictionary";
-import "@/app/globals.css";
+} from '@porsche-design-system/components-react/partials';
+import { PorscheDesignSystemProvider } from '@porsche-design-system/components-react/ssr';
+import type { Metadata, Viewport } from 'next';
+import { notFound } from 'next/navigation';
+import { ProductFavoritesProvider } from '@/app/components/favorites/ProductFavoritesProvider';
+import { ProductFavoriteToasts } from '@/app/components/favorites/ProductFavoriteToasts';
+import { FeedbackCopyProvider } from '@/app/components/feedback/FeedbackCopyContext';
+import { GlobalFooter } from '@/app/components/footer/GlobalFooter';
+import { isLocale, type Locale, locales } from '@/app/i18n/config';
+import { getDictionary } from '@/app/i18n/get-dictionary';
+import '@/app/globals.css';
 
-const APP_TITLE = "PDS UI Testing";
+const APP_TITLE = 'PDS UI Testing';
 
 /** Reject any locale segment that is not in `locales`. */
 export const dynamicParams = false;
@@ -24,7 +25,7 @@ export function generateStaticParams() {
 }
 
 export const viewport: Viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
 };
 
@@ -33,9 +34,7 @@ type LocaleLayoutProps = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({
-  params,
-}: LocaleLayoutProps): Promise<Metadata> {
+export async function generateMetadata({ params }: LocaleLayoutProps): Promise<Metadata> {
   const { locale: raw } = await params;
   if (!isLocale(raw)) return {};
   const dictionary = await getDictionary(raw);
@@ -48,10 +47,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function LocaleRootLayout({
-  children,
-  params,
-}: LocaleLayoutProps) {
+export default async function LocaleRootLayout({ children, params }: LocaleLayoutProps) {
   const { locale: raw } = await params;
   if (!isLocale(raw)) notFound();
   const locale: Locale = raw;
@@ -60,29 +56,25 @@ export default async function LocaleRootLayout({
   return (
     <html className="scheme-light-dark" lang={locale}>
       <head>
-        <base
-          href={
-            process.env.NEXT_PUBLIC_BASE_PATH
-              ? `${process.env.NEXT_PUBLIC_BASE_PATH}/`
-              : "/"
-          }
-        />
-        {getFontLinks({ format: "jsx" })}
-        {getComponentChunkLinks({ format: "jsx" })}
-        {getIconLinks({ format: "jsx" })}
-        {getMetaTagsAndIconLinks({ appTitle: APP_TITLE, format: "jsx" })}
+        <base href={process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/` : '/'} />
+        {getFontLinks({ format: 'jsx' })}
+        {getComponentChunkLinks({ format: 'jsx' })}
+        {getIconLinks({ format: 'jsx' })}
+        {getMetaTagsAndIconLinks({ appTitle: APP_TITLE, format: 'jsx' })}
       </head>
       <body>
         <PorscheDesignSystemProvider>
-          <ProductFavoritesProvider>
-            {children}
-            <ProductFavoriteToasts
-              copy={{
-                added: dictionary.header.favoritesToastAdded,
-                removed: dictionary.header.favoritesToastRemoved,
-              }}
-            />
-          </ProductFavoritesProvider>
+          <FeedbackCopyProvider copy={dictionary.feedback}>
+            <ProductFavoritesProvider>
+              {children}
+              <ProductFavoriteToasts
+                copy={{
+                  added: dictionary.header.favoritesToastAdded,
+                  removed: dictionary.header.favoritesToastRemoved,
+                }}
+              />
+            </ProductFavoritesProvider>
+          </FeedbackCopyProvider>
           <GlobalFooter dictionary={dictionary} locale={locale} />
         </PorscheDesignSystemProvider>
       </body>

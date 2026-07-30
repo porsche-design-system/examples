@@ -378,6 +378,23 @@
       }
     }
   },
+  "feedback": {
+    "sectionLabel": "Feedback",
+    "question": "How satisfied are you with the information shown on this page?",
+    "scaleStart": "Very dissatisfied",
+    "scaleEnd": "Very satisfied",
+    "ratingLabel": "Select your satisfaction from the scale 1 (very dissatisfied) to 5 (very satisfied)",
+    "rating1Sr": "(very dissatisfied)",
+    "rating2Sr": "(dissatisfied)",
+    "rating3Sr": "(neutral)",
+    "rating4Sr": "(satisfied)",
+    "rating5Sr": "(very satisfied)",
+    "commentLabel": "What two things could we do to make this page better?",
+    "submit": "Submit feedback",
+    "thanksHeading": "Thank you for your feedback",
+    "thanksCopy": "Your feedback helps us continuously improve our page.",
+    "restart": "Give new feedback"
+  },
   "footer": {
     "regionTitle": "Current Region / Language",
     "regionMarket": "USA / English",

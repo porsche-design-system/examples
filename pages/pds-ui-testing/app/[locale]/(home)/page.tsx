@@ -1,18 +1,17 @@
-import type { Metadata } from "next";
-import { HomeHero } from "@/app/components/home/HomeHero";
-import { HomeLandingContent } from "@/app/components/home/HomeLandingContent";
-import { filterCatalogProducts, getHomeCatalog } from "@/app/data/get-catalog";
-import { isLocale, type Locale } from "@/app/i18n/config";
-import { getDictionary } from "@/app/i18n/get-dictionary";
-import { productsIndexHref } from "@/app/i18n/href";
+import type { Metadata } from 'next';
+import { HomeHero } from '@/app/components/home/HomeHero';
+import { HomeLandingContent } from '@/app/components/home/HomeLandingContent';
+import { MainContent } from '@/app/components/layout/MainContent';
+import { filterCatalogProducts, getHomeCatalog } from '@/app/data/get-catalog';
+import { isLocale, type Locale } from '@/app/i18n/config';
+import { getDictionary } from '@/app/i18n/get-dictionary';
+import { productsIndexHref } from '@/app/i18n/href';
 
 type HomePageProps = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({
-  params,
-}: HomePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
   const { locale: raw } = await params;
   if (!isLocale(raw)) return {};
   const locale = raw as Locale;
@@ -24,20 +23,14 @@ export default async function HomePage({ params }: HomePageProps) {
   const { locale: raw } = await params;
   if (!isLocale(raw)) return null;
   const locale = raw as Locale;
-  const [dictionary, catalog] = await Promise.all([
-    getDictionary(locale),
-    getHomeCatalog(locale),
-  ]);
+  const [dictionary, catalog] = await Promise.all([getDictionary(locale), getHomeCatalog(locale)]);
   const { home } = dictionary.pages;
   const trendingProducts = filterCatalogProducts(catalog.products, {
-    flags: ["trending"],
+    flags: ['trending'],
   });
 
   return (
-    <main
-      className="relative z-0 grid-template gap-y-0"
-      data-testid="main-content"
-    >
+    <MainContent className="relative z-0 grid-template gap-y-0">
       <HomeHero
         alt={home.teaserAlt}
         ctaLabel={home.heroCta}
@@ -52,6 +45,6 @@ export default async function HomePage({ params }: HomePageProps) {
         tilePricingCopy={dictionary.pages.productList.pricing}
         trendingProducts={trendingProducts}
       />
-    </main>
+    </MainContent>
   );
 }

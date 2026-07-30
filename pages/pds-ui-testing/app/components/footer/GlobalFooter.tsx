@@ -60,7 +60,7 @@ export function GlobalFooter({ dictionary, locale }: Props) {
   ];
 
   return (
-    <footer className="grid-template bg-canvas py-fluid-lg mt-fluid-xl scheme-dark" data-testid="global-footer">
+    <footer className="grid-template bg-canvas py-fluid-lg scheme-dark" data-testid="global-footer">
       <div className="col-wide flex flex-col gap-fluid-md">
         <section aria-labelledby="footer-region-heading" className="flex flex-col gap-fluid-sm">
           <PHeading id="footer-region-heading" size="lg" tag="h2" weight="semibold">
