@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Placeholder 911 interior render">
+  <defs>
+    <linearGradient id="pm-int-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6f6f8" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#f6f6f8" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  <!-- dashboard band -->
+  <path d="M300 470 C 620 402, 980 402, 1300 470 L 1300 520 C 980 456, 620 456, 300 520 Z" fill="url(#pm-int-body)"/>
+  <!-- steering wheel -->
+  <g fill="none" stroke="#f6f6f8" stroke-opacity="0.30" stroke-width="10">
+    <circle cx="800" cy="600" r="120"/>
+  </g>
+  <g fill="url(#pm-int-body)">
+    <circle cx="800" cy="600" r="34"/>
+    <rect x="676" y="590" width="248" height="20" rx="10"/>
+    <rect x="790" y="600" width="20" height="112" rx="10"/>
+  </g>
+  <!-- instrument cluster hint -->
+  <ellipse cx="800" cy="486" rx="150" ry="30" fill="#0d070f" opacity="0.5"/>
+  <text x="800" y="792" text-anchor="middle" font-family="'Porsche Next', Arial, sans-serif" font-size="34" letter-spacing="6" fill="#f6f6f8" opacity="0.72">INTERIOR</text>
+  <text x="800" y="828" text-anchor="middle" font-family="'Porsche Next', Arial, sans-serif" font-size="18" fill="#f6f6f8" opacity="0.36">911 · Placeholder render</text>
+</svg>
