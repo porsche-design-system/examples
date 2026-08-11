@@ -4,6 +4,7 @@
   "private": true,
   "workspaces": [
     "frameworks/*",
+    "pages/*",
     "patterns",
     "templates"
   ],
@@ -18,6 +19,7 @@
     "dev:vue": "npm run dev --workspace=@porsche-design-system/vue",
     "dev:patterns": "npm run dev --workspace=@porsche-design-system/patterns",
     "dev:templates": "npm run dev --workspace=@porsche-design-system/templates",
+    "dev:pds-ui-testing": "npm run dev --workspace=@porsche-design-system/pds-ui-testing",
     "build": "npm run build --workspaces",
     "build:angular": "npm run build --workspace=@porsche-design-system/angular",
     "build:astro": "npm run build --workspace=@porsche-design-system/astro",
@@ -28,6 +30,7 @@
     "build:vue": "npm run build --workspace=@porsche-design-system/vue",
     "build:patterns": "npm run build --workspace=@porsche-design-system/patterns",
     "build:templates": "npm run build --workspace=@porsche-design-system/templates",
+    "build:pds-ui-testing": "npm run build --workspace=@porsche-design-system/pds-ui-testing",
     "preview:angular": "npm run watch --workspace=@porsche-design-system/angular",
     "preview:astro": "npm run preview --workspace=@porsche-design-system/astro",
     "preview:next-js": "npm run start --workspace=@porsche-design-system/next-js",
@@ -37,6 +40,7 @@
     "preview:vue": "npm run preview --workspace=@porsche-design-system/vue",
     "preview:patterns": "npm run preview --workspace=@porsche-design-system/patterns",
     "preview:templates": "npm run preview --workspace=@porsche-design-system/templates",
+    "preview:pds-ui-testing": "npm run preview --workspace=@porsche-design-system/pds-ui-testing",
     "format": "biome format",
     "lint": "biome lint",
     "test:e2e:angular": "npm run test:e2e --workspace=@porsche-design-system/angular",
@@ -49,6 +53,9 @@
     "test:e2e:patterns": "npm run test:e2e --workspace=@porsche-design-system/patterns",
     "test:a11y:patterns": "npm run test:a11y --workspace=@porsche-design-system/patterns",
     "test:vrt:patterns": "npm run test:vrt --workspace=@porsche-design-system/patterns",
+    "test:a11y:pds-ui-testing": "npm run test:a11y --workspace=@porsche-design-system/pds-ui-testing",
+    "test:e2e:pds-ui-testing": "npm run test:e2e --workspace=@porsche-design-system/pds-ui-testing",
+    "test:unit:pds-ui-testing": "npm run test:unit --workspace=@porsche-design-system/pds-ui-testing",
     "npm:install": "npm install",
     "npm:lint": "syncpack lint",
     "npm:lint:fix": "syncpack fix",
@@ -62,8 +69,13 @@
     "npm:clean": "npm cache clean --force"
   },
   "devDependencies": {
+    "@astrojs/compiler-binding": "0.2.3",
     "@biomejs/biome": "^2.5.1",
+    "@tailwindcss/oxide": "4.3.1",
+    "lightningcss": "1.32.0",
     "prettier": "^3.9.1",
+    "rolldown": "1.1.3",
+    "rollup": "4.60.2",
     "syncpack": "^15.3.2"
   },
   "overrides": {

@@ -1,0 +1,2159 @@
+{
+  "products": [
+    {
+      "id": "product-keychain",
+      "slug": "leather-crest-keychain",
+      "sku": "WAP-050-090-0R",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "timeless-enthusiast"
+      ],
+      "categories": [
+        "accessories"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "featured"
+      ],
+      "name": "Leather Crest Keychain",
+      "teaser": "A compact leather keychain with the Porsche crest.",
+      "description": "A timeless everyday accessory with grained leather, precise stitching, and a polished Porsche crest.",
+      "price": {
+        "amount": 79,
+        "currency": "USD",
+        "formatted": "$79.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/home-product-keychain.jpg",
+          "alt": "Leather Porsche crest keychain on a light background"
+        }
+      ],
+      "priceOriginal": {
+        "amount": 100,
+        "currency": "USD",
+        "formatted": "$100.00"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "A timeless everyday accessory with grained leather, precise stitching, and a polished Porsche crest. A refined Porsche lifestyle accessory for everyday use."
+          ],
+          "bullets": [
+            "Quality materials and precise craftsmanship.",
+            "Subtle Porsche branding.",
+            "Ideal as a gift or personal accessory."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "120 mm x 80 mm x 25 mm",
+          "weight": "85 g"
+        },
+        "materialAndCare": {
+          "material": "Leather / metal / synthetic (varies by model)",
+          "careInstructions": "Wipe with a soft, dry cloth. Keep away from moisture and direct sunlight."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Collection",
+            "value": "Porsche Lifestyle"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-cap",
+      "slug": "porsche-design-baseball-cap",
+      "sku": "WAP-080-001-0P",
+      "audiences": [
+        "men",
+        "women",
+        "unisex"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "apparel",
+        "accessories"
+      ],
+      "collections": [
+        "porsche-design"
+      ],
+      "flags": [
+        "new-release",
+        "trending"
+      ],
+      "name": "Porsche Design Baseball Cap",
+      "teaser": "A clean cap for everyday city looks.",
+      "description": "Sport-inspired Porsche styling with an adjustable fit, embroidered details, and a versatile silhouette.",
+      "price": {
+        "amount": 75,
+        "currency": "USD",
+        "formatted": "$75.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/home-product-cap.jpg",
+          "alt": "Black Porsche Design Baseball Cap"
+        }
+      ],
+      "priceOriginal": {
+        "amount": 100,
+        "currency": "USD",
+        "formatted": "$100.00"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Sport-inspired Porsche styling with an adjustable fit, embroidered details, and a versatile silhouette. Crafted with attention to detail, this Porsche Design Baseball Cap reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality porsche design baseball cap from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ],
+        "info": "Limited availability. This item is running low on stock."
+      }
+    },
+    {
+      "id": "product-umbrella",
+      "slug": "porsche-umbrella",
+      "sku": "WAP-050-081-0U",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "accessories"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "bestseller"
+      ],
+      "name": "Porsche Umbrella",
+      "teaser": "Weather protection with a minimal Porsche look.",
+      "description": "A durable compact umbrella designed for daily use, with subtle Porsche branding and a comfortable handle.",
+      "price": {
+        "amount": 69,
+        "currency": "USD",
+        "formatted": "$69.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/home-product-umbrella.jpg",
+          "alt": "Black Porsche umbrella"
+        }
+      ],
+      "priceOriginal": {
+        "amount": 89,
+        "currency": "USD",
+        "formatted": "$89.00"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "A durable compact umbrella designed for daily use, with subtle Porsche branding and a comfortable handle. A refined Porsche lifestyle accessory for everyday use."
+          ],
+          "bullets": [
+            "Quality materials and precise craftsmanship.",
+            "Subtle Porsche branding.",
+            "Ideal as a gift or personal accessory."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "120 mm x 80 mm x 25 mm",
+          "weight": "85 g"
+        },
+        "materialAndCare": {
+          "material": "Leather / metal / synthetic (varies by model)",
+          "careInstructions": "Wipe with a soft, dry cloth. Keep away from moisture and direct sunlight."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Collection",
+            "value": "Porsche Lifestyle"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-womens-t-shirt-essential",
+      "slug": "womens-t-shirt-essential",
+      "sku": "WAP726XXL0NPOR",
+      "audiences": [
+        "women"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "bestseller"
+      ],
+      "name": "Women's T-Shirt - Essential",
+      "teaser": "A white essential T-shirt with a women's Porsche crest badge.",
+      "description": "T-shirt with women's crest badge, selected from the Porsche Shop women's clothing listing.",
+      "price": {
+        "amount": 71,
+        "currency": "USD",
+        "formatted": "$71.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-womens-t-shirt-essential.webp",
+          "alt": "Women's T-Shirt - Essential"
+        }
+      ],
+      "priceOriginal": {
+        "amount": 89,
+        "currency": "USD",
+        "formatted": "$89.00"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "T-shirt with women's crest badge, selected from the Porsche Shop women's clothing listing. Crafted with attention to detail, this Women's T-Shirt - Essential reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality women's t-shirt - essential from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ],
+        "info": "Limited availability. This item is running low on stock."
+      }
+    },
+    {
+      "id": "product-womens-sport-top-shadegreen",
+      "slug": "womens-2-in-1-sport-top-cayenne-electric-shadegreen",
+      "sku": "WAP2170XS0T0YG",
+      "audiences": [
+        "women"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "new-release"
+      ],
+      "name": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle",
+      "teaser": "A shade green crop top with integrated sports bra.",
+      "description": "Functional crop top with integrated sports bra from Porsche x PUMA, selected from the Porsche Shop women's clothing listing.",
+      "price": {
+        "amount": 62,
+        "currency": "USD",
+        "formatted": "$62.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-womens-sport-top-shadegreen.webp",
+          "alt": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle in shade green"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Functional crop top with integrated sports bra from Porsche x PUMA, selected from the Porsche Shop women's clothing listing. Crafted with attention to detail, this 2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality 2-in-1 sport top - porsche cayenne electric lifestyle from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ],
+        "info": "Limited availability. This item is running low on stock."
+      }
+    },
+    {
+      "id": "product-womens-crew-neck-jumper-black",
+      "slug": "womens-crew-neck-jumper-cayenne-electric-black",
+      "sku": "WAP21000S0T0YG",
+      "audiences": [
+        "women"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "new-release"
+      ],
+      "name": "Crew-neck Jumper - Porsche Cayenne Electric Lifestyle",
+      "teaser": "A black cropped jumper by Porsche x PUMA.",
+      "description": "Cropped jumper by Porsche x PUMA with ribbed cuffs made of super-soft material.",
+      "price": {
+        "amount": 89,
+        "currency": "USD",
+        "formatted": "$89.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-womens-crew-neck-jumper-black.webp",
+          "alt": "Crew-neck Jumper - Porsche Cayenne Electric Lifestyle in black"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Cropped jumper by Porsche x PUMA with ribbed cuffs made of super-soft material. Crafted with attention to detail, this Crew-neck Jumper - Porsche Cayenne Electric Lifestyle reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality crew-neck jumper - porsche cayenne electric lifestyle from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ],
+        "info": "Limited availability. This item is running low on stock."
+      }
+    },
+    {
+      "id": "product-womens-t-shirt-essential-black",
+      "slug": "womens-essential-t-shirt-black",
+      "sku": "WAP7970XL0E",
+      "audiences": [
+        "women"
+      ],
+      "tags": [
+        "the-loyalist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "bestseller"
+      ],
+      "name": "T-Shirt - Essential",
+      "teaser": "A black essential T-shirt for everyday Porsche looks.",
+      "description": "Essential black T-shirt selected from the Porsche Shop women's clothing listing.",
+      "price": {
+        "amount": 99,
+        "currency": "USD",
+        "formatted": "$99.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-womens-t-shirt-essential-black.webp",
+          "alt": "T-Shirt - Essential in black"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Essential black T-shirt selected from the Porsche Shop women's clothing listing. Crafted with attention to detail, this T-Shirt - Essential reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality t-shirt - essential from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-womens-leggings-shadegreen",
+      "slug": "womens-7-8-leggings-cayenne-electric-shadegreen",
+      "sku": "WAP2190XS0T0YG",
+      "audiences": [
+        "women"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "new-release"
+      ],
+      "name": "7/8 Leggings - Porsche Cayenne Electric Lifestyle",
+      "teaser": "Lightweight shade green 7/8 leggings with a high waist.",
+      "description": "Lightweight 7/8 leggings from Porsche x PUMA with a high waist made from fast-drying material.",
+      "price": {
+        "amount": 79,
+        "currency": "USD",
+        "formatted": "$79.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-womens-leggings-shadegreen.webp",
+          "alt": "7/8 Leggings - Porsche Cayenne Electric Lifestyle in shade green"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Lightweight 7/8 leggings from Porsche x PUMA with a high waist made from fast-drying material. Crafted with attention to detail, this 7/8 Leggings - Porsche Cayenne Electric Lifestyle reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality 7/8 leggings - porsche cayenne electric lifestyle from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-womens-sport-top-black",
+      "slug": "womens-2-in-1-sport-top-cayenne-electric-black",
+      "sku": "WAP21600M0T0YG",
+      "audiences": [
+        "women"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "featured"
+      ],
+      "name": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle",
+      "teaser": "A black crop top with integrated sports bra.",
+      "description": "Functional crop top with integrated sports bra from Porsche x PUMA in black.",
+      "price": {
+        "amount": 62,
+        "currency": "USD",
+        "formatted": "$62.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-womens-sport-top-black.webp",
+          "alt": "2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle in black"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Functional crop top with integrated sports bra from Porsche x PUMA in black. Crafted with attention to detail, this 2-in-1 Sport Top - Porsche Cayenne Electric Lifestyle reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality 2-in-1 sport top - porsche cayenne electric lifestyle from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-womens-crew-neck-jumper-shadegreen",
+      "slug": "womens-crew-neck-jumper-cayenne-electric-shadegreen",
+      "sku": "WAP2110XS0T0YG",
+      "audiences": [
+        "women"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "trending"
+      ],
+      "name": "Crew-neck Jumper - Porsche Cayenne Electric Lifestyle",
+      "teaser": "A shade green cropped jumper by Porsche x PUMA.",
+      "description": "Cropped jumper by Porsche x PUMA in shade green with ribbed cuffs made of super-soft material.",
+      "price": {
+        "amount": 89,
+        "currency": "USD",
+        "formatted": "$89.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-womens-crew-neck-jumper-shadegreen.webp",
+          "alt": "Crew-neck Jumper - Porsche Cayenne Electric Lifestyle in shade green"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Cropped jumper by Porsche x PUMA in shade green with ribbed cuffs made of super-soft material. Crafted with attention to detail, this Crew-neck Jumper - Porsche Cayenne Electric Lifestyle reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality crew-neck jumper - porsche cayenne electric lifestyle from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-classic-leather-jacket",
+      "slug": "porsche-design-classic-leather-jacket",
+      "sku": "PD-MEN-001",
+      "audiences": [
+        "men"
+      ],
+      "tags": [
+        "urbanist",
+        "timeless-enthusiast"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-design"
+      ],
+      "flags": [
+        "featured",
+        "new-release"
+      ],
+      "name": "Porsche Design Classic Leather Jacket",
+      "teaser": "A premium leather jacket from the Porsche Design men's clothing range.",
+      "description": "A Porsche Design menswear piece inspired by the Porsche Shop listing. Placeholder imagery is used until final product visuals are available.",
+      "price": {
+        "amount": 1590,
+        "currency": "USD",
+        "formatted": "$1,590.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-classic-leather-jacket.webp",
+          "alt": "Porsche Design Classic Leather Jacket"
+        }
+      ],
+      "priceOriginal": {
+        "amount": 1990,
+        "currency": "USD",
+        "formatted": "$1,990.00"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "A Porsche Design menswear piece inspired by the Porsche Shop listing. Placeholder imagery is used until final product visuals are available. Crafted with attention to detail, this Porsche Design Classic Leather Jacket reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality porsche design classic leather jacket from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-long-sleeve-v-neck-shirt",
+      "slug": "porsche-design-long-sleeve-v-neck-shirt",
+      "sku": "PD-MEN-002",
+      "audiences": [
+        "men"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-design"
+      ],
+      "flags": [
+        "new-release"
+      ],
+      "name": "Porsche Design Long-sleeve V-neck Shirt",
+      "teaser": "A clean long-sleeve shirt for refined everyday looks.",
+      "description": "A Porsche Design long-sleeve V-neck shirt selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available.",
+      "price": {
+        "amount": 180,
+        "currency": "USD",
+        "formatted": "$180.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-long-sleeve-v-neck-shirt.webp",
+          "alt": "Porsche Design Long-sleeve V-neck Shirt"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "A Porsche Design long-sleeve V-neck shirt selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available. Crafted with attention to detail, this Porsche Design Long-sleeve V-neck Shirt reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality porsche design long-sleeve v-neck shirt from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-trench-coat",
+      "slug": "porsche-design-trench-coat",
+      "sku": "PD-MEN-003",
+      "audiences": [
+        "men"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-design"
+      ],
+      "flags": [
+        "featured"
+      ],
+      "name": "Porsche Design Trench Coat",
+      "teaser": "A sharp outerwear piece for business and city wear.",
+      "description": "A Porsche Design trench coat selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available.",
+      "price": {
+        "amount": 1350,
+        "currency": "USD",
+        "formatted": "$1,350.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-trench-coat.webp",
+          "alt": "Porsche Design Trench Coat"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "A Porsche Design trench coat selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available. Crafted with attention to detail, this Porsche Design Trench Coat reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality porsche design trench coat from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-crew-neck-pullover",
+      "slug": "porsche-design-crew-neck-pullover",
+      "sku": "PD-MEN-004",
+      "audiences": [
+        "men"
+      ],
+      "tags": [
+        "the-loyalist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-design"
+      ],
+      "flags": [
+        "trending"
+      ],
+      "name": "Porsche Design Crew-neck Pullover",
+      "teaser": "A comfortable pullover with understated Porsche Design character.",
+      "description": "A Porsche Design crew-neck pullover selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available.",
+      "price": {
+        "amount": 529,
+        "currency": "USD",
+        "formatted": "$529.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-crew-neck-pullover.webp",
+          "alt": "Porsche Design Crew-neck Pullover"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "A Porsche Design crew-neck pullover selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available. Crafted with attention to detail, this Porsche Design Crew-neck Pullover reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality porsche design crew-neck pullover from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-gumsole-trainers",
+      "slug": "porsche-design-gumsole-trainers",
+      "sku": "PD-MEN-005",
+      "audiences": [
+        "men"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-design"
+      ],
+      "flags": [
+        "bestseller"
+      ],
+      "name": "Porsche Design Gumsole Trainers",
+      "teaser": "Dark brown trainers for a casual Porsche Design look.",
+      "description": "Porsche Design Gumsole Trainers selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available.",
+      "price": {
+        "amount": 460,
+        "currency": "USD",
+        "formatted": "$460.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-gumsole-trainers.webp",
+          "alt": "Porsche Design Gumsole Trainers"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Porsche Design Gumsole Trainers selected from the men's clothing listing. Placeholder imagery is used until final product visuals are available. Crafted with attention to detail, this Porsche Design Gumsole Trainers reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality porsche design gumsole trainers from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-kids-cap-essential",
+      "slug": "kids-cap-essential",
+      "sku": "WAP2000010RESS",
+      "audiences": [
+        "kids"
+      ],
+      "tags": [
+        "the-loyalist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "bestseller"
+      ],
+      "name": "Kids Cap - Essential",
+      "teaser": "A red kids cap with the Porsche Crest on the front.",
+      "description": "Stylish cap for kids with Porsche Crest on the front, selected from the Porsche Shop children's clothes listing.",
+      "price": {
+        "amount": 39,
+        "currency": "USD",
+        "formatted": "$39.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-kids-cap-essential.webp",
+          "alt": "Kids Cap - Essential in red"
+        }
+      ],
+      "priceOriginal": {
+        "amount": 50,
+        "currency": "USD",
+        "formatted": "$50.00"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Stylish cap for kids with Porsche Crest on the front, selected from the Porsche Shop children's clothes listing. Crafted with attention to detail, this Kids Cap - Essential reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality kids cap - essential from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-kids-turbo-toddler-set",
+      "slug": "porsche-turbo-toddler-set",
+      "sku": "4056487070759",
+      "audiences": [
+        "kids"
+      ],
+      "tags": [
+        "timeless-enthusiast"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "featured"
+      ],
+      "name": "Porsche Turbo Toddler Set",
+      "teaser": "A two-piece toddler set with Porsche Turbo vehicle print.",
+      "description": "Stylish toddler set of two pieces with Porsche Turbo vehicle print, selected from the Porsche Shop children's clothes listing.",
+      "price": {
+        "amount": 50,
+        "currency": "USD",
+        "formatted": "$50.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-kids-turbo-toddler-set.webp",
+          "alt": "Porsche Turbo Toddler Set"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Stylish toddler set of two pieces with Porsche Turbo vehicle print, selected from the Porsche Shop children's clothes listing. Crafted with attention to detail, this Porsche Turbo Toddler Set reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality porsche turbo toddler set from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-kids-hoodie-essential",
+      "slug": "kids-hoodie-essential",
+      "sku": "WAP2050980RESS",
+      "audiences": [
+        "kids"
+      ],
+      "tags": [
+        "the-loyalist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "new-release"
+      ],
+      "name": "Kids Hoodie - Essential",
+      "teaser": "A grey hoodie for kids with the Porsche Crest.",
+      "description": "Comfortable hoodie for kids with the iconic Porsche Crest on the chest and a kangaroo pocket.",
+      "price": {
+        "amount": 130,
+        "currency": "USD",
+        "formatted": "$130.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-kids-hoodie-essential.webp",
+          "alt": "Kids Hoodie - Essential in grey"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Comfortable hoodie for kids with the iconic Porsche Crest on the chest and a kangaroo pocket. Crafted with attention to detail, this Kids Hoodie - Essential reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality kids hoodie - essential from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-kids-t-shirt-essential",
+      "slug": "kids-t-shirt-essential",
+      "sku": "WAP2061460RESS",
+      "audiences": [
+        "kids"
+      ],
+      "tags": [
+        "the-loyalist"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "trending"
+      ],
+      "name": "Kids T-Shirt - Essential",
+      "teaser": "A grey T-shirt for kids with the Porsche Crest.",
+      "description": "Comfortable T-shirt for kids with the iconic Porsche Crest on the chest.",
+      "price": {
+        "amount": 75,
+        "currency": "USD",
+        "formatted": "$75.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-kids-t-shirt-essential.webp",
+          "alt": "Kids T-Shirt - Essential in grey"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Minimalism meets elegance: the Essential Collection with a unique design that captures the Porsche spirit in its most refined form. The comfortable T-shirt for kids stands out with Porsche lettering on the lower back, accented by contrasting colours. The highlight of the Tee is the Porsche Crest sewn on the chest. The horn below it adds a playful detail, which is sewn on shirts up to size 122/128."
+          ],
+          "bullets": [
+            "Comfortable T-shirt for kids with Porsche Crest on the chest.",
+            "Colour-contrasting lower back with Porsche lettering.",
+            "Horn sewn on below the crest, up to size 122/128."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "320 mm x 235 mm x 20 mm",
+          "weight": "180 g"
+        },
+        "materialAndCare": {
+          "material": "100% cotton knitted",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Wash inside out. Do not wring. Do not bleach. Do not tumble dry. Warm iron. Do not dry clean."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Size",
+            "value": "146/152"
+          },
+          {
+            "label": "Color",
+            "value": "Grey"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-kids-polo-shirt-turbo-no-1",
+      "slug": "kids-polo-shirt-turbo-no-1",
+      "sku": "WAP3591340RTN1",
+      "audiences": [
+        "kids"
+      ],
+      "tags": [
+        "timeless-enthusiast"
+      ],
+      "categories": [
+        "apparel"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "featured"
+      ],
+      "name": "Kids Polo Shirt - Turbo No. 1",
+      "teaser": "A red kids polo shirt with Porsche lettering.",
+      "description": "Soft polo shirt for children with iconic Porsche lettering.",
+      "price": {
+        "amount": 80,
+        "currency": "USD",
+        "formatted": "$80.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-kids-polo-shirt-turbo-no-1.webp",
+          "alt": "Kids Polo Shirt - Turbo No. 1 in red"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Soft polo shirt for children with iconic Porsche lettering. Crafted with attention to detail, this Kids Polo Shirt - Turbo No. 1 reflects the refined Porsche lifestyle aesthetic."
+          ],
+          "bullets": [
+            "Premium quality kids polo shirt - turbo no. 1 from the Porsche collection.",
+            "Designed for comfort and everyday wear.",
+            "Subtle Porsche branding details."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "Folded: 300 mm x 250 mm x 30 mm",
+          "weight": "250 g"
+        },
+        "materialAndCare": {
+          "material": "Cotton blend",
+          "careInstructions": "Machine wash 30°C. Wash with similar colours. Do not bleach. Do not tumble dry. Iron at low temperature."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Fit",
+            "value": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-roadster-aluminum-trolley-s",
+      "slug": "roadster-aluminum-trolley-s",
+      "sku": "4056487085630",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "urbanist",
+        "timeless-enthusiast"
+      ],
+      "categories": [
+        "accessories",
+        "bags-luggage"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "new-release",
+        "featured"
+      ],
+      "name": "Roadster Aluminum Trolley S",
+      "teaser": "A premium silver aluminum suitcase inspired by the Porsche 911.",
+      "description": "High-quality suitcase made of anodised aluminum from Porsche Design. Inspired by the aerodynamic shape of the 911.",
+      "price": {
+        "amount": 1290,
+        "currency": "USD",
+        "formatted": "$1,290.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-roadster-aluminum-trolley-s.webp",
+          "alt": "Roadster Aluminum Trolley S in silver"
+        }
+      ],
+      "priceOriginal": {
+        "amount": 1650,
+        "currency": "USD",
+        "formatted": "$1,650.00"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "High-quality suitcase made of anodised aluminum from Porsche Design. Inspired by the aerodynamic shape of the 911. Built for travel and daily use with Porsche quality standards."
+          ],
+          "bullets": [
+            "Durable construction for frequent use.",
+            "Practical compartments and organisation.",
+            "Distinctive Porsche design language."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2.8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / polycarbonate / nylon (varies by model)",
+          "careInstructions": "Wipe clean with a damp cloth. Do not use abrasive cleaners. Store in a dry place."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Capacity",
+            "value": "Approx. 35–45 L"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-roadster-aluminum-trolley-m",
+      "slug": "roadster-aluminum-trolley-m",
+      "sku": "4056487085647",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "urbanist",
+        "timeless-enthusiast"
+      ],
+      "categories": [
+        "accessories",
+        "bags-luggage"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "new-release",
+        "featured"
+      ],
+      "name": "Roadster Aluminum Trolley M",
+      "teaser": "A premium black aluminum suitcase inspired by the Porsche 911.",
+      "description": "High-quality medium-size suitcase made of anodised aluminum from Porsche Design. Inspired by the aerodynamic shape of the 911.",
+      "price": {
+        "amount": 1850,
+        "currency": "USD",
+        "formatted": "$1,850.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-roadster-aluminum-trolley-m.webp",
+          "alt": "Roadster Aluminum Trolley M in black"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "High-quality medium-size suitcase made of anodised aluminum from Porsche Design. Inspired by the aerodynamic shape of the 911. Built for travel and daily use with Porsche quality standards."
+          ],
+          "bullets": [
+            "Durable construction for frequent use.",
+            "Practical compartments and organisation.",
+            "Distinctive Porsche design language."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2.8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / polycarbonate / nylon (varies by model)",
+          "careInstructions": "Wipe clean with a damp cloth. Do not use abrasive cleaners. Store in a dry place."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Capacity",
+            "value": "Approx. 35–45 L"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-roadster-aluminum-trolley-l",
+      "slug": "roadster-aluminum-trolley-l",
+      "sku": "4056487085654",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "urbanist",
+        "timeless-enthusiast"
+      ],
+      "categories": [
+        "accessories",
+        "bags-luggage"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "new-release",
+        "featured"
+      ],
+      "name": "Roadster Aluminum Trolley L",
+      "teaser": "A premium silver aluminum suitcase inspired by the Porsche 911.",
+      "description": "High-quality large suitcase made of anodised aluminum from Porsche Design. Inspired by the aerodynamic shape of the 911.",
+      "price": {
+        "amount": 1950,
+        "currency": "USD",
+        "formatted": "$1,950.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-roadster-aluminum-trolley-l.webp",
+          "alt": "Roadster Aluminum Trolley L in silver"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "High-quality large suitcase made of anodised aluminum from Porsche Design. Inspired by the aerodynamic shape of the 911. Built for travel and daily use with Porsche quality standards."
+          ],
+          "bullets": [
+            "Durable construction for frequent use.",
+            "Practical compartments and organisation.",
+            "Distinctive Porsche design language."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2.8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / polycarbonate / nylon (varies by model)",
+          "careInstructions": "Wipe clean with a damp cloth. Do not use abrasive cleaners. Store in a dry place."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Capacity",
+            "value": "Approx. 35–45 L"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-roadster-hardcase-business-trolley-s",
+      "slug": "roadster-hardcase-business-trolley-s",
+      "sku": "4056487093376",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "accessories",
+        "bags-luggage"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "trending"
+      ],
+      "name": "Roadster Hardcase Business Trolley S",
+      "teaser": "A lightweight business trolley with smart travel features.",
+      "description": "Lightweight business trolley with laptop compartment, USB port, smooth wheels and an ergonomic multi-stop telescopic handle.",
+      "price": {
+        "amount": 590,
+        "currency": "USD",
+        "formatted": "$590.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-roadster-hardcase-business-trolley-s.webp",
+          "alt": "Roadster Hardcase Business Trolley S in matt black"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Lightweight business trolley with laptop compartment, USB port, smooth wheels and an ergonomic multi-stop telescopic handle. Built for travel and daily use with Porsche quality standards."
+          ],
+          "bullets": [
+            "Durable construction for frequent use.",
+            "Practical compartments and organisation.",
+            "Distinctive Porsche design language."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2.8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / polycarbonate / nylon (varies by model)",
+          "careInstructions": "Wipe clean with a damp cloth. Do not use abrasive cleaners. Store in a dry place."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Capacity",
+            "value": "Approx. 35–45 L"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-travel-bag-heritage",
+      "slug": "travel-bag-heritage",
+      "sku": "WAP0350160RHWE",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "timeless-enthusiast"
+      ],
+      "categories": [
+        "accessories",
+        "bags-luggage"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        ""
+      ],
+      "name": "Travel Bag - Heritage",
+      "teaser": "A black Porsche travel bag with a spacious main compartment.",
+      "description": "Modern travel bag from Porsche with spacious main compartment and two-way zip.",
+      "price": {
+        "amount": 635,
+        "currency": "USD",
+        "formatted": "$635.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-travel-bag-heritage.webp",
+          "alt": "Travel Bag - Heritage in black"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Modern travel bag from Porsche with spacious main compartment and two-way zip. Built for travel and daily use with Porsche quality standards."
+          ],
+          "bullets": [
+            "Durable construction for frequent use.",
+            "Practical compartments and organisation.",
+            "Distinctive Porsche design language."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2.8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / polycarbonate / nylon (varies by model)",
+          "careInstructions": "Wipe clean with a damp cloth. Do not use abrasive cleaners. Store in a dry place."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Capacity",
+            "value": "Approx. 35–45 L"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-backpack-martini-racing",
+      "slug": "backpack-martini-racing",
+      "sku": "WAP0352010S0MR",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "the-loyalist"
+      ],
+      "categories": [
+        "accessories",
+        "bags-luggage"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "bestseller",
+        "new-release"
+      ],
+      "name": "Backpack - MARTINI RACING",
+      "teaser": "A black Porsche backpack with laptop compartment and trolley link.",
+      "description": "Spacious backpack from Porsche with 13-inch laptop compartment and practical trolley link.",
+      "price": {
+        "amount": 149,
+        "currency": "USD",
+        "formatted": "$149.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-backpack-martini-racing.webp",
+          "alt": "Backpack - MARTINI RACING in black"
+        }
+      ],
+      "priceOriginal": {
+        "amount": 199,
+        "currency": "USD",
+        "formatted": "$199.00"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Spacious backpack from Porsche with 13-inch laptop compartment and practical trolley link. Built for travel and daily use with Porsche quality standards."
+          ],
+          "bullets": [
+            "Durable construction for frequent use.",
+            "Practical compartments and organisation.",
+            "Distinctive Porsche design language."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2.8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / polycarbonate / nylon (varies by model)",
+          "careInstructions": "Wipe clean with a damp cloth. Do not use abrasive cleaners. Store in a dry place."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Capacity",
+            "value": "Approx. 35–45 L"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-retro-canvas-bag-porsche-fan-community",
+      "slug": "retro-canvas-bag-porsche-fan-community",
+      "sku": "WAP8100010TFWR",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "accessories",
+        "bags-luggage"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "new-release"
+      ],
+      "name": "Retro Canvas Bag - Porsche Fan Community",
+      "teaser": "A beige Porsche fabric bag with two handles and a striking print.",
+      "description": "Porsche fabric bag with two handles and a striking print on one side.",
+      "price": {
+        "amount": 39,
+        "currency": "USD",
+        "formatted": "$39.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-retro-canvas-bag-porsche-fan-community.webp",
+          "alt": "Retro Canvas Bag - Porsche Fan Community in beige"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Porsche fabric bag with two handles and a striking print on one side. Built for travel and daily use with Porsche quality standards."
+          ],
+          "bullets": [
+            "Durable construction for frequent use.",
+            "Practical compartments and organisation.",
+            "Distinctive Porsche design language."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "550 mm x 400 mm x 250 mm",
+          "weight": "2.8 kg"
+        },
+        "materialAndCare": {
+          "material": "Aluminium / polycarbonate / nylon (varies by model)",
+          "careInstructions": "Wipe clean with a damp cloth. Do not use abrasive cleaners. Store in a dry place."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Color",
+            "value": "As shown"
+          },
+          {
+            "label": "Capacity",
+            "value": "Approx. 35–45 L"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-porsche-folding-luggage-compartment-box",
+      "slug": "porsche-folding-luggage-compartment-box",
+      "sku": "95B044009",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "travel-transport"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "featured"
+      ],
+      "name": "Porsche Folding Luggage Compartment Box",
+      "teaser": "A black foldable luggage compartment box for flexible storage.",
+      "description": "Foldable luggage compartment box from Porsche for practical storage in the vehicle.",
+      "price": {
+        "amount": 56,
+        "currency": "USD",
+        "formatted": "$56.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-porsche-folding-luggage-compartment-box.webp",
+          "alt": "Porsche Folding Luggage Compartment Box in black"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Foldable luggage compartment box from Porsche for practical storage in the vehicle. An original Porsche accessory designed for seamless integration with your vehicle."
+          ],
+          "bullets": [
+            "Genuine Porsche quality and fit.",
+            "Designed for practical everyday use.",
+            "Easy installation or setup."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "See product packaging for exact dimensions",
+          "weight": "Varies by configuration"
+        },
+        "materialAndCare": {
+          "material": "High-quality automotive-grade materials",
+          "careInstructions": "Clean according to included instructions. Avoid harsh chemicals on sensitive surfaces."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Compatibility",
+            "value": "Porsche vehicles (see manual)"
+          },
+          {
+            "label": "Color",
+            "value": "As shown"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-porsche-bicycle-rack",
+      "slug": "porsche-bicycle-rack",
+      "sku": "95B044831",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "urbanist",
+        "timeless-enthusiast"
+      ],
+      "categories": [
+        "travel-transport"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "trending"
+      ],
+      "name": "Porsche Bicycle Rack",
+      "teaser": "A bicycle rack for transporting bikes safely with your Porsche.",
+      "description": "Original Porsche bicycle rack for secure and convenient bike transport.",
+      "price": {
+        "amount": 443,
+        "currency": "USD",
+        "formatted": "$443.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-porsche-bicycle-rack.webp",
+          "alt": "Porsche Bicycle Rack"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Original Porsche bicycle rack for secure and convenient bike transport. An original Porsche accessory designed for seamless integration with your vehicle."
+          ],
+          "bullets": [
+            "Genuine Porsche quality and fit.",
+            "Designed for practical everyday use.",
+            "Easy installation or setup."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "See product packaging for exact dimensions",
+          "weight": "Varies by configuration"
+        },
+        "materialAndCare": {
+          "material": "High-quality automotive-grade materials",
+          "careInstructions": "Clean according to included instructions. Avoid harsh chemicals on sensitive surfaces."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Compatibility",
+            "value": "Porsche vehicles (see manual)"
+          },
+          {
+            "label": "Color",
+            "value": "As shown"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-porsche-performance-roof-box",
+      "slug": "porsche-performance-roof-box",
+      "sku": "TE22MODOD0011",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "timeless-enthusiast"
+      ],
+      "categories": [
+        "travel-transport"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "bestseller"
+      ],
+      "name": "Porsche Performance roof box",
+      "teaser": "A high-gloss black roof box for extra travel storage.",
+      "description": "Porsche Performance roof box for additional storage on longer journeys and everyday adventures.",
+      "price": {
+        "amount": 1699,
+        "currency": "USD",
+        "formatted": "$1,699.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-porsche-performance-roof-box.webp",
+          "alt": "Porsche Performance roof box in high-gloss black"
+        }
+      ],
+      "priceOriginal": {
+        "amount": 2123,
+        "currency": "USD",
+        "formatted": "$2,123.00"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Porsche Performance roof box for additional storage on longer journeys and everyday adventures. An original Porsche accessory designed for seamless integration with your vehicle."
+          ],
+          "bullets": [
+            "Genuine Porsche quality and fit.",
+            "Designed for practical everyday use.",
+            "Easy installation or setup."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "See product packaging for exact dimensions",
+          "weight": "Varies by configuration"
+        },
+        "materialAndCare": {
+          "material": "High-quality automotive-grade materials",
+          "careInstructions": "Clean according to included instructions. Avoid harsh chemicals on sensitive surfaces."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Compatibility",
+            "value": "Porsche vehicles (see manual)"
+          },
+          {
+            "label": "Color",
+            "value": "As shown"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-porsche-dog-blanket",
+      "slug": "porsche-dog-blanket",
+      "sku": "9Y0044893A",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "the-loyalist"
+      ],
+      "categories": [
+        "travel-transport"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "new-release"
+      ],
+      "name": "Porsche Dog Blanket",
+      "teaser": "A practical Porsche blanket for traveling with dogs.",
+      "description": "Porsche dog blanket for comfortable and protected vehicle journeys with pets.",
+      "price": {
+        "amount": 102,
+        "currency": "USD",
+        "formatted": "$102.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-porsche-dog-blanket.webp",
+          "alt": "Porsche Dog Blanket"
+        }
+      ],
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Porsche dog blanket for comfortable and protected vehicle journeys with pets. An original Porsche accessory designed for seamless integration with your vehicle."
+          ],
+          "bullets": [
+            "Genuine Porsche quality and fit.",
+            "Designed for practical everyday use.",
+            "Easy installation or setup."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "See product packaging for exact dimensions",
+          "weight": "Varies by configuration"
+        },
+        "materialAndCare": {
+          "material": "High-quality automotive-grade materials",
+          "careInstructions": "Clean according to included instructions. Avoid harsh chemicals on sensitive surfaces."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Compatibility",
+            "value": "Porsche vehicles (see manual)"
+          },
+          {
+            "label": "Color",
+            "value": "As shown"
+          }
+        ]
+      }
+    },
+    {
+      "id": "product-porsche-cool-bag",
+      "slug": "porsche-cool-bag",
+      "sku": "TE21MODTD0004",
+      "audiences": [
+        "unisex"
+      ],
+      "tags": [
+        "urbanist"
+      ],
+      "categories": [
+        "travel-transport"
+      ],
+      "collections": [
+        "porsche-originals"
+      ],
+      "flags": [
+        "featured"
+      ],
+      "name": "Porsche Cool Bag",
+      "teaser": "A black cool bag for travel, excursions and everyday transport.",
+      "description": "Porsche cool bag for keeping food and drinks chilled while traveling.",
+      "price": {
+        "amount": 249,
+        "currency": "USD",
+        "formatted": "$249.00"
+      },
+      "vatNote": "incl. VAT",
+      "images": [
+        {
+          "src": "/product-porsche-cool-bag.webp",
+          "alt": "Porsche Cool Bag in black"
+        }
+      ],
+      "priceOriginal": {
+        "amount": 314,
+        "currency": "USD",
+        "formatted": "$314.00"
+      },
+      "details": {
+        "description": {
+          "paragraphs": [
+            "Porsche cool bag for keeping food and drinks chilled while traveling. An original Porsche accessory designed for seamless integration with your vehicle."
+          ],
+          "bullets": [
+            "Genuine Porsche quality and fit.",
+            "Designed for practical everyday use.",
+            "Easy installation or setup."
+          ]
+        },
+        "dimensionsAndWeight": {
+          "dimensions": "See product packaging for exact dimensions",
+          "weight": "Varies by configuration"
+        },
+        "materialAndCare": {
+          "material": "High-quality automotive-grade materials",
+          "careInstructions": "Clean according to included instructions. Avoid harsh chemicals on sensitive surfaces."
+        },
+        "generalCharacteristics": [
+          {
+            "label": "Compatibility",
+            "value": "Porsche vehicles (see manual)"
+          },
+          {
+            "label": "Color",
+            "value": "As shown"
+          }
+        ]
+      }
+    }
+  ]
+}

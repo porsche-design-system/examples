@@ -65,3 +65,6 @@ test-results/
 playwright-report/
 blob-report/
 playwright/.cache/
+
+# PDS MCP Server
+_tmp-pds-mcp-server/

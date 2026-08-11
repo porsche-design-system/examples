@@ -128,6 +128,43 @@ jobs:
           path: ./patterns/dist
       - run: npm run test:a11y:patterns
         shell: bash
+  unit-pds-ui-testing:
+    name: 'Unit (PDS UI Testing)'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - uses: actions/checkout@v6
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - run: npm run test:unit:pds-ui-testing
+        shell: bash
+  e2e-pds-ui-testing:
+    name: 'E2E (PDS UI Testing)'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - uses: actions/checkout@v6
+      - name: 'Install'
+        uses: ./.github/actions/install
+      # Build is done in Playwright webServer without NEXT_PUBLIC_BASE_PATH (deploy artifact uses base path).
+      - run: npm run test:e2e:pds-ui-testing
+        shell: bash
+  a11y-pds-ui-testing:
+    name: 'A11y (PDS UI Testing)'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - uses: actions/checkout@v6
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - run: npm run test:a11y:pds-ui-testing
+        shell: bash
   vrt-patterns:
    name: 'VRT (Patterns)'
    runs-on: ubuntu-latest

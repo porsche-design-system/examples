@@ -1,0 +1,20 @@
+@import "@porsche-design-system/components-react";
+@import "tailwindcss";
+@import "@porsche-design-system/components-react/tailwindcss";
+
+/* Prevent FOUC, while components are loading */
+:not(:defined, [data-ssr]) {
+  visibility: hidden;
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -1000px;
+  opacity: 0;
+}
+
+.skip-to-content:focus-within {
+  position: static;
+  top: 0;
+  opacity: 1;
+}

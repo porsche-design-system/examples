@@ -81,6 +81,23 @@ jobs:
         with:
           name: build-next-js
           path: ./frameworks/next-js/dist/
+  pds-ui-testing:
+    name: 'PDS UI Testing'
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ inputs.image }}
+      options: --user 1001
+    steps:
+      - uses: actions/checkout@v6
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - run: npm run build --workspace=@porsche-design-system/pds-ui-testing
+        env:
+          NEXT_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/pds-ui-testing"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: build-pds-ui-testing
+          path: ./pages/pds-ui-testing/dist/
   react:
     name: 'React'
     runs-on: ubuntu-latest
