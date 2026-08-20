@@ -9,7 +9,7 @@ import { FormPRadioGroup } from './components/form/FormPRadioGroup.tsx';
 import { FormPSelect } from './components/form/FormPSelect.tsx';
 
 type FormData = {
-  accountType: string;
+  accountType: string | undefined;
   salutation: string | undefined;
   title: string | undefined;
   firstname: string;
@@ -25,7 +25,7 @@ export const Form = () => {
     mode: 'onTouched', // Validate initially onBlur and then onChange
     criteriaMode: 'all', // Emit all field errors at once
     defaultValues: {
-      accountType: '',
+      accountType: undefined,
       salutation: undefined,
       title: undefined,
       firstname: '',
