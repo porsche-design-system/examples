@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" class="scheme-light-dark bg-canvas">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Feedback (Pattern)">
+    <title>Feedback (Pattern)</title>
+    <script type="module" crossorigin src="/examples/pr-303/patterns/assets/feedback-2-iglzca3N.js"></script>
+    <link rel="modulepreload" crossorigin href="/examples/pr-303/patterns/assets/modulepreload-polyfill-Dezn_h7o.js">
+    <link rel="stylesheet" crossorigin href="/examples/pr-303/patterns/assets/header-1-D5f-CnpN.css">
+  <link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.6.0.41e2f497a23ccd77e257.js as=script crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.display.f1848ed0347231958873.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.text.b5dd57b95df298795d7f.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.carousel.e5f9bdfebab1e2dbf617.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-tile.2b6554a060c015ee79c9.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-pure.690266e16861ddd17aae.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link.45070c571a2b36568a92.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2 as=font type=font/woff2 crossorigin><link rel=prefetch href=https://cdn.ui.porsche.com/porsche-design-system/icons/arrow-right.872716b.svg as=image type=image/svg+xml crossorigin><meta property=og:title content="Examples by Porsche Design System"><meta property=og:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=twitter:title content="Examples by Porsche Design System"><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=theme-color content=#FFF media=(prefers-color-scheme:light)><meta name=theme-color content=#0E1418 media=(prefers-color-scheme:dark)><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Examples by Porsche Design System"><meta name=msapplication-TileImage content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/mstile-270x270.f58081f.png><meta name=msapplication-TileColor content=#FFF><link rel=icon sizes=any href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon.ed9a926.ico><link rel=icon type=image/png sizes=32x32 href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon-32x32.d42ac28.png><link rel=apple-touch-icon href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/apple-touch-icon-180x180.bdf11cc.png><link rel=manifest href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/manifest.b904b15.webmanifest></head>
+
+  <body>
+    <main class="grid-template gap-y-fluid-xl justify-items-center py-fluid-lg bg-surface">
+      <section class="col-extended grid gap-fluid-md justify-items-center max-w-prose" aria-label="Feedback">
+        <div class="grid gap-static-xs justify-items-center">
+          <p-heading tag="h2" size="md" align="center">Your opinion matters</p-heading>
+          <p-text color="contrast-medium" align="center">Help us improve this page.</p-text>
+        </div>
+        <p-button
+          id="feedback-trigger"
+          type="button"
+          variant="secondary"
+          icon="none"
+          aria="{'aria-haspopup': 'dialog'}"
+        >
+          Give feedback
+        </p-button>
+      </section>
+
+      <div class="col-extended grid gap-fluid-md justify-items-center">
+        <p-wordmark href="#"></p-wordmark>
+        <p-text size="xs" color="contrast-medium" align="center">&copy; 2026 Dr. Ing. h.c. F. Porsche AG.</p-text>
+      </div>
+    </main>
+
+    <p-modal id="feedback-modal" aria="{'aria-label': 'Feedback'}">
+      <div class="col-extended grid gap-fluid-md max-w-prose">
+        <p-heading
+          id="feedback-question"
+          class="focus-visible:outline outline-focus outline-offset-2 rounded-md"
+          tag="h2"
+          size="md"
+          align="center"
+          tabindex="-1"
+        >
+          How satisfied are you with the information shown on this page?
+        </p-heading>
+
+        <form id="feedback-form" class="grid gap-fluid-md justify-items-center">
+          <div class="w-full grid md:grid-cols-[auto_minmax(320px,1fr)_auto] items-center gap-static-md">
+            <p-text
+              class="max-sm:hidden row-2 md:row-auto col-1 md:col-auto justify-self-start"
+              size="small"
+              align="start"
+              color="contrast-medium"
+            >
+              Very dissatisfied
+            </p-text>
+            <p-segmented-control
+              id="feedback-rating"
+              class="row-1 md:row-auto col-span-2 md:col-auto"
+              columns="{base: 1, s: 5}"
+              label="Select your satisfaction from the scale 1 (very dissatisfied) to 5 (very satisfied)"
+              hide-label="true"
+            >
+              <p-segmented-control-item value="1"
+                >1 <span class="sm:sr-only">(very dissatisfied)</span></p-segmented-control-item
+              >
+              <p-segmented-control-item value="2"
+                >2 <span class="sm:sr-only">(dissatisfied)</span></p-segmented-control-item
+              >
+              <p-segmented-control-item value="3">3 <span class="sm:sr-only">(neutral)</span></p-segmented-control-item>
+              <p-segmented-control-item value="4"
+                >4 <span class="sm:sr-only">(satisfied)</span></p-segmented-control-item
+              >
+              <p-segmented-control-item value="5"
+                >5 <span class="sm:sr-only">(very satisfied)</span></p-segmented-control-item
+              >
+            </p-segmented-control>
+            <p-text
+              class="max-sm:hidden row-2 md:row-auto col-2 md:col-auto justify-self-end"
+              size="small"
+              align="end"
+              color="contrast-medium"
+            >
+              Very satisfied
+            </p-text>
+          </div>
+          <p-textarea
+            id="feedback-comment"
+            class="w-full"
+            name="comment"
+            label="What two things could we do to make this page better?"
+            rows="4"
+            hidden
+          ></p-textarea>
+          <p-button id="feedback-submit" type="button" hidden>Submit feedback</p-button>
+        </form>
+
+        <div
+          id="feedback-thanks"
+          class="grid gap-fluid-md justify-items-center"
+          aria-live="polite"
+          aria-atomic="true"
+          hidden
+        >
+          <p-heading
+            id="feedback-thanks-heading"
+            class="focus-visible:outline outline-focus outline-offset-2 rounded-md"
+            tag="h2"
+            size="md"
+            align="center"
+            tabindex="-1"
+          >
+            Thank you for your feedback
+          </p-heading>
+          <p-text align="center">Your feedback helps us continuously improve our page.</p-text>
+          <p-button id="feedback-close" type="button" variant="secondary">Close</p-button>
+        </div>
+      </div>
+    </p-modal>
+
+  <script data-pds-loader-script>var porscheDesignSystem;(()=>{"use strict";const e={d:(t,n)=>{if(Array.isArray(n))for(var o=0;o<n.length;){var r=n[o++],s=n[o++];e.o(t,r)?0===s&&o++:0===s?Object.defineProperty(t,r,{enumerable:!0,value:n[o++]}):Object.defineProperty(t,r,{enumerable:!0,get:s})}else for(var r in n)e.o(n,r)&&!e.o(t,r)&&Object.defineProperty(t,r,{enumerable:!0,get:n[r]})},o:(e,t)=>Object.prototype.hasOwnProperty.call(e,t),r:e=>{Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}};let t={};e.r(t),e.d(t,{load:()=>s});const n="porscheDesignSystem";function o(){return document[n]||(document[n]={}),document[n]}function r({script:e,version:t,prefix:r}){const s=function(e){const t=o(),{[e]:n}=t;if(!n){let n=()=>{};const o=new Promise(e=>n=e);t[e]={isInjected:!1,isReady:()=>o,readyResolve:n,prefixes:[],registerCustomElements:null}}return t[e]}(t),{isInjected:i,prefixes:c=[],registerCustomElements:d}=s,[u]=Object.entries(o()).filter(([e,n])=>e!==t&&"object"==typeof n&&n.prefixes.includes(r));if(u)throw new Error(`[Porsche Design System v${t}] prefix '${r}' is already registered with version '${u[0]}' of the Porsche Design System. Please use a different one.\nTake a look at document.${n} for more details.`);i||(function(e){const t=document.createElement("script");t.src=e,t.setAttribute("crossorigin",""),document.body.appendChild(t)}(e),s.isInjected=!0),c.includes(r)||(c.push(r),d&&d(r))}const s=(e={})=>{const t="PORSCHE_DESIGN_SYSTEM_CDN";window[t]=e.cdn||window[t]||(window.location.origin.match(/\.cn$/)?"cn":"auto");const n="porscheDesignSystem";document[n]||(document[n]={}),document[n].cdn={url:"https://cdn.ui.porsche."+("cn"===window[t]?"cn":"com"),prefixes:[]},r({version:"4.6.0",script:document[n].cdn.url+"/porsche-design-system/components/porsche-design-system.v4.6.0.41e2f497a23ccd77e257.js",prefix:e.prefix||""})};porscheDesignSystem=t})();porscheDesignSystem.load()</script></body>
+</html>
