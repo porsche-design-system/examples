@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" class="scheme-light-dark bg-canvas">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Header (Pattern)">
+    <title>Header (Pattern)</title>
+    <script type="module" crossorigin src="/examples/pr-302/patterns/assets/header-2-CYaPs6Iz.js"></script>
+    <link rel="modulepreload" crossorigin href="/examples/pr-302/patterns/assets/modulepreload-polyfill-Dezn_h7o.js">
+    <link rel="stylesheet" crossorigin href="/examples/pr-302/patterns/assets/header-1-D5f-CnpN.css">
+  <link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.6.0.41e2f497a23ccd77e257.js as=script crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.display.f1848ed0347231958873.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.text.b5dd57b95df298795d7f.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.carousel.e5f9bdfebab1e2dbf617.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-tile.2b6554a060c015ee79c9.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-pure.690266e16861ddd17aae.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link.45070c571a2b36568a92.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2 as=font type=font/woff2 crossorigin><link rel=prefetch href=https://cdn.ui.porsche.com/porsche-design-system/icons/arrow-right.872716b.svg as=image type=image/svg+xml crossorigin><meta property=og:title content="Examples by Porsche Design System"><meta property=og:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=twitter:title content="Examples by Porsche Design System"><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=theme-color content=#FFF media=(prefers-color-scheme:light)><meta name=theme-color content=#0E1418 media=(prefers-color-scheme:dark)><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Examples by Porsche Design System"><meta name=msapplication-TileImage content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/mstile-270x270.f58081f.png><meta name=msapplication-TileColor content=#FFF><link rel=icon sizes=any href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon.ed9a926.ico><link rel=icon type=image/png sizes=32x32 href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon-32x32.d42ac28.png><link rel=apple-touch-icon href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/apple-touch-icon-180x180.bdf11cc.png><link rel=manifest href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/manifest.b904b15.webmanifest></head>
+
+  <body>
+    <header class="grid-template gap-y-0">
+      <div class="scheme-dark col-full flex justify-center py-static-xs px-static-md bg-surface">
+        <p-text size="xs">All sizes shown for Porsche Lifestyle products are EU sizes</p-text>
+      </div>
+      <div class="col-wide grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-fluid-md items-center min-h-[80px]">
+        <div class="flex flex-wrap gap-static-md items-center justify-start">
+          <nav aria-label="Main">
+            <p-button-pure
+              id="nav-button"
+              class="p-static-xs -m-static-xs"
+              type="button"
+              icon="menu-lines"
+              hide-label="{base: true, s: false}"
+              aria="{'aria-haspopup': 'dialog'}"
+            >
+              Menu
+            </p-button-pure>
+            <p-drilldown id="nav-drilldown">
+              <p-drilldown-item identifier="id-1" label="Some Label (1)">
+                <p-drilldown-item identifier="id-1-1" label="Some Label (1-1)">
+                  <p-drilldown-link><a href="#">Some anchor (1-1)</a></p-drilldown-link>
+                  <p-drilldown-link><a href="#">Some anchor (1-1)</a></p-drilldown-link>
+                </p-drilldown-item>
+                <p-drilldown-link><a href="#">Some anchor (1)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (1)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (1)</a></p-drilldown-link>
+              </p-drilldown-item>
+              <p-drilldown-item identifier="id-2" label="Some Label (2)">
+                <p-drilldown-link><a href="#">Some anchor (2)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (2)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (2)</a></p-drilldown-link>
+              </p-drilldown-item>
+              <p-drilldown-item identifier="id-3" label="Some Label (3)">
+                <p-drilldown-link><a href="#">Some anchor (3)</a></p-drilldown-link>
+                <p-drilldown-link><a href="#">Some anchor (3)</a></p-drilldown-link>
+              </p-drilldown-item>
+            </p-drilldown>
+          </nav>
+          <p-button-pure
+            class="p-static-xs -m-static-xs sm:hidden"
+            title="Search"
+            type="button"
+            icon="search"
+            hide-label="true"
+          >
+            Search
+          </p-button-pure>
+        </div>
+        <p-crest class="sm:hidden" href="#"></p-crest>
+        <p-wordmark class="max-sm:hidden" href="#"></p-wordmark>
+        <div class="flex flex-wrap gap-static-md items-center justify-end">
+          <p-button-pure
+            class="p-static-xs -m-static-xs max-sm:hidden"
+            title="Search"
+            type="button"
+            icon="search"
+            hide-label="true"
+          >
+            Search
+          </p-button-pure>
+          <p-link-pure
+            class="p-static-xs -m-static-xs max-sm:hidden"
+            title="Favorites"
+            href="#"
+            icon="heart"
+            hide-label="true"
+          >
+            Favorites
+          </p-link-pure>
+          <p-link-pure
+            class="p-static-xs -m-static-xs"
+            title="Shopping Cart"
+            href="#"
+            icon="shopping-cart"
+            hide-label="true"
+          >
+            Shopping Cart
+          </p-link-pure>
+          <p-button-pure class="p-static-xs -m-static-xs" title="User" type="button" icon="user" hide-label="true">
+            User
+          </p-button-pure>
+        </div>
+      </div>
+      <div class="col-full flex justify-center p-static-md border-t-thin border-contrast-low">
+        <p-tabs-bar compact="true">
+          <a href="#">All categories</a>
+          <p-divider class="mx-static-md" direction="vertical"></p-divider>
+          <a href="#">Timepieces</a>
+          <a href="#">Bags & Luggage</a>
+          <a href="#">Heritage</a>
+          <a href="#">Vehicle Accessories</a>
+          <a href="#">Eyewear</a>
+        </p-tabs-bar>
+      </div>
+    </header>
+
+    <main class="grid-template">
+      <section class="scheme-dark col-full grid grid-cols-subgrid items-end h-[clamp(480px,80vh,1000px)]">
+        <img
+          class="col-span-full row-span-full min-w-full w-full min-h-full h-full object-cover object-center"
+          src="/examples/pr-302/patterns/assets/trolley.webp"
+          alt=""
+        >
+        <div class="col-extended row-span-full mb-fluid-lg">
+          <p-heading tag="h1" size="3xl">
+            <span class="text-md block">Pattern</span>
+            Header
+          </p-heading>
+        </div>
+      </section>
+    </main>
+
+  <script data-pds-loader-script>var porscheDesignSystem;(()=>{"use strict";const e={d:(t,n)=>{if(Array.isArray(n))for(var o=0;o<n.length;){var r=n[o++],s=n[o++];e.o(t,r)?0===s&&o++:0===s?Object.defineProperty(t,r,{enumerable:!0,value:n[o++]}):Object.defineProperty(t,r,{enumerable:!0,get:s})}else for(var r in n)e.o(n,r)&&!e.o(t,r)&&Object.defineProperty(t,r,{enumerable:!0,get:n[r]})},o:(e,t)=>Object.prototype.hasOwnProperty.call(e,t),r:e=>{Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}};let t={};e.r(t),e.d(t,{load:()=>s});const n="porscheDesignSystem";function o(){return document[n]||(document[n]={}),document[n]}function r({script:e,version:t,prefix:r}){const s=function(e){const t=o(),{[e]:n}=t;if(!n){let n=()=>{};const o=new Promise(e=>n=e);t[e]={isInjected:!1,isReady:()=>o,readyResolve:n,prefixes:[],registerCustomElements:null}}return t[e]}(t),{isInjected:i,prefixes:c=[],registerCustomElements:d}=s,[u]=Object.entries(o()).filter(([e,n])=>e!==t&&"object"==typeof n&&n.prefixes.includes(r));if(u)throw new Error(`[Porsche Design System v${t}] prefix '${r}' is already registered with version '${u[0]}' of the Porsche Design System. Please use a different one.\nTake a look at document.${n} for more details.`);i||(function(e){const t=document.createElement("script");t.src=e,t.setAttribute("crossorigin",""),document.body.appendChild(t)}(e),s.isInjected=!0),c.includes(r)||(c.push(r),d&&d(r))}const s=(e={})=>{const t="PORSCHE_DESIGN_SYSTEM_CDN";window[t]=e.cdn||window[t]||(window.location.origin.match(/\.cn$/)?"cn":"auto");const n="porscheDesignSystem";document[n]||(document[n]={}),document[n].cdn={url:"https://cdn.ui.porsche."+("cn"===window[t]?"cn":"com"),prefixes:[]},r({version:"4.6.0",script:document[n].cdn.url+"/porsche-design-system/components/porsche-design-system.v4.6.0.41e2f497a23ccd77e257.js",prefix:e.prefix||""})};porscheDesignSystem=t})();porscheDesignSystem.load()</script></body>
+</html>

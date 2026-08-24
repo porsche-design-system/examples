@@ -1,0 +1,2 @@
+:HL["/examples/pr-302/pds-ui-testing/_next/static/chunks/0qezhg7fpa69_.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"(entry)","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"KIz7OzD5jTKfvsmJfPxwY"}
