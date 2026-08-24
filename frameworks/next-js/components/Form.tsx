@@ -11,7 +11,7 @@ import { FormPInputText } from './form/FormPInputText';
 import { FormPSelect } from './form/FormPSelect';
 
 type FormData = {
-  accountType: string;
+  accountType: string | undefined;
   salutation: string | undefined;
   title: string | undefined;
   firstname: string;
@@ -27,7 +27,7 @@ export const Form = () => {
     mode: 'onTouched', // Validate initially onBlur and then onChange
     criteriaMode: 'all', // Emit all field errors at once
     defaultValues: {
-      accountType: '',
+      accountType: undefined,
       salutation: undefined,
       title: undefined,
       firstname: '',

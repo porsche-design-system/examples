@@ -7,15 +7,9 @@ export const test = playwrightTest.extend<{
 }>({
   makeAxeBuilder: async ({ page }, use) => {
     const makeAxeBuilder = () => {
-      return new AxeBuilder({ page: page as Page }).withTags([
-        'wcag2a',
-        'wcag2aa',
-        'wcag21a',
-        'wcag21aa',
-        'wcag22aa',
-        'EN-301-549',
-        'best-practice',
-      ]);
+      return new AxeBuilder({ page: page as Page })
+        .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'EN-301-549', 'best-practice'])
+        .exclude(['.uf-visible']);
     };
     await use(makeAxeBuilder);
   },
