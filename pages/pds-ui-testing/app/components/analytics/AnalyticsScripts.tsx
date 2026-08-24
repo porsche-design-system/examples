@@ -1,8 +1,15 @@
 import Script from 'next/script';
 
-const FULLSTORY_ORG_ID = 'o-ARNQ-eu1';
-
+/**
+ * FullStory + Usetiful snippets for the deployed UI-testing demo.
+ * Omitted unless `NEXT_PUBLIC_FULLSTORY_ORG_ID` is set at build time (GitHub Pages CI).
+ */
 export function AnalyticsScripts() {
+  const orgId = process.env.NEXT_PUBLIC_FULLSTORY_ORG_ID;
+  if (!orgId) {
+    return null;
+  }
+
   return (
     <>
       <Script id="fullstory-script" strategy="afterInteractive">
@@ -20,13 +27,13 @@ g.identifyAccount=b,g.clearUserCookie=b,g.setVars=d,g.event=function(b,d,j){h("t
 },g.shutdown=function(){h("shutdown")},g.restart=function(){h("restart")},g.log=function(b,d){h("log",{level:b,msg:d})},g.consent=function(b){
 h("setIdentity",{consent:!arguments.length||b})}}(),u="fetch",a="XMLHttpRequest",g._w={},g._w[a]=m[a],g._w[u]=m[u],m[u]&&(m[u]=function(){
 return g._w[u].apply(this,arguments)}),g("init",{env:{orgId:o,host:e,script:t}}),g._v="2.1.0")
-}(window,document,"eu1.fullstory.com","edge.eu1.fullstory.com/s/fs.js","FS","${FULLSTORY_ORG_ID}");`}
+}(window,document,"eu1.fullstory.com","edge.eu1.fullstory.com/s/fs.js","FS","${orgId}");`}
       </Script>
       <Script
         id="usetifulScript"
         src="https://guides.eu1.fullstory.com/dist/gs.js"
         strategy="afterInteractive"
-        data-org-id={FULLSTORY_ORG_ID}
+        data-org-id={orgId}
         data-api-hostname="https://guides.eu1.fullstory.com"
       />
     </>

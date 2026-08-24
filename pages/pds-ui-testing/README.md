@@ -129,3 +129,11 @@ To serve under a sub-path:
 ```bash
 NEXT_PUBLIC_BASE_PATH=/examples/v4/pds-ui-testing npm run build:pds-ui-testing
 ```
+
+## FullStory / Usetiful
+
+GitHub Pages builds set `NEXT_PUBLIC_FULLSTORY_ORG_ID` so the survey widget and session replay load on the deployed demo. Local `next dev`, Playwright e2e, and a11y rebuilds omit the scripts unless you set the variable:
+
+```bash
+NEXT_PUBLIC_FULLSTORY_ORG_ID=o-ARNQ-eu1 npm run dev:pds-ui-testing
+```

@@ -94,6 +94,8 @@ jobs:
       - run: npm run build --workspace=@porsche-design-system/pds-ui-testing
         env:
           NEXT_PUBLIC_BASE_PATH: "/examples/${{ env.BRANCH_BASE_PATH }}/pds-ui-testing"
+          # Public FullStory/Usetiful snippet id; omitted from local/dev and Playwright builds.
+          NEXT_PUBLIC_FULLSTORY_ORG_ID: 'o-ARNQ-eu1'
       - uses: actions/upload-artifact@v7
         with:
           name: build-pds-ui-testing

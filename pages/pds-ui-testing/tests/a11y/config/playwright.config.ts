@@ -36,7 +36,7 @@ export default defineConfig({
   ],
   webServer: {
     // Match E2E: static export preview without base path so hydration matches URLs under test.
-    command: `NEXT_PUBLIC_BASE_PATH= npm run build && npx serve dist -l ${A11Y_PORT}`,
+    command: `NEXT_PUBLIC_BASE_PATH= NEXT_PUBLIC_FULLSTORY_ORG_ID= npm run build && npx serve dist -l ${A11Y_PORT}`,
     port: A11Y_PORT,
     reuseExistingServer: !process.env.CI,
     timeout: process.env.CI ? 120_000 : 120_000,
