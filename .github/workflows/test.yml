@@ -135,7 +135,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       - run: npm run test:unit:pds-ui-testing
@@ -147,7 +147,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       # Build is done in Playwright webServer without NEXT_PUBLIC_BASE_PATH (deploy artifact uses base path).
@@ -160,7 +160,7 @@ jobs:
       image: ${{ inputs.image }}
       options: --user 1001
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: 'Install'
         uses: ./.github/actions/install
       - run: npm run test:a11y:pds-ui-testing
