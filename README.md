@@ -26,10 +26,6 @@ The projects are built using [WCAG 2.2 (AA)](https://www.w3.org/TR/WCAG22/) comp
 - [Landing Page](https://porsche-design-system.github.io/examples/v4/templates/landing-page/1/)
 - [Admin Panel](https://porsche-design-system.github.io/examples/v4/templates/admin-panel/1/)
 
-### Pages
-
-- [PDS UI Testing](https://porsche-design-system.github.io/examples/v4/pds-ui-testing/en/) — Demo shop for manual accessibility and usability testing with PDS components ([test plan](pages/pds-ui-testing/ACCESSIBILITY-TEST-PLAN.md))
-
 ## Getting started
 
 ### Tools
@@ -129,7 +125,6 @@ All available commands for developing, building and testing are listed in the **
 - `npm run dev:vue`
 - `npm run dev:patterns`
 - `npm run dev:templates`
-- `npm run dev:pds-ui-testing`
 
 #### Build
 
@@ -142,7 +137,6 @@ All available commands for developing, building and testing are listed in the **
 - `npm run build:vue`
 - `npm run build:patterns`
 - `npm run build:templates`
-- `npm run build:pds-ui-testing`
 
 #### Preview
 
@@ -155,16 +149,12 @@ All available commands for developing, building and testing are listed in the **
 - `npm run preview:vue`
 - `npm run preview:patterns`
 - `npm run preview:templates`
-- `npm run preview:pds-ui-testing`
 
 #### Tests
 
 - `npm run test:e2e:patterns`
 - `npm run test:a11y:patterns`
 - `npm run test:vrt:patterns`
-- `npm run test:unit:pds-ui-testing`
-- `npm run test:e2e:pds-ui-testing`
-- `npm run test:a11y:pds-ui-testing`
 
 Any command can also be executed in a Docker container by running it with `./docker.sh`, such as:
 
