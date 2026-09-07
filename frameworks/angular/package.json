@@ -12,20 +12,20 @@
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
-    "@angular/common": "^22.0.2",
-    "@angular/compiler": "^22.0.2",
-    "@angular/core": "^22.0.2",
-    "@angular/forms": "^22.0.2",
-    "@angular/platform-browser": "^22.0.2",
-    "@angular/router": "^22.0.2",
+    "@angular/common": "^22.1.5",
+    "@angular/compiler": "^22.1.5",
+    "@angular/core": "^22.1.5",
+    "@angular/forms": "^22.1.5",
+    "@angular/platform-browser": "^22.1.5",
+    "@angular/router": "^22.1.5",
     "@porsche-design-system/components-angular": "4.6.0",
     "rxjs": "~7.8.2",
     "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "@angular/build": "^22.0.4",
-    "@angular/cli": "^22.0.4",
-    "@angular/compiler-cli": "^22.0.2",
+    "@angular/build": "^22.1.7",
+    "@angular/cli": "^22.1.7",
+    "@angular/compiler-cli": "^22.1.5",
     "@playwright/test": "1.61.0",
     "@tailwindcss/postcss": "^4.3.2",
     "@types/jasmine": "~6.0.0",
@@ -36,9 +36,9 @@
     "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.2.0",
-    "postcss": "^8.5.18",
+    "postcss": "^8.5.28",
     "tailwindcss": "^4.3.2",
-    "typescript": "~6.0.3"
+    "typescript": "^6.0.3"
   },
   "volta": {
     "extends": "../../package.json"
