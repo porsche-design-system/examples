@@ -7,7 +7,7 @@ const documentStructureRules = ['landmark-one-main', 'page-has-heading-one'];
 test.describe('has WCAG 2.2 (AA) compliance', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/feedback/1/');
-    await expect(page.locator('#feedback-question')).toBeAttached();
+    await expect(page.locator('#feedback-question')).toBeVisible();
   });
 
   test('with a11y tree', async ({ page }) => {
