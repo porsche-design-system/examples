@@ -8,6 +8,22 @@ test('has title', async ({ page }) => {
 
 test('reveals comment and submit after choosing a rating, then shows confirmation', async ({ page }) => {
   await page.goto('/feedback/1/');
+  await page.evaluate(() => {
+    const { __focusLog } = window as typeof window & { __focusLog: string[] };
+    const focusLog = __focusLog ?? [];
+    (window as typeof window & { __focusLog: string[] }).__focusLog = focusLog;
+    for (const id of ['feedback-question', 'feedback-thanks-heading']) {
+      const element = document.getElementById(id);
+      if (!element) {
+        continue;
+      }
+      const originalFocus = element.focus.bind(element);
+      element.focus = (...args) => {
+        focusLog.push(id);
+        return originalFocus(...args);
+      };
+    }
+  });
 
   const comment = page.locator('#feedback-comment');
   const submit = page.locator('#feedback-submit');
@@ -33,6 +49,11 @@ test('reveals comment and submit after choosing a rating, then shows confirmatio
   await expect(thanks).toHaveJSProperty('hidden', false);
   await expect(page.locator('#feedback-form')).toHaveJSProperty('hidden', true);
   await expect(page.locator('#feedback-question')).toHaveJSProperty('hidden', true);
+  await expect
+    .poll(() => {
+      return page.evaluate(() => (window as typeof window & { __focusLog?: string[] }).__focusLog?.at(-1));
+    })
+    .toBe('feedback-thanks-heading');
 
   // Restarting resets the flow and returns focus to the question heading.
   await page.locator('#feedback-restart').evaluate((element) => {
@@ -42,4 +63,9 @@ test('reveals comment and submit after choosing a rating, then shows confirmatio
   await expect(thanks).toHaveJSProperty('hidden', true);
   await expect(page.locator('#feedback-form')).toHaveJSProperty('hidden', false);
   await expect(page.locator('#feedback-question')).toHaveJSProperty('hidden', false);
+  await expect
+    .poll(() => {
+      return page.evaluate(() => (window as typeof window & { __focusLog?: string[] }).__focusLog?.at(-1));
+    })
+    .toBe('feedback-question');
 });
