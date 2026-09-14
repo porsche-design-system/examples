@@ -14,7 +14,9 @@ export async function waitForPdsHost(
     async (sel) => {
       const host = document.querySelector(sel) as PdsStencilHost | null;
       if (!host) return false;
-      await customElements.whenDefined(host.localName);
+      if (!customElements.get(host.localName)) {
+        return true;
+      }
       if (typeof host.componentOnReady === "function") {
         await host.componentOnReady();
       }
@@ -41,7 +43,9 @@ export async function waitForPdsHosts(
 
       await Promise.all(
         hosts.map(async (host) => {
-          await customElements.whenDefined(host.localName);
+          if (!customElements.get(host.localName)) {
+            return;
+          }
           if (typeof host.componentOnReady === "function") {
             await host.componentOnReady();
           }

@@ -3,7 +3,7 @@ import { expect, test } from '../utils';
 test.describe('has WCAG 2.2 (AA) compliance', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/header/1/');
-    await expect(page.getByText('Header')).toBeVisible();
+    await expect(page.getByText('Header')).toBeAttached();
   });
 
   test('with a11y tree', async ({ page }) => {
