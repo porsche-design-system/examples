@@ -86,6 +86,9 @@ npm run npm:outdated         # Check outdated deps
   for Angular, Astro, Next.js and React Router.
 - **Testing**: [Playwright](https://playwright.dev/) with configs under each
   `tests/{e2e,a11y,vrt}/config/`.
+- **Agent Skills**: version-matched Porsche Design System skills are linked into `.agents/skills`
+  as relative symlinks pointing into `node_modules`. Prefer them over external documentation, and
+  pick the one matching the workspace you edit (`pds-knowledge-js`, `-react`, `-vue`, `-angular`).
 
 ## Code Style & Conventions
 
