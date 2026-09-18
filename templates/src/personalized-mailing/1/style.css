@@ -1,0 +1,552 @@
+@import "@porsche-design-system/components-js";
+@import "tailwindcss";
+@import "@porsche-design-system/components-js/tailwindcss";
+
+:not(:defined) {
+  visibility: hidden;
+}
+
+/* Hero: bespoke mood gradient behind the personalised 911 render. */
+.pm-hero {
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(122, 90, 134, 0.35) 0%, transparent 60%),
+    linear-gradient(180deg, #1f0e20 0%, #010205 100%);
+}
+
+/* Stage layers share one grid cell, so DOM order alone defines the stacking — no z-index needed. */
+
+/* Environment backdrop — fades in for non-studio environments. */
+.pm-backdrop {
+  opacity: 0;
+  transition: opacity var(--p-duration-md) var(--p-ease-in-out);
+}
+
+.pm-stage:not([data-environment="studio"]) .pm-backdrop {
+  opacity: 1;
+}
+
+/* Model signature — ghosted behind the car, using the frosted token. */
+.pm-signature {
+  color: var(--p-color-frosted);
+}
+
+/* Day/Night lighting overlay — tints the whole stage. */
+.pm-lighting {
+  opacity: 0;
+  transition: opacity var(--p-duration-md) var(--p-ease-in-out);
+  background: linear-gradient(180deg, rgba(8, 10, 28, 0.35) 0%, rgba(3, 4, 12, 0.72) 100%);
+}
+
+.pm-stage[data-lighting="night"] .pm-lighting {
+  opacity: 1;
+}
+
+/* Custom full-bleed environment picker — mirrors p-tabs-bar frosted styling via PDS tokens. */
+.pm-env-picker {
+  display: flex;
+  gap: var(--p-spacing-static-xs);
+  padding: var(--p-spacing-static-xs);
+  background: var(--p-color-frosted);
+  border-radius: var(--p-radius-xl);
+  backdrop-filter: var(--p-blur-frosted);
+  -webkit-backdrop-filter: var(--p-blur-frosted);
+}
+
+.pm-env-btn {
+  height: 48px;
+  aspect-ratio: 4 / 3;
+  /* 2px padding keeps a visible gap between image and active indicator. */
+  padding: 2px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+  /* inset box-shadow tracks border-radius exactly — outline would not. */
+  box-shadow: inset 0 0 0 1px transparent;
+  transition:
+    background var(--p-duration-sm) var(--p-ease-in-out),
+    box-shadow var(--p-duration-sm) var(--p-ease-in-out);
+}
+
+.pm-env-btn[aria-pressed="true"] {
+  background: var(--p-color-frosted-strong);
+  box-shadow: inset 0 0 0 1px var(--p-color-primary);
+}
+
+@media (hover: hover) {
+  .pm-env-btn:not([aria-pressed="true"]):hover {
+    background: var(--p-color-frosted);
+  }
+}
+
+.pm-env-btn:focus-visible {
+  outline: 2px solid var(--p-color-focus);
+  outline-offset: 2px;
+}
+
+/* Image clips at p-button radius (8px), nested inside the 12px indicator ring. */
+.pm-env-btn img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--p-radius-lg);
+}
+
+/* Configuration highlight tiles — full-bleed photo with a frosted caption and optional tag. */
+.pm-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--p-spacing-static-md);
+  aspect-ratio: 3 / 4;
+  padding: var(--p-spacing-static-lg);
+  border-radius: var(--p-radius-xl);
+  overflow: hidden;
+  /* new stacking context so the absolute image stays behind the caption/tag. */
+  isolation: isolate;
+}
+
+.pm-tile__img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cut-out product shot (e.g. wheel) — a studio spotlight backdrop so the transparent
+   image reads as a framed product instead of floating on the bare canvas. */
+.pm-tile--product {
+  background: radial-gradient(120% 90% at 50% 38%, #26262b 0%, #141418 55%, #0c0c0f 100%);
+}
+.pm-tile--product .pm-tile__img {
+  object-fit: contain;
+  padding: var(--p-spacing-static-lg);
+}
+
+/* Caption sits at the bottom on a frosted panel — mirrors the env-picker styling. */
+.pm-tile__caption {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--p-spacing-static-xs);
+  padding: var(--p-spacing-static-sm) var(--p-spacing-static-md);
+  border-radius: var(--p-radius-lg);
+  color: var(--p-color-primary);
+}
+
+/* Recommendation carousel — each slide is a full-bleed photo with a scrim, caption and CTA. */
+.pm-carousel-slide {
+  position: relative;
+  /* new stacking context so the absolute background stays behind text/CTA. */
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: var(--p-spacing-static-md);
+  /* absolute (vw-based) width so slides size consistently under slides-per-page="auto"
+     and the next slide peeks in; a % width would collapse against the auto track. */
+  width: clamp(260px, 62vw, 1067px);
+  aspect-ratio: 16 / 9;
+  padding: var(--p-spacing-static-lg);
+  border-radius: var(--p-radius-xl);
+  overflow: hidden;
+  color: #fbfcff;
+}
+
+.pm-carousel-slide__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.pm-carousel-slide__bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slide 2 background is intentionally over-scaled to bleed past the frame edges. */
+.pm-carousel-slide__img-wide {
+  inset: 0 auto auto -0.32%;
+  width: 177.78%;
+  max-width: none;
+}
+
+/* Gradient scrim keeps caption text legible over bright photography. */
+.pm-carousel-slide__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 56%, #000);
+}
+
+.pm-carousel-slide__scrim--flat {
+  background: rgb(0 0 0 / 0.2);
+}
+
+.pm-carousel-slide__text {
+  display: flex;
+  flex-direction: column;
+  max-width: 280px;
+}
+
+/* Oversized "OPTIONS" lettering that introduces the recommendation carousel. */
+.pm-options-headline {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 1550px;
+}
+
+/* ------------------------------------------------------------------ *
+ * "Beauty" wallpaper gallery — downloadable wide wallpapers on a dark
+ * aubergine stage, behind a giant frosted, blurred "BEAUTY" wordmark.
+ * ------------------------------------------------------------------ */
+.pm-wallpapers {
+  position: relative;
+  isolation: isolate;
+  /* Own inner spacing top and bottom; the telescope below is pulled up to sit flush,
+     so this padding gives the pagination dots room without a canvas gap between sections. */
+  padding-block: var(--p-spacing-fluid-xl);
+  background: #1f0e20;
+  overflow: hidden;
+}
+
+/* Soft, oversized blurred glow behind everything for depth. */
+.pm-wallpapers__glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.pm-wallpapers__glow img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 170%;
+  height: 130%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0.2;
+  filter: blur(80px);
+}
+
+/* Giant frosted, blurred word that sits behind and overlaps the carousel. */
+.pm-wallpapers__headline {
+  justify-self: center;
+  margin: 0 0 -2.5rem;
+  font-family: var(--p-font-family, "Porsche Next", system-ui, sans-serif);
+  font-size: clamp(4rem, 22vw, 20.625rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(175 175 182 / 0.15);
+  pointer-events: none;
+}
+
+/* Pull the carousel up so its slides crop the lower part of the "BEAUTY" wordmark. */
+.pm-wallpapers__carousel {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(-13rem, -11vw, -5rem);
+}
+
+/* Each wallpaper slide is a wide, rounded, downloadable photo. */
+.pm-wallpaper {
+  position: relative;
+  display: block;
+  /* absolute (vw-based) width so slides size consistently under
+     slides-per-page="auto" and the next slide peeks in. */
+  width: clamp(300px, 74vw, 1320px);
+  aspect-ratio: 16 / 9;
+  border-radius: var(--p-radius-xl);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.pm-wallpaper img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--p-duration-lg, 0.6s) var(--p-ease-out, ease);
+}
+
+.pm-wallpaper:hover img,
+.pm-wallpaper:focus-visible img {
+  transform: scale(1.03);
+}
+
+/* Compact "Download Wallpaper" button (p-link-pure), horizontally centred near the bottom. */
+.pm-wallpaper__download {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--p-spacing-static-md);
+  width: max-content;
+  margin-inline: auto;
+}
+
+/* ------------------------------------------------------------------ *
+ * Telescope zoom — dependency-free layered zoom-on-scroll finale.
+ * A tall section is pinned via `position: sticky`; main.js writes an
+ * eased 0→1 `--progress` and every transform below is derived from it.
+ * ------------------------------------------------------------------ */
+.pm-telescope {
+  --progress: 0;
+  /* Blur ramps in over the first 40% of scroll; photos begin flying once the
+     font has picked up a little blur (~20% in) and continue to the end. */
+  --blur-t: clamp(0, calc(var(--progress) / 0.4), 1);
+  --fly: clamp(0, calc((var(--progress) - 0.2) / 0.8), 1);
+  position: relative;
+  /* Pull up by the main grid's row-gap so it sits flush against the wallpapers above. */
+  margin-top: calc(var(--p-spacing-fluid-xl) * -1);
+  height: 320vh;
+  background: #19191a;
+}
+
+.pm-telescope__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  /* solid canvas colour backdrop. */
+  background: #19191a;
+}
+
+/* Photos flying past the camera in 3D ------------------------------- */
+.pm-telescope__floaters {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  perspective: 100vh;
+  pointer-events: none;
+}
+
+.pm-telescope__floaters img {
+  position: absolute;
+  width: 12vw;
+  border-radius: var(--p-radius-md);
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 0.5);
+  /* Per-image staggered timeline: each photo starts at its own --d delay and
+     shares a 0.65 span, so they reveal one after another rather than at once. */
+  --t: clamp(0, calc((var(--fly) - var(--d, 0)) / 0.65), 1);
+  /* Anchored by their centre; start small deep in the distance, then rush
+     forward and streak past the camera as --t → 1. */
+  transform: translate(-50%, -50%) translateZ(calc(-90vh + var(--t) * var(--fz, 1) * 210vh));
+  /* Quickly fade in from the distance, then fade out as they blow past. */
+  opacity: min(clamp(0, calc(var(--t) * 8), 1), clamp(0, calc((0.95 - var(--t)) * 4), 1));
+}
+
+.pm-telescope__floaters img:nth-of-type(1) {
+  top: 30%;
+  left: 33%;
+  --fz: 1.15;
+  --d: 0;
+}
+.pm-telescope__floaters img:nth-of-type(2) {
+  top: 24%;
+  left: 58%;
+  --fz: 0.9;
+  --d: 0.05;
+}
+.pm-telescope__floaters img:nth-of-type(3) {
+  top: 42%;
+  left: 74%;
+  --fz: 1.05;
+  --d: 0.1;
+}
+.pm-telescope__floaters img:nth-of-type(4) {
+  top: 62%;
+  left: 64%;
+  --fz: 0.8;
+  --d: 0.15;
+}
+.pm-telescope__floaters img:nth-of-type(5) {
+  top: 68%;
+  left: 42%;
+  --fz: 1.1;
+  --d: 0.2;
+}
+.pm-telescope__floaters img:nth-of-type(6) {
+  top: 58%;
+  left: 24%;
+  --fz: 0.95;
+  --d: 0.25;
+}
+.pm-telescope__floaters img:nth-of-type(7) {
+  top: 33%;
+  left: 18%;
+  --fz: 1.2;
+  --d: 0.3;
+}
+/* The last (centred) photo doesn't blow past the camera or fade out — it
+   comes forward and settles large and centred to hand off to the next stage. */
+.pm-telescope__floaters img:nth-of-type(8) {
+  top: 50%;
+  left: 50%;
+  --d: 0.35;
+  z-index: 1;
+  transform: translate(-50%, -50%) translateZ(calc(-90vh + var(--t) * 162vh));
+  opacity: clamp(0, calc(var(--t) * 8), 1);
+}
+
+/* Sticky headline ---------------------------------------------------- */
+.pm-telescope__title {
+  position: relative;
+  z-index: 0;
+  max-width: min(1346px, 82vw);
+  margin: 0;
+  padding: 0 var(--p-spacing-static-md);
+  font-family: var(--p-font-family, "Porsche Next", system-ui, sans-serif);
+  font-size: clamp(2rem, 8.2vw, 9rem);
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: clamp(0.25rem, 1.15vw, 1.25rem);
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(156 156 159 / 0.3);
+  /* Sharp at the start, then blurs as you scroll (matching the Figma states). */
+  filter: blur(calc(var(--blur-t) * 20.5px));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pm-backdrop,
+  .pm-lighting {
+    transition: none;
+  }
+
+  /* Telescope: no pin/blur/fly — a single static, sharp headline. */
+  .pm-telescope {
+    height: auto;
+  }
+  .pm-telescope__stage {
+    position: relative;
+    height: auto;
+    min-height: 70vh;
+  }
+  .pm-telescope__floaters {
+    display: none;
+  }
+  .pm-telescope__title {
+    filter: none;
+  }
+}
+
+/* Scroll-triggered reveal — mirrors the commissions "animate in view" pattern with v4 motion tokens. */
+@keyframes pm-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-animation="fade-in-up"] {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+[data-animation="fade-in-up"].animation-play {
+  animation: pm-fade-in-up var(--p-duration-lg) var(--p-ease-out) var(--pm-delay, 0s) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animation] {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Sticky call-to-action bar — frosted bar pinned to the bottom that
+ * slides up after the user scrolls past a threshold (see main.js).
+ * ------------------------------------------------------------------ */
+.pm-cta-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: var(--p-spacing-static-sm) var(--p-spacing-fluid-md) var(--p-spacing-static-xl);
+  /* Hidden below the viewport until revealed. */
+  transform: translateY(160%);
+  transition: transform var(--p-duration-lg, 0.6s) var(--p-ease-out, cubic-bezier(0.16, 1, 0.3, 1));
+  pointer-events: none;
+}
+
+.pm-cta-bar.is-visible {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.pm-cta-bar__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--p-spacing-static-md);
+  max-width: 920px;
+  margin-inline: auto;
+  padding: var(--p-spacing-static-xs) var(--p-spacing-static-sm) var(--p-spacing-static-xs) var(--p-spacing-static-md);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-color-frosted);
+  /* Literal blur value: Lightning CSS (Tailwind v4) drops `backdrop-filter: var(--p-blur-frosted)`,
+     so the frosted token is inlined here to keep the backdrop blur. */
+  -webkit-backdrop-filter: blur(32px);
+  backdrop-filter: blur(32px);
+  box-shadow: 0 0.75rem 2.5rem rgb(0 0 0 / 0.45);
+}
+
+/* Configured car peeking out of the bar. */
+.pm-cta-bar__car {
+  flex-shrink: 0;
+  width: auto;
+  height: 3.5rem;
+  object-fit: contain;
+}
+
+.pm-cta-bar__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Push the actions to the far end. */
+.pm-cta-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--p-spacing-static-sm);
+  margin-left: auto;
+}
+
+/* On narrow viewports drop the descriptive text and secondary link to keep the primary CTA. */
+@media (max-width: 640px) {
+  .pm-cta-bar__text,
+  .pm-cta-bar__ghost {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pm-cta-bar {
+    transition: none;
+  }
+}
