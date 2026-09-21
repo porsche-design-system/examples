@@ -25,7 +25,9 @@ const showConfirmation = () => {
   question.hidden = true;
   thanks.hidden = false;
   // Move focus to the confirmation so keyboard and screen reader users are informed.
-  thanksHeading.focus();
+  window.requestAnimationFrame(() => {
+    thanksHeading.focus();
+  });
 };
 
 const restartFeedback = () => {
@@ -38,7 +40,9 @@ const restartFeedback = () => {
   question.hidden = false;
   form.hidden = false;
   // Return focus to the question so the flow is re-announced and can be repeated from the start.
-  question.focus();
+  window.requestAnimationFrame(() => {
+    question.focus();
+  });
 };
 
 rating.addEventListener('change', revealCommentAndSubmit);

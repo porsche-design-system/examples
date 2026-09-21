@@ -14,6 +14,7 @@
     "@porsche-design-system/components-react": "4.7.0",
     "@react-router/node": "^8.4.0",
     "@react-router/serve": "^8.4.0",
+    "@remix-run/route-pattern": "^0.22.1",
     "isbot": "^5.2.2",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
