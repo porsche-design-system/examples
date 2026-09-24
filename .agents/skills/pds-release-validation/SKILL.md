@@ -60,7 +60,7 @@ Ask for the exact version if it is missing. Accept only a plain semver version (
    - Confirm in the browser that `document.porscheDesignSystem['<version>']` exists.
    - Keep useful new tests. Mark checks that need a human (screen reader, visual judgement) as **Manual**.
 
-7. **Report.** Write `release-reviews/<version>.md` (gitignored) and finish with the verdict and path:
+7. **Report.** Write `.pds/release-reviews/<version>.md` (gitignored) and finish with the verdict and path:
    - **Blocked**: a candidate regression or an unresolvable setup/runtime failure.
    - **Incomplete**: no blocker, but checks are **Not run** or **Manual**.
    - **Ready for sign-off**: every entry and the regression suite pass, and any N/A is justified.

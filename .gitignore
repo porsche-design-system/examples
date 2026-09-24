@@ -70,7 +70,7 @@ playwright/.cache/
 _tmp-pds-mcp-server/
 
 # PDS release validation reports
-release-reviews/
+.pds/release-reviews/
 
 # PDS audit deprecation reports
 .pds/audits/

@@ -179,7 +179,7 @@ Use pds-release-validation to validate PDS <exact-version>.
 ```
 
 The skill upgrades all examples to that version, verifies every change since the previous stable,
-runs the regression suite and saves a report to `release-reviews/<version>.md`. All changes stay
+runs the regression suite and saves a report to `.pds/release-reviews/<version>.md`. All changes stay
 local; it does not commit, push, open a PR or publish a release.
 
 ## Security
