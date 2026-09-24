@@ -51,7 +51,9 @@ const showConfirmation = () => {
   thanks.hidden = false;
   close.hidden = false;
   // Move focus to the confirmation so keyboard and screen reader users are informed.
-  thanksHeading.focus();
+  window.requestAnimationFrame(() => {
+    thanksHeading.focus();
+  });
 };
 
 trigger.addEventListener('click', openModal);
