@@ -35,8 +35,8 @@ Ask for the exact version if it is missing.
    strings and changelog headings counts as a change.
 
 3. **Upgrade.** Record `git rev-parse HEAD` and the current PDS versions. For each PDS package, run
-   `npm install --save-exact <pkg>@<version> -w <workspace> …` across every workspace that depends on it (including
-   `pages/*`). Then `npm run npm:lint` must pass, and `npm ls <pkg>` must show only the candidate. Re-read the
+   `npm install --save-exact <pkg>@<version> -w <workspace> …` across every workspace that depends on it. Then
+   `npm run npm:lint` must pass, and `npm ls <pkg>` must show only the candidate. Re-read the
    `.agents/skills/pds-knowledge-*` skills, which now come from the candidate.
 
 4. **List changes.** Collect every entry after the previous stable (all RC sections included) from
