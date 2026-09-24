@@ -71,3 +71,6 @@ _tmp-pds-mcp-server/
 
 # PDS release validation reports
 release-reviews/
+
+# PDS audit deprecation reports
+.pds/audits/

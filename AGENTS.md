@@ -89,6 +89,9 @@ npm run npm:outdated         # Check outdated deps
 - **Agent Skills**: version-matched Porsche Design System skills are linked into `.agents/skills`
   as relative symlinks pointing into `node_modules`. Prefer them over external documentation, and
   pick the one matching the workspace you edit (`pds-knowledge-js`, `-react`, `-vue`, `-angular`).
+  `pds-audit-deprecations-{js|react|vue|angular}` audits a workspace for deprecated PDS API usage
+  and writes its report below `.pds/audits/` (gitignored) without changing code. Re-link after
+  adding skills with `npx pds-skill --package @porsche-design-system/components-<fw> --location .agents/skills`.
 - **Release validation**: `.agents/skills/pds-release-validation/SKILL.md` is repository-owned, not
   a package symlink. Invoke it explicitly with an exact published PDS version (RC or stable) to
   verify every change and run the regression suite locally. It does not commit or publish.
