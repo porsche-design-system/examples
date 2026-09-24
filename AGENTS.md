@@ -89,6 +89,9 @@ npm run npm:outdated         # Check outdated deps
 - **Agent Skills**: version-matched Porsche Design System skills are linked into `.agents/skills`
   as relative symlinks pointing into `node_modules`. Prefer them over external documentation, and
   pick the one matching the workspace you edit (`pds-knowledge-js`, `-react`, `-vue`, `-angular`).
+- **Release validation**: `.agents/skills/pds-release-validation/SKILL.md` is repository-owned, not
+  a package symlink. Invoke it explicitly with an exact published PDS version (RC or stable) to
+  verify every change and run the regression suite locally. It does not commit or publish.
 
 ## Code Style & Conventions
 
@@ -108,4 +111,3 @@ and `npm run lint` before finishing. Key rules:
 - Match the existing patterns of the workspace you are editing (component structure, file naming,
   test layout) rather than introducing new ones.
 - Preserve accessibility (WCAG 2.2 AA) when changing markup.
-

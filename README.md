@@ -179,8 +179,20 @@ Any command can also be executed in a Docker container by running it with `./doc
 
 ---
 
+## Local PDS release validation
+
+To validate a published PDS release candidate or stable release, invoke the repository-owned
+[`pds-release-validation`](.agents/skills/pds-release-validation/SKILL.md) skill in your local agent:
+
+```text
+Use pds-release-validation to validate PDS <exact-version>.
+```
+
+The skill upgrades all examples to that version, verifies every change since the previous stable,
+runs the regression suite and saves a report to `release-reviews/<version>.md`. All changes stay
+local; it does not commit, push, open a PR or publish a release.
+
 ## Security
 
 Found a vulnerability? Please **do not** open a public issue. Report it privately via GitHub's security advisories — see
 our [Security Policy](./SECURITY.md) for the process, scope and response times.
-

@@ -68,3 +68,6 @@ playwright/.cache/
 
 # PDS MCP Server
 _tmp-pds-mcp-server/
+
+# PDS release validation reports
+release-reviews/
