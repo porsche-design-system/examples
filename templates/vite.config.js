@@ -27,7 +27,29 @@ const transformIndexHtmlPlugin = () => {
 
       const headPartials = [
         //`<meta http-equiv="Content-Security-Policy" content="${cspContent}"/>`, // disabled due to loading of H&N
-        getComponentChunkLinks({ components: ['heading', 'text', 'carousel', 'link-tile', 'link-pure', 'link'] }),
+        getComponentChunkLinks({
+          components: [
+            'heading',
+            'text',
+            'carousel',
+            'link-tile',
+            'link-pure',
+            'link',
+            'model-signature',
+            'segmented-control',
+            'tabs-bar',
+            'tag',
+            'button',
+            'button-pure',
+            'icon',
+            'wordmark',
+            'divider',
+            'flyout',
+            'input-text',
+            'input-email',
+            'textarea',
+          ],
+        }),
         getFontLinks(),
         getIconLinks(),
         getMetaTagsAndIconLinks({ appTitle: 'Examples by Porsche Design System' }),
@@ -54,6 +76,8 @@ export default defineConfig({
       input: {
         'landing-page-1': resolve(__dirname, 'src/landing-page/1/index.html'),
         'admin-panel-1': resolve(__dirname, 'src/admin-panel/1/index.html'),
+        'personalized-mailing-1': resolve(__dirname, 'src/personalized-mailing/1/index.html'),
+        'personalized-mailing-2': resolve(__dirname, 'src/personalized-mailing/2/index.html'),
       },
     },
   },

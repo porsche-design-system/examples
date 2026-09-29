@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Studio environment placeholder">
+  <defs>
+    <linearGradient id="pm-studio" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2f3f5"/>
+      <stop offset="0.62" stop-color="#e2e3e7"/>
+      <stop offset="1" stop-color="#c9cace"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#pm-studio)"/>
+  <ellipse cx="800" cy="880" rx="1100" ry="180" fill="#ffffff" opacity="0.5"/>
+</svg>
