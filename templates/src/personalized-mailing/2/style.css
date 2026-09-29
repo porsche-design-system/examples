@@ -1,0 +1,405 @@
+@import "@porsche-design-system/components-js";
+@import "tailwindcss";
+@import "@porsche-design-system/components-js/tailwindcss";
+
+:not(:defined) {
+  visibility: hidden;
+}
+
+/* Hero -------------------------------------------------------------- */
+/* Height is written by main.js (coupled to the video's measured bottom edge, see
+   updateHero()) so there is never too much empty canvas before the next section. */
+.pm2-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Giant background typo — bg-clip-text gradient fades the ghost title to transparent. */
+.pm2-ghost-title {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  z-index: 1;
+  margin: 0;
+  margin-top: 16vh;
+  font-family: var(--p-font-family, "Porsche Next", system-ui, sans-serif);
+  font-size: clamp(52px, 12.53vw, 300px);
+  font-weight: 400;
+  line-height: 1.048;
+  white-space: nowrap;
+  background-image: linear-gradient(to bottom, var(--p-color-contrast-medium) 0%, transparent 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pm2-ghost-title--small {
+  position: absolute;
+  top: clamp(24px, 3vw, 72px);
+  z-index: 0;
+  margin-top: 0;
+  font-size: clamp(48px, 12.53vw, 300px);
+}
+
+/* Video card — top/left/right/border-radius are written every frame by main.js
+   (see updateHero()): it shrinks toward a rounded card on scroll, then widens back
+   to full-bleed exactly when its top edge reaches the viewport top. */
+.pm2-video-wrap {
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  opacity: 0;
+  transform: scale(0.97);
+  transition:
+    opacity var(--p-duration-lg) var(--p-ease-in-out),
+    transform var(--p-duration-lg) var(--p-ease-in-out);
+  transition-delay: 0.35s;
+}
+
+.pm2-hero.is-mounted .pm2-video-wrap {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 759px) {
+  .pm2-video-wrap {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+.pm2-video-wrap video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pm2-video-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 45%, transparent 70%);
+}
+
+.pm2-video-caption {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: 70ch;
+  padding: var(--p-spacing-fluid-xl);
+  opacity: 0;
+  transition: opacity var(--p-duration-lg) var(--p-ease-in-out);
+  transition-delay: 0.6s;
+}
+
+.pm2-hero.is-mounted .pm2-video-caption {
+  opacity: 1;
+}
+
+.pm2-video-toggle {
+  position: absolute;
+  right: var(--p-spacing-fluid-xl);
+  bottom: var(--p-spacing-fluid-xl);
+  display: flex;
+  height: 3.5rem;
+  width: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--p-radius-full, 999px);
+  cursor: pointer;
+  background: var(--p-color-frosted);
+  backdrop-filter: var(--p-blur-frosted);
+  -webkit-backdrop-filter: var(--p-blur-frosted);
+  transition: transform var(--p-duration-md) var(--p-ease-in-out);
+}
+
+.pm2-video-toggle:hover {
+  transform: scale(1.05);
+}
+
+.pm2-wordmark {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  z-index: 20;
+  padding-top: var(--p-spacing-fluid-lg);
+  opacity: 0;
+  transform: translateY(-12px);
+  transition:
+    opacity var(--p-duration-lg) var(--p-ease-in-out),
+    transform var(--p-duration-lg) var(--p-ease-in-out);
+}
+
+.pm2-hero.is-mounted .pm2-wordmark {
+  opacity: 1;
+  transform: none;
+}
+
+.pm2-scroll-hint {
+  position: fixed;
+  inset-inline: 0;
+  bottom: var(--p-spacing-fluid-md);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+}
+
+/* Chapter -------------------------------------------------------------- */
+.pm2-chapter {
+  background: #c4001a;
+  border-radius: 0 0 clamp(28px, 4vw, 56px) clamp(28px, 4vw, 56px);
+}
+
+.pm2-car-signature {
+  color: var(--p-color-contrast-low);
+}
+
+/* Mosaic tiles ----------------------------------------------------------- */
+.pm2-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  border-radius: var(--p-radius-xl);
+}
+
+.pm2-tile__img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pm2-tile__caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--p-spacing-static-xs);
+  padding: var(--p-spacing-fluid-md);
+}
+
+/* Cross-sell -------------------------------------------------------------- */
+.pm2-crosssell {
+  background: linear-gradient(180deg, var(--p-color-surface) 0%, #601315 100%);
+}
+
+.pm2-crosssell__lead {
+  z-index: 1;
+  padding-top: clamp(220px, 23vw, 450px);
+}
+
+.pm2-crosssell__carousel {
+  z-index: 1;
+}
+
+.pm2-xsell-slide {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  aspect-ratio: 16 / 10;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: var(--p-spacing-fluid-md);
+}
+
+.pm2-xsell-slide > img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pm2-xsell-slide__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0) 72%);
+}
+
+.pm2-xsell-slide__tag {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: 999px;
+  background: #fff;
+  padding: 4px 12px;
+}
+
+.pm2-xsell-slide__tag span {
+  font-size: 14px;
+  line-height: 20px;
+  color: #010205;
+}
+
+.pm2-xsell-slide__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--p-spacing-static-xs);
+}
+
+/* Freude, die man teilt. -------------------------------------------------------------- */
+.pm2-share__content {
+  position: relative;
+  z-index: 1;
+  padding-top: clamp(70px, 17vw, 400px);
+}
+
+.pm2-fan {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: clamp(320px, 34vw, 480px);
+}
+
+.pm2-fan__card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(190px, 20vw, 286px);
+  border-radius: var(--p-radius-lg);
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.5));
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(0deg) scale(0.9);
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
+}
+
+.pm2-fan--in-view .pm2-fan__card {
+  opacity: 1;
+}
+
+.pm2-fan__card--left {
+  z-index: 1;
+  transition-delay: 0s;
+}
+
+.pm2-fan--in-view .pm2-fan__card--left {
+  transform: translate(-50%, -50%) translateX(-42%) rotate(-13deg);
+}
+
+.pm2-fan__card--right {
+  z-index: 1;
+  transition-delay: 0.09s;
+}
+
+.pm2-fan--in-view .pm2-fan__card--right {
+  transform: translate(-50%, -50%) translateX(42%) rotate(13deg);
+}
+
+.pm2-fan__card--center {
+  z-index: 2;
+  transition-delay: 0.18s;
+}
+
+.pm2-fan--in-view .pm2-fan__card--center {
+  transform: translate(-50%, -50%);
+}
+
+/* Praktisches -------------------------------------------------------------- */
+.pm2-practical {
+  background: var(--p-color-canvas);
+}
+
+/* Scroll-triggered reveal — mirrors the "1" template's "animate in view" pattern. */
+@keyframes pm2-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-animation="fade-in-up"] {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+[data-animation="fade-in-up"].animation-play {
+  animation: pm2-fade-in-up var(--p-duration-lg) var(--p-ease-out) var(--pm-delay, 0s) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animation] {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .pm2-fan__card {
+    transition: none;
+  }
+}
+
+/* Sticky contact bar -------------------------------------------------------------- */
+.pm2-contact-bar {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--p-spacing-fluid-md) var(--p-spacing-fluid-md);
+  transform: translateY(24px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform var(--p-duration-md) var(--p-ease-in-out),
+    opacity var(--p-duration-md) var(--p-ease-in-out);
+}
+
+.pm2-contact-bar.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pm2-contact-bar__inner {
+  display: flex;
+  max-width: 100%;
+  align-items: center;
+  gap: var(--p-spacing-static-lg);
+  border-radius: 12px;
+  background: var(--p-color-frosted);
+  backdrop-filter: var(--p-blur-frosted);
+  -webkit-backdrop-filter: var(--p-blur-frosted);
+  padding: var(--p-spacing-static-sm) var(--p-spacing-static-md) var(--p-spacing-static-sm) var(--p-spacing-static-sm);
+}
+
+.pm2-contact-bar__avatar {
+  display: flex;
+  height: 3rem;
+  width: 3rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--p-color-contrast-low);
+}
+
+.pm2-contact-bar__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+@media (max-width: 640px) {
+  .pm2-contact-bar__subline {
+    display: none;
+  }
+}
