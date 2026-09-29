@@ -24,41 +24,63 @@
   </head>
 
   <body>
-    <main class="grid-template gap-y-fluid-xl">
+    <!-- Hidden dev menu: swap Hero variants (not part of the actual design, purely for review). -->
+    <button
+      type="button"
+      id="pm2-dev-menu-toggle"
+      class="pm2-dev-menu-toggle"
+      aria-label="Dev-Menü: Hero-Varianten"
+    >
+      <p-icon name="wrench" color="contrast-medium" size="x-small" aria-hidden="true"></p-icon>
+    </button>
+    <div id="pm2-dev-menu" class="pm2-dev-menu" hidden>
+      <p-text size="x-small" weight="semi-bold" color="contrast-medium">DEV · Hero-Varianten</p-text>
+      <div class="pm2-dev-menu__list">
+        <button type="button" class="pm2-dev-menu__item" data-variant="standard">A · Standard 16:9</button>
+        <button type="button" class="pm2-dev-menu__item" data-variant="wide">B · Breitbild 21:9</button>
+        <button type="button" class="pm2-dev-menu__item" data-variant="classic">C · Klassisch 4:3</button>
+        <button type="button" class="pm2-dev-menu__item" data-variant="static">D · Ohne Parallax, tiefer Anschnitt</button>
+        <button type="button" class="pm2-dev-menu__item" data-variant="fullbleedCenter">E · Vollflächig, Text mittig (PFM v4)</button>
+        <button type="button" class="pm2-dev-menu__item" data-variant="clearText">F · 90vh Abstand, Text frei lesbar</button>
+      </div>
+    </div>
+
+    <main class="grid-template">
       <!-- Hero: scroll-driven video card (widens to full-bleed once it reaches the viewport top) with
            a giant ghost-type title behind it and a personalised caption on top. -->
       <section
         id="pm2-hero"
-        class="pm2-hero scheme-dark col-full grid grid-cols-subgrid relative bg-surface"
+        class="pm2-hero scheme-dark col-full grid grid-cols-subgrid relative overflow-hidden bg-surface"
         aria-labelledby="pm2-hero-heading"
       >
+        <div class="pm2-hero-red-wash absolute inset-x-0 bottom-0 top-[62vh] z-0 pointer-events-none" aria-hidden="true"></div>
+
         <h1
           id="pm2-hero-heading"
-          class="pm2-ghost-title col-full justify-self-center text-center pointer-events-none"
+          class="pm2-ghost-title absolute inset-x-0 top-0 z-1 col-full mt-[16vh] justify-self-center text-center pointer-events-none"
         >
           <span class="block">Eine Wahl</span>
           <span class="block">mit Charakter</span>
         </h1>
 
-        <div id="pm2-video-wrap" class="pm2-video-wrap col-full">
+        <div id="pm2-video-wrap" class="pm2-video-wrap absolute z-10 overflow-hidden col-full">
           <video
             id="pm2-video"
-            class="size-full object-cover"
-            poster="/assets/mood-porsche-gts.webp"
+            class="absolute inset-0 size-full object-cover"
+            poster="/assets/pfm/hero-poster.jpg"
             autoplay
             muted
             loop
             playsinline
             aria-hidden="true"
           >
-            <source src="/assets/mood-porsche-gts.mp4" type="video/mp4">
-            <source src="/assets/mood-porsche-gts.webm" type="video/webm">
+            <source src="/assets/pfm/hero.mp4" type="video/mp4">
           </video>
-          <div class="pm2-video-scrim" aria-hidden="true"></div>
+          <div id="pm2-video-scrim" class="pm2-video-scrim absolute inset-0" aria-hidden="true"></div>
 
-          <div class="pm2-video-caption" data-animation="fade-in-up">
-            <p-heading tag="h2" size="x-large" color="primary">Herr Niesner, Ihr 911 Targa.</p-heading>
-            <p-text class="mt-fluid-sm max-w-140" size="medium" color="contrast-medium">
+          <div id="pm2-video-caption" class="pm2-video-caption absolute inset-x-0 top-0 flex flex-col items-center text-center p-fluid-xl" data-animation="fade-in-up">
+            <p-heading tag="h2" size="2xl" color="primary" align="center">Herr Niessner, Ihr 911 Targa.</p-heading>
+            <p-text class="mt-fluid-sm max-w-[60ch]" size="medium" color="contrast-medium" align="center">
               Gemeinsam mit Ihrem Porsche Zentrum konfiguriert – abgestimmt auf Ihren Stil, in Karminrot.
               Ihr persönliches Roadmovie, Herr Niessner.
             </p-text>
@@ -67,7 +89,7 @@
           <button
             id="pm2-video-toggle"
             type="button"
-            class="pm2-video-toggle"
+            class="absolute right-[var(--p-spacing-fluid-xl)] bottom-[var(--p-spacing-fluid-xl)] flex h-14 w-14 max-sm:h-11 max-sm:w-11 items-center justify-center rounded-full border-none cursor-pointer bg-frosted backdrop-blur-[32px] transition-transform hover:scale-105"
             aria-label="Video pausieren"
             data-playing="true"
           >
@@ -75,11 +97,11 @@
           </button>
         </div>
 
-        <div class="pm2-wordmark pointer-events-none col-full flex justify-center">
+        <div class="pm2-wordmark absolute inset-x-0 top-0 z-20 pt-fluid-lg pointer-events-none col-full flex justify-center">
           <p-wordmark aria='{ "aria-label": "Porsche" }'></p-wordmark>
         </div>
 
-        <div class="pm2-scroll-hint">
+        <div class="pm2-scroll-hint fixed inset-x-0 bottom-[var(--p-spacing-fluid-md)] z-20 flex justify-center">
           <p-button-pure
             type="button"
             icon="arrow-down"
@@ -93,23 +115,23 @@
 
       <!-- "Ein neues Kapitel": intro lead + configured car cutout + count-up KPIs on Karminrot. -->
       <section
-        class="pm2-chapter col-full grid grid-cols-subgrid scheme-dark py-fluid-2xl"
+        class="pm2-chapter col-full grid grid-cols-subgrid scheme-dark py-fluid-2xl relative z-1 bg-[#c4001a] rounded-b-[clamp(28px,4vw,56px)]"
         aria-labelledby="pm2-chapter-heading"
       >
         <div class="col-narrow flex flex-col items-center gap-fluid-lg text-center">
-          <p-text data-animation="fade-in-up" size="large" align="center" class="max-w-150">
+          <p-text data-animation="fade-in-up" size="large" align="center" class="max-w-[70ch]">
             Ihr 911 Targa in Karminrot ist bei uns eingegangen – eine Kombination, die Haltung zeigt.
             Jetzt beginnt der schönste Teil: der Weg zu Ihrem Porsche. Machen Sie den nächsten Schritt
             und sprechen Sie mit Ihrem persönlichen Ansprechpartner.
           </p-text>
 
           <div
-            class="pm2-car-stage relative w-full max-w-255"
+            class="pm2-car-stage relative w-full max-w-[1020px]"
             data-animation="fade-in-up"
             style="--pm-delay: var(--p-duration-sm)"
           >
             <p-model-signature
-              class="pm2-car-signature absolute left-1/2 top-2/5 w-4/5 max-w-225 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+              class="absolute left-1/2 top-2/5 w-4/5 max-w-[900px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
               model="911"
               color="contrast-low"
               size="inherit"
@@ -117,13 +139,13 @@
             ></p-model-signature>
             <img
               class="relative z-1 w-full"
-              src="/assets/911-2.png"
+              src="/assets/pfm/chapter-car.png"
               alt="Ihr 911 Targa in Karminrot, Frontansicht"
             >
           </div>
 
           <div
-            class="flex flex-col items-center gap-fluid-sm max-w-150"
+            class="flex flex-col items-center gap-fluid-sm max-w-[70ch]"
             data-animation="fade-in-up"
             style="--pm-delay: calc(var(--p-duration-sm) * 2)"
           >
@@ -137,7 +159,7 @@
           </div>
 
           <div
-            class="pm2-kpis grid w-full max-w-175 grid-cols-1 gap-fluid-lg sm:grid-cols-3"
+            class="pm2-kpis w-full max-w-[1000px] gap-fluid-lg"
             data-animation="fade-in-up"
             style="--pm-delay: calc(var(--p-duration-sm) * 3)"
           >
@@ -171,51 +193,78 @@
 
       <!-- Mosaik: what makes this configuration unique — 3 static highlight tiles. -->
       <section
-        class="col-full grid grid-cols-subgrid gap-y-fluid-xl py-fluid-2xl scheme-dark"
+        class="pm2-mosaic col-full grid grid-cols-subgrid gap-y-fluid-xl py-fluid-2xl scheme-dark mt-[calc(-1*clamp(28px,4vw,56px))]"
         aria-labelledby="pm2-mosaic-heading"
       >
         <div class="col-basic flex flex-col items-center gap-fluid-sm text-center" data-animation="fade-in-up">
           <p-heading id="pm2-mosaic-heading" tag="h2" size="x-large" align="center">
             Was Ihren 911 Targa ausmacht.
           </p-heading>
-          <p-text size="medium" color="contrast-high" align="center" class="max-w-150">
+          <p-text size="medium" color="contrast-high" align="center" class="max-w-[70ch]">
             Die Ausstattung, für die Sie sich entschieden haben – eine Kombination, die es in dieser
             Form kein zweites Mal gibt.
           </p-text>
         </div>
 
         <div class="col-extended grid grid-cols-1 gap-fluid-md md:grid-cols-2 md:items-start">
-          <div class="pm2-tile aspect-[3/4]" data-animation="fade-in-up" style="--pm-delay: var(--p-duration-sm)">
-            <img class="pm2-tile__img" src="/assets/pm-tile-1.png" alt="" loading="lazy">
-            <div class="pm2-tile__caption">
+          <div
+            class="relative isolate flex aspect-[3/4] flex-col justify-end overflow-hidden rounded-xl"
+            data-animation="fade-in-up"
+            style="--pm-delay: var(--p-duration-sm)"
+          >
+            <img
+              class="absolute inset-0 -z-1 size-full rounded-[inherit] object-cover"
+              src="/assets/pfm/mosaic-1.png"
+              alt=""
+              loading="lazy"
+            >
+            <div class="flex flex-col gap-static-xs p-fluid-md">
               <p-text size="small" color="contrast-high">Außenfarbe</p-text>
               <p-text size="large" color="primary">Karminrot</p-text>
             </div>
           </div>
           <div class="flex flex-col gap-fluid-md">
             <div
-              class="pm2-tile aspect-[748/477]"
+              class="relative isolate flex aspect-[748/477] flex-col justify-end overflow-hidden rounded-xl"
               data-animation="fade-in-up"
               style="--pm-delay: calc(var(--p-duration-sm) * 2)"
             >
-              <img class="pm2-tile__img" src="/assets/pm-tile-2.png" alt="" loading="lazy">
-              <div class="pm2-tile__caption">
+              <img
+                class="absolute inset-0 -z-1 size-full rounded-[inherit] object-cover"
+                src="/assets/pfm/mosaic-2.png"
+                alt=""
+                loading="lazy"
+              >
+              <div class="flex flex-col gap-static-xs p-fluid-md">
                 <p-text size="small" color="contrast-high">Innenfarbe &amp; Material</p-text>
                 <p-text size="large" color="primary">Karminrot Lederausstattung</p-text>
               </div>
             </div>
             <div
-              class="pm2-tile aspect-[748/477]"
+              class="relative isolate flex aspect-[748/477] flex-col justify-end overflow-hidden rounded-xl"
               data-animation="fade-in-up"
               style="--pm-delay: calc(var(--p-duration-sm) * 3)"
             >
-              <img class="pm2-tile__img" src="/assets/pm-tile-3.png" alt="" loading="lazy">
-              <div class="pm2-tile__caption">
+              <img
+                class="absolute inset-0 -z-1 size-full rounded-[inherit] object-cover"
+                src="/assets/pfm/mosaic-3.png"
+                alt=""
+                loading="lazy"
+              >
+              <div class="flex flex-col gap-static-xs p-fluid-md">
                 <p-text size="small" color="contrast-high">Exterieur</p-text>
                 <p-text size="large" color="primary">Sportabgasanlage (Endrohrblenden in schwarz)</p-text>
               </div>
             </div>
           </div>
+        </div>
+
+        <div
+          class="col-basic flex justify-center"
+          data-animation="fade-in-up"
+          style="--pm-delay: calc(var(--p-duration-sm) * 4)"
+        >
+          <p-button type="button" icon="arrow-right">Zum Konfigurator</p-button>
         </div>
       </section>
 
@@ -226,14 +275,14 @@
       >
         <h2
           id="pm2-crosssell-heading"
-          class="pm2-ghost-title pm2-ghost-title--small col-full justify-self-center text-center pointer-events-none"
+          class="pm2-ghost-title pm2-ghost-title--small absolute inset-x-0 top-[clamp(24px,3vw,72px)] z-0 col-full mt-0 justify-self-center text-center pointer-events-none"
         >
           <span class="block">Erweitern Sie</span>
           <span class="block">Ihren Traum.</span>
         </h2>
 
         <div class="pm2-crosssell__lead col-extended relative" data-animation="fade-in-up">
-          <p-text size="large" color="contrast-high" class="max-w-115">
+          <p-text size="large" color="contrast-high" class="max-w-[460px]">
             Ausstattungen, die andere Fahrer am 911 Targa besonders schätzen.
           </p-text>
         </div>
@@ -248,37 +297,37 @@
           rewind="true"
           aria='{ "aria-label": "Empfohlene Ausstattungen" }'
         >
-          <article class="pm2-xsell-slide">
-            <img src="/assets/cockpit.webp" alt="" loading="lazy">
-            <div class="pm2-xsell-slide__scrim" aria-hidden="true"></div>
-            <div class="pm2-xsell-slide__tag">
-              <span>Beliebt</span>
+          <article class="relative isolate flex aspect-16/10 flex-col items-start justify-between overflow-hidden rounded-3xl p-fluid-md">
+            <img class="absolute inset-0 -z-1 size-full object-cover" src="/assets/pfm/xsell-burmester.jpg" alt="" loading="lazy">
+            <div class="pm2-xsell-slide__scrim absolute inset-0 -z-1" aria-hidden="true"></div>
+            <div class="scheme-light inline-flex w-fit items-center rounded-full bg-canvas px-static-sm py-static-2xs">
+              <p-text size="x-small" color="primary">Beliebt</p-text>
             </div>
-            <div class="pm2-xsell-slide__text">
+            <div class="flex flex-col items-start gap-static-xs">
               <p-text size="medium" color="primary">Burmester® High-End Surround Sound System</p-text>
               <p-text size="small" color="primary">Ihr Klangerlebnis, perfektioniert.</p-text>
               <p-link-pure href="#" icon="arrow-right" class="mt-static-xs">Zum Konfigurator</p-link-pure>
             </div>
           </article>
-          <article class="pm2-xsell-slide">
-            <img src="/assets/911-gt3.webp" alt="" loading="lazy">
-            <div class="pm2-xsell-slide__scrim" aria-hidden="true"></div>
-            <div class="pm2-xsell-slide__tag">
-              <span>Beliebt</span>
+          <article class="relative isolate flex aspect-16/10 flex-col items-start justify-between overflow-hidden rounded-3xl p-fluid-md">
+            <img class="absolute inset-0 -z-1 size-full object-cover" src="/assets/pfm/led.png" alt="" loading="lazy">
+            <div class="pm2-xsell-slide__scrim absolute inset-0 -z-1" aria-hidden="true"></div>
+            <div class="scheme-light inline-flex w-fit items-center rounded-full bg-canvas px-static-sm py-static-2xs">
+              <p-text size="x-small" color="primary">Beliebt</p-text>
             </div>
-            <div class="pm2-xsell-slide__text">
+            <div class="flex flex-col items-start gap-static-xs">
               <p-text size="medium" color="primary">HD-Matrix LED-Hauptscheinwerfer</p-text>
               <p-text size="small" color="primary">Präzises Licht für jede Situation.</p-text>
               <p-link-pure href="#" icon="arrow-right" class="mt-static-xs">Zum Konfigurator</p-link-pure>
             </div>
           </article>
-          <article class="pm2-xsell-slide">
-            <img src="/assets/chrono-car.webp" alt="" loading="lazy">
-            <div class="pm2-xsell-slide__scrim" aria-hidden="true"></div>
-            <div class="pm2-xsell-slide__tag">
-              <span>Beliebt</span>
+          <article class="relative isolate flex aspect-16/10 flex-col items-start justify-between overflow-hidden rounded-3xl p-fluid-md">
+            <img class="absolute inset-0 -z-1 size-full object-cover" src="/assets/pfm/crosssell-3.jpg" alt="" loading="lazy">
+            <div class="pm2-xsell-slide__scrim absolute inset-0 -z-1" aria-hidden="true"></div>
+            <div class="scheme-light inline-flex w-fit items-center rounded-full bg-canvas px-static-sm py-static-2xs">
+              <p-text size="x-small" color="primary">Beliebt</p-text>
             </div>
-            <div class="pm2-xsell-slide__text">
+            <div class="flex flex-col items-start gap-static-xs">
               <p-text size="medium" color="primary">Sport Chrono Paket</p-text>
               <p-text size="small" color="primary">Für den entscheidenden Moment.</p-text>
               <p-link-pure href="#" icon="arrow-right" class="mt-static-xs">Zum Konfigurator</p-link-pure>
@@ -294,17 +343,17 @@
       >
         <h2
           id="pm2-share-heading"
-          class="pm2-ghost-title pm2-ghost-title--small col-full justify-self-center text-center pointer-events-none"
+          class="pm2-ghost-title pm2-ghost-title--small absolute inset-x-0 top-[clamp(24px,3vw,72px)] z-0 col-full mt-0 justify-self-center text-center pointer-events-none"
         >
           <span class="block">Freude, die</span>
           <span class="block">man teilt.</span>
         </h2>
 
-        <div class="pm2-share__content col-basic relative flex flex-col items-center gap-fluid-lg">
-          <div class="pm2-fan">
-            <img class="pm2-fan__card pm2-fan__card--left" src="/assets/911_targa.webp" alt="" loading="lazy">
-            <img class="pm2-fan__card pm2-fan__card--right" src="/assets/911_targa.webp" alt="" loading="lazy">
-            <img class="pm2-fan__card pm2-fan__card--center" src="/assets/911_targa.webp" alt="" loading="lazy">
+        <div class="col-basic relative z-1 flex flex-col items-center gap-fluid-lg pt-[clamp(70px,17vw,400px)]">
+          <div class="pm2-fan relative flex w-full justify-center h-[clamp(320px,34vw,480px)]">
+            <img class="pm2-fan__card pm2-fan__card--left" src="/assets/pfm/share-card.png" alt="" loading="lazy">
+            <img class="pm2-fan__card pm2-fan__card--right" src="/assets/pfm/share-card.png" alt="" loading="lazy">
+            <img class="pm2-fan__card pm2-fan__card--center" src="/assets/pfm/share-card.png" alt="" loading="lazy">
           </div>
 
           <p-text
@@ -313,7 +362,7 @@
             size="large"
             color="contrast-high"
             align="center"
-            class="max-w-150"
+            class="max-w-[70ch]"
           >
             Ein 911 ist ein Gefühl – und Vorfreude wird schöner, wenn man sie teilt. Zeigen Sie Ihren
             Liebsten, worauf Sie sich freuen.
@@ -332,9 +381,9 @@
       <!-- "Praktisches für Ihren Weg zum 911." — dark rounded panel with two service items. -->
       <section class="col-full grid grid-cols-subgrid py-fluid-2xl scheme-dark" aria-label="Praktisches für Ihren Weg zum 911">
         <div class="col-extended" data-animation="fade-in-up">
-          <div class="pm2-practical rounded-3xl bg-canvas p-fluid-xl">
+          <div class="rounded-3xl bg-surface p-fluid-xl">
             <div class="grid gap-fluid-xl md:grid-cols-2">
-              <p-heading tag="h2" size="x-large" color="primary">Praktisches für Ihren Weg zum 911.</p-heading>
+              <p-heading class="max-w-[42ch]" tag="h2" size="x-large" color="primary">Praktisches für Ihren Weg zum 911.</p-heading>
 
               <div class="flex flex-col gap-fluid-xl">
                 <div class="flex flex-col items-start gap-fluid-md">
@@ -368,11 +417,41 @@
           </div>
         </div>
       </section>
+
+      <!-- "Ihr persönlicher Ansprechpartner" — inline contact block: advisor profile + contact details. -->
+      <section class="col-full grid grid-cols-subgrid pt-fluid-md pb-fluid-2xl scheme-dark" aria-label="Ihr persönlicher Ansprechpartner">
+        <div class="col-basic flex flex-col items-center gap-fluid-lg text-center" data-animation="fade-in-up">
+          <img
+            src="/assets/pfm/advisor.jpg"
+            alt="Scott Lee"
+            class="h-[104px] w-[104px] shrink-0 rounded-full object-cover"
+            style="object-position: 50% 28%"
+          >
+
+          <div class="flex flex-col items-center gap-static-sm">
+            <p-heading tag="h2" size="x-large" color="primary" align="center">Herr Niessner,<br>Scott Lee ist für Sie da.</p-heading>
+            <p-text size="small" color="contrast-medium" align="center">Verkaufsberater · Porsche Zentrum Stuttgart</p-text>
+            <div class="flex flex-wrap items-center justify-center gap-static-md">
+              <p-link-pure icon="phone" size="small" underline="true">
+                <a href="tel:071199523991">0711 99523991</a>
+              </p-link-pure>
+              <p-link-pure icon="email" size="small" underline="true">
+                <a href="mailto:scott.lee@porsche-stuttgart.de">scott.lee@porsche-stuttgart.de</a>
+              </p-link-pure>
+            </div>
+          </div>
+
+          <p-text size="medium" color="contrast-medium" align="center" class="max-w-[60ch]">
+            Von der Bestätigung bis zur Schlüsselübergabe begleitet Sie Ihr persönlicher Ansprechpartner –
+            direkt, unkompliziert und mit einem offenen Ohr für jede Frage zu Ihrem 911 Targa.
+          </p-text>
+        </div>
+      </section>
     </main>
 
     <!-- Global Porsche footer — trimmed on purpose: this is a single-purpose confirmation page (no
          shop/region relevance), so only the legal/consumption text and the wordmark remain. -->
-    <footer class="grid-template py-fluid-lg bg-surface">
+    <footer class="grid-template py-fluid-lg bg-canvas">
       <article class="col-extended mt-fluid-sm grid gap-fluid-md" aria-label="Consumption and emission information">
         <p-text size="2xs" color="contrast-medium">
           The consumption and emission values stated were determined in accordance with the legally
@@ -423,25 +502,34 @@
     </footer>
 
     <!-- Sticky floating contact bar — slides up once the hero has scrolled out of view. -->
-    <div class="pm2-contact-bar" data-contact-bar aria-hidden="true">
-      <div class="pm2-contact-bar__inner">
-        <button type="button" class="pm2-contact-bar__avatar" data-open-flyout aria-label="Details zu Ihrem Ansprechpartner anzeigen">
-          <p-icon name="user" color="primary"></p-icon>
+    <div class="pm2-contact-bar fixed inset-x-0 bottom-0 z-50 flex justify-center px-fluid-md pb-fluid-md" data-contact-bar aria-hidden="true">
+      <div class="pm2-contact-bar__inner flex max-w-full items-center gap-static-sm rounded-xl bg-frosted backdrop-blur-[32px] py-static-sm pr-static-md pl-static-sm">
+        <button type="button" class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border-none cursor-pointer bg-contrast-low" data-open-flyout aria-label="Details zu Ihrem Ansprechpartner anzeigen">
+          <img src="/assets/pfm/advisor.jpg" alt="Scott Lee" class="size-full rounded-lg object-cover" style="object-position: 50% 28%">
         </button>
-        <div class="pm2-contact-bar__text">
+        <div class="flex flex-col leading-[1.2]">
           <p-text size="small" weight="semi-bold" color="primary">Scott Lee</p-text>
-          <p-text size="x-small" color="contrast-medium" class="pm2-contact-bar__subline">Verkaufsberater · Porsche Zentrum Stuttgart</p-text>
+          <p-text size="x-small" color="contrast-medium" class="pm2-contact-bar__subline max-[640px]:hidden">Verkaufsberater · Porsche Zentrum Stuttgart</p-text>
         </div>
-        <p-button type="button" icon="none" compact="true" data-open-flyout>Berater kontaktieren</p-button>
+        <p-button type="button" icon="none" compact="true" class="ml-static-md" data-open-flyout>Berater kontaktieren</p-button>
       </div>
     </div>
 
     <!-- Advisor flyout: contact details + a mocked message form (no real submission — demo only). -->
-    <p-flyout id="pm2-flyout" open="false" footer-behavior="fixed" aria='{ "aria-label": "Ihr Ansprechpartner" }'>
+    <p-flyout
+      id="pm2-flyout"
+      open="false"
+      footer-behavior="fixed"
+      style="--p-flyout-width: clamp(360px, 34vw, 500px)"
+      aria='{ "aria-label": "Ihr Ansprechpartner" }'
+    >
       <div class="flex flex-col gap-fluid-md pt-static-md">
-        <div class="flex flex-col gap-static-2xs">
-          <p-heading tag="h2" size="large">Scott Lee</p-heading>
-          <p-text size="small" color="contrast-medium">Verkaufsberater</p-text>
+        <div class="flex items-center gap-static-md">
+          <img src="/assets/pfm/advisor.jpg" alt="Scott Lee" class="h-[72px] w-[72px] shrink-0 rounded-lg object-cover" style="object-position: 50% 28%">
+          <div class="flex flex-col gap-static-2xs">
+            <p-heading tag="h2" size="large">Scott Lee</p-heading>
+            <p-text size="small" color="contrast-medium">Verkaufsberater</p-text>
+          </div>
         </div>
 
         <p-text size="medium">
