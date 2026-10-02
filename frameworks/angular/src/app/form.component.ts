@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   type AbstractControl,
   FormControl,
@@ -11,9 +11,7 @@ import { PorscheDesignSystemModule } from '@porsche-design-system/components-ang
 
 @Component({
   selector: 'app-form-page',
-  standalone: true,
   imports: [ReactiveFormsModule, PorscheDesignSystemModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="col-wide grid grid-cols-subgrid gap-y-fluid-md">
       <p-heading class="col-wide">Register</p-heading>

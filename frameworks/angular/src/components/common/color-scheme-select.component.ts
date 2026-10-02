@@ -1,13 +1,11 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PorscheDesignSystemModule, type SelectChangeEventDetail } from '@porsche-design-system/components-angular';
 import type { ColorScheme } from '../../models/colorScheme';
 import { ColorSchemeService } from '../../services/color-scheme.service';
 
 @Component({
   selector: 'color-scheme-select',
-  standalone: true,
   imports: [PorscheDesignSystemModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <p-select name="color-scheme" [value]="colorSchemeService.colorScheme()" label="Color Scheme" [compact]="true"
               class="w-48"

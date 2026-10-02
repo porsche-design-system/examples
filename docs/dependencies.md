@@ -121,7 +121,7 @@ Angular is a normal npm workspace (`frameworks/angular`) with its own `package.j
 consumes the **published** `@porsche-design-system/components-angular` package, plain `ng update` works here — no custom
 wrapper script is needed.
 
-- **Version ranges** (`@angular/*`, `@angular/build`, `@angular/cli`, `@angular/compiler-cli`, `zone.js`) are owned by
+- **Version ranges** (`@angular/*`, `@angular/build`, `@angular/cli`, `@angular/compiler-cli`) are owned by
   `syncpack`. Bump them **first** via `npm run npm:update` (pick the `@angular/*` family together so they move in
   lockstep), then `npm install` from the repo root. Keep `typescript` within Angular's supported `MAX_TS_VERSION`
   ceiling.
@@ -146,7 +146,8 @@ for tests and the **committed VRT snapshots**:
 1. Bump the `@playwright/test` range across the workspaces (e.g. with `npm run npm:lint:fix` after editing one
    `package.json`), then run `npm install`.
 2. Update the Playwright Docker image tag (`mcr.microsoft.com/playwright:vX.Y.Z`) in
-   [`docker-compose.yml`](../docker-compose.yml) to match. A mismatch between the installed Playwright and the Docker
-   image makes the tests fail.
+   [`docker-compose.yml`](../docker-compose.yml) and in the CI jobs of
+   [`.github/workflows/contribution.yml`](../.github/workflows/contribution.yml) to match. A mismatch between the
+   installed Playwright and the Docker image makes the tests fail.
 3. Regenerate and verify the committed VRT snapshots in Docker (`./docker.sh npm run test:vrt:patterns`) so browser
    binaries and screenshots stay in sync.
