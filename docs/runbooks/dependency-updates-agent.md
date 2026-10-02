@@ -196,8 +196,9 @@ Keep these on the **same** version (npm `X.Y.Z` ↔ image `vX.Y.Z`):
 
 1. The `@playwright/test` range in the workspace `package.json` files (use `npm run npm:lint:fix` to align them), then
    `npm install`.
-2. The Docker image reference `mcr.microsoft.com/playwright:vX.Y.Z` in [`docker-compose.yml`](../../docker-compose.yml).
-   A mismatch between the installed Playwright and the Docker image makes the tests fail.
+2. The Docker image reference `mcr.microsoft.com/playwright:vX.Y.Z` in [`docker-compose.yml`](../../docker-compose.yml)
+   and in the CI jobs of [`.github/workflows/contribution.yml`](../../.github/workflows/contribution.yml). A mismatch
+   between the installed Playwright and the Docker image makes the tests fail.
 3. Regenerate and verify the committed VRT snapshots in Docker:
 
    ```bash
