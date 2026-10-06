@@ -157,6 +157,10 @@ main.grid-template {
 
 .pm2-hero--no-video .pm2-hero-red-wash {
   top: 0;
+  /* No video to lead the mount sequence here — the wash is the whole hero background and must be
+     painted immediately so it matches the already-solid red chapter below (no delayed fade-in). */
+  opacity: 1;
+  transition: none;
 }
 
 /* No-video: the car leads the chapter and is pulled up so it cuts into the ghost title's 2nd line. */
