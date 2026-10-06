@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="de" class="scheme-dark bg-canvas">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personalized Mailing (Template)">
+    <title>Personalized Mailing (Template)</title>
+    <!-- Critical inline styles: paint the dark canvas and hide undefined components before the bundle
+         loads (prevents FOUC/flash). -->
+    <style>:root{color-scheme:dark}html{background-color:#010205}:not(:defined){visibility:hidden}</style>
+    <!-- Render-blocking stylesheet: applied before first paint so plain markup never flashes unstyled
+         (unlike a JS-injected import). -->
+    <script type="module" crossorigin src="/examples/pr-293/templates/assets/personalized-mailing-3-CA7weJPm.js"></script>
+    <link rel="modulepreload" crossorigin href="/examples/pr-293/templates/assets/modulepreload-polyfill-P2Xu9kJm.js">
+    <link rel="stylesheet" crossorigin href="/examples/pr-293/templates/assets/personalized-mailing-3-dkQqGaNM.css">
+  <link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.8.0.c21a593e29d87dc35fa9.js as=script crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.heading.ddda6725e405a3cb8653.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.text.0db9f426cfb4a8d7eef2.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.carousel.4afeecbf8a8bed693e96.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-tile.7a1376a1361be914359c.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link-pure.fa5f2c2b3c2343b89e90.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.link.02f38d4eb5185b395b55.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.model-signature.12979e3fd96fd38a8679.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.segmented-control.c42a19d2c806bcac8b4c.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.tabs-bar.cb4fbab1218f75cb8294.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.tag.92eacdceea7805c595a7.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.button.224478cae698f40af408.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.button-pure.d3a330ca096ab5a284b8.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.icon.510d9db873709eb43b2b.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.wordmark.da76d0c365632cead687.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.divider.31a16606e418072aedf7.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.flyout.07a38a256d0ea79dac03.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.modal.743dc779c402f5528201.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.input-text.651fa0500930a871b58e.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.input-email.47b882f8ffb4ee5aa561.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.textarea.fad8ff8d0214f6a4320d.js as=script><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2 as=font type=font/woff2 crossorigin><link rel=prefetch href=https://cdn.ui.porsche.com/porsche-design-system/icons/arrow-right.872716b.svg as=image type=image/svg+xml crossorigin><meta property=og:title content="Examples by Porsche Design System"><meta property=og:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=twitter:title content="Examples by Porsche Design System"><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/og-image.c880d39.png><meta name=theme-color content=#FFF media=(prefers-color-scheme:light)><meta name=theme-color content=#0E1418 media=(prefers-color-scheme:dark)><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Examples by Porsche Design System"><meta name=msapplication-TileImage content=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/mstile-270x270.f58081f.png><meta name=msapplication-TileColor content=#FFF><link rel=icon sizes=any href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon.ed9a926.ico><link rel=icon type=image/png sizes=32x32 href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/favicon-32x32.d42ac28.png><link rel=apple-touch-icon href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/apple-touch-icon-180x180.bdf11cc.png><link rel=manifest href=https://cdn.ui.porsche.com/porsche-design-system/meta-icons/manifest.3bef07b.webmanifest></head>
+
+  <body>
+    <!-- Hidden dev menu: swap Hero variants (not part of the actual design, purely for review). -->
+    <button
+      type="button"
+      id="pm2-dev-menu-toggle"
+      class="pm2-dev-menu-toggle"
+      aria-label="Dev-Menü: Hero-Varianten"
+    >
+      <p-icon name="wrench" color="contrast-medium" size="x-small" aria-hidden="true"></p-icon>
+    </button>
+    <div id="pm2-dev-menu" class="pm2-dev-menu" hidden>
+      <p-text size="x-small" weight="semi-bold" color="contrast-medium">DEV · Hero-Varianten</p-text>
+      <div class="pm2-dev-menu__list">
+        <button type="button" class="pm2-dev-menu__item" data-variant="fullbleedCenter">1 · Mit Video</button>
+        <button type="button" class="pm2-dev-menu__item" data-variant="noVideo">2 · Ohne Video</button>
+      </div>
+    </div>
+
+    <main class="grid-template">
+      <!-- Hero: scroll-driven video card (widens to full-bleed once it reaches the viewport top) with
+           a giant ghost-type title behind it and a personalised caption on top. -->
+      <section
+        id="pm2-hero"
+        class="pm2-hero scheme-dark col-full grid grid-cols-subgrid relative overflow-hidden bg-surface"
+        aria-labelledby="pm2-hero-heading"
+      >
+        <div class="pm2-hero-red-wash absolute inset-x-0 bottom-0 top-[62vh] z-0 pointer-events-none" aria-hidden="true"></div>
+
+        <h1
+          id="pm2-hero-heading"
+          class="pm2-ghost-title absolute inset-x-0 top-0 z-1 col-full mt-[16vh] justify-self-center text-center pointer-events-none"
+        >
+          <span class="block">Eine Wahl</span>
+          <span class="block">mit Charakter</span>
+        </h1>
+
+        <div id="pm2-video-wrap" class="pm2-video-wrap absolute z-10 overflow-hidden col-full">
+          <video
+            id="pm2-video"
+            class="absolute inset-0 size-full object-cover"
+            poster="/examples/pr-293/templates/assets/pfm/hero-poster.webp"
+            autoplay
+            muted
+            loop
+            playsinline
+            aria-hidden="true"
+          >
+            <source src="/examples/pr-293/templates/assets/pfm/hero.mp4" type="video/mp4">
+          </video>
+          <div id="pm2-video-scrim" class="pm2-video-scrim absolute inset-0" aria-hidden="true"></div>
+
+          <div id="pm2-video-caption" class="pm2-video-caption absolute inset-x-0 top-0 flex flex-col items-center text-center p-fluid-xl" data-animation="fade-in-up">
+            <p-heading tag="h2" size="2xl" color="primary" align="center">Herr Niessner, Ihr 911 Targa.</p-heading>
+            <p-text class="mt-fluid-sm max-w-[60ch]" size="medium" color="contrast-medium" align="center">
+              Gemeinsam mit Ihrem Porsche Zentrum konfiguriert – abgestimmt auf Ihren Stil, in Karminrot.
+              Ihr persönliches Roadmovie, Herr Niessner.
+            </p-text>
+          </div>
+
+          <button
+            id="pm2-video-toggle"
+            type="button"
+            class="absolute right-[var(--p-spacing-fluid-xl)] bottom-[var(--p-spacing-fluid-xl)] flex h-14 w-14 max-sm:h-11 max-sm:w-11 items-center justify-center rounded-full border-none cursor-pointer bg-frosted backdrop-blur-[32px] transition-transform hover:scale-105"
+            aria-label="Video pausieren"
+            data-playing="true"
+          >
+            <p-icon name="pause" color="primary" aria-hidden="true"></p-icon>
+          </button>
+        </div>
+
+        <div class="pm2-wordmark absolute inset-x-0 top-0 z-20 pt-fluid-lg pointer-events-none col-full flex justify-center">
+          <p-wordmark aria='{ "aria-label": "Porsche" }'></p-wordmark>
+        </div>
+
+        <div class="pm2-scroll-hint fixed inset-x-0 bottom-[var(--p-spacing-fluid-md)] z-20 flex justify-center">
+          <p-button-pure
+            type="button"
+            icon="arrow-down"
+            hide-label="true"
+            size="medium"
+            id="pm2-scroll-next"
+          >Nach unten scrollen</p-button-pure
+          >
+        </div>
+      </section>
+
+      <!-- "Ein neues Kapitel": intro lead + configured car cutout + count-up KPIs on Karminrot. -->
+      <section
+        class="pm2-chapter col-full grid grid-cols-subgrid scheme-dark py-fluid-2xl relative z-1 bg-[#c4001a] rounded-b-[clamp(28px,4vw,56px)]"
+        aria-labelledby="pm2-chapter-heading"
+      >
+        <div class="col-narrow flex flex-col items-center gap-fluid-lg text-center">
+          <p-text data-animation="fade-in-up" size="large" align="center" class="max-w-[70ch]">
+            Ihr 911 Targa in Karminrot ist bei uns eingegangen – eine Kombination, die Haltung zeigt.
+            Jetzt beginnt der schönste Teil: der Weg zu Ihrem Porsche. Machen Sie den nächsten Schritt
+            und sprechen Sie mit Ihrem persönlichen Ansprechpartner.
+          </p-text>
+
+          <div
+            class="pm2-car-stage relative w-full max-w-[1020px]"
+            data-animation="fade-in-up"
+            style="--pm-delay: var(--p-duration-sm)"
+          >
+            <p-model-signature
+              class="absolute left-1/2 top-2/5 w-4/5 max-w-[900px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+              model="911"
+              color="contrast-low"
+              size="inherit"
+              aria-hidden="true"
+            ></p-model-signature>
+            <img
+              class="relative z-1 w-full"
+              src="/examples/pr-293/templates/assets/pfm/chapter-car.png"
+              alt="Ihr 911 Targa in Karminrot, Frontansicht"
+            >
+          </div>
+
+          <div
+            class="pm2-chapter-headline flex flex-col items-center gap-fluid-sm max-w-[70ch]"
+            data-animation="fade-in-up"
+            style="--pm-delay: calc(var(--p-duration-sm) * 2)"
+          >
+            <p-heading id="pm2-chapter-heading" tag="h2" size="x-large" align="center">
+              Ein neues Kapitel
+            </p-heading>
+            <p-text size="medium" color="contrast-high" align="center">
+              Seit 1963 bewegt der 911 Menschen – über Generationen hinweg. Ihr Targa schreibt dieses
+              Kapitel weiter. Manche Autos werden bewundert. Ihres bleibt in Erinnerung.
+            </p-text>
+          </div>
+
+          <!-- Motorsound player: play + "Sportabgasanlage" by default; on play the pill widens and the
+               waveform crossfades in place of the title (see style.css + main.js). -->
+          <div
+            class="pm2-sound-player flex items-center rounded-full bg-frosted backdrop-blur-frosted py-static-xs pr-static-md pl-static-xs"
+            data-animation="fade-in-up"
+            style="--pm-delay: calc(var(--p-duration-sm) * 2)"
+          >
+            <p-button id="pm2-sound-toggle" type="button" icon="play-filled" hide-label="true">Motorsound abspielen</p-button>
+            <div class="pm2-sound-player__swap">
+              <p-text class="pm2-sound-player__title" size="small" color="primary">Sportabgasanlage</p-text>
+              <div class="pm2-sound-player__wave" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <!-- biome-ignore lint/a11y/useMediaCaption: engine-sound sample (Sportabgasanlage), no spoken content to caption -->
+            <audio id="pm2-sound-audio" src="/examples/pr-293/templates/assets/pfm/motorsound.mp3" preload="none"></audio>
+          </div>
+
+          <div
+            class="pm2-kpis w-full max-w-[1000px] gap-fluid-lg"
+            data-animation="fade-in-up"
+            style="--pm-delay: calc(var(--p-duration-sm) * 3)"
+          >
+            <div class="flex flex-col items-center text-center">
+              <div class="flex items-end gap-static-xs">
+                <p-text size="3xl" color="primary"><span data-countup="9000" data-decimals="0">0</span></p-text>
+                <p-text size="small" weight="semi-bold" color="primary" class="pb-[9px]">1/min</p-text>
+              </div>
+              <p-text size="small" color="contrast-medium" align="center" class="mt-static-xs">Maximaldrehzahl</p-text>
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <div class="flex items-end gap-static-xs">
+                <p-text size="3xl" color="primary"><span data-countup="3.9" data-decimals="1">0</span></p-text>
+                <p-text size="small" weight="semi-bold" color="primary" class="pb-[9px]">s</p-text>
+              </div>
+              <p-text size="small" color="contrast-medium" align="center" class="mt-static-xs">Beschleunigung 0–100 km/h</p-text>
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <div class="flex items-end gap-static-xs">
+                <p-text size="3xl" color="primary"><span data-countup="375" data-decimals="0">0</span></p-text>
+                <p-text size="small" weight="semi-bold" color="primary" class="pb-[9px]">kW</p-text>
+                <p-text size="3xl" color="primary">/</p-text>
+                <p-text size="3xl" color="primary"><span data-countup="510" data-decimals="0">0</span></p-text>
+                <p-text size="small" weight="semi-bold" color="primary" class="pb-[9px]">PS</p-text>
+              </div>
+              <p-text size="small" color="contrast-medium" align="center" class="mt-static-xs">Leistung (kW) / Leistung (PS)</p-text>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mosaik: what makes this configuration unique — 3 static highlight tiles. -->
+      <section
+        class="pm2-mosaic col-full grid grid-cols-subgrid gap-y-fluid-xl py-fluid-2xl scheme-dark mt-[calc(-1*clamp(28px,4vw,56px))]"
+        aria-labelledby="pm2-mosaic-heading"
+      >
+        <div class="col-basic flex flex-col items-center gap-fluid-sm text-center" data-animation="fade-in-up">
+          <p-heading id="pm2-mosaic-heading" tag="h2" size="x-large" align="center">
+            Was Ihren 911 Targa ausmacht.
+          </p-heading>
+          <p-text size="medium" color="contrast-high" align="center" class="max-w-[70ch]">
+            Die Ausstattung, für die Sie sich entschieden haben – eine Kombination, die es in dieser
+            Form kein zweites Mal gibt.
+          </p-text>
+        </div>
+
+        <div class="col-extended grid grid-cols-1 gap-fluid-md md:grid-cols-2 md:items-start">
+          <div
+            class="relative isolate flex aspect-[3/4] flex-col justify-end overflow-hidden rounded-3xl"
+            data-animation="fade-in-up"
+            style="--pm-delay: var(--p-duration-sm)"
+          >
+            <img
+              class="absolute inset-0 -z-1 size-full object-cover"
+              src="/examples/pr-293/templates/assets/pfm/mosaic-1.png"
+              alt=""
+              loading="lazy"
+            >
+            <div class="flex flex-col gap-static-xs p-fluid-md">
+              <p-text size="small" color="contrast-high">Außenfarbe</p-text>
+              <p-text size="large" color="primary">Karminrot</p-text>
+            </div>
+          </div>
+          <div class="flex flex-col gap-fluid-md">
+            <div
+              class="relative isolate flex aspect-[748/477] flex-col justify-end overflow-hidden rounded-3xl"
+              data-animation="fade-in-up"
+              style="--pm-delay: calc(var(--p-duration-sm) * 2)"
+            >
+              <img
+                class="absolute inset-0 -z-1 size-full object-cover"
+                src="/examples/pr-293/templates/assets/pfm/mosaic-2.png"
+                alt=""
+                loading="lazy"
+              >
+              <div class="flex flex-col gap-static-xs p-fluid-md">
+                <p-text size="small" color="contrast-high">Innenfarbe &amp; Material</p-text>
+                <p-text size="large" color="primary">Karminrot Lederausstattung</p-text>
+              </div>
+            </div>
+            <div
+              class="relative isolate flex aspect-[748/477] flex-col justify-end overflow-hidden rounded-3xl"
+              data-animation="fade-in-up"
+              style="--pm-delay: calc(var(--p-duration-sm) * 3)"
+            >
+              <img
+                class="absolute inset-0 -z-1 size-full object-cover"
+                src="/examples/pr-293/templates/assets/pfm/mosaic-3.png"
+                alt=""
+                loading="lazy"
+              >
+              <div class="flex flex-col gap-static-xs p-fluid-md">
+                <p-text size="small" color="contrast-high">Exterieur</p-text>
+                <p-text size="large" color="primary">Sportabgasanlage (Endrohrblenden in schwarz)</p-text>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-basic flex justify-center"
+          data-animation="fade-in-up"
+          style="--pm-delay: calc(var(--p-duration-sm) * 4)"
+        >
+          <p-button type="button" icon="arrow-right">Zum Konfigurator</p-button>
+        </div>
+      </section>
+
+      <!-- Cross-Sell: "Erweitern Sie Ihren Traum." — ghost-type title + carousel of add-on options. -->
+      <section
+        class="pm2-crosssell col-full grid grid-cols-subgrid gap-y-fluid-md scheme-dark relative overflow-hidden pb-fluid-2xl"
+        aria-labelledby="pm2-crosssell-heading"
+      >
+        <h2
+          id="pm2-crosssell-heading"
+          class="pm2-ghost-title pm2-ghost-title--small absolute inset-x-0 top-[clamp(24px,3vw,72px)] z-0 col-full mt-0 justify-self-center text-center pointer-events-none"
+        >
+          <span class="block">Erweitern Sie</span>
+          <span class="block">Ihren Traum.</span>
+        </h2>
+
+        <div class="pm2-crosssell__lead col-extended relative" data-animation="fade-in-up">
+          <p-text size="large" color="contrast-high" class="max-w-[460px]">
+            Ausstattungen, die andere Fahrer am 911 Targa besonders schätzen.
+          </p-text>
+        </div>
+
+        <p-carousel
+          class="pm2-crosssell__carousel col-full relative"
+          data-animation="fade-in-up"
+          style="--pm-delay: var(--p-duration-sm)"
+          width="extended"
+          slides-per-page='{ "base": 1, "s": 2 }'
+          pagination="true"
+          rewind="true"
+          aria='{ "aria-label": "Empfohlene Ausstattungen" }'
+        >
+          <article class="relative isolate flex aspect-16/10 flex-col items-start justify-between overflow-hidden rounded-3xl p-fluid-md">
+            <img class="absolute inset-0 -z-1 size-full object-cover" src="/examples/pr-293/templates/assets/pfm/xsell-burmester.webp" alt="" loading="lazy">
+            <div class="pm2-xsell-slide__scrim absolute inset-0 -z-1" aria-hidden="true"></div>
+            <div class="scheme-light inline-flex w-fit items-center rounded-full bg-canvas px-static-sm py-static-2xs">
+              <p-text size="x-small" color="primary">Beliebt</p-text>
+            </div>
+            <div class="flex flex-col items-start gap-static-xs">
+              <p-text size="medium" color="primary">Burmester® High-End Surround Sound System</p-text>
+              <p-text size="small" color="primary">Ihr Klangerlebnis, perfektioniert.</p-text>
+              <p-link-pure href="#" icon="arrow-right" class="mt-static-xs">Zum Konfigurator</p-link-pure>
+            </div>
+          </article>
+          <article class="relative isolate flex aspect-16/10 flex-col items-start justify-between overflow-hidden rounded-3xl p-fluid-md">
+            <img class="absolute inset-0 -z-1 size-full object-cover" src="/examples/pr-293/templates/assets/pfm/led.png" alt="" loading="lazy">
+            <div class="pm2-xsell-slide__scrim absolute inset-0 -z-1" aria-hidden="true"></div>
+            <div class="scheme-light inline-flex w-fit items-center rounded-full bg-canvas px-static-sm py-static-2xs">
+              <p-text size="x-small" color="primary">Beliebt</p-text>
+            </div>
+            <div class="flex flex-col items-start gap-static-xs">
+              <p-text size="medium" color="primary">HD-Matrix LED-Hauptscheinwerfer</p-text>
+              <p-text size="small" color="primary">Präzises Licht für jede Situation.</p-text>
+              <p-link-pure href="#" icon="arrow-right" class="mt-static-xs">Zum Konfigurator</p-link-pure>
+            </div>
+          </article>
+          <article class="relative isolate flex aspect-16/10 flex-col items-start justify-between overflow-hidden rounded-3xl p-fluid-md">
+            <img class="absolute inset-0 -z-1 size-full object-cover" src="/examples/pr-293/templates/assets/pfm/crosssell-3.webp" alt="" loading="lazy">
+            <div class="pm2-xsell-slide__scrim absolute inset-0 -z-1" aria-hidden="true"></div>
+            <div class="scheme-light inline-flex w-fit items-center rounded-full bg-canvas px-static-sm py-static-2xs">
+              <p-text size="x-small" color="primary">Beliebt</p-text>
+            </div>
+            <div class="flex flex-col items-start gap-static-xs">
+              <p-text size="medium" color="primary">Sport Chrono Paket</p-text>
+              <p-text size="small" color="primary">Für den entscheidenden Moment.</p-text>
+              <p-link-pure href="#" icon="arrow-right" class="mt-static-xs">Zum Konfigurator</p-link-pure>
+            </div>
+          </article>
+        </p-carousel>
+      </section>
+
+      <!-- "Expertenmeinungen & Testberichte" — ghost-type title + grid of video testimonials.
+           Each card opens its YouTube clip in a p-modal (see #pm2-video-modal + main.js). -->
+      <section
+        class="pm2-voices col-full grid grid-cols-subgrid scheme-dark relative overflow-hidden pt-[calc(var(--spacing-fluid-2xl)_*_2)] pb-fluid-2xl bg-surface"
+        aria-labelledby="pm2-voices-heading"
+      >
+        <h2
+          id="pm2-voices-heading"
+          class="pm2-ghost-title pm2-ghost-title--5xl absolute inset-x-0 top-[calc(clamp(24px,3vw,72px)_+_var(--spacing-fluid-2xl))] z-0 col-full mt-0 justify-self-center text-center pointer-events-none"
+        >
+          <span class="block">Expertenmeinungen</span>
+          <span class="block">&amp; Testberichte.</span>
+        </h2>
+
+        <div class="col-extended relative z-1 grid gap-fluid-md md:grid-cols-2 pt-[clamp(20px,3vw,120px)]">
+          <div
+            class="pm2-voice-card flex w-full cursor-pointer items-center gap-fluid-md rounded-lg bg-frosted p-fluid-sm backdrop-blur-frosted"
+            data-video-id="oK9JB7SpZWw"
+            data-animation="fade-in-up"
+          >
+            <div class="relative isolate aspect-16/9 shrink-0 grow-0 basis-[clamp(120px,38%,340px)] overflow-hidden rounded-md">
+              <img class="absolute inset-0 size-full object-cover" src="https://img.youtube.com/vi/oK9JB7SpZWw/hqdefault.jpg" alt="" loading="lazy">
+              <p-button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" type="button" icon="play-filled" hide-label="true">Video abspielen: Porsche 911 Targa im Test – auto motor und sport</p-button>
+            </div>
+            <div class="flex flex-col gap-static-xs">
+              <p-text size="medium" color="primary">
+                „Die schönsten Schwarzwald-Sträßchen und der Porsche 911 – das passt einfach.“
+              </p-text>
+              <p-text size="small" color="contrast-medium">auto motor und sport</p-text>
+            </div>
+          </div>
+
+          <div
+            class="pm2-voice-card flex w-full cursor-pointer items-center gap-fluid-md rounded-lg bg-frosted p-fluid-sm backdrop-blur-frosted"
+            data-video-id="cYvm2S3pNp8"
+            data-animation="fade-in-up"
+            style="--pm-delay: var(--p-duration-sm)"
+          >
+            <div class="relative isolate aspect-16/9 shrink-0 grow-0 basis-[clamp(120px,38%,340px)] overflow-hidden rounded-md">
+              <img class="absolute inset-0 size-full object-cover" src="https://img.youtube.com/vi/cYvm2S3pNp8/hqdefault.jpg" alt="" loading="lazy">
+              <p-button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" type="button" icon="play-filled" hide-label="true">Video abspielen: 60 Jahre Porsche 911 Targa</p-button>
+            </div>
+            <div class="flex flex-col gap-static-xs">
+              <p-text size="medium" color="primary">
+                „60 Jahre Targa – eine Silhouette, die bis heute jeden Blick auf sich zieht.“
+              </p-text>
+              <p-text size="small" color="contrast-medium">Porsche</p-text>
+            </div>
+          </div>
+
+          <div
+            class="pm2-voice-card flex w-full cursor-pointer items-center gap-fluid-md rounded-lg bg-frosted p-fluid-sm backdrop-blur-frosted"
+            data-video-id="wUGx2ZcxZok"
+            data-animation="fade-in-up"
+            style="--pm-delay: calc(var(--p-duration-sm) * 2)"
+          >
+            <div class="relative isolate aspect-16/9 shrink-0 grow-0 basis-[clamp(120px,38%,340px)] overflow-hidden rounded-md">
+              <img class="absolute inset-0 size-full object-cover" src="https://img.youtube.com/vi/wUGx2ZcxZok/hqdefault.jpg" alt="" loading="lazy">
+              <p-button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" type="button" icon="play-filled" hide-label="true">Video abspielen: Porsche 911 Targa 4 GTS – Fahrbericht</p-button>
+            </div>
+            <div class="flex flex-col gap-static-xs">
+              <p-text size="medium" color="primary">
+                „Offen fahren ohne Kompromisse: Im Alltag bleibt der Targa erstaunlich souverän.“
+              </p-text>
+              <p-text size="small" color="contrast-medium">Fahrbericht</p-text>
+            </div>
+          </div>
+
+          <div
+            class="pm2-voice-card flex w-full cursor-pointer items-center gap-fluid-md rounded-lg bg-frosted p-fluid-sm backdrop-blur-frosted"
+            data-video-id="D6irwZDE1b4"
+            data-animation="fade-in-up"
+            style="--pm-delay: calc(var(--p-duration-sm) * 3)"
+          >
+            <div class="relative isolate aspect-16/9 shrink-0 grow-0 basis-[clamp(120px,38%,340px)] overflow-hidden rounded-md">
+              <img class="absolute inset-0 size-full object-cover" src="https://img.youtube.com/vi/D6irwZDE1b4/hqdefault.jpg" alt="" loading="lazy">
+              <p-button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" type="button" icon="play-filled" hide-label="true">Video abspielen: Porsche 911 Targa 4 GTS – Testbericht</p-button>
+            </div>
+            <div class="flex flex-col gap-static-xs">
+              <p-text size="medium" color="primary">
+                „Zwischen Sportwagen und Grand Tourer findet der Targa 4 GTS die perfekte Balance.“
+              </p-text>
+              <p-text size="small" color="contrast-medium">Testbericht</p-text>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- "Freude, die man teilt." — ghost-type title + a fan of share cards + a save action. -->
+      <section
+        class="pm2-share col-full grid grid-cols-subgrid scheme-dark relative overflow-hidden py-fluid-2xl bg-surface"
+        aria-labelledby="pm2-share-heading"
+      >
+        <h2
+          id="pm2-share-heading"
+          class="pm2-ghost-title pm2-ghost-title--small absolute inset-x-0 top-[clamp(24px,3vw,72px)] z-0 col-full mt-0 justify-self-center text-center pointer-events-none"
+        >
+          <span class="block">Freude, die</span>
+          <span class="block">man teilt.</span>
+        </h2>
+
+        <div class="col-basic relative z-1 flex flex-col items-center gap-fluid-lg pt-[clamp(70px,17vw,400px)]">
+          <div class="pm2-fan relative flex w-full justify-center h-[clamp(320px,34vw,480px)]">
+            <img class="pm2-fan__card pm2-fan__card--left" src="/examples/pr-293/templates/assets/pfm/share-card.png" alt="" loading="lazy">
+            <img class="pm2-fan__card pm2-fan__card--right" src="/examples/pr-293/templates/assets/pfm/share-card.png" alt="" loading="lazy">
+            <img class="pm2-fan__card pm2-fan__card--center" src="/examples/pr-293/templates/assets/pfm/share-card.png" alt="" loading="lazy">
+          </div>
+
+          <p-text
+            data-animation="fade-in-up"
+            style="--pm-delay: var(--p-duration-sm)"
+            size="large"
+            color="contrast-high"
+            align="center"
+            class="max-w-[70ch]"
+          >
+            Ein 911 ist ein Gefühl – und Vorfreude wird schöner, wenn man sie teilt. Zeigen Sie Ihren
+            Liebsten, worauf Sie sich freuen.
+          </p-text>
+
+          <p-button
+            data-animation="fade-in-up"
+            style="--pm-delay: calc(var(--p-duration-sm) * 2)"
+            type="button"
+            icon="download"
+          >Speichern</p-button
+          >
+        </div>
+      </section>
+
+      <!-- "Praktisches für Ihren Weg zum 911." — dark rounded panel with two service items. -->
+      <section class="col-full grid grid-cols-subgrid py-fluid-2xl scheme-dark" aria-label="Praktisches für Ihren Weg zum 911">
+        <div class="col-basic flex flex-col items-center gap-fluid-lg text-center" data-animation="fade-in-up">
+          <p-heading class="max-w-[42ch]" tag="h2" size="x-large" color="primary" align="center">
+            Praktisches für Ihren Weg zum 911.
+          </p-heading>
+        </div>
+
+        <div class="col-basic mt-fluid-lg grid grid-cols-1 gap-fluid-md md:grid-cols-2">
+          <div class="relative isolate flex aspect-square md:aspect-[3/4] flex-col justify-end overflow-hidden rounded-xl" data-animation="fade-in-up">
+            <img
+              class="absolute inset-0 -z-1 size-full object-cover"
+              src="/examples/pr-293/templates/assets/pfm/practical-finance.webp"
+              alt=""
+              loading="lazy"
+              style="object-position: 75% 50%"
+            >
+            <div class="absolute inset-0 -z-1 bg-[linear-gradient(to_top,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0)_72%)]"></div>
+            <div class="flex flex-col items-start gap-fluid-md p-fluid-md text-left">
+              <div class="flex flex-col gap-static-sm">
+                <p-text size="x-small" weight="semi-bold" color="contrast-medium">Porsche Financial Services</p-text>
+                <p-text size="medium" color="primary">Ansichtssache.</p-text>
+                <p-text size="small" color="contrast-medium">
+                  Manche Träume liegen in weiter Ferne? Individuelle Raten für Ihren Targa –
+                  transparent gerechnet, ohne Umweg.
+                </p-text>
+              </div>
+              <p-button variant="secondary" icon="none" href="https://www.porsche.com/germany/accessoriesandservice/porschefinancialservices/finance/porschefinance/">
+                Optionen ansehen
+              </p-button>
+            </div>
+          </div>
+
+          <div class="relative isolate flex aspect-square md:aspect-[3/4] flex-col justify-end overflow-hidden rounded-xl" data-animation="fade-in-up" style="--pm-delay: var(--p-duration-sm)">
+            <img
+              class="absolute inset-0 -z-1 size-full object-cover"
+              src="/examples/pr-293/templates/assets/pfm/practical-insurance.webp"
+              alt=""
+              loading="lazy"
+            >
+            <div class="absolute inset-0 -z-1 bg-[linear-gradient(to_top,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0)_72%)]"></div>
+            <div class="flex flex-col items-start gap-fluid-md p-fluid-md text-left">
+              <div class="flex flex-col gap-static-sm">
+                <p-text size="x-small" weight="semi-bold" color="contrast-medium">Porsche Versicherung</p-text>
+                <p-text size="medium" color="primary">Was wäre wenn?</p-text>
+                <p-text size="small" color="contrast-medium">
+                  Sie das Hier und Jetzt genießen während wir uns um alles rund um Ihre
+                  Versicherung kümmern.
+                </p-text>
+              </div>
+              <p-button variant="secondary" icon="none" href="https://www.porsche.com/germany/accessoriesandservice/porschefinancialservices/insurance/">
+                Versicherungsoptionen ansehen
+              </p-button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- "Ihr persönlicher Ansprechpartner" — inline contact block: advisor profile + contact details. -->
+      <section class="col-full grid grid-cols-subgrid pt-fluid-md pb-fluid-2xl scheme-dark" aria-label="Ihr persönlicher Ansprechpartner">
+        <div class="col-basic flex flex-col items-center gap-fluid-lg text-center" data-animation="fade-in-up">
+          <img
+            src="/examples/pr-293/templates/assets/pfm/advisor.webp"
+            alt="Scott Lee"
+            class="h-[104px] w-[104px] shrink-0 rounded-full object-cover"
+            style="object-position: 50% 28%"
+          >
+
+          <div class="flex flex-col items-center gap-static-sm">
+            <p-heading tag="h2" size="x-large" color="primary" align="center">Herr Niessner,<br>Scott Lee ist für Sie da.</p-heading>
+            <p-text size="small" color="contrast-medium" align="center">Verkaufsberater · Porsche Zentrum Stuttgart</p-text>
+            <div class="flex flex-wrap items-center justify-center gap-static-md">
+              <p-link-pure icon="phone" size="small" underline="true">
+                <a href="tel:071199523991">0711 99523991</a>
+              </p-link-pure>
+              <p-link-pure icon="email" size="small" underline="true">
+                <a href="mailto:scott.lee@porsche-stuttgart.de">scott.lee@porsche-stuttgart.de</a>
+              </p-link-pure>
+            </div>
+          </div>
+
+          <p-text size="medium" color="contrast-medium" align="center" class="max-w-[60ch]">
+            Von der Bestätigung bis zur Schlüsselübergabe begleitet Sie Ihr persönlicher Ansprechpartner –
+            direkt, unkompliziert und mit einem offenen Ohr für jede Frage zu Ihrem 911 Targa.
+          </p-text>
+        </div>
+      </section>
+
+      <!-- PDS "Feedback" pattern (patterns/src/feedback/1), ported inline and translated. -->
+      <section class="col-full grid grid-cols-subgrid py-fluid-md scheme-dark" aria-label="Feedback">
+        <div class="col-extended max-w-prose grid gap-fluid-md justify-self-center">
+          <p-heading
+            id="feedback-question"
+            class="focus-visible:outline outline-focus outline-offset-2 rounded-md"
+            tag="h2"
+            size="md"
+            align="center"
+            tabindex="-1"
+          >
+            Wie zufrieden sind Sie mit den Informationen auf dieser Seite?
+          </p-heading>
+
+          <form id="feedback-form" class="grid gap-fluid-md justify-items-center">
+            <div class="w-full grid md:grid-cols-[auto_minmax(320px,1fr)_auto] items-center gap-static-md">
+              <p-text
+                class="max-sm:hidden row-2 md:row-auto col-1 md:col-auto justify-self-start"
+                size="small"
+                align="start"
+                color="contrast-medium"
+              >
+                Sehr unzufrieden
+              </p-text>
+              <p-segmented-control
+                id="feedback-rating"
+                class="row-1 md:row-auto col-span-2 md:col-auto"
+                columns="{base: 1, s: 5}"
+                label="Wählen Sie Ihre Zufriedenheit auf einer Skala von 1 (sehr unzufrieden) bis 5 (sehr zufrieden)"
+                hide-label="true"
+              >
+                <p-segmented-control-item value="1"
+                  >1 <span class="sm:sr-only">(sehr unzufrieden)</span></p-segmented-control-item
+                >
+                <p-segmented-control-item value="2"
+                  >2 <span class="sm:sr-only">(unzufrieden)</span></p-segmented-control-item
+                >
+                <p-segmented-control-item value="3">3 <span class="sm:sr-only">(neutral)</span></p-segmented-control-item>
+                <p-segmented-control-item value="4"
+                  >4 <span class="sm:sr-only">(zufrieden)</span></p-segmented-control-item
+                >
+                <p-segmented-control-item value="5"
+                  >5 <span class="sm:sr-only">(sehr zufrieden)</span></p-segmented-control-item
+                >
+              </p-segmented-control>
+              <p-text
+                class="max-sm:hidden row-2 md:row-auto col-2 md:col-auto justify-self-end"
+                size="small"
+                align="end"
+                color="contrast-medium"
+              >
+                Sehr zufrieden
+              </p-text>
+            </div>
+            <p-textarea
+              id="feedback-comment"
+              class="w-full"
+              name="comment"
+              label="Was könnten wir an dieser Seite verbessern?"
+              rows="4"
+              hidden
+            ></p-textarea>
+            <p-button id="feedback-submit" type="button" hidden>Feedback absenden</p-button>
+          </form>
+
+          <div
+            id="feedback-thanks"
+            class="grid gap-fluid-md justify-items-center"
+            aria-live="polite"
+            aria-atomic="true"
+            hidden
+          >
+            <p-heading
+              id="feedback-thanks-heading"
+              class="focus-visible:outline outline-focus outline-offset-2 rounded-md"
+              tag="h2"
+              size="md"
+              align="center"
+              tabindex="-1"
+            >
+              Vielen Dank für Ihr Feedback
+            </p-heading>
+            <p-text align="center">Ihr Feedback hilft uns, diese Seite kontinuierlich zu verbessern.</p-text>
+            <p-button id="feedback-restart" type="button" variant="secondary" icon="refresh">
+              Neues Feedback geben
+            </p-button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Porsche footer — trimmed on purpose: this is a single-purpose confirmation page (no
+         shop/region relevance), so only the legal/consumption text and the wordmark remain. -->
+    <footer class="grid-template py-fluid-lg bg-canvas">
+      <article class="col-extended mt-fluid-sm grid gap-fluid-md" aria-label="Consumption and emission information">
+        <p-text size="2xs" color="contrast-medium">
+          The consumption and emission values stated were determined in accordance with the legally
+          prescribed measurement procedures. Since September 1, 2017, certain new vehicles have been
+          type-approved in accordance with the Worldwide Harmonized Vehicles Test Procedure (WLTP), a
+          more realistic test procedure for measuring fuel/electricity consumption and CO₂ emissions.
+          Since September 1, 2018, the WLTP has replaced the New European Driving Cycle (NEDC). Due to
+          the more realistic testing conditions, the fuel/electricity consumption and CO₂ emission
+          values measured according to the WLTP are, in many cases, higher than those measured
+          according to the NEDC. As a result, vehicle taxation may change accordingly starting
+          September 1, 2018. Further information on the differences between WLTP and NEDC can be found
+          at www.porsche.com/wltp.
+        </p-text>
+        <p-text size="2xs" color="contrast-medium">
+          Currently, regardless of the applied type-approval procedure, it remains mandatory to
+          communicate NEDC values. The additional disclosure of WLTP values may be done on a voluntary
+          basis until their mandatory use. In the case of new vehicles type-approved according to WLTP,
+          NEDC values are derived from WLTP values and stated during the transitional period. Where NEDC
+          values are stated as ranges, they do not refer to a specific individual vehicle and are not
+          part of the offer. They serve solely for comparison purposes between different vehicle types.
+          Optional equipment and accessories (attachments, tire formats, etc.) can alter relevant
+          vehicle parameters such as weight, rolling resistance, and aerodynamics, and can influence
+          fuel/electricity consumption, CO₂ emissions, and performance values of a vehicle in addition
+          to weather and traffic conditions and individual driving behavior. Further information on the
+          official fuel/electricity consumption and official specific CO₂ emissions of new passenger
+          cars can be found in the "Guide on fuel consumption, CO₂ emissions and electricity
+          consumption of new passenger cars," available free of charge at all sales outlets and from
+          DAT.
+        </p-text>
+        <p-text size="2xs" color="contrast-medium">
+          Neither the number of active users of this Porsche Connect Store nor the number of active
+          users of the App Center available in the connected vehicle (Macan electric) upon activation
+          of the Connect services exceeds the threshold of 45 million active users in the European
+          Union as defined by the Digital Services Act (DSA). Important information regarding fully
+          electric Porsche models can be found here.
+        </p-text>
+      </article>
+      <div class="col-extended mt-fluid-md grid justify-items-center gap-fluid-md">
+        <p-wordmark></p-wordmark>
+        <p-text size="xx-small" color="contrast-medium">© 2026 Porsche AG</p-text>
+        <ul class="flex flex-wrap justify-center gap-fluid-md">
+          <li><p-link-pure icon="none" size="x-small" underline="true"><a href="#">Legal notice</a></p-link-pure></li>
+          <li><p-link-pure icon="none" size="x-small" underline="true"><a href="#">Privacy notice</a></p-link-pure></li>
+          <li><p-link-pure icon="none" size="x-small" underline="true"><a href="#">Accessibility Statement</a></p-link-pure></li>
+          <li><p-link-pure icon="none" size="x-small" underline="true"><a href="#">Open Source Software Notice</a></p-link-pure></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Sticky floating contact bar — slides up from off-canvas once the hero has scrolled out of view. -->
+    <div class="pm2-contact-bar fixed inset-x-0 bottom-0 z-50 flex justify-center px-fluid-md pb-fluid-md" data-contact-bar aria-hidden="true">
+      <div class="pm2-contact-bar__inner flex max-w-full items-center gap-static-sm rounded-full bg-frosted backdrop-blur-[32px] py-static-sm pr-static-md pl-static-sm">
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full">
+          <img src="/examples/pr-293/templates/assets/pfm/advisor.webp" alt="Scott Lee" class="size-full object-cover" style="object-position: 50% 28%">
+        </div>
+        <div class="flex flex-col leading-[1.2]">
+          <p-text size="small" weight="semi-bold" color="primary">Scott Lee</p-text>
+          <p-text size="x-small" color="contrast-medium" class="pm2-contact-bar__subline max-[640px]:hidden">Verkaufsberater · Porsche Zentrum Stuttgart</p-text>
+        </div>
+        <div class="ml-static-md flex items-center gap-static-xs">
+          <p-button type="button" variant="secondary" icon="phone" hide-label="true" compact="true" data-tel="071199523991">Anrufen</p-button>
+          <p-button type="button" variant="secondary" icon="email" hide-label="true" compact="true" data-mailto="scott.lee@porsche-stuttgart.de">E-Mail</p-button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Motorsound: sticky floating player (bottom-right). Square frosted tile with play/pause + wave animation.
+         The .is-playing class on the card drives the wave animation (see style.css + main.js). -->
+    <!-- Reusable video lightbox: the YouTube iframe src is set on open and cleared on dismiss
+         (see main.js) so playback stops when the modal closes. -->
+    <p-modal id="pm2-video-modal" aria='{ "aria-label": "Video abspielen" }' style="--p-modal-width: min(960px, calc(100% - 2rem)); --p-modal-spacing-top: clamp(16px, 6vh, 80px); --p-modal-spacing-bottom: clamp(16px, 6vh, 80px)">
+      <div class="relative -mt-(--ref-p-modal-pt) -mr-(--ref-p-modal-px) -mb-(--ref-p-modal-pb) -ml-(--ref-p-modal-px) aspect-16/9 overflow-hidden bg-canvas">
+        <iframe
+          class="absolute inset-0 size-full border-0"
+          id="pm2-video-iframe"
+          title="Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </p-modal>
+
+  <script data-pds-loader-script>var porscheDesignSystem;(()=>{"use strict";const e={d:(t,n)=>{for(var s in n)e.o(n,s)&&!e.o(t,s)&&Object.defineProperty(t,s,{enumerable:!0,get:n[s]})},o:(e,t)=>Object.prototype.hasOwnProperty.call(e,t),r:e=>{Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}};let t={};e.r(t),e.d(t,{load:()=>r});const n="porscheDesignSystem";function s(){return document[n]||(document[n]={}),document[n]}function o({script:e,version:t,prefix:o}){const r=function(e){const t=s(),{[e]:n}=t;if(!n){let n=()=>{};const s=new Promise(e=>n=e);t[e]={isInjected:!1,isReady:()=>s,readyResolve:n,prefixes:[],registerCustomElements:null}}return t[e]}(t),{isInjected:c,prefixes:i=[],registerCustomElements:d}=r,[u]=Object.entries(s()).filter(([e,n])=>e!==t&&"object"==typeof n&&n.prefixes.includes(o));if(u)throw new Error(`[Porsche Design System v${t}] prefix '${o}' is already registered with version '${u[0]}' of the Porsche Design System. Please use a different one.\nTake a look at document.${n} for more details.`);c||(function(e){const t=document.createElement("script");t.src=e,t.setAttribute("crossorigin",""),document.body.appendChild(t)}(e),r.isInjected=!0),i.includes(o)||(i.push(o),d&&d(o))}const r=(e={})=>{const t="PORSCHE_DESIGN_SYSTEM_CDN";window[t]=e.cdn||window[t]||(window.location.origin.match(/\.cn$/)?"cn":"auto");const n="porscheDesignSystem";document[n]||(document[n]={}),document[n].cdn={url:"https://cdn.ui.porsche."+("cn"===window[t]?"cn":"com"),prefixes:[]},o({version:"4.8.0",script:document[n].cdn.url+"/porsche-design-system/components/porsche-design-system.v4.8.0.c21a593e29d87dc35fa9.js",prefix:e.prefix||""})};porscheDesignSystem=t})();porscheDesignSystem.load()</script></body>
+</html>
