@@ -90,6 +90,13 @@ main.grid-template {
 /* Height is written by main.js (coupled to the video's measured bottom edge, see
    updateHero()) so there is never too much empty canvas before the next section. */
 
+/* Baseline height reserved before main.js runs — the hero's children are absolutely positioned,
+   so without this the section collapses on first paint and the chapter below jumps down once JS
+   sets the real min-height (large CLS). Matches the full-bleed variant's JS value (window.innerHeight). */
+.pm2-hero {
+  min-height: 100vh;
+}
+
 /* Continuous red wash the video floats on — avoids a hard cut into the Karminrot chapter below.
    Fades in together with the video (not instantly on load) so the wordmark leads the mount sequence. */
 .pm2-hero-red-wash {
