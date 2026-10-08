@@ -1,0 +1,515 @@
+@import "@porsche-design-system/components-js";
+@import "tailwindcss";
+@import "@porsche-design-system/components-js/tailwindcss";
+
+:root {
+  /* Single source of truth for the configured exterior colour (Karminrot by default). Override this
+     one custom property to re-theme every brand-red surface on the page (chapter background, hero
+     wash, muted mosaic tint) — e.g. generate a page with <html style="--pm-config-color: #0061bd">. */
+  --pm-config-color: #c4001a;
+}
+
+:not(:defined) {
+  visibility: hidden;
+}
+
+/* `grid-template`'s own `gap` shorthand also creates a row-gap between the top-level sections —
+   our sections flow into each other with no seam, so kill just the row-gap (column-gap stays,
+   it's needed for the nested grid-cols-subgrid children to line up). */
+main.grid-template {
+  row-gap: 0;
+}
+
+/* Hidden dev menu — Hero-variant switcher, not part of the actual design (review/testing aid only). */
+.pm2-dev-menu-toggle {
+  position: fixed;
+  left: var(--p-spacing-static-sm);
+  top: var(--p-spacing-static-sm);
+  z-index: 100;
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgb(0 0 0 / 0.4);
+  opacity: 0.15;
+  transition: opacity var(--p-duration-md) var(--p-ease-in-out);
+}
+
+.pm2-dev-menu-toggle:hover,
+.pm2-dev-menu-toggle:focus-visible {
+  opacity: 1;
+}
+
+.pm2-dev-menu {
+  position: fixed;
+  left: var(--p-spacing-static-sm);
+  top: 52px;
+  z-index: 100;
+  width: min(320px, 90vw);
+  display: flex;
+  flex-direction: column;
+  gap: var(--p-spacing-static-md);
+  border-radius: 12px;
+  border: 1px dashed rgb(255 255 255 / 0.3);
+  background: rgb(0 0 0 / 0.85);
+  padding: var(--p-spacing-static-md);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.pm2-dev-menu[hidden] {
+  display: none;
+}
+
+.pm2-dev-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--p-spacing-static-xs);
+}
+
+.pm2-dev-menu__item {
+  border: 1px solid rgb(255 255 255 / 0.16);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--p-color-primary);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  padding: var(--p-spacing-static-xs) var(--p-spacing-static-sm);
+}
+
+.pm2-dev-menu__item:hover {
+  background: rgb(255 255 255 / 0.08);
+}
+
+.pm2-dev-menu__item[aria-pressed="true"] {
+  border-color: var(--p-color-primary);
+  background: rgb(255 255 255 / 0.12);
+}
+
+
+/* Hero -------------------------------------------------------------- */
+/* Height is written by main.js (coupled to the video's measured bottom edge, see
+   updateHero()) so there is never too much empty canvas before the next section. */
+
+/* Baseline height reserved before main.js runs — the hero's children are absolutely positioned,
+   so without this the section collapses on first paint and the chapter below jumps down once JS
+   sets the real min-height (large CLS). Matches the full-bleed variant's JS value (window.innerHeight). */
+.pm2-hero {
+  min-height: 100vh;
+}
+
+/* Continuous red wash the video floats on — avoids a hard cut into the Karminrot chapter below.
+   Fades in together with the video (not instantly on load) so the wordmark leads the mount sequence. */
+.pm2-hero-red-wash {
+  background: linear-gradient(to bottom, transparent 0%, var(--pm-config-color) 45%, var(--pm-config-color) 100%);
+  opacity: 0;
+  transition: opacity var(--p-duration-lg) var(--p-ease-in-out);
+  transition-delay: 0.35s;
+}
+
+.pm2-hero.is-mounted .pm2-hero-red-wash {
+  opacity: 1;
+}
+
+/* Giant background typo — bg-clip-text gradient fades the ghost title to transparent. */
+.pm2-ghost-title {
+  /* margin-top intentionally left unset — owned by the `mt-[...]` Tailwind class in the HTML,
+     which a shorthand `margin: 0` here would silently override (unlayered CSS beats Tailwind's
+     layered utilities regardless of source order). */
+  margin-inline: 0;
+  margin-bottom: 0;
+  font-family: var(--p-font-family, "Porsche Next", system-ui, sans-serif);
+  font-size: clamp(52px, 12.53vw, 300px);
+  font-weight: 400;
+  line-height: 1.048;
+  white-space: nowrap;
+  background-image: linear-gradient(to bottom, var(--p-color-contrast-medium) 0%, transparent 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pm2-ghost-title--small {
+  font-size: clamp(48px, 12.53vw, 300px);
+}
+
+.pm2-ghost-title--5xl {
+  font-size: var(--text-5xl);
+}
+
+/* Video card — top/left/right/bottom/border-radius/aspect-ratio are written every frame by main.js
+   (see updateHero()), driven by the currently selected Hero variant (see the dev menu). */
+.pm2-video-wrap {
+  opacity: 0;
+  transform: scale(0.97);
+  transition:
+    opacity var(--p-duration-lg) var(--p-ease-in-out),
+    transform var(--p-duration-lg) var(--p-ease-in-out);
+  transition-delay: 0.35s;
+}
+
+.pm2-hero.is-mounted .pm2-video-wrap {
+  opacity: 1;
+  transform: none;
+}
+
+.pm2-hero--fullbleed #pm2-hero-heading {
+  display: none;
+}
+
+/* "Ohne Video" variant: no video card, and the red wash fills the whole (collapsed) hero so the
+   ghost title sits on Karminrot and flows seamlessly into the red chapter that slides up below. */
+.pm2-hero--no-video .pm2-video-wrap {
+  display: none;
+}
+
+.pm2-hero--no-video .pm2-hero-red-wash {
+  top: 0;
+  /* No video to lead the mount sequence here — the wash is the whole hero background and must be
+     painted immediately so it matches the already-solid red chapter below (no delayed fade-in). */
+  opacity: 1;
+  transition: none;
+}
+
+/* No-video: the car leads the chapter and is pulled up so it cuts into the ghost title's 2nd line. */
+.pm3-no-video .pm2-chapter {
+  position: relative;
+  z-index: 1;
+}
+
+.pm3-no-video .pm2-car-stage {
+  order: -1;
+  margin-top: calc(-1 * clamp(120px, 22vw, 320px));
+}
+
+/* No-video: drop the "Ein neues Kapitel" headline block and the 911 signature behind the car. */
+.pm3-no-video .pm2-chapter-headline,
+.pm3-no-video .pm2-car-stage p-model-signature {
+  display: none;
+}
+
+.pm2-video-scrim {
+  background: linear-gradient(105deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 45%, transparent 70%);
+}
+
+/* Fullbleed variant (E): 2-layer scrim (darker top/bottom, clear middle) instead of the diagonal one. */
+.pm2-video-scrim--fullbleed {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0.3) 80%,
+    rgba(0, 0, 0, 0.42) 100%
+  );
+}
+
+.pm2-video-caption {
+  opacity: 0;
+  transition: opacity var(--p-duration-lg) var(--p-ease-in-out);
+  transition-delay: 0.6s;
+}
+
+/* Fullbleed variant (E): caption moves to bottom-center (matches the PFM v4 reference layout). */
+.pm2-video-caption--center {
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: 0;
+  max-width: none;
+  padding: 0 var(--p-spacing-fluid-md) calc(6vh + 72px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* "static" variant (D): caption anchored to the bottom of the (smaller, inset) video card, keeping
+   the same padding/centering as the default top-anchored state — just flipped vertically. */
+.pm2-video-caption--bottom {
+  top: auto;
+  bottom: 0;
+}
+
+/* On narrow viewports the bottom-anchored caption (fullbleed E, "static" D) can wrap to 3+ lines
+   and sit close to the play/pause toggle — lift the text clear above it and let the toggle go
+   compact (below, on #pm2-video-toggle) instead of relocating it. */
+@media (width < 760px) {
+  .pm2-video-caption--center,
+  .pm2-video-caption--bottom {
+    padding-bottom: calc(var(--p-spacing-fluid-xl) + var(--p-spacing-static-2xl));
+  }
+}
+
+.pm2-hero.is-mounted .pm2-video-caption {
+  opacity: 1;
+}
+
+.pm2-wordmark {
+  opacity: 0;
+  transform: translateY(-12px);
+  transition:
+    opacity var(--p-duration-lg) var(--p-ease-in-out),
+    transform var(--p-duration-lg) var(--p-ease-in-out);
+}
+
+.pm2-hero.is-mounted .pm2-wordmark {
+  opacity: 1;
+  transform: none;
+}
+
+/* Chapter -------------------------------------------------------------- */
+/* .pm2-chapter's background/corner-radius/stacking are plain Tailwind utility classes in the HTML
+   (bg-[var(--pm-config-color)], rounded-b-[...], relative, z-1) — the class name itself stays as a JS hook for
+   main.js's count-up IntersectionObserver. */
+/* KPIs — the "Leistung (kW)/(PS)" stat is visually the widest (4 text chunks + a slash), so it needs
+   its own breakpoint tier: stacked on mobile, then a 2-col row with the wide stat centered on its own
+   row underneath, and only equal 3-up columns once there's genuinely enough width per column. */
+.pm2-kpis {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "a"
+    "b"
+    "c";
+}
+
+.pm2-kpis > :nth-child(1) {
+  grid-area: a;
+}
+.pm2-kpis > :nth-child(2) {
+  grid-area: b;
+}
+.pm2-kpis > :nth-child(3) {
+  grid-area: c;
+}
+
+@media (width >= 760px) {
+  .pm2-kpis {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "a b"
+      "c c";
+  }
+}
+
+@media (width >= 1300px) {
+  .pm2-kpis {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "a b c";
+  }
+}
+
+/* Mosaik — carries the Karminrot chapter's red tone onward, fading gradually across the WHOLE
+   section (not just its top) so the warm undertone flows all the way to the Cross-Sell seam.
+   Pulled up to sit BEHIND the chapter's rounded bottom corners (see .pm2-chapter) so its own
+   reddish background shows through that corner cutout instead of the page's black background. */
+.pm2-mosaic {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--pm-config-color) 22%, transparent) 0%,
+    color-mix(in srgb, var(--pm-config-color) 10%, transparent) 40%,
+    color-mix(in srgb, var(--pm-config-color) 4%, transparent) 70%,
+    var(--p-color-surface) 100%
+  );
+}
+
+/* Cross-sell -------------------------------------------------------------- */
+.pm2-crosssell {
+  background: linear-gradient(180deg, var(--p-color-surface) 0%, #601315 100%);
+}
+
+.pm2-crosssell__lead {
+  z-index: 1;
+  padding-top: clamp(220px, 23vw, 450px);
+}
+
+.pm2-crosssell__carousel {
+  z-index: 1;
+}
+
+.pm2-xsell-slide__scrim {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0) 72%);
+}
+
+/* Freude, die man teilt. -------------------------------------------------------------- */
+.pm2-fan__card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(190px, 20vw, 286px);
+  border-radius: var(--p-radius-lg);
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.5));
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(0deg) scale(0.9);
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
+}
+
+.pm2-fan--in-view .pm2-fan__card {
+  opacity: 1;
+}
+
+.pm2-fan__card--left {
+  z-index: 1;
+  transition-delay: 0s;
+}
+
+.pm2-fan--in-view .pm2-fan__card--left {
+  transform: translate(-50%, -50%) translateX(-42%) rotate(-13deg);
+}
+
+.pm2-fan__card--right {
+  z-index: 1;
+  transition-delay: 0.09s;
+}
+
+.pm2-fan--in-view .pm2-fan__card--right {
+  transform: translate(-50%, -50%) translateX(42%) rotate(13deg);
+}
+
+.pm2-fan__card--center {
+  z-index: 2;
+  transition-delay: 0.18s;
+}
+
+.pm2-fan--in-view .pm2-fan__card--center {
+  transform: translate(-50%, -50%);
+}
+
+/* Scroll-triggered reveal — mirrors the "1" template's "animate in view" pattern. */
+@keyframes pm2-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-animation="fade-in-up"] {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+[data-animation="fade-in-up"].animation-play {
+  animation: pm2-fade-in-up var(--p-duration-lg) var(--p-ease-out) var(--pm-delay, 0s) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animation] {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .pm2-fan__card {
+    transition: none;
+  }
+}
+
+/* Sticky contact bar -------------------------------------------------------------- */
+.pm2-contact-bar {
+  /* 130% (not a small nudge like 24px) so the bar genuinely starts off-canvas below the viewport
+     and slides up into place, instead of mostly just fading in a few px below its resting position. */
+  transform: translateY(130%);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform var(--p-duration-lg) var(--p-ease-in-out),
+    opacity var(--p-duration-lg) var(--p-ease-in-out);
+}
+
+.pm2-contact-bar.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Motorsound inline player — title/waveform crossfade on play, pill widens --------------------- */
+.pm2-sound-player__swap {
+  position: relative;
+  width: 148px;
+  height: 28px;
+  margin-left: var(--p-spacing-static-md);
+  overflow: hidden;
+  transition: width var(--p-duration-lg) var(--p-ease-in-out);
+}
+
+.pm2-sound-player.is-playing .pm2-sound-player__swap {
+  width: 186px;
+}
+
+.pm2-sound-player__title,
+.pm2-sound-player__wave {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  transition: opacity var(--p-duration-md) var(--p-ease-in-out);
+}
+
+.pm2-sound-player__title {
+  opacity: 1;
+  white-space: nowrap;
+}
+
+.pm2-sound-player__wave {
+  opacity: 0;
+}
+
+.pm2-sound-player.is-playing .pm2-sound-player__title {
+  opacity: 0;
+}
+
+.pm2-sound-player.is-playing .pm2-sound-player__wave {
+  opacity: 1;
+}
+
+.pm2-sound-player__wave span {
+  display: block;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--p-color-primary);
+  transform-origin: center;
+}
+
+/* 10-step height pattern repeated across the 30 bars */
+.pm2-sound-player__wave span:nth-child(10n + 1) { height: 8px; }
+.pm2-sound-player__wave span:nth-child(10n + 2) { height: 14px; }
+.pm2-sound-player__wave span:nth-child(10n + 3) { height: 22px; }
+.pm2-sound-player__wave span:nth-child(10n + 4) { height: 28px; }
+.pm2-sound-player__wave span:nth-child(10n + 5) { height: 18px; }
+.pm2-sound-player__wave span:nth-child(10n + 6) { height: 24px; }
+.pm2-sound-player__wave span:nth-child(10n + 7) { height: 12px; }
+.pm2-sound-player__wave span:nth-child(10n + 8) { height: 20px; }
+.pm2-sound-player__wave span:nth-child(10n + 9) { height: 15px; }
+.pm2-sound-player__wave span:nth-child(10n) { height: 10px; }
+
+.pm2-sound-player.is-playing .pm2-sound-player__wave span {
+  animation: pm2-sound-wave 0.85s var(--p-ease-in-out) infinite;
+}
+
+.pm2-sound-player.is-playing .pm2-sound-player__wave span:nth-child(3n) { animation-delay: 0.1s; }
+.pm2-sound-player.is-playing .pm2-sound-player__wave span:nth-child(3n + 1) { animation-delay: 0.28s; }
+.pm2-sound-player.is-playing .pm2-sound-player__wave span:nth-child(3n + 2) { animation-delay: 0s; }
+
+@keyframes pm2-sound-wave {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pm2-sound-player.is-playing .pm2-sound-player__wave span {
+    animation: none;
+  }
+}
+
