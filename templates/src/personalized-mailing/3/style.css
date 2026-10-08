@@ -2,6 +2,13 @@
 @import "tailwindcss";
 @import "@porsche-design-system/components-js/tailwindcss";
 
+:root {
+  /* Single source of truth for the configured exterior colour (Karminrot by default). Override this
+     one custom property to re-theme every brand-red surface on the page (chapter background, hero
+     wash, muted mosaic tint) — e.g. generate a page with <html style="--pm-config-color: #0061bd">. */
+  --pm-config-color: #c4001a;
+}
+
 :not(:defined) {
   visibility: hidden;
 }
@@ -100,7 +107,7 @@ main.grid-template {
 /* Continuous red wash the video floats on — avoids a hard cut into the Karminrot chapter below.
    Fades in together with the video (not instantly on load) so the wordmark leads the mount sequence. */
 .pm2-hero-red-wash {
-  background: linear-gradient(to bottom, rgba(196, 0, 26, 0) 0%, #c4001a 45%, #c4001a 100%);
+  background: linear-gradient(to bottom, transparent 0%, var(--pm-config-color) 45%, var(--pm-config-color) 100%);
   opacity: 0;
   transition: opacity var(--p-duration-lg) var(--p-ease-in-out);
   transition-delay: 0.35s;
@@ -258,7 +265,7 @@ main.grid-template {
 
 /* Chapter -------------------------------------------------------------- */
 /* .pm2-chapter's background/corner-radius/stacking are plain Tailwind utility classes in the HTML
-   (bg-[#c4001a], rounded-b-[...], relative, z-1) — the class name itself stays as a JS hook for
+   (bg-[var(--pm-config-color)], rounded-b-[...], relative, z-1) — the class name itself stays as a JS hook for
    main.js's count-up IntersectionObserver. */
 /* KPIs — the "Leistung (kW)/(PS)" stat is visually the widest (4 text chunks + a slash), so it needs
    its own breakpoint tier: stacked on mobile, then a 2-col row with the wide stat centered on its own
@@ -305,9 +312,9 @@ main.grid-template {
 .pm2-mosaic {
   background: linear-gradient(
     180deg,
-    rgba(196, 0, 26, 0.22) 0%,
-    rgba(196, 0, 26, 0.1) 40%,
-    rgba(196, 0, 26, 0.04) 70%,
+    color-mix(in srgb, var(--pm-config-color) 22%, transparent) 0%,
+    color-mix(in srgb, var(--pm-config-color) 10%, transparent) 40%,
+    color-mix(in srgb, var(--pm-config-color) 4%, transparent) 70%,
     var(--p-color-surface) 100%
   );
 }
