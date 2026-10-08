@@ -70,6 +70,7 @@
             playsinline
             aria-hidden="true"
           >
+            <source src="/assets/pfm/hero.webm" type="video/webm">
             <source src="/assets/pfm/hero.mp4" type="video/mp4">
           </video>
           <div id="pm2-video-scrim" class="pm2-video-scrim absolute inset-0" aria-hidden="true"></div>
@@ -184,14 +185,14 @@
                 <p-text size="3xl" color="primary"><span data-countup="9000" data-decimals="0">0</span></p-text>
                 <p-text size="small" weight="semi-bold" color="primary" class="pb-[9px]">1/min</p-text>
               </div>
-              <p-text size="small" color="contrast-medium" align="center" class="mt-static-xs">Maximaldrehzahl</p-text>
+              <p-text size="small" color="contrast-high" align="center" class="mt-static-xs">Maximaldrehzahl</p-text>
             </div>
             <div class="flex flex-col items-center text-center">
               <div class="flex items-end gap-static-xs">
                 <p-text size="3xl" color="primary"><span data-countup="3.9" data-decimals="1">0</span></p-text>
                 <p-text size="small" weight="semi-bold" color="primary" class="pb-[9px]">s</p-text>
               </div>
-              <p-text size="small" color="contrast-medium" align="center" class="mt-static-xs">Beschleunigung 0–100 km/h</p-text>
+              <p-text size="small" color="contrast-high" align="center" class="mt-static-xs">Beschleunigung 0–100 km/h</p-text>
             </div>
             <div class="flex flex-col items-center text-center">
               <div class="flex items-end gap-static-xs">
@@ -201,7 +202,7 @@
                 <p-text size="3xl" color="primary"><span data-countup="510" data-decimals="0">0</span></p-text>
                 <p-text size="small" weight="semi-bold" color="primary" class="pb-[9px]">PS</p-text>
               </div>
-              <p-text size="small" color="contrast-medium" align="center" class="mt-static-xs">Leistung (kW) / Leistung (PS)</p-text>
+              <p-text size="small" color="contrast-high" align="center" class="mt-static-xs">Leistung (kW) / Leistung (PS)</p-text>
             </div>
           </div>
         </div>
@@ -714,7 +715,7 @@
     </footer>
 
     <!-- Sticky floating contact bar — slides up from off-canvas once the hero has scrolled out of view. -->
-    <div class="pm2-contact-bar fixed inset-x-0 bottom-0 z-50 flex justify-center px-fluid-md pb-fluid-md" data-contact-bar aria-hidden="true">
+    <div class="pm2-contact-bar fixed inset-x-0 bottom-0 z-50 flex justify-center px-fluid-md pb-fluid-md" data-contact-bar aria-hidden="true" inert>
       <div class="pm2-contact-bar__inner flex max-w-full items-center gap-static-sm rounded-full bg-frosted backdrop-blur-[32px] py-static-sm pr-static-md pl-static-sm">
         <div class="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full">
           <img src="/assets/pfm/advisor.webp" alt="Scott Lee" class="size-full object-cover" style="object-position: 50% 28%">

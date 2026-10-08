@@ -297,6 +297,9 @@ if (contactBar) {
     const show = window.scrollY > window.innerHeight * 0.7 && !footerVisible && !contactSectionVisible;
     contactBar.classList.toggle('is-visible', show);
     contactBar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    // inert when hidden so the off-canvas contact buttons aren't focusable (aria-hidden on an
+    // element with focusable descendants is itself an a11y violation).
+    contactBar.toggleAttribute('inert', !show);
   };
 
   window.addEventListener('scroll', updateContactBar, { passive: true });
