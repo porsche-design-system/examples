@@ -177,31 +177,31 @@
           </div>
 
           <div
-            class="pm2-kpis w-full max-w-[1000px] gap-fluid-lg"
+            class="pm2-kpis grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-[1000px] gap-fluid-lg"
             data-animation="fade-in-up"
             style="--pm-delay: calc(var(--p-duration-sm) * 3)"
           >
             <div class="flex flex-col items-center text-center">
-              <div class="flex items-end gap-static-xs">
+              <div class="flex items-baseline gap-static-xs">
                 <p-text size="3xl" color="primary"><span data-countup="9000" data-decimals="0">0</span></p-text>
-                <p-text size="small" weight="semi-bold" color="primary" class="pb-[9px]">1/min</p-text>
+                <p-text size="small" weight="semi-bold" color="primary">1/min</p-text>
               </div>
               <p-text size="small" color="contrast-high" align="center" class="mt-static-xs">Maximaldrehzahl</p-text>
             </div>
             <div class="flex flex-col items-center text-center">
-              <div class="flex items-end gap-static-xs">
+              <div class="flex items-baseline gap-static-xs">
                 <p-text size="3xl" color="primary"><span data-countup="3.9" data-decimals="1">0</span></p-text>
-                <p-text size="small" weight="semi-bold" color="primary" class="pb-[9px]">s</p-text>
+                <p-text size="small" weight="semi-bold" color="primary">s</p-text>
               </div>
               <p-text size="small" color="contrast-high" align="center" class="mt-static-xs">Beschleunigung 0–100 km/h</p-text>
             </div>
-            <div class="flex flex-col items-center text-center">
-              <div class="flex items-end gap-static-xs">
+            <div class="flex flex-col items-center text-center sm:col-span-2 lg:col-span-1">
+              <div class="flex items-baseline gap-static-xs">
                 <p-text size="3xl" color="primary"><span data-countup="375" data-decimals="0">0</span></p-text>
-                <p-text size="small" weight="semi-bold" color="primary" class="pb-[9px]">kW</p-text>
+                <p-text size="small" weight="semi-bold" color="primary">kW</p-text>
                 <p-text size="3xl" color="primary">/</p-text>
                 <p-text size="3xl" color="primary"><span data-countup="510" data-decimals="0">0</span></p-text>
-                <p-text size="small" weight="semi-bold" color="primary" class="pb-[9px]">PS</p-text>
+                <p-text size="small" weight="semi-bold" color="primary">PS</p-text>
               </div>
               <p-text size="small" color="contrast-high" align="center" class="mt-static-xs">Leistung (kW) / Leistung (PS)</p-text>
             </div>
@@ -493,52 +493,28 @@
         </div>
 
         <div class="col-basic mt-fluid-lg grid grid-cols-1 gap-fluid-md md:grid-cols-2">
-          <div class="relative isolate flex aspect-square md:aspect-[3/4] flex-col justify-end overflow-hidden rounded-xl" data-animation="fade-in-up">
-            <img
-              class="absolute inset-0 -z-1 size-full object-cover"
-              src="/assets/pfm/practical-finance.webp"
-              alt=""
-              loading="lazy"
-              style="object-position: 75% 50%"
-            >
-            <div class="absolute inset-0 -z-1 bg-[linear-gradient(to_top,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0)_72%)]"></div>
-            <div class="flex flex-col items-start gap-fluid-md p-fluid-md text-left">
-              <div class="flex flex-col gap-static-sm">
-                <p-text size="x-small" weight="semi-bold" color="contrast-medium">Porsche Financial Services</p-text>
-                <p-text size="medium" color="primary">Ansichtssache.</p-text>
-                <p-text size="small" color="contrast-medium">
-                  Manche Träume liegen in weiter Ferne? Individuelle Raten für Ihren Targa –
-                  transparent gerechnet, ohne Umweg.
-                </p-text>
-              </div>
-              <p-button variant="secondary" icon="none" href="https://www.porsche.com/germany/accessoriesandservice/porschefinancialservices/finance/porschefinance/">
-                Optionen ansehen
-              </p-button>
-            </div>
-          </div>
+          <p-link-tile
+            href="https://www.porsche.com/germany/accessoriesandservice/porschefinancialservices/finance/porschefinance/"
+            label="Ansichtssache."
+            description="Manche Träume liegen in weiter Ferne? Individuelle Raten für Ihren Targa – transparent gerechnet, ohne Umweg."
+            aspect-ratio='{ "base": "1/1", "m": "3/4" }'
+            data-animation="fade-in-up"
+          >
+            <p-tag slot="header" color="background-frosted" compact="true">Porsche Financial Services</p-tag>
+            <img src="/assets/pfm/practical-finance.webp" alt="" loading="lazy" style="object-position: 75% 50%">
+          </p-link-tile>
 
-          <div class="relative isolate flex aspect-square md:aspect-[3/4] flex-col justify-end overflow-hidden rounded-xl" data-animation="fade-in-up" style="--pm-delay: var(--p-duration-sm)">
-            <img
-              class="absolute inset-0 -z-1 size-full object-cover"
-              src="/assets/pfm/practical-insurance.webp"
-              alt=""
-              loading="lazy"
-            >
-            <div class="absolute inset-0 -z-1 bg-[linear-gradient(to_top,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.25)_45%,rgba(0,0,0,0)_72%)]"></div>
-            <div class="flex flex-col items-start gap-fluid-md p-fluid-md text-left">
-              <div class="flex flex-col gap-static-sm">
-                <p-text size="x-small" weight="semi-bold" color="contrast-medium">Porsche Versicherung</p-text>
-                <p-text size="medium" color="primary">Was wäre wenn?</p-text>
-                <p-text size="small" color="contrast-medium">
-                  Sie das Hier und Jetzt genießen während wir uns um alles rund um Ihre
-                  Versicherung kümmern.
-                </p-text>
-              </div>
-              <p-button variant="secondary" icon="none" href="https://www.porsche.com/germany/accessoriesandservice/porschefinancialservices/insurance/">
-                Versicherungsoptionen ansehen
-              </p-button>
-            </div>
-          </div>
+          <p-link-tile
+            href="https://www.porsche.com/germany/accessoriesandservice/porschefinancialservices/insurance/"
+            label="Was wäre wenn?"
+            description="Sie das Hier und Jetzt genießen während wir uns um alles rund um Ihre Versicherung kümmern."
+            aspect-ratio='{ "base": "1/1", "m": "3/4" }'
+            data-animation="fade-in-up"
+            style="--pm-delay: var(--p-duration-sm)"
+          >
+            <p-tag slot="header" color="background-frosted" compact="true">Porsche Versicherung</p-tag>
+            <img src="/assets/pfm/practical-insurance.webp" alt="" loading="lazy">
+          </p-link-tile>
         </div>
       </section>
 

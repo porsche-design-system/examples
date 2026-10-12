@@ -252,43 +252,8 @@ main.grid-template {
 /* .pm2-chapter's background/corner-radius/stacking are plain Tailwind utility classes in the HTML
    (bg-[var(--pm-config-color)], rounded-b-[...], relative, z-1) — the class name itself stays as a JS hook for
    main.js's count-up IntersectionObserver. */
-/* KPIs — the "Leistung (kW)/(PS)" stat is visually the widest (4 text chunks + a slash), so it needs
-   its own breakpoint tier: stacked on mobile, then a 2-col row with the wide stat centered on its own
-   row underneath, and only equal 3-up columns once there's genuinely enough width per column. */
-.pm2-kpis {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "a"
-    "b"
-    "c";
-}
-
-.pm2-kpis > :nth-child(1) {
-  grid-area: a;
-}
-.pm2-kpis > :nth-child(2) {
-  grid-area: b;
-}
-.pm2-kpis > :nth-child(3) {
-  grid-area: c;
-}
-
-@media (width >= 760px) {
-  .pm2-kpis {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "a b"
-      "c c";
-  }
-}
-
-@media (width >= 1300px) {
-  .pm2-kpis {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "a b c";
-  }
-}
+/* .pm2-kpis — the grid layout (1 col → 2 col with the wide stat spanning → 3 col) lives as Tailwind
+   utilities in the HTML; the class stays only as a JS hook for the count-up IntersectionObserver. */
 
 /* Mosaik — carries the Karminrot chapter's red tone onward, fading gradually across the WHOLE
    section (not just its top) so the warm undertone flows all the way to the Cross-Sell seam.
