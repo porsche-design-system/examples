@@ -289,7 +289,7 @@
           data-animation="fade-in-up"
           style="--pm-delay: calc(var(--p-duration-sm) * 4)"
         >
-          <p-button type="button" icon="arrow-right">Zum Konfigurator</p-button>
+          <p-button type="button" icon="none">Zum Konfigurator</p-button>
         </div>
       </section>
 
@@ -322,42 +322,39 @@
           rewind="true"
           aria='{ "aria-label": "Empfohlene Ausstattungen" }'
         >
-          <article class="relative isolate flex aspect-16/10 flex-col items-start justify-between overflow-hidden rounded-3xl p-fluid-md">
-            <img class="absolute inset-0 -z-1 size-full object-cover" src="/assets/pfm/xsell-burmester.webp" alt="" loading="lazy">
-            <div class="pm2-xsell-slide__scrim absolute inset-0 -z-1" aria-hidden="true"></div>
-            <div class="scheme-light inline-flex w-fit items-center rounded-full bg-canvas px-static-sm py-static-2xs">
-              <p-text size="x-small" color="primary">Beliebt</p-text>
-            </div>
-            <div class="flex flex-col items-start gap-static-xs">
-              <p-text size="medium" color="primary">Burmester® High-End Surround Sound System</p-text>
-              <p-text size="small" color="primary">Ihr Klangerlebnis, perfektioniert.</p-text>
-              <p-link-pure href="#" icon="arrow-right" class="mt-static-xs">Zum Konfigurator</p-link-pure>
-            </div>
-          </article>
-          <article class="relative isolate flex aspect-16/10 flex-col items-start justify-between overflow-hidden rounded-3xl p-fluid-md">
-            <img class="absolute inset-0 -z-1 size-full object-cover" src="/assets/pfm/led.webp" alt="" loading="lazy">
-            <div class="pm2-xsell-slide__scrim absolute inset-0 -z-1" aria-hidden="true"></div>
-            <div class="scheme-light inline-flex w-fit items-center rounded-full bg-canvas px-static-sm py-static-2xs">
-              <p-text size="x-small" color="primary">Beliebt</p-text>
-            </div>
-            <div class="flex flex-col items-start gap-static-xs">
-              <p-text size="medium" color="primary">HD-Matrix LED-Hauptscheinwerfer</p-text>
-              <p-text size="small" color="primary">Präzises Licht für jede Situation.</p-text>
-              <p-link-pure href="#" icon="arrow-right" class="mt-static-xs">Zum Konfigurator</p-link-pure>
-            </div>
-          </article>
-          <article class="relative isolate flex aspect-16/10 flex-col items-start justify-between overflow-hidden rounded-3xl p-fluid-md">
-            <img class="absolute inset-0 -z-1 size-full object-cover" src="/assets/pfm/crosssell-3.webp" alt="" loading="lazy">
-            <div class="pm2-xsell-slide__scrim absolute inset-0 -z-1" aria-hidden="true"></div>
-            <div class="scheme-light inline-flex w-fit items-center rounded-full bg-canvas px-static-sm py-static-2xs">
-              <p-text size="x-small" color="primary">Beliebt</p-text>
-            </div>
-            <div class="flex flex-col items-start gap-static-xs">
-              <p-text size="medium" color="primary">Sport Chrono Paket</p-text>
-              <p-text size="small" color="primary">Für den entscheidenden Moment.</p-text>
-              <p-link-pure href="#" icon="arrow-right" class="mt-static-xs">Zum Konfigurator</p-link-pure>
-            </div>
-          </article>
+          <p-link-tile
+            href="#"
+            label="Burmester® High-End Surround Sound System"
+            description="Ihr Klangerlebnis, perfektioniert."
+            aspect-ratio="16/9"
+            gradient="true"
+            weight="regular"
+          >
+            <p-tag slot="header" color="background-frosted" compact="true">Beliebt</p-tag>
+            <img src="/assets/pfm/xsell-burmester.webp" alt="" loading="lazy">
+          </p-link-tile>
+          <p-link-tile
+            href="#"
+            label="HD-Matrix LED-Hauptscheinwerfer"
+            description="Präzises Licht für jede Situation."
+            aspect-ratio="16/9"
+            gradient="true"
+            weight="regular"
+          >
+            <p-tag slot="header" color="background-frosted" compact="true">Beliebt</p-tag>
+            <img src="/assets/pfm/led.webp" alt="" loading="lazy">
+          </p-link-tile>
+          <p-link-tile
+            href="#"
+            label="Sport Chrono Paket"
+            description="Für den entscheidenden Moment."
+            aspect-ratio="16/9"
+            gradient="true"
+            weight="regular"
+          >
+            <p-tag slot="header" color="background-frosted" compact="true">Beliebt</p-tag>
+            <img src="/assets/pfm/crosssell-3.webp" alt="" loading="lazy">
+          </p-link-tile>
         </p-carousel>
       </section>
 
