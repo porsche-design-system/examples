@@ -25,29 +25,28 @@
 
   <body>
     <!-- Hidden dev menu: swap Hero variants (not part of the actual design, purely for review).
-         Built from PDS components: a p-popover with a slotted compact wrench button as its trigger. -->
-    <p-popover
-      id="pm2-dev-menu"
-      direction="bottom"
-      class="fixed left-static-sm top-static-sm z-[100]"
-    >
-      <p-button
-        slot="button"
-        type="button"
-        variant="secondary"
-        icon="wrench"
-        hide-label="true"
-        compact="true"
-        class="opacity-60 transition-opacity hover:opacity-100"
-      >Dev-Menü: Hero-Varianten</p-button>
-      <div class="flex flex-col gap-static-sm">
-        <p-text size="x-small" weight="semi-bold" color="contrast-medium">DEV · Hero-Varianten</p-text>
-        <div class="flex flex-col gap-static-xs">
-          <p-button type="button" variant="secondary" compact="true" data-variant="fullbleedCenter">1 · Mit Video</p-button>
-          <p-button type="button" variant="secondary" compact="true" data-variant="noVideo">2 · Ohne Video</p-button>
+         Built from PDS components: a p-popover with a slotted compact wrench button as its trigger.
+         Wrapped in a fixed div because p-popover is `display: contents`, so position can't apply to it. -->
+    <div class="fixed left-static-sm top-static-sm z-[100]">
+      <p-popover id="pm2-dev-menu" direction="bottom">
+        <p-button
+          slot="button"
+          type="button"
+          variant="secondary"
+          icon="wrench"
+          hide-label="true"
+          compact="true"
+          class="opacity-60 transition-opacity hover:opacity-100"
+        >Dev-Menü: Hero-Varianten</p-button>
+        <div class="flex flex-col gap-static-sm">
+          <p-text size="x-small" weight="semi-bold" color="contrast-medium">DEV · Hero-Varianten</p-text>
+          <div class="flex flex-col gap-static-xs">
+            <p-button type="button" variant="secondary" compact="true" data-variant="fullbleedCenter">1 · Mit Video</p-button>
+            <p-button type="button" variant="secondary" compact="true" data-variant="noVideo">2 · Ohne Video</p-button>
+          </div>
         </div>
-      </div>
-    </p-popover>
+      </p-popover>
+    </div>
 
     <main class="grid-template">
       <!-- Hero: scroll-driven video card (widens to full-bleed once it reaches the viewport top) with
