@@ -119,7 +119,6 @@ main.grid-template {
   margin-inline: 0;
   margin-bottom: 0;
   font-family: var(--p-font-family, "Porsche Next", system-ui, sans-serif);
-  font-size: clamp(52px, 12.53vw, 300px);
   font-weight: 400;
   line-height: 1.048;
   white-space: nowrap;
@@ -127,14 +126,6 @@ main.grid-template {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-.pm2-ghost-title--small {
-  font-size: clamp(48px, 12.53vw, 300px);
-}
-
-.pm2-ghost-title--5xl {
-  font-size: var(--text-5xl);
 }
 
 /* Video card — top/left/right/bottom/border-radius/aspect-ratio are written every frame by main.js
