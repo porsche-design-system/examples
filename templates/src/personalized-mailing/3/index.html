@@ -43,10 +43,11 @@
 
     <main class="grid-template">
       <!-- Hero: scroll-driven video card (widens to full-bleed once it reaches the viewport top) with
-           a giant ghost-type title behind it and a personalised caption on top. -->
+           a giant ghost-type title behind it and a personalised caption on top.
+           min-h-screen reserves height before main.js runs so the chapter below doesn't jump (CLS). -->
       <section
         id="pm2-hero"
-        class="pm2-hero scheme-dark col-full grid grid-cols-subgrid relative overflow-hidden bg-surface"
+        class="pm2-hero scheme-dark col-full grid grid-cols-subgrid relative overflow-hidden bg-surface min-h-screen"
         aria-labelledby="pm2-hero-heading"
       >
         <div class="pm2-hero-red-wash absolute inset-x-0 bottom-0 top-[62vh] z-0 pointer-events-none" aria-hidden="true"></div>
@@ -298,14 +299,14 @@
           <span class="block">Ihren Traum.</span>
         </h2>
 
-        <div class="pm2-crosssell__lead col-extended relative" data-animation="fade-in-up">
+        <div class="pm2-crosssell__lead col-extended relative z-1 pt-[clamp(220px,23vw,450px)]" data-animation="fade-in-up">
           <p-text size="large" color="contrast-high" class="max-w-[460px]">
             Ausstattungen, die andere Fahrer am 911 Targa besonders schätzen.
           </p-text>
         </div>
 
         <p-carousel
-          class="pm2-crosssell__carousel col-full relative"
+          class="pm2-crosssell__carousel col-full relative z-1"
           data-animation="fade-in-up"
           style="--pm-delay: var(--p-duration-sm)"
           width="extended"

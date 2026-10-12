@@ -95,14 +95,8 @@ main.grid-template {
 
 /* Hero -------------------------------------------------------------- */
 /* Height is written by main.js (coupled to the video's measured bottom edge, see
-   updateHero()) so there is never too much empty canvas before the next section. */
-
-/* Baseline height reserved before main.js runs — the hero's children are absolutely positioned,
-   so without this the section collapses on first paint and the chapter below jumps down once JS
-   sets the real min-height (large CLS). Matches the full-bleed variant's JS value (window.innerHeight). */
-.pm2-hero {
-  min-height: 100vh;
-}
+   updateHero()) so there is never too much empty canvas before the next section.
+   The baseline min-height lives on the section as a `min-h-screen` utility in the HTML. */
 
 /* Continuous red wash the video floats on — avoids a hard cut into the Karminrot chapter below.
    Fades in together with the video (not instantly on load) so the wordmark leads the mount sequence. */
@@ -322,15 +316,6 @@ main.grid-template {
 /* Cross-sell -------------------------------------------------------------- */
 .pm2-crosssell {
   background: linear-gradient(180deg, var(--p-color-surface) 0%, #601315 100%);
-}
-
-.pm2-crosssell__lead {
-  z-index: 1;
-  padding-top: clamp(220px, 23vw, 450px);
-}
-
-.pm2-crosssell__carousel {
-  z-index: 1;
 }
 
 .pm2-xsell-slide__scrim {
