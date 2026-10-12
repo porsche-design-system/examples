@@ -46,6 +46,7 @@ const transformIndexHtmlPlugin = () => {
             'divider',
             'flyout',
             'modal',
+            'popover',
             'input-text',
             'input-email',
             'textarea',

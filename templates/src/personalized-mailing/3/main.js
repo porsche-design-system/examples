@@ -159,21 +159,17 @@ if (hero && heroTitle && videoWrap) {
   // Opening animation, triggered after the first frame (mirrors the "1" template's fade-in-up delays).
   requestAnimationFrame(() => hero.classList.add('is-mounted'));
 
-  // Hidden dev menu: swap Hero variants (review/testing aid, not part of the actual design).
-  const devMenuToggle = document.getElementById('pm2-dev-menu-toggle');
+  // Hidden dev menu (p-popover + slotted compact wrench button): swap Hero variants (review aid only).
   const devMenu = document.getElementById('pm2-dev-menu');
   const devMenuItems = devMenu ? [...devMenu.querySelectorAll('[data-variant]')] : [];
 
   const setActiveMenuItem = () => {
+    // Active variant = primary button, the rest secondary (p-popover handles its own open/close).
     for (const btn of devMenuItems) {
-      btn.setAttribute('aria-pressed', String(btn.dataset.variant === heroVariantKey));
+      btn.setAttribute('variant', btn.dataset.variant === heroVariantKey ? 'primary' : 'secondary');
     }
   };
   setActiveMenuItem();
-
-  devMenuToggle?.addEventListener('click', () => {
-    devMenu.hidden = !devMenu.hidden;
-  });
 
   for (const btn of devMenuItems) {
     btn.addEventListener('click', () => {
