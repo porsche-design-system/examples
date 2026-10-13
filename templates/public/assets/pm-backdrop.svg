@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Placeholder environment backdrop">
+  <defs>
+    <linearGradient id="pm-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2140"/>
+      <stop offset="0.55" stop-color="#241428"/>
+      <stop offset="1" stop-color="#120a14"/>
+    </linearGradient>
+    <radialGradient id="pm-glow" cx="0.5" cy="0.62" r="0.6">
+      <stop offset="0" stop-color="#7a5a86" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#7a5a86" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pm-floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a0f1d"/>
+      <stop offset="1" stop-color="#050307"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#pm-sky)"/>
+  <rect width="1600" height="900" fill="url(#pm-glow)"/>
+  <rect y="560" width="1600" height="340" fill="url(#pm-floor)"/>
+  <ellipse cx="800" cy="562" rx="900" ry="70" fill="#000000" opacity="0.35"/>
+  <text x="1560" y="866" text-anchor="end" font-family="'Porsche Next', Arial, sans-serif" font-size="20" fill="#f6f6f8" opacity="0.32">Backdrop · Placeholder</text>
+</svg>

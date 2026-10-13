@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Placeholder 911 exterior render">
+  <defs>
+    <linearGradient id="pm-ext-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6f6f8" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#f6f6f8" stop-opacity="0.14"/>
+    </linearGradient>
+  </defs>
+  <!-- ground shadow -->
+  <ellipse cx="800" cy="640" rx="470" ry="34" fill="#000000" opacity="0.45"/>
+  <!-- sports coupe side silhouette -->
+  <g fill="url(#pm-ext-body)" stroke="#f6f6f8" stroke-opacity="0.22" stroke-width="2">
+    <path d="M360 612
+      C 388 560, 470 548, 556 545
+      C 626 486, 726 452, 830 452
+      C 946 452, 1036 478, 1092 536
+      C 1170 544, 1236 566, 1260 612
+      L 1260 618
+      C 1236 606, 1180 600, 1120 600
+      L 470 600
+      C 424 600, 388 604, 360 618 Z"/>
+  </g>
+  <!-- window -->
+  <path d="M642 512 C 700 470, 786 452, 852 456 C 918 460, 968 476, 1000 508 Z" fill="#0d070f" opacity="0.55"/>
+  <!-- wheels -->
+  <g fill="#0d070f" stroke="#f6f6f8" stroke-opacity="0.28" stroke-width="4">
+    <circle cx="560" cy="612" r="62"/>
+    <circle cx="1076" cy="612" r="62"/>
+  </g>
+  <g fill="#f6f6f8" fill-opacity="0.18">
+    <circle cx="560" cy="612" r="26"/>
+    <circle cx="1076" cy="612" r="26"/>
+  </g>
+  <text x="800" y="742" text-anchor="middle" font-family="'Porsche Next', Arial, sans-serif" font-size="34" letter-spacing="6" fill="#f6f6f8" opacity="0.72">EXTERIOR</text>
+  <text x="800" y="778" text-anchor="middle" font-family="'Porsche Next', Arial, sans-serif" font-size="18" fill="#f6f6f8" opacity="0.36">911 · Placeholder render</text>
+</svg>
