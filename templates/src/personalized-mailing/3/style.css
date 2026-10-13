@@ -126,19 +126,10 @@ main.grid-template {
   text-align: center;
 }
 
-/* "static" variant (D): caption anchored to the bottom of the (smaller, inset) video card, keeping
-   the same padding/centering as the default top-anchored state — just flipped vertically. */
-.pm2-video-caption--bottom {
-  top: auto;
-  bottom: 0;
-}
-
-/* On narrow viewports the bottom-anchored caption (fullbleed E, "static" D) can wrap to 3+ lines
-   and sit close to the play/pause toggle — lift the text clear above it and let the toggle go
-   compact (below, on #pm2-video-toggle) instead of relocating it. */
+/* On narrow viewports the bottom-anchored fullbleed caption can wrap to 3+ lines and sit close to
+   the play/pause toggle — lift the text clear above it instead of relocating the toggle. */
 @media (width < 760px) {
-  .pm2-video-caption--center,
-  .pm2-video-caption--bottom {
+  .pm2-video-caption--center {
     padding-bottom: calc(var(--p-spacing-fluid-xl) + var(--p-spacing-static-2xl));
   }
 }
@@ -179,11 +170,6 @@ main.grid-template {
     color-mix(in srgb, var(--pm-config-color) 4%, transparent) 70%,
     var(--p-color-surface) 100%
   );
-}
-
-/* Cross-sell -------------------------------------------------------------- */
-.pm2-crosssell {
-  background: linear-gradient(180deg, var(--p-color-surface) 0%, #601315 100%);
 }
 
 /* Freude, die man teilt. -------------------------------------------------------------- */

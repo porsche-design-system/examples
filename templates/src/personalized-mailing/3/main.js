@@ -67,7 +67,6 @@ if (hero && heroTitle && videoWrap) {
     // Page-level hook so the chapter (a sibling section) can reorder/pull up the car in no-video mode.
     document.documentElement.classList.toggle('pm3-no-video', !!variant.noVideo);
     videoCaption?.classList.toggle('pm2-video-caption--center', !!variant.fullbleed);
-    videoCaption?.classList.toggle('pm2-video-caption--bottom', !!variant.captionBottom);
   };
 
   let raf = 0;
