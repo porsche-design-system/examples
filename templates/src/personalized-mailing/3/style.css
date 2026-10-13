@@ -106,21 +106,6 @@ main.grid-template {
   display: none;
 }
 
-.pm2-video-scrim {
-  background: linear-gradient(105deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 45%, transparent 70%);
-}
-
-/* Fullbleed variant (E): 2-layer scrim (darker top/bottom, clear middle) instead of the diagonal one. */
-.pm2-video-scrim--fullbleed {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(0, 0, 0, 0) 30%,
-    rgba(0, 0, 0, 0.3) 80%,
-    rgba(0, 0, 0, 0.42) 100%
-  );
-}
-
 .pm2-video-caption {
   opacity: 0;
   transition: opacity var(--p-duration-lg) var(--p-ease-in-out);

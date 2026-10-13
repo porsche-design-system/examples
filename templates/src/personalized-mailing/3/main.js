@@ -46,7 +46,6 @@ const HERO_VARIANTS = {
 const hero = document.getElementById('pm2-hero');
 const heroTitle = document.getElementById('pm2-hero-heading');
 const videoWrap = document.getElementById('pm2-video-wrap');
-const videoScrim = document.getElementById('pm2-video-scrim');
 const videoCaption = document.getElementById('pm2-video-caption');
 const scrollHint = document.querySelector('.pm2-scroll-hint');
 
@@ -67,7 +66,6 @@ if (hero && heroTitle && videoWrap) {
     hero.classList.toggle('pm2-hero--no-video', !!variant.noVideo);
     // Page-level hook so the chapter (a sibling section) can reorder/pull up the car in no-video mode.
     document.documentElement.classList.toggle('pm3-no-video', !!variant.noVideo);
-    videoScrim?.classList.toggle('pm2-video-scrim--fullbleed', !!variant.fullbleed);
     videoCaption?.classList.toggle('pm2-video-caption--center', !!variant.fullbleed);
     videoCaption?.classList.toggle('pm2-video-caption--bottom', !!variant.captionBottom);
   };
