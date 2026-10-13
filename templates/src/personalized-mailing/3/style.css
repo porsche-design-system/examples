@@ -112,28 +112,6 @@ main.grid-template {
   transition-delay: 0.6s;
 }
 
-/* Fullbleed variant (E): caption moves to bottom-center (matches the PFM v4 reference layout). */
-.pm2-video-caption--center {
-  left: 0;
-  right: 0;
-  top: auto;
-  bottom: 0;
-  max-width: none;
-  padding: 0 var(--p-spacing-fluid-md) calc(6vh + 72px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* On narrow viewports the bottom-anchored fullbleed caption can wrap to 3+ lines and sit close to
-   the play/pause toggle — lift the text clear above it instead of relocating the toggle. */
-@media (width < 760px) {
-  .pm2-video-caption--center {
-    padding-bottom: calc(var(--p-spacing-fluid-xl) + var(--p-spacing-static-2xl));
-  }
-}
-
 .pm2-hero.is-mounted .pm2-video-caption {
   opacity: 1;
 }
