@@ -10,14 +10,14 @@
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts"
   },
   "dependencies": {
-    "@porsche-design-system/components-js": "4.8.0"
+    "@porsche-design-system/components-js": "4.10.1"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0",
-    "@tailwindcss/vite": "^4.3.3",
-    "tailwindcss": "^4.3.3",
+    "@tailwindcss/vite": "^4.3.5",
+    "tailwindcss": "^4.3.5",
     "typescript": "~6.0.3",
-    "vite": "^8.3.2"
+    "vite": "^8.3.8"
   },
   "volta": {
     "extends": "../../package.json"

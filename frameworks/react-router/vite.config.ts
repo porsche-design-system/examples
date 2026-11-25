@@ -45,5 +45,12 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
+  // Since @react-router/dev 8.5 the dev server no longer registers route imports as client dependencies while rendering
+  // the first request, and Vite's scanner has no HTML entry to crawl. Dependencies imported by the app would therefore
+  // only be discovered once the browser requests them, forcing a re-optimization and a full page reload on a cold
+  // start. Pre-bundle them up front instead.
+  optimizeDeps: {
+    include: ['@porsche-design-system/components-react/ssr', 'react-hook-form'],
+  },
   plugins: [tailwindcss(), reactRouter(), patchProcessBrowserGlobalIdentifierPlugin()],
 });
