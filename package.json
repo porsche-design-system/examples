@@ -62,14 +62,14 @@
     "npm:clean": "npm cache clean --force"
   },
   "devDependencies": {
-    "@astrojs/compiler-binding": "0.5.1",
-    "@biomejs/biome": "^2.5.15",
-    "@tailwindcss/oxide": "4.3.3",
+    "@astrojs/compiler-binding": "0.5.3",
+    "@biomejs/biome": "^2.6.9",
+    "@tailwindcss/oxide": "4.3.5",
     "lightningcss": "1.33.0",
-    "prettier": "^3.9.9",
-    "rolldown": "1.2.12",
-    "rollup": "4.63.6",
-    "syncpack": "^15.3.3"
+    "prettier": "^3.10.1",
+    "rolldown": "1.2.19",
+    "rollup": "4.68.8",
+    "syncpack": "^15.3.4"
   },
   "overrides": {
     "@vee-validate/zod": {

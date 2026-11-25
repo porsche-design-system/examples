@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!package-lock.json"]
+    "includes": ["**", "!package-lock.json", "!.agents/skills"]
   },
   "assist": {
     "actions": {
@@ -72,6 +72,12 @@
     }
   },
   "overrides": [
+    {
+      "includes": ["**/*.md", "**/*.mdx", "**/*.yml", "**/*.yaml"],
+      "formatter": {
+        "enabled": false
+      }
+    },
     {
       "includes": ["**/*.css", "**/*.scss"],
       "javascript": {
