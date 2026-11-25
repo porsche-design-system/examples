@@ -1,0 +1,8 @@
+:HL["/examples/pr-322/next-js/_next/static/chunks/41w8qfn1ml_co.css","style"]
+:HL["/examples/pr-322/next-js/_next/static/media/07a39a8a4660cc7c-s.p.0r6juujl39pe6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/examples/pr-322/next-js/_next/static/media/605ce01b664af129-s.p.0wgildi0cnwt9.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-regular.b8f1c20.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["https://cdn.ui.porsche.com/porsche-design-system/fonts/porsche-next-latin-semi-bold.b5f6fca.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["https://cdn.ui.porsche.com/porsche-design-system/components/porsche-design-system.v4.10.1.e8da2aee48a1a1459322.js","script",{"crossOrigin":""}]
+1:[["children",{"s":"__PAGE__","h":160}]]
+0:{"b":"jnjssEa4HXks5tuMkj6xb","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
